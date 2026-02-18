@@ -4,8 +4,9 @@ import { Suspense } from "react";
 import { SoulPreview } from "@/components/soul-preview";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, QrCode } from "lucide-react";
 import { ShareActions } from "@/components/share-actions";
+import { QRCodeDisplay } from "@/components/qrcode-display";
 
 interface SharePageProps {
   searchParams: Promise<{ data?: string }>;
@@ -95,6 +96,16 @@ export default async function SharePage({ searchParams }: SharePageProps) {
         </div>
 
         <ShareActions dataParam={dataParam} />
+
+        <div className="mt-12 border-t pt-8">
+          <h2 className="text-2xl font-semibold mb-6 text-center flex items-center justify-center">
+            <QrCode className="mr-2 h-5 w-5" />
+            Scan to Share
+          </h2>
+          <div className="flex justify-center">
+            <QRCodeDisplay url={`https://clawsouls.hub/share?data=${dataParam}`} name={soul.name} />
+          </div>
+        </div>
 
         <Suspense fallback={<div>Loading preview...</div>}>
           <SoulPreview soul={soul} />
