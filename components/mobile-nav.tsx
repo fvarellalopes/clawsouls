@@ -36,7 +36,7 @@ export function MobileNav() {
   return (
     <nav className="mobile-nav">
       {links.map((link) => {
-        const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+        const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
         const Icon = link.icon;
 
         return (

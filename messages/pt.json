@@ -56,7 +56,11 @@
     "subtitle": "Comece com um personagem famoso ou crie o seu próprio",
     "load": "Carregar Preset",
     "description": "Selecione um preset para carregar seu perfil completo",
-    "backToEditor": "Voltar ao Editor"
+    "backToHome": "Voltar ao Início",
+    "searchPlaceholder": "Buscar presets...",
+    "allCreatures": "Todos os tipos",
+    "loading": "Carregando...",
+    "noPresetsFound": "Nenhum preset encontrado com esses filtros."
   },
   "home": {
     "heroTitle": "Crie a Alma da sua AI",

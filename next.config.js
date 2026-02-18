@@ -22,6 +22,8 @@ const nextConfig = {
       },
     ],
   },
+  // Externalize native modules for server-side
+  serverExternalPackages: ['better-sqlite3'],
 };
 
 module.exports = withBundleAnalyzer(withPWA(withNextIntl(nextConfig)));

@@ -10,7 +10,7 @@ function EditorContent() {
   const { setSoul } = useSoulStore();
 
   useEffect(() => {
-    const data = searchParams.get("data");
+    const data = searchParams?.get("data");
     if (data) {
       try {
         const decoded = atob(data);

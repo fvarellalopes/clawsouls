@@ -1,24 +1,70 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { presets } from "@/data/presets";
 import { useSoulStore } from "@/store/soulStore";
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Search, Filter } from "lucide-react";
 import Link from "next/link";
+
+interface Preset {
+  id: string;
+  name: string;
+  creature: string;
+  vibe?: string;
+  emoji?: string;
+  tags: string[];
+  description?: string;
+}
 
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
   const { loadPreset } = useSoulStore();
   const router = useRouter();
 
-  const handleLoadPreset = (presetId: string) => {
-    const preset = presets.find((p) => p.id === presetId);
-    if (preset) {
-      loadPreset(preset);
-      router.push("/editor");
+  const [presets, setPresets] = useState<Preset[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const [selectedCreature, setSelectedCreature] = useState<string | null>(null);
+  const [creatures, setCreatures] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchPresets();
+    fetchFacets();
+  }, [search, selectedCreature]);
+
+  const fetchFacets = async () => {
+    const res = await fetch('/api/presets?limit=1');
+    if (res.ok) {
+      const json = await res.json();
+      if (json.facets?.creature) {
+        setCreatures(json.facets.creature);
+      }
     }
+  };
+
+  const fetchPresets = async () => {
+    setLoading(true);
+    const params = new URLSearchParams({
+      limit: '50',
+      offset: '0',
+      ...(search && { search }),
+      ...(selectedCreature && { creature: selectedCreature })
+    });
+    const res = await fetch(`/api/presets?${params.toString()}`);
+    if (res.ok) {
+      const json = await res.json();
+      setPresets(json.data);
+      setTotal(json.meta.total);
+    }
+    setLoading(false);
+  };
+
+  const handleLoadPreset = (preset: Preset) => {
+    loadPreset(preset as any); // cast because store expects full shape
+    router.push("/editor");
   };
 
   return (
@@ -28,56 +74,75 @@ export default function PresetsPage() {
           <Button asChild variant="ghost">
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              {t("backToEditor")}
+              {t('backToHome')}
             </Link>
           </Button>
+          <h1 className="text-4xl font-bold mt-4">{t('title')}</h1>
+          <p className="text-muted-foreground mt-2">
+            {t('subtitle', { total })}
+          </p>
         </div>
 
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">{t("title")}</h1>
-          <p className="text-lg text-muted-foreground">{t("subtitle")}</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {presets.map((preset) => (
-            <div
-              key={preset.id}
-              className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all hover:border-accent/50 group"
+        {/* Filter Bar */}
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder={t('searchPlaceholder')}
+              className="w-full pl-10 pr-4 py-2 border rounded-md"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <Filter className="h-4 w-4 text-muted-foreground" />
+            <select
+              className="border rounded-md px-3 py-2"
+              value={selectedCreature || ""}
+              onChange={(e) => setSelectedCreature(e.target.value || null)}
             >
-              <div className="flex items-center space-x-4 mb-4">
-                <span className="text-4xl">{preset.emoji}</span>
-                <div>
-                  <h3 className="text-xl font-semibold group-hover:text-accent transition-colors">
-                    {preset.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{preset.creature}</p>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground mb-4 line-clamp-3">
-                {preset.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {preset.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <Button
-                onClick={() => handleLoadPreset(preset.id)}
-                className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
-              >
-                {t("load")}
-              </Button>
-            </div>
-          ))}
+              <option value="">{t('allCreatures')}</option>
+              {creatures.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
+          </div>
         </div>
+
+        {/* Grid */}
+        {loading ? (
+          <div className="text-center py-12">{t('loading')}</div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {presets.map((preset) => (
+              <div
+                key={preset.id}
+                className="border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                onClick={() => handleLoadPreset(preset)}
+              >
+                <div className="text-4xl mb-2">{preset.emoji}</div>
+                <h3 className="font-semibold truncate">{preset.name}</h3>
+                <p className="text-sm text-muted-foreground">{preset.creature}</p>
+                {preset.tags && preset.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {preset.tags.slice(0, 2).map((tag) => (
+                      <span key={tag} className="text-xs bg-secondary px-2 py-0.5 rounded">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {!loading && presets.length === 0 && (
+          <div className="text-center py-12 text-muted-foreground">
+            {t('noPresetsFound')}
+          </div>
+        )}
       </div>
     </div>
   );
