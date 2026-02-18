@@ -50,6 +50,23 @@ export default async function LocaleLayout({
     <html lang={locale} className="dark">
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
         <NextIntlClientProvider locale={locale} messages={typedMessages}>
+          {/* Structured Data (JSON-LD) */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "ClawSouls",
+                "url": "https://clawsouls.hub",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://clawsouls.hub/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              })
+            }}
+          />
           <div className="min-h-screen flex flex-col">
             <Header locale={locale} messages={typedMessages} />
             <main className="flex-1 pb-16 md:pb-0">{children}</main>
