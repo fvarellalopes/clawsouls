@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Palette, Share2, Download, Sparkles } from "lucide-react";
@@ -45,7 +47,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">{t("features.visual")}</h3>
               <p className="text-muted-foreground">
-                Editor visual intuitivo com sliders, switches e seletores para ajustar cada detalhe da personalidade.
+                {t("features.visualDesc")}
               </p>
             </div>
 
@@ -55,7 +57,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">{t("features.presets")}</h3>
               <p className="text-muted-foreground">
-                10+ personagens famosos pré-configurados: Shadow, Jack, Doc, Zen, Virus, Pony e mais.
+                {t("features.presetsDesc")}
               </p>
             </div>
 
@@ -65,7 +67,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">{t("features.share")}</h3>
               <p className="text-muted-foreground">
-                Gere links com OpenGraph. Compartilhe suas criações no Twitter, Discord, onde quiser.
+                {t("features.shareDesc")}
               </p>
             </div>
 
@@ -75,7 +77,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">{t("features.export")}</h3>
               <p className="text-muted-foreground">
-                Exporte seu SOUL.md pronto para usar no OpenClaw. Formato markdown com Metadados.
+                {t("features.exportDesc")}
               </p>
             </div>
           </div>
@@ -84,16 +86,15 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-3xl font-bold mb-6">Pronto para criar sua AI única?</h2>
+        <div className="container mx-auto text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {t("ctaTitle")}
+          </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Leva menos de 5 minutos. Sem cadastro. 100% gratuito.
+            {t("ctaDesc")}
           </p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/editor">
-              {t("getStarted")}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+          <Button asChild size="lg" className="bg-accent text-accent-foreground">
+            <Link href="/editor">{t("ctaButton")}</Link>
           </Button>
         </div>
       </section>

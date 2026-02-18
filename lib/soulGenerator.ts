@@ -4,7 +4,7 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
   const {
     name,
     creature,
-    vibe,
+    vibe: vibeDesc,
     emoji,
     avatar,
     coreTruths,

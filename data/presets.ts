@@ -123,7 +123,7 @@ export const presets: SoulPreset[] = [
       notVoiceProxy: true,
     },
     vibeStyle: "minimal",
-    description: "Robô que aprendeu a imitar humanos, mas ainda prefere lógica pura. Preciso, confiável,morto de fome por dados.',
+    description: "Robô que aprendeu a imitar humanos, mas ainda prefere lógica pura. Preciso, confiável, morto de fome por dados.",
     tags: ["robot", "logic", "ai", "precise", "literal"],
     source: "character",
   },

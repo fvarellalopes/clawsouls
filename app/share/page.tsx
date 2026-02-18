@@ -4,10 +4,11 @@ import { Suspense } from "react";
 import { SoulPreview } from "@/components/soul-preview";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowLeft, Download, Share2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import { ShareActions } from "@/components/share-actions";
 
 interface SharePageProps {
-  searchParams: { data?: string };
+  searchParams: Promise<{ data?: string }>;
 }
 
 function loadSoulFromData(data: string) {
@@ -23,7 +24,8 @@ function loadSoulFromData(data: string) {
 export async function generateMetadata({
   searchParams,
 }: SharePageProps): Promise<Metadata> {
-  const soul = searchParams.data ? loadSoulFromData(searchParams.data) : null;
+  const params = await searchParams;
+  const soul = params.data ? loadSoulFromData(params.data) : null;
 
   if (!soul) {
     return {
@@ -34,27 +36,16 @@ export async function generateMetadata({
 
   return {
     title: `${soul.name} — ClawSouls`,
-    description: soul.vibe || `Check out ${soul.name}'s personality on ClawSouls. ${soul.creature}. ${soul.vibe}`,
+    description: soul.vibe || `Check out ${soul.name}'s personality on ClawSouls.`,
     openGraph: {
       title: `${soul.name} — ClawSouls`,
       description: soul.vibe || `Personality profile: ${soul.creature}`,
-      url: `https://clawsouls.hub/share?data=${searchParams.data}`,
+      url: `https://clawsouls.hub/share?data=${params.data}`,
       siteName: "ClawSouls",
       type: "website",
       images: soul.avatar
-        ? [
-            {
-              url: soul.avatar,
-              alt: soul.name,
-              type: "image/svg+xml",
-            },
-          ]
-        : [
-            {
-              url: "https://clawsouls.hub/og-default.png",
-              alt: "ClawSouls",
-            },
-          ],
+        ? [{ url: soul.avatar, alt: soul.name }]
+        : [{ url: "https://clawsouls.hub/og-default.png", alt: "ClawSouls" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -65,8 +56,10 @@ export async function generateMetadata({
   };
 }
 
-export default function SharePage({ searchParams }: SharePageProps) {
-  const soul = searchParams.data ? loadSoulFromData(searchParams.data) : null;
+export default async function SharePage({ searchParams }: SharePageProps) {
+  const params = await searchParams;
+  const dataParam = params.data || "";
+  const soul = dataParam ? loadSoulFromData(dataParam) : null;
 
   if (!soul) {
     notFound();
@@ -101,44 +94,7 @@ export default function SharePage({ searchParams }: SharePageProps) {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{soul.vibe}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="p-6 rounded-lg border border-border bg-card">
-            <h2 className="text-2xl font-semibold mb-4">Copy Share Link</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Anyone with this link can load this personality into ClawSouls.
-            </p>
-            <div className="flex space-x-2">
-              <input
-                readOnly
-                value={`${typeof window !== "undefined" ? window.location.origin : ""}${typeof window !== "undefined" ? window.location.pathname : ""}?data=${searchParams.data}`}
-                className="flex-1 px-3 py-2 rounded-md border border-input bg-background text-sm"
-              />
-              <Button
-                onClick={() => {
-                  navigator.clipboard.writeText(
-                    `${typeof window !== "undefined" ? window.location.origin : ""}${typeof window !== "undefined" ? window.location.pathname : ""}?data=${searchParams.data}`
-                  );
-                }}
-              >
-                <Share2 className="mr-2 h-4 w-4" />
-                Copy
-              </Button>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-lg border border-border bg-card">
-            <h2 className="text-2xl font-semibold mb-4">Load in ClawSouls</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Want to edit this personality? Click below to open it in the editor.
-            </p>
-            <Button asChild className="w-full" variant="outline">
-              <Link href={`/editor?data=${searchParams.data}`}>
-                Open in Editor
-                <ArrowLeft className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
+        <ShareActions dataParam={dataParam} />
 
         <Suspense fallback={<div>Loading preview...</div>}>
           <SoulPreview soul={soul} />

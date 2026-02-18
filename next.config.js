@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const createNextIntlPlugin = require('next-intl/plugin');
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -6,10 +7,9 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 });
 
-const { i18n } = require("./next-i18next.config");
+const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig = {
-  i18n,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -19,7 +19,6 @@ const nextConfig = {
       },
     ],
   },
-  trailingSlash: true,
 };
 
-module.exports = withPWA(nextConfig);
+module.exports = withPWA(withNextIntl(nextConfig));

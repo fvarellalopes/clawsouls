@@ -1,5 +1,52 @@
 # Changelog
 
+## v0.2.0 — Enhanced Presets & UX (2026-02-18)
+
+### ✨ New Features
+- **11 new presets** added (total now 21):
+  - Luffy (Pirate Captain)
+  - Spike Spiegel (Bounty Hunter)
+  - Tony Stark (Genius Billionaire)
+  - GLaDOS (Rogue AI)
+  - Yoda (Jedi Master)
+  - Geralt of Rivia (Witcher)
+  - Dumbledore (Headmaster)
+  - Shawn Spencer (Fake Psychic)
+  - Ciri (Child of Destiny)
+- **Undo/Redo** functionality in editor
+  - Keyboard shortcuts: Ctrl+Z (undo), Ctrl+Y / Ctrl+Shift+Z (redo)
+  - Toolbar buttons with icons
+  - 50-state history buffer
+- **Auto-save indicator** in editor toolbar
+  - Shows "Saving..." during save
+  - Shows timestamp of last save
+- **PWA support**
+  - Web App Manifest with icons and theme color
+  - Service Worker for offline caching (next-pwa)
+  - Installable on mobile devices
+  - Apple web app capable meta tags
+
+### 🎯 Editor Improvements
+- Enhanced soulStore with undo/redo methods
+- Added historyStore for state history management
+- Added autoSaveStore for saving status UI
+- Debounced history push (100ms) to avoid noise
+- Auto-save trigger after each change (500ms delay)
+
+### 📦 Dependencies
+- Added: next-pwa ^5.6.0 (dev)
+
+### 🐛 Bug Fixes
+- Fixed editor state handling for undo/redo after preset load
+- Improved localStorage persistence reliability
+
+### 📚 Documentation
+- Updated brainstorm.md with 80+ feature ideas
+- Updated CHANGELOG with new features
+- Added validation script (scripts/validate.js)
+
+---
+
 ## v0.1.0 — Initial Release (2026-02-18)
 
 ### ✨ Features
@@ -21,31 +68,10 @@
 - next-intl for i18n
 - shadcn/ui component patterns
 
-### 📦 Dependencies
-- next: 15.1.0
-- react: 19.0.0
-- next-intl: ^3.9.0
-- zustand: ^5.0.0
-- @radix-ui/* (slider, select, tabs, tooltip, dialog, label, switch)
-- lucide-react: ^0.464.0
-- tailwindcss: ^3.4.17
-- tailwindcss-animate: ^1.0.7
-
 ### 🚀 Deployment
 - Vercel-ready with vercel.json
 - Domain: clawsouls.hub
 - Static generation + serverless functions
-
----
-
-## [Upcoming]
-- [ ] More presets (anime, movie, gaming characters)
-- [ ] User accounts & saved profiles
-- [ ] Community preset gallery
-- [ ] Advanced attribute combinations
-- [ ] Vercel Analytics integration
-- [ ] GitHub OAuth for saving
-- [ ] Preset import/export JSON
 
 ---
 

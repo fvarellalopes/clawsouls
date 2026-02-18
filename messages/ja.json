@@ -61,6 +61,9 @@
       "share": "共有可能リンク",
       "export": "SOUL.mdエクスポート"
     },
-    "featureDesc": "モダンでインタラクティブ、国際化対応。"
+    "featureDesc": "モダンでインタラクティブ、国際化対応。",
+    "ctaButton": "始めましょう",
+    "ctaTitle": "今すぐ始めよう",
+    "ctaDesc": "あなただけのAI人格を作成"
   }
 }

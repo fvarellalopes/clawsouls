@@ -6,6 +6,12 @@ interface HistoryState {
   past: SoulState["soul"][];
   future: SoulState["soul"][];
   maxSize: number;
+  push: (soul: SoulState["soul"]) => void;
+  undo: (current: SoulState["soul"]) => SoulState["soul"];
+  redo: (current: SoulState["soul"]) => SoulState["soul"];
+  canUndo: () => boolean;
+  canRedo: () => boolean;
+  clear: () => void;
 }
 
 export const useHistoryStore = create<HistoryState>()(

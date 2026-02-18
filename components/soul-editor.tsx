@@ -12,7 +12,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Textarea } from "@/components/ui/textarea";
 import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Save } from "lucide-react";
 import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { presets, attributeOptions } from "@/data/presets";
@@ -308,11 +307,11 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <div className="flex justify-between items-center">
                         <Label className="capitalize text-base">{t(`attributes.${key}`)}</Label>
                         <span className="text-sm text-muted-foreground font-mono">
-                          {options.find(o => o.value === soul[key as any])?.label || "Equilibrado"}
+                          {options.find(o => o.value === (soul as any)[key])?.label || "Equilibrado"}
                         </span>
                       </div>
                       <Slider
-                        value={[soul[key as any] as number]}
+                        value={[(soul as any)[key] as number]}
                         onValueChange={(value) => handleAttributeChange(key as any, value[0])}
                         max={100}
                         min={0}
@@ -419,7 +418,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           <div className="space-y-4">
             <Input
               readOnly
-              value={`${window.location.origin}/share?data=${btoa(JSON.stringify(soul))}`}
+              value={`${typeof window !== "undefined" ? window.location.origin : ""}${typeof window !== "undefined" ? window.location.pathname : ""}?data=${btoa(JSON.stringify(soul))}`}
             />
             <p className="text-sm text-muted-foreground">
               {t("shareTip")}
