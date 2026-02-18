@@ -47,7 +47,9 @@
     "shareTip": "Cualquiera con este enlace puede cargar tu creación en ClawSouls.",
     "close": "Cerrar",
     "reset": "Reiniciar",
-    "resetConfirm": "¿Seguro que quieres reiniciar todos los campos?"
+    "resetConfirm": "¿Seguro que quieres reiniciar todos los campos?",
+    "copy": "Copiar",
+    "copied": "¡Copiado!"
   },
   "presetsPage": {
     "title": "Personalidades Predefinidas",

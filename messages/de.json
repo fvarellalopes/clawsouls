@@ -47,7 +47,9 @@
     "shareTip": "Anyone with this link can load your creation into ClawSouls.",
     "close": "Close",
     "reset": "Reset to Default",
-    "resetConfirm": "Are you sure you want to reset all fields?"
+    "resetConfirm": "Are you sure you want to reset all fields?",
+    "copy": "Kopieren",
+    "copied": "Kopiert!"
   },
   "presetsPage": {
     "title": "Preset Personalities",

@@ -47,7 +47,9 @@
     "shareTip": "このリンクがあれば、誰でもClawSoulsであなたの作成物をロードできます。",
     "close": "閉じる",
     "reset": "リセット",
-    "resetConfirm": "すべてのフィールドをリセットしますか？"
+    "resetConfirm": "すべてのフィールドをリセットしますか？",
+    "copy": "コピー",
+    "copied": "コピーしました！"
   },
   "presetsPage": {
     "title": "プリセット人格",

@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Save } from "lucide-react";
+import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save } from "lucide-react";
 import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { presets, attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
@@ -30,6 +30,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const { lastSaved, isSaving } = useAutoSaveStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [previewDialogOpen, setPreviewDialogOpen] = useState(false);
+  const [previewCopied, setPreviewCopied] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   // Keyboard shortcuts
@@ -412,9 +413,39 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               {t("previewDesc")}
             </DialogDescription>
           </DialogHeader>
-          <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">
-            {generateSoulMD(soul)}
-          </pre>
+          <div className="relative">
+            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">
+              {generateSoulMD(soul)}
+            </pre>
+            <Button
+              size="sm"
+              variant="secondary"
+              className="absolute top-2 right-2"
+              onClick={async () => {
+                const content = generateSoulMD(soul);
+                await navigator.clipboard.writeText(content);
+                setPreviewCopied(true);
+                setTimeout(() => setPreviewCopied(false), 2000);
+              }}
+            >
+              {previewCopied ? (
+                <>
+                  <Check className="h-4 w-4 mr-2" />
+                  {t("copied")}
+                </>
+              ) : (
+                <>
+                  <Copy className="h-4 w-4 mr-2" />
+                  {t("copy")}
+                </>
+              )}
+            </Button>
+          </div>
+          <DialogFooter>
+            <Button onClick={() => setPreviewDialogOpen(false)}>
+              {t("close")}
+            </Button>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
 
