@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSoulStore, SoulPreset } from "@/store/soulStore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,7 +13,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare } from "lucide-react";
+import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Save } from "lucide-react";
+import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { presets, attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { useTranslations } from "next-intl";
@@ -25,11 +26,29 @@ interface SoulEditorProps {
 
 export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const t = useTranslations("editor");
-  const { soul, setSoul, resetSoul, loadPreset } = useSoulStore();
+  const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo } = useSoulStore();
+  const { lastSaved, isSaving } = useAutoSaveStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [previewDialogOpen, setPreviewDialogOpen] = useState(false);
   const [savedPresetName, setSavedPresetName] = useState("");
   const [showAdvanced, setShowAdvanced] = useState(false);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      }
+      if ((e.ctrlKey || e.metaKey) && (e.key === "y" || (e.key === "z" && e.shiftKey))) {
+        e.preventDefault();
+        redo();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [undo, redo]);
 
   const handleAttributeChange = (attr: keyof typeof soul, value: any) => {
     setSoul({ [attr]: value });
@@ -86,8 +105,41 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
       <div className="min-h-screen py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-4xl font-bold text-gradient">{t("title")}</h1>
-            <div className="flex space-x-2">
+            <div className="flex items-center space-x-4">
+              <h1 className="text-4xl font-bold text-gradient">{t("title")}</h1>
+              <div className="flex items-center space-x-2">
+                <Button
+                  onClick={undo}
+                  variant="ghost"
+                  size="icon"
+                  disabled={!canUndo()}
+                  title="Undo (Ctrl+Z)"
+                >
+                  <Undo2 className="h-4 w-4" />
+                </Button>
+                <Button
+                  onClick={redo}
+                  variant="ghost"
+                  size="icon"
+                  disabled={!canRedo()}
+                  title="Redo (Ctrl+Y)"
+                >
+                  <Redo2 className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              {isSaving && (
+                <span className="text-sm text-muted-foreground flex items-center">
+                  <Save className="h-3 w-3 mr-1 animate-pulse" />
+                  Saving...
+                </span>
+              )}
+              {!isSaving && lastSaved && (
+                <span className="text-sm text-muted-foreground">
+                  Saved {new Date(lastSaved).toLocaleTimeString()}
+                </span>
+              )}
               <Button onClick={() => setPreviewDialogOpen(true)} variant="outline">
                 <Eye className="mr-2 h-4 w-4" />
                 {t("preview")}

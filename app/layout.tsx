@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   description: "Design, customize, and share AI personality profiles. The visual SOUL.md editor for OpenClaw agents.",
   keywords: ["openclaw", "ai personality", "soul.md", "agent customization", "ai character creator"],
   authors: [{ name: "ClawSouls" }],
+  manifest: "/manifest.json",
   openGraph: {
     title: "ClawSouls — Create Your OpenClaw Soul",
     description: "Design, customize, and share AI personality profiles. The visual SOUL.md editor for OpenClaw agents.",
@@ -34,6 +35,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ClawSouls — Create Your OpenClaw Soul",
     description: "Design, customize, and share AI personality profiles. The visual SOUL.md editor for OpenClaw agents.",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "ClawSouls",
   },
 };
 
