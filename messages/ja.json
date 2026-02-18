@@ -1,0 +1,69 @@
+{
+  "common": {
+    "presets": "プリセット",
+    "create": "作成",
+    "about": "について",
+    "madeWith": "で作られました",
+    "footerDescription": "ClawSouls — OpenClaw AIの人格をスタイリッシュにカスタマイズ。"
+  },
+  "editor": {
+    "title": "ソウルエディタ",
+    "preview": "プレビュー",
+    "share": "共有",
+    "export": ".mdダウンロード",
+    "basicInfo": "基本情報",
+    "basicInfoDesc": "名前、生物、バイブ、絵文字、アバター",
+    "personality": "人格",
+    "personalityDesc": "コアの真理と境界線",
+    "attributes": "属性",
+    "attributesDesc": "コミュニケーションの調整：ユーモア、フォーマリティ、丁寧さなど",
+    "advanced": "詳細設定",
+    "advancedDesc": "プリセットとカスタマイズ",
+    "nameLabel": "名前",
+    "creatureLabel": "生物種",
+    "vibeLabel": "バイブ",
+    "emojiLabel": "シグネチャー絵文字",
+    "avatarLabel": "アバターURL (オプション)",
+    "vibeStyleLabel": "バイブスタイル",
+    "selectVibeStyle": "スタイルを選択...",
+    "coreTruths": "コアの真理",
+    "coreTruthsDesc": "AIが生きる基本原則",
+    "boundaries": "境界線",
+    "boundariesDesc": "倫理的ガイドラインと行動制限",
+    "toneAttributes": "トーン属性",
+    "toneAttributesDesc": "AIのコミュニケーション方法を調整",
+    "low": "低",
+    "high": "高",
+    "soulPreview": "SOUL.mdプレビュー",
+    "previewDesc": "あなたのAI用に生成されたSOUL.mdコンテンツ",
+    "shareLink": "共有リンク",
+    "shareDesc": "このリンクをコピーして人格を共有",
+    "shareTip": "このリンクがあれば、誰でもClawSoulsであなたの作成物をロードできます。",
+    "close": "閉じる",
+    "reset": "リセット",
+    "resetConfirm": "すべてのフィールドをリセットしますか？"
+  },
+  "presetsPage": {
+    "title": "プリセット人格",
+    "subtitle": "有名なキャラクターから始める、または自分で作成",
+    "load": "プリセットをロード",
+    "description": "プリセットを選択して完全なプロフィールをロード",
+    "backToEditor": "エディタに戻る"
+  },
+  "home": {
+    "heroTitle": "AIの魂を作ろう",
+    "heroSubtitle": "OpenClaw SOUL.mdファイルのビジュアルエディタ。人格をカスタマイズ、トーンを調整、作成物を共有。",
+    "getStarted": "始める",
+    "browsePresets": "プリセットを見る",
+    "features": {
+      "visual": "ビジュアルエディタ",
+      "presets": "有名プリセット",
+      "share": "共有可能リンク",
+      "export": "SOUL.mdエクスポート"
+    },
+    "featureDesc": "モダンでインタラクティブ、国際化対応。",
+    "ctaButton": "始めましょう",
+    "ctaTitle": "今すぐ始めよう",
+    "ctaDesc": "あなただけのAI人格を作成"
+  }
+}
