@@ -1,0 +1,66 @@
+{
+  "common": {
+    "presets": "Presets",
+    "create": "Create",
+    "about": "About",
+    "madeWith": "Made with",
+    "footerDescription": "ClawSouls — Create your OpenClaw AI personality with style."
+  },
+  "editor": {
+    "title": "Soul Editor",
+    "preview": "Preview",
+    "share": "Share",
+    "export": "Download .md",
+    "basicInfo": "Basic Info",
+    "basicInfoDesc": "Name, creature, vibe, emoji, avatar",
+    "personality": "Personality",
+    "personalityDesc": "Core truths and boundaries",
+    "attributes": "Attributes",
+    "attributesDesc": "Tone sliders: humor, formality, verbosity, etc.",
+    "advanced": "Advanced",
+    "advancedDesc": "Presets and customization",
+    "nameLabel": "Name",
+    "creatureLabel": "Creature",
+    "vibeLabel": "Vibe",
+    "emojiLabel": "Signature Emoji",
+    "avatarLabel": "Avatar URL (optional)",
+    "vibeStyleLabel": "Vibe Style",
+    "selectVibeStyle": "Select vibe style...",
+    "coreTruths": "Core Truths",
+    "coreTruthsDesc": "Fundamental principles your AI lives by",
+    "boundaries": "Boundaries",
+    "boundariesDesc": "Limits and ethical guidelines",
+    "toneAttributes": "Tone Attributes",
+    "toneAttributesDesc": "Fine-tune how your AI communicates",
+    "low": "Low",
+    "high": "High",
+    "soulPreview": "SOUL.md Preview",
+    "previewDesc": "Generated SOUL.md content for your AI",
+    "shareLink": "Share Your Creation",
+    "shareDesc": "Copy this link to share your personality",
+    "shareTip": "Anyone with this link can load your creation into ClawSouls.",
+    "close": "Close",
+    "reset": "Reset to Default",
+    "resetConfirm": "Are you sure you want to reset all fields?"
+  },
+  "presetsPage": {
+    "title": "Preset Personalities",
+    "subtitle": "Start from a famous character or create your own",
+    "load": "Load Preset",
+    "description": "Select a preset to load its complete personality profile",
+    "backToEditor": "Back to Editor"
+  },
+  "home": {
+    "heroTitle": "Create Your AI's Soul",
+    "heroSubtitle": "Visual editor for OpenClaw SOUL.md files. Customize personalities, tweak tones, and share your creations.",
+    "getStarted": "Get Started",
+    "browsePresets": "Browse Presets",
+    "features": {
+      "visual": "Visual Editor",
+      "presets": "Famous Presets",
+      "share": "Shareable Links",
+      "export": "Export SOUL.md"
+    },
+    "featureDesc": "Modern, interactive, and internationalized."
+  }
+}
