@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, Edit3, LayoutGrid } from "lucide-react";
+import { Home, Edit3, LayoutGrid, Bookmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
@@ -25,6 +25,11 @@ export function MobileNav() {
       href: "/presets",
       label: t("presets"),
       icon: LayoutGrid,
+    },
+    {
+      href: "/my-presets",
+      label: t("myPresets"),
+      icon: Bookmark,
     },
   ];
 

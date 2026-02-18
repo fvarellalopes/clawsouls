@@ -17,6 +17,7 @@ import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { presets, attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { useTranslations } from "next-intl";
+import { SavePresetDialog } from "@/components/save-preset-dialog";
 
 interface SoulEditorProps {
   locale: string;
@@ -29,7 +30,6 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const { lastSaved, isSaving } = useAutoSaveStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [previewDialogOpen, setPreviewDialogOpen] = useState(false);
-  const [savedPresetName, setSavedPresetName] = useState("");
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   // Keyboard shortcuts
@@ -45,9 +45,20 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
       }
     };
 
+    const handleLoadPreset = (e: Event) => {
+      const custom = e as CustomEvent;
+      if (custom.detail) {
+        setSoul(custom.detail);
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [undo, redo]);
+    window.addEventListener("load-soul-preset", handleLoadPreset);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("load-soul-preset", handleLoadPreset);
+    };
+  }, [undo, redo, setSoul]);
 
   const handleAttributeChange = (attr: keyof typeof soul, value: any) => {
     setSoul({ [attr]: value });
@@ -147,6 +158,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <Share2 className="mr-2 h-4 w-4" />
                 {t("share")}
               </Button>
+              <SavePresetDialog />
               <Button onClick={handleExport} className="bg-primary text-primary-foreground">
                 <Download className="mr-2 h-4 w-4" />
                 {t("export")}

@@ -25,6 +25,13 @@ export interface SoulState {
     };
     vibeStyle: string;
     continuity: boolean;
+    // Tone attributes
+    humor: number;
+    formality: number;
+    emojiUsage: number;
+    verbosity: number;
+    consciousness: number;
+    questioning: number;
   };
   isDarkMode: boolean;
   locale: string;
@@ -64,6 +71,13 @@ export interface SoulPreset {
   description: string;
   tags: string[];
   source: "character" | "custom";
+  // Tone attributes (optional)
+  humor?: number;
+  formality?: number;
+  emojiUsage?: number;
+  verbosity?: number;
+  consciousness?: number;
+  questioning?: number;
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -90,6 +104,12 @@ export const useSoulStore = create<SoulState>()(
         },
         vibeStyle: "concise",
         continuity: true,
+        humor: 50,
+        formality: 50,
+        emojiUsage: 30,
+        verbosity: 50,
+        consciousness: 50,
+        questioning: 30,
       },
       isDarkMode: false,
       locale: "en",
@@ -138,13 +158,19 @@ export const useSoulStore = create<SoulState>()(
           },
           vibeStyle: "concise",
           continuity: true,
+          humor: 50,
+          formality: 50,
+          emojiUsage: 30,
+          verbosity: 50,
+          consciousness: 50,
+          questioning: 30,
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
       },
 
       loadPreset: (preset) => {
-        const newSoul = {
+        const newSoul: SoulState["soul"] = {
           name: preset.name,
           creature: preset.creature,
           vibe: preset.vibe,
@@ -154,6 +180,13 @@ export const useSoulStore = create<SoulState>()(
           boundaries: preset.boundaries,
           vibeStyle: preset.vibeStyle,
           continuity: true,
+          // Tone attributes with defaults
+          humor: preset.humor ?? 50,
+          formality: preset.formality ?? 50,
+          emojiUsage: preset.emojiUsage ?? 30,
+          verbosity: preset.verbosity ?? 50,
+          consciousness: preset.consciousness ?? 50,
+          questioning: preset.questioning ?? 30,
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);

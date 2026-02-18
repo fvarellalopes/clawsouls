@@ -2,7 +2,8 @@
   "mobileNav": {
     "home": "ホーム",
     "editor": "エディタ",
-    "presets": "プリセット"
+    "presets": "プリセット",
+    "myPresets": "マイプリセット"
   },
   "common": {
     "presets": "プリセット",
@@ -70,5 +71,23 @@
     "ctaButton": "始めましょう",
     "ctaTitle": "今すぐ始めよう",
     "ctaDesc": "あなただけのAI人格を作成"
+  },
+  "myPresets": {
+    "title": "マイプリセット",
+    "subtitle": "保存した人物設定プリセットを管理",
+    "empty": "まだプリセットを保存していません。 ",
+    "createFirst": "最初のプリセットを作成",
+    "load": "読み込む",
+    "savedAgo": "{time}に保存",
+    "creature": "種族",
+    "vibe": "雰囲気",
+    "vibeStyle": "スタイル",
+    "humor": "ユーモア",
+    "formality": "フォーマル度",
+    "save": "保存",
+    "savePreset": "プリセットを保存",
+    "presetName": "プリセット名",
+    "saved": "保存しました！",
+    "saveToMyPresets": "マイプリセットに保存"
   }
 }

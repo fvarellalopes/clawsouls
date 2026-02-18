@@ -2,7 +2,8 @@
   "mobileNav": {
     "home": "Início",
     "editor": "Editor",
-    "presets": "Presets"
+    "presets": "Presets",
+    "myPresets": "Meus Presets"
   },
   "common": {
     "presets": "Presets",
@@ -67,5 +68,23 @@
       "export": "Exportar SOUL.md"
     },
     "featureDesc": "Moderno, interativo e internacionalizado."
+  },
+  "myPresets": {
+    "title": "Meus Presets",
+    "subtitle": "Gerencie seus presets de personalidade salvos",
+    "empty": "Você ainda não salvou nenhum preset. ",
+    "createFirst": "Crie seu primeiro preset",
+    "load": "Carregar",
+    "savedAgo": "Salvo {time}",
+    "creature": "Criatura",
+    "vibe": "Vibração",
+    "vibeStyle": "Estilo",
+    "humor": "humor",
+    "formality": "formalidade",
+    "save": "Salvar",
+    "savePreset": "Salvar Preset",
+    "presetName": "Nome do Preset",
+    "saved": "Salvo!",
+    "saveToMyPresets": "Salvar em Meus Presets"
   }
 }

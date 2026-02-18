@@ -23,6 +23,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "commander": "13.0.0",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.464.0",
     "nanoid": "^5.0.4",
     "next": "15.1.0",
