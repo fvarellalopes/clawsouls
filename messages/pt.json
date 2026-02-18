@@ -1,4 +1,9 @@
 {
+  "mobileNav": {
+    "home": "Início",
+    "editor": "Editor",
+    "presets": "Presets"
+  },
   "common": {
     "presets": "Presets",
     "create": "Criar",

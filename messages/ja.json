@@ -1,4 +1,9 @@
 {
+  "mobileNav": {
+    "home": "ホーム",
+    "editor": "エディタ",
+    "presets": "プリセット"
+  },
   "common": {
     "presets": "プリセット",
     "create": "作成",

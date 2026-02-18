@@ -90,4 +90,53 @@
     backdrop-filter: blur(1.5rem);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  /* Mobile-first utilities */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: hsl(var(--background));
+      border-top: 1px solid hsl(var(--border));
+      padding: 0.5rem;
+      justify-content: space-around;
+    }
+
+    .mobile-only {
+      display: block;
+    }
+
+    .desktop-only {
+      display: none;
+    }
+
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .slider-thumb {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-only {
+      display: none;
+    }
+  }
 }
