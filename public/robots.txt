@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://clawsouls.hub/sitemap.xml
+
+# Block admin areas
+Disallow: /admin
+Disallow: /api/admin

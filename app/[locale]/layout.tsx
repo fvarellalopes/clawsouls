@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
             <Header locale={locale} messages={typedMessages} />
             <main className="flex-1">{children}</main>
             <Footer />
+            <Analytics />
           </div>
         </NextIntlClientProvider>
       </body>
