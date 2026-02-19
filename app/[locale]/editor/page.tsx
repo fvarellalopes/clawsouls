@@ -1,11 +1,15 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, use } from "react";
 import { useSearchParams } from "next/navigation";
 import { SoulEditor } from "@/components/soul-editor";
 import { useSoulStore } from "@/store/soulStore";
 
-function EditorContent() {
+interface EditorPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+function EditorContent({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
   const { setSoul } = useSoulStore();
 
@@ -22,13 +26,21 @@ function EditorContent() {
     }
   }, [searchParams, setSoul]);
 
-  return <SoulEditor locale="en" messages={{}} />;
+  return <SoulEditor locale={locale} messages={{}} />;
 }
 
-export default function EditorPage() {
+export default function EditorPage({ params }: EditorPageProps) {
+  const { locale } = use(params);
+  
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading editor...</div>}>
-      <EditorContent />
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-pulse text-purple-400">Loading editor...</div>
+        </div>
+      </div>
+    }>
+      <EditorContent locale={locale} />
     </Suspense>
   );
 }
