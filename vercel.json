@@ -5,8 +5,5 @@
     "app/**/*.ts": {
       "maxDuration": 10
     }
-  },
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "@clawsouls_url"
   }
 }
