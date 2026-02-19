@@ -1,80 +1,118 @@
-# 🚀 Deploy ClawSouls to Vercel
+# 🚀 Deploy ClawSouls to IPFS (Storacha)
+
+## Visão Geral
+
+O deploy agora é feito via **IPFS** usando **Storacha** para armazenamento e Pinata para pin redundante.
 
 ## Prerequisites
 
 - GitHub repository: https://github.com/ClawdAI2-brazil/clawsouls
-- Domain: clawsouls.hub (already registered)
-- Vercel account
+- Conta Storacha (https://storacha.network)
+- Conta Pinata (https://pinata.cloud) - opcional para redundância
 
-## Steps
+## Configuração
 
-### 1. Push to GitHub (if not already)
+### 1. Configure Storacha
 
 ```bash
-cd /root/clawsouls
-git remote -v  # Should show origin -> https://github.com/ClawdAI2-brazil/clawsouls.git
-git push -u origin main
+# Instalar Storacha CLI
+npm install -g @storacha/cli
+
+# Login
+storacha login
+
+# Criar space (equivalente a bucket S3)
+storacha space create clawsouls
+
+# Criar signing key
+storacha key create --json > storacha-key.json
+
+# Criar UCAN proof
+storacha delegation create <DID_DO_KEY> -c space/blob/add -c space/index/add -c filecoin/offer -c upload/add --base64 > storacha-proof.json
 ```
 
-### 2. Import in Vercel
+### 2. Configure GitHub Secrets
 
-1. Go to https://vercel.com/import
-2. Choose **Import Git Repository**
-3. Select `ClawdAI2-brazil/clawsouls`
-4. Framework preset: Next.js
-5. Root Directory: `.` (default)
-6. Build Command: `npm run build` (default)
-7. Output Directory: `.next` (auto-filled)
+No repo GitHub, vá em **Settings → Secrets and variables → Actions** e adicione:
 
-### 3. Environment Variables
+| Secret | Valor |
+|--------|-------|
+| `STORACHA_KEY` | Conteúdo do campo `base64` do arquivo `storacha-key.json` |
+| `STORACHA_PROOF` | Conteúdo do arquivo `storacha-proof.json` (string base64) |
+| `PINATA_JWT` | JWT da API Pinata (opcional) |
 
-Add in Vercel Project Settings → Environment Variables:
+### 3. Obter credenciais Storacha via web
 
-| Key | Value |
-|-----|-------|
-| `NEXT_PUBLIC_SITE_URL` | `https://clawsouls.hub` |
+Alternativamente, você pode obter as credenciais em:
+- https://dash.storacha.network/
 
-### 4. Domain Configuration
+## Deploy
 
-In Vercel Project Settings → Domains:
+O deploy é automático:
 
-1. Add domain: `clawsouls.hub`
-2. Follow DNS instructions (point to Vercel nameservers)
-3. Wait for SSL (automatic via Let's Encrypt)
+- **Push para `main`** → Production deploy
+- **Pull Request** → Preview deploy com comentário no PR
 
-### 5. Deploy
+## Verificação
 
-- Vercel auto-deploys on push to `main`
-- Or click **Deploy** manually in dashboard
+Após o deploy, você verá:
+- CID do IPFS nos logs do GitHub Action
+- Comentário no PR com links de acesso
 
-### 6. Verify
+### Acessar o site
 
-- Check homepage loads: https://clawsouls.hub
-- Check editor: https://clawsouls.hub/editor
-- Check share OG: https://clawsouls.hub/share?data=eyJ... (use real data)
-- Check i18n: click globe → switch languages
+```
+Gateway: https://ipfs.io/ipfs/<CID>
+Storacha: https://w3s.link/ipfs/<CID>
+Dweb: https://dweb.link/ipfs/<CID>
+```
 
-## 🛠️ Troubleshooting
+### DNS (Opcional)
 
-**Build fails**: Check Node.js version (should be 18+). Adjust in Vercel → Settings → Node.js Version.
+Para domínio próprio via IPNS, configure:
+```bash
+# Publicar IPNS
+storacha name publish <CID>
 
-**OG tags not showing**: Use Vercel OG image generation or verify `/share` route metadata. Clear Discord/Twitter cache.
+# Configurar DNS CNAME para gateway
+```
 
-**404s**: Ensure `next.config.js` has `i18n` configured and `middleware.ts` exists.
+## Estrutura do Workflow
 
-## 📊 Monitoring
+O workflow está em `.github/workflows/deploy-to-ipfs.yml`:
 
-- Vercel Analytics → dashboard
-- Enable Vercel Analytics in project settings
-- Add Google Analytics if needed (edit `app/layout.tsx`)
+```yaml
+# Build automático
+npm run build
 
-## 🔄 CI/CD
+# Deploy para IPFS
+ipshipyard/ipfs-deploy-action@v1
+```
 
-Automatic deployments on:
+## Troubleshooting
 
-- Push to `main` → Production
-- Pull requests → Preview deployments
+**Action falha na autenticação**: Verifique se `STORACHA_KEY` e `STORACHA_PROOF` estão válidos.
 
-## 🎉 Done!
+**CID não aparece**: Aguarde ~30s para o IPFS propagar.
 
-Your ClawSouls app is live at https://clawsouls.hub
+**Preview não funciona**: Alguns gateways IPFS podem demorar para replicar.
+
+## Monitoramento
+
+- GitHub Actions → workflows → deploy-to-ipfs
+- Logs do GitHub Action mostram o CID e links
+
+## FAQ
+
+### IPFS é permanente?
+Sim, uma vez feito o pin, o conteúdo fica disponível desde que alguém mantenha o pin.
+
+### Posso usar domínio próprio?
+Sim, via IPNS ou configurando um gateway próprio.
+
+### E se Storacha sair do ar?
+O conteúdo está pinado em Pinata (se configurado), então há redundância.
+
+---
+
+**Nota**: Este projeto usa build estático com `output: 'export'` no Next.js. O diretório de saída é `./dist`, não `.next`.

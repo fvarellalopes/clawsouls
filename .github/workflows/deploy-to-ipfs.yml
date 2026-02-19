@@ -1,0 +1,68 @@
+name: Deploy to IPFS (Storacha)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+          
+      - name: Build static export
+        run: npm run build
+        
+      - name: Deploy to IPFS via Storacha
+        id: deploy
+        uses: ipshipyard/ipfs-deploy-action@v1
+        with:
+          path-to-deploy: "./dist"
+          storacha-key: ${{ secrets.STORACHA_KEY }}
+          storacha-proof: ${{ secrets.STORACHA_PROOF }}
+          pinata-jwt-token: ${{ secrets.PINATA_JWT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Output deployment info
+        run: |
+          echo "✅ Deployment complete!"
+          echo "IPFS CID: ${{ steps.deploy.outputs.cid }}"
+          echo ""
+          echo "🔗 Access your site:"
+          echo "  - Gateway: https://ipfs.io/ipfs/${{ steps.deploy.outputs.cid }}"
+          echo "  - Storacha: https://w3s.link/ipfs/${{ steps.deploy.outputs.cid }}"
+          echo "  - Dweb: https://dweb.link/ipfs/${{ steps.deploy.outputs.cid }}"
+          
+      - name: Save CID to file
+        run: echo "${{ steps.deploy.outputs.cid }}" > cid.txt
+          
+      - name: Upload CID artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ipfs-cid-${{ github.run_id }}
+          path: cid.txt
+          retention-days: 30
+          
+      - name: Update deployment badge on failure
+        if: failure()
+        run: |
+          echo "❌ Deployment failed!"
+          echo "Check the logs above for details."

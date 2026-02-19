@@ -1,12 +1,16 @@
+"use client";
+
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { SoulPreview } from "@/components/soul-preview";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, QrCode } from "lucide-react";
 import { ShareActions } from "@/components/share-actions";
 import { QRCodeDisplay } from "@/components/qrcode-display";
+import { useEffect, useState } from "react";
 
 interface SharePageProps {
   searchParams: Promise<{ data?: string }>;
@@ -22,48 +26,39 @@ function loadSoulFromData(data: string) {
   }
 }
 
-export async function generateMetadata({
-  searchParams,
-}: SharePageProps): Promise<Metadata> {
-  const params = await searchParams;
-  const soul = params.data ? loadSoulFromData(params.data) : null;
+function SharePageContent() {
+  const searchParams = useSearchParams();
+  const dataParam = searchParams?.get("data") || "";
+  const [soul, setSoul] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!soul) {
-    return {
-      title: "ClawSouls — Personality Not Found",
-      description: "The requested personality could not be loaded.",
-    };
+  useEffect(() => {
+    if (dataParam) {
+      const loadedSoul = loadSoulFromData(dataParam);
+      setSoul(loadedSoul);
+    }
+    setLoading(false);
+  }, [dataParam]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen py-12 px-4 flex items-center justify-center">
+        <div>Loading...</div>
+      </div>
+    );
   }
 
-  return {
-    title: `${soul.name} — ClawSouls`,
-    description: soul.vibe || `Check out ${soul.name}'s personality on ClawSouls.`,
-    openGraph: {
-      title: `${soul.name} — ClawSouls`,
-      description: soul.vibe || `Personality profile: ${soul.creature}`,
-      url: `https://clawsouls.hub/share?data=${params.data}`,
-      siteName: "ClawSouls",
-      type: "website",
-      images: soul.avatar
-        ? [{ url: soul.avatar, alt: soul.name }]
-        : [{ url: "https://clawsouls.hub/og-default.png", alt: "ClawSouls" }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${soul.name} — ClawSouls`,
-      description: soul.vibe || `Personality profile: ${soul.creature}`,
-      images: soul.avatar ? [soul.avatar] : ["https://clawsouls.hub/og-default.png"],
-    },
-  };
-}
-
-export default async function SharePage({ searchParams }: SharePageProps) {
-  const params = await searchParams;
-  const dataParam = params.data || "";
-  const soul = dataParam ? loadSoulFromData(dataParam) : null;
-
   if (!soul) {
-    notFound();
+    return (
+      <div className="min-h-screen py-12 px-4 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Personality Not Found</h1>
+          <Button asChild>
+            <Link href="/">Back to Home</Link>
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -121,5 +116,15 @@ export default async function SharePage({ searchParams }: SharePageProps) {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SharePage({ searchParams }: SharePageProps) {
+  // For static export, we need to handle this differently
+  // Wrapping in Suspense for client-side params
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <SharePageContent />
+    </Suspense>
   );
 }
