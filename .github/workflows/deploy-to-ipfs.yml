@@ -32,8 +32,11 @@ jobs:
         run: npm run build
         
       - name: Check build output
-        run: ls -la && ls -la dist/ 2>/dev/null || echo "dist not found"
-        
+        run: |
+          ls -la
+          ls -la dist/ 2>/dev/null || echo "dist not found"
+          du -sh dist/ 2>/dev/null || echo "dist size unknown"
+          
       - name: Deploy to IPFS via Storacha
         id: deploy
         uses: ipshipyard/ipfs-deploy-action@v1.8.0
