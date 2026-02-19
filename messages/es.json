@@ -56,7 +56,11 @@
     "subtitle": "Empieza con un personaje famoso o crea el tuyo propio",
     "load": "Cargar Preset",
     "description": "Selecciona un preset para cargar su perfil completo",
-    "backToEditor": "Volver al Editor"
+    "backToEditor": "Volver al Editor",
+    "backToHome": "Volver al Inicio",
+    "searchPlaceholder": "Buscar presets...",
+    "allCreatures": "Todas las criaturas",
+    "loading": "Cargando..."
   },
   "home": {
     "heroTitle": "Crea el Alma de tu AI",
@@ -67,9 +71,16 @@
       "visual": "Editor Visual",
       "presets": "Presets Famosos",
       "share": "Enlaces Compartibles",
-      "export": "Exportar SOUL.md"
+      "export": "Exportar SOUL.md",
+      "visualDesc": "Interfaz intuitiva para crear la personalidad de tu AI con vista previa en tiempo real",
+      "presetsDesc": "Comienza con 300+ presets inspirados en personajes famosos y arquetipos",
+      "shareDesc": "Genera enlaces únicos para compartir tus creaciones con el mundo",
+      "exportDesc": "Descarga archivos SOUL.md compatibles con OpenClaw y otros frameworks"
     },
-    "featureDesc": "Moderno, interactivo e internacionalizado."
+    "featureDesc": "Moderno, interactivo e internacionalizado.",
+    "ctaTitle": "¿Listo para Crear?",
+    "ctaDesc": "Comienza a construir la personalidad de tu AI ahora. Sin necesidad de código.",
+    "ctaButton": "Abrir la Forja"
   },
   "myPresets": {
     "title": "Mis Presets",

@@ -71,9 +71,16 @@
       "visual": "Editor Visual",
       "presets": "Presets Famosos",
       "share": "Links Compartilháveis",
-      "export": "Exportar SOUL.md"
+      "export": "Exportar SOUL.md",
+      "visualDesc": "Interface intuitiva para criar a personalidade da sua AI com preview em tempo real",
+      "presetsDesc": "Comece com 300+ presets inspirados em personagens famosos e arquétipos",
+      "shareDesc": "Gere links únicos para compartilhar suas criações com o mundo",
+      "exportDesc": "Baixe arquivos SOUL.md compatíveis com OpenClaw e outros frameworks"
     },
-    "featureDesc": "Moderno, interativo e internacionalizado."
+    "featureDesc": "Moderno, interativo e internacionalizado.",
+    "ctaTitle": "Pronto para Criar?",
+    "ctaDesc": "Comece a construir a personalidade da sua AI agora. Sem necessidade de código.",
+    "ctaButton": "Abrir a Forja"
   },
   "myPresets": {
     "title": "Meus Presets",

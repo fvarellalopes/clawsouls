@@ -56,7 +56,11 @@
     "subtitle": "有名なキャラクターから始める、または自分で作成",
     "load": "プリセットをロード",
     "description": "プリセットを選択して完全なプロフィールをロード",
-    "backToEditor": "エディタに戻る"
+    "backToEditor": "エディタに戻る",
+    "backToHome": "ホームに戻る",
+    "searchPlaceholder": "プリセットを検索...",
+    "allCreatures": "すべてのクリーチャー",
+    "loading": "読み込み中..."
   },
   "home": {
     "heroTitle": "AIの魂を作ろう",
@@ -67,7 +71,11 @@
       "visual": "ビジュアルエディタ",
       "presets": "有名プリセット",
       "share": "共有可能リンク",
-      "export": "SOUL.mdエクスポート"
+      "export": "SOUL.mdエクスポート",
+      "visualDesc": "リアルタイムプレビューでAIの人格を直感的に作成",
+      "presetsDesc": "有名なキャラクターやアーキタイプに基づいた300以上のプリセット",
+      "shareDesc": "世界中と作品を共有するユニークなリンクを生成",
+      "exportDesc": "OpenClawや他のフレームワークと互換性のあるSOUL.mdファイルをダウンロード"
     },
     "featureDesc": "モダンでインタラクティブ、国際化対応。",
     "ctaButton": "始めましょう",

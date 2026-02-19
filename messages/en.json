@@ -56,7 +56,11 @@
     "subtitle": "Start from a famous character or create your own",
     "load": "Load Preset",
     "description": "Select a preset to load its complete personality profile",
-    "backToEditor": "Back to Editor"
+    "backToEditor": "Back to Editor",
+    "backToHome": "Back to Home",
+    "searchPlaceholder": "Search presets...",
+    "allCreatures": "All creatures",
+    "loading": "Loading..."
   },
   "home": {
     "heroTitle": "Create Your AI's Soul",
@@ -67,9 +71,16 @@
       "visual": "Visual Editor",
       "presets": "Famous Presets",
       "share": "Shareable Links",
-      "export": "Export SOUL.md"
+      "export": "Export SOUL.md",
+      "visualDesc": "Intuitive interface to craft your AI's personality with real-time preview",
+      "presetsDesc": "Start from 300+ presets inspired by famous characters and archetypes",
+      "shareDesc": "Generate unique links to share your creations with the world",
+      "exportDesc": "Download SOUL.md files compatible with OpenClaw and other frameworks"
     },
-    "featureDesc": "Modern, interactive, and internationalized."
+    "featureDesc": "Modern, interactive, and internationalized.",
+    "ctaTitle": "Ready to Create?",
+    "ctaDesc": "Start building your AI's personality now. No coding required.",
+    "ctaButton": "Open the Forge"
   },
   "myPresets": {
     "title": "My Presets",
