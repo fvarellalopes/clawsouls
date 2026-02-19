@@ -33,15 +33,35 @@ jobs:
         
       - name: Check build output
         run: |
+          echo "=== Root dir ==="
           ls -la
+          echo ""
+          echo "=== .next dir ==="
+          ls -la .next/ 2>/dev/null || echo ".next not found"
+          echo ""
+          echo "=== dist dir ==="
           ls -la dist/ 2>/dev/null || echo "dist not found"
-          du -sh dist/ 2>/dev/null || echo "dist size unknown"
+          echo ""
+          echo "=== out dir ==="
+          ls -la out/ 2>/dev/null || echo "out not found"
+          
+      - name: Set output directory
+        id: set-output
+        run: |
+          if [ -d "dist" ]; then
+            echo "dir=dist" >> $GITHUB_OUTPUT
+          elif [ -d "out" ]; then
+            echo "dir=out" >> $GITHUB_OUTPUT  
+          else
+            echo "dir=.next" >> $GITHUB_OUTPUT
+          fi
+          echo "Output dir: ${{ steps.set-output.outputs.dir }}"
           
       - name: Deploy to IPFS via Storacha
         id: deploy
         uses: ipshipyard/ipfs-deploy-action@v1.8.0
         with:
-          path-to-deploy: "./dist"
+          path-to-deploy: ${{ steps.set-output.outputs.dir }}
           storacha-key: ${{ secrets.STORACHA_KEY }}
           storacha-proof: ${{ secrets.STORACHA_PROOF }}
           pinata-jwt-token: ${{ secrets.PINATA_JWT }}
