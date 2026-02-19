@@ -5,6 +5,16 @@ const API_BASE = process.env.NEXT_PUBLIC_PRESETS_API || '/api/presets'
 
 // Converter formato Supabase (campos planos) para SoulPreset (objetos)
 function mapSupabaseToSoulPreset(data: any): SoulPreset {
+  // Parse tags if it's a string
+  let tags = data.tags || [];
+  if (typeof tags === 'string') {
+    try {
+      tags = JSON.parse(tags);
+    } catch {
+      tags = [];
+    }
+  }
+  
   return {
     id: data.id,
     name: data.name,
@@ -27,7 +37,7 @@ function mapSupabaseToSoulPreset(data: any): SoulPreset {
     },
     vibeStyle: data.vibe_style as any,
     description: data.description,
-    tags: data.tags || [],
+    tags: tags,
     source: data.source,
     // Campos opcionais que podem não existir no Supabase ainda
     humor: data.humor ?? 50,
