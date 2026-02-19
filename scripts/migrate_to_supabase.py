@@ -11,8 +11,8 @@ from datetime import datetime
 
 # Configuração
 DB_PATH = "/root/clawsouls/data/database.sqlite"
-SUPABASE_URL = "https://qsnmcomdjreewaiwzzxl.supabase.co"
-SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzbm1jb21kanJlZXdhaXd6enhsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDg5MjcwOCwiZXhwIjoyMDg2NDY4NzA4fQ.GjoZ9_P2aK8ki48nqvtAg3DfXXoyzn-OrE_2r0SbE70"
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+SUPABASE_SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 
 HEADERS = {
     "apikey": SUPABASE_SERVICE_KEY,
