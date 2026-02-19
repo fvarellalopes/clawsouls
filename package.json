@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "postbuild": "node -e \"const fs=require('fs');const p=process.env.NEXT_EXPORT_DIST||'dist';if(!fs.existsSync(p+'/index.html'))fs.writeFileSync(p+'/index.html','<!DOCTYPE html><html lang=\\\"en\\\"><head><meta charset=\\\"UTF-8\\\"><meta http-equiv=\\\"refresh\\\" content=\\\"0;url=/en/\\\"><title>ClawSouls</title></head><body><script>window.location.href=\\\"/en/\\\"</script></body></html>')\"",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",

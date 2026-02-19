@@ -13,6 +13,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig = {
+  output: 'export',
+  distDir: 'dist',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -24,6 +26,8 @@ const nextConfig = {
   },
   // Externalize native modules for server-side
   serverExternalPackages: ['better-sqlite3'],
+  // Disable server-side features for static export
+  trailingSlash: true,
 };
 
 module.exports = withBundleAnalyzer(withPWA(withNextIntl(nextConfig)));

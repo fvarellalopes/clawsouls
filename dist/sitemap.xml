@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://clawsouls.hub/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://clawsouls.hub/en/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://clawsouls.hub/pt/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://clawsouls.hub/es/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://clawsouls.hub/ja/" />
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://clawsouls.hub/en/editor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://clawsouls.hub/en/editor" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://clawsouls.hub/pt/editor" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://clawsouls.hub/es/editor" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://clawsouls.hub/ja/editor" />
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://clawsouls.hub/en/presets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://clawsouls.hub/en/presets" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://clawsouls.hub/pt/presets" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://clawsouls.hub/es/presets" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://clawsouls.hub/ja/presets" />
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>

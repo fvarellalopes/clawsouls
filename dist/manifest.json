@@ -1,0 +1,18 @@
+{
+  "name": "ClawSouls",
+  "short_name": "ClawSouls",
+  "description": "Visual SOUL.md editor for OpenClaw agents",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#facc15",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
