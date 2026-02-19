@@ -15,6 +15,10 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 const nextConfig = {
   output: 'export',
   distDir: 'dist',
+  // Base path for IPFS/deployed environments
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // Asset prefix for IPFS
+  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
   images: {
     unoptimized: true,
     remotePatterns: [
