@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Cinzel, Crimson_Pro, Fira_Code } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
@@ -8,8 +8,23 @@ import { Footer } from "@/components/layout/footer";
 import { NextIntlClientProvider } from "next-intl";
 import { MobileNav } from "@/components/mobile-nav";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+const cinzel = Cinzel({ 
+  subsets: ["latin"], 
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800", "900"]
+});
+
+const crimsonPro = Crimson_Pro({ 
+  subsets: ["latin"], 
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600"]
+});
+
+const firaCode = Fira_Code({ 
+  subsets: ["latin"], 
+  variable: "--font-mono",
+  weight: ["400", "500"]
+});
 
 const locales = ["en", "pt", "es", "ja"];
 
@@ -48,28 +63,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="dark">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+      <body className={`${cinzel.variable} ${crimsonPro.variable} ${firaCode.variable}`}>
         <NextIntlClientProvider locale={locale} messages={typedMessages}>
-          {/* Structured Data (JSON-LD) */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "ClawSouls",
-                "url": "https://clawsouls.hub",
-                "potentialAction": {
-                  "@type": "SearchAction",
-                  "target": "https://clawsouls.hub/search?q={search_term_string}",
-                  "query-input": "required name=search_term_string"
-                }
-              })
-            }}
-          />
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen flex flex-col relative">
             <Header locale={locale} messages={typedMessages} />
-            <main className="flex-1 pb-16 md:pb-0">{children}</main>
+            <main className="flex-1 pb-20 md:pb-0 relative z-10">{children}</main>
             <Footer />
             <Analytics />
             <MobileNav />

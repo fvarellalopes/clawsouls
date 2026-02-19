@@ -1,31 +1,38 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { Heart, Github, Sparkles } from "lucide-react";
 
 export function Footer() {
-  const t = useTranslations("common");
-
   return (
-    <footer className="border-t border-border/40 py-6 md:py-8">
-      <div className="container mx-auto px-4 text-center">
-        <p className="text-sm text-muted-foreground mb-4">
-          {t("footerDescription")}
-        </p>
-        <div className="flex justify-center space-x-6 text-sm">
-          <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-            {t("about")}
-          </Link>
-          <Link href="/presets" className="text-muted-foreground hover:text-foreground transition-colors">
-            {t("presets")}
-          </Link>
-          <Link href="https://docs.openclaw.ai" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
-            OpenClaw Docs
-          </Link>
+    <footer className="relative mt-auto">
+      <div className="absolute inset-0 border-t border-purple-500/20" />
+      <div className="container mx-auto py-8 px-4 relative">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-purple-300/60">
+            <Sparkles className="h-4 w-4" />
+            <span className="text-sm">
+              Forjado com <Heart className="inline h-3 w-3 text-amber-500 mx-1" /> por Clawd
+            </span>
+          </div>
+          
+          <div className="flex items-center gap-6">
+            <Link 
+              href="https://github.com/fvarellalopes/clawsouls" 
+              target="_blank"
+              className="text-purple-300/60 hover:text-purple-200 transition-colors"
+            >
+              <Github className="h-5 w-5" />
+            </Link>
+            <Link 
+              href="https://clawd.ai" 
+              target="_blank"
+              className="text-purple-300/60 hover:text-purple-200 transition-colors text-sm"
+            >
+              Clawd.ai
+            </Link>
+          </div>
         </div>
-        <p className="text-xs text-muted-foreground mt-4">
-          © {new Date().getFullYear()} ClawSouls — {t("madeWith")} 🤖💖
-        </p>
       </div>
     </footer>
   );

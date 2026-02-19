@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Globe } from "lucide-react";
-import { useSoulStore } from "@/store/soulStore";
+import { Sparkles, Globe } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,9 +18,6 @@ interface HeaderProps {
 
 export function Header({ locale, messages }: HeaderProps) {
   const t = useTranslations("common");
-  const { isDarkMode, setIsDarkMode } = useSoulStore();
-
-  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   const locales = [
     { code: "en", name: "English" },
@@ -31,51 +27,64 @@ export function Header({ locale, messages }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/40 glass supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-gradient">ClawSouls</span>
+    <header className="sticky top-0 z-50 w-full">
+      <div className="absolute inset-0 glass border-b border-purple-500/20" />
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 relative">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <Sparkles className="h-5 w-5 text-white" />
+          </div>
+          <span className="text-2xl font-bold tracking-wider">
+            <span className="text-gradient">Claw</span>
+            <span className="text-gradient-gold">Souls</span>
+          </span>
         </Link>
 
-        <nav className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm" asChild>
+        <nav className="hidden md:flex items-center gap-2">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            asChild
+            className="text-purple-200 hover:text-purple-100 hover:bg-purple-500/10"
+          >
             <Link href="/presets">{t("presets")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            asChild
+            className="text-purple-200 hover:text-purple-100 hover:bg-purple-500/10"
+          >
             <Link href="/editor">{t("create")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            asChild
+            className="text-purple-200 hover:text-purple-100 hover:bg-purple-500/10"
+          >
             <Link href="/about">{t("about")}</Link>
           </Button>
         </nav>
 
-        <div className="flex items-center space-x-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {isDarkMode ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
-
+        <div className="flex items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="text-purple-300 hover:text-purple-100 hover:bg-purple-500/10"
+              >
                 <Globe className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="bg-purple-950 border-purple-500/30">
               {locales.map((loc) => (
                 <DropdownMenuItem key={loc.code} asChild>
                   <Link
                     href={`/${loc.code === "en" ? "" : loc.code}`}
                     locale={loc.code}
-                    className={`flex items-center ${locale === loc.code ? "font-semibold" : ""}`}
+                    className={`text-purple-200 hover:text-purple-100 ${locale === loc.code ? "text-amber-400 font-semibold" : ""}`}
                   >
                     {loc.name}
                   </Link>
@@ -83,6 +92,17 @@ export function Header({ locale, messages }: HeaderProps) {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          
+          <Button 
+            asChild
+            size="sm"
+            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white border-0 shadow-lg shadow-purple-500/20"
+          >
+            <Link href="/editor">
+              <Sparkles className="mr-2 h-4 w-4" />
+              {t("create")}
+            </Link>
+          </Button>
         </div>
       </div>
     </header>
