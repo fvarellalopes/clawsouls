@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'Preset must include id and name' })
     }
 
-    const success = insert_preset(preset)
+    const success = await insert_preset(preset)
     if (!success) {
       return res.status(409).json({ error: 'Preset with this ID already exists' })
     }

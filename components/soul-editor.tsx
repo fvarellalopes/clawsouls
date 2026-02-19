@@ -14,7 +14,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save } from "lucide-react";
 import { useAutoSaveStore } from "@/store/autoSaveStore";
-import { presets, attributeOptions } from "@/data/presets";
+import { usePresets } from "@/lib/usePresets";
+import { attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { useTranslations } from "next-intl";
 import { SavePresetDialog } from "@/components/save-preset-dialog";
@@ -32,6 +33,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const [previewDialogOpen, setPreviewDialogOpen] = useState(false);
   const [previewCopied, setPreviewCopied] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const { presets, loading } = usePresets(); // <-- hook para presets da API
 
   // Keyboard shortcuts
   useEffect(() => {

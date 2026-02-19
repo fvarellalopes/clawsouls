@@ -1,9 +1,9 @@
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import Database from 'better-sqlite3';
 import fs from 'fs';
 import path from 'path';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'database.sqlite');
-
+// Types
 export type Preset = {
   id: string;
   name: string;
@@ -34,16 +34,33 @@ export type Preset = {
   updated_at?: string;
 };
 
+// Supabase client (singleton)
+let supabase: SupabaseClient | null = null;
+
+function getSupabase(): SupabaseClient | null {
+  if (supabase) return supabase;
+
+  const url = process.env.SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (url && serviceRoleKey) {
+    supabase = createClient(url, serviceRoleKey);
+    return supabase;
+  }
+
+  return null;
+}
+
+// SQLite fallback
+const DB_PATH = path.join(process.cwd(), 'data', 'database.sqlite');
 let db: Database.Database | null = null;
 
 function getDb(): Database.Database {
   if (db) return db;
-
   const dataDir = path.dirname(DB_PATH);
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
   }
-
   db = new Database(DB_PATH);
   return db;
 }
@@ -73,114 +90,244 @@ function rowToPreset(row: any): Preset {
     consciousness: Number(row.consciousness),
     questioning: Number(row.questioning),
     description: row.description,
-    tags: row.tags ? JSON.parse(row.tags) : [],
+    tags: row.tags || [],
     source: row.source,
     created_at: row.created_at,
     updated_at: row.updated_at,
   };
 }
 
-export function list_presets(
+// API functions (async)
+export async function list_presets(
   limit: number = 50,
   offset: number = 0,
   creature?: string,
   source?: string,
   tags?: string[],
   search?: string
+): Promise<Preset[]> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    let query = supabaseClient.from('presets').select('*');
+
+    if (creature) query = query.eq('creature', creature);
+    if (source) query = query.eq('source', source);
+    if (search) query = query.or(`name.ilike.%${search}%,vibe.ilike.%${search}%,description.ilike.%${search}%`);
+    if (tags && tags.length > 0) {
+      for (const tag of tags) {
+        query = query.contains('tags', [tag]);
+      }
+    }
+
+    query = query.range(offset, offset + limit - 1).order('name', { ascending: true });
+
+    const { data, error } = await query;
+    if (error) {
+      console.error('Supabase error:', error);
+      return [];
+    }
+    return (data || []).map(rowToPreset);
+  }
+
+  // SQLite fallback (sync)
+  return list_presets_sync(limit, offset, creature, source, tags, search);
+}
+
+function list_presets_sync(
+  limit: number,
+  offset: number,
+  creature?: string,
+  source?: string,
+  tags?: string[],
+  search?: string
 ): Preset[] {
   const database = getDb();
-
-  let query = 'SELECT * FROM presets WHERE 1=1';
+  let sql = 'SELECT * FROM presets WHERE 1=1';
   const params: any[] = [];
 
   if (creature) {
-    query += ' AND creature = ?';
+    sql += ' AND creature = ?';
     params.push(creature);
   }
   if (source) {
-    query += ' AND source = ?';
+    sql += ' AND source = ?';
     params.push(source);
   }
   if (search) {
-    query += ' AND (name LIKE ? OR vibe LIKE ? OR description LIKE ?)';
+    sql += ' AND (name LIKE ? OR vibe LIKE ? OR description LIKE ?)';
     const searchPat = `%${search}%`;
     params.push(searchPat, searchPat, searchPat);
   }
   if (tags && tags.length > 0) {
     for (const tag of tags) {
-      query += " AND tags LIKE ?";
+      sql += " AND tags LIKE ?";
       params.push(`%"${tag}"%`);
     }
   }
 
-  query += ' ORDER BY name LIMIT ? OFFSET ?';
+  sql += ' ORDER BY name LIMIT ? OFFSET ?';
   params.push(limit, offset);
 
-  const stmt = database.prepare(query);
+  const stmt = database.prepare(sql);
   const rows = stmt.all(...params);
   return rows.map(rowToPreset);
 }
 
-export function get_preset_by_id(preset_id: string): Preset | null {
+export async function get_preset_by_id(preset_id: string): Promise<Preset | null> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const { data, error } = await supabaseClient.from('presets').select('*').eq('id', preset_id).single();
+    if (error) {
+      if (error.code === 'PGRST116') return null; // Not found
+      console.error('Supabase error:', error);
+      return null;
+    }
+    return data ? rowToPreset(data) : null;
+  }
+
   const database = getDb();
   const stmt = database.prepare('SELECT * FROM presets WHERE id = ?');
   const row = stmt.get(preset_id);
   return row ? rowToPreset(row) : null;
 }
 
-export function count_presets(
+export async function count_presets(
   creature?: string,
   source?: string,
   tags?: string[],
   search?: string
-): number {
-  const database = getDb();
+): Promise<number> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    let query = supabaseClient.from('presets').select('*', { count: 'exact', head: true });
 
-  let query = 'SELECT COUNT(*) as cnt FROM presets WHERE 1=1';
+    if (creature) query = query.eq('creature', creature);
+    if (source) query = query.eq('source', source);
+    if (search) query = query.or(`name.ilike.%${search}%,vibe.ilike.%${search}%,description.ilike.%${search}%`);
+    if (tags && tags.length > 0) {
+      for (const tag of tags) {
+        query = query.contains('tags', [tag]);
+      }
+    }
+
+    const { count, error } = await query;
+    if (error) {
+      console.error('Supabase error:', error);
+      return 0;
+    }
+    return Number(count) || 0;
+  }
+
+  // SQLite fallback
+  const database = getDb();
+  let sql = 'SELECT COUNT(*) as cnt FROM presets WHERE 1=1';
   const params: any[] = [];
 
   if (creature) {
-    query += ' AND creature = ?';
+    sql += ' AND creature = ?';
     params.push(creature);
   }
   if (source) {
-    query += ' AND source = ?';
+    sql += ' AND source = ?';
     params.push(source);
   }
   if (search) {
-    query += ' AND (name LIKE ? OR vibe LIKE ? OR description LIKE ?)';
+    sql += ' AND (name LIKE ? OR vibe LIKE ? OR description LIKE ?)';
     const searchPat = `%${search}%`;
     params.push(searchPat, searchPat, searchPat);
   }
   if (tags && tags.length > 0) {
     for (const tag of tags) {
-      query += " AND tags LIKE ?";
+      sql += " AND tags LIKE ?";
       params.push(`%"${tag}"%`);
     }
   }
 
-  const stmt = database.prepare(query);
+  const stmt = database.prepare(sql);
   const row = stmt.get(...params) as { cnt: number };
   return row ? Number(row.cnt) : 0;
 }
 
-export function get_creature_types(): string[] {
+export async function get_creature_types(): Promise<string[]> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const { data, error } = await supabaseClient.from('presets').select('creature').order('creature', { ascending: true });
+    if (error) {
+      console.error('Supabase error:', error);
+      return [];
+    }
+    const unique = new Set<string>();
+    data?.forEach(row => unique.add(row.creature));
+    return Array.from(unique).sort();
+  }
+
   const database = getDb();
   const stmt = database.prepare('SELECT DISTINCT creature FROM presets ORDER BY creature');
   const rows = stmt.all() as { creature: string }[];
   return rows.map(r => r.creature);
 }
 
-export function get_sources(): string[] {
+export async function get_sources(): Promise<string[]> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const { data, error } = await supabaseClient.from('presets').select('source').order('source', { ascending: true });
+    if (error) {
+      console.error('Supabase error:', error);
+      return [];
+    }
+    const unique = new Set<string>();
+    data?.forEach(row => unique.add(row.source));
+    return Array.from(unique).sort();
+  }
+
   const database = getDb();
   const stmt = database.prepare('SELECT DISTINCT source FROM presets ORDER BY source');
   const rows = stmt.all() as { source: string }[];
   return rows.map(r => r.source);
 }
 
-export function insert_preset(preset: Preset): boolean {
-  const database = getDb();
+export async function insert_preset(preset: any): Promise<boolean> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const { error } = await supabaseClient.from('presets').insert([{
+      id: preset.id,
+      name: preset.name,
+      creature: preset.creature || 'Human',
+      vibe: preset.vibe || null,
+      emoji: preset.emoji || '😊',
+      avatar: preset.avatar || null,
+      core_truths_helpful: preset.core_truths_helpful ?? true,
+      core_truths_opinions: preset.core_truths_opinions ?? true,
+      core_truths_resourceful: preset.core_truths_resourceful ?? true,
+      core_truths_trustworthy: preset.core_truths_trustworthy ?? true,
+      core_truths_respectful: preset.core_truths_respectful ?? true,
+      boundaries_private: preset.boundaries_private ?? true,
+      boundaries_ask_before_acting: preset.boundaries_ask_before_acting ?? false,
+      boundaries_no_half_baked: preset.boundaries_no_half_baked ?? false,
+      boundaries_not_voice_proxy: preset.boundaries_not_voice_proxy ?? true,
+      vibe_style: preset.vibe_style || 'balanced',
+      humor: preset.humor ?? 50,
+      formality: preset.formality ?? 50,
+      emoji_usage: preset.emojiUsage ?? preset.emoji_usage ?? 10,
+      verbosity: preset.verbosity ?? 50,
+      consciousness: preset.consciousness ?? 50,
+      questioning: preset.questioning ?? 30,
+      description: preset.description || null,
+      tags: preset.tags || [],
+      source: preset.source || 'character'
+    }]);
+    if (error) {
+      if (error.code === '23505') { // unique_violation
+        return false;
+      }
+      console.error('Supabase insert error:', error);
+      throw error;
+    }
+    return true;
+  }
 
+  // SQLite fallback
+  const database = getDb();
   const sql = `
     INSERT INTO presets (
       id, name, creature, vibe, emoji, avatar,
@@ -192,7 +339,6 @@ export function insert_preset(preset: Preset): boolean {
       consciousness, questioning, description, tags, source
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
-
   try {
     const stmt = database.prepare(sql);
     stmt.run(
@@ -214,7 +360,7 @@ export function insert_preset(preset: Preset): boolean {
       preset.vibe_style || 'balanced',
       preset.humor ?? 50,
       preset.formality ?? 50,
-      preset.emoji_usage ?? 10,
+      preset.emojiUsage ?? preset.emoji_usage ?? 10,
       preset.verbosity ?? 50,
       preset.consciousness ?? 50,
       preset.questioning ?? 30,
@@ -231,18 +377,31 @@ export function insert_preset(preset: Preset): boolean {
   }
 }
 
-export function health_check(): { status: string; total_presets: number; creature_types: number; sources: number; db_path: string } {
-  const database = getDb();
+export async function health_check(): Promise<{ status: string; total_presets: number; creature_types: number; sources: number; db_type: string }> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const count = await count_presets();
+    const creatures = (await get_creature_types()).length;
+    const sources = (await get_sources()).length;
+    return {
+      status: 'healthy (supabase)',
+      total_presets: count,
+      creature_types: creatures,
+      sources: sources,
+      db_type: 'supabase'
+    };
+  }
 
+  const database = getDb();
   const totalRow = database.prepare('SELECT COUNT(*) as cnt FROM presets').get() as { cnt: number };
   const creatureRow = database.prepare('SELECT COUNT(DISTINCT creature) as cnt FROM presets').get() as { cnt: number };
   const sourcesRow = database.prepare('SELECT COUNT(DISTINCT source) as cnt FROM presets').get() as { cnt: number };
 
   return {
-    status: 'healthy',
+    status: 'healthy (sqlite)',
     total_presets: Number(totalRow.cnt),
     creature_types: Number(creatureRow.cnt),
     sources: Number(sourcesRow.cnt),
-    db_path: DB_PATH
+    db_type: 'sqlite'
   };
 }

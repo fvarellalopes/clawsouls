@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { list_presets, count_presets, get_creature_types, get_sources } from '@/lib/db'
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -21,26 +21,32 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const tagsList = Array.isArray(tags) ? tags : (tags ? [tags] : undefined)
 
   try {
-    const presets = list_presets(
-      limitNum,
-      offsetNum,
-      creature as string | undefined,
-      source as string | undefined,
-      tagsList as string[] | undefined,
-      search as string | undefined
-    )
-    const total = count_presets(
-      creature as string | undefined,
-      source as string | undefined,
-      tagsList as string[] | undefined,
-      search as string | undefined
-    )
+    const [presets, total] = await Promise.all([
+      list_presets(
+        limitNum,
+        offsetNum,
+        creature as string | undefined,
+        source as string | undefined,
+        tagsList as string[] | undefined,
+        search as string | undefined
+      ),
+      count_presets(
+        creature as string | undefined,
+        source as string | undefined,
+        tagsList as string[] | undefined,
+        search as string | undefined
+      )
+    ])
 
     let facets: { creature: string[]; source: string[] } | null = null
     if (!creature && !source && !tags && !search) {
+      const [creatureTypes, sources] = await Promise.all([
+        get_creature_types(),
+        get_sources()
+      ])
       facets = {
-        creature: get_creature_types(),
-        source: get_sources()
+        creature: creatureTypes,
+        source: sources
       }
     }
 
