@@ -1,147 +1,170 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { useSoulStore } from "@/store/soulStore";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Search, Filter } from "lucide-react";
+import { useSoulStore } from "@/store/soulStore";
+import { usePresets } from "@/lib/usePresets";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ArrowLeft, Search, X, Sparkles, Filter } from "lucide-react";
 import Link from "next/link";
-
-interface Preset {
-  id: string;
-  name: string;
-  creature: string;
-  vibe?: string;
-  emoji?: string;
-  tags: string[];
-  description?: string;
-}
+import { motion, AnimatePresence } from "framer-motion";
+import { PresetCard } from "@/components/preset-card";
+import { ThreeBackground } from "@/components/three-background";
+import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animated";
 
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
-  const { loadPreset } = useSoulStore();
   const router = useRouter();
+  const { loadPreset } = useSoulStore();
+  const { presets, loading } = usePresets();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  const [presets, setPresets] = useState<Preset[]>([]);
-  const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
-  const [selectedCreature, setSelectedCreature] = useState<string | null>(null);
-  const [creatures, setCreatures] = useState<string[]>([]);
+  // Get all unique tags
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    presets.forEach((p) => p.tags.forEach((tag) => tags.add(tag)));
+    return Array.from(tags).sort();
+  }, [presets]);
 
-  useEffect(() => {
-    fetchPresets();
-    fetchFacets();
-  }, [search, selectedCreature]);
-
-  const fetchFacets = async () => {
-    const res = await fetch('/api/presets?limit=1');
-    if (res.ok) {
-      const json = await res.json();
-      if (json.facets?.creature) {
-        setCreatures(json.facets.creature);
-      }
+  // Filter
+  const filteredPresets = useMemo(() => {
+    let result = presets;
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.creature.toLowerCase().includes(q) ||
+          p.tags.some((tag) => tag.toLowerCase().includes(q)) ||
+          p.description.toLowerCase().includes(q)
+      );
     }
-  };
-
-  const fetchPresets = async () => {
-    setLoading(true);
-    const params = new URLSearchParams({
-      limit: '50',
-      offset: '0',
-      ...(search && { search }),
-      ...(selectedCreature && { creature: selectedCreature })
-    });
-    const res = await fetch(`/api/presets?${params.toString()}`);
-    if (res.ok) {
-      const json = await res.json();
-      setPresets(json.data);
-      setTotal(json.meta.total);
+    if (selectedTag) {
+      result = result.filter((p) => p.tags.includes(selectedTag));
     }
-    setLoading(false);
-  };
+    return result;
+  }, [presets, searchQuery, selectedTag]);
 
-  const handleLoadPreset = (preset: Preset) => {
-    loadPreset(preset as any); // cast because store expects full shape
+  const handleSelect = (preset: any) => {
+    loadPreset(preset);
     router.push("/editor");
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <div className="mb-8">
-          <Button asChild variant="ghost">
-            <Link href="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              {t('backToHome')}
+    <div className="min-h-screen relative py-10 px-4">
+      <ThreeBackground />
+
+      <div className="container mx-auto max-w-6xl relative z-10">
+        {/* Header */}
+        <FadeUp>
+          <div className="text-center mb-12">
+            <Link href="/editor" className="inline-flex items-center gap-2 text-purple-300/50 hover:text-purple-200 mb-6 transition-colors text-sm">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Editor
             </Link>
-          </Button>
-          <h1 className="text-4xl font-bold mt-4">{t('title')}</h1>
-          <p className="text-muted-foreground mt-2">
-            {t('subtitle', { total })}
-          </p>
-        </div>
-
-        {/* Filter Bar */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder={t('searchPlaceholder')}
-              className="w-full pl-10 pr-4 py-2 border rounded-md"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4 text-muted-foreground" />
-            <select
-              className="border rounded-md px-3 py-2"
-              value={selectedCreature || ""}
-              onChange={(e) => setSelectedCreature(e.target.value || null)}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
-              <option value="">{t('allCreatures')}</option>
-              {creatures.map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
+              <h1 className="text-4xl md:text-5xl font-bold text-gradient font-display tracking-wider mb-4">
+                {t("title")}
+              </h1>
+              <p className="text-purple-200/50 text-lg max-w-xl mx-auto font-body">
+                {t("subtitle")}
+              </p>
+            </motion.div>
           </div>
-        </div>
+        </FadeUp>
 
-        {/* Grid */}
-        {loading ? (
-          <div className="text-center py-12">{t('loading')}</div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {presets.map((preset) => (
-              <div
-                key={preset.id}
-                className="border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
-                onClick={() => handleLoadPreset(preset)}
+        {/* Search + Tags */}
+        <FadeUp delay={0.15}>
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-purple-400/40" />
+              <Input
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={t("searchPlaceholder")}
+                className="pl-11 pr-10 bg-[#140d24]/60 border-purple-500/20 focus:border-purple-400/40 rounded-xl h-12 text-purple-100 placeholder:text-purple-400/30"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-purple-400/40 hover:text-purple-300 transition-colors"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+          </div>
+        </FadeUp>
+
+        {/* Tag filters */}
+        <FadeUp delay={0.2}>
+          <div className="flex flex-wrap justify-center gap-2 mb-10 max-w-3xl mx-auto">
+            <button
+              onClick={() => setSelectedTag(null)}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase transition-all ${
+                !selectedTag
+                  ? "bg-purple-500/30 text-purple-100 ring-1 ring-purple-400/40"
+                  : "bg-purple-500/10 text-purple-300/40 hover:text-purple-200/60"
+              }`}
+            >
+              All
+            </button>
+            {allTags.slice(0, 15).map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase transition-all ${
+                  selectedTag === tag
+                    ? "bg-amber-500/20 text-amber-200 ring-1 ring-amber-400/30"
+                    : "bg-purple-500/10 text-purple-300/40 hover:text-purple-200/60"
+                }`}
               >
-                <div className="text-4xl mb-2">{preset.emoji}</div>
-                <h3 className="font-semibold truncate">{preset.name}</h3>
-                <p className="text-sm text-muted-foreground">{preset.creature}</p>
-                {preset.tags && preset.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {preset.tags.slice(0, 2).map((tag) => (
-                      <span key={tag} className="text-xs bg-secondary px-2 py-0.5 rounded">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
+                {tag}
+              </button>
             ))}
           </div>
-        )}
+        </FadeUp>
 
-        {!loading && presets.length === 0 && (
-          <div className="text-center py-12 text-muted-foreground">
-            {t('noPresetsFound')}
-          </div>
+        {/* Count */}
+        <FadeUp delay={0.25}>
+          <p className="text-center text-sm text-purple-400/30 mb-8 font-mono">
+            {filteredPresets.length} {filteredPresets.length === 1 ? "soul" : "souls"} found
+          </p>
+        </FadeUp>
+
+        {/* Grid */}
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <AnimatePresence mode="popLayout">
+            {filteredPresets.map((preset, i) => (
+              <StaggerItem key={preset.id}>
+                <PresetCard preset={preset} index={i} onSelect={handleSelect} />
+              </StaggerItem>
+            ))}
+          </AnimatePresence>
+        </StaggerContainer>
+
+        {filteredPresets.length === 0 && !loading && (
+          <FadeUp>
+            <div className="text-center py-20">
+              <Sparkles className="h-12 w-12 text-purple-400/20 mx-auto mb-4" />
+              <p className="text-purple-300/30 text-lg font-body">No souls match your search</p>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => { setSearchQuery(""); setSelectedTag(null); }}
+                className="mt-4 text-purple-400/50"
+              >
+                Clear filters
+              </Button>
+            </div>
+          </FadeUp>
         )}
       </div>
     </div>
