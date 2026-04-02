@@ -9,14 +9,25 @@
 - [x] Visual editor with tabs (Basic, Personality, Attributes, Advanced)
 - [x] 10 character presets (Shadow, Jack, Doc, Zen, Virus, Pony, Kira, Dev, Sage, Radd)
 - [x] Real-time SOUL.md generation
-- [x] Download/export functionality
+- [x] Download/export functionality (SOUL.md + JSON)
 - [x] Shareable links with base64 encoding
 - [x] OpenGraph metadata on share page
 - [x] Internationalization (en, pt, es, ja)
-- [x] Dark mode by default
-- [x] Vercel deployment config
+- [x] Dark mode by default + light mode toggle
+- [x] Vercel deployment config + Analytics
 - [x] README, CONTRIBUTING, EXAMPLES, CHANGELOG, QUICKSTART
 - [x] Git commit ready
+- [x] Undo/redo in editor (Ctrl+Z / Ctrl+Y)
+- [x] Presets search/filter with tag system
+- [x] PWA support (next-pwa + service worker)
+- [x] Import JSON to editor (drag-drop + paste)
+- [x] Export JSON (config backup)
+- [x] Custom core truths (user-defined principles)
+- [x] Custom boundaries (user-defined rules)
+- [x] Theme toggle (dark/light)
+- [x] Animated UI (framer-motion, Three.js background)
+- [x] Parchment preview for SOUL.md
+- [x] Preset cards with hover effects
 
 ## 📋 Future Enhancements
 

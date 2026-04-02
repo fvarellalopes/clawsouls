@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { insert_preset } from '@/lib/db'
 import { verifyApiKey } from '@/lib/auth'
+import { rateLimit } from '@/lib/rateLimit'
 
 // Simple API key auth for admin endpoints
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY
@@ -8,6 +9,11 @@ const ADMIN_API_KEY = process.env.ADMIN_API_KEY
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  // Rate limit: 10 requests per minute for admin writes
+  if (!rateLimit(req, res, { max: 10, windowMs: 60_000 })) {
+    return;
   }
 
   // Auth check

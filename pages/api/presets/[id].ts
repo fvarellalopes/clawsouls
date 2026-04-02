@@ -1,9 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { get_preset_by_id } from '@/lib/db'
+import { rateLimit } from '@/lib/rateLimit'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  // Rate limit: 180 requests per minute
+  if (!rateLimit(req, res, { max: 180, windowMs: 60_000 })) {
+    return;
   }
 
   const { id } = req.query
