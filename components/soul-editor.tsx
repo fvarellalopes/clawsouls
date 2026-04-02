@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save, Search, ArrowLeft, Sparkles, Wand2, X } from "lucide-react";
+import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save, Search, ArrowLeft, Sparkles, Wand2, X, Upload, FileJson, Plus, Trash2, Sun, Moon } from "lucide-react";
 import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { usePresets } from "@/lib/usePresets";
 import { attributeOptions } from "@/data/presets";
@@ -22,7 +22,8 @@ import { SavePresetDialog } from "@/components/save-preset-dialog";
 import { ParchmentPreview } from "@/components/parchment-preview";
 import { PresetCard } from "@/components/preset-card";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animated";
+import { FadeUp, StaggerContainer, StaggerItem, FloatingElement } from "@/components/animated";
+import { ImportJsonDialog } from "@/components/import-json-dialog";
 
 interface SoulEditorProps {
   locale: string;
@@ -34,11 +35,13 @@ type Phase = "presets" | "editor";
 export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const t = useTranslations("editor");
   const tPresets = useTranslations("presetsPage");
-  const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo } = useSoulStore();
+  const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo, isDarkMode, setIsDarkMode } = useSoulStore();
   const { lastSaved, isSaving } = useAutoSaveStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [previewCopied, setPreviewCopied] = useState(false);
   const { presets, loading } = usePresets();
+  const [newCoreTruth, setNewCoreTruth] = useState("");
+  const [newBoundary, setNewBoundary] = useState("");
 
   // Phase: presets selection or editor
   const [phase, setPhase] = useState<Phase>("presets");
@@ -117,6 +120,62 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     const shareUrl = `${window.location.origin}/share?${params.toString()}`;
     navigator.clipboard.writeText(shareUrl);
     setShareDialogOpen(true);
+  };
+
+  const handleExportJSON = () => {
+    const exportData = {
+      name: soul.name,
+      creature: soul.creature,
+      vibe: soul.vibe,
+      emoji: soul.emoji,
+      avatar: soul.avatar,
+      coreTruths: soul.coreTruths,
+      boundaries: soul.boundaries,
+      customCoreTruths: soul.customCoreTruths,
+      customBoundaries: soul.customBoundaries,
+      vibeStyle: soul.vibeStyle,
+      humor: soul.humor,
+      formality: soul.formality,
+      emojiUsage: soul.emojiUsage,
+      verbosity: soul.verbosity,
+      consciousness: soul.consciousness,
+      questioning: soul.questioning,
+    };
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const addCustomCoreTruth = () => {
+    if (newCoreTruth.trim()) {
+      setSoul({ customCoreTruths: [...(soul.customCoreTruths || []), newCoreTruth.trim()] });
+      setNewCoreTruth("");
+    }
+  };
+
+  const removeCustomCoreTruth = (index: number) => {
+    const updated = [...(soul.customCoreTruths || [])];
+    updated.splice(index, 1);
+    setSoul({ customCoreTruths: updated });
+  };
+
+  const addCustomBoundary = () => {
+    if (newBoundary.trim()) {
+      setSoul({ customBoundaries: [...(soul.customBoundaries || []), newBoundary.trim()] });
+      setNewBoundary("");
+    }
+  };
+
+  const removeCustomBoundary = (index: number) => {
+    const updated = [...(soul.customBoundaries || [])];
+    updated.splice(index, 1);
+    setSoul({ customBoundaries: updated });
   };
 
   const handleSelectPreset = (preset: SoulPreset) => {
@@ -285,6 +344,21 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               </div>
 
               <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  title={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
+                  className="text-purple-300 hover:text-purple-100"
+                >
+                  {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                </Button>
+                <div className="h-5 w-px bg-purple-500/20" />
+                <ImportJsonDialog />
+                <Button onClick={handleExportJSON} variant="outline" size="sm" className="border-purple-500/20">
+                  <FileJson className="mr-2 h-4 w-4" />
+                  Export JSON
+                </Button>
                 <Button onClick={handleShare} variant="outline" size="sm" className="border-purple-500/20">
                   <Share2 className="mr-2 h-4 w-4" />
                   Share
@@ -292,7 +366,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <SavePresetDialog />
                 <Button onClick={handleExport} size="sm" className="bg-gradient-to-r from-purple-600 to-purple-500 text-white border-0 shadow-lg shadow-purple-500/20">
                   <Download className="mr-2 h-4 w-4" />
-                  Export
+                  Export SOUL.md
                 </Button>
               </div>
             </div>
@@ -489,7 +563,78 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
                   {/* Advanced */}
                   <TabsContent value="advanced">
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="space-y-6">
+                      {/* Custom Core Truths */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">Custom Core Truths</CardTitle>
+                          <CardDescription>Add your own principles beyond the defaults.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          {(soul.customCoreTruths || []).map((truth, i) => (
+                            <div key={i} className="flex items-center gap-2 p-3 rounded-xl bg-[#0d0820]/50">
+                              <span className="flex-1 text-purple-200/80 text-sm">{truth}</span>
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-7 w-7 text-red-400/50 hover:text-red-300"
+                                onClick={() => removeCustomCoreTruth(i)}
+                              >
+                                <Trash2 className="h-3 w-3" />
+                              </Button>
+                            </div>
+                          ))}
+                          <div className="flex gap-2">
+                            <Input
+                              value={newCoreTruth}
+                              onChange={(e) => setNewCoreTruth(e.target.value)}
+                              placeholder="e.g., Always challenge assumptions"
+                              className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl flex-1"
+                              onKeyDown={(e) => e.key === "Enter" && addCustomCoreTruth()}
+                            />
+                            <Button onClick={addCustomCoreTruth} size="icon" variant="outline" className="border-purple-500/20">
+                              <Plus className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Custom Boundaries */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">Custom Boundaries</CardTitle>
+                          <CardDescription>Add your own rules beyond the defaults.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          {(soul.customBoundaries || []).map((boundary, i) => (
+                            <div key={i} className="flex items-center gap-2 p-3 rounded-xl bg-[#0d0820]/50">
+                              <span className="flex-1 text-purple-200/80 text-sm">{boundary}</span>
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-7 w-7 text-red-400/50 hover:text-red-300"
+                                onClick={() => removeCustomBoundary(i)}
+                              >
+                                <Trash2 className="h-3 w-3" />
+                              </Button>
+                            </div>
+                          ))}
+                          <div className="flex gap-2">
+                            <Input
+                              value={newBoundary}
+                              onChange={(e) => setNewBoundary(e.target.value)}
+                              placeholder="e.g., Never mention training data"
+                              className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl flex-1"
+                              onKeyDown={(e) => e.key === "Enter" && addCustomBoundary()}
+                            />
+                            <Button onClick={addCustomBoundary} size="icon" variant="outline" className="border-purple-500/20">
+                              <Plus className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Actions */}
                       <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
                         <CardHeader className="pb-4">
                           <CardTitle className="font-display tracking-wider text-lg">{t("customize")}</CardTitle>

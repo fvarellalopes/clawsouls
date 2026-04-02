@@ -23,6 +23,8 @@ export interface SoulState {
       noHalfBaked: boolean;
       notVoiceProxy: boolean;
     };
+    customCoreTruths: string[];
+    customBoundaries: string[];
     vibeStyle: string;
     continuity: boolean;
     // Tone attributes
@@ -41,6 +43,7 @@ export interface SoulState {
   setLocale: (locale: string) => void;
   resetSoul: () => void;
   loadPreset: (preset: SoulPreset) => void;
+  importSoul: (json: string) => { success: boolean; error?: string };
   undo: () => void;
   redo: () => void;
   canUndo: () => boolean;
@@ -67,11 +70,12 @@ export interface SoulPreset {
     noHalfBaked: boolean;
     notVoiceProxy: boolean;
   };
+  customCoreTruths?: string[];
+  customBoundaries?: string[];
   vibeStyle: string;
   description: string;
   tags: string[];
   source: "character" | "custom";
-  // Tone attributes (optional)
   humor?: number;
   formality?: number;
   emojiUsage?: number;
@@ -102,6 +106,8 @@ export const useSoulStore = create<SoulState>()(
           noHalfBaked: true,
           notVoiceProxy: true,
         },
+        customCoreTruths: [],
+        customBoundaries: [],
         vibeStyle: "concise",
         continuity: true,
         humor: 50,
@@ -156,6 +162,8 @@ export const useSoulStore = create<SoulState>()(
             noHalfBaked: true,
             notVoiceProxy: true,
           },
+          customCoreTruths: [],
+          customBoundaries: [],
           vibeStyle: "concise",
           continuity: true,
           humor: 50,
@@ -178,9 +186,10 @@ export const useSoulStore = create<SoulState>()(
           avatar: preset.avatar,
           coreTruths: preset.coreTruths,
           boundaries: preset.boundaries,
+          customCoreTruths: preset.customCoreTruths ?? [],
+          customBoundaries: preset.customBoundaries ?? [],
           vibeStyle: preset.vibeStyle,
           continuity: true,
-          // Tone attributes with defaults
           humor: preset.humor ?? 50,
           formality: preset.formality ?? 50,
           emojiUsage: preset.emojiUsage ?? 30,
@@ -190,6 +199,51 @@ export const useSoulStore = create<SoulState>()(
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
+      },
+
+      importSoul: (json: string) => {
+        try {
+          const parsed = JSON.parse(json);
+          // Validate required fields
+          if (!parsed.name && !parsed.creature) {
+            return { success: false, error: "JSON must have at least 'name' or 'creature' field" };
+          }
+          const newSoul: SoulState["soul"] = {
+            name: parsed.name ?? "",
+            creature: parsed.creature ?? "",
+            vibe: parsed.vibe ?? "",
+            emoji: parsed.emoji ?? "",
+            avatar: parsed.avatar,
+            coreTruths: {
+              helpful: parsed.coreTruths?.helpful ?? true,
+              opinions: parsed.coreTruths?.opinions ?? true,
+              resourceful: parsed.coreTruths?.resourceful ?? true,
+              trustworthy: parsed.coreTruths?.trustworthy ?? true,
+              respectful: parsed.coreTruths?.respectful ?? true,
+            },
+            boundaries: {
+              private: parsed.boundaries?.private ?? true,
+              askBeforeActing: parsed.boundaries?.askBeforeActing ?? true,
+              noHalfBaked: parsed.boundaries?.noHalfBaked ?? true,
+              notVoiceProxy: parsed.boundaries?.notVoiceProxy ?? true,
+            },
+            customCoreTruths: Array.isArray(parsed.customCoreTruths) ? parsed.customCoreTruths : [],
+            customBoundaries: Array.isArray(parsed.customBoundaries) ? parsed.customBoundaries : [],
+            vibeStyle: parsed.vibeStyle ?? "concise",
+            continuity: parsed.continuity ?? true,
+            humor: parsed.humor ?? 50,
+            formality: parsed.formality ?? 50,
+            emojiUsage: parsed.emojiUsage ?? 30,
+            verbosity: parsed.verbosity ?? 50,
+            consciousness: parsed.consciousness ?? 50,
+            questioning: parsed.questioning ?? 30,
+          };
+          set({ soul: newSoul });
+          useHistoryStore.getState().push(newSoul);
+          return { success: true };
+        } catch (e) {
+          return { success: false, error: "Invalid JSON format" };
+        }
       },
 
       undo: () => {

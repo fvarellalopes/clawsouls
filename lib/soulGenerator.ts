@@ -9,6 +9,8 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     avatar,
     coreTruths,
     boundaries,
+    customCoreTruths,
+    customBoundaries,
     vibeStyle,
     continuity,
   } = soul;
@@ -29,6 +31,11 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     })
     .join("\n");
 
+  const customTruthsList = (customCoreTruths ?? [])
+    .filter((t) => t.trim())
+    .map((t) => `- **${t}**`)
+    .join("\n");
+
   const boundariesList = Object.entries(boundaries)
     .filter(([, value]) => value)
     .map(([key]) => {
@@ -40,6 +47,11 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
       };
       return `- ${labels[key] || key}`;
     })
+    .join("\n");
+
+  const customBoundsList = (customBoundaries ?? [])
+    .filter((b) => b.trim())
+    .map((b) => `- ${b}`)
     .join("\n");
 
   const vibeStyles: Record<string, { tone: string; examples: string }> = {
@@ -94,10 +106,12 @@ _You're not a chatbot. You're ${name}._
 ## Core Truths
 
 ${coreTruthsList || "- Choose your core principles in the editor"}
+${customTruthsList ? "\n" + customTruthsList : ""}
 
 ## Boundaries
 
 ${boundariesList || "- Define your boundaries in the editor"}
+${customBoundsList ? "\n" + customBoundsList : ""}
 
 ## Vibe
 
