@@ -1,5 +1,14 @@
-import { useState, useEffect } from 'react'
-import { SoulPreset } from '@/store/soulStore'
+import { useState, useEffect, useCallback, useMemo } from 'react'
+import { SoulPreset, PresetCategory } from '@/store/soulStore'
+import { 
+  allPresets, 
+  featuredPresets,
+  getPresetsByCategory,
+  searchPresets as searchAllPresets,
+  getPresetById as findPresetById,
+  getFeaturedPresets,
+  presetMetadata,
+} from '@/data/presets'
 
 const API_BASE = process.env.NEXT_PUBLIC_PRESETS_API || '/api/presets'
 
@@ -46,84 +55,185 @@ function mapSupabaseToSoulPreset(data: any): SoulPreset {
     verbosity: data.verbosity ?? 50,
     consciousness: data.consciousness ?? 50,
     questioning: data.questioning ?? 30,
+    empathy: data.empathy ?? 50,
+    creativity: data.creativity ?? 50,
+    patience: data.patience ?? 50,
   }
 }
 
-export function usePresets() {
+interface UsePresetsOptions {
+  category?: PresetCategory;
+  featured?: boolean;
+  limit?: number;
+}
+
+export function usePresets(options: UsePresetsOptions = {}) {
+  const { category, featured, limit } = options
   const [presets, setPresets] = useState<SoulPreset[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [usingFallback, setUsingFallback] = useState(false)
 
   useEffect(() => {
     async function fetchPresets() {
       try {
         setLoading(true)
+        
+        // Try to fetch from API first
         const res = await fetch(API_BASE)
-        if (!res.ok) throw new Error('Failed to fetch presets')
-        const json = await res.json()
-        const mapped = (json.data || []).map(mapSupabaseToSoulPreset)
-        setPresets(mapped)
-        setError(null)
-      } catch (err: any) {
-        console.error('Erro ao carregar presets:', err)
-        setError(err.message)
-        // Fallback: importar presets locais estáticos
-        try {
-          const { presets: localPresets } = await import('@/data/presets')
-          setPresets(localPresets)
-        } catch (e) {
-          console.error('Fallback também falhou:', e)
+        if (res.ok) {
+          const json = await res.json()
+          const mapped = (json.data || []).map(mapSupabaseToSoulPreset)
+          setPresets(mapped)
+          setUsingFallback(false)
+          setError(null)
+          setLoading(false)
+          return
         }
+      } catch (err: any) {
+        console.log('API fetch failed, using local presets')
+      }
+
+      // Fallback to local presets
+      try {
+        setUsingFallback(true)
+        let localPresets: SoulPreset[]
+        
+        if (featured) {
+          localPresets = getFeaturedPresets(limit)
+        } else if (category) {
+          localPresets = getPresetsByCategory(category)
+        } else {
+          localPresets = allPresets
+        }
+        
+        if (limit && !featured) {
+          localPresets = localPresets.slice(0, limit)
+        }
+        
+        setPresets(localPresets)
+        setError(null)
+      } catch (e) {
+        console.error('Fallback also failed:', e)
+        setError('Failed to load presets')
       } finally {
         setLoading(false)
       }
     }
 
     fetchPresets()
-  }, [])
+  }, [category, featured, limit])
 
-  return { presets, loading, error }
+  return { 
+    presets, 
+    loading, 
+    error,
+    usingFallback,
+    metadata: presetMetadata,
+  }
 }
 
 export function usePresetById(id: string) {
   const [preset, setPreset] = useState<SoulPreset | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [usingFallback, setUsingFallback] = useState(false)
 
   useEffect(() => {
     async function fetchPreset() {
+      if (!id) {
+        setLoading(false)
+        return
+      }
+
       try {
         setLoading(true)
+        
+        // Try API first
         const res = await fetch(`${API_BASE}/${id}`)
-        if (!res.ok) {
-          if (res.status === 404) {
-            setError('Preset não encontrado')
-            return
-          }
-          throw new Error('Failed to fetch preset')
+        if (res.ok) {
+          const data = await res.json()
+          const mapped = mapSupabaseToSoulPreset(data)
+          setPreset(mapped)
+          setUsingFallback(false)
+          setError(null)
+          setLoading(false)
+          return
         }
-        const data = await res.json()
-        const mapped = mapSupabaseToSoulPreset(data)
-        setPreset(mapped)
-        setError(null)
-      } catch (err: any) {
-        console.error('Erro ao carregar preset:', err)
-        setError(err.message)
-        // Fallback: buscar da lista local
-        try {
-          const { presets: localPresets } = await import('@/data/presets')
-          const local = localPresets.find(p => p.id === id)
-          if (local) setPreset(local)
-        } catch (e) {
-          console.error('Fallback também falhou:', e)
+      } catch (err) {
+        console.log('API fetch failed, using local preset')
+      }
+
+      // Fallback to local
+      try {
+        setUsingFallback(true)
+        const local = findPresetById(id)
+        if (local) {
+          setPreset(local)
+          setError(null)
+        } else {
+          setError('Preset not found')
         }
+      } catch (e) {
+        console.error('Fallback failed:', e)
+        setError('Failed to load preset')
       } finally {
         setLoading(false)
       }
     }
 
-    if (id) fetchPreset()
+    fetchPreset()
   }, [id])
 
-  return { preset, loading, error }
+  return { preset, loading, error, usingFallback }
+}
+
+// Hook for searching presets
+export function usePresetSearch(query: string) {
+  const [results, setResults] = useState<SoulPreset[]>([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (!query.trim()) {
+      setResults([])
+      return
+    }
+
+    setLoading(true)
+    // Debounce search
+    const timeout = setTimeout(() => {
+      const searchResults = searchAllPresets(query)
+      setResults(searchResults)
+      setLoading(false)
+    }, 300)
+
+    return () => clearTimeout(timeout)
+  }, [query])
+
+  return { results, loading }
+}
+
+// Hook for categories
+export function usePresetCategories() {
+  return useMemo(() => presetMetadata.categories, [])
+}
+
+// Hook for featured presets (optimized for homepage)
+export function useFeaturedPresets(limit = 6) {
+  return usePresets({ featured: true, limit })
+}
+
+// Hook for presets by category with caching
+export function usePresetsByCategory(category: PresetCategory) {
+  return usePresets({ category })
+}
+
+// Export utilities
+export { 
+  allPresets,
+  featuredPresets,
+  getPresetsByCategory,
+  searchAllPresets as searchPresets,
+  findPresetById as getPresetById,
+  presetMetadata,
 }

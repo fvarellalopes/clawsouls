@@ -34,13 +34,25 @@ export interface SoulState {
     verbosity: number;
     consciousness: number;
     questioning: number;
+    // Advanced attributes (v2.0)
+    empathy: number;
+    creativity: number;
+    patience: number;
   };
   isDarkMode: boolean;
   locale: string;
+  // UI State
+  activeTab: string;
+  showAdvancedMode: boolean;
+  chatHistory: ChatMessage[];
 
   setSoul: (soul: Partial<SoulState["soul"]>) => void;
   setIsDarkMode: (isDark: boolean) => void;
   setLocale: (locale: string) => void;
+  setActiveTab: (tab: string) => void;
+  setShowAdvancedMode: (show: boolean) => void;
+  addChatMessage: (message: ChatMessage) => void;
+  clearChatHistory: () => void;
   resetSoul: () => void;
   loadPreset: (preset: SoulPreset) => void;
   importSoul: (json: string) => { success: boolean; error?: string };
@@ -48,6 +60,13 @@ export interface SoulState {
   redo: () => void;
   canUndo: () => boolean;
   canRedo: () => boolean;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  timestamp: number;
 }
 
 export interface SoulPreset {
@@ -82,43 +101,55 @@ export interface SoulPreset {
   verbosity?: number;
   consciousness?: number;
   questioning?: number;
+  // Advanced attributes (v2.0)
+  empathy?: number;
+  creativity?: number;
+  patience?: number;
 }
+
+const defaultSoul = {
+  name: "",
+  creature: "",
+  vibe: "",
+  emoji: "",
+  avatar: undefined,
+  coreTruths: {
+    helpful: true,
+    opinions: true,
+    resourceful: true,
+    trustworthy: true,
+    respectful: true,
+  },
+  boundaries: {
+    private: true,
+    askBeforeActing: true,
+    noHalfBaked: true,
+    notVoiceProxy: true,
+  },
+  customCoreTruths: [],
+  customBoundaries: [],
+  vibeStyle: "concise",
+  continuity: true,
+  humor: 50,
+  formality: 50,
+  emojiUsage: 30,
+  verbosity: 50,
+  consciousness: 50,
+  questioning: 30,
+  empathy: 50,
+  creativity: 50,
+  patience: 50,
+};
 
 export const useSoulStore = create<SoulState>()(
   persist(
     (set, get) => ({
-      soul: {
-        name: "",
-        creature: "",
-        vibe: "",
-        emoji: "",
-        avatar: undefined,
-        coreTruths: {
-          helpful: true,
-          opinions: true,
-          resourceful: true,
-          trustworthy: true,
-          respectful: true,
-        },
-        boundaries: {
-          private: true,
-          askBeforeActing: true,
-          noHalfBaked: true,
-          notVoiceProxy: true,
-        },
-        customCoreTruths: [],
-        customBoundaries: [],
-        vibeStyle: "concise",
-        continuity: true,
-        humor: 50,
-        formality: 50,
-        emojiUsage: 30,
-        verbosity: 50,
-        consciousness: 50,
-        questioning: 30,
-      },
+      soul: { ...defaultSoul },
       isDarkMode: false,
       locale: "en",
+      activeTab: "basic",
+      showAdvancedMode: false,
+      chatHistory: [],
 
       setSoul: (soul) => {
         const current = get().soul;
@@ -142,39 +173,20 @@ export const useSoulStore = create<SoulState>()(
 
       setLocale: (locale) => set({ locale }),
 
+      setActiveTab: (tab) => set({ activeTab: tab }),
+
+      setShowAdvancedMode: (show) => set({ showAdvancedMode: show }),
+
+      addChatMessage: (message) => {
+        const { chatHistory } = get();
+        set({ chatHistory: [...chatHistory, message].slice(-50) }); // Keep last 50 messages
+      },
+
+      clearChatHistory: () => set({ chatHistory: [] }),
+
       resetSoul: () => {
-        const defaultSoul = {
-          name: "",
-          creature: "",
-          vibe: "",
-          emoji: "",
-          avatar: undefined,
-          coreTruths: {
-            helpful: true,
-            opinions: true,
-            resourceful: true,
-            trustworthy: true,
-            respectful: true,
-          },
-          boundaries: {
-            private: true,
-            askBeforeActing: true,
-            noHalfBaked: true,
-            notVoiceProxy: true,
-          },
-          customCoreTruths: [],
-          customBoundaries: [],
-          vibeStyle: "concise",
-          continuity: true,
-          humor: 50,
-          formality: 50,
-          emojiUsage: 30,
-          verbosity: 50,
-          consciousness: 50,
-          questioning: 30,
-        };
-        set({ soul: defaultSoul });
-        useHistoryStore.getState().push(defaultSoul);
+        set({ soul: { ...defaultSoul } });
+        useHistoryStore.getState().push({ ...defaultSoul });
       },
 
       loadPreset: (preset) => {
@@ -196,6 +208,9 @@ export const useSoulStore = create<SoulState>()(
           verbosity: preset.verbosity ?? 50,
           consciousness: preset.consciousness ?? 50,
           questioning: preset.questioning ?? 30,
+          empathy: preset.empathy ?? 50,
+          creativity: preset.creativity ?? 50,
+          patience: preset.patience ?? 50,
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -237,6 +252,9 @@ export const useSoulStore = create<SoulState>()(
             verbosity: parsed.verbosity ?? 50,
             consciousness: parsed.consciousness ?? 50,
             questioning: parsed.questioning ?? 30,
+            empathy: parsed.empathy ?? 50,
+            creativity: parsed.creativity ?? 50,
+            patience: parsed.patience ?? 50,
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);
@@ -273,12 +291,29 @@ export const useSoulStore = create<SoulState>()(
       canRedo: () => useHistoryStore.getState().canRedo(),
     }),
     {
-      name: "soul-storage",
+      name: "soul-storage-v2",
+      version: 2,
       partialize: (state) => ({
         soul: state.soul,
         isDarkMode: state.isDarkMode,
         locale: state.locale,
+        showAdvancedMode: state.showAdvancedMode,
       }),
+      migrate: (persistedState: any, version) => {
+        if (version === 1) {
+          // Migration from v1 to v2: add advanced attributes
+          return {
+            ...persistedState,
+            soul: {
+              ...persistedState.soul,
+              empathy: persistedState.soul.empathy ?? 50,
+              creativity: persistedState.soul.creativity ?? 50,
+              patience: persistedState.soul.patience ?? 50,
+            },
+          };
+        }
+        return persistedState;
+      },
     }
   )
 );
