@@ -4,7 +4,8 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "Mis Presets",
-    "achievements": "Logros"
+    "achievements": "Logros",
+    "compare": "Comparar"
   },
   "common": {
     "presets": "Ajustes",
@@ -17,7 +18,8 @@
     "loading": "Cargando...",
     "backToHome": "Volver al Inicio",
     "cancel": "Cancelar",
-    "import": "Importar"
+    "import": "Importar",
+    "compare": "Comparar"
   },
   "editor": {
     "title": "Editor de Alma",
@@ -178,7 +180,8 @@
       "balanced": "Equilibrado",
       "expressive": "Expresivo",
       "dramatic": "Dramático"
-    }
+    },
+    "fillWithAI": "Rellenar con IA"
   },
   "presetsPage": {
     "title": "Personalidades Predefinidas",
@@ -2145,5 +2148,31 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "compare": {
+    "title": "Comparar Presets",
+    "description": "Selecciona dos presets para comparar lado a lado. Ve puntuaciones de compatibilidad, diferencias de atributos y diff del SOUL.md.",
+    "selectPresetA": "Preset A",
+    "selectPresetB": "Preset B",
+    "selectPreset": "Elige un preset...",
+    "compare": "Comparar",
+    "similarity": "Puntuación de Compatibilidad",
+    "match": "compatible",
+    "differences": "Diferencias",
+    "tone": "Tono",
+    "personality": "Personalidad",
+    "style": "Estilo"
+  },
+  "fillWithAI": {
+    "title": "Rellenar con IA",
+    "description": "Describe la personalidad deseada con puntos, y generaremos una vibe y sugerencias de atributos.",
+    "bulletPoints": "Puntos",
+    "placeholder": "Le encanta el humor negro\nExperto en Python\nHabla como un pirata\n\"¡Ahoy, marineros!\"\nEnérgico y siempre curioso",
+    "hint": "Una característica por línea. Usa comillas para frases de firma. Sé tan específico o vago como quieras.",
+    "generate": "Generar Vibe",
+    "generatedVibe": "Vibe Generada",
+    "suggestedAttributes": "Atributos Sugeridos",
+    "regenerate": "Regenerar",
+    "apply": "Aplicar al Editor"
   }
 }

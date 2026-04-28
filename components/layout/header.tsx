@@ -61,6 +61,9 @@ export function Header({ locale, messages }: HeaderProps) {
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
             <Link href="/editor">{t("create")}</Link>
           </Button>
+          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+            <Link href="/compare">{t("compare")}</Link>
+          </Button>
         </nav>
 
         <div className="flex items-center gap-2">

@@ -4,7 +4,8 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "My Presets",
-    "achievements": "Badges"
+    "achievements": "Badges",
+    "compare": "Compare"
   },
   "common": {
     "presets": "Presets",
@@ -17,7 +18,8 @@
     "loading": "Loading...",
     "backToHome": "Back to Home",
     "cancel": "Cancel",
-    "import": "Import"
+    "import": "Import",
+    "compare": "Compare"
   },
   "editor": {
     "title": "Soul Editor",
@@ -124,16 +126,46 @@
     "changeTheme": "Change Color Theme",
     "changeThemeDesc": "Pick a color palette that matches your soul's vibe.",
     "themes": {
-      "cyberpunk": { "name": "Cyberpunk", "description": "Purple and gold on dark — the default ClawSouls vibe" },
-      "ocean": { "name": "Ocean", "description": "Deep blues and teal — calm and focused" },
-      "forest": { "name": "Forest", "description": "Deep greens and amber — earthy and grounded" },
-      "sunset": { "name": "Sunset", "description": "Warm oranges and pinks — passionate and dramatic" },
-      "monochrome": { "name": "Monochrome", "description": "Pure grayscale — minimal and clean" },
-      "sakura": { "name": "Sakura", "description": "Soft pinks and white — gentle and elegant" },
-      "blood": { "name": "Bloodborne", "description": "Deep reds and gold — dark, gothic, intense" },
-      "matrix": { "name": "Matrix", "description": "Neon green on black — hacker aesthetic" },
-      "arctic": { "name": "Arctic", "description": "Ice blue and white — cold, clean, precise" },
-      "royal": { "name": "Royal", "description": "Deep purple and gold — regal and majestic" }
+      "cyberpunk": {
+        "name": "Cyberpunk",
+        "description": "Purple and gold on dark — the default ClawSouls vibe"
+      },
+      "ocean": {
+        "name": "Ocean",
+        "description": "Deep blues and teal — calm and focused"
+      },
+      "forest": {
+        "name": "Forest",
+        "description": "Deep greens and amber — earthy and grounded"
+      },
+      "sunset": {
+        "name": "Sunset",
+        "description": "Warm oranges and pinks — passionate and dramatic"
+      },
+      "monochrome": {
+        "name": "Monochrome",
+        "description": "Pure grayscale — minimal and clean"
+      },
+      "sakura": {
+        "name": "Sakura",
+        "description": "Soft pinks and white — gentle and elegant"
+      },
+      "blood": {
+        "name": "Bloodborne",
+        "description": "Deep reds and gold — dark, gothic, intense"
+      },
+      "matrix": {
+        "name": "Matrix",
+        "description": "Neon green on black — hacker aesthetic"
+      },
+      "arctic": {
+        "name": "Arctic",
+        "description": "Ice blue and white — cold, clean, precise"
+      },
+      "royal": {
+        "name": "Royal",
+        "description": "Deep purple and gold — regal and majestic"
+      }
     },
     "exportJson": "Export JSON",
     "exportSoulMd": "Export SOUL.md",
@@ -148,7 +180,8 @@
     "customCoreTruthsPlaceholder": "e.g., Always challenge assumptions",
     "customBoundaries": "Custom Boundaries",
     "customBoundariesDesc": "Add your own rules beyond the defaults.",
-    "customBoundariesPlaceholder": "e.g., Never mention training data"
+    "customBoundariesPlaceholder": "e.g., Never mention training data",
+    "fillWithAI": "Fill with AI"
   },
   "presetsPage": {
     "title": "Preset Personalities",
@@ -2115,5 +2148,31 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "compare": {
+    "title": "Compare Presets",
+    "description": "Select two presets to compare side-by-side. See compatibility scores, attribute differences, and SOUL.md diff.",
+    "selectPresetA": "Preset A",
+    "selectPresetB": "Preset B",
+    "selectPreset": "Choose a preset...",
+    "compare": "Compare",
+    "similarity": "Compatibility Score",
+    "match": "match",
+    "differences": "Differences",
+    "tone": "Tone",
+    "personality": "Personality",
+    "style": "Style"
+  },
+  "fillWithAI": {
+    "title": "Fill with AI",
+    "description": "Describe your desired personality with bullet points, and we will generate a vibe and attribute suggestions.",
+    "bulletPoints": "Bullet Points",
+    "placeholder": "Loves dark humor\nExpert in Python\nSpeaks like a pirate\n\"Ahoy, matey!\"\nEnergetic and always curious",
+    "hint": "One trait per line. Use quotes for signature phrases. Be as specific or vague as you like.",
+    "generate": "Generate Vibe",
+    "generatedVibe": "Generated Vibe",
+    "suggestedAttributes": "Suggested Attributes",
+    "regenerate": "Regenerate",
+    "apply": "Apply to Editor"
   }
 }
