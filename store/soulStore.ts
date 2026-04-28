@@ -40,6 +40,9 @@ export interface SoulState {
     extraversion: number;    // 0-100, sociability/assertiveness
     agreeableness: number;   // 0-100, cooperation/trust
     neuroticism: number;     // 0-100, emotional instability
+    // Advanced personality
+    communicationMode: string; // socratic, diagnostic, encouraging, challenging, flirty, direct
+    knowledgeDomains: string[]; // tech, philosophy, pop-culture, science, history, arts, sports, business
   };
   isDarkMode: boolean;
   locale: string;
@@ -93,6 +96,8 @@ export interface SoulPreset {
   extraversion?: number;
   agreeableness?: number;
   neuroticism?: number;
+  communicationMode?: string;
+  knowledgeDomains?: string[];
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -132,6 +137,8 @@ export const useSoulStore = create<SoulState>()(
         extraversion: 50,
         agreeableness: 50,
         neuroticism: 30,
+        communicationMode: "direct",
+        knowledgeDomains: [],
       },
       isDarkMode: false,
       locale: "en",
@@ -193,6 +200,8 @@ export const useSoulStore = create<SoulState>()(
           extraversion: 50,
           agreeableness: 50,
           neuroticism: 30,
+          communicationMode: "direct",
+          knowledgeDomains: [],
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
@@ -222,6 +231,8 @@ export const useSoulStore = create<SoulState>()(
           extraversion: preset.extraversion ?? 50,
           agreeableness: preset.agreeableness ?? 50,
           neuroticism: preset.neuroticism ?? 30,
+          communicationMode: preset.communicationMode ?? "direct",
+          knowledgeDomains: preset.knowledgeDomains ?? [],
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -268,6 +279,8 @@ export const useSoulStore = create<SoulState>()(
             extraversion: parsed.extraversion ?? 50,
             agreeableness: parsed.agreeableness ?? 50,
             neuroticism: parsed.neuroticism ?? 30,
+            communicationMode: parsed.communicationMode ?? "direct",
+            knowledgeDomains: Array.isArray(parsed.knowledgeDomains) ? parsed.knowledgeDomains : [],
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);

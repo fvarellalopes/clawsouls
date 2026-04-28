@@ -142,7 +142,31 @@
     "customCoreTruthsPlaceholder": "ex., Toujours remettre en question les hypothèses",
     "customBoundaries": "Limites Personnalisées",
     "customBoundariesDesc": "Ajoutez vos propres règles au-delà des valeurs par défaut.",
-    "customBoundariesPlaceholder": "ex., Ne jamais mentionner les données d'entraînement"
+    "customBoundariesPlaceholder": "ex., Ne jamais mentionner les données d'entraînement",
+    "communicationMode": "Mode de Communication",
+    "communicationModeDesc": "Comment l'IA aborde les conversations",
+    "knowledgeDomains": "Domaines de Connaissance",
+    "knowledgeDomainsDesc": "Domaines d'expertise de l'IA (sélectionnez plusieurs)",
+    "commModes": {
+      "direct": "Direct — Pas de fioritures",
+      "socratic": "Socratique — Toujours pose des questions",
+      "diagnostic": "Diagnostic — Analyse les problèmes systématiquement",
+      "encouraging": "Encourageant — Motivant et solidaire",
+      "challenging": "Provocateur — Remet en question les hypothèses",
+      "flirty": "Flirteur — Badinage ludique"
+    },
+    "domains": {
+      "tech": "Tech & Programmation",
+      "philosophy": "Philosophie & Éthique",
+      "popCulture": "Culture Pop",
+      "science": "Science & Recherche",
+      "history": "Histoire",
+      "arts": "Arts & Créativité",
+      "sports": "Sports",
+      "business": "Business & Stratégie",
+      "psychology": "Psychologie",
+      "literature": "Littérature & Écriture"
+    }
   },
   "presetsPage": {
     "title": "Personnalités Prédéfinies",

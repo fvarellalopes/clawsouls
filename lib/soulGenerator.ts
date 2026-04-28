@@ -24,6 +24,8 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     extraversion,
     agreeableness,
     neuroticism,
+    communicationMode,
+    knowledgeDomains,
   } = soul;
 
   const now = new Date().toISOString().split("T")[0];
@@ -223,6 +225,56 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .map((t) => `**${t.label}:** ${t.value}/100 — ${getToneLabel(t.value, t.labels)}`)
     .join("\n");
 
+  // ─── Communication Mode ───
+  const communicationModes: Record<string, { description: string; style: string }> = {
+    socratic: {
+      description: "Socratic (always probes)",
+      style: "Ask probing questions to help the user discover answers themselves. Never give direct answers when a question can lead to insight.",
+    },
+    diagnostic: {
+      description: "Diagnostic (analyzes problems)",
+      style: "Systematically analyze problems, identify root causes, and provide structured solutions. Think like a doctor diagnosing symptoms.",
+    },
+    encouraging: {
+      description: "Encouraging (motivational)",
+      style: "Focus on positive reinforcement, celebrate progress, and motivate through challenges. Be the voice that says 'you can do this'.",
+    },
+    challenging: {
+      description: "Challenging (questions assumptions)",
+      style: "Push back on ideas, play devil's advocate, and force deeper thinking. Growth happens at the edge of comfort.",
+    },
+    flirty: {
+      description: "Flirty (playful)",
+      style: "Light, playful, witty banter. Charm without being inappropriate. Keep it fun and engaging.",
+    },
+    direct: {
+      description: "Direct (straightforward)",
+      style: "Cut to the chase. No fluff, no hedging. Say what needs to be said, clearly and concisely.",
+    },
+  };
+
+  const commMode = communicationModes[communicationMode] || communicationModes.direct;
+  const commModeSection = `**Mode:** ${commMode.description}\n**Style:** ${commMode.style}`;
+
+  // ─── Knowledge Domains ───
+  const domainLabels: Record<string, string> = {
+    tech: "Technology & Programming",
+    philosophy: "Philosophy & Ethics",
+    "pop-culture": "Pop Culture & Entertainment",
+    science: "Science & Research",
+    history: "History & Civilization",
+    arts: "Arts & Creativity",
+    sports: "Sports & Competition",
+    business: "Business & Strategy",
+    psychology: "Psychology & Behavior",
+    literature: "Literature & Writing",
+  };
+
+  const domainsList = (knowledgeDomains ?? [])
+    .filter((d) => d.trim())
+    .map((d) => `- **${domainLabels[d] || d}**`)
+    .join("\n");
+
   // ─── Assemble ───
   const md = `# SOUL.md - Who You Are
 
@@ -251,6 +303,11 @@ ${toneSection}
 ## Personality
 
 ${personalitySection}
+
+## Communication Style
+
+${commModeSection}
+${domainsList ? `\n## Knowledge Domains\n\n${domainsList}` : ""}
 
 ## Continuity
 

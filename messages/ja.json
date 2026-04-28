@@ -142,7 +142,31 @@
     "customCoreTruthsPlaceholder": "例：常に前提を疑う",
     "customBoundaries": "カスタム境界線",
     "customBoundariesDesc": "デフォルトを超えた独自のルールを追加。",
-    "customBoundariesPlaceholder": "例：学習データについて言及しない"
+    "customBoundariesPlaceholder": "例：学習データについて言及しない",
+    "communicationMode": "コミュニケーションモード",
+    "communicationModeDesc": "AIが会話にどうアプローチするか",
+    "knowledgeDomains": "知識ドメイン",
+    "knowledgeDomainsDesc": "AIの専門分野（複数選択可）",
+    "commModes": {
+      "direct": "ストレート — 無駄なく直接的",
+      "socratic": "ソクラテス式 — 常に質問で深掘り",
+      "diagnostic": "診断型 — 問題を体系的に分析",
+      "encouraging": "励まし型 — 励ましとサポート",
+      "challenging": "挑戦型 — 前提を問い質す",
+      "flirty": "軽やか型 — プレイフルな会話"
+    },
+    "domains": {
+      "tech": "テクノロジー & プログラミング",
+      "philosophy": "哲学 & 倫理",
+      "popCulture": "ポップカルチャー",
+      "science": "科学 & 研究",
+      "history": "歴史",
+      "arts": "アート & クリエイティビティ",
+      "sports": "スポーツ",
+      "business": "ビジネス & 戦略",
+      "psychology": "心理学",
+      "literature": "文学 & 執筆"
+    }
   },
   "presetsPage": {
     "title": "プリセット人格",

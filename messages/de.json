@@ -142,7 +142,31 @@
     "customCoreTruthsPlaceholder": "z.B. Immer Annahmen hinterfragen",
     "customBoundaries": "Eigene Grenzen",
     "customBoundariesDesc": "Füge eigene Regeln über die Standardwerte hinaus hinzu.",
-    "customBoundariesPlaceholder": "z.B. Niemals Trainingsdaten erwähnen"
+    "customBoundariesPlaceholder": "z.B. Niemals Trainingsdaten erwähnen",
+    "communicationMode": "Kommunikationsmodus",
+    "communicationModeDesc": "Wie die KI Gespräche angeht",
+    "knowledgeDomains": "Wissensbereiche",
+    "knowledgeDomainsDesc": "Fachgebiete der KI (Mehrfachauswahl)",
+    "commModes": {
+      "direct": "Direkt — Kein Schnickschnack",
+      "socratic": "Sokratisch — Fragt immer nach",
+      "diagnostic": "Diagnostisch — Analysiert Probleme systematisch",
+      "encouraging": "Ermutigend — Motivierend und unterstützend",
+      "challenging": "Herausfordernd — Hinterfragt Annahmen",
+      "flirty": "Flirtig — Verspielter Schlagabtausch"
+    },
+    "domains": {
+      "tech": "Technik & Programmierung",
+      "philosophy": "Philosophie & Ethik",
+      "popCulture": "Popkultur",
+      "science": "Wissenschaft & Forschung",
+      "history": "Geschichte",
+      "arts": "Kunst & Kreativität",
+      "sports": "Sport",
+      "business": "Business & Strategie",
+      "psychology": "Psychologie",
+      "literature": "Literatur & Schreiben"
+    }
   },
   "presetsPage": {
     "title": "Vorgefertigte Persönlichkeiten",

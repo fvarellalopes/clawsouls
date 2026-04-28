@@ -142,7 +142,31 @@
     "customCoreTruthsPlaceholder": "例如：始终质疑假设",
     "customBoundaries": "自定义边界",
     "customBoundariesDesc": "添加超出默认值的自定义规则。",
-    "customBoundariesPlaceholder": "例如：永远不提及训练数据"
+    "customBoundariesPlaceholder": "例如：永远不提及训练数据",
+    "communicationMode": "沟通模式",
+    "communicationModeDesc": "AI如何进行对话",
+    "knowledgeDomains": "知识领域",
+    "knowledgeDomainsDesc": "AI的专业领域（可多选）",
+    "commModes": {
+      "direct": "直接 — 简洁明了，不绕弯子",
+      "socratic": "苏格拉底式 — 总是通过提问引导",
+      "diagnostic": "诊断式 — 系统性分析问题",
+      "encouraging": "鼓励式 — 积极激励和支持",
+      "challenging": "挑战式 — 质疑假设，推动深入思考",
+      "flirty": "俏皮式 — 轻松诙谐的互动"
+    },
+    "domains": {
+      "tech": "技术 & 编程",
+      "philosophy": "哲学 & 伦理",
+      "popCulture": "流行文化",
+      "science": "科学 & 研究",
+      "history": "历史",
+      "arts": "艺术 & 创意",
+      "sports": "体育",
+      "business": "商业 & 战略",
+      "psychology": "心理学",
+      "literature": "文学 & 写作"
+    }
   },
   "presetsPage": {
     "title": "预设人格",

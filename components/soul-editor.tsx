@@ -183,6 +183,9 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
       extraversion: soul.extraversion,
       agreeableness: soul.agreeableness,
       neuroticism: soul.neuroticism,
+      // Advanced personality
+      communicationMode: soul.communicationMode,
+      knowledgeDomains: soul.knowledgeDomains,
     };
     const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -608,6 +611,78 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               </div>
                             </div>
                           ))}
+                        </CardContent>
+                      </Card>
+
+                      {/* Communication Mode */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">{t("communicationMode")}</CardTitle>
+                          <CardDescription>{t("communicationModeDesc")}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <Select
+                            value={soul.communicationMode || "direct"}
+                            onValueChange={(value) => handleAttributeChange("communicationMode", value)}
+                          >
+                            <SelectTrigger className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent className="bg-[#1a0f2e] border-purple-500/30">
+                              <SelectItem value="direct">{t("commModes.direct")}</SelectItem>
+                              <SelectItem value="socratic">{t("commModes.socratic")}</SelectItem>
+                              <SelectItem value="diagnostic">{t("commModes.diagnostic")}</SelectItem>
+                              <SelectItem value="encouraging">{t("commModes.encouraging")}</SelectItem>
+                              <SelectItem value="challenging">{t("commModes.challenging")}</SelectItem>
+                              <SelectItem value="flirty">{t("commModes.flirty")}</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </CardContent>
+                      </Card>
+
+                      {/* Knowledge Domains */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">{t("knowledgeDomains")}</CardTitle>
+                          <CardDescription>{t("knowledgeDomainsDesc")}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="grid grid-cols-2 gap-2">
+                            {[
+                              { value: "tech", label: t("domains.tech") },
+                              { value: "philosophy", label: t("domains.philosophy") },
+                              { value: "pop-culture", label: t("domains.popCulture") },
+                              { value: "science", label: t("domains.science") },
+                              { value: "history", label: t("domains.history") },
+                              { value: "arts", label: t("domains.arts") },
+                              { value: "sports", label: t("domains.sports") },
+                              { value: "business", label: t("domains.business") },
+                              { value: "psychology", label: t("domains.psychology") },
+                              { value: "literature", label: t("domains.literature") },
+                            ].map((domain) => {
+                              const isSelected = (soul.knowledgeDomains || []).includes(domain.value);
+                              return (
+                                <button
+                                  key={domain.value}
+                                  type="button"
+                                  onClick={() => {
+                                    const current = soul.knowledgeDomains || [];
+                                    const updated = isSelected
+                                      ? current.filter((d) => d !== domain.value)
+                                      : [...current, domain.value];
+                                    handleAttributeChange("knowledgeDomains", updated);
+                                  }}
+                                  className={`p-2.5 rounded-xl text-sm text-left transition-all ${
+                                    isSelected
+                                      ? "bg-purple-600/20 border border-purple-400/40 text-purple-100"
+                                      : "bg-[#0d0820]/50 border border-purple-500/10 text-purple-300/60 hover:text-purple-200 hover:border-purple-400/20"
+                                  }`}
+                                >
+                                  {domain.label}
+                                </button>
+                              );
+                            })}
+                          </div>
                         </CardContent>
                       </Card>
                     </motion.div>
