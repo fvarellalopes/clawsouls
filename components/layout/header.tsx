@@ -56,7 +56,7 @@ export function Header({ locale, messages }: HeaderProps) {
             <Link href="/quiz">Quiz</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
-            <Link href="/achievements">Achievements</Link
+            <Link href="/achievements">Achievements</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
             <Link href="/editor">{t("create")}</Link>

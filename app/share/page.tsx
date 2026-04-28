@@ -12,12 +12,12 @@ import { QRCodeDisplay } from "@/components/qrcode-display";
 import { useEffect, useState } from "react";
 import { decompressSoul } from "@/lib/compress";
 
-function loadSoulFromData(data: string): Record<string, unknown> | null {
+function loadSoulFromData(data: string): Record<string, any> | null {
   // Try new short ID first (alphanumeric, 8 chars)
   return null; // Short IDs handled by /share/[id] route
 }
 
-function loadSoulFromBase64(data: string): Record<string, unknown> | null {
+function loadSoulFromBase64(data: string): Record<string, any> | null {
   try {
     const decoded = atob(data);
     return JSON.parse(decoded);
@@ -29,7 +29,7 @@ function loadSoulFromBase64(data: string): Record<string, unknown> | null {
 function SharePageContent() {
   const searchParams = useSearchParams();
   const dataParam = searchParams?.get("data") || "";
-  const [soul, setSoul] = useState<Record<string, unknown> | null>(null);
+  const [soul, setSoul] = useState<Record<string, any> | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

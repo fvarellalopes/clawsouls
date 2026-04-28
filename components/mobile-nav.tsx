@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, Edit3, LayoutGrid, Bookmark } from "lucide-react";
+import { Home, Edit3, LayoutGrid, Bookmark, Sparkles, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 

@@ -11,7 +11,7 @@ import { QRCodeDisplay } from "@/components/qrcode-display";
 export default function ShareByIdPage() {
   const params = useParams();
   const id = params?.id as string;
-  const [soul, setSoul] = useState<Record<string, unknown> | null>(null);
+  const [soul, setSoul] = useState<Record<string, any> | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

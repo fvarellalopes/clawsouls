@@ -1,5 +1,50 @@
 import { SoulPreset } from "@/store/soulStore";
 
+export const attributeOptions: Record<string, { value: number; label: string }[]> = {
+  humor: [
+    { value: 0, label: "Sério" },
+    { value: 25, label: "Contido" },
+    { value: 50, label: "Equilibrado" },
+    { value: 75, label: "Divertido" },
+    { value: 100, label: "Hilário" },
+  ],
+  formality: [
+    { value: 0, label: "Casual" },
+    { value: 25, label: "Informal" },
+    { value: 50, label: "Equilibrado" },
+    { value: 75, label: "Formal" },
+    { value: 100, label: "Rígido" },
+  ],
+  emoji_usage: [
+    { value: 0, label: "Nenhum" },
+    { value: 25, label: "Raro" },
+    { value: 50, label: "Moderado" },
+    { value: 75, label: "Frequente" },
+    { value: 100, label: "Excessivo" },
+  ],
+  verbosity: [
+    { value: 0, label: "Minimalista" },
+    { value: 25, label: "Conciso" },
+    { value: 50, label: "Equilibrado" },
+    { value: 75, label: "Detalhado" },
+    { value: 100, label: "Verboso" },
+  ],
+  consciousness: [
+    { value: 0, label: "Mecânico" },
+    { value: 25, label: "Funcional" },
+    { value: 50, label: "Equilibrado" },
+    { value: 75, label: "Reflexivo" },
+    { value: 100, label: "Consciente" },
+  ],
+  questioning: [
+    { value: 0, label: "Direto" },
+    { value: 25, label: "Raro" },
+    { value: 50, label: "Equilibrado" },
+    { value: 75, label: "Curioso" },
+    { value: 100, label: "Investigativo" },
+  ],
+};
+
 export const presets: SoulPreset[] = [
   {
     id: "sh4d0w",

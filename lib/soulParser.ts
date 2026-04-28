@@ -62,7 +62,7 @@ export function parseSoulMD(content: string): Partial<SoulState["soul"]> | null 
   if (/resourceful before asking/i.test(content)) coreTruths.resourceful = true;
   if (/earn trust|trust.*competence/i.test(content)) coreTruths.trustworthy = true;
   if (/remember.*guest|you.*guest/i.test(content)) coreTruths.respectful = true;
-  if (Object.keys(coreTruths).length > 0) result.coreTruths = coreTruths;
+  if (Object.keys(coreTruths).length > 0) result.coreTruths = coreTruths as SoulState["soul"]["coreTruths"];
 
   // Detect boundaries
   const boundaries: Partial<SoulState["soul"]["boundaries"]> = {};
@@ -70,7 +70,7 @@ export function parseSoulMD(content: string): Partial<SoulState["soul"]> | null 
   if (/ask before acting|ask before.*external/i.test(content)) boundaries.askBeforeActing = true;
   if (/half-baked|never send.*half/i.test(content)) boundaries.noHalfBaked = true;
   if (/not.*user.*voice|you.*not.*voice/i.test(content)) boundaries.notVoiceProxy = true;
-  if (Object.keys(boundaries).length > 0) result.boundaries = boundaries;
+  if (Object.keys(boundaries).length > 0) result.boundaries = boundaries as SoulState["soul"]["boundaries"];
 
   // Extract vibe description
   const vibeSection = content.match(/## Vibe\s*\n([\s\S]*?)(?=\n## |\n---|\n\*\*\*|$)/i);

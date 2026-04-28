@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useMyPresetsStore } from "@/store/myPresetsStore";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Trash2, FolderOpen } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import type { Locale } from "date-fns";
@@ -15,10 +15,10 @@ const locales: Record<string, Locale> = { pt: ptBR, en: enUS, es: es, ja: ja, zh
 export default function MyPresetsPage() {
   const t = useTranslations("myPresets");
   const router = useRouter();
+  const pathname = usePathname();
   const { presets, remove, load } = useMyPresetsStore();
-  const pathname = router.pathname || "/";
-    const localeMatch = pathname.match(/^\/(en|pt|es|ja|fr|de|zh)/);
-    const locale = localeMatch?.[1] || "en";
+  const localeMatch = pathname?.match(/^\/(en|pt|es|ja|fr|de|zh)/);
+  const locale = localeMatch?.[1] || "en";
   const fmtLocale = locales[locale] || enUS;
 
   const handleLoad = (soul: any) => {
