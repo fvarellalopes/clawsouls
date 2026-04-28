@@ -74,11 +74,14 @@ export default async function LocaleLayout({
       <body
         className={`${cinzel.variable} ${crimsonPro.variable} ${firaCode.variable}`}
       >
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
         <NextIntlClientProvider locale={locale} messages={typedMessages}>
           <ThemeInitializer />
           <div className="min-h-screen flex flex-col relative">
             <Header locale={locale} messages={typedMessages} />
-            <main className="flex-1 pb-24 md:pb-0 relative z-10">
+            <main id="main-content" className="flex-1 pb-24 md:pb-0 relative z-10">
               <ErrorBoundary>{children}</ErrorBoundary>
             </main>
             <Footer />
