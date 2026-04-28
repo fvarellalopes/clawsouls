@@ -186,7 +186,8 @@
     "customCoreTruthsPlaceholder": "e.g., Always challenge assumptions",
     "customBoundaries": "Custom Boundaries",
     "customBoundariesDesc": "Add your own rules beyond the defaults.",
-    "customBoundariesPlaceholder": "e.g., Never mention training data"
+    "customBoundariesPlaceholder": "e.g., Never mention training data",
+    "fillWithAI": "Fill with AI"
   },
   "presetsPage": {
     "title": "Preset Personalities",
@@ -2167,5 +2168,17 @@
     "tone": "Tone",
     "personality": "Personality",
     "style": "Style"
+  },
+  "fillWithAI": {
+    "title": "Fill with AI",
+    "description": "Describe your desired personality with bullet points, and we will generate a vibe and attribute suggestions.",
+    "bulletPoints": "Bullet Points",
+    "placeholder": "Loves dark humor\nExpert in Python\nSpeaks like a pirate\n\"Ahoy, matey!\"\nEnergetic and always curious",
+    "hint": "One trait per line. Use quotes for signature phrases. Be as specific or vague as you like.",
+    "generate": "Generate Vibe",
+    "generatedVibe": "Generated Vibe",
+    "suggestedAttributes": "Suggested Attributes",
+    "regenerate": "Regenerate",
+    "apply": "Apply to Editor"
   }
 }
