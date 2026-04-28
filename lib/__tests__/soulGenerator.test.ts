@@ -453,7 +453,7 @@ describe('soulGenerator — emotional range', () => {
   });
 });
 
-// ─── n. Speech patterns (if implemented) ───
+// ─── n. Speech patterns ───
 describe('soulGenerator — speech patterns', () => {
   it('formats signature phrases with quotes and italics', () => {
     const soul = makeSoul({ signaturePhrases: ["Hello there", "Indeed"] });

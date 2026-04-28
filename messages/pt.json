@@ -4,7 +4,8 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "Meus Presets",
-    "achievements": "Conquistas"
+    "achievements": "Conquistas",
+    "compare": "Comparar"
   },
   "common": {
     "presets": "Presets",
@@ -17,7 +18,8 @@
     "loading": "Carregando...",
     "backToHome": "Voltar ao Início",
     "cancel": "Cancelar",
-    "import": "Importar"
+    "import": "Importar",
+    "compare": "Comparar"
   },
   "editor": {
     "title": "Editor de Alma",

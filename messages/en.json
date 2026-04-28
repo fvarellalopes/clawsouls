@@ -4,7 +4,8 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "My Presets",
-    "achievements": "Badges"
+    "achievements": "Badges",
+    "compare": "Compare"
   },
   "common": {
     "presets": "Presets",
@@ -17,7 +18,8 @@
     "loading": "Loading...",
     "backToHome": "Back to Home",
     "cancel": "Cancel",
-    "import": "Import"
+    "import": "Import",
+    "compare": "Compare"
   },
   "editor": {
     "title": "Soul Editor",
