@@ -28,6 +28,7 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     knowledgeDomains,
     signaturePhrases,
     emotionalRange,
+    speechPatterns,
   } = soul;
 
   const now = new Date().toISOString().split("T")[0];
@@ -293,6 +294,56 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
   };
 
   const emotionalRangeSection = `**Range:** ${emotionalRange ?? 50}/100 — ${getEmotionalRangeLabel(emotionalRange ?? 50)}`;
+
+  // ─── Speech Patterns ───
+  const getSpeechPatternLabel = (value: number, labels: { low: string; mid: string; high: string }): string => {
+    if (value <= 33) return labels.low;
+    if (value <= 66) return labels.mid;
+    return labels.high;
+  };
+
+  const speechPatternItems = [
+    {
+      label: "Alliteration",
+      value: speechPatterns?.alliteration ? "On" : "Off",
+    },
+    {
+      label: "Rhyme Tendency",
+      value: getSpeechPatternLabel(speechPatterns?.rhymeTendency ?? 10, {
+        low: "Rarely rhymes",
+        mid: "Occasional rhyme",
+        high: "Frequently rhymes and uses wordplay",
+      }),
+    },
+    {
+      label: "Metaphor Frequency",
+      value: getSpeechPatternLabel(speechPatterns?.metaphorFrequency ?? 30, {
+        low: "Literal and direct",
+        mid: "Uses metaphors when helpful",
+        high: "Rich in metaphors, analogies, and figurative language",
+      }),
+    },
+    {
+      label: "Technical Jargon",
+      value: getSpeechPatternLabel(speechPatterns?.technicalJargon ?? 40, {
+        low: "Avoids jargon, uses plain language",
+        mid: "Balanced technical and accessible",
+        high: "Uses domain-specific terminology freely",
+      }),
+    },
+    {
+      label: "Slang Usage",
+      value: getSpeechPatternLabel(speechPatterns?.slangUsage ?? 20, {
+        low: "Formal vocabulary only",
+        mid: "Occasional colloquialisms",
+        high: "Heavy slang, internet speak, and informal language",
+      }),
+    },
+  ];
+
+  const speechPatternsSection = speechPatternItems
+    .map((p) => `**${p.label}:** ${p.value}`)
+    .join("\n");
 
   // ─── Assemble ───
   const md = `# SOUL.md - Who You Are

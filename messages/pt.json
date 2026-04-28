@@ -186,7 +186,8 @@
       "balanced": "Equilibrado",
       "expressive": "Expressivo",
       "dramatic": "Dramático"
-    }
+    },
+    "fillWithAI": "Preencher com IA"
   },
   "presetsPage": {
     "title": "Personalidades Pré-definidas",
@@ -2166,5 +2167,17 @@
     "tone": "Tom",
     "personality": "Personalidade",
     "style": "Estilo"
+  },
+  "fillWithAI": {
+    "title": "Preencher com IA",
+    "description": "Descreva a personalidade desejada com tópicos, e geraremos uma vibe e sugestões de atributos.",
+    "bulletPoints": "Tópicos",
+    "placeholder": "Adora humor negro\nEspecialista em Python\nFala como um pirata\n\"Ahoy, marujos!\"\nEnérgico e sempre curioso",
+    "hint": "Uma característica por linha. Use aspas para frases de assinatura. Seja específico ou vago como quiser.",
+    "generate": "Gerar Vibe",
+    "generatedVibe": "Vibe Gerada",
+    "suggestedAttributes": "Atributos Sugeridos",
+    "regenerate": "Regenerar",
+    "apply": "Aplicar ao Editor"
   }
 }

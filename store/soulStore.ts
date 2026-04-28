@@ -45,6 +45,14 @@ export interface SoulState {
     knowledgeDomains: string[];
     signaturePhrases: string[];
     emotionalRange: number; // 0=flat, 50=balanced, 100=dramatic
+    // Speech Patterns
+    speechPatterns: {
+      alliteration: boolean;
+      rhymeTendency: number; // 0-100
+      metaphorFrequency: number; // 0-100
+      technicalJargon: number; // 0-100
+      slangUsage: number; // 0-100
+    };
   };
   isDarkMode: boolean;
   locale: string;
@@ -102,6 +110,13 @@ export interface SoulPreset {
   knowledgeDomains?: string[];
   signaturePhrases?: string[];
   emotionalRange?: number;
+  speechPatterns?: {
+    alliteration?: boolean;
+    rhymeTendency?: number;
+    metaphorFrequency?: number;
+    technicalJargon?: number;
+    slangUsage?: number;
+  };
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -145,6 +160,13 @@ export const useSoulStore = create<SoulState>()(
         knowledgeDomains: [],
         signaturePhrases: [],
         emotionalRange: 50,
+        speechPatterns: {
+          alliteration: false,
+          rhymeTendency: 10,
+          metaphorFrequency: 30,
+          technicalJargon: 40,
+          slangUsage: 20,
+        },
       },
       isDarkMode: false,
       locale: "en",
@@ -210,6 +232,13 @@ export const useSoulStore = create<SoulState>()(
           knowledgeDomains: [],
           signaturePhrases: [],
           emotionalRange: 50,
+          speechPatterns: {
+            alliteration: false,
+            rhymeTendency: 10,
+            metaphorFrequency: 30,
+            technicalJargon: 40,
+            slangUsage: 20,
+          },
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
@@ -243,6 +272,13 @@ export const useSoulStore = create<SoulState>()(
           knowledgeDomains: preset.knowledgeDomains ?? [],
           signaturePhrases: preset.signaturePhrases ?? [],
           emotionalRange: preset.emotionalRange ?? 50,
+          speechPatterns: {
+            alliteration: preset.speechPatterns?.alliteration ?? false,
+            rhymeTendency: preset.speechPatterns?.rhymeTendency ?? 10,
+            metaphorFrequency: preset.speechPatterns?.metaphorFrequency ?? 30,
+            technicalJargon: preset.speechPatterns?.technicalJargon ?? 40,
+            slangUsage: preset.speechPatterns?.slangUsage ?? 20,
+          },
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -293,6 +329,13 @@ export const useSoulStore = create<SoulState>()(
             knowledgeDomains: Array.isArray(parsed.knowledgeDomains) ? parsed.knowledgeDomains : [],
             signaturePhrases: Array.isArray(parsed.signaturePhrases) ? parsed.signaturePhrases : [],
             emotionalRange: parsed.emotionalRange ?? 50,
+            speechPatterns: {
+              alliteration: parsed.speechPatterns?.alliteration ?? false,
+              rhymeTendency: parsed.speechPatterns?.rhymeTendency ?? 10,
+              metaphorFrequency: parsed.speechPatterns?.metaphorFrequency ?? 30,
+              technicalJargon: parsed.speechPatterns?.technicalJargon ?? 40,
+              slangUsage: parsed.speechPatterns?.slangUsage ?? 20,
+            },
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);
