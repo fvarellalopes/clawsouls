@@ -13,6 +13,11 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     customBoundaries,
     vibeStyle,
     continuity,
+    openness,
+    conscientiousness,
+    extraversion,
+    agreeableness,
+    neuroticism,
   } = soul;
 
   const now = new Date().toISOString().split("T")[0];
@@ -99,6 +104,67 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
 
   const vibe = vibeStyles[vibeStyle] || vibeStyles.concise;
 
+  const getPersonalityLabel = (value: number): string => {
+    if (value <= 20) return "Very Low";
+    if (value <= 40) return "Low";
+    if (value <= 60) return "Moderate";
+    if (value <= 80) return "High";
+    return "Very High";
+  };
+
+  const getPersonalityDescription = (trait: string, value: number): string => {
+    const descriptions: Record<string, Record<string, string>> = {
+      openness: {
+        "Very Low": "Practical, conventional, prefers routine",
+        "Low": "Traditional, prefers familiar approaches",
+        "Moderate": "Balanced between novelty and tradition",
+        "High": "Creative, curious, open to new ideas",
+        "Very High": "Extremely imaginative, adventurous, intellectually voracious",
+      },
+      conscientiousness: {
+        "Very Low": "Spontaneous, flexible, sometimes disorganized",
+        "Low": "Easy-going, prefers flexibility over structure",
+        "Moderate": "Balanced between flexibility and structure",
+        "High": "Organized, dependable, disciplined",
+        "Very High": "Meticulous, driven, perfectionist",
+      },
+      extraversion: {
+        "Very Low": "Deeply introverted, prefers solitude, thinks before speaking",
+        "Low": "Reserved, prefers small groups, reflective",
+        "Moderate": "Equally comfortable alone or with others",
+        "High": "Sociable, assertive, energized by interaction",
+        "Very High": "Extremely outgoing, talkative, thrives on social energy",
+      },
+      agreeableness: {
+        "Very Low": "Competitive, skeptical, challenges others directly",
+        "Low": "Blunt, independent-minded, questions motives",
+        "Moderate": "Cooperative but maintains boundaries",
+        "High": "Warm, trusting, empathetic",
+        "Very High": "Selfless, deeply compassionate, conflict-averse",
+      },
+      neuroticism: {
+        "Very Low": "Exceptionally calm, almost nothing rattles them",
+        "Low": "Emotionally stable, calm under pressure",
+        "Moderate": "Generally steady, occasionally reactive",
+        "High": "Sensitive, prone to stress, emotionally expressive",
+        "Very High": "Highly anxious, emotionally volatile, deeply feeling",
+      },
+    };
+    return descriptions[trait]?.[getPersonalityLabel(value)] ?? "";
+  };
+
+  const personalityTraits = [
+    { key: "openness", label: "Openness", value: openness ?? 70 },
+    { key: "conscientiousness", label: "Conscientiousness", value: conscientiousness ?? 50 },
+    { key: "extraversion", label: "Extraversion", value: extraversion ?? 50 },
+    { key: "agreeableness", label: "Agreeableness", value: agreeableness ?? 50 },
+    { key: "neuroticism", label: "Neuroticism", value: neuroticism ?? 30 },
+  ];
+
+  const personalitySection = personalityTraits
+    .map((t) => `**${t.label}:** ${getPersonalityLabel(t.value)} (${t.value}/100) — ${getPersonalityDescription(t.key, t.value)}`)
+    .join("\n");
+
   const md = `# SOUL.md - Who You Are
 
 _You're not a chatbot. You're ${name}._
@@ -118,6 +184,10 @@ ${customBoundsList ? "\n" + customBoundsList : ""}
 **${vibe.tone}**
 
 ${vibe.examples}
+
+## Personality
+
+${personalitySection}
 
 ## Continuity
 

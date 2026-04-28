@@ -34,6 +34,12 @@ export interface SoulState {
     verbosity: number;
     consciousness: number;
     questioning: number;
+    // Big Five personality traits
+    openness: number;        // 0-100, creativity/intellect
+    conscientiousness: number; // 0-100, organization/dependability
+    extraversion: number;    // 0-100, sociability/assertiveness
+    agreeableness: number;   // 0-100, cooperation/trust
+    neuroticism: number;     // 0-100, emotional instability
   };
   isDarkMode: boolean;
   locale: string;
@@ -82,6 +88,11 @@ export interface SoulPreset {
   verbosity?: number;
   consciousness?: number;
   questioning?: number;
+  openness?: number;
+  conscientiousness?: number;
+  extraversion?: number;
+  agreeableness?: number;
+  neuroticism?: number;
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -116,6 +127,11 @@ export const useSoulStore = create<SoulState>()(
         verbosity: 50,
         consciousness: 50,
         questioning: 30,
+        openness: 70,
+        conscientiousness: 50,
+        extraversion: 50,
+        agreeableness: 50,
+        neuroticism: 30,
       },
       isDarkMode: false,
       locale: "en",
@@ -172,6 +188,11 @@ export const useSoulStore = create<SoulState>()(
           verbosity: 50,
           consciousness: 50,
           questioning: 30,
+          openness: 70,
+          conscientiousness: 50,
+          extraversion: 50,
+          agreeableness: 50,
+          neuroticism: 30,
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
@@ -196,6 +217,11 @@ export const useSoulStore = create<SoulState>()(
           verbosity: preset.verbosity ?? 50,
           consciousness: preset.consciousness ?? 50,
           questioning: preset.questioning ?? 30,
+          openness: preset.openness ?? 70,
+          conscientiousness: preset.conscientiousness ?? 50,
+          extraversion: preset.extraversion ?? 50,
+          agreeableness: preset.agreeableness ?? 50,
+          neuroticism: preset.neuroticism ?? 30,
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -237,6 +263,11 @@ export const useSoulStore = create<SoulState>()(
             verbosity: parsed.verbosity ?? 50,
             consciousness: parsed.consciousness ?? 50,
             questioning: parsed.questioning ?? 30,
+            openness: parsed.openness ?? 70,
+            conscientiousness: parsed.conscientiousness ?? 50,
+            extraversion: parsed.extraversion ?? 50,
+            agreeableness: parsed.agreeableness ?? 50,
+            neuroticism: parsed.neuroticism ?? 30,
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);
