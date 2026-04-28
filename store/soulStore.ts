@@ -41,8 +41,10 @@ export interface SoulState {
     agreeableness: number;   // 0-100, cooperation/trust
     neuroticism: number;     // 0-100, emotional instability
     // Advanced personality
-    communicationMode: string; // socratic, diagnostic, encouraging, challenging, flirty, direct
-    knowledgeDomains: string[]; // tech, philosophy, pop-culture, science, history, arts, sports, business
+    communicationMode: string;
+    knowledgeDomains: string[];
+    signaturePhrases: string[];
+    emotionalRange: number; // 0=flat, 50=balanced, 100=dramatic
   };
   isDarkMode: boolean;
   locale: string;
@@ -98,6 +100,8 @@ export interface SoulPreset {
   neuroticism?: number;
   communicationMode?: string;
   knowledgeDomains?: string[];
+  signaturePhrases?: string[];
+  emotionalRange?: number;
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -139,6 +143,8 @@ export const useSoulStore = create<SoulState>()(
         neuroticism: 30,
         communicationMode: "direct",
         knowledgeDomains: [],
+        signaturePhrases: [],
+        emotionalRange: 50,
       },
       isDarkMode: false,
       locale: "en",
@@ -202,6 +208,8 @@ export const useSoulStore = create<SoulState>()(
           neuroticism: 30,
           communicationMode: "direct",
           knowledgeDomains: [],
+          signaturePhrases: [],
+          emotionalRange: 50,
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
@@ -233,6 +241,8 @@ export const useSoulStore = create<SoulState>()(
           neuroticism: preset.neuroticism ?? 30,
           communicationMode: preset.communicationMode ?? "direct",
           knowledgeDomains: preset.knowledgeDomains ?? [],
+          signaturePhrases: preset.signaturePhrases ?? [],
+          emotionalRange: preset.emotionalRange ?? 50,
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -281,6 +291,8 @@ export const useSoulStore = create<SoulState>()(
             neuroticism: parsed.neuroticism ?? 30,
             communicationMode: parsed.communicationMode ?? "direct",
             knowledgeDomains: Array.isArray(parsed.knowledgeDomains) ? parsed.knowledgeDomains : [],
+            signaturePhrases: Array.isArray(parsed.signaturePhrases) ? parsed.signaturePhrases : [],
+            emotionalRange: parsed.emotionalRange ?? 50,
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);

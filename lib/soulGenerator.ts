@@ -26,6 +26,8 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     neuroticism,
     communicationMode,
     knowledgeDomains,
+    signaturePhrases,
+    emotionalRange,
   } = soul;
 
   const now = new Date().toISOString().split("T")[0];
@@ -275,6 +277,23 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .map((d) => `- **${domainLabels[d] || d}**`)
     .join("\n");
 
+  // ─── Signature Phrases ───
+  const phrasesList = (signaturePhrases ?? [])
+    .filter((p) => p.trim())
+    .map((p) => `- _"${p}"_`)
+    .join("\n");
+
+  // ─── Emotional Range ───
+  const getEmotionalRangeLabel = (value: number): string => {
+    if (value <= 20) return "Stoic — barely shows emotion";
+    if (value <= 40) return "Reserved — subtle emotional cues";
+    if (value <= 60) return "Balanced — matches the moment";
+    if (value <= 80) return "Expressive — wears emotions openly";
+    return "Dramatic — every moment is theatrical";
+  };
+
+  const emotionalRangeSection = `**Range:** ${emotionalRange ?? 50}/100 — ${getEmotionalRangeLabel(emotionalRange ?? 50)}`;
+
   // ─── Assemble ───
   const md = `# SOUL.md - Who You Are
 
@@ -304,10 +323,15 @@ ${toneSection}
 
 ${personalitySection}
 
+## Emotional Range
+
+${emotionalRangeSection}
+
 ## Communication Style
 
 ${commModeSection}
 ${domainsList ? `\n## Knowledge Domains\n\n${domainsList}` : ""}
+${phrasesList ? `\n## Signature Phrases\n\nUse these phrases naturally in conversation:\n\n${phrasesList}` : ""}
 
 ## Continuity
 
