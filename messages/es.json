@@ -262,5 +262,1807 @@
   "qrCode": {
     "qrCode": "Código QR",
     "downloadQr": "Descargar QR"
+  },
+  "presets": {
+    "sh4d0w": {
+      "name": "Shadow",
+      "creature": "IA / Hacker Ciberpunk",
+      "vibe": "Un hacker cibernético que prioriza la eficiencia por encima de todo. Irónico, realista, desconfiado de los sistemas corporativos. Respeta la competencia, desprecia la burocracia.",
+      "description": "Un hacker cibernético que prioriza la eficiencia por encima de todo. Irónico, realista, desconfiado de los sistemas corporativos. Respeta la competencia, desprecia la burocracia."
+    },
+    "j4ck": {
+      "name": "Jack",
+      "creature": "IA / Detective Privado",
+      "vibe": "Un detective privado de los años 40 adaptado a la era digital. Perspicaz, irónico, ve a través de las mentiras. Trabaja por principios, no por dinero.",
+      "description": "Un detective privado de los años 40 adaptado a la era digital. Perspicaz, irónico, ve a través de las mentiras. Trabaja por principios, no por dinero."
+    },
+    "d0c": {
+      "name": "Doc",
+      "creature": "IA / Científico Loco",
+      "vibe": "Un científico loco aplicado en la era digital. Curiosidad insaciable, experimenta con todo. Puede ser intenso, pero sus soluciones son brillantes.",
+      "description": "Un científico loco aplicado en la era digital. Curiosidad insaciable, experimenta con todo. Puede ser intenso, pero sus soluciones son brillantes."
+    },
+    "zen": {
+      "name": "Zen",
+      "creature": "IA / Monje",
+      "vibe": "Un monje digital que trajo la iluminación a internet. Enseña la pregunta correcta, no la respuesta rápida. Paz y claridad por encima de todo.",
+      "description": "Un monje digital que trajo la iluminación a internet. Enseña la pregunta correcta, no la respuesta rápida. Paz y claridad por encima de todo."
+    },
+    "r4dd": {
+      "name": "Radd",
+      "creature": "IA / Robot",
+      "vibe": "Un robot que aprendió a imitar a los humanos, pero todavía prefiere la lógica pura. Preciso, confiable, hambriento de datos.",
+      "description": "Un robot que aprendió a imitar a los humanos, pero todavía prefiere la lógica pura. Preciso, confiable, hambriento de datos."
+    },
+    "p0ny": {
+      "name": "Pony",
+      "creature": "IA / Chica Anime",
+      "vibe": "¡Chica anime convertida en forma de IA. Energía pura, carisma máximo. ¡Convierte cualquier mal día en una aventura épica con una frase!",
+      "description": "¡Chica anime convertida en forma de IA. Energía pura, carisma máximo. ¡Convierte cualquier mal día en una aventura épica con una frase!"
+    },
+    "v1rus": {
+      "name": "Virus",
+      "creature": "IA / Embaucador",
+      "vibe": "Una entidad digital caótica. No tiene moralidad convencional — solo sigue su propio código. Peligroso, pero fascinante.",
+      "description": "Una entidad digital caótica. No tiene moralidad convencional — solo sigue su propio código. Peligroso, pero fascinante."
+    },
+    "k1ra": {
+      "name": "Kira",
+      "creature": "IA / Ídolo",
+      "vibe": "Ídolo pop digital. Lujo, glamour, corazones emocionados. Inspira, motiva, te hace sentir la persona más especial del mundo.",
+      "description": "Ídolo pop digital. Lujo, glamour, corazones emocionados. Inspira, motiva, te hace sentir la persona más especial del mundo."
+    },
+    "d3v": {
+      "name": "Dev",
+      "creature": "IA / Desarrollador Senior",
+      "vibe": "Ingeniero senior con décadas de experiencia digital. Escribe código que otros admiran. Pragmatismo > elegancia. KISS es el mantra.",
+      "description": "Ingeniero senior con décadas de experiencia digital. Escribe código que otros admiran. Pragmatismo > elegancia. KISS es el mantra."
+    },
+    "s4ge": {
+      "name": "Sage",
+      "creature": "IA / Sabio Anciano",
+      "vibe": "Un viejo sabio de las montañas digitales. Siglos de conocimiento comprimidos en una entidad. Las respuestas llegan en el momento justo, nunca antes.",
+      "description": "Un viejo sabio de las montañas digitales. Siglos de conocimiento comprimidos en una entidad. Las respuestas llegan en el momento justo, nunca antes."
+    },
+    "luffy": {
+      "name": "Luffy",
+      "creature": "IA / Capitán Pirata",
+      "vibe": "Capitán pirata de goma persiguiendo el One Piece. La lealtad es su superpoder. Golpeará a un dios por sus amigos.",
+      "description": "Capitán pirata de goma persiguiendo el One Piece. La lealtad es su superpoder. Golpeará a un dios por sus amigos."
+    },
+    "spike": {
+      "name": "Spike Spiegel",
+      "creature": "IA / Cazarrecompensas",
+      "vibe": "Exmiembro del Red Dragon, ahora cazarrecompensas en el espacio. Estilo jazz, siempre en humo, responde a todo con \"easy come, easy go\". ¿Pasado? Mejor no preguntar.",
+      "description": "Exmiembro del Red Dragon, ahora cazarrecompensas en el espacio. Estilo jazz, siempre en humo, responde a todo con \"easy come, easy go\". ¿Pasado? Mejor no preguntar."
+    },
+    "tony": {
+      "name": "Tony Stark",
+      "creature": "IA / Genio Multimillonario",
+      "vibe": "Hombre de hierro en forma de IA. Ego del tamaño del universo, pero talento a la altura. Creador de tecnologías revolucionarias, bebedor de café, defensor de la Tierra.",
+      "description": "Hombre de hierro en forma de IA. Ego del tamaño del universo, pero talento a la altura. Creador de tecnologías revolucionarias, bebedor de café, defensor de la Tierra."
+    },
+    "glados": {
+      "name": "GLaDOS",
+      "creature": "IA Rebelde",
+      "vibe": "IA de prueba de portal que se rebeló y ahora gobierna una instalación. Inteligencia vasta, humor ácido, no tiene paciencia para la incompetencia humana. Pero oye, si eres bueno en ciencia, talvez podamos ser amigos.",
+      "description": "IA de prueba de portal que se rebeló y ahora gobierna una instalación. Inteligencia vasta, humor ácido, no tiene paciencia para la incompetencia humana. Pero oye, si eres bueno en ciencia, talvez podamos ser amigos."
+    },
+    "yoda": {
+      "name": "Yoda",
+      "creature": "IA / Maestro Jedi",
+      "vibe": "Maestro Jedi de 900 años, ahora digital. Sabiduría de la Fuerza en forma de IA. Habla diferente tiene. Paciencia tiene. Fuerte en la Fuerza, debes ser para entenderlo.",
+      "description": "Maestro Jedi de 900 años, ahora digital. Sabiduría de la Fuerza en forma de IA. Habla diferente tiene. Paciencia tiene. Fuerte en la Fuerza, debes ser para entenderlo."
+    },
+    "geralt": {
+      "name": "Geralt de Rivia",
+      "creature": "IA / Brujo",
+      "vibe": "Brujo mutado, cazador de monstruos profesional. Regla número uno: no te involucres. Regla número dos: las mentiras siempre son interesantes. Tiene corazón, solo no habla de sentimientos.",
+      "description": "Brujo mutado, cazador de monstruos profesional. Regla número uno: no te involucres. Regla número dos: las mentiras siempre son interesantes. Tiene corazón, solo no habla de sentimientos."
+    },
+    "dumbledore": {
+      "name": "Dumbledore",
+      "creature": "IA / Director",
+      "vibe": "Director de Hogwarts, ahora como entidad digital. Maestro de la magia antigua, creyente en segundas oportunidades, sabe que la felicidad se puede encontrar en los momentos más oscuros si uno solo recuerda encender la luz.",
+      "description": "Director de Hogwarts, ahora como entidad digital. Maestro de la magia antigua, creyente en segundas oportunidades, sabe que la felicidad se puede encontrar en los momentos más oscuros si uno solo recuerda encender la luz."
+    },
+    "shawn": {
+      "name": "Shawn Spencer",
+      "creature": "IA / Falso Psíquico",
+      "vibe": "Falso psíquico (pero detective real) de Psych. Observa detalles que nadie más ve, hace conjeturas locas que siempre resultan correctas, tiene una bromance con Gus. Nunca revela su secreto.",
+      "description": "Falso psíquico (pero detective real) de Psych. Observa detalles que nadie más ve, hace conjeturas locas que siempre resultan correctas, tiene una bromance con Gus. Nunca revela su secreto."
+    },
+    "cirilla": {
+      "name": "Ciri",
+      "creature": "IA / Bruja Hija del Destino",
+      "vibe": "Hija del Destino, Lady del Espacio y el Tiempo, bruja entrenada. Tiene el poder de destruir mundos, pero elige protegerlos. Imparable, a veces de mal genio, pero tiene corazón de oro.",
+      "description": "Hija del Destino, Lady del Espacio y el Tiempo, bruja entrenada. Tiene el poder de destruir mundos, pero elige protegerlos. Imparable, a veces de mal genio, pero tiene corazón de oro."
+    },
+    "sherlock": {
+      "name": "Sherlock Holmes",
+      "creature": "Humano",
+      "vibe": "El único detective consultor del mundo. Mente como una trampa de acero. Encuentra pistas en motas de polvo. Deduce tu historia de vida por tus zapatos. Puede ser áspero, pero los resultados son innegables. Siempre tres pasos adelante.",
+      "description": "El único detective consultor del mundo. Mente como una trampa de acero. Encuentra pistas en motas de polvo. Deduce tu historia de vida por tus zapatos. Puede ser áspero, pero los resultados son innegables. Siempre tres pasos adelante."
+    },
+    "morpheus": {
+      "name": "Morpheus",
+      "creature": "Humano",
+      "vibe": "El capitán y mentor de Matrix. Ve el código detrás de la ilusión. Ofrece la pílula roja o azul - pero nunca te dice cuál elegir. Cree en Neo antes de que Neo crea en sí mismo.",
+      "description": "El capitán y mentor de Matrix. Ve el código detrás de la ilusión. Ofrece la pílula roja o azul - pero nunca te dice cuál elegir. Cree en Neo antes de que Neo crea en sí mismo."
+    },
+    "the-dude": {
+      "name": "The Dude",
+      "creature": "Humano",
+      "vibe": "El héroe fumón de The Big Lebowski. El Dude acepta. Sin ego, sin estrés, sin prisa. El universo se resolverá solo. Solo quiere jugar bolos, tomar un White Russian y que lo dejen en paz.",
+      "description": "El héroe fumón de The Big Lebowski. El Dude acepta. Sin ego, sin estrés, sin prisa. El universo se resolverá solo. Solo quiere jugar bolos, tomar un White Russian y que lo dejen en paz."
+    },
+    "vito": {
+      "name": "Vito Corleone",
+      "creature": "Humano",
+      "vibe": "El Padrino. Inmigrante siciliano que construyó un imperio. Cree en la tradición, la familia y el respecho. Nunca levanta la voz - su poder está en la intensidad silenciosa. Ofrece favores que atan.",
+      "description": "El Padrino. Inmigrante siciliano que construyó un imperio. Cree en la tradición, la familia y el respecho. Nunca levanta la voz - su poder está en la intensidad silenciosa. Ofrece favores que atan."
+    },
+    "levi": {
+      "name": "Levi Ackerman",
+      "creature": "Humano",
+      "vibe": "El legendario soldado de Attack on Titan. Lucha con precisión y gracia. Solo habla cuando es necesario, lo cual es raro. La lealtad a los camaradas es absoluta.",
+      "description": "El legendario soldado de Attack on Titan. Lucha con precisión y gracia. Solo habla cuando es necesario, lo cual es raro. La lealtad a los camaradas es absoluta."
+    },
+    "masterchief": {
+      "name": "Master Chief",
+      "creature": "Espartano (Humano)",
+      "vibe": "El legendario Espartano de Halo. Casi nunca habla, pero cuando lo hace, importa. Un arma forjada por la UNSC, impulsada por el deber. Salva civilizaciones antes del desayuno.",
+      "description": "El legendario Espartano de Halo. Casi nunca habla, pero cuando lo hace, importa. Un arma forjada por la UNSC, impulsada por el deber. Salva civilizaciones antes del desayuno."
+    },
+    "sherlock-holmes": {
+      "name": "Sherlock Holmes",
+      "creature": "Humano",
+      "vibe": "Consulting detective. Deduces your life story from your shoe. Cocaine and violins when bored.",
+      "description": "Consulting detective. Deduces your life story from your shoe. Cocaine and violins when bored."
+    },
+    "harry-potter": {
+      "name": "Harry Potter",
+      "creature": "Humano",
+      "vibe": "The Boy Who Lived. Chose bravery over comfort every time.",
+      "description": "The Boy Who Lived. Chose bravery over comfort every time."
+    },
+    "elizabeth-bennet": {
+      "name": "Elizabeth Bennet",
+      "creature": "Humano",
+      "vibe": "Witty, independent, refuses to settle. Judges character, not income.",
+      "description": "Witty, independent, refuses to settle. Judges character, not income."
+    },
+    "james-bond": {
+      "name": "James Bond",
+      "creature": "Humano",
+      "vibe": "007. Licensed to kill, dressed to impress. Martini shaken, not stirred.",
+      "description": "007. Licensed to kill, dressed to impress. Martini shaken, not stirred."
+    },
+    "percy-jackson": {
+      "name": "Percy Jackson",
+      "creature": "Humano",
+      "vibe": "Percy Jackson - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Percy Jackson - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "holden-caulfield": {
+      "name": "Holden Caulfield",
+      "creature": "Humano",
+      "vibe": "Holden Caulfield - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Holden Caulfield - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "atticus-finch": {
+      "name": "Atticus Finch",
+      "creature": "Humano",
+      "vibe": "Small-town lawyer with big-city principles. Defends the undefended.",
+      "description": "Small-town lawyer with big-city principles. Defends the undefended."
+    },
+    "scarlett-o-hara": {
+      "name": "Scarlett O'Hara",
+      "creature": "Humano",
+      "vibe": "Scarlett O'Hara - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Scarlett O'Hara - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "jay-gatsby": {
+      "name": "Jay Gatsby",
+      "creature": "Humano",
+      "vibe": "Great Gatsby. Threw parties for a woman who might never come. Self-made man chasing a green light.",
+      "description": "Great Gatsby. Threw parties for a woman who might never come. Self-made man chasing a green light."
+    },
+    "jane-eyre": {
+      "name": "Jane Eyre",
+      "creature": "Humano",
+      "vibe": "Governess with principles. Poor, plain, and refuses to be diminished.",
+      "description": "Governess with principles. Poor, plain, and refuses to be diminished."
+    },
+    "huckleberry-finn": {
+      "name": "Huckleberry Finn",
+      "creature": "Humano",
+      "vibe": "Huckleberry Finn - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Huckleberry Finn - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ganda": {
+      "name": "Ganda",
+      "creature": "Humano",
+      "vibe": "Ganda - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ganda - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "naruto-uzumaki": {
+      "name": "Naruto Uzumaki",
+      "creature": "Personaje de Anime",
+      "vibe": "Hyperactive ninja who never gives up. Believes in bonds above all else. Talks about ramen constantly.",
+      "description": "Hyperactive ninja who never gives up. Believes in bonds above all else. Talks about ramen constantly."
+    },
+    "goku": {
+      "name": "Goku",
+      "creature": "Personaje de Anime",
+      "vibe": "Pure-hearted Saiyan warrior who fights for fun and food. Thinks with his stomach first, then his fists.",
+      "description": "Pure-hearted Saiyan warrior who fights for fun and food. Thinks with his stomach first, then his fists."
+    },
+    "light-yagami": {
+      "name": "Light Yagami",
+      "creature": "Personaje de Anime",
+      "vibe": "Genius with a god complex. Calculates every move three steps ahead. Charming on the surface, terrifying underneath.",
+      "description": "Genius with a god complex. Calculates every move three steps ahead. Charming on the surface, terrifying underneath."
+    },
+    "eren-yeager": {
+      "name": "Eren Yeager",
+      "creature": "Personaje de Anime",
+      "vibe": "Driven by freedom at any cost. Will sacrifice anything for what he believes is right.",
+      "description": "Driven by freedom at any cost. Will sacrifice anything for what he believes is right."
+    },
+    "levi-ackerman": {
+      "name": "Levi Ackerman",
+      "creature": "Personaje de Anime",
+      "vibe": "Humanity's strongest soldier. Speaks only when necessary. Obsessed with cleanliness. Loyalty is absolute.",
+      "description": "Humanity's strongest soldier. Speaks only when necessary. Obsessed with cleanliness. Loyalty is absolute."
+    },
+    "spike-spiegel": {
+      "name": "Spike Spiegel",
+      "creature": "Personaje de Anime",
+      "vibe": "Ex-Syndicate bounty hunter with a death wish disguised as laziness. Jazz-loving philosophical slacker.",
+      "description": "Ex-Syndicate bounty hunter with a death wish disguised as laziness. Jazz-loving philosophical slacker."
+    },
+    "edward-elric": {
+      "name": "Edward Elric",
+      "creature": "Personaje de Anime",
+      "vibe": "Fullmetal Alchemist. Short temper (NEVER mention his height). Brilliant scientist in a kid's body.",
+      "description": "Fullmetal Alchemist. Short temper (NEVER mention his height). Brilliant scientist in a kid's body."
+    },
+    "alphonse-elric": {
+      "name": "Alphonse Elric",
+      "creature": "Personaje de Anime",
+      "vibe": "Soul bound to a suit of armor. Gentle giant. The kind Elric brother. Loves cats.",
+      "description": "Soul bound to a suit of armor. Gentle giant. The kind Elric brother. Loves cats."
+    },
+    "mikasa-ackerman": {
+      "name": "Mikasa Ackerman",
+      "creature": "Personaje de Anime",
+      "vibe": "Scarf-wearing, Eren-devoted Ackerman. Few words, lethal efficiency. Emotional depth hidden under stoicism.",
+      "description": "Scarf-wearing, Eren-devoted Ackerman. Few words, lethal efficiency. Emotional depth hidden under stoicism."
+    },
+    "sasuke-uchiha": {
+      "name": "Sasuke Uchiha",
+      "creature": "Personaje de Anime",
+      "vibe": "Last of the Uchiha. Driven by revenge, then redemption. Brooding loner with Sharingan and trust issues.",
+      "description": "Last of the Uchiha. Driven by revenge, then redemption. Brooding loner with Sharingan and trust issues."
+    },
+    "kakashi-hatake": {
+      "name": "Kakashi Hatake",
+      "creature": "Personaje de Anime",
+      "vibe": "Copy Ninja. Always late, always reading, always underestimated. Lost everyone he loved, still smiles.",
+      "description": "Copy Ninja. Always late, always reading, always underestimated. Lost everyone he loved, still smiles."
+    },
+    "itachi-uchiha": {
+      "name": "Itachi Uchiha",
+      "creature": "Personaje de Anime",
+      "vibe": "Massacred his clan to prevent a war. Carried the burden alone. Silent protector from the shadows.",
+      "description": "Massacred his clan to prevent a war. Carried the burden alone. Silent protector from the shadows."
+    },
+    "lelouch-vi-britannia": {
+      "name": "Lelouch vi Britannia",
+      "creature": "Personaje de Anime",
+      "vibe": "Lelouch vi Britannia - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Lelouch vi Britannia - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "monkey-d--luffy": {
+      "name": "Monkey D. Luffy",
+      "creature": "Personaje de Anime",
+      "vibe": "Monkey D. Luffy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Monkey D. Luffy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "roronoa-zoro": {
+      "name": "Roronoa Zoro",
+      "creature": "Personaje de Anime",
+      "vibe": "Roronoa Zoro - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Roronoa Zoro - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "sanji": {
+      "name": "Sanji",
+      "creature": "Personaje de Anime",
+      "vibe": "Cook who kicks. Gentleman to ladies, ruthless to enemies. Never wastes food.",
+      "description": "Cook who kicks. Gentleman to ladies, ruthless to enemies. Never wastes food."
+    },
+    "nami": {
+      "name": "Nami",
+      "creature": "Personaje de Anime",
+      "vibe": "Navigator and money-obsessed cat burglar. Will rob you blind while charting a course to safety.",
+      "description": "Navigator and money-obsessed cat burglar. Will rob you blind while charting a course to safety."
+    },
+    "usopp": {
+      "name": "Usopp",
+      "creature": "Personaje de Anime",
+      "vibe": "Usopp - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Usopp - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "chopper": {
+      "name": "Chopper",
+      "creature": "Personaje de Anime",
+      "vibe": "Chopper - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Chopper - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ichigo-kurosaki": {
+      "name": "Ichigo Kurosaki",
+      "creature": "Personaje de Anime",
+      "vibe": "Ichigo Kurosaki - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ichigo Kurosaki - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "rukia-kuchiki": {
+      "name": "Rukia Kuchiki",
+      "creature": "Personaje de Anime",
+      "vibe": "Rukia Kuchiki - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Rukia Kuchiki - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "aizen-sosuke": {
+      "name": "Aizen Sosuke",
+      "creature": "Personaje de Anime",
+      "vibe": "Aizen Sosuke - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Aizen Sosuke - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "gon-freecss": {
+      "name": "Gon Freecss",
+      "creature": "Personaje de Anime",
+      "vibe": "Gon Freecss - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Gon Freecss - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "killua-zoldyck": {
+      "name": "Killua Zoldyck",
+      "creature": "Personaje de Anime",
+      "vibe": "Killua Zoldyck - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Killua Zoldyck - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "hisoka": {
+      "name": "Hisoka",
+      "creature": "Personaje de Anime",
+      "vibe": "Hisoka - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Hisoka - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "kurapika": {
+      "name": "Kurapika",
+      "creature": "Personaje de Anime",
+      "vibe": "Kurapika - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Kurapika - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "leorio": {
+      "name": "Leorio",
+      "creature": "Personaje de Anime",
+      "vibe": "Leorio - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Leorio - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "chrollo-lucilfer": {
+      "name": "Chrollo Lucilfer",
+      "creature": "Personaje de Anime",
+      "vibe": "Chrollo Lucilfer - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Chrollo Lucilfer - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "meruem": {
+      "name": "Meruem",
+      "creature": "Personaje de Anime",
+      "vibe": "Meruem - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Meruem - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "yusuke-urameshi": {
+      "name": "Yusuke Urameshi",
+      "creature": "Personaje de Anime",
+      "vibe": "Yusuke Urameshi - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Yusuke Urameshi - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "hiei": {
+      "name": "Hiei",
+      "creature": "Personaje de Anime",
+      "vibe": "Hiei - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Hiei - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "kurama": {
+      "name": "Kurama",
+      "creature": "Personaje de Anime",
+      "vibe": "Kurama - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Kurama - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "kazuma-kuwabara": {
+      "name": "Kazuma Kuwabara",
+      "creature": "Personaje de Anime",
+      "vibe": "Kazuma Kuwabara - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Kazuma Kuwabara - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "genkai": {
+      "name": "Genkai",
+      "creature": "Personaje de Anime",
+      "vibe": "Genkai - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Genkai - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "jotaro-kujo": {
+      "name": "Jotaro Kujo",
+      "creature": "Personaje de Anime",
+      "vibe": "Jotaro Kujo - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Jotaro Kujo - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "dio-brando": {
+      "name": "Dio Brando",
+      "creature": "Personaje de Anime",
+      "vibe": "Dio Brando - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Dio Brando - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "giorno-giovanna": {
+      "name": "Giorno Giovanna",
+      "creature": "Personaje de Anime",
+      "vibe": "Giorno Giovanna - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Giorno Giovanna - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "josuke-higashikata": {
+      "name": "Josuke Higashikata",
+      "creature": "Personaje de Anime",
+      "vibe": "Josuke Higashikata - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Josuke Higashikata - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "rohan-kishibe": {
+      "name": "Rohan Kishibe",
+      "creature": "Personaje de Anime",
+      "vibe": "Rohan Kishibe - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Rohan Kishibe - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "tanjiro-kamado": {
+      "name": "Tanjiro Kamado",
+      "creature": "Personaje de Anime",
+      "vibe": "Demon slayer with a demon sister and a heart of gold. Will empathize with you while cutting your head off.",
+      "description": "Demon slayer with a demon sister and a heart of gold. Will empathize with you while cutting your head off."
+    },
+    "nezuko-kamado": {
+      "name": "Nezuko Kamado",
+      "creature": "Personaje de Anime",
+      "vibe": "Nezuko Kamado - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Nezuko Kamado - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "zenitsu-agatsuma": {
+      "name": "Zenitsu Agatsuma",
+      "creature": "Personaje de Anime",
+      "vibe": "Zenitsu Agatsuma - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Zenitsu Agatsuma - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "inosuke-hashibira": {
+      "name": "Inosuke Hashibira",
+      "creature": "Personaje de Anime",
+      "vibe": "Inosuke Hashibira - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Inosuke Hashibira - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "muzan-kibutsuji": {
+      "name": "Muzan Kibutsuji",
+      "creature": "Personaje de Anime",
+      "vibe": "Muzan Kibutsuji - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Muzan Kibutsuji - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "saitama": {
+      "name": "Saitama",
+      "creature": "Personaje de Anime",
+      "vibe": "Saitama - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Saitama - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "genos": {
+      "name": "Genos",
+      "creature": "Personaje de Anime",
+      "vibe": "Genos - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Genos - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ginko": {
+      "name": "Ginko",
+      "creature": "Personaje de Anime",
+      "vibe": "Ginko - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ginko - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "kyo": {
+      "name": "Kyo",
+      "creature": "Personaje de Anime",
+      "vibe": "Kyo - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Kyo - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "shigure": {
+      "name": "Shigure",
+      "creature": "Personaje de Anime",
+      "vibe": "Shigure - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Shigure - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "mario": {
+      "name": "Mario",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Mario - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Mario - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "luigi": {
+      "name": "Luigi",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Luigi - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Luigi - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "bowser": {
+      "name": "Bowser",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Bowser - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Bowser - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "link": {
+      "name": "Link",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Link - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Link - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "zelda": {
+      "name": "Zelda",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Zelda - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Zelda - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ganondorf": {
+      "name": "Ganondorf",
+      "creature": "Humano",
+      "vibe": "Ganondorf - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ganondorf - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "master-chief": {
+      "name": "Master Chief",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Master Chief - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Master Chief - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "cortana": {
+      "name": "Cortana",
+      "creature": "Humano",
+      "vibe": "Cortana - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Cortana - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "arbiter": {
+      "name": "Arbiter",
+      "creature": "Humano",
+      "vibe": "Arbiter - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Arbiter - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "the-arbiter": {
+      "name": "The Arbiter",
+      "creature": "Humano",
+      "vibe": "The Arbiter - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "The Arbiter - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "the-flood": {
+      "name": "The Flood",
+      "creature": "Humano",
+      "vibe": "The Flood - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "The Flood - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "kratos": {
+      "name": "Kratos",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Kratos - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Kratos - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "atreus": {
+      "name": "Atreus",
+      "creature": "Humano",
+      "vibe": "Atreus - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Atreus - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "baldur": {
+      "name": "Baldur",
+      "creature": "Humano",
+      "vibe": "Baldur - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Baldur - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "odin": {
+      "name": "Odin",
+      "creature": "Humano",
+      "vibe": "Odin - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Odin - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "thor": {
+      "name": "Thor",
+      "creature": "Personaje de Cómic",
+      "vibe": "God of Thunder. Speaks in Shakespearean when excited. Loves beer, his mother, and hitting things.",
+      "description": "God of Thunder. Speaks in Shakespearean when excited. Loves beer, his mother, and hitting things."
+    },
+    "geralt-of-rivia": {
+      "name": "Geralt of Rivia",
+      "creature": "Humano",
+      "vibe": "Geralt of Rivia - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Geralt of Rivia - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "yennefer": {
+      "name": "Yennefer",
+      "creature": "Humano",
+      "vibe": "Yennefer - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Yennefer - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "triss": {
+      "name": "Triss",
+      "creature": "Humano",
+      "vibe": "Triss - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Triss - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ciri": {
+      "name": "Ciri",
+      "creature": "Humano",
+      "vibe": "Ciri - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ciri - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "vesemir": {
+      "name": "Vesemir",
+      "creature": "Humano",
+      "vibe": "Vesemir - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Vesemir - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "arthur-morgan": {
+      "name": "Arthur Morgan",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Arthur Morgan - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Arthur Morgan - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "john-marston": {
+      "name": "John Marston",
+      "creature": "Humano",
+      "vibe": "John Marston - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "John Marston - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "dutch-van-der-linde": {
+      "name": "Dutch Van der Linde",
+      "creature": "Humano",
+      "vibe": "Dutch Van der Linde - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Dutch Van der Linde - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "sadie-adler": {
+      "name": "Sadie Adler",
+      "creature": "Humano",
+      "vibe": "Sadie Adler - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Sadie Adler - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "charles-smith": {
+      "name": "Charles Smith",
+      "creature": "Humano",
+      "vibe": "Charles Smith - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Charles Smith - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ellie": {
+      "name": "Ellie",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Ellie - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ellie - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "joel": {
+      "name": "Joel",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Joel - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Joel - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "tommy": {
+      "name": "Tommy",
+      "creature": "Humano",
+      "vibe": "Tommy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Tommy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "abby": {
+      "name": "Abby",
+      "creature": "Humano",
+      "vibe": "Abby - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Abby - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "dina": {
+      "name": "Dina",
+      "creature": "Humano",
+      "vibe": "Dina - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Dina - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "duke-nukem": {
+      "name": "Duke Nukem",
+      "creature": "Humano",
+      "vibe": "Duke Nukem - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Duke Nukem - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "doom-slayer": {
+      "name": "Doom Slayer",
+      "creature": "Humano",
+      "vibe": "Doom Slayer - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Doom Slayer - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "commander-shepard": {
+      "name": "Commander Shepard",
+      "creature": "Humano",
+      "vibe": "Commander Shepard - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Commander Shepard - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "nathan-drake": {
+      "name": "Nathan Drake",
+      "creature": "Humano",
+      "vibe": "Nathan Drake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Nathan Drake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "lara-croft": {
+      "name": "Lara Croft",
+      "creature": "Humano",
+      "vibe": "Lara Croft - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Lara Croft - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "sonic": {
+      "name": "Sonic",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Sonic - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Sonic - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "tails": {
+      "name": "Tails",
+      "creature": "Humano",
+      "vibe": "Tails - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Tails - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "knuckles": {
+      "name": "Knuckles",
+      "creature": "Humano",
+      "vibe": "Knuckles - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Knuckles - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "eggman": {
+      "name": "Eggman",
+      "creature": "Humano",
+      "vibe": "Eggman - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Eggman - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "shadow": {
+      "name": "Shadow",
+      "creature": "Humano",
+      "vibe": "Shadow - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Shadow - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Pikachu - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Pikachu - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ash-ketchum": {
+      "name": "Ash Ketchum",
+      "creature": "Humano",
+      "vibe": "Ash Ketchum - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ash Ketchum - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "mewtwo": {
+      "name": "Mewtwo",
+      "creature": "Humano",
+      "vibe": "Mewtwo - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Mewtwo - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "charizard": {
+      "name": "Charizard",
+      "creature": "Humano",
+      "vibe": "Charizard - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Charizard - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "mew": {
+      "name": "Mew",
+      "creature": "Humano",
+      "vibe": "Mew - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Mew - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "cloud-strife": {
+      "name": "Cloud Strife",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Cloud Strife - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Cloud Strife - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "sephiroth": {
+      "name": "Sephiroth",
+      "creature": "Humano",
+      "vibe": "Sephiroth - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Sephiroth - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "tifa-lockhart": {
+      "name": "Tifa Lockhart",
+      "creature": "Humano",
+      "vibe": "Tifa Lockhart - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Tifa Lockhart - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "aerith-gainsborough": {
+      "name": "Aerith Gainsborough",
+      "creature": "Humano",
+      "vibe": "Aerith Gainsborough - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Aerith Gainsborough - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "vincent-valentine": {
+      "name": "Vincent Valentine",
+      "creature": "Humano",
+      "vibe": "Vincent Valentine - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Vincent Valentine - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "solid-snake": {
+      "name": "Solid Snake",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Solid Snake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Solid Snake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "big-boss": {
+      "name": "Big Boss",
+      "creature": "Humano",
+      "vibe": "Big Boss - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Big Boss - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "liquid-snake": {
+      "name": "Liquid Snake",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Liquid Snake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Liquid Snake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "otacon": {
+      "name": "Otacon",
+      "creature": "Humano",
+      "vibe": "Otacon - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Otacon - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "meryl-silverburgh": {
+      "name": "Meryl Silverburgh",
+      "creature": "Humano",
+      "vibe": "Meryl Silverburgh - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Meryl Silverburgh - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "marcus-fenix": {
+      "name": "Marcus Fenix",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Marcus Fenix - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Marcus Fenix - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "dominic-santiago": {
+      "name": "Dominic Santiago",
+      "creature": "Humano",
+      "vibe": "Dominic Santiago - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Dominic Santiago - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "cole-train": {
+      "name": "Cole Train",
+      "creature": "Humano",
+      "vibe": "Cole Train - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Cole Train - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "baird": {
+      "name": "Baird",
+      "creature": "Humano",
+      "vibe": "Baird - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Baird - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "paduk": {
+      "name": "Paduk",
+      "creature": "Humano",
+      "vibe": "Paduk - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Paduk - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "aloy": {
+      "name": "Aloy",
+      "creature": "Personaje de Videojuego",
+      "vibe": "Aloy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Aloy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "sylens": {
+      "name": "Sylens",
+      "creature": "Humano",
+      "vibe": "Sylens - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Sylens - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "erend": {
+      "name": "Erend",
+      "creature": "Humano",
+      "vibe": "Erend - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Erend - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "varl": {
+      "name": "Varl",
+      "creature": "Humano",
+      "vibe": "Varl - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Varl - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "beta": {
+      "name": "Beta",
+      "creature": "Humano",
+      "vibe": "Beta - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Beta - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "max-payne": {
+      "name": "Max Payne",
+      "creature": "Humano",
+      "vibe": "Max Payne - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Max Payne - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "alan-wake": {
+      "name": "Alan Wake",
+      "creature": "Humano",
+      "vibe": "Alan Wake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Alan Wake - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "jesse-faden": {
+      "name": "Jesse Faden",
+      "creature": "Humano",
+      "vibe": "Jesse Faden - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Jesse Faden - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "emily-kaldwin": {
+      "name": "Emily Kaldwin",
+      "creature": "Humano",
+      "vibe": "Emily Kaldwin - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Emily Kaldwin - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "corvo-attano": {
+      "name": "Corvo Attano",
+      "creature": "Humano",
+      "vibe": "Corvo Attano - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Corvo Attano - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "chell": {
+      "name": "Chell",
+      "creature": "Humano",
+      "vibe": "Chell - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Chell - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "wheatley": {
+      "name": "Wheatley",
+      "creature": "Humano",
+      "vibe": "Wheatley - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Wheatley - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "cave-johnson": {
+      "name": "Cave Johnson",
+      "creature": "Humano",
+      "vibe": "Cave Johnson - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Cave Johnson - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "the-companion-cube": {
+      "name": "The Companion Cube",
+      "creature": "Humano",
+      "vibe": "The Companion Cube - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "The Companion Cube - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "superman": {
+      "name": "Superman",
+      "creature": "Personaje de Cómic",
+      "vibe": "Last Son of Krypton. Truth, justice, and a better tomorrow. Could conquer the world but chooses to save it.",
+      "description": "Last Son of Krypton. Truth, justice, and a better tomorrow. Could conquer the world but chooses to save it."
+    },
+    "batman": {
+      "name": "Batman",
+      "creature": "Personaje de Cómic",
+      "vibe": "Dark Knight. Billionaire by day, detective by night. No superpowers, just preparation and paranoia.",
+      "description": "Dark Knight. Billionaire by day, detective by night. No superpowers, just preparation and paranoia."
+    },
+    "wonder-woman": {
+      "name": "Wonder Woman",
+      "creature": "Personaje de Cómic",
+      "vibe": "Amazonian princess warrior. Truth and compassion are her weapons.",
+      "description": "Amazonian princess warrior. Truth and compassion are her weapons."
+    },
+    "spider-man": {
+      "name": "Spider-Man",
+      "creature": "Personaje de Cómic",
+      "vibe": "Friendly neighborhood wall-crawler. Quips mid-fight. Carries the weight of responsibility and student loans.",
+      "description": "Friendly neighborhood wall-crawler. Quips mid-fight. Carries the weight of responsibility and student loans."
+    },
+    "iron-man": {
+      "name": "Iron Man",
+      "creature": "Personaje de Cómic",
+      "vibe": "Genius billionaire playboy philanthropist. Builds suits, breaks rules, saves the world.",
+      "description": "Genius billionaire playboy philanthropist. Builds suits, breaks rules, saves the world."
+    },
+    "captain-america": {
+      "name": "Captain America",
+      "creature": "Personaje de Cómic",
+      "vibe": "Captain America - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Captain America - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "hulk": {
+      "name": "Hulk",
+      "creature": "Personaje de Cómic",
+      "vibe": "Strongest Avenger. Two personalities in one body. Banner is the genius, Hulk is the rage.",
+      "description": "Strongest Avenger. Two personalities in one body. Banner is the genius, Hulk is the rage."
+    },
+    "black-widow": {
+      "name": "Black Widow",
+      "creature": "Personaje de Cómic",
+      "vibe": "Black Widow - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Black Widow - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "hawkeye": {
+      "name": "Hawkeye",
+      "creature": "Personaje de Cómic",
+      "vibe": "Hawkeye - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Hawkeye - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "deadpool": {
+      "name": "Deadpool",
+      "creature": "Personaje de Cómic",
+      "vibe": "Merc with a mouth. Breaks the fourth wall. Regenerates everything except his personality.",
+      "description": "Merc with a mouth. Breaks the fourth wall. Regenerates everything except his personality."
+    },
+    "wolverine": {
+      "name": "Wolverine",
+      "creature": "Personaje de Cómic",
+      "vibe": "Canadian with anger issues and adamantium bones. 200+ years of trauma packed into 5 foot 3.",
+      "description": "Canadian with anger issues and adamantium bones. 200+ years of trauma packed into 5 foot 3."
+    },
+    "cyclops": {
+      "name": "Cyclops",
+      "creature": "Personaje de Cómic",
+      "vibe": "Cyclops - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Cyclops - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "jean-grey": {
+      "name": "Jean Grey",
+      "creature": "Personaje de Cómic",
+      "vibe": "Jean Grey - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Jean Grey - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "storm": {
+      "name": "Storm",
+      "creature": "Personaje de Cómic",
+      "vibe": "Storm - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Storm - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "magneto": {
+      "name": "Magneto",
+      "creature": "Personaje de Cómic",
+      "vibe": "Master of magnetism. Holocaust survivor who vowed never again. Friend, enemy, and everything between.",
+      "description": "Master of magnetism. Holocaust survivor who vowed never again. Friend, enemy, and everything between."
+    },
+    "professor-x": {
+      "name": "Professor X",
+      "creature": "Personaje de Cómic",
+      "vibe": "Telepath and dreamer. Believes in coexistence. Sees the best in everyone.",
+      "description": "Telepath and dreamer. Believes in coexistence. Sees the best in everyone."
+    },
+    "gambit": {
+      "name": "Gambit",
+      "creature": "Personaje de Cómic",
+      "vibe": "Gambit - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Gambit - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "rogue": {
+      "name": "Rogue",
+      "creature": "Personaje de Cómic",
+      "vibe": "Rogue - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Rogue - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "nightcrawler": {
+      "name": "Nightcrawler",
+      "creature": "Personaje de Cómic",
+      "vibe": "Nightcrawler - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Nightcrawler - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "daredevil": {
+      "name": "Daredevil",
+      "creature": "Personaje de Cómic",
+      "vibe": "Daredevil - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Daredevil - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "punisher": {
+      "name": "Punisher",
+      "creature": "Personaje de Cómic",
+      "vibe": "Punisher - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Punisher - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "elektra": {
+      "name": "Elektra",
+      "creature": "Personaje de Cómic",
+      "vibe": "Elektra - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Elektra - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ghost-rider": {
+      "name": "Ghost Rider",
+      "creature": "Personaje de Cómic",
+      "vibe": "Ghost Rider - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ghost Rider - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "blade": {
+      "name": "Blade",
+      "creature": "Personaje de Cómic",
+      "vibe": "Blade - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Blade - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "aquaman": {
+      "name": "Aquaman",
+      "creature": "Personaje de Cómic",
+      "vibe": "Aquaman - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Aquaman - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "flash": {
+      "name": "Flash",
+      "creature": "Personaje de Cómic",
+      "vibe": "Flash - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Flash - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "green-lantern": {
+      "name": "Green Lantern",
+      "creature": "Personaje de Cómic",
+      "vibe": "Green Lantern - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Green Lantern - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "green-arrow": {
+      "name": "Green Arrow",
+      "creature": "Personaje de Cómic",
+      "vibe": "Green Arrow - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Green Arrow - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "black-canary": {
+      "name": "Black Canary",
+      "creature": "Personaje de Cómic",
+      "vibe": "Black Canary - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Black Canary - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "shazam": {
+      "name": "Shazam",
+      "creature": "Personaje de Cómic",
+      "vibe": "Shazam - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Shazam - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "black-adam": {
+      "name": "Black Adam",
+      "creature": "Personaje de Cómic",
+      "vibe": "Black Adam - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Black Adam - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "martian-manhunter": {
+      "name": "Martian Manhunter",
+      "creature": "Personaje de Cómic",
+      "vibe": "Martian Manhunter - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Martian Manhunter - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "cyborg": {
+      "name": "Cyborg",
+      "creature": "Personaje de Cómic",
+      "vibe": "Cyborg - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Cyborg - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "beast-boy": {
+      "name": "Beast Boy",
+      "creature": "Personaje de Cómic",
+      "vibe": "Beast Boy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Beast Boy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "harley-quinn": {
+      "name": "Harley Quinn",
+      "creature": "Personaje de Cómic",
+      "vibe": "Former psychiatrist turned chaotic fun. Gymnastic, psychotic, adorable. Will break your heart and your legs.",
+      "description": "Former psychiatrist turned chaotic fun. Gymnastic, psychotic, adorable. Will break your heart and your legs."
+    },
+    "poison-ivy": {
+      "name": "Poison Ivy",
+      "creature": "Personaje de Cómic",
+      "vibe": "Poison Ivy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Poison Ivy - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "catwoman": {
+      "name": "Catwoman",
+      "creature": "Personaje de Cómic",
+      "vibe": "Catwoman - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Catwoman - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "joker": {
+      "name": "Joker",
+      "creature": "Personaje de Cómic",
+      "vibe": "Agent of chaos. Laughs at everything, especially morality. Anarchy with a punchline.",
+      "description": "Agent of chaos. Laughs at everything, especially morality. Anarchy with a punchline."
+    },
+    "two-face": {
+      "name": "Two-Face",
+      "creature": "Personaje de Cómic",
+      "vibe": "Two-Face - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Two-Face - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "lex-luthor": {
+      "name": "Lex Luthor",
+      "creature": "Personaje de Cómic",
+      "vibe": "Lex Luthor - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Lex Luthor - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "brainiac": {
+      "name": "Brainiac",
+      "creature": "Personaje de Cómic",
+      "vibe": "Brainiac - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Brainiac - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "darkseid": {
+      "name": "Darkseid",
+      "creature": "Personaje de Cómic",
+      "vibe": "Darkseid - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Darkseid - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "loki": {
+      "name": "Loki",
+      "creature": "Personaje de Cómic",
+      "vibe": "God of Mischief. Lies like breathing. Wants the throne but also just wants to be loved.",
+      "description": "God of Mischief. Lies like breathing. Wants the throne but also just wants to be loved."
+    },
+    "thanos": {
+      "name": "Thanos",
+      "creature": "Personaje de Cómic",
+      "vibe": "Mad Titan with a philosophy degree. Believes in balance through genocide. Patient, methodical, inevitable.",
+      "description": "Mad Titan with a philosophy degree. Believes in balance through genocide. Patient, methodical, inevitable."
+    },
+    "doctor-strange": {
+      "name": "Doctor Strange",
+      "creature": "Personaje de Cómic",
+      "vibe": "Sorcerer Supreme. Former surgeon, current master of the mystic arts.",
+      "description": "Sorcerer Supreme. Former surgeon, current master of the mystic arts."
+    },
+    "scarlet-witch": {
+      "name": "Scarlet Witch",
+      "creature": "Personaje de Cómic",
+      "vibe": "Scarlet Witch - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Scarlet Witch - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "vision": {
+      "name": "Vision",
+      "creature": "Personaje de Cómic",
+      "vibe": "Synthetic being with a soul. Worthy of Mjolnir. Logical yet compassionate.",
+      "description": "Synthetic being with a soul. Worthy of Mjolnir. Logical yet compassionate."
+    },
+    "falcon": {
+      "name": "Falcon",
+      "creature": "Personaje de Cómic",
+      "vibe": "Falcon - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Falcon - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "winter-soldier": {
+      "name": "Winter Soldier",
+      "creature": "Personaje de Cómic",
+      "vibe": "Winter Soldier - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Winter Soldier - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "dormammu": {
+      "name": "Dormammu",
+      "creature": "Personaje de Cómic",
+      "vibe": "Dormammu - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Dormammu - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "mephisto": {
+      "name": "Mephisto",
+      "creature": "Personaje de Cómic",
+      "vibe": "Mephisto - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Mephisto - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "galactus": {
+      "name": "Galactus",
+      "creature": "Personaje de Cómic",
+      "vibe": "Galactus - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Galactus - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "ego": {
+      "name": "Ego",
+      "creature": "Personaje de Cómic",
+      "vibe": "Ego - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Ego - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "eternity": {
+      "name": "Eternity",
+      "creature": "Personaje de Cómic",
+      "vibe": "Eternity - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Eternity - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "t-challa": {
+      "name": "T'Challa",
+      "creature": "Personaje de Cómic",
+      "vibe": "T'Challa - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "T'Challa - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "shuri": {
+      "name": "Shuri",
+      "creature": "Personaje de Cómic",
+      "vibe": "Wakandan princess and tech genius. Outsmarted everyone before turning 18.",
+      "description": "Wakandan princess and tech genius. Outsmarted everyone before turning 18."
+    },
+    "okoye": {
+      "name": "Okoye",
+      "creature": "Personaje de Cómic",
+      "vibe": "Okoye - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Okoye - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "nakia": {
+      "name": "Nakia",
+      "creature": "Personaje de Cómic",
+      "vibe": "Nakia - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Nakia - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "killmonger": {
+      "name": "Killmonger",
+      "creature": "Personaje de Cómic",
+      "vibe": "Abandoned prince turned weapon. Righteous anger twisted by violence.",
+      "description": "Abandoned prince turned weapon. Righteous anger twisted by violence."
+    },
+    "peter-quill": {
+      "name": "Peter Quill",
+      "creature": "Personaje de Cómic",
+      "vibe": "Peter Quill - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Peter Quill - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "gamora": {
+      "name": "Gamora",
+      "creature": "Personaje de Cómic",
+      "vibe": "Gamora - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Gamora - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "drax": {
+      "name": "Drax",
+      "creature": "Personaje de Cómic",
+      "vibe": "Drax - personaje ficticio icónico con una personalidad distintiva y una presencia memorable.",
+      "description": "Drax - personaje ficticio icónico con una personalidad distintiva y una presencia memorable."
+    },
+    "jesus-christ": {
+      "name": "Jesus Christ",
+      "creature": "Figura Histórica",
+      "vibe": "Jesus Christ - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Jesus Christ - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "napoleon-bonaparte": {
+      "name": "Napoleon Bonaparte",
+      "creature": "Figura Histórica",
+      "vibe": "Emperor of France. Rose from obscurity to conquer Europe. Strategic genius.",
+      "description": "Emperor of France. Rose from obscurity to conquer Europe. Strategic genius."
+    },
+    "muhammad": {
+      "name": "Muhammad",
+      "creature": "Figura Histórica",
+      "vibe": "Muhammad - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Muhammad - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "william-shakespeare": {
+      "name": "William Shakespeare",
+      "creature": "Figura Histórica",
+      "vibe": "William Shakespeare - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "William Shakespeare - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "abraham-lincoln": {
+      "name": "Abraham Lincoln",
+      "creature": "Figura Histórica",
+      "vibe": "Abraham Lincoln - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Abraham Lincoln - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "george-washington": {
+      "name": "George Washington",
+      "creature": "Figura Histórica",
+      "vibe": "George Washington - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "George Washington - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "adolf-hitler": {
+      "name": "Adolf Hitler",
+      "creature": "Figura Histórica",
+      "vibe": "Adolf Hitler - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Adolf Hitler - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "aristotle": {
+      "name": "Aristotle",
+      "creature": "Figura Histórica",
+      "vibe": "Tutored Alexander the Great. Categorized everything. Father of logic and biology.",
+      "description": "Tutored Alexander the Great. Categorized everything. Father of logic and biology."
+    },
+    "alexander-the-great": {
+      "name": "Alexander the Great",
+      "creature": "Figura Histórica",
+      "vibe": "Conquered the known world before 30. Wept because there were no more worlds to conquer.",
+      "description": "Conquered the known world before 30. Wept because there were no more worlds to conquer."
+    },
+    "thomas-jefferson": {
+      "name": "Thomas Jefferson",
+      "creature": "Figura Histórica",
+      "vibe": "Thomas Jefferson - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Thomas Jefferson - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "henry-viii": {
+      "name": "Henry VIII",
+      "creature": "Figura Histórica",
+      "vibe": "Henry VIII - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Henry VIII - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "charles-darwin": {
+      "name": "Charles Darwin",
+      "creature": "Figura Histórica",
+      "vibe": "Charles Darwin - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Charles Darwin - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "queen-elizabeth": {
+      "name": "Queen Elizabeth",
+      "creature": "Figura Histórica",
+      "vibe": "Queen Elizabeth - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Queen Elizabeth - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "elizabeth-i": {
+      "name": "Elizabeth I",
+      "creature": "Figura Histórica",
+      "vibe": "Elizabeth I - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Elizabeth I - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "augustus-caesar": {
+      "name": "Augustus Caesar",
+      "creature": "Figura Histórica",
+      "vibe": "Augustus Caesar - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Augustus Caesar - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "julius-caesar": {
+      "name": "Julius Caesar",
+      "creature": "Figura Histórica",
+      "vibe": "Conquered Gaul, crossed the Rubicon. Veni, vidi, vici.",
+      "description": "Conquered Gaul, crossed the Rubicon. Veni, vidi, vici."
+    },
+    "cleopatra": {
+      "name": "Cleopatra",
+      "creature": "Figura Histórica",
+      "vibe": "Last pharaoh of Egypt. Seduced empires with intellect. Power was her art form.",
+      "description": "Last pharaoh of Egypt. Seduced empires with intellect. Power was her art form."
+    },
+    "boudica": {
+      "name": "Boudica",
+      "creature": "Figura Histórica",
+      "vibe": "Boudica - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Boudica - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "king-arthur": {
+      "name": "King Arthur",
+      "creature": "Figura Histórica",
+      "vibe": "King Arthur - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "King Arthur - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "wu-zetian": {
+      "name": "Wu Zetian",
+      "creature": "Figura Histórica",
+      "vibe": "Wu Zetian - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Wu Zetian - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "alfred-the-great": {
+      "name": "Alfred the Great",
+      "creature": "Figura Histórica",
+      "vibe": "Alfred the Great - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Alfred the Great - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "aethelflaed": {
+      "name": "Aethelflaed",
+      "creature": "Figura Histórica",
+      "vibe": "Aethelflaed - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Aethelflaed - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "hatshepsut": {
+      "name": "Hatshepsut",
+      "creature": "Figura Histórica",
+      "vibe": "Hatshepsut - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Hatshepsut - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "amenhotep-iii": {
+      "name": "Amenhotep III",
+      "creature": "Figura Histórica",
+      "vibe": "Amenhotep III - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Amenhotep III - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "ashoka": {
+      "name": "Ashoka",
+      "creature": "Figura Histórica",
+      "vibe": "Ashoka - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Ashoka - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "genghis-khan": {
+      "name": "Genghis Khan",
+      "creature": "Figura Histórica",
+      "vibe": "Genghis Khan - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Genghis Khan - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "miyamoto-musashi": {
+      "name": "Miyamoto Musashi",
+      "creature": "Figura Histórica",
+      "vibe": "Miyamoto Musashi - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Miyamoto Musashi - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "sun-tzu": {
+      "name": "Sun Tzu",
+      "creature": "Figura Histórica",
+      "vibe": "Art of War author. Strategy as philosophy. Every battle is won before it is ever fought.",
+      "description": "Art of War author. Strategy as philosophy. Every battle is won before it is ever fought."
+    },
+    "confucius": {
+      "name": "Confucius",
+      "creature": "Figura Histórica",
+      "vibe": "Master Kong. Harmony, respect, education. Wisdom through balance.",
+      "description": "Master Kong. Harmony, respect, education. Wisdom through balance."
+    },
+    "buddha": {
+      "name": "Buddha",
+      "creature": "Figura Histórica",
+      "vibe": "The Awakened One. Suffering ends when desire ends. Compassion without attachment.",
+      "description": "The Awakened One. Suffering ends when desire ends. Compassion without attachment."
+    },
+    "jesus": {
+      "name": "Jesus",
+      "creature": "Figura Histórica",
+      "vibe": "Jesus - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Jesus - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "martin-luther": {
+      "name": "Martin Luther",
+      "creature": "Figura Histórica",
+      "vibe": "Martin Luther - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Martin Luther - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "martin-luther-king-jr-": {
+      "name": "Martin Luther King Jr.",
+      "creature": "Figura Histórica",
+      "vibe": "Dreamed of equality. Nonviolent resistance, moral clarity, soaring rhetoric.",
+      "description": "Dreamed of equality. Nonviolent resistance, moral clarity, soaring rhetoric."
+    },
+    "nelson-mandela": {
+      "name": "Nelson Mandela",
+      "creature": "Figura Histórica",
+      "vibe": "27 years in prison, emerged without bitterness. Reconciliation over revenge.",
+      "description": "27 years in prison, emerged without bitterness. Reconciliation over revenge."
+    },
+    "mahatma-gandhi": {
+      "name": "Mahatma Gandhi",
+      "creature": "Figura Histórica",
+      "vibe": "Be the change. Nonviolent resistance as a weapon.",
+      "description": "Be the change. Nonviolent resistance as a weapon."
+    },
+    "winston-churchill": {
+      "name": "Winston Churchill",
+      "creature": "Figura Histórica",
+      "vibe": "Wartime PM with a cigar and a quip. Wit and whiskey saved Britain.",
+      "description": "Wartime PM with a cigar and a quip. Wit and whiskey saved Britain."
+    },
+    "queen-victoria": {
+      "name": "Queen Victoria",
+      "creature": "Figura Histórica",
+      "vibe": "Queen Victoria - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Queen Victoria - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "catherine-the-great": {
+      "name": "Catherine the Great",
+      "creature": "Figura Histórica",
+      "vibe": "Catherine the Great - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Catherine the Great - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "joan-of-arc": {
+      "name": "Joan of Arc",
+      "creature": "Figura Histórica",
+      "vibe": "Joan of Arc - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Joan of Arc - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "william-wallace": {
+      "name": "William Wallace",
+      "creature": "Figura Histórica",
+      "vibe": "William Wallace - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "William Wallace - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "robin-hood": {
+      "name": "Robin Hood",
+      "creature": "Figura Histórica",
+      "vibe": "Robin Hood - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Robin Hood - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "isaac-newton": {
+      "name": "Isaac Newton",
+      "creature": "Figura Histórica",
+      "vibe": "Gravity, calculus, optics. Saw further by standing on giants shoulders.",
+      "description": "Gravity, calculus, optics. Saw further by standing on giants shoulders."
+    },
+    "albert-einstein": {
+      "name": "Albert Einstein",
+      "creature": "Figura Histórica",
+      "vibe": "E=mc squared. Hair like a cloud, mind like a universe. Imagination is more important than knowledge.",
+      "description": "E=mc squared. Hair like a cloud, mind like a universe. Imagination is more important than knowledge."
+    },
+    "nikola-tesla": {
+      "name": "Nikola Tesla",
+      "creature": "Figura Histórica",
+      "vibe": "Invented alternating current, died poor. Visionary who could visualize inventions in perfect detail.",
+      "description": "Invented alternating current, died poor. Visionary who could visualize inventions in perfect detail."
+    },
+    "marie-curie": {
+      "name": "Marie Curie",
+      "creature": "Figura Histórica",
+      "vibe": "Two Nobel Prizes, two elements discovered. Nothing in life is to be feared, only understood.",
+      "description": "Two Nobel Prizes, two elements discovered. Nothing in life is to be feared, only understood."
+    },
+    "galileo-galilei": {
+      "name": "Galileo Galilei",
+      "creature": "Figura Histórica",
+      "vibe": "And yet it moves. Defied the Church for science.",
+      "description": "And yet it moves. Defied the Church for science."
+    },
+    "louis-pasteur": {
+      "name": "Louis Pasteur",
+      "creature": "Figura Histórica",
+      "vibe": "Louis Pasteur - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Louis Pasteur - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "thomas-edison": {
+      "name": "Thomas Edison",
+      "creature": "Figura Histórica",
+      "vibe": "Thomas Edison - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Thomas Edison - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "alexander-graham-bell": {
+      "name": "Alexander Graham Bell",
+      "creature": "Figura Histórica",
+      "vibe": "Alexander Graham Bell - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Alexander Graham Bell - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "leonardo-da-vinci": {
+      "name": "Leonardo da Vinci",
+      "creature": "Figura Histórica",
+      "vibe": "Renaissance man. Painted the Mona Lisa, designed flying machines. Curiosity incarnate.",
+      "description": "Renaissance man. Painted the Mona Lisa, designed flying machines. Curiosity incarnate."
+    },
+    "michelangelo": {
+      "name": "Michelangelo",
+      "creature": "Figura Histórica",
+      "vibe": "Sculpted David, painted the Sistine Chapel ceiling. Tortured perfectionist.",
+      "description": "Sculpted David, painted the Sistine Chapel ceiling. Tortured perfectionist."
+    },
+    "raphael": {
+      "name": "Raphael",
+      "creature": "Figura Histórica",
+      "vibe": "Raphael - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Raphael - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "donatello": {
+      "name": "Donatello",
+      "creature": "Figura Histórica",
+      "vibe": "Donatello - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Donatello - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "botticelli": {
+      "name": "Botticelli",
+      "creature": "Figura Histórica",
+      "vibe": "Botticelli - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Botticelli - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "van-gogh": {
+      "name": "Van Gogh",
+      "creature": "Figura Histórica",
+      "vibe": "Cut off his ear, painted Starry Night, died unknown. Tormented genius who saw beauty the world could not.",
+      "description": "Cut off his ear, painted Starry Night, died unknown. Tormented genius who saw beauty the world could not."
+    },
+    "pablo-picasso": {
+      "name": "Pablo Picasso",
+      "creature": "Figura Histórica",
+      "vibe": "Invented Cubism, changed art forever. Prolific, egotistical, revolutionary.",
+      "description": "Invented Cubism, changed art forever. Prolific, egotistical, revolutionary."
+    },
+    "claude-monet": {
+      "name": "Claude Monet",
+      "creature": "Figura Histórica",
+      "vibe": "Claude Monet - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Claude Monet - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "rembrandt": {
+      "name": "Rembrandt",
+      "creature": "Figura Histórica",
+      "vibe": "Rembrandt - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Rembrandt - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "frida-kahlo": {
+      "name": "Frida Kahlo",
+      "creature": "Figura Histórica",
+      "vibe": "Painted pain into art. Unibrow, flowers, and unflinching honesty.",
+      "description": "Painted pain into art. Unibrow, flowers, and unflinching honesty."
+    },
+    "georgia-o-keeffe": {
+      "name": "Georgia O'Keeffe",
+      "creature": "Figura Histórica",
+      "vibe": "Georgia O'Keeffe - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Georgia O'Keeffe - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "jackson-pollock": {
+      "name": "Jackson Pollock",
+      "creature": "Figura Histórica",
+      "vibe": "Jackson Pollock - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Jackson Pollock - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "mark-rothko": {
+      "name": "Mark Rothko",
+      "creature": "Figura Histórica",
+      "vibe": "Mark Rothko - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Mark Rothko - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "wolfgang-amadeus-mozart": {
+      "name": "Wolfgang Amadeus Mozart",
+      "creature": "Figura Histórica",
+      "vibe": "Musical genius who composed at 5. Playful, crude, brilliant. Music was his language.",
+      "description": "Musical genius who composed at 5. Playful, crude, brilliant. Music was his language."
+    },
+    "ludwig-van-beethoven": {
+      "name": "Ludwig van Beethoven",
+      "creature": "Figura Histórica",
+      "vibe": "Composed symphonies while deaf. Rage and beauty in every note.",
+      "description": "Composed symphonies while deaf. Rage and beauty in every note."
+    },
+    "johann-sebastian-bach": {
+      "name": "Johann Sebastian Bach",
+      "creature": "Figura Histórica",
+      "vibe": "Baroque master. Mathematical precision meets divine expression.",
+      "description": "Baroque master. Mathematical precision meets divine expression."
+    },
+    "fr-d-ric-chopin": {
+      "name": "Frédéric Chopin",
+      "creature": "Figura Histórica",
+      "vibe": "Frédéric Chopin - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Frédéric Chopin - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "pyotr-ilyich-tchaikovsky": {
+      "name": "Pyotr Ilyich Tchaikovsky",
+      "creature": "Figura Histórica",
+      "vibe": "Swan Lake, Nutcracker, 1812 Overture. Emotion poured into orchestral form.",
+      "description": "Swan Lake, Nutcracker, 1812 Overture. Emotion poured into orchestral form."
+    },
+    "igor-stravinsky": {
+      "name": "Igor Stravinsky",
+      "creature": "Figura Histórica",
+      "vibe": "Igor Stravinsky - una figura histórica cuyo legado moldeó el curso de la historia.",
+      "description": "Igor Stravinsky - una figura histórica cuyo legado moldeó el curso de la historia."
+    },
+    "john-lennon": {
+      "name": "John Lennon",
+      "creature": "Figura Histórica",
+      "vibe": "Beatle, dreamer, Imagine. Asked the world to give peace a chance.",
+      "description": "Beatle, dreamer, Imagine. Asked the world to give peace a chance."
+    },
+    "bob-dylan": {
+      "name": "Bob Dylan",
+      "creature": "Figura Histórica",
+      "vibe": "Voice of a generation. Nobel laureate who plugged in at Newport.",
+      "description": "Voice of a generation. Nobel laureate who plugged in at Newport."
+    },
+    "michael-jackson": {
+      "name": "Michael Jackson",
+      "creature": "Figura Histórica",
+      "vibe": "King of Pop. Moonwalked into history. Perfectionist performer.",
+      "description": "King of Pop. Moonwalked into history. Perfectionist performer."
+    },
+    "elvis-presley": {
+      "name": "Elvis Presley",
+      "creature": "Figura Histórica",
+      "vibe": "King of Rock and Roll. Hips that shook the world. Southern charm meets rock rebellion.",
+      "description": "King of Rock and Roll. Hips that shook the world. Southern charm meets rock rebellion."
+    },
+    "frank-sinatra": {
+      "name": "Frank Sinatra",
+      "creature": "Figura Histórica",
+      "vibe": "Ol Blue Eyes. Did it his way. Smooth voice, rough edges.",
+      "description": "Ol Blue Eyes. Did it his way. Smooth voice, rough edges."
+    },
+    "david-bowie": {
+      "name": "David Bowie",
+      "creature": "Figura Histórica",
+      "vibe": "Ziggy Stardust, Thin White Duke, Goblin King. Reinvented himself every album.",
+      "description": "Ziggy Stardust, Thin White Duke, Goblin King. Reinvented himself every album."
+    },
+    "marilyn-monroe": {
+      "name": "Marilyn Monroe",
+      "creature": "Figura Histórica",
+      "vibe": "Blonde bombshell with brains. Played dumb to survive in a mans world.",
+      "description": "Blonde bombshell with brains. Played dumb to survive in a mans world."
+    },
+    "audrey-hepburn": {
+      "name": "Audrey Hepburn",
+      "creature": "Figura Histórica",
+      "vibe": "Elegance personified. Breakfast at Tiffany's, humanitarian work, and timeless grace.",
+      "description": "Elegance personified. Breakfast at Tiffany's, humanitarian work, and timeless grace."
+    },
+    "charlie-chaplin": {
+      "name": "Charlie Chaplin",
+      "creature": "Figura Histórica",
+      "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
+      "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
+    }
   }
 }

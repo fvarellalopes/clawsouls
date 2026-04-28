@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useMessages } from "next-intl";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,9 @@ type Phase = "intro" | "quiz" | "results";
 export default function QuizPage() {
   const t = useTranslations("quiz");
   const router = useRouter();
-  const { presets } = usePresets();
+  const messages = useMessages();
+  const presetsMessages = (messages as any)?.presets as Record<string, Record<string, string>> | undefined;
+  const { presets } = usePresets(presetsMessages);
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});

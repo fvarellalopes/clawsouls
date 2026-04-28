@@ -44,7 +44,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
   const [previewCopied, setPreviewCopied] = useState(false);
-  const { presets, loading } = usePresets();
+  const presetsMessages = (messages as any)?.presets as Record<string, Record<string, string>> | undefined;
+  const { presets, loading } = usePresets(presetsMessages);
   const [newCoreTruth, setNewCoreTruth] = useState("");
   const [newBoundary, setNewBoundary] = useState("");
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useMessages } from "next-intl";
 import { usePresets } from "@/lib/usePresets";
 import { PresetCard } from "@/components/preset-card";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,9 @@ import { PresetsGridSkeleton } from "@/components/skeletons";
 
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
-  const { presets, loading } = usePresets();
+  const messages = useMessages();
+  const presetsMessages = (messages as any)?.presets as Record<string, Record<string, string>> | undefined;
+  const { presets, loading } = usePresets(presetsMessages);
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const router = useRouter();

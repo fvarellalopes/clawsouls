@@ -7,8 +7,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, QrCode, Loader2 } from "lucide-react";
 import { QRCodeDisplay } from "@/components/qrcode-display";
+import { NextIntlClientProvider, useTranslations } from "next-intl";
+import enMessages from "@/messages/en.json";
 
-export default function ShareByIdPage() {
+function ShareByIdContent() {
+  const t = useTranslations("share");
   const params = useParams();
   const id = params?.id as string;
   const [soul, setSoul] = useState<Record<string, any> | null>(null);
@@ -40,10 +43,10 @@ export default function ShareByIdPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Share Not Found</h1>
-          <p className="text-purple-300/50 mb-6">This link may have expired.</p>
+          <h1 className="text-2xl font-bold mb-4">{t("shareNotFound")}</h1>
+          <p className="text-purple-300/50 mb-6">{t("linkExpired")}</p>
           <Button asChild>
-            <Link href="/">Back to Home</Link>
+            <Link href="/">{t("backToHome")}</Link>
           </Button>
         </div>
       </div>
@@ -59,7 +62,7 @@ export default function ShareByIdPage() {
           <Button asChild variant="ghost">
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              {t("backToHome")}
             </Link>
           </Button>
         </div>
@@ -84,7 +87,7 @@ export default function ShareByIdPage() {
         <div className="mt-12 border-t pt-8">
           <h2 className="text-2xl font-semibold mb-6 text-center flex items-center justify-center">
             <QrCode className="mr-2 h-5 w-5" />
-            Scan to Share
+            {t("scanToShare")}
           </h2>
           <div className="flex justify-center">
             <QRCodeDisplay url={shareUrl} name={typeof soul.name === "string" ? soul.name : ""} />
@@ -98,12 +101,20 @@ export default function ShareByIdPage() {
         <div className="mt-8 text-center">
           <Button asChild size="lg" className="bg-accent text-accent-foreground">
             <Link href="/editor">
-              Create Your Own
+              {t("createYourOwn")}
               <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
             </Link>
           </Button>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ShareByIdPage() {
+  return (
+    <NextIntlClientProvider locale="en" messages={enMessages}>
+      <ShareByIdContent />
+    </NextIntlClientProvider>
   );
 }

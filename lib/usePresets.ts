@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { SoulPreset } from '@/store/soulStore'
 
 const API_BASE = process.env.NEXT_PUBLIC_PRESETS_API || '/api/presets'
@@ -55,8 +55,20 @@ function mapSupabaseToSoulPreset(data: any): SoulPreset {
   }
 }
 
-export function usePresets() {
-  const [presets, setPresets] = useState<SoulPreset[]>([])
+// Apply locale translations to a preset
+function applyTranslations(preset: SoulPreset, presetTranslations: Record<string, string> | undefined): SoulPreset {
+  if (!presetTranslations) return preset;
+  return {
+    ...preset,
+    name: presetTranslations.name || preset.name,
+    creature: presetTranslations.creature || preset.creature,
+    vibe: presetTranslations.vibe || preset.vibe,
+    description: presetTranslations.description || preset.description,
+  };
+}
+
+export function usePresets(presetsMessages?: Record<string, Record<string, string>>) {
+  const [rawPresets, setRawPresets] = useState<SoulPreset[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -68,7 +80,7 @@ export function usePresets() {
         if (!res.ok) throw new Error('Failed to fetch presets')
         const json = await res.json()
         const mapped = (json.data || []).map(mapSupabaseToSoulPreset)
-        setPresets(mapped)
+        setRawPresets(mapped)
         setError(null)
       } catch (err: any) {
         console.error('Erro ao carregar presets:', err)
@@ -76,7 +88,7 @@ export function usePresets() {
         // Fallback: importar presets locais estáticos
         try {
           const { presets: localPresets } = await import('@/data/presets')
-          setPresets(localPresets)
+          setRawPresets(localPresets)
         } catch (e) {
           console.error('Fallback também falhou:', e)
         }
@@ -88,10 +100,19 @@ export function usePresets() {
     fetchPresets()
   }, [])
 
+  // Apply translations when messages change
+  const presets = useMemo(() => {
+    if (!presetsMessages) return rawPresets;
+    return rawPresets.map(preset => {
+      const presetTranslations = presetsMessages[preset.id];
+      return applyTranslations(preset, presetTranslations);
+    });
+  }, [rawPresets, presetsMessages]);
+
   return { presets, loading, error }
 }
 
-export function usePresetById(id: string) {
+export function usePresetById(id: string, presetsMessages?: Record<string, Record<string, string>>) {
   const [preset, setPreset] = useState<SoulPreset | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -131,5 +152,12 @@ export function usePresetById(id: string) {
     if (id) fetchPreset()
   }, [id])
 
-  return { preset, loading, error }
+  // Apply translations
+  const translatedPreset = useMemo(() => {
+    if (!preset || !presetsMessages) return preset;
+    const presetTranslations = presetsMessages[preset.id];
+    return applyTranslations(preset, presetTranslations);
+  }, [preset, presetsMessages]);
+
+  return { preset: translatedPreset, loading, error }
 }
