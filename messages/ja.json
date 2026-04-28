@@ -3,7 +3,8 @@
     "home": "ホーム",
     "editor": "エディタ",
     "presets": "プリセット",
-    "myPresets": "マイプリセット"
+    "myPresets": "マイプリセット",
+    "achievements": "実績"
   },
   "common": {
     "presets": "プリセット",
@@ -114,5 +115,24 @@
     "presetName": "プリセット名",
     "saved": "保存しました！",
     "saveToMyPresets": "マイプリセットに保存"
+  },
+  "quiz": {
+    "title": "パーソナリティクイズ",
+    "subtitle": "完璧なAIマッチを見つけよう",
+    "start": "クイズを始める",
+    "question": "質問",
+    "of": "/",
+    "next": "次へ",
+    "back": "戻る",
+    "seeResults": "結果を見る",
+    "yourMatches": "あなたのマッチ",
+    "bestMatch": "ベストマッチ",
+    "useThis": "このプリセットを使う",
+    "retake": "もう一度"
+  },
+  "achievements": {
+    "title": "実績",
+    "unlocked": "解除済み",
+    "of": "/"
   }
 }

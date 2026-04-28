@@ -3,7 +3,8 @@
     "home": "Home",
     "editor": "Editor",
     "presets": "Presets",
-    "myPresets": "My Presets"
+    "myPresets": "My Presets",
+    "achievements": "Badges"
   },
   "common": {
     "presets": "Presets",
@@ -114,5 +115,24 @@
     "presetName": "Preset Name",
     "saved": "Saved!",
     "saveToMyPresets": "Save to My Presets"
+  },
+  "quiz": {
+    "title": "Personality Quiz",
+    "subtitle": "Find your perfect AI match",
+    "start": "Start Quiz",
+    "question": "Question",
+    "of": "of",
+    "next": "Next",
+    "back": "Back",
+    "seeResults": "See Results",
+    "yourMatches": "Your Matches",
+    "bestMatch": "Best Match",
+    "useThis": "Use This Preset",
+    "retake": "Retake Quiz"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "unlocked": "Unlocked",
+    "of": "of"
   }
 }

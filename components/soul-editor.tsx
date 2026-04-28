@@ -24,6 +24,7 @@ import { PresetCard } from "@/components/preset-card";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, StaggerContainer, StaggerItem, FloatingElement } from "@/components/animated";
 import { ImportJsonDialog } from "@/components/import-json-dialog";
+import { useAchievementsStore } from "@/store/achievementsStore";
 import { PresetsGridSkeleton } from "@/components/skeletons";
 
 interface SoulEditorProps {
@@ -35,9 +36,11 @@ type Phase = "presets" | "editor";
 
 export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const t = useTranslations("editor");
+  addLanguageUsed(locale);
   const tPresets = useTranslations("presetsPage");
   const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo, isDarkMode, setIsDarkMode } = useSoulStore();
   const { lastSaved, isSaving } = useAutoSaveStore();
+  const { incrementExport, incrementShare, addLanguageUsed } = useAchievementsStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
   const [previewCopied, setPreviewCopied] = useState(false);
@@ -114,6 +117,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    incrementExport();
   };
 
   const handleShare = async () => {
@@ -128,6 +132,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
         const shareUrl = `${window.location.origin}/share/${id}`;
         await navigator.clipboard.writeText(shareUrl);
         setShareUrl(shareUrl);
+        incrementShare();
       } else {
         // Fallback to base64
         const params = new URLSearchParams();
@@ -182,6 +187,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    incrementExport();
   };
 
   const addCustomCoreTruth = () => {

@@ -20,6 +20,8 @@ export function MobileNav() {
     { href: "/editor", label: t("editor"), icon: Edit3 },
     { href: "/presets", label: t("presets"), icon: LayoutGrid },
     { href: "/my-presets", label: t("myPresets"), icon: Bookmark },
+    { href: "/quiz", label: "Quiz", icon: Sparkles },
+    { href: "/achievements", label: t("achievements"), icon: Trophy },
   ];
 
   return (

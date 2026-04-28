@@ -25,6 +25,9 @@ export function Header({ locale, messages }: HeaderProps) {
     { code: "pt", name: "Português", flag: "🇧🇷" },
     { code: "es", name: "Español", flag: "🇪🇸" },
     { code: "ja", name: "日本語", flag: "🇯🇵" },
+    { code: "zh", name: "中文", flag: "🇨🇳" },
+    { code: "de", name: "Deutsch", flag: "🇩🇪" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
   ];
 
   return (
@@ -48,6 +51,12 @@ export function Header({ locale, messages }: HeaderProps) {
         <nav className="hidden md:flex items-center gap-1">
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
             <Link href="/presets">{t("presets")}</Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+            <Link href="/quiz">Quiz</Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+            <Link href="/achievements">Achievements</Link
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
             <Link href="/editor">{t("create")}</Link>

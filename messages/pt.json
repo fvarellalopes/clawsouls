@@ -3,7 +3,8 @@
     "home": "Início",
     "editor": "Editor",
     "presets": "Presets",
-    "myPresets": "Meus Presets"
+    "myPresets": "Meus Presets",
+    "achievements": "Conquistas"
   },
   "common": {
     "presets": "Presets",
@@ -114,5 +115,24 @@
     "presetName": "Nome do Preset",
     "saved": "Salvo!",
     "saveToMyPresets": "Salvar em Meus Presets"
+  },
+  "quiz": {
+    "title": "Quiz de Personalidade",
+    "subtitle": "Encontre seu match perfeito de IA",
+    "start": "Iniciar Quiz",
+    "question": "Pergunta",
+    "of": "de",
+    "next": "Próximo",
+    "back": "Voltar",
+    "seeResults": "Ver Resultados",
+    "yourMatches": "Seus Matches",
+    "bestMatch": "Melhor Match",
+    "useThis": "Usar Este Preset",
+    "retake": "Refazer Quiz"
+  },
+  "achievements": {
+    "title": "Conquistas",
+    "unlocked": "Desbloqueadas",
+    "de": "de"
   }
 }

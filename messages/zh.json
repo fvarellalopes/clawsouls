@@ -3,7 +3,8 @@
     "home": "Home",
     "editor": "Editor",
     "presets": "Presets",
-    "myPresets": "My Presets"
+    "myPresets": "My Presets",
+    "achievements": "成就"
   },
   "common": {
     "presets": "Presets",
@@ -103,5 +104,24 @@
     "presetName": "Preset Name",
     "saved": "Saved!",
     "saveToMyPresets": "Save to My Presets"
+  },
+  "quiz": {
+    "title": "性格测试",
+    "subtitle": "找到你完美的AI匹配",
+    "start": "开始测试",
+    "question": "问题",
+    "of": "/",
+    "next": "下一步",
+    "back": "返回",
+    "seeResults": "查看结果",
+    "yourMatches": "你的匹配",
+    "bestMatch": "最佳匹配",
+    "useThis": "使用此预设",
+    "retake": "重新测试"
+  },
+  "achievements": {
+    "title": "成就",
+    "unlocked": "已解锁",
+    "of": "/"
   }
 }
