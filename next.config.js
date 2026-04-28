@@ -18,6 +18,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '**',
+          // Note: DiceBear SVGs are loaded directly,
       },
     ],
   },

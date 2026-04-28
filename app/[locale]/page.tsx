@@ -51,7 +51,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass mb-10">
                 <Stars className="h-4 w-4 text-purple-400" />
                 <span className="text-sm font-medium text-purple-200 tracking-wide">
-                  {t("featureDesc")}
+                  {t("featureDesc")} · 30+ presets
                 </span>
               </div>
             </FloatingElement>

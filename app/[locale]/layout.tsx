@@ -9,6 +9,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { MobileNav } from "@/components/mobile-nav";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { AchievementToast } from "@/components/achievement-toast";
+import { KeyboardHelp } from "@/components/keyboard-help";
 import { JsonLd } from "@/components/json-ld";
 
 const cinzel = Cinzel({
@@ -81,6 +82,7 @@ export default async function LocaleLayout({
             <Footer />
             <MobileNav />
             <AchievementToast />
+            <KeyboardHelp />
             <Analytics />
           </div>
         </NextIntlClientProvider>
