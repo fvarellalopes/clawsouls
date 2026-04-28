@@ -12,11 +12,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save, Search, ArrowLeft, Sparkles, Wand2, X, Upload, FileJson, Plus, Trash2, Sun, Moon } from "lucide-react";
+import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save, Search, ArrowLeft, Sparkles, Wand2, X, Upload, FileJson, FileText, Plus, Trash2, Sun, Moon } from "lucide-react";
 import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { usePresets } from "@/lib/usePresets";
 import { attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
+import { exportYAML } from "@/lib/exportYAML";
 import { useTranslations } from "next-intl";
 import { SavePresetDialog } from "@/components/save-preset-dialog";
 import { ParchmentPreview } from "@/components/parchment-preview";
@@ -192,6 +193,20 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     const a = document.createElement("a");
     a.href = url;
     a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    incrementExport();
+  };
+
+  const handleExportYAML = () => {
+    const content = exportYAML(soul);
+    const blob = new Blob([content], { type: "text/yaml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.yaml`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -413,6 +428,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <Button onClick={handleExportJSON} variant="outline" size="sm" className="border-purple-500/20">
                   <FileJson className="mr-2 h-4 w-4" />
                   {t("exportJson")}
+                </Button>
+                <Button onClick={handleExportYAML} variant="outline" size="sm" className="border-purple-500/20">
+                  <FileText className="mr-2 h-4 w-4" />
+                  {t("exportYaml")}
                 </Button>
                 <Button onClick={handleShare} variant="outline" size="sm" className="border-purple-500/20">
                   <Share2 className="mr-2 h-4 w-4" />
@@ -787,6 +806,66 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               <Plus className="h-4 w-4" />
                             </Button>
                           </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Speech Patterns */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">{t("speechPatterns")}</CardTitle>
+                          <CardDescription>{t("speechPatternsDesc")}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                          {/* Alliteration toggle */}
+                          <div className="flex items-center justify-between p-3 rounded-xl bg-[#0d0820]/50 hover:bg-[#0d0820]/80 transition-colors">
+                            <Label htmlFor="speech-alliteration" className="text-purple-200/80 cursor-pointer">
+                              {t("alliteration")}
+                            </Label>
+                            <Switch
+                              id="speech-alliteration"
+                              checked={soul.speechPatterns?.alliteration ?? false}
+                              onCheckedChange={(checked) =>
+                                handleAttributeChange("speechPatterns", {
+                                  ...soul.speechPatterns,
+                                  alliteration: checked,
+                                })
+                              }
+                            />
+                          </div>
+
+                          {/* Sliders */}
+                          {[
+                            { key: "rhymeTendency", label: t("rhymeTendency") },
+                            { key: "metaphorFrequency", label: t("metaphorFrequency") },
+                            { key: "technicalJargon", label: t("technicalJargon") },
+                            { key: "slangUsage", label: t("slangUsage") },
+                          ].map(({ key, label }) => (
+                            <div key={key} className="space-y-3">
+                              <div className="flex justify-between items-center">
+                                <Label className="text-purple-200/80 text-sm">{label}</Label>
+                                <span className="text-xs text-amber-400/70 font-mono bg-amber-500/10 px-2 py-0.5 rounded-md">
+                                  {(soul.speechPatterns as any)?.[key] ?? (key === "rhymeTendency" ? 10 : key === "metaphorFrequency" ? 30 : key === "technicalJargon" ? 40 : 20)}
+                                </span>
+                              </div>
+                              <Slider
+                                value={[(soul.speechPatterns as any)?.[key] ?? (key === "rhymeTendency" ? 10 : key === "metaphorFrequency" ? 30 : key === "technicalJargon" ? 40 : 20)]}
+                                onValueChange={(value) =>
+                                  handleAttributeChange("speechPatterns", {
+                                    ...soul.speechPatterns,
+                                    [key]: value[0],
+                                  })
+                                }
+                                max={100}
+                                min={0}
+                                step={1}
+                                className="[&_[role=slider]]:bg-purple-500 [&_[role=slider]]:border-purple-400"
+                              />
+                              <div className="flex justify-between text-[10px] text-purple-400/30 px-1 uppercase tracking-wider">
+                                <span>{t("low")}</span>
+                                <span>{t("high")}</span>
+                              </div>
+                            </div>
+                          ))}
                         </CardContent>
                       </Card>
 

@@ -136,6 +136,7 @@
       "royal": { "name": "Royal", "description": "Deep purple and gold — regal and majestic" }
     },
     "exportJson": "Export JSON",
+    "exportYaml": "Export YAML",
     "exportSoulMd": "Export SOUL.md",
     "livePreview": "Live Preview",
     "switchPreset": "Switch Preset",

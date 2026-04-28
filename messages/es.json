@@ -130,6 +130,7 @@
       }
     },
     "exportJson": "Exportar JSON",
+    "exportYaml": "Exportar YAML",
     "exportSoulMd": "Exportar SOUL.md",
     "livePreview": "Vista Previa en Vivo",
     "switchPreset": "Cambiar Preset",
