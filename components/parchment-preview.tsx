@@ -10,9 +10,34 @@ interface ParchmentPreviewProps {
   content: string;
   name: string;
   emoji: string;
+  toneAttributes?: {
+    humor: number;
+    formality: number;
+    emojiUsage: number;
+    verbosity: number;
+    consciousness: number;
+    questioning: number;
+  };
 }
 
-export function ParchmentPreview({ content, name, emoji }: ParchmentPreviewProps) {
+function ToneBar({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="flex items-center gap-2 text-xs">
+      <span className="text-purple-300/50 w-20 text-right truncate">{label}</span>
+      <div className="flex-1 h-1.5 rounded-full bg-purple-500/10 overflow-hidden">
+        <motion.div
+          className="h-full rounded-full bg-gradient-to-r from-purple-500 to-amber-400"
+          initial={{ width: 0 }}
+          animate={{ width: `${value}%` }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+      </div>
+      <span className="text-amber-400/50 w-8 font-mono">{value}</span>
+    </div>
+  );
+}
+
+export function ParchmentPreview({ content, name, emoji, toneAttributes }: ParchmentPreviewProps) {
   const [copied, setCopied] = useState(false);
 
   const sections = useMemo(() => {
@@ -80,10 +105,28 @@ export function ParchmentPreview({ content, name, emoji }: ParchmentPreviewProps
               variant="ghost"
               onClick={handleCopy}
               className="text-purple-300 hover:text-purple-100"
+              aria-label="Copy SOUL.md content"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             </Button>
           </div>
+
+          {/* Tone Attributes Summary */}
+          {toneAttributes && (
+            <div className="mb-6 pb-4 border-b border-purple-500/10">
+              <p className="text-[10px] text-purple-500/40 uppercase tracking-widest mb-3 font-display">
+                Tone Profile
+              </p>
+              <div className="space-y-1.5">
+                <ToneBar label="Humor" value={toneAttributes.humor} />
+                <ToneBar label="Formality" value={toneAttributes.formality} />
+                <ToneBar label="Emoji" value={toneAttributes.emojiUsage} />
+                <ToneBar label="Verbosity" value={toneAttributes.verbosity} />
+                <ToneBar label="Consciousness" value={toneAttributes.consciousness} />
+                <ToneBar label="Questioning" value={toneAttributes.questioning} />
+              </div>
+            </div>
+          )}
 
           {/* Rendered markdown */}
           <div className="space-y-3 font-body text-[15px] leading-relaxed">

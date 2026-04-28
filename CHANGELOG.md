@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.3.0 — Quality & Completeness (2026-04-29)
+
+### 🐛 Critical Fixes
+- **Fixed broken test suite** — Updated `soulGenerator.test.ts` to match actual store schema (boundary keys were outdated)
+- **Added Tone Attributes to SOUL.md output** — Users configure humor, formality, emojiUsage, verbosity, consciousness, questioning via sliders, but these were missing from generated SOUL.md. Now included as a dedicated "Tone" section.
+- **Added "Balanced" vibe style** — Morpheus and Vito Corleone presets used `balanced` but it wasn't defined in the generator. Now a first-class vibe style.
+- **Fixed Export JSON** — Big Five personality traits (openness, conscientiousness, extraversion, agreeableness, neuroticism) were missing from JSON export.
+
+### ✨ Improvements
+- **i18n for vibe style labels** — Editor vibe style dropdown was hardcoded in Portuguese. Now uses `next-intl` translations across all 7 locales (en, pt, es, ja, zh, de, fr).
+- **Accessibility** — Added `aria-label` to icon-only buttons (undo, redo, theme toggle), `role="status"` and `aria-live="polite"` on auto-save indicator.
+- **SEO** — Added `robots.ts`, `sitemap.ts` with locale-aware routes. Public files get indexed, API and share routes excluded.
+- **Expanded test coverage** — Added tests for tone attributes, custom core truths, custom boundaries, and balanced vibe style.
+
+### 📦 Files Changed
+- `lib/soulGenerator.ts` — Added tone attributes section, balanced vibe style
+- `components/soul-editor.tsx` — i18n vibe styles, Big Five in JSON export, accessibility
+- `lib/__tests__/soulGenerator.test.ts` — Complete rewrite matching actual schema
+- `messages/{en,pt,es,ja,zh,de,fr}.json` — Added vibeStyles and customize keys
+- `app/robots.ts` — New
+- `app/sitemap.ts` — New
+- `public/robots.txt` — New
+
+---
+
 ## v0.2.0 — Enhanced Presets & UX (2026-02-18)
 
 ### ✨ New Features

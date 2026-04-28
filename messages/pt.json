@@ -49,7 +49,22 @@
     "reset": "Resetar Padrão",
     "resetConfirm": "Tem certeza que quer resetar todos os campos?",
     "copy": "Copiar",
-    "copied": "¡Copiado!"
+    "copied": "¡Copiado!",
+    "vibeStyles": {
+      "concise": "Conciso",
+      "expressive": "Expressivo",
+      "sharp": "Sharp/Sarcástico",
+      "verbose": "Verboso",
+      "minimal": "Minimalista",
+      "dramatic": "Dramático",
+      "poetic": "Poético",
+      "technical": "Técnico",
+      "casual": "Casual",
+      "formal": "Formal",
+      "balanced": "Equilibrado"
+    },
+    "customize": "Personalizar",
+    "customizeDesc": "Opções e ações adicionais"
   },
   "presetsPage": {
     "title": "Personalidades Pré-definidas",

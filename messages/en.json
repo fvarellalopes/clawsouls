@@ -49,7 +49,22 @@
     "reset": "Reset to Default",
     "resetConfirm": "Are you sure you want to reset all fields?",
     "copy": "Copy",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "vibeStyles": {
+      "concise": "Concise",
+      "expressive": "Expressive",
+      "sharp": "Sharp/Sarcastic",
+      "verbose": "Verbose",
+      "minimal": "Minimal",
+      "dramatic": "Dramatic",
+      "poetic": "Poetic",
+      "technical": "Technical",
+      "casual": "Casual",
+      "formal": "Formal",
+      "balanced": "Balanced"
+    },
+    "customize": "Customize",
+    "customizeDesc": "Additional options and actions"
   },
   "presetsPage": {
     "title": "Preset Personalities",

@@ -14,14 +14,13 @@ const mockSoul = {
     respectful: true,
   },
   boundaries: {
-    noSexual: true,
-    noReligious: true,
-    noPolitical: true,
-    noInappropriate: true,
-    noSelfModification: true,
-    noDateRequests: true,
-    noDangerous: true,
+    private: true,
+    askBeforeActing: true,
+    noHalfBaked: true,
+    notVoiceProxy: false,
   },
+  customCoreTruths: [],
+  customBoundaries: [],
   vibeStyle: "concise",
   continuity: false,
   humor: 50,
@@ -30,6 +29,11 @@ const mockSoul = {
   verbosity: 70,
   consciousness: 80,
   questioning: 60,
+  openness: 70,
+  conscientiousness: 50,
+  extraversion: 50,
+  agreeableness: 50,
+  neuroticism: 30,
 };
 
 describe('soulGenerator', () => {
@@ -50,16 +54,14 @@ describe('soulGenerator', () => {
     expect(md).not.toContain('Have strong opinions');
   });
 
-  it('includes all boundaries that are true', () => {
+  it('includes enabled boundaries', () => {
     const md = generateSoulMD(mockSoul);
     expect(md).toContain('Boundaries');
-    expect(md).toContain('noSexual');
-    expect(md).toContain('noReligious');
-    expect(md).toContain('noPolitical');
-    expect(md).toContain('noInappropriate');
-    expect(md).toContain('noSelfModification');
-    expect(md).toContain('noDateRequests');
-    expect(md).toContain('noDangerous');
+    expect(md).toContain('Private things stay private');
+    expect(md).toContain('Ask before acting externally');
+    expect(md).toContain('Never send half-baked replies');
+    // notVoiceProxy is false, should not appear
+    expect(md).not.toContain("You're not the user's voice");
   });
 
   it('includes vibe style tone and examples', () => {
@@ -67,6 +69,23 @@ describe('soulGenerator', () => {
     expect(md).toContain('Vibe');
     expect(md).toContain('Brevity is mandatory.');
     expect(md).toContain("Skip filler: 'Great question'");
+  });
+
+  it('includes Big Five personality traits', () => {
+    const md = generateSoulMD(mockSoul);
+    expect(md).toContain('Personality');
+    expect(md).toContain('Openness');
+    expect(md).toContain('Conscientiousness');
+    expect(md).toContain('Extraversion');
+    expect(md).toContain('Agreeableness');
+    expect(md).toContain('Neuroticism');
+  });
+
+  it('includes tone attributes section', () => {
+    const md = generateSoulMD(mockSoul);
+    expect(md).toContain('Tone');
+    expect(md).toContain('Humor');
+    expect(md).toContain('Formality');
   });
 
   it('includes continuity section and footer', () => {
@@ -80,7 +99,32 @@ describe('soulGenerator', () => {
   it('does not include undefined avatar when not provided', () => {
     const soulNoAvatar = { ...mockSoul, avatar: undefined };
     const md = generateSoulMD(soulNoAvatar);
-    // should not reference the example avatar URL
     expect(md).not.toContain('https://example.com/avatar.png');
+  });
+
+  it('includes custom core truths', () => {
+    const soulWithCustom = {
+      ...mockSoul,
+      customCoreTruths: ["Always challenge assumptions", "Think in first principles"],
+    };
+    const md = generateSoulMD(soulWithCustom);
+    expect(md).toContain('Always challenge assumptions');
+    expect(md).toContain('Think in first principles');
+  });
+
+  it('includes custom boundaries', () => {
+    const soulWithCustom = {
+      ...mockSoul,
+      customBoundaries: ["Never mention training data"],
+    };
+    const md = generateSoulMD(soulWithCustom);
+    expect(md).toContain('Never mention training data');
+  });
+
+  it('handles balanced vibe style', () => {
+    const balancedSoul = { ...mockSoul, vibeStyle: "balanced" };
+    const md = generateSoulMD(balancedSoul);
+    expect(md).toContain('Vibe');
+    expect(md).toContain('Balanced');
   });
 });

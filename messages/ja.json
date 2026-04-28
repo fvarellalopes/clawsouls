@@ -49,7 +49,22 @@
     "reset": "リセット",
     "resetConfirm": "すべてのフィールドをリセットしますか？",
     "copy": "コピー",
-    "copied": "コピーしました！"
+    "copied": "コピーしました！",
+    "vibeStyles": {
+      "concise": "簡潔",
+      "expressive": "表現力豊か",
+      "sharp": "シャープ/皮肉",
+      "verbose": "冗長",
+      "minimal": "ミニマル",
+      "dramatic": "ドラマチック",
+      "poetic": "詩的",
+      "technical": "技術的",
+      "casual": "カジュアル",
+      "formal": "フォーマル",
+      "balanced": "バランス"
+    },
+    "customize": "カスタマイズ",
+    "customizeDesc": "追加オプションとアクション"
   },
   "presetsPage": {
     "title": "プリセット人格",

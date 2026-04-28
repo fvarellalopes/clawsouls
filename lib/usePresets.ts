@@ -39,13 +39,19 @@ function mapSupabaseToSoulPreset(data: any): SoulPreset {
     description: data.description,
     tags: tags,
     source: data.source,
-    // Campos opcionais que podem não existir no Supabase ainda
+    // Tone attributes (optional, may not exist in Supabase yet)
     humor: data.humor ?? 50,
     formality: data.formality ?? 50,
     emojiUsage: data.emoji_usage ?? 10,
     verbosity: data.verbosity ?? 50,
     consciousness: data.consciousness ?? 50,
     questioning: data.questioning ?? 30,
+    // Big Five personality traits
+    openness: data.openness ?? 70,
+    conscientiousness: data.conscientiousness ?? 50,
+    extraversion: data.extraversion ?? 50,
+    agreeableness: data.agreeableness ?? 50,
+    neuroticism: data.neuroticism ?? 30,
   }
 }
 

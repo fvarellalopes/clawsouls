@@ -49,7 +49,22 @@
     "reset": "Reset to Default",
     "resetConfirm": "Are you sure you want to reset all fields?",
     "copy": "复制",
-    "copied": "已复制!"
+    "copied": "已复制!",
+    "vibeStyles": {
+      "concise": "简洁",
+      "expressive": "表达丰富",
+      "sharp": "犀利/讽刺",
+      "verbose": "详细",
+      "minimal": "极简",
+      "dramatic": "戏剧化",
+      "poetic": "诗意",
+      "technical": "技术型",
+      "casual": "随意",
+      "formal": "正式",
+      "balanced": "均衡"
+    },
+    "customize": "自定义",
+    "customizeDesc": "额外选项和操作"
   },
   "presetsPage": {
     "title": "Preset Personalities",

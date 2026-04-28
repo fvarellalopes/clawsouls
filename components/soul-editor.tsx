@@ -27,7 +27,7 @@ import { ImportJsonDialog } from "@/components/import-json-dialog";
 
 interface SoulEditorProps {
   locale: string;
-  messages: any;
+  messages: Record<string, unknown>;
 }
 
 type Phase = "presets" | "editor";
@@ -134,12 +134,19 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
       customCoreTruths: soul.customCoreTruths,
       customBoundaries: soul.customBoundaries,
       vibeStyle: soul.vibeStyle,
+      // Tone attributes
       humor: soul.humor,
       formality: soul.formality,
       emojiUsage: soul.emojiUsage,
       verbosity: soul.verbosity,
       consciousness: soul.consciousness,
       questioning: soul.questioning,
+      // Big Five personality traits
+      openness: soul.openness,
+      conscientiousness: soul.conscientiousness,
+      extraversion: soul.extraversion,
+      agreeableness: soul.agreeableness,
+      neuroticism: soul.neuroticism,
     };
     const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -193,16 +200,17 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const soulMD = useMemo(() => generateSoulMD(soul), [soul]);
 
   const vibeStyles = [
-    { value: "concise", label: "Conciso" },
-    { value: "expressive", label: "Expressivo" },
-    { value: "sharp", label: "Sharp/Sarcástico" },
-    { value: "verbose", label: "Verboso" },
-    { value: "minimal", label: "Minimalista" },
-    { value: "dramatic", label: "Dramático" },
-    { value: "poetic", label: "Poético" },
-    { value: "technical", label: "Técnico" },
-    { value: "casual", label: "Casual" },
-    { value: "formal", label: "Formal" },
+    { value: "concise", label: t("vibeStyles.concise") },
+    { value: "expressive", label: t("vibeStyles.expressive") },
+    { value: "sharp", label: t("vibeStyles.sharp") },
+    { value: "verbose", label: t("vibeStyles.verbose") },
+    { value: "minimal", label: t("vibeStyles.minimal") },
+    { value: "dramatic", label: t("vibeStyles.dramatic") },
+    { value: "poetic", label: t("vibeStyles.poetic") },
+    { value: "technical", label: t("vibeStyles.technical") },
+    { value: "casual", label: t("vibeStyles.casual") },
+    { value: "formal", label: t("vibeStyles.formal") },
+    { value: "balanced", label: t("vibeStyles.balanced") },
   ];
 
   // ─── PHASE 1: PRESET SELECTION ────────────────────────────────────────
@@ -313,10 +321,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 </Button>
                 <div className="h-5 w-px bg-purple-500/20" />
                 <div className="flex items-center gap-1">
-                  <Button onClick={undo} variant="ghost" size="icon" disabled={!canUndo()} title="Undo (Ctrl+Z)">
+                  <Button onClick={undo} variant="ghost" size="icon" disabled={!canUndo()} title="Undo (Ctrl+Z)" aria-label="Undo">
                     <Undo2 className="h-4 w-4" />
                   </Button>
-                  <Button onClick={redo} variant="ghost" size="icon" disabled={!canRedo()} title="Redo (Ctrl+Y)">
+                  <Button onClick={redo} variant="ghost" size="icon" disabled={!canRedo()} title="Redo (Ctrl+Y)" aria-label="Redo">
                     <Redo2 className="h-4 w-4" />
                   </Button>
                 </div>
@@ -327,6 +335,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -10 }}
                       className="text-sm text-purple-400/60 flex items-center"
+                      role="status"
+                      aria-live="polite"
                     >
                       <Save className="h-3 w-3 mr-1 animate-pulse" /> Saving...
                     </motion.span>
@@ -336,6 +346,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className="text-xs text-purple-400/40"
+                      aria-live="off"
                     >
                       Saved {new Date(lastSaved).toLocaleTimeString()}
                     </motion.span>
@@ -349,6 +360,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   size="icon"
                   onClick={() => setIsDarkMode(!isDarkMode)}
                   title={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
+                  aria-label={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
                   className="text-purple-300 hover:text-purple-100"
                 >
                   {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -678,7 +690,19 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     <Eye className="h-4 w-4 text-amber-400/60" />
                     <span className="text-sm font-display tracking-wider text-purple-200/60">Live Preview</span>
                   </div>
-                  <ParchmentPreview content={soulMD} name={soul.name} emoji={soul.emoji} />
+                  <ParchmentPreview
+                    content={soulMD}
+                    name={soul.name}
+                    emoji={soul.emoji}
+                    toneAttributes={{
+                      humor: soul.humor,
+                      formality: soul.formality,
+                      emojiUsage: soul.emojiUsage,
+                      verbosity: soul.verbosity,
+                      consciousness: soul.consciousness,
+                      questioning: soul.questioning,
+                    }}
+                  />
                 </div>
               </FadeUp>
             </div>

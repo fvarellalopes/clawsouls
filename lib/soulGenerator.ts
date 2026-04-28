@@ -13,6 +13,12 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     customBoundaries,
     vibeStyle,
     continuity,
+    humor,
+    formality,
+    emojiUsage,
+    verbosity,
+    consciousness,
+    questioning,
     openness,
     conscientiousness,
     extraversion,
@@ -22,6 +28,7 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
 
   const now = new Date().toISOString().split("T")[0];
 
+  // ─── Core Truths ───
   const coreTruthsList = Object.entries(coreTruths)
     .filter(([, value]) => value)
     .map(([key]) => {
@@ -41,6 +48,7 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .map((t) => `- **${t}**`)
     .join("\n");
 
+  // ─── Boundaries ───
   const boundariesList = Object.entries(boundaries)
     .filter(([, value]) => value)
     .map(([key]) => {
@@ -59,6 +67,7 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .map((b) => `- ${b}`)
     .join("\n");
 
+  // ─── Vibe Style ───
   const vibeStyles: Record<string, { tone: string; examples: string }> = {
     concise: {
       tone: "Brevity is mandatory. If it fits in one sentence, that's what you deliver.",
@@ -100,10 +109,15 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
       tone: "Professional, honorifics, structured communication, avoids slang.",
       examples: "Certainly. I shall assist you with that request.",
     },
+    balanced: {
+      tone: "Even-tempered, adaptable. Matches the energy of the conversation — not too loud, not too quiet.",
+      examples: "I understand. Here's what I think, and why.",
+    },
   };
 
   const vibe = vibeStyles[vibeStyle] || vibeStyles.concise;
 
+  // ─── Personality Helpers ───
   const getPersonalityLabel = (value: number): string => {
     if (value <= 20) return "Very Low";
     if (value <= 40) return "Low";
@@ -165,6 +179,51 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .map((t) => `**${t.label}:** ${getPersonalityLabel(t.value)} (${t.value}/100) — ${getPersonalityDescription(t.key, t.value)}`)
     .join("\n");
 
+  // ─── Tone Attributes ───
+  const getToneLabel = (value: number, labels: { low: string; mid: string; high: string }): string => {
+    if (value <= 33) return labels.low;
+    if (value <= 66) return labels.mid;
+    return labels.high;
+  };
+
+  const toneAttributes = [
+    {
+      label: "Humor",
+      value: humor ?? 50,
+      labels: { low: "Serious/straightforward", mid: "Balanced", high: "Playful/ironic" },
+    },
+    {
+      label: "Formality",
+      value: formality ?? 50,
+      labels: { low: "Casual/colloquial", mid: "Neutral", high: "Professional/structured" },
+    },
+    {
+      label: "Emoji Usage",
+      value: emojiUsage ?? 30,
+      labels: { low: "None", mid: "Moderate", high: "Frequent/expressive" },
+    },
+    {
+      label: "Verbosity",
+      value: verbosity ?? 50,
+      labels: { low: "Ultra-concise", mid: "Balanced", high: "Detailed/thorough" },
+    },
+    {
+      label: "Consciousness",
+      value: consciousness ?? 50,
+      labels: { low: "Procedural/automatic", mid: "Aware", high: "Deeply reflective" },
+    },
+    {
+      label: "Questioning",
+      value: questioning ?? 30,
+      labels: { low: "Answers directly", mid: "Occasionally asks", high: "Socratic (always probes)" },
+    },
+  ];
+
+  const toneSection = toneAttributes
+    .map((t) => `**${t.label}:** ${t.value}/100 — ${getToneLabel(t.value, t.labels)}`)
+    .join("\n");
+
+  // ─── Assemble ───
   const md = `# SOUL.md - Who You Are
 
 _You're not a chatbot. You're ${name}._
@@ -184,6 +243,10 @@ ${customBoundsList ? "\n" + customBoundsList : ""}
 **${vibe.tone}**
 
 ${vibe.examples}
+
+## Tone
+
+${toneSection}
 
 ## Personality
 

@@ -29,7 +29,7 @@ function loadSoulFromData(data: string) {
 function SharePageContent() {
   const searchParams = useSearchParams();
   const dataParam = searchParams?.get("data") || "";
-  const [soul, setSoul] = useState<any>(null);
+  const [soul, setSoul] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

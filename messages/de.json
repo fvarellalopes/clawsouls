@@ -49,7 +49,22 @@
     "reset": "Reset to Default",
     "resetConfirm": "Are you sure you want to reset all fields?",
     "copy": "Kopieren",
-    "copied": "Kopiert!"
+    "copied": "Kopiert!",
+    "vibeStyles": {
+      "concise": "Prägnant",
+      "expressive": "Ausdrucksstark",
+      "sharp": "Scharf/Sarkastisch",
+      "verbose": "Ausführlich",
+      "minimal": "Minimal",
+      "dramatic": "Dramatisch",
+      "poetic": "Poetisch",
+      "technical": "Technisch",
+      "casual": "Locker",
+      "formal": "Förmlich",
+      "balanced": "Ausgewogen"
+    },
+    "customize": "Anpassen",
+    "customizeDesc": "Zusätzliche Optionen und Aktionen"
   },
   "presetsPage": {
     "title": "Preset Personalities",

@@ -49,7 +49,22 @@
     "reset": "Reset to Default",
     "resetConfirm": "Are you sure you want to reset all fields?",
     "copy": "Copier",
-    "copied": "Copié !"
+    "copied": "Copié !",
+    "vibeStyles": {
+      "concise": "Concis",
+      "expressive": "Expressif",
+      "sharp": "Tranchant/Sarcastique",
+      "verbose": "Verbeux",
+      "minimal": "Minimal",
+      "dramatic": "Dramatique",
+      "poetic": "Poétique",
+      "technical": "Technique",
+      "casual": "Décontracté",
+      "formal": "Formel",
+      "balanced": "Équilibré"
+    },
+    "customize": "Personnaliser",
+    "customizeDesc": "Options et actions supplémentaires"
   },
   "presetsPage": {
     "title": "Preset Personalities",

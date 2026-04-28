@@ -1,7 +1,7 @@
+# https://clawsouls.hub
 User-agent: *
 Allow: /
-Sitemap: https://clawsouls.hub/sitemap.xml
+Disallow: /api/
+Disallow: /share
 
-# Block admin areas
-Disallow: /admin
-Disallow: /api/admin
+Sitemap: https://clawsouls.hub/sitemap.xml
