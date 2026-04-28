@@ -27,6 +27,11 @@ export type Preset = {
   verbosity?: number;
   consciousness?: number;
   questioning?: number;
+  openness?: number;
+  conscientiousness?: number;
+  extraversion?: number;
+  agreeableness?: number;
+  neuroticism?: number;
   description?: string;
   tags?: string[];
   source?: string;
@@ -89,6 +94,11 @@ function rowToPreset(row: any): Preset {
     verbosity: Number(row.verbosity),
     consciousness: Number(row.consciousness),
     questioning: Number(row.questioning),
+    openness: Number(row.openness) || 70,
+    conscientiousness: Number(row.conscientiousness) || 50,
+    extraversion: Number(row.extraversion) || 50,
+    agreeableness: Number(row.agreeableness) || 50,
+    neuroticism: Number(row.neuroticism) || 30,
     description: row.description,
     tags: row.tags || [],
     source: row.source,
@@ -312,6 +322,11 @@ export async function insert_preset(preset: any): Promise<boolean> {
       verbosity: preset.verbosity ?? 50,
       consciousness: preset.consciousness ?? 50,
       questioning: preset.questioning ?? 30,
+      openness: preset.openness ?? 70,
+      conscientiousness: preset.conscientiousness ?? 50,
+      extraversion: preset.extraversion ?? 50,
+      agreeableness: preset.agreeableness ?? 50,
+      neuroticism: preset.neuroticism ?? 30,
       description: preset.description || null,
       tags: preset.tags || [],
       source: preset.source || 'character'
@@ -336,8 +351,8 @@ export async function insert_preset(preset: any): Promise<boolean> {
       boundaries_private, boundaries_ask_before_acting,
       boundaries_no_half_baked, boundaries_not_voice_proxy,
       vibe_style, humor, formality, emoji_usage, verbosity,
-      consciousness, questioning, description, tags, source
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      consciousness, questioning, openness, conscientiousness, extraversion, agreeableness, neuroticism, description, tags, source
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
   try {
     const stmt = database.prepare(sql);
@@ -364,6 +379,11 @@ export async function insert_preset(preset: any): Promise<boolean> {
       preset.verbosity ?? 50,
       preset.consciousness ?? 50,
       preset.questioning ?? 30,
+      preset.openness ?? 70,
+      preset.conscientiousness ?? 50,
+      preset.extraversion ?? 50,
+      preset.agreeableness ?? 50,
+      preset.neuroticism ?? 30,
       preset.description || null,
       JSON.stringify(preset.tags || []),
       preset.source || 'character'

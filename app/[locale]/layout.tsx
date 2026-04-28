@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { NextIntlClientProvider } from "next-intl";
 import { MobileNav } from "@/components/mobile-nav";
+import { ErrorBoundary } from "@/components/error-boundary";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ const firaCode = Fira_Code({
   weight: ["400", "500"],
 });
 
-const locales = ["en", "pt", "es", "ja"];
+const locales = ["en", "pt", "es", "ja", "fr", "de", "zh"];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -72,7 +73,7 @@ export default async function LocaleLayout({
           <div className="min-h-screen flex flex-col relative">
             <Header locale={locale} messages={typedMessages} />
             <main className="flex-1 pb-24 md:pb-0 relative z-10">
-              {children}
+              <ErrorBoundary>{children}</ErrorBoundary>
             </main>
             <Footer />
             <MobileNav />

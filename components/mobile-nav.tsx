@@ -12,7 +12,7 @@ export function MobileNav() {
   const pathname = usePathname();
 
   // Strip locale prefix for matching
-  const cleanPath = pathname?.replace(/^\/(en|pt|es|ja)/, "") || "/";
+  const cleanPath = pathname?.replace(/^\/(en|pt|es|ja|fr|de|zh)/, "") || "/";
   const normalizedPath = cleanPath === "" ? "/" : cleanPath;
 
   const links = [

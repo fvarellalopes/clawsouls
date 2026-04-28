@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Wand2, Scroll, Download, Share2, Palette, Stars, Sparkles, Zap } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ThreeBackground } from "@/components/three-background";
+import { ThreeBackgroundLazy } from "@/components/three-background-lazy";
 import { FadeUp, StaggerContainer, StaggerItem, FloatingElement } from "@/components/animated";
 
 export default function HomePage() {
@@ -40,7 +40,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <ThreeBackground />
+      <ThreeBackgroundLazy />
 
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center justify-center px-4">

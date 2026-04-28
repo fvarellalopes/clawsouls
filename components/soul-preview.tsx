@@ -3,8 +3,10 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { generateSoulMD } from "@/lib/soulGenerator";
 
+import { SoulState } from "@/store/soulStore";
+
 interface SoulPreviewProps {
-  soul: any;
+  soul: SoulState["soul"];
 }
 
 export function SoulPreview({ soul }: SoulPreviewProps) {

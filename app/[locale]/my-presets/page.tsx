@@ -8,15 +8,17 @@ import { useRouter } from "next/navigation";
 import { Trash2, FolderOpen } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import type { Locale } from "date-fns";
-import { ptBR, enUS, es, ja } from "date-fns/locale";
+import { ptBR, enUS, es, ja, zhCN, de, fr } from "date-fns/locale";
 
-const locales: Record<string, Locale> = { pt: ptBR, en: enUS, es: es, ja: ja };
+const locales: Record<string, Locale> = { pt: ptBR, en: enUS, es: es, ja: ja, zh: zhCN, de: de, fr: fr };
 
 export default function MyPresetsPage() {
   const t = useTranslations("myPresets");
   const router = useRouter();
   const { presets, remove, load } = useMyPresetsStore();
-  const locale = (router as any).getLocale?.() || "en";
+  const pathname = router.pathname || "/";
+    const localeMatch = pathname.match(/^\/(en|pt|es|ja|fr|de|zh)/);
+    const locale = localeMatch?.[1] || "en";
   const fmtLocale = locales[locale] || enUS;
 
   const handleLoad = (soul: any) => {

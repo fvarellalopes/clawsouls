@@ -13,7 +13,8 @@ import {
   DialogFooter,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Upload, FileJson, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Upload, FileJson, AlertCircle, CheckCircle2, FileText } from "lucide-react";
+import { parseSoulMD } from "@/lib/soulParser";
 
 export function ImportJsonDialog() {
   const [open, setOpen] = useState(false);
@@ -21,6 +22,7 @@ export function ImportJsonDialog() {
   const [result, setResult] = useState<{ success: boolean; error?: string } | null>(null);
   const { importSoul } = useSoulStore();
   const fileRef = useRef<HTMLInputElement>(null);
+  const mdFileRef = useRef<HTMLInputElement>(null);
 
   const handleImport = () => {
     const r = importSoul(jsonText);
@@ -41,6 +43,28 @@ export function ImportJsonDialog() {
       const reader = new FileReader();
       reader.onload = (ev) => {
         setJsonText(ev.target?.result as string);
+      };
+      reader.readAsText(file);
+    }
+  };
+
+  const handleMdFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const text = ev.target?.result as string;
+        const parsed = parseSoulMD(text);
+        if (parsed) {
+          importSoul(JSON.stringify(parsed));
+          setResult({ success: true });
+          setTimeout(() => {
+            setOpen(false);
+            setResult(null);
+          }, 1500);
+        } else {
+          setResult({ success: false, error: "Could not parse SOUL.md — no recognizable patterns found." });
+        }
       };
       reader.readAsText(file);
     }
@@ -90,7 +114,7 @@ export function ImportJsonDialog() {
             <input
               ref={fileRef}
               type="file"
-              accept=".json,application/json"
+              accept=".json,application/json,.md,text/markdown"
               className="hidden"
               onChange={handleFileSelect}
             />
@@ -122,6 +146,29 @@ export function ImportJsonDialog() {
               </span>
             </div>
           )}
+        </div>
+
+        {/* SOUL.md Import */}
+        <div className="border-t border-purple-500/10 pt-4">
+          <p className="text-xs text-purple-400/40 mb-3 uppercase tracking-wider">
+            Or import an existing SOUL.md
+          </p>
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full border-purple-500/20"
+            onClick={() => mdFileRef.current?.click()}
+          >
+            <FileText className="mr-2 h-4 w-4" />
+            Import SOUL.md
+          </Button>
+          <input
+            ref={mdFileRef}
+            type="file"
+            accept=".md,text/markdown"
+            className="hidden"
+            onChange={handleMdFileSelect}
+          />
         </div>
 
         <DialogFooter>
