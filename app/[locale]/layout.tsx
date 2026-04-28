@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { NextIntlClientProvider } from "next-intl";
 import { MobileNav } from "@/components/mobile-nav";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { JsonLd } from "@/components/json-ld";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ const firaCode = Fira_Code({
   weight: ["400", "500"],
 });
 
-const locales = ["en", "pt", "es", "ja", "fr", "de", "zh"];
+const locales = ["en", "pt", "es", "ja", "fr", "de", "zh"] as const;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -66,6 +67,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="dark">
+      <JsonLd />
       <body
         className={`${cinzel.variable} ${crimsonPro.variable} ${firaCode.variable}`}
       >

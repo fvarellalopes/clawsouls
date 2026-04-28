@@ -1,59 +1,47 @@
 "use client";
 
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { SoulPreview } from "@/components/soul-preview";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowLeft, QrCode } from "lucide-react";
-import { ShareActions } from "@/components/share-actions";
+import { ArrowLeft, QrCode, Loader2 } from "lucide-react";
 import { QRCodeDisplay } from "@/components/qrcode-display";
-import { useEffect, useState } from "react";
-import { decompressSoul } from "@/lib/compress";
 
-function loadSoulFromData(data: string): Record<string, unknown> | null {
-  // Try new short ID first (alphanumeric, 8 chars)
-  return null; // Short IDs handled by /share/[id] route
-}
-
-function loadSoulFromBase64(data: string): Record<string, unknown> | null {
-  try {
-    const decoded = atob(data);
-    return JSON.parse(decoded);
-  } catch {
-    return null;
-  }
-}
-
-function SharePageContent() {
-  const searchParams = useSearchParams();
-  const dataParam = searchParams?.get("data") || "";
+export default function ShareByIdPage() {
+  const params = useParams();
+  const id = params?.id as string;
   const [soul, setSoul] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (dataParam) {
-      const loadedSoul = loadSoulFromBase64(dataParam);
-      setSoul(loadedSoul);
-    }
-    setLoading(false);
-  }, [dataParam]);
+    if (!id) return;
+
+    fetch(`/api/share?id=${id}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Share not found");
+        return res.json();
+      })
+      .then((data) => setSoul(data.soul))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, [id]);
 
   if (loading) {
     return (
-      <div className="min-h-screen py-12 px-4 flex items-center justify-center">
-        <div className="animate-pulse text-purple-300/50">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="h-8 w-8 text-purple-400 animate-spin" />
       </div>
     );
   }
 
-  if (!soul) {
+  if (error || !soul) {
     return (
-      <div className="min-h-screen py-12 px-4 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Personality Not Found</h1>
-          <p className="text-purple-300/50 mb-6">This share link may have expired or is invalid.</p>
+          <h1 className="text-2xl font-bold mb-4">Share Not Found</h1>
+          <p className="text-purple-300/50 mb-6">This link may have expired.</p>
           <Button asChild>
             <Link href="/">Back to Home</Link>
           </Button>
@@ -61,6 +49,8 @@ function SharePageContent() {
       </div>
     );
   }
+
+  const shareUrl = `https://clawsouls.hub/share/${id}`;
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -91,21 +81,19 @@ function SharePageContent() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{typeof soul.vibe === "string" ? soul.vibe : ""}</p>
         </div>
 
-        <ShareActions dataParam={dataParam} />
-
         <div className="mt-12 border-t pt-8">
           <h2 className="text-2xl font-semibold mb-6 text-center flex items-center justify-center">
             <QrCode className="mr-2 h-5 w-5" />
             Scan to Share
           </h2>
           <div className="flex justify-center">
-            <QRCodeDisplay url={`${process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.hub"}/share?data=${dataParam}`} name={typeof soul.name === "string" ? soul.name : ""} />
+            <QRCodeDisplay url={shareUrl} name={typeof soul.name === "string" ? soul.name : ""} />
           </div>
         </div>
 
-        <Suspense fallback={<div>Loading preview...</div>}>
+        <div className="mt-8">
           <SoulPreview soul={soul as any} />
-        </Suspense>
+        </div>
 
         <div className="mt-8 text-center">
           <Button asChild size="lg" className="bg-accent text-accent-foreground">
@@ -117,13 +105,5 @@ function SharePageContent() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function SharePage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <SharePageContent />
-    </Suspense>
   );
 }

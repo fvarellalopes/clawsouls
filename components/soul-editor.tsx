@@ -24,6 +24,7 @@ import { PresetCard } from "@/components/preset-card";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, StaggerContainer, StaggerItem, FloatingElement } from "@/components/animated";
 import { ImportJsonDialog } from "@/components/import-json-dialog";
+import { PresetsGridSkeleton } from "@/components/skeletons";
 
 interface SoulEditorProps {
   locale: string;
@@ -38,6 +39,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo, isDarkMode, setIsDarkMode } = useSoulStore();
   const { lastSaved, isSaving } = useAutoSaveStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
   const [previewCopied, setPreviewCopied] = useState(false);
   const { presets, loading } = usePresets();
   const [newCoreTruth, setNewCoreTruth] = useState("");
@@ -114,11 +116,34 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     URL.revokeObjectURL(url);
   };
 
-  const handleShare = () => {
-    const params = new URLSearchParams();
-    params.set("data", btoa(JSON.stringify(soul)));
-    const shareUrl = `${window.location.origin}/share?${params.toString()}`;
-    navigator.clipboard.writeText(shareUrl);
+  const handleShare = async () => {
+    try {
+      const res = await fetch("/api/share", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ soul }),
+      });
+      if (res.ok) {
+        const { id } = await res.json();
+        const shareUrl = `${window.location.origin}/share/${id}`;
+        await navigator.clipboard.writeText(shareUrl);
+        setShareUrl(shareUrl);
+      } else {
+        // Fallback to base64
+        const params = new URLSearchParams();
+        params.set("data", btoa(JSON.stringify(soul)));
+        const fallbackUrl = `${window.location.origin}/share?${params.toString()}`;
+        await navigator.clipboard.writeText(fallbackUrl);
+        setShareUrl(fallbackUrl);
+      }
+    } catch {
+      // Fallback to base64
+      const params = new URLSearchParams();
+      params.set("data", btoa(JSON.stringify(soul)));
+      const fallbackUrl = `${window.location.origin}/share?${params.toString()}`;
+      await navigator.clipboard.writeText(fallbackUrl);
+      setShareUrl(fallbackUrl);
+    }
     setShareDialogOpen(true);
   };
 
@@ -289,13 +314,15 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
             ))}
           </StaggerContainer>
 
-          {filteredPresets.length === 0 && !loading && (
+          {loading ? (
+            <PresetsGridSkeleton count={9} />
+          ) : filteredPresets.length === 0 ? (
             <FadeUp>
               <div className="text-center py-20">
                 <p className="text-purple-300/40 text-lg font-body">No presets found for "{searchQuery}"</p>
               </div>
             </FadeUp>
-          )}
+          ) : null}
         </div>
       </div>
     );
@@ -720,7 +747,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           <div className="space-y-4">
             <Input
               readOnly
-              value={`${typeof window !== "undefined" ? window.location.origin : ""}/share?data=${btoa(JSON.stringify(soul))}`}
+              value={shareUrl}
               className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl"
             />
             <p className="text-sm text-purple-300/40">{t("shareTip")}</p>

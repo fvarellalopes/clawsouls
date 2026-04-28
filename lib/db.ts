@@ -397,6 +397,88 @@ export async function insert_preset(preset: any): Promise<boolean> {
   }
 }
 
+
+export async function update_preset(id: string, preset: Partial<Preset>): Promise<boolean> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const { error } = await supabaseClient.from('presets').update({
+      name: preset.name,
+      creature: preset.creature,
+      vibe: preset.vibe,
+      emoji: preset.emoji,
+      avatar: preset.avatar,
+      vibe_style: preset.vibe_style,
+      humor: preset.humor,
+      formality: preset.formality,
+      emoji_usage: preset.emoji_usage,
+      verbosity: preset.verbosity,
+      consciousness: preset.consciousness,
+      questioning: preset.questioning,
+      openness: preset.openness,
+      conscientiousness: preset.conscientiousness,
+      extraversion: preset.extraversion,
+      agreeableness: preset.agreeableness,
+      neuroticism: preset.neuroticism,
+      description: preset.description,
+      tags: preset.tags,
+      updated_at: new Date().toISOString(),
+    }).eq('id', id);
+    if (error) {
+      console.error('Supabase update error:', error);
+      return false;
+    }
+    return true;
+  }
+
+  // SQLite fallback
+  const database = getDb();
+  const fields: string[] = [];
+  const params: any[] = [];
+  
+  const fieldMap: Record<string, any> = {
+    name: preset.name, creature: preset.creature, vibe: preset.vibe,
+    emoji: preset.emoji, avatar: preset.avatar, vibe_style: preset.vibe_style,
+    humor: preset.humor, formality: preset.formality, emoji_usage: preset.emoji_usage,
+    verbosity: preset.verbosity, consciousness: preset.consciousness,
+    questioning: preset.questioning, openness: preset.openness,
+    conscientiousness: preset.conscientiousness, extraversion: preset.extraversion,
+    agreeableness: preset.agreeableness, neuroticism: preset.neuroticism,
+    description: preset.description, tags: preset.tags ? JSON.stringify(preset.tags) : undefined,
+  };
+
+  for (const [key, val] of Object.entries(fieldMap)) {
+    if (val !== undefined) {
+      fields.push(`${key} = ?`);
+      params.push(val);
+    }
+  }
+
+  if (fields.length === 0) return false;
+  params.push(id);
+
+  const sql = `UPDATE presets SET ${fields.join(', ')} WHERE id = ?`;
+  const stmt = database.prepare(sql);
+  const result = stmt.run(...params);
+  return result.changes > 0;
+}
+
+export async function delete_preset(id: string): Promise<boolean> {
+  const supabaseClient = getSupabase();
+  if (supabaseClient) {
+    const { error } = await supabaseClient.from('presets').delete().eq('id', id);
+    if (error) {
+      console.error('Supabase delete error:', error);
+      return false;
+    }
+    return true;
+  }
+
+  const database = getDb();
+  const stmt = database.prepare('DELETE FROM presets WHERE id = ?');
+  const result = stmt.run(id);
+  return result.changes > 0;
+}
+
 export async function health_check(): Promise<{ status: string; total_presets: number; creature_types: number; sources: number; db_type: string }> {
   const supabaseClient = getSupabase();
   if (supabaseClient) {
