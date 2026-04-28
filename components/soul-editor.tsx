@@ -1022,6 +1022,16 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Fill with AI Dialog */}
+      <FillWithAIDialog
+        open={fillWithAIOpen}
+        onOpenChange={setFillWithAIOpen}
+        currentSoul={soul}
+        onApply={(values) => {
+          setSoul(values);
+        }}
+      />
     </>
   );
 }
