@@ -130,6 +130,7 @@
       }
     },
     "exportJson": "JSONエクスポート",
+    "exportYaml": "YAMLエクスポート",
     "exportSoulMd": "SOUL.mdエクスポート",
     "livePreview": "ライブプレビュー",
     "switchPreset": "プリセット切替",
