@@ -166,6 +166,18 @@
       "business": "商业 & 战略",
       "psychology": "心理学",
       "literature": "文学 & 写作"
+    },
+    "emotionalRange": "情感范围",
+    "emotionalRangeDesc": "AI在对话中的表达丰富程度",
+    "signaturePhrases": "标志性语句",
+    "signaturePhrasesDesc": "AI在对话中自然使用的标志性语句",
+    "signaturePhrasesPlaceholder": "例如：让我们直入主题",
+    "emotionalLabels": {
+      "stoic": "克制",
+      "reserved": "内敛",
+      "balanced": "平衡",
+      "expressive": "感性",
+      "dramatic": "戏剧化"
     }
   },
   "presetsPage": {

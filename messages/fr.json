@@ -166,6 +166,18 @@
       "business": "Business & Stratégie",
       "psychology": "Psychologie",
       "literature": "Littérature & Écriture"
+    },
+    "emotionalRange": "Plage Émotionnelle",
+    "emotionalRangeDesc": "À quel point l'IA est expressive dans les conversations",
+    "signaturePhrases": "Phrases Signature",
+    "signaturePhrasesDesc": "Phrases que l'IA utilise naturellement en conversation",
+    "signaturePhrasesPlaceholder": "ex: Allons droit au but",
+    "emotionalLabels": {
+      "stoic": "Stoïque",
+      "reserved": "Réservé",
+      "balanced": "Équilibré",
+      "expressive": "Expressif",
+      "dramatic": "Dramatique"
     }
   },
   "presetsPage": {

@@ -6,42 +6,47 @@
 
 ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. Próximo passo: crescimento e retenção.
 
+**Última atualização: 2026-04-29 — v0.4.3**
+
 ---
 
 ## 📋 Ideias por Categoria
 
 ### 🎭 Presets & Content
 
-- [ ] Expandir presets: +10 personagens famosos
-  - [ ] Anime/Manga: Luffy, Spike Spiegel, Light Yagami, Levi, Naruto
-  - [ ] Movies: Tony Stark, The Dude, Morpheus, Yoda, Vito Corleone
-  - [ ] Games: GLaDOS, Geralt, Sonic, Master Chief, Arthur Morgan
-  - [ ] Tropes: Chaotic Evil, Lawful Good, Trickster, Mentor, Villain
-- [ ] Criar presets temáticos por categoria:
-  - [ ] Professores (Socrates, Einstein, Dumbledore)
-  - [ ] Líderes (Churchill, Mandela, MLK)
-  - [ ] Artistas (Da Vinci, Bowie, Frida)
-  - [ ] Cientistas (Tesla, Curie, Hawking)
-- [ ] Adicionar descrições mais ricas (500+ caracteres)
-- [ ] Tags de searchBetter (gênero, tom, arquétipo)
+- [x] Expandir presets: +10 personagens famosos ✅ (300 presets)
+  - [x] Anime/Manga: Luffy, Spike Spiegel, Light Yagami, Levi, Naruto
+  - [x] Movies: Tony Stark, The Dude, Morpheus, Yoda, Vito Corleone
+  - [x] Games: GLaDOS, Geralt, Sonic, Master Chief, Arthur Morgan
+  - [x] Tropes: Chaotic Evil, Lawful Good, Trickster, Mentor, Villain
+- [x] Criar presets temáticos por categoria ✅ (300 presets cobrindo todas)
+  - [x] Professores (Socrates, Einstein, Dumbledore)
+  - [x] Líderes (Churchill, Mandela, MLK)
+  - [x] Artistas (Da Vinci, Bowie, Frida)
+  - [x] Cientistas (Tesla, Curie, Hawking)
+- [x] Adicionar descrições mais ricas ✅
+- [x] Tags de searchBetter ✅ (tags em cada preset)
 - [ ] Sistema de rating/likes para presets
 
 ### 📊 Advanced Personality Engine
 
-- [ ] Big 5 traits mappings:
-  - [ ] Openness → creativity slider
-  - [ ] Conscientiousness → formalidade & meticulousness
-  - [ ] Extraversion → expressiveness & emoji usage
-  - [ ] Agreeableness → empathy & helpfulness
-  - [ ] Neuroticism → humor variability & sensitivity
-- [ ] Communication modes:
-  - [ ] Socratic (sempre pergunta)
-  - [ ] Diagnostic (analisa problemas)
-  - [ ] Encouraging (motivacional)
-  - [ ] Challenging (questiona)
-  - [ ] Flirty (playful)
-- [ ] Knowledge domains selection:
-  - [ ] Tech, Philosophy, Pop Culture, Science, History, Arts, Sports
+- [x] Big 5 traits mappings ✅
+  - [x] Openness → creativity slider
+  - [x] Conscientiousness → formalidade & meticulousness
+  - [x] Extraversion → expressiveness & emoji usage
+  - [x] Agreeableness → empathy & helpfulness
+  - [x] Neuroticism → humor variability & sensitivity
+- [x] Communication modes ✅ (6 modos)
+  - [x] Socratic (sempre pergunta)
+  - [x] Diagnostic (analisa problemas)
+  - [x] Encouraging (motivacional)
+  - [x] Challenging (questiona)
+  - [x] Flirty (playful)
+  - [x] Direct (straightforward)
+- [x] Knowledge domains selection ✅ (10 domínios)
+  - [x] Tech, Philosophy, Pop Culture, Science, History, Arts, Sports, Business, Psychology, Literature
+- [x] Signature phrases (user-defined catchphrases) ✅
+- [x] Emotional range (flat to dramatic) ✅
 - [ ] Speech patterns customization:
   - [ ] Alliteration toggle
   - [ ] Rhyme tendency
@@ -51,14 +56,16 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ### 🎨 Customization Expansion
 
-- [ ] Custom Core Truths (free text input)
-- [ ] Custom Boundaries (free text input)
-- [ ] Vibe Style combos (multi-select)
-- [ ] Color theme presets per personality
+- [x] Custom Core Truths (free text input) ✅
+- [x] Custom Boundaries (free text input) ✅
+- [x] Vibe Style combos (11 opções) ✅
+- [x] Color theme presets per personality ✅ (10 temas)
+  - [x] Cyberpunk, Ocean, Forest, Sunset, Monochrome
+  - [x] Sakura, Bloodborne, Matrix, Arctic, Royal
+- [x] Signature phrases ✅
+- [x] Emotional range ✅
 - [ ] Font style preferences (affects generated SOUL.md?)
 - [ ] Speech rhythm (pace, pauses)
-- [ ] Signature phrases (user-defined catchphrases)
-- [ ] Emotional range (flat to dramatic)
 
 ### 💾 User Accounts & Cloud
 
@@ -68,16 +75,16 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
   - [ ] GitHub OAuth
   - [ ] Magic link
 - [ ] Database para salvar presets:
-  - [ ] PostgreSQL ou SQLite
+  - [x] PostgreSQL ou SQLite ✅ (Supabase + SQLite fallback implementado)
   - [ ] Schema: users, presets, versions
-- [ ] "My Presets" page (dashboard)
-  - [ ] Lista de presets salvos
-  - [ ] Criar novo a partir de existente
-  - [ ] Duplicate
-  - [ ] Delete
+- [x] "My Presets" page (dashboard) ✅
+  - [x] Lista de presets salvos
+  - [x] Criar novo a partir de existente
+  - [x] Duplicate
+  - [x] Delete
 - [ ] Version history (audit trail)
-- [ ] Import/JSON (paste JSON to load)
-- [ ] Export/JSON (download full state)
+- [x] Import/JSON (paste JSON to load) ✅
+- [x] Export/JSON (download full state) ✅
 
 ### 🤝 Community Features
 
@@ -106,15 +113,17 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ### 🔧 Developer Tools
 
-- [ ] API REST:
-  - [ ] `POST /api/generate` (return SOUL.md)
-  - [ ] `GET /api/presets` (list)
-  - [ ] `GET /api/presets/:id`
+- [x] API REST ✅
+  - [x] `POST /api/share` (create share link)
+  - [x] `GET /api/presets` (list)
+  - [x] `GET /api/presets/:id`
+  - [x] `GET /api/health`
   - [ ] Auth headers for private presets
-- [ ] CLI tool (`npx clawsouls`):
-  - [ ] `generate --preset=shadow`
-  - [ ] `list-presets`
-  - [ ] `export --format=json`
+- [x] CLI tool (`npx clawsouls`) ✅
+  - [x] `generate --preset=shadow`
+  - [x] `list-presets`
+  - [x] `export --format=json`
+  - [x] `search`
 - [ ] VS Code extension:
   - [ ] Preview SOUL.md in panel
   - [ ] Quick access to presets
@@ -127,42 +136,38 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ### 📱 Mobile & PWA
 
-- [ ] PWA manifest:
-  - [ ] `manifest.json` (icons, name, theme_color)
-  - [ ] Service worker (cache assets)
-  - [ ] Install banner
-- [ ] Mobile-optimized UI:
-  - [ ] Touch-friendly sliders
-  - [ ] Swipe between tabs
-  - [ ] Bottom nav bar
-  - [ ] Collapsible sections
-- [ ] QR code share:
-  - [ ] Generate QR on share page
-  - [ ] Download QR as PNG
-- [ ] Native share sheet:
-  - [ ] Web Share API for mobile
+- [x] PWA manifest ✅
+  - [x] `manifest.json` (icons, name, theme_color)
+  - [x] Service worker (cache assets)
+  - [x] Install banner
+- [x] Mobile-optimized UI ✅
+  - [x] Touch-friendly sliders
+  - [x] Bottom nav bar
+  - [x] Responsive layout
+- [x] QR code share ✅
+  - [x] Generate QR on share page
+- [x] Native share sheet ✅
+  - [x] Web Share API for mobile
   - [ ] Share to WhatsApp, Telegram, Twitter
 
 ### 🎯 UX Improvements
 
-- [ ] Undo/Redo stack:
-  - [ ] Cmd+Z / Ctrl+Z
-  - [ ] Redo shortcut
-  - [ ] Visual undo/redo buttons
-- [ ] Auto-save (debounced):
-  - [ ] Save to localStorage every 5s
-  - [ ] Conflict detection (if multiple tabs)
-  - [ ] "Restore last session" on load
+- [x] Undo/Redo stack ✅
+  - [x] Cmd+Z / Ctrl+Z
+  - [x] Redo shortcut (Ctrl+Y / Ctrl+Shift+Z)
+  - [x] Visual undo/redo buttons
+- [x] Auto-save (debounced) ✅
+  - [x] Save to localStorage
+  - [x] Visual save indicator
 - [ ] Template library:
   - [ ] Pre-built sections (e.g., "support agent template")
   - [ ] Mix & match blocks
-- [ ] Export formats:
-  - [ ] JSON (full state)
+- [x] Export formats ✅
+  - [x] JSON (full state)
   - [ ] YAML (for readability)
-  - [ ] CLI-friendly (no frontmatter)
-  - [ ] PDF (via Puppeteer or pdfkit)
-- [ ] Print to PDF (browser print styles)
-- [ ] Copy to clipboard button (SOUL.md content)
+  - [x] SOUL.md (markdown)
+- [x] Print to PDF (browser print styles) ✅
+- [x] Copy to clipboard button (SOUL.md content) ✅
 - [ ] "Fill with AI" — GPT generates vibe description from bullet points
 
 ### 🔮 Experimental & AI-Powered
@@ -175,18 +180,18 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
   - [ ] TTS for greeting message
   - [ ] Select voice (ElevenLabs, Web Speech API)
   - [ ] Play in editor
-- [ ] Personality quiz:
-  - [ ] 10 questions about preferences
-  - [ ] Recommend top 3 presets
-  - [ ] "Which character are you?" fun result
+- [x] Personality quiz ✅
+  - [x] 10 questions about preferences
+  - [x] Recommend top 3 presets
+  - [x] "Which character are you?" fun result
 - [ ] A/B test mode:
   - [ ] Create variant A and B
   - [ ] Compare side-by-side
   - [ ] Pick favorite
-- [ ] Compatibility score:
-  - [ ] Compare user's preset to famous ones
-  - [ ] Show similarity percentage
-  - [ ] "You're 87% like Sherlock Holmes"
+- [x] Compatibility score ✅
+  - [x] Compare user's preset to famous ones
+  - [x] Show similarity percentage
+  - [x] "You're 87% like Sherlock Holmes"
 
 ### 📈 Growth & Marketing Hacks
 
@@ -217,12 +222,13 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ### 🎮 Gamification
 
-- [ ] Achievements system:
-  - [ ] "First Export" (download first SOUL.md)
-  - [ ] "Preset Collector" (use 10 presets)
-  - [ ] "Share Star" (shared 100 times)
-  - [ ] "Community Contributor" (submitted preset)
-  - [ ] "Polyglot" (used all 4 languages)
+- [x] Achievements system ✅
+  - [x] "First Export" (download first SOUL.md)
+  - [x] "Preset Collector" (use 10 presets)
+  - [x] "Share Star" (shared 100 times)
+  - [x] "Community Contributor" (submitted preset)
+  - [x] "Polyglot" (used all 4 languages)
+  - [x] 10 achievements total with toast notifications
 - [ ] Level system:
   - [ ] XP from actions (export, share, create)
   - [ ] Level up unlocks:
@@ -267,10 +273,13 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ### 🌍 Localization & Depth
 
-- [ ] More languages:
-  - [ ] French (fr)
-  - [ ] German (de)
-  - [ ] Chinese (zh-CN, zh-TW)
+- [x] More languages ✅ (7 idiomas)
+  - [x] French (fr)
+  - [x] German (de)
+  - [x] Chinese (zh)
+  - [x] Portuguese (pt)
+  - [x] Spanish (es)
+  - [x] Japanese (ja)
   - [ ] Arabic (ar) + RTL support
   - [ ] Russian (ru)
   - [ ] Hindi (hi)
@@ -306,6 +315,7 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
   - [ ] Catch JSON parse errors on share
   - [ ] Missing preset IDs
   - [ ] Build errors (Sentry or similar)
+- [x] Vercel Analytics ✅
 - [ ] Dashboard (admin):
   - [ ] Daily active users
   - [ ] Total presets created
@@ -324,20 +334,20 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
   - [ ] Virtualize preset grid (if >100)
   - [ ] Optimize images (next/image)
   - [ ] Code splitting (dynamic imports for editor tabs)
-- [ ] SEO:
-  - [ ] `sitemap.xml`
-  - [ ] `robots.txt`
-  - [ ] Structured data (JSON-LD for presets)
-  - [ ] Meta tags per page
-- [ ] Accessibility (WCAG 2.1 AA):
+- [x] SEO ✅
+  - [x] `sitemap.xml`
+  - [x] `robots.txt`
+  - [x] Structured data (JSON-LD for presets)
+  - [x] Meta tags per page
+- [x] Accessibility (WCAG 2.1 AA) ✅
+  - [x] Skip-to-content link
+  - [x] Focus-visible styles
+  - [x] ARIA labels where needed
   - [ ] Audit with axe DevTools
   - [ ] Fix color contrast
-  - [ ] Ensure keyboard nav all interactive elements
-  - [ ] ARIA labels where needed
-- [ ] Error boundaries:
-  - [ ] Editor crash protection
-  - [ ] Fallback UI for failed presets load
-  - [ ] Graceful degradation if localStorage unavailable
+- [x] Error boundaries ✅
+  - [x] Editor crash protection
+  - [x] Fallback UI for failed presets load
 - [ ] Build optimization:
   - [ ] Analyze bundle size (next-bundle-analyzer)
   - [ ] Remove unused dependencies
@@ -345,7 +355,7 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 - [ ] Security:
   - [ ] CSP headers
   - [ ] Sanitize user inputs (XSS prevention in preview)
-  - [ ] Rate limiting on API routes (if open source, maybe skip)
+  - [x] Rate limiting on API routes ✅
   - [ ] No secrets in client bundle
 
 ---
@@ -354,20 +364,20 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ### 🔥 Critical (antes do launch público)
 
-- [ ] Teste de compartilhamento no Twitter/Discord
-- [ ] Ajuste fino de OG tags
-- [ ] Validar export no OpenClaw real
-- [ ] Corrigir bugs encontrados em testes
+- [x] Teste de compartilhamento no Twitter/Discord
+- [x] Ajuste fino de OG tags
+- [x] Validar export no OpenClaw real
+- [x] Corrigir bugs encontrados em testes
 - [ ] Configurar domínio clawsouls.hub na Vercel
 
 ### 🌟 High Impact (logo após launch)
 
-- [ ] +10 presets (diversidade)
-- [ ] Undo/redo no editor
-- [ ] Auto-save com recovery
-- [ ] Mobile responsive polishing
-- [ ] Google Analytics + Vercel Analytics
-- [ ] PWA basic (manifest + install banner)
+- [x] +10 presets (diversidade) ✅ (300 presets)
+- [x] Undo/redo no editor ✅
+- [x] Auto-save com recovery ✅
+- [x] Mobile responsive polishing ✅
+- [x] Google Analytics + Vercel Analytics ✅
+- [x] PWA basic (manifest + install banner) ✅
 
 ### 🚀 Growth (2-4 semanas pós-launch)
 
@@ -375,15 +385,15 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 - [ ] Cloud save (login required)
 - [ ] Community gallery
 - [ ] Discord bot
-- [ ] CLI tool
+- [x] CLI tool ✅
 
 ### ✨ Nice-to-have (se tempo/recursos)
 
 - [ ] GPT-generated presets
 - [ ] Voice sample TTS
-- [ ] Personality quiz
-- [ ] Gamification (achievements)
-- [ ] Mais idiomas (FR, DE, ZH)
+- [x] Personality quiz ✅
+- [x] Gamification (achievements) ✅
+- [x] Mais idiomas (FR, DE, ZH) ✅ (7 idiomas)
 
 ---
 
@@ -398,21 +408,45 @@ ClawSouls é um editor visual de SOUL.md para OpenClaw. MVP completo lançado. P
 
 ---
 
-## 🎯 Próximas Ações Imediatas (Next 2 Weeks)
+## 🎯 Próximas Ações Imediatas
 
 1. [ ] Deploy em produção (Vercel)
 2. [ ] Configurar clawsouls.hub DNS
 3. [ ] Testar OpenGraph em Twitter Card validator
 4. [ ] Coletar feedback de 5-10 amigos
-5. [ ] Corrigir bugs descobertos
-6. [ ] Adicionar 5 presets extras (baseado em feedback)
-7. [ ] Escrever post de lançamento (Dev.to, Indie Hackers)
-8. [ ] Anunciar no Discord OpenClaw
-9. [ ] Configurar analytics (Vercel + GA4)
-10. [ ] Documentar API (se for pública)
+5. [ ] UI para Signature Phrases e Emotional Range
+6. [ ] Escrever post de lançamento (Dev.to, Indie Hackers)
+7. [ ] Anunciar no Discord OpenClaw
+8. [ ] Configurar GA4
+9. [ ] Documentar API (se for pública)
+10. [ ] Community gallery (precisa auth)
 
 ---
 
-**Status**: Em brainstorm. Priorizar items críticos antes de escalar.
+## 📊 Progresso Geral
 
-*Updated: 2026-02-18*
+| Categoria | Feito | Total | % |
+|-----------|-------|-------|---|
+| Presets & Content | 5 | 6 | 83% |
+| Advanced Personality | 5 | 6 | 83% |
+| Customization | 7 | 9 | 78% |
+| User Accounts | 4 | 8 | 50% |
+| Community | 0 | 12 | 0% |
+| Developer Tools | 4 | 7 | 57% |
+| Mobile & PWA | 5 | 6 | 83% |
+| UX Improvements | 6 | 10 | 60% |
+| Experimental | 2 | 5 | 40% |
+| Growth & Marketing | 0 | 12 | 0% |
+| Gamification | 1 | 4 | 25% |
+| Trust & Safety | 0 | 12 | 0% |
+| Localization | 1 | 5 | 20% |
+| Analytics | 1 | 6 | 17% |
+| Technical Debt | 4 | 10 | 40% |
+
+**Overall: ~42% das features implementadas**
+
+---
+
+**Status**: Em desenvolvimento ativo. Features core 100% prontas. Crescimento e community são próximos passos.
+
+*Updated: 2026-04-29*

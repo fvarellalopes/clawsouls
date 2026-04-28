@@ -71,6 +71,18 @@
       "psychology": "Psychology",
       "literature": "Literature & Writing"
     },
+    "emotionalRange": "Emotional Range",
+    "emotionalRangeDesc": "How expressive your AI is in conversations",
+    "emotionalLabels": {
+      "stoic": "Stoic",
+      "reserved": "Reserved",
+      "balanced": "Balanced",
+      "expressive": "Expressive",
+      "dramatic": "Dramatic"
+    },
+    "signaturePhrases": "Signature Phrases",
+    "signaturePhrasesDesc": "Catchphrases your AI uses naturally in conversation",
+    "signaturePhrasesPlaceholder": "e.g., Let's cut to the chase",
     "soulPreview": "SOUL.md Preview",
     "previewDesc": "Generated SOUL.md content for your AI",
     "shareLink": "Share Your Creation",

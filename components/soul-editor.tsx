@@ -685,10 +685,39 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                           </div>
                         </CardContent>
                       </Card>
+
+                      {/* Emotional Range */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">{t("emotionalRange")}</CardTitle>
+                          <CardDescription>{t("emotionalRangeDesc")}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs text-amber-400/70 font-mono bg-amber-500/10 px-2 py-0.5 rounded-md">
+                              {soul.emotionalRange <= 20 ? t("emotionalLabels.stoic") :
+                               soul.emotionalRange <= 40 ? t("emotionalLabels.reserved") :
+                               soul.emotionalRange <= 60 ? t("emotionalLabels.balanced") :
+                               soul.emotionalRange <= 80 ? t("emotionalLabels.expressive") :
+                               t("emotionalLabels.dramatic")}
+                            </span>
+                          </div>
+                          <Slider
+                            value={[soul.emotionalRange ?? 50]}
+                            onValueChange={(value) => handleAttributeChange("emotionalRange", value[0])}
+                            max={100}
+                            min={0}
+                            step={1}
+                            className="[&_[role=slider]]:bg-purple-500 [&_[role=slider]]:border-purple-400"
+                          />
+                          <div className="flex justify-between text-[10px] text-purple-400/30 px-1 uppercase tracking-wider">
+                            <span>{t("emotionalLabels.stoic")}</span>
+                            <span>{t("emotionalLabels.dramatic")}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </motion.div>
                   </TabsContent>
-
-                  {/* Advanced */}
                   <TabsContent value="advanced">
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="space-y-6">
                       {/* Custom Core Truths */}
@@ -755,6 +784,60 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               onKeyDown={(e) => e.key === "Enter" && addCustomBoundary()}
                             />
                             <Button onClick={addCustomBoundary} size="icon" variant="outline" className="border-purple-500/20">
+                              <Plus className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Signature Phrases */}
+                      <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
+                        <CardHeader className="pb-4">
+                          <CardTitle className="font-display tracking-wider text-lg">{t("signaturePhrases")}</CardTitle>
+                          <CardDescription>{t("signaturePhrasesDesc")}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          {(soul.signaturePhrases || []).map((phrase, i) => (
+                            <div key={i} className="flex items-center gap-2 p-3 rounded-xl bg-[#0d0820]/50">
+                              <span className="flex-1 text-purple-200/80 text-sm italic">"{phrase}"</span>
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-7 w-7 text-red-400/50 hover:text-red-300"
+                                onClick={() => {
+                                  const updated = [...(soul.signaturePhrases || [])];
+                                  updated.splice(i, 1);
+                                  handleAttributeChange("signaturePhrases", updated);
+                                }}
+                              >
+                                <Trash2 className="h-3 w-3" />
+                              </Button>
+                            </div>
+                          ))}
+                          <div className="flex gap-2">
+                            <Input
+                              value={newCoreTruth}
+                              onChange={(e) => setNewCoreTruth(e.target.value)}
+                              placeholder={t("signaturePhrasesPlaceholder")}
+                              className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl flex-1"
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" && newCoreTruth.trim()) {
+                                  handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newCoreTruth.trim()]);
+                                  setNewCoreTruth("");
+                                }
+                              }}
+                            />
+                            <Button
+                              onClick={() => {
+                                if (newCoreTruth.trim()) {
+                                  handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newCoreTruth.trim()]);
+                                  setNewCoreTruth("");
+                                }
+                              }}
+                              size="icon"
+                              variant="outline"
+                              className="border-purple-500/20"
+                            >
                               <Plus className="h-4 w-4" />
                             </Button>
                           </div>

@@ -166,6 +166,18 @@
       "business": "ビジネス & 戦略",
       "psychology": "心理学",
       "literature": "文学 & 執筆"
+    },
+    "emotionalRange": "感情の幅",
+    "emotionalRangeDesc": "会話でどの程度表現豊かか",
+    "signaturePhrases": "特徴的なフレーズ",
+    "signaturePhrasesDesc": "会話で自然に使うフレーズ",
+    "signaturePhrasesPlaceholder": "例: 早速本題に入ろう",
+    "emotionalLabels": {
+      "stoic": "ストイック",
+      "reserved": "控えめ",
+      "balanced": "バランス",
+      "expressive": "表現豊か",
+      "dramatic": "ドラマチック"
     }
   },
   "presetsPage": {

@@ -166,6 +166,18 @@
       "business": "Negócios & Estratégia",
       "psychology": "Psicologia",
       "literature": "Literatura & Escrita"
+    },
+    "emotionalRange": "Amplitude Emocional",
+    "emotionalRangeDesc": "Quão expressiva a IA é nas conversas",
+    "signaturePhrases": "Frases de Efeito",
+    "signaturePhrasesDesc": "Frases que a IA usa naturalmente na conversa",
+    "signaturePhrasesPlaceholder": "ex: Vamos direto ao ponto",
+    "emotionalLabels": {
+      "stoic": "Estoico",
+      "reserved": "Reservado",
+      "balanced": "Equilibrado",
+      "expressive": "Expressivo",
+      "dramatic": "Dramático"
     }
   },
   "presetsPage": {
