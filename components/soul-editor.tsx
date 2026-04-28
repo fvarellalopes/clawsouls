@@ -25,6 +25,7 @@ import { PresetCard } from "@/components/preset-card";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, StaggerContainer, StaggerItem, FloatingElement } from "@/components/animated";
 import { ImportJsonDialog } from "@/components/import-json-dialog";
+import { FillWithAIDialog } from "@/components/fill-with-ai-dialog";
 import { useAchievementsStore } from "@/store/achievementsStore";
 import { PresetsGridSkeleton } from "@/components/skeletons";
 import { ThemeSelector } from "@/components/theme-selector";
@@ -49,6 +50,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const { presets, loading } = usePresets(presetsMessages);
   const [newCoreTruth, setNewCoreTruth] = useState("");
   const [newBoundary, setNewBoundary] = useState("");
+  const [fillWithAIOpen, setFillWithAIOpen] = useState(false);
 
   // Phase: presets selection or editor
   const [phase, setPhase] = useState<Phase>("presets");
@@ -504,7 +506,18 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               />
                             </div>
                             <div className="space-y-2 md:col-span-2">
-                              <Label className="text-purple-200/80 text-sm">{t("vibeLabel")}</Label>
+                              <div className="flex items-center justify-between">
+                                <Label className="text-purple-200/80 text-sm">{t("vibeLabel")}</Label>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => setFillWithAIOpen(true)}
+                                  className="text-purple-400/60 hover:text-purple-300 h-7 px-2 gap-1.5"
+                                >
+                                  <Wand2 className="h-3.5 w-3.5" />
+                                  <span className="text-xs">{t("fillWithAI")}</span>
+                                </Button>
+                              </div>
                               <Textarea
                                 value={soul.vibe}
                                 onChange={(e) => handleAttributeChange("vibe", e.target.value)}
