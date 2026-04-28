@@ -85,6 +85,50 @@
     "savedTime": "Salvo {time}",
     "switchToLight": "Mudar para tema claro",
     "switchToDark": "Mudar para tema escuro",
+    "changeTheme": "Mudar Tema de Cores",
+    "changeThemeDesc": "Escolha uma paleta que combine com a vibe da sua soul.",
+    "themes": {
+      "cyberpunk": {
+        "name": "Cyberpunk",
+        "description": "Roxo e dourado sobre escuro — a vibe padrão do ClawSouls"
+      },
+      "ocean": {
+        "name": "Oceano",
+        "description": "Azuis profundos e teal — calmo e focado"
+      },
+      "forest": {
+        "name": "Floresta",
+        "description": "Verdes profundos e âmbar — terroso e firme"
+      },
+      "sunset": {
+        "name": "Pôr do Sol",
+        "description": "Laranjas quentes e rosas — apaixonado e dramático"
+      },
+      "monochrome": {
+        "name": "Monocromático",
+        "description": "Cinza puro — minimalista e limpo"
+      },
+      "sakura": {
+        "name": "Sakura",
+        "description": "Rosas suaves e branco — gentil e elegante"
+      },
+      "blood": {
+        "name": "Bloodborne",
+        "description": "Vermelhos profundos e ouro — sombrio, gótico, intenso"
+      },
+      "matrix": {
+        "name": "Matrix",
+        "description": "Verde neon sobre preto — estética hacker"
+      },
+      "arctic": {
+        "name": "Ártico",
+        "description": "Azul gelado e branco — frio, limpo, preciso"
+      },
+      "royal": {
+        "name": "Real",
+        "description": "Roxo profundo e dourado — régio e majestoso"
+      }
+    },
     "exportJson": "Exportar JSON",
     "exportSoulMd": "Exportar SOUL.md",
     "livePreview": "Prévia ao Vivo",
@@ -234,7 +278,8 @@
     "scanToShare": "Escanear para Compartilhar",
     "createYourOwn": "Crie o Seu",
     "loading": "Carregando...",
-    "loadingPreview": "Carregando prévia..."
+    "loadingPreview": "Carregando prévia...",
+    "shareVia": "Compartilhar via..."
   },
   "keyboard": {
     "title": "Atalhos de Teclado",

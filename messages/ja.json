@@ -85,6 +85,50 @@
     "savedTime": "{time}に保存",
     "switchToLight": "ライトテーマに切り替え",
     "switchToDark": "ダークテーマに切り替え",
+    "changeTheme": "カラーテーマを変更",
+    "changeThemeDesc": "ソウルの雰囲気に合うカラーパレットを選択してください。",
+    "themes": {
+      "cyberpunk": {
+        "name": "サイバーパンク",
+        "description": "紫と金のダーク — ClawSoulsのデフォルトの雰囲気"
+      },
+      "ocean": {
+        "name": "オーシャン",
+        "description": "深い青とティール — 穏やかで集中"
+      },
+      "forest": {
+        "name": "フォレスト",
+        "description": "深い緑と琥珀 — 大地的で安定"
+      },
+      "sunset": {
+        "name": "サンセット",
+        "description": "温かいオレンジとピンク — 情熱的で劇的"
+      },
+      "monochrome": {
+        "name": "モノクローム",
+        "description": "純粋なグレー — ミニマルでクリーン"
+      },
+      "sakura": {
+        "name": "桜",
+        "description": "柔らかいピンクと白 — 優しくエレガント"
+      },
+      "blood": {
+        "name": "ブラッドボーン",
+        "description": "深い赤と金 — ダークでゴシック、激しい"
+      },
+      "matrix": {
+        "name": "マトリックス",
+        "description": "ネオングリーンon黒 — ハッカーの美学"
+      },
+      "arctic": {
+        "name": "アークティック",
+        "description": "アイスブルーと白 — 冷たく、クリーンで、正確"
+      },
+      "royal": {
+        "name": "ロイヤル",
+        "description": "深い紫と金 — 王室的で威厳がある"
+      }
+    },
     "exportJson": "JSONエクスポート",
     "exportSoulMd": "SOUL.mdエクスポート",
     "livePreview": "ライブプレビュー",
@@ -235,7 +279,8 @@
     "scanToShare": "スキャンして共有",
     "createYourOwn": "自分も作る",
     "loading": "読み込み中...",
-    "loadingPreview": "プレビューを読み込み中..."
+    "loadingPreview": "プレビューを読み込み中...",
+    "shareVia": "共有する..."
   },
   "keyboard": {
     "title": "キーボードショートカット",

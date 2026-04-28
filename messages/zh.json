@@ -85,6 +85,50 @@
     "savedTime": "已保存 {time}",
     "switchToLight": "切换到亮色主题",
     "switchToDark": "切换到暗色主题",
+    "changeTheme": "更换配色主题",
+    "changeThemeDesc": "选择一个与你灵魂气质匹配的配色方案。",
+    "themes": {
+      "cyberpunk": {
+        "name": "赛博朋克",
+        "description": "紫色与金色暗色调 — ClawSouls的默认风格"
+      },
+      "ocean": {
+        "name": "海洋",
+        "description": "深蓝与青色 — 平静而专注"
+      },
+      "forest": {
+        "name": "森林",
+        "description": "深绿与琥珀 — 质朴而沉稳"
+      },
+      "sunset": {
+        "name": "日落",
+        "description": "温暖的橙色与粉色 — 热烈而戏剧化"
+      },
+      "monochrome": {
+        "name": "单色",
+        "description": "纯灰色 — 极简而干净"
+      },
+      "sakura": {
+        "name": "樱花",
+        "description": "柔和的粉色与白色 — 温柔而优雅"
+      },
+      "blood": {
+        "name": "血源诅咒",
+        "description": "深红与金色 — 黑暗、哥特、强烈"
+      },
+      "matrix": {
+        "name": "黑客帝国",
+        "description": "黑色上的霓虹绿 — 黑客美学"
+      },
+      "arctic": {
+        "name": "极地",
+        "description": "冰蓝与白色 — 冷冽、干净、精准"
+      },
+      "royal": {
+        "name": "皇室",
+        "description": "深紫与金色 — 尊贵而威严"
+      }
+    },
     "exportJson": "导出 JSON",
     "exportSoulMd": "导出 SOUL.md",
     "livePreview": "实时预览",
@@ -235,7 +279,8 @@
     "scanToShare": "扫码分享",
     "createYourOwn": "创建你的",
     "loading": "加载中...",
-    "loadingPreview": "加载预览中..."
+    "loadingPreview": "加载预览中...",
+    "shareVia": "分享到..."
   },
   "keyboard": {
     "title": "键盘快捷键",

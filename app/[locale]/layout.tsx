@@ -11,6 +11,7 @@ import { ErrorBoundary } from "@/components/error-boundary";
 import { AchievementToast } from "@/components/achievement-toast";
 import { KeyboardHelp } from "@/components/keyboard-help";
 import { JsonLd } from "@/components/json-ld";
+import { ThemeInitializer } from "@/components/theme-initializer";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default async function LocaleLayout({
         className={`${cinzel.variable} ${crimsonPro.variable} ${firaCode.variable}`}
       >
         <NextIntlClientProvider locale={locale} messages={typedMessages}>
+          <ThemeInitializer />
           <div className="min-h-screen flex flex-col relative">
             <Header locale={locale} messages={typedMessages} />
             <main className="flex-1 pb-24 md:pb-0 relative z-10">

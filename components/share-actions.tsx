@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { Share2, Check, ArrowRight } from "lucide-react";
+import { Share2, Check, ArrowRight, Smartphone } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface ShareActionsProps {
@@ -26,6 +26,21 @@ export function ShareActions({ dataParam }: ShareActionsProps) {
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy:", err);
+    }
+  };
+
+  const canNativeShare = typeof navigator !== "undefined" && !!navigator.share;
+
+  const handleNativeShare = async () => {
+    try {
+      await navigator.share({
+        title: "ClawSouls — AI Personality",
+        text: "Check out this AI personality on ClawSouls!",
+        url: shareUrl,
+      });
+    } catch {
+      // User cancelled or share failed — fallback to copy
+      handleCopy();
     }
   };
 
@@ -52,6 +67,12 @@ export function ShareActions({ dataParam }: ShareActionsProps) {
             )}
           </Button>
         </div>
+        {canNativeShare && (
+          <Button onClick={handleNativeShare} variant="outline" className="w-full mt-3">
+            <Smartphone className="mr-2 h-4 w-4" />
+            {t("shareVia")}
+          </Button>
+        )}
       </div>
 
       <div className="p-6 rounded-lg border border-border bg-card">

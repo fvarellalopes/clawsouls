@@ -85,6 +85,50 @@
     "savedTime": "Gespeichert {time}",
     "switchToLight": "Zum hellen Theme wechseln",
     "switchToDark": "Zum dunklen Theme wechseln",
+    "changeTheme": "Farbthema ändern",
+    "changeThemeDesc": "Wähle eine Farbpalette, die zur Stimmung deiner Seele passt.",
+    "themes": {
+      "cyberpunk": {
+        "name": "Cyberpunk",
+        "description": "Lila und Gold auf Dunkel — die Standard-ClawSouls-Stimmung"
+      },
+      "ocean": {
+        "name": "Ozean",
+        "description": "Tiefblau und Türkis — ruhig und fokussiert"
+      },
+      "forest": {
+        "name": "Wald",
+        "description": "Tiefgrün und Bernstein — erdig und beständig"
+      },
+      "sunset": {
+        "name": "Sonnenuntergang",
+        "description": "Warmes Orange und Rosa — leidenschaftlich und dramatisch"
+      },
+      "monochrome": {
+        "name": "Monochrom",
+        "description": "Reines Grau — minimalistisch und sauber"
+      },
+      "sakura": {
+        "name": "Sakura",
+        "description": "Sanftes Rosa und Weiß — sanft und elegant"
+      },
+      "blood": {
+        "name": "Bloodborne",
+        "description": "Tiefrot und Gold — dunkel, gotisch, intensiv"
+      },
+      "matrix": {
+        "name": "Matrix",
+        "description": "Neongrün auf Schwarz — Hacker-Ästhetik"
+      },
+      "arctic": {
+        "name": "Arktis",
+        "description": "Eisblau und Weiß — kalt, sauber, präzise"
+      },
+      "royal": {
+        "name": "Königlich",
+        "description": "Tiefes Lila und Gold — königlich und majestätisch"
+      }
+    },
     "exportJson": "JSON exportieren",
     "exportSoulMd": "SOUL.md exportieren",
     "livePreview": "Live-Vorschau",
@@ -235,7 +279,8 @@
     "scanToShare": "Scannen zum Teilen",
     "createYourOwn": "Erstelle deine eigene",
     "loading": "Laden...",
-    "loadingPreview": "Vorschau laden..."
+    "loadingPreview": "Vorschau laden...",
+    "shareVia": "Teilen über..."
   },
   "keyboard": {
     "title": "Tastenkürzel",

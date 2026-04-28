@@ -85,6 +85,50 @@
     "savedTime": "Sauvegardé {time}",
     "switchToLight": "Passer au thème clair",
     "switchToDark": "Passer au thème sombre",
+    "changeTheme": "Changer le Thème de Couleur",
+    "changeThemeDesc": "Choisissez une palette qui correspond à l'ambiance de votre âme.",
+    "themes": {
+      "cyberpunk": {
+        "name": "Cyberpunk",
+        "description": "Violet et or sur sombre — l'ambiance par défaut de ClawSouls"
+      },
+      "ocean": {
+        "name": "Océan",
+        "description": "Bleus profonds et sarcelle — calme et concentré"
+      },
+      "forest": {
+        "name": "Forêt",
+        "description": "Verts profonds et ambre — terrestre et stable"
+      },
+      "sunset": {
+        "name": "Coucher de Soleil",
+        "description": "Oranges chauds et roses — passionné et dramatique"
+      },
+      "monochrome": {
+        "name": "Monochrome",
+        "description": "Gris pur — minimaliste et propre"
+      },
+      "sakura": {
+        "name": "Sakura",
+        "description": "Roses doux et blanc — doux et élégant"
+      },
+      "blood": {
+        "name": "Bloodborne",
+        "description": "Rouges profonds et or — sombre, gothique, intense"
+      },
+      "matrix": {
+        "name": "Matrix",
+        "description": "Vert néon sur noir — esthétique hacker"
+      },
+      "arctic": {
+        "name": "Arctique",
+        "description": "Bleu glacé et blanc — froid, propre, précis"
+      },
+      "royal": {
+        "name": "Royal",
+        "description": "Violet profond et or — royal et majestueux"
+      }
+    },
     "exportJson": "Exporter JSON",
     "exportSoulMd": "Exporter SOUL.md",
     "livePreview": "Aperçu en Direct",
@@ -235,7 +279,8 @@
     "scanToShare": "Scanner pour Partager",
     "createYourOwn": "Créez le Vôtre",
     "loading": "Chargement...",
-    "loadingPreview": "Chargement de l'aperçu..."
+    "loadingPreview": "Chargement de l'aperçu...",
+    "shareVia": "Partager via..."
   },
   "keyboard": {
     "title": "Raccourcis Clavier",

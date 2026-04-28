@@ -26,6 +26,7 @@ import { FadeUp, StaggerContainer, StaggerItem, FloatingElement } from "@/compon
 import { ImportJsonDialog } from "@/components/import-json-dialog";
 import { useAchievementsStore } from "@/store/achievementsStore";
 import { PresetsGridSkeleton } from "@/components/skeletons";
+import { ThemeSelector } from "@/components/theme-selector";
 
 interface SoulEditorProps {
   locale: string;
@@ -403,6 +404,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 >
                   {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                 </Button>
+                <ThemeSelector />
                 <div className="h-5 w-px bg-purple-500/20" />
                 <ImportJsonDialog />
                 <Button onClick={handleExportJSON} variant="outline" size="sm" className="border-purple-500/20">

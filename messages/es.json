@@ -85,6 +85,50 @@
     "savedTime": "Guardado {time}",
     "switchToLight": "Cambiar a tema claro",
     "switchToDark": "Cambiar a tema oscuro",
+    "changeTheme": "Cambiar Tema de Colores",
+    "changeThemeDesc": "Elige una paleta que combine con el vibe de tu soul.",
+    "themes": {
+      "cyberpunk": {
+        "name": "Cyberpunk",
+        "description": "Púrpura y dorado sobre oscuro — el vibe por defecto de ClawSouls"
+      },
+      "ocean": {
+        "name": "Océano",
+        "description": "Azules profundos y teal — calmado y enfocado"
+      },
+      "forest": {
+        "name": "Bosque",
+        "description": "Verdes profundos y ámbar — terroso y firme"
+      },
+      "sunset": {
+        "name": "Atardecer",
+        "description": "Naranjas cálidos y rosas — apasionado y dramático"
+      },
+      "monochrome": {
+        "name": "Monocromático",
+        "description": "Gris puro — minimalista y limpio"
+      },
+      "sakura": {
+        "name": "Sakura",
+        "description": "Rosas suaves y blanco — gentil y elegante"
+      },
+      "blood": {
+        "name": "Bloodborne",
+        "description": "Rojos profundos y oro — oscuro, gótico, intenso"
+      },
+      "matrix": {
+        "name": "Matrix",
+        "description": "Verde neón sobre negro — estética hacker"
+      },
+      "arctic": {
+        "name": "Ártico",
+        "description": "Azul helado y blanco — frío, limpio, preciso"
+      },
+      "royal": {
+        "name": "Real",
+        "description": "Púrpura profundo y dorado — regio y majestuoso"
+      }
+    },
     "exportJson": "Exportar JSON",
     "exportSoulMd": "Exportar SOUL.md",
     "livePreview": "Vista Previa en Vivo",
@@ -235,7 +279,8 @@
     "scanToShare": "Escanear para Compartir",
     "createYourOwn": "Crea el Tuyo",
     "loading": "Cargando...",
-    "loadingPreview": "Cargando vista previa..."
+    "loadingPreview": "Cargando vista previa...",
+    "shareVia": "Compartir vía..."
   },
   "keyboard": {
     "title": "Atajos de Teclado",
