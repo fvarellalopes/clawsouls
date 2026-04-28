@@ -130,6 +130,7 @@
       }
     },
     "exportJson": "Exportar JSON",
+    "exportYaml": "Exportar YAML",
     "exportSoulMd": "Exportar SOUL.md",
     "livePreview": "Prévia ao Vivo",
     "switchPreset": "Trocar Preset",
@@ -172,6 +173,13 @@
     "signaturePhrases": "Frases de Efeito",
     "signaturePhrasesDesc": "Frases que a IA usa naturalmente na conversa",
     "signaturePhrasesPlaceholder": "ex: Vamos direto ao ponto",
+    "speechPatterns": "Padrões de Fala",
+    "speechPatternsDesc": "Personalize como sua alma fala",
+    "alliteration": "Aliteração",
+    "rhymeTendency": "Tendência a Rimas",
+    "metaphorFrequency": "Frequência de Metáforas",
+    "technicalJargon": "Jargão Técnico",
+    "slangUsage": "Uso de Gírias",
     "emotionalLabels": {
       "stoic": "Estoico",
       "reserved": "Reservado",
@@ -2144,5 +2152,19 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "compare": {
+    "title": "Comparar Presets",
+    "description": "Selecione dois presets para comparar lado a lado. Veja pontuações de compatibilidade, diferenças de atributos e diff do SOUL.md.",
+    "selectPresetA": "Preset A",
+    "selectPresetB": "Preset B",
+    "selectPreset": "Escolha um preset...",
+    "compare": "Comparar",
+    "similarity": "Pontuação de Compatibilidade",
+    "match": "compatível",
+    "differences": "Diferenças",
+    "tone": "Tom",
+    "personality": "Personalidade",
+    "style": "Estilo"
   }
 }

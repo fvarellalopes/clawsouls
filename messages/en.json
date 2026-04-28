@@ -83,6 +83,13 @@
     "signaturePhrases": "Signature Phrases",
     "signaturePhrasesDesc": "Catchphrases your AI uses naturally in conversation",
     "signaturePhrasesPlaceholder": "e.g., Let's cut to the chase",
+    "speechPatterns": "Speech Patterns",
+    "speechPatternsDesc": "Customize how your soul speaks",
+    "alliteration": "Alliteration",
+    "rhymeTendency": "Rhyme Tendency",
+    "metaphorFrequency": "Metaphor Frequency",
+    "technicalJargon": "Technical Jargon",
+    "slangUsage": "Slang Usage",
     "soulPreview": "SOUL.md Preview",
     "previewDesc": "Generated SOUL.md content for your AI",
     "shareLink": "Share Your Creation",
@@ -124,18 +131,49 @@
     "changeTheme": "Change Color Theme",
     "changeThemeDesc": "Pick a color palette that matches your soul's vibe.",
     "themes": {
-      "cyberpunk": { "name": "Cyberpunk", "description": "Purple and gold on dark — the default ClawSouls vibe" },
-      "ocean": { "name": "Ocean", "description": "Deep blues and teal — calm and focused" },
-      "forest": { "name": "Forest", "description": "Deep greens and amber — earthy and grounded" },
-      "sunset": { "name": "Sunset", "description": "Warm oranges and pinks — passionate and dramatic" },
-      "monochrome": { "name": "Monochrome", "description": "Pure grayscale — minimal and clean" },
-      "sakura": { "name": "Sakura", "description": "Soft pinks and white — gentle and elegant" },
-      "blood": { "name": "Bloodborne", "description": "Deep reds and gold — dark, gothic, intense" },
-      "matrix": { "name": "Matrix", "description": "Neon green on black — hacker aesthetic" },
-      "arctic": { "name": "Arctic", "description": "Ice blue and white — cold, clean, precise" },
-      "royal": { "name": "Royal", "description": "Deep purple and gold — regal and majestic" }
+      "cyberpunk": {
+        "name": "Cyberpunk",
+        "description": "Purple and gold on dark — the default ClawSouls vibe"
+      },
+      "ocean": {
+        "name": "Ocean",
+        "description": "Deep blues and teal — calm and focused"
+      },
+      "forest": {
+        "name": "Forest",
+        "description": "Deep greens and amber — earthy and grounded"
+      },
+      "sunset": {
+        "name": "Sunset",
+        "description": "Warm oranges and pinks — passionate and dramatic"
+      },
+      "monochrome": {
+        "name": "Monochrome",
+        "description": "Pure grayscale — minimal and clean"
+      },
+      "sakura": {
+        "name": "Sakura",
+        "description": "Soft pinks and white — gentle and elegant"
+      },
+      "blood": {
+        "name": "Bloodborne",
+        "description": "Deep reds and gold — dark, gothic, intense"
+      },
+      "matrix": {
+        "name": "Matrix",
+        "description": "Neon green on black — hacker aesthetic"
+      },
+      "arctic": {
+        "name": "Arctic",
+        "description": "Ice blue and white — cold, clean, precise"
+      },
+      "royal": {
+        "name": "Royal",
+        "description": "Deep purple and gold — regal and majestic"
+      }
     },
     "exportJson": "Export JSON",
+    "exportYaml": "Export YAML",
     "exportSoulMd": "Export SOUL.md",
     "livePreview": "Live Preview",
     "switchPreset": "Switch Preset",
@@ -2115,5 +2153,19 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "compare": {
+    "title": "Compare Presets",
+    "description": "Select two presets to compare side-by-side. See compatibility scores, attribute differences, and SOUL.md diff.",
+    "selectPresetA": "Preset A",
+    "selectPresetB": "Preset B",
+    "selectPreset": "Choose a preset...",
+    "compare": "Compare",
+    "similarity": "Compatibility Score",
+    "match": "match",
+    "differences": "Differences",
+    "tone": "Tone",
+    "personality": "Personality",
+    "style": "Style"
   }
 }

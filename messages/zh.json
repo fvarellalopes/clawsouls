@@ -130,6 +130,7 @@
       }
     },
     "exportJson": "导出 JSON",
+    "exportYaml": "导出 YAML",
     "exportSoulMd": "导出 SOUL.md",
     "livePreview": "实时预览",
     "switchPreset": "切换预设",
