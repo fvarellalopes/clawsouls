@@ -15,7 +15,7 @@ export const attributeOptions: Record<string, { value: number; label: string }[]
     { value: 75, label: "Formal" },
     { value: 100, label: "Rígido" },
   ],
-  emoji_usage: [
+  emojiUsage: [
     { value: 0, label: "Nenhum" },
     { value: 25, label: "Raro" },
     { value: 50, label: "Moderado" },

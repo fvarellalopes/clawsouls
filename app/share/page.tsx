@@ -12,10 +12,33 @@ import { QRCodeDisplay } from "@/components/qrcode-display";
 import { useEffect, useState } from "react";
 import { decompressSoul } from "@/lib/compress";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
+import type { AbstractIntlMessages } from "next-intl";
 import enMessages from "@/messages/en.json";
+import ptMessages from "@/messages/pt.json";
+import esMessages from "@/messages/es.json";
+import jaMessages from "@/messages/ja.json";
+import frMessages from "@/messages/fr.json";
+import deMessages from "@/messages/de.json";
+import zhMessages from "@/messages/zh.json";
+
+const localeMessages: Record<string, AbstractIntlMessages> = {
+  en: enMessages as unknown as AbstractIntlMessages,
+  pt: ptMessages as unknown as AbstractIntlMessages,
+  es: esMessages as unknown as AbstractIntlMessages,
+  ja: jaMessages as unknown as AbstractIntlMessages,
+  fr: frMessages as unknown as AbstractIntlMessages,
+  de: deMessages as unknown as AbstractIntlMessages,
+  zh: zhMessages as unknown as AbstractIntlMessages,
+};
+
+function detectLocale(): string {
+  if (typeof window === "undefined") return "en";
+  const lang = navigator.language?.split("-")[0];
+  return localeMessages[lang] ? lang : "en";
+}
 
 function loadSoulFromData(data: string): Record<string, any> | null {
-  return null;
+  return decompressSoul(data);
 }
 
 function loadSoulFromBase64(data: string): Record<string, any> | null {
@@ -36,7 +59,11 @@ function SharePageContent() {
 
   useEffect(() => {
     if (dataParam) {
-      const loadedSoul = loadSoulFromBase64(dataParam);
+      // Try compressed format first, then base64
+      let loadedSoul = loadSoulFromData(dataParam);
+      if (!loadedSoul) {
+        loadedSoul = loadSoulFromBase64(dataParam);
+      }
       setSoul(loadedSoul);
     }
     setLoading(false);
@@ -101,7 +128,7 @@ function SharePageContent() {
             {t("scanToShare")}
           </h2>
           <div className="flex justify-center">
-            <QRCodeDisplay url={`${process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.hub"}/share?data=${dataParam}`} name={typeof soul.name === "string" ? soul.name : ""} />
+            <QRCodeDisplay url={`${typeof window !== "undefined" ? window.location.origin : process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.hub"}/share?data=${dataParam}`} name={typeof soul.name === "string" ? soul.name : ""} />
           </div>
         </div>
 
@@ -123,9 +150,10 @@ function SharePageContent() {
 }
 
 export default function SharePage() {
+  const locale = detectLocale();
   return (
-    <NextIntlClientProvider locale="en" messages={enMessages}>
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">{enMessages.share.loading}</div>}>
+    <NextIntlClientProvider locale={locale} messages={localeMessages[locale] || enMessages}>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
         <SharePageContent />
       </Suspense>
     </NextIntlClientProvider>

@@ -9,10 +9,11 @@ export const contentType = "image/png";
 export default async function OGImage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
-  // Fetch the share data
+  // Fetch the share data using environment variable or fallback
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.hub";
   let soul: Record<string, unknown> = {};
   try {
-    const res = await fetch(`https://clawsouls.hub/api/share?id=${id}`);
+    const res = await fetch(`${baseUrl}/api/share?id=${id}`);
     if (res.ok) {
       const data = await res.json();
       soul = data.soul || {};

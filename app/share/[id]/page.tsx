@@ -8,7 +8,30 @@ import Link from "next/link";
 import { ArrowLeft, QrCode, Loader2 } from "lucide-react";
 import { QRCodeDisplay } from "@/components/qrcode-display";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
+import type { AbstractIntlMessages } from "next-intl";
 import enMessages from "@/messages/en.json";
+import ptMessages from "@/messages/pt.json";
+import esMessages from "@/messages/es.json";
+import jaMessages from "@/messages/ja.json";
+import frMessages from "@/messages/fr.json";
+import deMessages from "@/messages/de.json";
+import zhMessages from "@/messages/zh.json";
+
+const localeMessages: Record<string, AbstractIntlMessages> = {
+  en: enMessages as unknown as AbstractIntlMessages,
+  pt: ptMessages as unknown as AbstractIntlMessages,
+  es: esMessages as unknown as AbstractIntlMessages,
+  ja: jaMessages as unknown as AbstractIntlMessages,
+  fr: frMessages as unknown as AbstractIntlMessages,
+  de: deMessages as unknown as AbstractIntlMessages,
+  zh: zhMessages as unknown as AbstractIntlMessages,
+};
+
+function detectLocale(): string {
+  if (typeof window === "undefined") return "en";
+  const lang = navigator.language?.split("-")[0];
+  return localeMessages[lang] ? lang : "en";
+}
 
 function ShareByIdContent() {
   const t = useTranslations("share");
@@ -53,7 +76,9 @@ function ShareByIdContent() {
     );
   }
 
-  const shareUrl = `https://clawsouls.hub/share/${id}`;
+  const shareUrl = typeof window !== "undefined"
+    ? `${window.location.origin}/share/${id}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.hub"}/share/${id}`;
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -112,8 +137,9 @@ function ShareByIdContent() {
 }
 
 export default function ShareByIdPage() {
+  const locale = detectLocale();
   return (
-    <NextIntlClientProvider locale="en" messages={enMessages}>
+    <NextIntlClientProvider locale={locale} messages={localeMessages[locale] || enMessages}>
       <ShareByIdContent />
     </NextIntlClientProvider>
   );

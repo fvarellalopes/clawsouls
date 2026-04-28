@@ -40,7 +40,6 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo, isDarkMode, setIsDarkMode } = useSoulStore();
   const { lastSaved, isSaving } = useAutoSaveStore();
   const { incrementExport, incrementShare, addLanguageUsed } = useAchievementsStore();
-  addLanguageUsed(locale);
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
   const [previewCopied, setPreviewCopied] = useState(false);
@@ -53,6 +52,11 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const [phase, setPhase] = useState<Phase>("presets");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPresetId, setSelectedPresetId] = useState<string | null>(null);
+
+  // Track language usage for achievements
+  useEffect(() => {
+    addLanguageUsed(locale);
+  }, [locale, addLanguageUsed]);
 
   // Filter presets
   const filteredPresets = useMemo(() => {

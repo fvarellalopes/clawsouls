@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.4.2 — Bug Fixes & i18n Improvements (2026-04-29)
+
+### 🐛 Bug Fixes
+- **Emoji Usage slider broken** — `attributeOptions` used `emoji_usage` key but store uses `emojiUsage`, causing the slider to read/write `undefined`. Fixed to `emojiUsage`.
+- **Achievement tracking on every render** — `addLanguageUsed()` was called outside `useEffect`, firing on every render. Moved to proper `useEffect` with locale dependency.
+- **Share page `loadSoulFromData` was a no-op** — Function always returned `null`. Now properly calls `decompressSoul()` for compressed share data.
+- **OG image hardcoded domain** — `opengraph-image.tsx` fetched from `https://clawsouls.hub` instead of using `NEXT_PUBLIC_SITE_URL` env var.
+- **Share URLs hardcoded** — Share pages used hardcoded `clawsouls.hub` domain. Now uses `window.location.origin` or env var fallback.
+
+### 🌍 i18n
+- **Share pages locale detection** — Both `/share` and `/share/[id]` now detect browser locale and load the correct translation (en, pt, es, ja, fr, de, zh) instead of always showing English.
+
+---
+
 ## v0.4.0 — Growth Features (2026-04-29)
 
 ### ✨ New Features
