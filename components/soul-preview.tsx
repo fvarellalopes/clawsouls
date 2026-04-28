@@ -2,6 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { generateSoulMD } from "@/lib/soulGenerator";
+import { useTranslations } from "next-intl";
 
 import { SoulState } from "@/store/soulStore";
 
@@ -10,14 +11,15 @@ interface SoulPreviewProps {
 }
 
 export function SoulPreview({ soul }: SoulPreviewProps) {
+  const t = useTranslations("soulPreview");
   const markdown = generateSoulMD(soul);
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>SOUL.md Preview</CardTitle>
+        <CardTitle>{t("title")}</CardTitle>
         <CardDescription>
-          This is the exact Markdown that will be used by OpenClaw.
+          {t("description")}
         </CardDescription>
       </CardHeader>
       <CardContent>

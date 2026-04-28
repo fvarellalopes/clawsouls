@@ -11,7 +11,13 @@
     "create": "Create",
     "about": "About",
     "madeWith": "Made with",
-    "footerDescription": "ClawSouls — Create your OpenClaw AI personality with style."
+    "footerDescription": "ClawSouls — Create your OpenClaw AI personality with style.",
+    "quiz": "Quiz",
+    "achievements": "Achievements",
+    "loading": "Loading...",
+    "backToHome": "Back to Home",
+    "cancel": "Cancel",
+    "import": "Import"
   },
   "editor": {
     "title": "Soul Editor",
@@ -65,7 +71,34 @@
       "balanced": "Balanced"
     },
     "customize": "Customize",
-    "customizeDesc": "Additional options and actions"
+    "customizeDesc": "Additional options and actions",
+    "chooseYourBeginning": "Choose Your Beginning",
+    "pickASoul": "Pick a Soul",
+    "pickASoulDesc": "Start from a preset or forge your own from scratch.",
+    "startFromScratch": "Start from Scratch",
+    "startFromScratchDesc": "Blank canvas, infinite possibilities",
+    "noPresetsFound": "No presets found for \"{query}\"",
+    "presets": "Presets",
+    "undoTitle": "Undo (Ctrl+Z)",
+    "redoTitle": "Redo (Ctrl+Y)",
+    "saving": "Saving...",
+    "savedTime": "Saved {time}",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
+    "exportJson": "Export JSON",
+    "exportSoulMd": "Export SOUL.md",
+    "livePreview": "Live Preview",
+    "switchPreset": "Switch Preset",
+    "basicTabMobile": "Basic",
+    "soulTabMobile": "Soul",
+    "toneTabMobile": "Tone",
+    "moreTabMobile": "More",
+    "customCoreTruths": "Custom Core Truths",
+    "customCoreTruthsDesc": "Add your own principles beyond the defaults.",
+    "customCoreTruthsPlaceholder": "e.g., Always challenge assumptions",
+    "customBoundaries": "Custom Boundaries",
+    "customBoundariesDesc": "Add your own rules beyond the defaults.",
+    "customBoundariesPlaceholder": "e.g., Never mention training data"
   },
   "presetsPage": {
     "title": "Preset Personalities",
@@ -76,7 +109,10 @@
     "backToHome": "Back to Home",
     "searchPlaceholder": "Search presets...",
     "allCreatures": "All creatures",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "all": "All",
+    "noPresetsFound": "No presets found",
+    "noPresetsFoundSearch": "No presets found for \"{query}\""
   },
   "home": {
     "heroTitle": "Create Your AI's Soul",
@@ -96,7 +132,15 @@
     "featureDesc": "Modern, interactive, and internationalized.",
     "ctaTitle": "Ready to Create?",
     "ctaDesc": "Start building your AI's personality now. No coding required.",
-    "ctaButton": "Open the Forge"
+    "ctaButton": "Open the Forge",
+    "presetsCount": "30+ presets",
+    "scroll": "Scroll",
+    "capabilities": "Capabilities",
+    "forgedForCreators": "Forged for Creators",
+    "forgedForCreatorsDesc": "Every tool you need to craft, customize, and share AI personalities.",
+    "readyToForge": "Ready to Forge?",
+    "readyToForgeDesc": "Start from scratch or pick a preset. Your AI's soul awaits.",
+    "startCreating": "Start Creating"
   },
   "myPresets": {
     "title": "My Presets",
@@ -128,11 +172,95 @@
     "yourMatches": "Your Matches",
     "bestMatch": "Best Match",
     "useThis": "Use This Preset",
-    "retake": "Retake Quiz"
+    "retake": "Retake Quiz",
+    "personalityQuiz": "Personality Quiz",
+    "quizIntro": "Answer {count} questions about how you want your AI to behave. We'll match you with the perfect preset.",
+    "browseAll": "Browse All",
+    "questionProgress": "Question {current} of {total}",
+    "matchesDesc": "Based on your answers, here are your top 3 personality matches."
   },
   "achievements": {
     "title": "Achievements",
     "unlocked": "Unlocked",
-    "of": "of"
+    "of": "of",
+    "unlockedSummary": "{unlockedCount} of {totalCount} unlocked ({percentage}%)",
+    "exports": "Exports",
+    "shares": "Shares",
+    "quizzes": "Quizzes",
+    "languages": "Languages",
+    "keepCreating": "Keep Creating"
+  },
+  "parchmentPreview": {
+    "unnamedSoul": "Unnamed Soul",
+    "soulMdPreview": "SOUL.md Preview",
+    "copySoulContent": "Copy SOUL.md content",
+    "toneProfile": "Tone Profile",
+    "humor": "Humor",
+    "formality": "Formality",
+    "emojiUsage": "Emoji",
+    "verbosity": "Verbosity",
+    "consciousness": "Consciousness",
+    "questioning": "Questioning",
+    "forgedBy": "Forged in ClawSouls ✦ {year}"
+  },
+  "soulPreview": {
+    "title": "SOUL.md Preview",
+    "description": "This is the exact Markdown that will be used by OpenClaw."
+  },
+  "importJson": {
+    "importJson": "Import JSON",
+    "importSoulConfig": "Import Soul Config",
+    "importSoulConfigDesc": "Paste JSON or drag a .json file to load a soul configuration.",
+    "dropJsonFile": "Drop a .json file here or click to browse",
+    "soulImported": "Soul imported successfully!",
+    "orImportSoulMd": "Or import an existing SOUL.md",
+    "importSoulMd": "Import SOUL.md",
+    "cancel": "Cancel",
+    "import": "Import",
+    "parseError": "Could not parse SOUL.md — no recognizable patterns found."
+  },
+  "share": {
+    "copyShareLink": "Copy Share Link",
+    "copyShareLinkDesc": "Anyone with this link can load this personality into ClawSouls.",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "loadInEditor": "Load in Editor",
+    "loadInEditorDesc": "Want to customize this personality? Open it in the editor.",
+    "openInEditor": "Open in Editor",
+    "personalityNotFound": "Personality Not Found",
+    "shareLinkExpired": "This share link may have expired or is invalid.",
+    "shareNotFound": "Share Not Found",
+    "linkExpired": "This link may have expired.",
+    "backToHome": "Back to Home",
+    "scanToShare": "Scan to Share",
+    "createYourOwn": "Create Your Own",
+    "loading": "Loading...",
+    "loadingPreview": "Loading preview..."
+  },
+  "keyboard": {
+    "title": "Keyboard Shortcuts",
+    "undo": "Undo",
+    "redo": "Redo",
+    "redoAlt": "Redo (alt)",
+    "addItem": "Add item (in inputs)",
+    "pressToToggle": "Press ? to toggle"
+  },
+  "errorBoundary": {
+    "somethingWentWrong": "Something went wrong",
+    "unexpectedError": "An unexpected error occurred.",
+    "tryAgain": "Try Again"
+  },
+  "achievementToast": {
+    "achievementUnlocked": "Achievement Unlocked!"
+  },
+  "compatibility": {
+    "match": "match",
+    "tone": "Tone",
+    "personality": "Personality",
+    "style": "Style"
+  },
+  "qrCode": {
+    "qrCode": "QR Code",
+    "downloadQr": "Download QR"
   }
 }

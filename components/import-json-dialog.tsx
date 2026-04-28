@@ -15,8 +15,10 @@ import {
 } from "@/components/ui/dialog";
 import { Upload, FileJson, AlertCircle, CheckCircle2, FileText } from "lucide-react";
 import { parseSoulMD } from "@/lib/soulParser";
+import { useTranslations } from "next-intl";
 
 export function ImportJsonDialog() {
+  const t = useTranslations("importJson");
   const [open, setOpen] = useState(false);
   const [jsonText, setJsonText] = useState("");
   const [result, setResult] = useState<{ success: boolean; error?: string } | null>(null);
@@ -63,7 +65,7 @@ export function ImportJsonDialog() {
             setResult(null);
           }, 1500);
         } else {
-          setResult({ success: false, error: "Could not parse SOUL.md — no recognizable patterns found." });
+          setResult({ success: false, error: t("parseError") });
         }
       };
       reader.readAsText(file);
@@ -86,17 +88,17 @@ export function ImportJsonDialog() {
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" className="border-purple-500/20">
           <Upload className="mr-2 h-4 w-4" />
-          Import JSON
+          {t("importJson")}
         </Button>
       </DialogTrigger>
       <DialogContent className="bg-[#1a0f2e] border-purple-500/30 max-w-lg">
         <DialogHeader>
           <DialogTitle className="font-display tracking-wider flex items-center gap-2">
             <FileJson className="h-5 w-5 text-purple-400" />
-            Import Soul Config
+            {t("importSoulConfig")}
           </DialogTitle>
           <DialogDescription>
-            Paste JSON or drag a .json file to load a soul configuration.
+            {t("importSoulConfigDesc")}
           </DialogDescription>
         </DialogHeader>
 
@@ -109,7 +111,7 @@ export function ImportJsonDialog() {
           >
             <Upload className="h-8 w-8 text-purple-400/30 mx-auto mb-2" />
             <p className="text-sm text-purple-300/50">
-              Drop a .json file here or click to browse
+              {t("dropJsonFile")}
             </p>
             <input
               ref={fileRef}
@@ -142,7 +144,7 @@ export function ImportJsonDialog() {
                 <AlertCircle className="h-4 w-4" />
               )}
               <span className="text-sm">
-                {result.success ? "Soul imported successfully!" : result.error}
+                {result.success ? t("soulImported") : result.error}
               </span>
             </div>
           )}
@@ -151,7 +153,7 @@ export function ImportJsonDialog() {
         {/* SOUL.md Import */}
         <div className="border-t border-purple-500/10 pt-4">
           <p className="text-xs text-purple-400/40 mb-3 uppercase tracking-wider">
-            Or import an existing SOUL.md
+            {t("orImportSoulMd")}
           </p>
           <Button
             variant="outline"
@@ -160,7 +162,7 @@ export function ImportJsonDialog() {
             onClick={() => mdFileRef.current?.click()}
           >
             <FileText className="mr-2 h-4 w-4" />
-            Import SOUL.md
+            {t("importSoulMd")}
           </Button>
           <input
             ref={mdFileRef}
@@ -173,14 +175,14 @@ export function ImportJsonDialog() {
 
         <DialogFooter>
           <Button variant="ghost" onClick={() => setOpen(false)}>
-            Cancel
+            {t("cancel")}
           </Button>
           <Button
             onClick={handleImport}
             disabled={!jsonText.trim()}
             className="bg-purple-600 text-white"
           >
-            Import
+            {t("import")}
           </Button>
         </DialogFooter>
       </DialogContent>

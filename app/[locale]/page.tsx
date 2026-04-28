@@ -51,7 +51,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass mb-10">
                 <Stars className="h-4 w-4 text-purple-400" />
                 <span className="text-sm font-medium text-purple-200 tracking-wide">
-                  {t("featureDesc")} · 30+ presets
+                  {t("featureDesc")} · {t("presetsCount")}
                 </span>
               </div>
             </FloatingElement>
@@ -107,7 +107,7 @@ export default function HomePage() {
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <span className="text-xs tracking-[0.3em] uppercase font-display">Scroll</span>
+              <span className="text-xs tracking-[0.3em] uppercase font-display">{t("scroll")}</span>
               <div className="w-px h-8 bg-gradient-to-b from-purple-400/30 to-transparent" />
             </motion.div>
           </FadeUp>
@@ -120,13 +120,13 @@ export default function HomePage() {
           <FadeUp>
             <div className="text-center mb-20">
               <span className="text-xs tracking-[0.4em] uppercase text-amber-400/60 font-display">
-                Capabilities
+                {t("capabilities")}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mt-4 text-gradient font-display tracking-wider">
-                Forged for Creators
+                {t("forgedForCreators")}
               </h2>
               <p className="text-purple-200/50 mt-4 max-w-xl mx-auto font-body text-lg">
-                Every tool you need to craft, customize, and share AI personalities.
+                {t("forgedForCreatorsDesc")}
               </p>
             </div>
           </FadeUp>
@@ -170,13 +170,13 @@ export default function HomePage() {
 
           <FadeUp delay={0.15}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient font-display tracking-wider">
-              Ready to Forge?
+              {t("readyToForge")}
             </h2>
           </FadeUp>
 
           <FadeUp delay={0.3}>
             <p className="text-xl text-purple-200/50 mb-10 font-body">
-              Start from scratch or pick a preset. Your AI's soul awaits.
+              {t("readyToForgeDesc")}
             </p>
           </FadeUp>
 
@@ -188,7 +188,7 @@ export default function HomePage() {
             >
               <Link href="/editor">
                 <Zap className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Start Creating
+                {t("startCreating")}
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

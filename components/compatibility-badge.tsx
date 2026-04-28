@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { calculateCompatibility } from "@/lib/compatibility";
 import { SoulState, SoulPreset } from "@/store/soulStore";
+import { useTranslations } from "next-intl";
 
 interface CompatibilityBadgeProps {
   currentSoul: SoulState["soul"];
@@ -12,6 +13,7 @@ interface CompatibilityBadgeProps {
 }
 
 export function CompatibilityBadge({ currentSoul, preset, showBreakdown = false }: CompatibilityBadgeProps) {
+  const t = useTranslations("compatibility");
   const compatibility = useMemo(
     () => calculateCompatibility(currentSoul, preset),
     [currentSoul, preset]
@@ -32,14 +34,14 @@ export function CompatibilityBadge({ currentSoul, preset, showBreakdown = false 
         className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${getColor(compatibility.overall)}`}
       >
         <span>{compatibility.overall}%</span>
-        <span className="text-[10px] opacity-60">match</span>
+        <span className="text-[10px] opacity-60">{t("match")}</span>
       </motion.div>
 
       {showBreakdown && (
         <div className="text-[10px] text-purple-400/40 space-y-0.5">
-          <div>Tone: {compatibility.breakdown.tone}%</div>
-          <div>Personality: {compatibility.breakdown.personality}%</div>
-          <div>Style: {compatibility.breakdown.style === 100 ? "✓" : "✗"}</div>
+          <div>{t("tone")}: {compatibility.breakdown.tone}%</div>
+          <div>{t("personality")}: {compatibility.breakdown.personality}%</div>
+          <div>{t("style")}: {compatibility.breakdown.style === 100 ? "✓" : "✗"}</div>
         </div>
       )}
     </div>

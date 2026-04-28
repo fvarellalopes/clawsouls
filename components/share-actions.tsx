@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Share2, Check, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ShareActionsProps {
   dataParam: string;
 }
 
 export function ShareActions({ dataParam }: ShareActionsProps) {
+  const t = useTranslations("share");
   const [copied, setCopied] = useState(false);
 
   const shareUrl = typeof window !== "undefined"
@@ -30,9 +32,9 @@ export function ShareActions({ dataParam }: ShareActionsProps) {
   return (
     <div className="grid md:grid-cols-2 gap-8 mb-12">
       <div className="p-6 rounded-lg border border-border bg-card">
-        <h2 className="text-2xl font-semibold mb-4">Copy Share Link</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t("copyShareLink")}</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Anyone with this link can load this personality into ClawSouls.
+          {t("copyShareLinkDesc")}
         </p>
         <div className="flex space-x-2">
           <Input readOnly value={shareUrl} className="flex-1" />
@@ -40,12 +42,12 @@ export function ShareActions({ dataParam }: ShareActionsProps) {
             {copied ? (
               <>
                 <Check className="mr-2 h-4 w-4" />
-                Copied!
+                {t("copied")}
               </>
             ) : (
               <>
                 <Share2 className="mr-2 h-4 w-4" />
-                Copy
+                {t("copy")}
               </>
             )}
           </Button>
@@ -53,13 +55,13 @@ export function ShareActions({ dataParam }: ShareActionsProps) {
       </div>
 
       <div className="p-6 rounded-lg border border-border bg-card">
-        <h2 className="text-2xl font-semibold mb-4">Load in Editor</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t("loadInEditor")}</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Want to customize this personality? Open it in the editor.
+          {t("loadInEditorDesc")}
         </p>
         <Button asChild className="w-full">
           <Link href={`/editor?data=${dataParam}`}>
-            Open in Editor
+            {t("openInEditor")}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import QRCodeLib from "qrcode";
 import { Button } from "./ui/button";
+import { useTranslations } from "next-intl";
 
 interface QRCodeDisplayProps {
   url: string;
@@ -10,6 +11,7 @@ interface QRCodeDisplayProps {
 }
 
 export function QRCodeDisplay({ url, name }: QRCodeDisplayProps) {
+  const t = useTranslations("qrCode");
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export function QRCodeDisplay({ url, name }: QRCodeDisplayProps) {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      <img src={qrDataUrl} alt="QR Code" className="border-2 border-accent rounded-lg p-2 bg-white" />
+      <img src={qrDataUrl} alt={t("qrCode")} className="border-2 border-accent rounded-lg p-2 bg-white" />
       <Button
         variant="outline"
         size="sm"
@@ -33,7 +35,7 @@ export function QRCodeDisplay({ url, name }: QRCodeDisplayProps) {
           a.click();
         }}
       >
-        Download QR
+        {t("downloadQr")}
       </Button>
     </div>
   );

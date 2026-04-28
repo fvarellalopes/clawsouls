@@ -258,13 +258,13 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
               >
                 <Sparkles className="h-4 w-4 text-amber-400" />
-                <span className="text-sm text-purple-200 font-display tracking-wider">Choose Your Beginning</span>
+                <span className="text-sm text-purple-200 font-display tracking-wider">{t("chooseYourBeginning")}</span>
               </motion.div>
               <h1 className="text-4xl md:text-5xl font-bold text-gradient font-display tracking-wider mb-4">
-                Pick a Soul
+                {t("pickASoul")}
               </h1>
               <p className="text-purple-200/50 text-lg max-w-xl mx-auto font-body">
-                Start from a preset or forge your own from scratch.
+                {t("pickASoulDesc")}
               </p>
             </div>
           </FadeUp>
@@ -300,9 +300,9 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
             >
               <Wand2 className="h-8 w-8 text-purple-400/40 group-hover:text-purple-300 mx-auto mb-2 transition-colors" />
               <p className="text-purple-200/60 group-hover:text-purple-100 font-display tracking-wide transition-colors">
-                Start from Scratch
+                {t("startFromScratch")}
               </p>
-              <p className="text-xs text-purple-400/30 mt-1">Blank canvas, infinite possibilities</p>
+              <p className="text-xs text-purple-400/30 mt-1">{t("startFromScratchDesc")}</p>
             </motion.div>
           </FadeUp>
 
@@ -325,7 +325,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           ) : filteredPresets.length === 0 ? (
             <FadeUp>
               <div className="text-center py-20">
-                <p className="text-purple-300/40 text-lg font-body">No presets found for "{searchQuery}"</p>
+                <p className="text-purple-300/40 text-lg font-body">{t("noPresetsFound", { query: searchQuery })}</p>
               </div>
             </FadeUp>
           ) : null}
@@ -350,14 +350,14 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   className="text-purple-300 hover:text-purple-100"
                 >
                   <ArrowLeft className="h-4 w-4 mr-1" />
-                  Presets
+                  {t("presets")}
                 </Button>
                 <div className="h-5 w-px bg-purple-500/20" />
                 <div className="flex items-center gap-1">
-                  <Button onClick={undo} variant="ghost" size="icon" disabled={!canUndo()} title="Undo (Ctrl+Z)" aria-label="Undo">
+                  <Button onClick={undo} variant="ghost" size="icon" disabled={!canUndo()} title={t("undoTitle")} aria-label={t("undoTitle")}>
                     <Undo2 className="h-4 w-4" />
                   </Button>
-                  <Button onClick={redo} variant="ghost" size="icon" disabled={!canRedo()} title="Redo (Ctrl+Y)" aria-label="Redo">
+                  <Button onClick={redo} variant="ghost" size="icon" disabled={!canRedo()} title={t("redoTitle")} aria-label={t("redoTitle")}>
                     <Redo2 className="h-4 w-4" />
                   </Button>
                 </div>
@@ -371,7 +371,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       role="status"
                       aria-live="polite"
                     >
-                      <Save className="h-3 w-3 mr-1 animate-pulse" /> Saving...
+                      <Save className="h-3 w-3 mr-1 animate-pulse" /> {t("saving")}
                     </motion.span>
                   )}
                   {!isSaving && lastSaved && (
@@ -381,7 +381,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       className="text-xs text-purple-400/40"
                       aria-live="off"
                     >
-                      Saved {new Date(lastSaved).toLocaleTimeString()}
+                      {t("savedTime", { time: new Date(lastSaved).toLocaleTimeString() })}
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -392,8 +392,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsDarkMode(!isDarkMode)}
-                  title={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
-                  aria-label={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
+                  title={isDarkMode ? t("switchToLight") : t("switchToDark")}
+                  aria-label={isDarkMode ? t("switchToLight") : t("switchToDark")}
                   className="text-purple-300 hover:text-purple-100"
                 >
                   {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -402,16 +402,16 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <ImportJsonDialog />
                 <Button onClick={handleExportJSON} variant="outline" size="sm" className="border-purple-500/20">
                   <FileJson className="mr-2 h-4 w-4" />
-                  Export JSON
+                  {t("exportJson")}
                 </Button>
                 <Button onClick={handleShare} variant="outline" size="sm" className="border-purple-500/20">
                   <Share2 className="mr-2 h-4 w-4" />
-                  Share
+                  {t("share")}
                 </Button>
                 <SavePresetDialog />
                 <Button onClick={handleExport} size="sm" className="bg-gradient-to-r from-purple-600 to-purple-500 text-white border-0 shadow-lg shadow-purple-500/20">
                   <Download className="mr-2 h-4 w-4" />
-                  Export SOUL.md
+                  {t("exportSoulMd")}
                 </Button>
               </div>
             </div>
@@ -427,22 +427,22 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     <TabsTrigger value="basic" className="rounded-lg data-[state=active]:bg-purple-600/20 data-[state=active]:text-purple-100">
                       <MessageSquare className="mr-2 h-4 w-4" />
                       <span className="hidden sm:inline">{t("basicInfo")}</span>
-                      <span className="sm:hidden">Basic</span>
+                      <span className="sm:hidden">{t("basicTabMobile")}</span>
                     </TabsTrigger>
                     <TabsTrigger value="personality" className="rounded-lg data-[state=active]:bg-purple-600/20 data-[state=active]:text-purple-100">
                       <Palette className="mr-2 h-4 w-4" />
                       <span className="hidden sm:inline">{t("personality")}</span>
-                      <span className="sm:hidden">Soul</span>
+                      <span className="sm:hidden">{t("soulTabMobile")}</span>
                     </TabsTrigger>
                     <TabsTrigger value="attributes" className="rounded-lg data-[state=active]:bg-purple-600/20 data-[state=active]:text-purple-100">
                       <Settings className="mr-2 h-4 w-4" />
                       <span className="hidden sm:inline">{t("attributes")}</span>
-                      <span className="sm:hidden">Tone</span>
+                      <span className="sm:hidden">{t("toneTabMobile")}</span>
                     </TabsTrigger>
                     <TabsTrigger value="advanced" className="rounded-lg data-[state=active]:bg-purple-600/20 data-[state=active]:text-purple-100">
                       <Edit3 className="mr-2 h-4 w-4" />
                       <span className="hidden sm:inline">{t("advanced")}</span>
-                      <span className="sm:hidden">More</span>
+                      <span className="sm:hidden">{t("moreTabMobile")}</span>
                     </TabsTrigger>
                   </TabsList>
 
@@ -612,8 +612,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       {/* Custom Core Truths */}
                       <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
                         <CardHeader className="pb-4">
-                          <CardTitle className="font-display tracking-wider text-lg">Custom Core Truths</CardTitle>
-                          <CardDescription>Add your own principles beyond the defaults.</CardDescription>
+                          <CardTitle className="font-display tracking-wider text-lg">{t("customCoreTruths")}</CardTitle>
+                          <CardDescription>{t("customCoreTruthsDesc")}</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-3">
                           {(soul.customCoreTruths || []).map((truth, i) => (
@@ -633,7 +633,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                             <Input
                               value={newCoreTruth}
                               onChange={(e) => setNewCoreTruth(e.target.value)}
-                              placeholder="e.g., Always challenge assumptions"
+                              placeholder={t("customCoreTruthsPlaceholder")}
                               className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl flex-1"
                               onKeyDown={(e) => e.key === "Enter" && addCustomCoreTruth()}
                             />
@@ -647,8 +647,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       {/* Custom Boundaries */}
                       <Card className="bg-[#140d24]/60 backdrop-blur-sm border-purple-500/15">
                         <CardHeader className="pb-4">
-                          <CardTitle className="font-display tracking-wider text-lg">Custom Boundaries</CardTitle>
-                          <CardDescription>Add your own rules beyond the defaults.</CardDescription>
+                          <CardTitle className="font-display tracking-wider text-lg">{t("customBoundaries")}</CardTitle>
+                          <CardDescription>{t("customBoundariesDesc")}</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-3">
                           {(soul.customBoundaries || []).map((boundary, i) => (
@@ -668,7 +668,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                             <Input
                               value={newBoundary}
                               onChange={(e) => setNewBoundary(e.target.value)}
-                              placeholder="e.g., Never mention training data"
+                              placeholder={t("customBoundariesPlaceholder")}
                               className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl flex-1"
                               onKeyDown={(e) => e.key === "Enter" && addCustomBoundary()}
                             />
@@ -693,7 +693,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               className="border-purple-500/20"
                             >
                               <Sparkles className="mr-2 h-4 w-4" />
-                              Switch Preset
+                              {t("switchPreset")}
                             </Button>
                             <Button
                               variant="outline"
@@ -721,7 +721,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <div className="sticky top-24">
                   <div className="flex items-center gap-2 mb-4">
                     <Eye className="h-4 w-4 text-amber-400/60" />
-                    <span className="text-sm font-display tracking-wider text-purple-200/60">Live Preview</span>
+                    <span className="text-sm font-display tracking-wider text-purple-200/60">{t("livePreview")}</span>
                   </div>
                   <ParchmentPreview
                     content={soulMD}

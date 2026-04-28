@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function AchievementsPage() {
+  const t = useTranslations("achievements");
   const { unlockedIds, stats } = useAchievementsStore();
 
   const unlockedCount = unlockedIds.length;
@@ -26,10 +27,10 @@ export default function AchievementsPage() {
         >
           <Trophy className="h-16 w-16 text-amber-400 mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-gradient font-display tracking-wider mb-3">
-            Achievements
+            {t("title")}
           </h1>
           <p className="text-purple-200/50 text-lg mb-4">
-            {unlockedCount} of {totalCount} unlocked ({percentage}%)
+            {t("unlockedSummary", { unlockedCount, totalCount, percentage })}
           </p>
           <div className="max-w-xs mx-auto h-2 rounded-full bg-purple-500/10 overflow-hidden">
             <motion.div
@@ -44,10 +45,10 @@ export default function AchievementsPage() {
         {/* Stats Summary */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {[
-            { label: "Exports", value: stats.totalExports, emoji: "📄" },
-            { label: "Shares", value: stats.totalShares, emoji: "🔗" },
-            { label: "Quizzes", value: stats.quizzesTaken, emoji: "🧠" },
-            { label: "Languages", value: stats.languagesUsed.length, emoji: "🌍" },
+            { label: t("exports"), value: stats.totalExports, emoji: "📄" },
+            { label: t("shares"), value: stats.totalShares, emoji: "🔗" },
+            { label: t("quizzes"), value: stats.quizzesTaken, emoji: "🧠" },
+            { label: t("languages"), value: stats.languagesUsed.length, emoji: "🌍" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -108,7 +109,7 @@ export default function AchievementsPage() {
                             className="mt-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-xs"
                           >
                             <Sparkles className="h-3 w-3" />
-                            Unlocked
+                            {t("unlocked")}
                           </motion.div>
                         )}
                       </div>
@@ -124,7 +125,7 @@ export default function AchievementsPage() {
           <Button asChild variant="outline" className="border-purple-500/20">
             <Link href="/editor">
               <Sparkles className="mr-2 h-4 w-4" />
-              Keep Creating
+              {t("keepCreating")}
             </Link>
           </Button>
         </div>

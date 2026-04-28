@@ -11,7 +11,13 @@
     "create": "Crear",
     "about": "Acerca de",
     "madeWith": "Hecho con",
-    "footerDescription": "ClawSouls — Crea tu personalidad AI OpenClaw con estilo."
+    "footerDescription": "ClawSouls — Crea tu personalidad AI OpenClaw con estilo.",
+    "quiz": "Quiz",
+    "achievements": "Logros",
+    "loading": "Cargando...",
+    "backToHome": "Volver al Inicio",
+    "cancel": "Cancelar",
+    "import": "Importar"
   },
   "editor": {
     "title": "Editor de Alma",
@@ -65,7 +71,34 @@
       "balanced": "Equilibrado"
     },
     "customize": "Personalizar",
-    "customizeDesc": "Opciones y acciones adicionales"
+    "customizeDesc": "Opciones y acciones adicionales",
+    "chooseYourBeginning": "Elige Tu Comienzo",
+    "pickASoul": "Elige un Alma",
+    "pickASoulDesc": "Empieza con un preset o crea el tuyo desde cero.",
+    "startFromScratch": "Empezar desde Cero",
+    "startFromScratchDesc": "Lienzo en blanco, posibilidades infinitas",
+    "noPresetsFound": "No se encontraron presets para \"{query}\"",
+    "presets": "Presets",
+    "undoTitle": "Deshacer (Ctrl+Z)",
+    "redoTitle": "Rehacer (Ctrl+Y)",
+    "saving": "Guardando...",
+    "savedTime": "Guardado {time}",
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro",
+    "exportJson": "Exportar JSON",
+    "exportSoulMd": "Exportar SOUL.md",
+    "livePreview": "Vista Previa en Vivo",
+    "switchPreset": "Cambiar Preset",
+    "basicTabMobile": "Básico",
+    "soulTabMobile": "Alma",
+    "toneTabMobile": "Tono",
+    "moreTabMobile": "Más",
+    "customCoreTruths": "Verdades Fundamentales Personalizadas",
+    "customCoreTruthsDesc": "Añade tus propios principios más allá de los predeterminados.",
+    "customCoreTruthsPlaceholder": "ej., Siempre cuestionar suposiciones",
+    "customBoundaries": "Límites Personalizados",
+    "customBoundariesDesc": "Añade tus propias reglas más allá de las predeterminadas.",
+    "customBoundariesPlaceholder": "ej., Nunca mencionar datos de entrenamiento"
   },
   "presetsPage": {
     "title": "Personalidades Predefinidas",
@@ -76,7 +109,10 @@
     "backToHome": "Volver al Inicio",
     "searchPlaceholder": "Buscar presets...",
     "allCreatures": "Todas las criaturas",
-    "loading": "Cargando..."
+    "loading": "Cargando...",
+    "all": "Todos",
+    "noPresetsFound": "No se encontraron presets",
+    "noPresetsFoundSearch": "No se encontraron presets para \"{query}\""
   },
   "home": {
     "heroTitle": "Crea el Alma de tu AI",
@@ -96,7 +132,15 @@
     "featureDesc": "Moderno, interactivo e internacionalizado.",
     "ctaTitle": "¿Listo para Crear?",
     "ctaDesc": "Comienza a construir la personalidad de tu AI ahora. Sin necesidad de código.",
-    "ctaButton": "Abrir la Forja"
+    "ctaButton": "Abrir la Forja",
+    "presetsCount": "30+ presets",
+    "scroll": "Desplazar",
+    "capabilities": "Capacidades",
+    "forgedForCreators": "Forjado para Creadores",
+    "forgedForCreatorsDesc": "Todas las herramientas que necesitas para crear, personalizar y compartir personalidades de AI.",
+    "readyToForge": "¿Listo para Forjar?",
+    "readyToForgeDesc": "Empieza desde cero o elige un preset. El alma de tu AI te espera.",
+    "startCreating": "Empezar a Crear"
   },
   "myPresets": {
     "title": "Mis Presets",
@@ -128,11 +172,95 @@
     "yourMatches": "Tus Matches",
     "bestMatch": "Mejor Match",
     "useThis": "Usar Este Preset",
-    "retake": "Rehacer Quiz"
+    "retake": "Rehacer Quiz",
+    "personalityQuiz": "Quiz de Personalidad",
+    "quizIntro": "Responde {count} preguntas sobre cómo quieres que se comporte tu AI. Te encontrarán con el preset perfecto.",
+    "browseAll": "Ver Todos",
+    "questionProgress": "Pregunta {current} de {total}",
+    "matchesDesc": "Según tus respuestas, aquí están tus 3 mejores coincidencias de personalidad."
   },
   "achievements": {
     "title": "Logros",
     "unlocked": "Desbloqueados",
-    "de": "de"
+    "of": "de",
+    "unlockedSummary": "{unlockedCount} de {totalCount} desbloqueados ({percentage}%)",
+    "exports": "Exportaciones",
+    "shares": "Compartidos",
+    "quizzes": "Quizzes",
+    "languages": "Idiomas",
+    "keepCreating": "Sigue Creando"
+  },
+  "parchmentPreview": {
+    "unnamedSoul": "Alma Sin Nombre",
+    "soulMdPreview": "Vista previa del SOUL.md",
+    "copySoulContent": "Copiar contenido del SOUL.md",
+    "toneProfile": "Perfil de Tono",
+    "humor": "Humor",
+    "formality": "Formalidad",
+    "emojiUsage": "Emoji",
+    "verbosity": "Verbosidad",
+    "consciousness": "Consciencia",
+    "questioning": "Cuestionamiento",
+    "forgedBy": "Forjado en ClawSouls ✦ {year}"
+  },
+  "soulPreview": {
+    "title": "Vista previa del SOUL.md",
+    "description": "Este es el Markdown exacto que usará OpenClaw."
+  },
+  "importJson": {
+    "importJson": "Importar JSON",
+    "importSoulConfig": "Importar Configuración de Alma",
+    "importSoulConfigDesc": "Pega el JSON o arrastra un archivo .json para cargar una configuración.",
+    "dropJsonFile": "Suelta un archivo .json aquí o haz clic para navegar",
+    "soulImported": "¡Alma importada con éxito!",
+    "orImportSoulMd": "O importa un SOUL.md existente",
+    "importSoulMd": "Importar SOUL.md",
+    "cancel": "Cancelar",
+    "import": "Importar",
+    "parseError": "No se pudo analizar el SOUL.md — no se encontraron patrones reconocibles."
+  },
+  "share": {
+    "copyShareLink": "Copiar Enlace para Compartir",
+    "copyShareLinkDesc": "Cualquiera con este enlace puede cargar esta personalidad en ClawSouls.",
+    "copied": "¡Copiado!",
+    "copy": "Copiar",
+    "loadInEditor": "Cargar en el Editor",
+    "loadInEditorDesc": "¿Quieres personalizar esta personalidad? Ábrela en el editor.",
+    "openInEditor": "Abrir en el Editor",
+    "personalityNotFound": "Personalidad No Encontrada",
+    "shareLinkExpired": "Este enlace puede haber expirado o no es válido.",
+    "shareNotFound": "Compartido No Encontrado",
+    "linkExpired": "Este enlace puede haber expirado.",
+    "backToHome": "Volver al Inicio",
+    "scanToShare": "Escanear para Compartir",
+    "createYourOwn": "Crea el Tuyo",
+    "loading": "Cargando...",
+    "loadingPreview": "Cargando vista previa..."
+  },
+  "keyboard": {
+    "title": "Atajos de Teclado",
+    "undo": "Deshacer",
+    "redo": "Rehacer",
+    "redoAlt": "Rehacer (alt)",
+    "addItem": "Agregar elemento (en campos)",
+    "pressToToggle": "Presiona ? para alternar"
+  },
+  "errorBoundary": {
+    "somethingWentWrong": "Algo salió mal",
+    "unexpectedError": "Ocurrió un error inesperado.",
+    "tryAgain": "Intentar de Nuevo"
+  },
+  "achievementToast": {
+    "achievementUnlocked": "¡Logro Desbloqueado!"
+  },
+  "compatibility": {
+    "match": "match",
+    "tone": "Tono",
+    "personality": "Personalidad",
+    "style": "Estilo"
+  },
+  "qrCode": {
+    "qrCode": "Código QR",
+    "downloadQr": "Descargar QR"
   }
 }

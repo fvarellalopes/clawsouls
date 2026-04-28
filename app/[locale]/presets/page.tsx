@@ -97,7 +97,7 @@ export default function PresetsPage() {
             onClick={() => setSelectedTag(null)}
             className="rounded-full text-xs"
           >
-            All
+            {t("all")}
           </Button>
           {allTags.slice(0, 15).map((tag) => (
             <Button
@@ -133,7 +133,7 @@ export default function PresetsPage() {
         {!loading && filtered.length === 0 && (
           <div className="text-center py-20">
             <p className="text-purple-300/40 text-lg">
-              No presets found {search ? `for "${search}"` : ""}
+              {search ? t("noPresetsFoundSearch", { query: search }) : t("noPresetsFound")}
             </p>
           </div>
         )}

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAchievementsStore, achievements } from "@/store/achievementsStore";
 import { Trophy, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function AchievementToast() {
+  const t = useTranslations("achievementToast");
   const { newAchievement, clearNewAchievement } = useAchievementsStore();
   const [visible, setVisible] = useState(false);
 
@@ -39,7 +41,7 @@ export function AchievementToast() {
               <div className="flex items-center gap-2">
                 <Trophy className="h-4 w-4 text-amber-400" />
                 <span className="text-xs text-amber-400 font-bold uppercase tracking-wider">
-                  Achievement Unlocked!
+                  {t("achievementUnlocked")}
                 </span>
               </div>
               <div className="text-lg font-bold text-purple-100 font-display">

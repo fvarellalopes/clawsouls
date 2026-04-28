@@ -17,6 +17,7 @@ import Link from "next/link";
 type Phase = "intro" | "quiz" | "results";
 
 export default function QuizPage() {
+  const t = useTranslations("quiz");
   const router = useRouter();
   const { presets } = usePresets();
   const [phase, setPhase] = useState<Phase>("intro");
@@ -88,11 +89,10 @@ export default function QuizPage() {
             🧠
           </motion.div>
           <h1 className="text-4xl md:text-5xl font-bold text-gradient font-display tracking-wider mb-4">
-            Personality Quiz
+            {t("personalityQuiz")}
           </h1>
           <p className="text-purple-200/60 text-lg mb-8 leading-relaxed">
-            Answer {quizQuestions.length} questions about how you want your AI to behave.
-            We&apos;ll match you with the perfect preset.
+            {t("quizIntro", { count: quizQuestions.length })}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -101,12 +101,12 @@ export default function QuizPage() {
               className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-8 py-6 text-lg rounded-2xl"
             >
               <Sparkles className="mr-2 h-5 w-5" />
-              Start Quiz
+              {t("start")}
             </Button>
             <Button asChild size="lg" variant="outline" className="border-purple-500/20 px-8 py-6 text-lg rounded-2xl">
               <Link href="/presets">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Browse All
+                {t("browseAll")}
               </Link>
             </Button>
           </div>
@@ -125,7 +125,7 @@ export default function QuizPage() {
           {/* Progress */}
           <div className="mb-8">
             <div className="flex justify-between text-sm text-purple-300/50 mb-2">
-              <span>Question {currentQuestion + 1} of {quizQuestions.length}</span>
+              <span>{t("questionProgress", { current: currentQuestion + 1, total: quizQuestions.length })}</span>
               <span>{Math.round(progress)}%</span>
             </div>
             <div className="h-1.5 rounded-full bg-purple-500/10 overflow-hidden">
@@ -194,14 +194,14 @@ export default function QuizPage() {
               className="text-purple-300"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back
+              {t("back")}
             </Button>
             <Button
               onClick={handleNext}
               disabled={selectedOption === null}
               className="bg-purple-600 text-white px-8"
             >
-              {currentQuestion === quizQuestions.length - 1 ? "See Results" : "Next"}
+              {currentQuestion === quizQuestions.length - 1 ? t("seeResults") : t("next")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -221,10 +221,10 @@ export default function QuizPage() {
         >
           <Trophy className="h-16 w-16 text-amber-400 mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-bold text-gradient font-display tracking-wider mb-4">
-            Your Matches
+            {t("yourMatches")}
           </h1>
           <p className="text-purple-200/60 text-lg">
-            Based on your answers, here are your top 3 personality matches.
+            {t("matchesDesc")}
           </p>
         </motion.div>
 
@@ -240,7 +240,7 @@ export default function QuizPage() {
                 <div className="p-4 text-center">
                   {i === 0 && (
                     <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold mb-3">
-                      🏆 Best Match
+                      🏆 {t("bestMatch")}
                     </div>
                   )}
                   <div className="text-5xl mb-3">{result.preset.emoji}</div>
@@ -256,7 +256,7 @@ export default function QuizPage() {
                     onClick={() => handleLoadPreset(result.preset)}
                     className="w-full bg-purple-600 text-white"
                   >
-                    Use This Preset
+                    {t("useThis")}
                   </Button>
                 </div>
               </Card>
@@ -267,7 +267,7 @@ export default function QuizPage() {
         <div className="text-center">
           <Button variant="outline" onClick={handleRestart} className="border-purple-500/20">
             <RotateCcw className="mr-2 h-4 w-4" />
-            Retake Quiz
+            {t("retake")}
           </Button>
         </div>
       </div>

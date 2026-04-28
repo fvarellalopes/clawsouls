@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 
 export function MobileNav() {
   const t = useTranslations("mobileNav");
+  const tCommon = useTranslations("common");
   const pathname = usePathname();
 
   // Strip locale prefix for matching
@@ -20,7 +21,7 @@ export function MobileNav() {
     { href: "/editor", label: t("editor"), icon: Edit3 },
     { href: "/presets", label: t("presets"), icon: LayoutGrid },
     { href: "/my-presets", label: t("myPresets"), icon: Bookmark },
-    { href: "/quiz", label: "Quiz", icon: Sparkles },
+    { href: "/quiz", label: tCommon("quiz"), icon: Sparkles },
     { href: "/achievements", label: t("achievements"), icon: Trophy },
   ];
 

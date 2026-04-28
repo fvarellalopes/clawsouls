@@ -53,10 +53,10 @@ export function Header({ locale, messages }: HeaderProps) {
             <Link href="/presets">{t("presets")}</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
-            <Link href="/quiz">Quiz</Link>
+            <Link href="/quiz">{t("quiz")}</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
-            <Link href="/achievements">Achievements</Link>
+            <Link href="/achievements">{t("achievements")}</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
             <Link href="/editor">{t("create")}</Link>

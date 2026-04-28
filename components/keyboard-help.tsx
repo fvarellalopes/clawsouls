@@ -4,16 +4,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Keyboard, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const shortcuts = [
-  { keys: ["Ctrl", "Z"], action: "Undo" },
-  { keys: ["Ctrl", "Y"], action: "Redo" },
-  { keys: ["Ctrl", "Shift", "Z"], action: "Redo (alt)" },
-  { keys: ["Enter"], action: "Add item (in inputs)" },
-];
+import { useTranslations } from "next-intl";
 
 export function KeyboardHelp() {
+  const t = useTranslations("keyboard");
   const [open, setOpen] = useState(false);
+
+  const shortcuts = [
+    { keys: ["Ctrl", "Z"], action: t("undo") },
+    { keys: ["Ctrl", "Y"], action: t("redo") },
+    { keys: ["Ctrl", "Shift", "Z"], action: t("redoAlt") },
+    { keys: ["Enter"], action: t("addItem") },
+  ];
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -41,7 +43,7 @@ export function KeyboardHelp() {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Keyboard className="h-4 w-4 text-amber-400" />
-                <span className="text-sm font-bold text-purple-100 font-display">Keyboard Shortcuts</span>
+                <span className="text-sm font-bold text-purple-100 font-display">{t("title")}</span>
               </div>
               <button onClick={() => setOpen(false)} className="text-purple-400/40 hover:text-purple-300">
                 <X className="h-4 w-4" />
@@ -65,7 +67,7 @@ export function KeyboardHelp() {
               ))}
             </div>
             <p className="text-[10px] text-purple-400/30 mt-4 text-center">
-              Press <kbd className="px-1 py-0.5 bg-purple-500/10 rounded text-purple-300/50">?</kbd> to toggle
+              Press <kbd className="px-1 py-0.5 bg-purple-500/10 rounded text-purple-300/50">?</kbd> {t("pressToToggle")}
             </p>
           </div>
         </motion.div>

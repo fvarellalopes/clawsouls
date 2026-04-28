@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface ParchmentPreviewProps {
   content: string;
@@ -38,6 +39,7 @@ function ToneBar({ label, value }: { label: string; value: number }) {
 }
 
 export function ParchmentPreview({ content, name, emoji, toneAttributes }: ParchmentPreviewProps) {
+  const t = useTranslations("parchmentPreview");
   const [copied, setCopied] = useState(false);
 
   const sections = useMemo(() => {
@@ -95,9 +97,9 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
               </motion.span>
               <div>
                 <h3 className="text-xl font-bold text-gradient font-display">
-                  {name || "Unnamed Soul"}
+                  {name || t("unnamedSoul")}
                 </h3>
-                <p className="text-sm text-purple-300/60">SOUL.md Preview</p>
+                <p className="text-sm text-purple-300/60">{t("soulMdPreview")}</p>
               </div>
             </div>
             <Button
@@ -105,7 +107,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
               variant="ghost"
               onClick={handleCopy}
               className="text-purple-300 hover:text-purple-100"
-              aria-label="Copy SOUL.md content"
+              aria-label={t("copySoulContent")}
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             </Button>
@@ -115,15 +117,15 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
           {toneAttributes && (
             <div className="mb-6 pb-4 border-b border-purple-500/10">
               <p className="text-[10px] text-purple-500/40 uppercase tracking-widest mb-3 font-display">
-                Tone Profile
+                {t("toneProfile")}
               </p>
               <div className="space-y-1.5">
-                <ToneBar label="Humor" value={toneAttributes.humor} />
-                <ToneBar label="Formality" value={toneAttributes.formality} />
-                <ToneBar label="Emoji" value={toneAttributes.emojiUsage} />
-                <ToneBar label="Verbosity" value={toneAttributes.verbosity} />
-                <ToneBar label="Consciousness" value={toneAttributes.consciousness} />
-                <ToneBar label="Questioning" value={toneAttributes.questioning} />
+                <ToneBar label={t("humor")} value={toneAttributes.humor} />
+                <ToneBar label={t("formality")} value={toneAttributes.formality} />
+                <ToneBar label={t("emojiUsage")} value={toneAttributes.emojiUsage} />
+                <ToneBar label={t("verbosity")} value={toneAttributes.verbosity} />
+                <ToneBar label={t("consciousness")} value={toneAttributes.consciousness} />
+                <ToneBar label={t("questioning")} value={toneAttributes.questioning} />
               </div>
             </div>
           )}
@@ -198,7 +200,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
           {/* Footer watermark */}
           <div className="mt-6 pt-4 border-t border-purple-500/10 text-center">
             <span className="text-[10px] text-purple-500/30 tracking-widest uppercase font-display">
-              Forged in ClawSouls ✦ {new Date().getFullYear()}
+              {t("forgedBy", { year: new Date().getFullYear() })}
             </span>
           </div>
         </div>

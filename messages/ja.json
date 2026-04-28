@@ -11,7 +11,13 @@
     "create": "作成",
     "about": "について",
     "madeWith": "で作られました",
-    "footerDescription": "ClawSouls — OpenClaw AIの人格をスタイリッシュにカスタマイズ。"
+    "footerDescription": "ClawSouls — OpenClaw AIの人格をスタイリッシュにカスタマイズ。",
+    "quiz": "クイズ",
+    "achievements": "実績",
+    "loading": "読み込み中...",
+    "backToHome": "ホームに戻る",
+    "cancel": "キャンセル",
+    "import": "インポート"
   },
   "editor": {
     "title": "ソウルエディタ",
@@ -65,7 +71,34 @@
       "balanced": "バランス"
     },
     "customize": "カスタマイズ",
-    "customizeDesc": "追加オプションとアクション"
+    "customizeDesc": "追加オプションとアクション",
+    "chooseYourBeginning": "始まりを選ぼう",
+    "pickASoul": "魂を選ぼう",
+    "pickASoulDesc": "プリセットから始めるか、ゼロから作成。",
+    "startFromScratch": "ゼロから始める",
+    "startFromScratchDesc": "真っ白なキャンバス、無限の可能性",
+    "noPresetsFound": "\"{query}\" に該当するプリセットが見つかりません",
+    "presets": "プリセット",
+    "undoTitle": "元に戻す (Ctrl+Z)",
+    "redoTitle": "やり直し (Ctrl+Y)",
+    "saving": "保存中...",
+    "savedTime": "{time}に保存",
+    "switchToLight": "ライトテーマに切り替え",
+    "switchToDark": "ダークテーマに切り替え",
+    "exportJson": "JSONエクスポート",
+    "exportSoulMd": "SOUL.mdエクスポート",
+    "livePreview": "ライブプレビュー",
+    "switchPreset": "プリセット切替",
+    "basicTabMobile": "基本",
+    "soulTabMobile": "魂",
+    "toneTabMobile": "トーン",
+    "moreTabMobile": "他",
+    "customCoreTruths": "カスタムコアの真理",
+    "customCoreTruthsDesc": "デフォルトを超えた独自の原則を追加。",
+    "customCoreTruthsPlaceholder": "例：常に前提を疑う",
+    "customBoundaries": "カスタム境界線",
+    "customBoundariesDesc": "デフォルトを超えた独自のルールを追加。",
+    "customBoundariesPlaceholder": "例：学習データについて言及しない"
   },
   "presetsPage": {
     "title": "プリセット人格",
@@ -76,7 +109,10 @@
     "backToHome": "ホームに戻る",
     "searchPlaceholder": "プリセットを検索...",
     "allCreatures": "すべてのクリーチャー",
-    "loading": "読み込み中..."
+    "loading": "読み込み中...",
+    "all": "すべて",
+    "noPresetsFound": "プリセットが見つかりません",
+    "noPresetsFoundSearch": "\"{query}\" に該当するプリセットが見つかりません"
   },
   "home": {
     "heroTitle": "AIの魂を作ろう",
@@ -96,7 +132,15 @@
     "featureDesc": "モダンでインタラクティブ、国際化対応。",
     "ctaButton": "始めましょう",
     "ctaTitle": "今すぐ始めよう",
-    "ctaDesc": "あなただけのAI人格を作成"
+    "ctaDesc": "あなただけのAI人格を作成",
+    "presetsCount": "30以上のプリセット",
+    "scroll": "スクロール",
+    "capabilities": "機能",
+    "forgedForCreators": "クリエイターのために鍛えられた",
+    "forgedForCreatorsDesc": "AIの人格を作成、カスタマイズ、共有するために必要なすべてのツール。",
+    "readyToForge": "鍛造の準備はできましたか？",
+    "readyToForgeDesc": "ゼロから始めるか、プリセットを選ぼう。あなたのAIの魂が待っている。",
+    "startCreating": "作成を始める"
   },
   "myPresets": {
     "title": "マイプリセット",
@@ -128,11 +172,95 @@
     "yourMatches": "あなたのマッチ",
     "bestMatch": "ベストマッチ",
     "useThis": "このプリセットを使う",
-    "retake": "もう一度"
+    "retake": "もう一度",
+    "personalityQuiz": "パーソナリティクイズ",
+    "quizIntro": "AIの振る舞い方について{count}問に答えましょう。最適なプリセットをマッチします。",
+    "browseAll": "すべて見る",
+    "questionProgress": "質問 {current} / {total}",
+    "matchesDesc": "あなたの回答に基づいて、トップ3のパーソナリティマッチです。"
   },
   "achievements": {
     "title": "実績",
     "unlocked": "解除済み",
-    "of": "/"
+    "of": "/",
+    "unlockedSummary": "{unlockedCount} / {totalCount} 解除済み ({percentage}%)",
+    "exports": "エクスポート",
+    "shares": "シェア",
+    "quizzes": "クイズ",
+    "languages": "言語",
+    "keepCreating": "作成を続ける"
+  },
+  "parchmentPreview": {
+    "unnamedSoul": "名前のない魂",
+    "soulMdPreview": "SOUL.mdプレビュー",
+    "copySoulContent": "SOUL.mdの内容をコピー",
+    "toneProfile": "トーンプロファイル",
+    "humor": "ユーモア",
+    "formality": "フォーマル度",
+    "emojiUsage": "絵文字",
+    "verbosity": "冗長さ",
+    "consciousness": "意識",
+    "questioning": "質問力",
+    "forgedBy": "ClawSoulsで鍛造 ✦ {year}"
+  },
+  "soulPreview": {
+    "title": "SOUL.mdプレビュー",
+    "description": "これはOpenClawが使用する正確なMarkdownです。"
+  },
+  "importJson": {
+    "importJson": "JSONインポート",
+    "importSoulConfig": "ソウル設定をインポート",
+    "importSoulConfigDesc": "JSONを貼り付けるか、.jsonファイルをドラッグして設定を読み込みます。",
+    "dropJsonFile": ".jsonファイルをドロップするか、クリックして参照",
+    "soulImported": "ソウルが正常にインポートされました！",
+    "orImportSoulMd": "または既存のSOUL.mdをインポート",
+    "importSoulMd": "SOUL.mdをインポート",
+    "cancel": "キャンセル",
+    "import": "インポート",
+    "parseError": "SOUL.mdを解析できませんでした — 認識可能なパターンが見つかりません。"
+  },
+  "share": {
+    "copyShareLink": "共有リンクをコピー",
+    "copyShareLinkDesc": "このリンクがあれば、誰でもこの人格をClawSoulsに読み込めます。",
+    "copied": "コピーしました！",
+    "copy": "コピー",
+    "loadInEditor": "エディタで開く",
+    "loadInEditorDesc": "この人格をカスタマイズしますか？エディタで開きましょう。",
+    "openInEditor": "エディタで開く",
+    "personalityNotFound": "人格が見つかりません",
+    "shareLinkExpired": "このリンクは期限切れか無効です。",
+    "shareNotFound": "共有が見つかりません",
+    "linkExpired": "このリンクは期限切れの可能性があります。",
+    "backToHome": "ホームに戻る",
+    "scanToShare": "スキャンして共有",
+    "createYourOwn": "自分も作る",
+    "loading": "読み込み中...",
+    "loadingPreview": "プレビューを読み込み中..."
+  },
+  "keyboard": {
+    "title": "キーボードショートカット",
+    "undo": "元に戻す",
+    "redo": "やり直し",
+    "redoAlt": "やり直し (alt)",
+    "addItem": "アイテム追加（入力欄内）",
+    "pressToToggle": "？キーでトグル"
+  },
+  "errorBoundary": {
+    "somethingWentWrong": "エラーが発生しました",
+    "unexpectedError": "予期しないエラーが発生しました。",
+    "tryAgain": "再試行"
+  },
+  "achievementToast": {
+    "achievementUnlocked": "実績解除！"
+  },
+  "compatibility": {
+    "match": "マッチ",
+    "tone": "トーン",
+    "personality": "人格",
+    "style": "スタイル"
+  },
+  "qrCode": {
+    "qrCode": "QRコード",
+    "downloadQr": "QRをダウンロード"
   }
 }
