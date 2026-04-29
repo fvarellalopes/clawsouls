@@ -28,6 +28,7 @@
     "clsx": "^2.1.1",
     "commander": "13.0.0",
     "date-fns": "^4.1.0",
+    "framer-motion": "^12.38.0",
     "js-yaml": "^4.1.1",
     "lucide-react": "^0.464.0",
     "nanoid": "^5.0.4",

@@ -97,7 +97,7 @@ export function FillWithAIDialog({ open, onOpenChange, onApply, currentSoul }: F
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={handleRegenerate}
+                    onClick={handleGenerate}
                     className="text-muted-fg hover:text-fg h-7 px-2"
                   >
                     <RefreshCw className="h-3.5 w-3.5 mr-1" />
@@ -180,7 +180,7 @@ export function FillWithAIDialog({ open, onOpenChange, onApply, currentSoul }: F
               {/* Action Buttons */}
               <div className="flex gap-3">
                 <Button
-                  onClick={handleRegenerate}
+                  onClick={handleGenerate}
                   variant="outline"
                   className="flex-1 border-border text-fg"
                 >

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Select,
   SelectContent,
@@ -54,11 +55,17 @@ function CompareBar({
           {valueA}
         </span>
         <div className="flex-1 h-2 rounded-full bg-primary/10 relative overflow-hidden">
-          <div
+          <motion.div
             className="absolute top-0 left-0 h-full rounded-full bg-primary"
+            initial={{ width: 0 }}
+            animate={{ width: `${valueA}%` }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           />
-          <div
+          <motion.div
             className="absolute top-0 left-0 h-full rounded-full bg-accent opacity-50"
+            initial={{ width: 0 }}
+            animate={{ width: `${valueB}%` }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           />
         </div>
         <span className="text-accent/80 font-mono text-xs w-8">
@@ -129,7 +136,9 @@ function PresetSelector({
       </Select>
 
       {preset && (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
           className="p-3 rounded-xl bg-primary/5 border border-border"
         >
           <div className="flex items-center gap-2 mb-2">
@@ -144,7 +153,7 @@ function PresetSelector({
           <p className="text-xs text-muted-fg leading-relaxed line-clamp-3">
             {preset.vibe}
           </p>
-        </div>
+        </motion.div>
       )}
     </div>
   );
@@ -244,10 +253,14 @@ function DiffViewer({
             </tr>
           </thead>
           <tbody>
+            <AnimatePresence>
               {displayLines.map((line) => (
-                <tr
+                <motion.tr
                   key={line.index}
-                  className={`border-b border-border/50 ${
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className={`border-b border-border/5 ${
                     line.same
                       ? "bg-transparent"
                       : "bg-primary/5"
@@ -274,8 +287,9 @@ function DiffViewer({
                   >
                     {line.lineB || <span className="text-subtle-fg/30 italic">—</span>}
                   </td>
-                </tr>
+                </motion.tr>
               ))}
+            </AnimatePresence>
           </tbody>
         </table>
       </div>
@@ -361,8 +375,13 @@ export function ABTestMode() {
       </div>
 
       {/* Comparison results */}
+      <AnimatePresence>
         {showComparison && canCompare && compatibility && (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
             className="space-y-8"
           >
             {/* Compatibility score */}
@@ -386,7 +405,7 @@ export function ABTestMode() {
                       stroke="rgba(168,85,247,0.1)"
                       strokeWidth="8"
                     />
-                    <circle
+                    <motion.circle
                       cx="50"
                       cy="50"
                       r="42"
@@ -395,9 +414,12 @@ export function ABTestMode() {
                       strokeWidth="8"
                       strokeLinecap="round"
                       strokeDasharray={`${2 * Math.PI * 42}`}
+                      initial={{ strokeDashoffset: 2 * Math.PI * 42 }}
+                      animate={{
                         strokeDashoffset:
                           2 * Math.PI * 42 * (1 - compatibility.overall / 100),
                       }}
+                      transition={{ duration: 1.2, ease: "easeOut" }}
                     />
                     <defs>
                       <linearGradient
@@ -413,11 +435,14 @@ export function ABTestMode() {
                     </defs>
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span
+                    <motion.span
                       className="text-3xl font-bold font-display text-primary font-display"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
                     >
                       {compatibility.overall}%
-                    </span>
+                    </motion.span>
                     <span className="text-xs text-muted-fg">{t("match")}</span>
                   </div>
                 </div>
@@ -559,8 +584,9 @@ export function ABTestMode() {
                 nameB={presetB.name}
               />
             </Card>
-          </div>
+          </motion.div>
         )}
+      </AnimatePresence>
     </div>
   );
 }
