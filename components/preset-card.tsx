@@ -21,6 +21,7 @@ export function PresetCard({ preset, index, onSelect, isSelected }: PresetCardPr
       }`}
     >
       <div className="relative p-5 bg-surface">
+        {/* Emoji + Name */}
         <div className="flex items-center gap-3 mb-3">
           <span className="text-3xl group-hover:scale-110 transition-transform duration-200">
             {preset.emoji}
@@ -38,6 +39,7 @@ export function PresetCard({ preset, index, onSelect, isSelected }: PresetCardPr
           )}
         </div>
 
+        {/* Description */}
         <p className="text-sm text-muted-fg line-clamp-2 mb-3 leading-relaxed">
           {preset.description}
         </p>

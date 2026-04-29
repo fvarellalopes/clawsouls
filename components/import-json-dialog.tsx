@@ -109,7 +109,7 @@ export function ImportJsonDialog() {
             className="border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors cursor-pointer"
             onClick={() => fileRef.current?.click()}
           >
-            <Upload className="h-8 w-8 text-subtle-fg mx-auto mb-2" />
+            <Upload className="h-8 w-8 text-subtle-fg/30 mx-auto mb-2" />
             <p className="text-sm text-muted-fg">
               {t("dropJsonFile")}
             </p>
@@ -152,7 +152,7 @@ export function ImportJsonDialog() {
 
         {/* SOUL.md Import */}
         <div className="border-t border-border pt-4">
-          <p className="text-xs text-subtle-fg mb-3 uppercase tracking-wider">
+          <p className="text-xs text-subtle-fg/40 mb-3 uppercase tracking-wider">
             {t("orImportSoulMd")}
           </p>
           <Button

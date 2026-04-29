@@ -210,18 +210,8 @@
       "shareDesc": "Générez des liens uniques pour partager vos créations avec le monde",
       "exportDesc": "Téléchargez des fichiers SOUL.md compatibles avec OpenClaw et d'autres frameworks"
     },
-    "featureDesc": "Moderne, interactif et internationalisé.",
-    "ctaTitle": "Prêt à Créer ?",
-    "ctaDesc": "Commencez à construire la personnalité de votre IA maintenant. Aucun codage requis.",
-    "ctaButton": "Ouvrir la Forge",
-    "presetsCount": "30+ presets",
-    "scroll": "Défiler",
-    "capabilities": "Capacités",
     "forgedForCreators": "Forgé pour les Créateurs",
-    "forgedForCreatorsDesc": "Tous les outils dont vous avez besoin pour créer, personnaliser et partager des personnalités IA.",
-    "readyToForge": "Prêt à Forger ?",
-    "readyToForgeDesc": "Partez de zéro ou choisissez un preset. L'âme de votre IA vous attend.",
-    "startCreating": "Commencer à Créer"
+    "forgedForCreatorsDesc": "Tous les outils dont vous avez besoin pour créer, personnaliser et partager des personnalités IA."
   },
   "myPresets": {
     "title": "Mes Presets",
@@ -2146,5 +2136,11 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "footer": {
+    "github": "GitHub",
+    "editor": "Editor",
+    "presets": "Presets",
+    "builtWith": "Built with Next.js"
   }
 }

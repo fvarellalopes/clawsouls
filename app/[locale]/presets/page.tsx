@@ -63,7 +63,7 @@ export default function PresetsPage() {
         </div>
 
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-fg font-display mb-3">
+          <h1 className="text-4xl font-bold font-display text-primary font-display tracking-wider mb-3">
             {t("title")}
           </h1>
           <p className="text-muted-fg text-lg">{t("subtitle")}</p>
@@ -71,17 +71,17 @@ export default function PresetsPage() {
 
         <div className="max-w-md mx-auto mb-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-fg" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-subtle-fg" />
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder={t("searchPlaceholder")}
-              className="pl-10 bg-surface border-border rounded-xl"
+              className="pl-10 bg-surface-alt border-border rounded-xl"
             />
             {search && (
               <button
                 onClick={() => setSearch("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-fg hover:text-fg"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle-fg hover:text-muted-fg"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -125,7 +125,7 @@ export default function PresetsPage() {
 
         {!loading && filtered.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-muted-fg text-lg">
+            <p className="text-subtle-fg text-lg">
               {search ? t("noPresetsFoundSearch", { query: search }) : t("noPresetsFound")}
             </p>
           </div>

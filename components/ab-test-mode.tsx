@@ -260,7 +260,7 @@ function DiffViewer({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className={`border-b border-border/5 ${
+                  className={`border-b border-border/50 ${
                     line.same
                       ? "bg-transparent"
                       : "bg-primary/5"

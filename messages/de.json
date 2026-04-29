@@ -210,18 +210,8 @@
       "shareDesc": "Generiere einzigartige Links, um deine Erstellungen mit der Welt zu teilen",
       "exportDesc": "Lade SOUL.md-Dateien herunter, die mit OpenClaw und anderen Frameworks kompatibel sind"
     },
-    "featureDesc": "Modern, interaktiv und internationalisiert.",
-    "ctaTitle": "Bereit zum Erstellen?",
-    "ctaDesc": "Beginne jetzt mit dem Bau der Persönlichkeit deiner KI. Keine Programmierung erforderlich.",
-    "ctaButton": "Die Schmiede öffnen",
-    "presetsCount": "30+ Presets",
-    "scroll": "Scrollen",
-    "capabilities": "Fähigkeiten",
     "forgedForCreators": "Geschmiedet für Kreative",
-    "forgedForCreatorsDesc": "Alle Werkzeuge, die du brauchst, um KI-Persönlichkeiten zu erstellen, anzupassen und zu teilen.",
-    "readyToForge": "Bereit zum Schmieden?",
-    "readyToForgeDesc": "Starte von Grund auf oder wähle ein Preset. Die Seele deiner KI wartet.",
-    "startCreating": "Jetzt erstellen"
+    "forgedForCreatorsDesc": "Alle Werkzeuge, die du brauchst, um KI-Persönlichkeiten zu erstellen, anzupassen und zu teilen."
   },
   "myPresets": {
     "title": "Meine Presets",
@@ -2146,5 +2136,11 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "footer": {
+    "github": "GitHub",
+    "editor": "Editor",
+    "presets": "Presets",
+    "builtWith": "Built with Next.js"
   }
 }

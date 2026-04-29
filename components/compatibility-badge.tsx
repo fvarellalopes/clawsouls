@@ -20,7 +20,7 @@ export function CompatibilityBadge({ currentSoul, preset, showBreakdown = false 
 
   const getColor = (score: number) => {
     if (score >= 80) return "text-emerald-400 bg-emerald-500/15 border-emerald-500/20";
-    if (score >= 60) return "text-amber-400 bg-amber-500/15 border-amber-500/20";
+    if (score >= 60) return "text-accent bg-accent/10 border-accent/20";
     if (score >= 40) return "text-orange-400 bg-orange-500/15 border-orange-500/20";
     return "text-red-400 bg-red-500/15 border-red-500/20";
   };

@@ -2,7 +2,9 @@
 
 function SkeletonPulse({ className }: { className?: string }) {
   return (
-    <div className={`bg-primary/10 rounded-lg animate-pulse-soft ${className || ""}`} />
+    <div
+      className={`bg-primary/10 rounded-lg animate-pulse-soft ${className || ""}`}
+    />
   );
 }
 

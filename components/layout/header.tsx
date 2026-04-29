@@ -48,28 +48,31 @@ export function Header({ locale, messages }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      <div className="absolute inset-0 bg-bg/95  border-b border-border" />
+      <div className="absolute inset-0 bg-bg/80 backdrop-blur-lg border-b border-border" />
       <div className="container mx-auto flex h-16 items-center justify-between px-4 relative">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
             <Sparkles className="h-4 w-4 text-primary-fg" />
           </div>
-          <span className="text-xl font-bold font-display text-primary">
+          <span className="text-xl font-bold font-display text-fg">
             ClawSouls
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
             <Link href="/presets">{t("presets")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
             <Link href="/quiz">{t("quiz")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
             <Link href="/achievements">{t("achievements")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
+            <Link href="/editor">{t("create")}</Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
             <Link href="/compare">{t("compare")}</Link>
           </Button>
         </nav>
@@ -88,7 +91,7 @@ export function Header({ locale, messages }: HeaderProps) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-xl">
+              <Button variant="ghost" size="icon" className="text-muted-fg hover:text-fg rounded-lg">
                 <Globe className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
@@ -97,8 +100,8 @@ export function Header({ locale, messages }: HeaderProps) {
                 <DropdownMenuItem key={loc.code} asChild>
                   <Link
                     href={`/${loc.code}`}
-                    className={`text-fg hover:bg-surface-alt cursor-pointer rounded-lg ${
-                      locale === loc.code ? "text-accent font-semibold" : ""
+                    className={`text-fg hover:text-fg cursor-pointer rounded-lg ${
+                      locale === loc.code ? "font-semibold bg-primary/10" : ""
                     }`}
                   >
                     <span className="mr-2">{loc.flag}</span>
@@ -112,7 +115,7 @@ export function Header({ locale, messages }: HeaderProps) {
           <Button
             asChild
             size="sm"
-            className="bg-accent text-accent-fg border-0 rounded-xl hover:opacity-90"
+            className="bg-primary text-primary-fg border-0 rounded-lg transition-opacity duration-200 hover:opacity-90"
           >
             <Link href="/editor">
               <Sparkles className="mr-2 h-4 w-4" />

@@ -10,46 +10,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "var(--bg)",
-        fg: "var(--fg)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         surface: "var(--surface)",
         "surface-alt": "var(--surface-alt)",
-        border: "var(--border)",
-        "muted-fg": "var(--muted-fg)",
-        "subtle-fg": "var(--subtle-fg)",
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--foreground-card)",
+        },
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--foreground-popover)",
+        },
         primary: {
           DEFAULT: "var(--primary)",
-          fg: "var(--primary-fg)",
+          foreground: "var(--foreground-primary)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--foreground-secondary)",
+        },
+        muted: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--foreground-muted)",
         },
         accent: {
           DEFAULT: "var(--accent)",
-          fg: "var(--accent-fg)",
-        },
-        /* Keep shadcn-compatible tokens mapped to new system */
-        background: "var(--bg)",
-        foreground: "var(--fg)",
-        card: {
-          DEFAULT: "var(--surface)",
-          foreground: "var(--fg)",
-        },
-        popover: {
-          DEFAULT: "var(--surface)",
-          foreground: "var(--fg)",
-        },
-        secondary: {
-          DEFAULT: "var(--surface-alt)",
-          foreground: "var(--fg)",
-        },
-        muted: {
-          DEFAULT: "var(--surface-alt)",
-          foreground: "var(--muted-fg)",
+          foreground: "var(--foreground-accent)",
         },
         destructive: {
-          DEFAULT: "var(--color-error)",
-          foreground: "var(--color-paper)",
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--foreground-destructive)",
         },
-        input: "var(--border)",
-        ring: "var(--primary)",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -57,22 +52,17 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
-        body: ["var(--font-body)", "system-ui", "sans-serif"],
-        sans: ["var(--font-body)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        display: ["var(--font-display)", "Space Grotesk", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "monospace"],
       },
       animation: {
-        "fade-in": "fadeIn 0.3s ease-out",
-        "slide-up": "slideUp 0.3s ease-out",
+        "fade-in": "fadeIn 0.4s ease-out both",
       },
       keyframes: {
         fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        slideUp: {
-          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },

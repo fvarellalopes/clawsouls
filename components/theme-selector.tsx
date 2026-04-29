@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Palette, Check } from "lucide-react";
 
-
 export function ThemeSelector() {
   const t = useTranslations("editor");
   const { themeId, setTheme, getAllThemes } = useThemeStore();
@@ -46,13 +45,11 @@ export function ThemeSelector() {
               className={`relative p-4 rounded-xl border-2 transition-all text-left hover:scale-[1.02] active:scale-[0.98] ${
                 themeId === theme.id
                   ? "border-accent/60 bg-accent/5"
-                  : "border-border hover:border-primary/30 bg-surface/50"
+                  : "border-border hover:border-primary/30 bg-surface-alt/50"
               }`}
             >
               {themeId === theme.id && (
-                <div
-                  className="absolute top-2 right-2 w-5 h-5 rounded-full bg-accent flex items-center justify-center"
-                >
+                <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-accent flex items-center justify-center">
                   <Check className="h-3 w-3 text-accent-fg" />
                 </div>
               )}
@@ -60,15 +57,15 @@ export function ThemeSelector() {
               {/* Color preview dots */}
               <div className="flex gap-1.5 mb-3">
                 <div
-                  className="w-5 h-5 rounded-full border border-white/10"
+                  className="w-5 h-5 rounded-full border border-border"
                   style={{ backgroundColor: theme.preview.primary }}
                 />
                 <div
-                  className="w-5 h-5 rounded-full border border-white/10"
+                  className="w-5 h-5 rounded-full border border-border"
                   style={{ backgroundColor: theme.preview.accent }}
                 />
                 <div
-                  className="w-5 h-5 rounded-full border border-white/10"
+                  className="w-5 h-5 rounded-full border border-border"
                   style={{ backgroundColor: theme.preview.background }}
                 />
               </div>
@@ -79,7 +76,7 @@ export function ThemeSelector() {
                   {t(theme.nameKey)}
                 </span>
               </div>
-              <p className="text-[11px] text-subtle-fg leading-tight">
+              <p className="text-[11px] text-muted-fg leading-tight">
                 {t(theme.descriptionKey)}
               </p>
             </button>

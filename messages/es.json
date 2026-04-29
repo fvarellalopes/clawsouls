@@ -252,18 +252,8 @@
       "shareDesc": "Genera enlaces únicos para compartir tus creaciones con el mundo",
       "exportDesc": "Descarga archivos SOUL.md compatibles con OpenClaw y otros frameworks"
     },
-    "featureDesc": "Moderno, interactivo e internacionalizado.",
-    "ctaTitle": "¿Listo para Crear?",
-    "ctaDesc": "Comienza a construir la personalidad de tu AI ahora. Sin necesidad de código.",
-    "ctaButton": "Abrir la Forja",
-    "presetsCount": "30+ presets",
-    "scroll": "Desplazar",
-    "capabilities": "Capacidades",
     "forgedForCreators": "Forjado para Creadores",
-    "forgedForCreatorsDesc": "Todas las herramientas que necesitas para crear, personalizar y compartir personalidades de AI.",
-    "readyToForge": "¿Listo para Forjar?",
-    "readyToForgeDesc": "Empieza desde cero o elige un preset. El alma de tu AI te espera.",
-    "startCreating": "Empezar a Crear"
+    "forgedForCreatorsDesc": "Todas las herramientas que necesitas para crear, personalizar y compartir personalidades de AI."
   },
   "myPresets": {
     "title": "Mis Presets",
@@ -2214,5 +2204,11 @@
     "suggestedAttributes": "Atributos Sugeridos",
     "regenerate": "Regenerar",
     "apply": "Aplicar al Editor"
+  },
+  "footer": {
+    "github": "GitHub",
+    "editor": "Editor",
+    "presets": "Presets",
+    "builtWith": "Hecho con Next.js"
   }
 }

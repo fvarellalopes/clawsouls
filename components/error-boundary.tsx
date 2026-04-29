@@ -20,7 +20,7 @@ function ErrorFallback({ error, onReset }: { error: Error | null; onReset: () =>
   return (
     <div className="min-h-[400px] flex items-center justify-center p-8">
       <div className="text-center max-w-md">
-        <AlertTriangle className="h-12 w-12 text-accent/70 mx-auto mb-4" />
+        <AlertTriangle className="h-12 w-12 text-accent/60 mx-auto mb-4" />
         <h2 className="text-xl font-display font-bold text-fg mb-2">
           {t("somethingWentWrong")}
         </h2>

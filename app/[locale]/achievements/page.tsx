@@ -18,14 +18,26 @@ export default function AchievementsPage() {
   return (
     <div className="min-h-screen py-8 px-4">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 animate-fade-up">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
           <Trophy className="h-16 w-16 text-accent mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-fg font-display mb-3">{t("title")}</h1>
+          <h1 className="text-4xl font-bold font-display text-primary font-display tracking-wider mb-3">
+            {t("title")}
+          </h1>
           <p className="text-muted-fg text-lg mb-4">
             {t("unlockedSummary", { unlockedCount, totalCount, percentage })}
           </p>
-          <div className="max-w-xs mx-auto h-2 rounded-full bg-border overflow-hidden">
-            <div className="h-full rounded-full bg-primary transition-all duration-1000 ease-out" style={{ width: `${percentage}%` }} />
+          <div className="max-w-xs mx-auto h-2 rounded-full bg-primary/10 overflow-hidden">
+            <motion.div
+              className="h-full rounded-full bg-accent"
+              initial={{ width: 0 }}
+              animate={{ width: `${percentage}%` }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            />
           </div>
         </div>
 
@@ -36,8 +48,13 @@ export default function AchievementsPage() {
             { label: t("quizzes"), value: stats.quizzesTaken, emoji: "🧠" },
             { label: t("languages"), value: stats.languagesUsed.length, emoji: "🌍" },
           ].map((stat, i) => (
-            <div key={stat.label} className="animate-fade-up" style={{ animationDelay: `${i * 0.1}s` }}>
-              <Card className="bg-surface border-border">
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <Card className="bg-surface-alt border-border">
                 <CardContent className="p-4 text-center">
                   <div className="text-2xl mb-1">{stat.emoji}</div>
                   <div className="text-2xl font-bold text-fg">{stat.value}</div>
@@ -52,18 +69,31 @@ export default function AchievementsPage() {
           {achievements.map((achievement, i) => {
             const isUnlocked = unlockedIds.includes(achievement.id);
             return (
-              <div key={achievement.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.05}s` }}>
-                <Card className={`overflow-hidden transition-all duration-200 ${
-                  isUnlocked ? "bg-surface border-accent/30 ring-1 ring-accent/10" : "bg-surface/40 border-border opacity-60"
-                }`}>
+              <motion.div
+                key={achievement.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <Card
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isUnlocked
+                      ? "bg-surface-alt border-accent/30 ring-1 ring-accent/10"
+                      : "bg-surface/40 border-border opacity-60"
+                  }`}
+                >
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
                       <div className="text-4xl">{isUnlocked ? achievement.emoji : "🔒"}</div>
                       <div className="flex-1">
-                        <h3 className={`font-bold font-display ${isUnlocked ? "text-accent" : "text-muted-fg"}`}>
+                        <h3 className={`font-bold font-display tracking-wide ${
+                          isUnlocked ? "text-accent" : "text-subtle-fg"
+                        }`}>
                           {achievement.name}
                         </h3>
-                        <p className={`text-sm mt-1 ${isUnlocked ? "text-muted-fg" : "text-muted-fg/50"}`}>
+                        <p className={`text-sm mt-1 ${
+                          isUnlocked ? "text-muted-fg" : "text-muted-fg/30"
+                        }`}>
                           {achievement.description}
                         </p>
                         {isUnlocked && (
