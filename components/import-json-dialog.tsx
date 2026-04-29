@@ -108,13 +108,19 @@ export function ImportJsonDialog() {
             onDragOver={(e) => e.preventDefault()}
             className="border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors cursor-pointer"
             onClick={() => fileRef.current?.click()}
+            role="button"
+            tabIndex={0}
+            aria-label={t("dropJsonFile")}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") fileRef.current?.click(); }}
           >
-            <Upload className="h-8 w-8 text-subtle-fg/30 mx-auto mb-2" />
+            <Upload className="h-8 w-8 text-subtle-fg/30 mx-auto mb-2" aria-hidden="true" />
             <p className="text-sm text-muted-fg">
               {t("dropJsonFile")}
             </p>
+            <label htmlFor="import-file-input" className="sr-only">{t("dropJsonFile")}</label>
             <input
               ref={fileRef}
+              id="import-file-input"
               type="file"
               accept=".json,application/json,.md,text/markdown"
               className="hidden"

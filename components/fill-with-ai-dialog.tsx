@@ -66,8 +66,9 @@ export function FillWithAIDialog({ open, onOpenChange, onApply, currentSoul }: F
         </DialogHeader>
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label className="text-fg text-sm">{t("bulletPoints")}</Label>
+            <Label htmlFor="ai-bullets" className="text-fg text-sm">{t("bulletPoints")}</Label>
             <Textarea
+              id="ai-bullets"
               value={bulletsText}
               onChange={(e) => setBulletsText(e.target.value)}
               placeholder={t("placeholder")}

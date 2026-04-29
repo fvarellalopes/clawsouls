@@ -14,28 +14,31 @@ export function Footer() {
           <span>·</span>
           <span>Visual SOUL.md Editor</span>
         </div>
-        <div className="flex items-center gap-4">
+        <nav aria-label="Footer navigation" className="flex items-center gap-4">
           <a
             href="https://github.com/fvarellalopes/clawsouls"
             target="_blank"
             rel="noopener"
             className="hover:text-foreground transition-colors duration-150"
+            aria-label={t("github")}
           >
             {t("github")}
           </a>
           <Link
             href="/editor"
             className="hover:text-foreground transition-colors duration-150"
+            aria-label={t("editor")}
           >
             {t("editor")}
           </Link>
           <Link
             href="/presets"
             className="hover:text-foreground transition-colors duration-150"
+            aria-label={t("presets")}
           >
             {t("presets")}
           </Link>
-        </div>
+        </nav>
         <span>{t("builtWith")} · {new Date().getFullYear()}</span>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Sparkles } from "lucide-react";
 import { SoulPreset } from "@/store/soulStore";
 
@@ -10,20 +11,23 @@ interface PresetCardProps {
   isSelected?: boolean;
 }
 
-export function PresetCard({ preset, index, onSelect, isSelected }: PresetCardProps) {
+export const PresetCard = React.memo(function PresetCard({ preset, index, onSelect, isSelected }: PresetCardProps) {
   return (
-    <div
+    <button
+      type="button"
       onClick={() => onSelect(preset)}
-      className={`relative group cursor-pointer rounded-xl overflow-hidden transition-all duration-200 ${
+      className={`relative group cursor-pointer rounded-xl overflow-hidden transition-all duration-200 w-full text-left ${
         isSelected
           ? "ring-2 ring-accent/60 shadow-lg"
           : "ring-1 ring-border hover:ring-primary/30 hover:shadow-md"
       }`}
+      aria-label={`${preset.name} — ${preset.creature}`}
+      aria-pressed={isSelected}
     >
       <div className="relative p-5 bg-surface">
         {/* Emoji + Name */}
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-3xl group-hover:scale-110 transition-transform duration-200">
+          <span className="text-3xl group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
             {preset.emoji}
           </span>
           <div className="flex-1 min-w-0">
@@ -34,7 +38,7 @@ export function PresetCard({ preset, index, onSelect, isSelected }: PresetCardPr
           </div>
           {isSelected && (
             <div className="text-accent">
-              <Sparkles className="h-5 w-5" />
+              <Sparkles className="h-5 w-5" aria-hidden="true" />
             </div>
           )}
         </div>
@@ -55,6 +59,6 @@ export function PresetCard({ preset, index, onSelect, isSelected }: PresetCardPr
           ))}
         </div>
       </div>
-    </div>
+    </button>
   );
-}
+});

@@ -1063,34 +1063,56 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                             </Button>
                           </div>
                         ))}
-                        <div className="flex gap-2">
-                          <Input
-                            value={newSignaturePhrase}
-                            onChange={(e) => setNewSignaturePhrase(e.target.value)}
-                            placeholder={t("signaturePhrasesPlaceholder")}
-                            className="rounded-xl flex-1"
-                            style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" && newSignaturePhrase.trim()) {
-                                handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
-                                setNewSignaturePhrase("");
-                              }
-                            }}
-                          />
-                          <Button
-                            onClick={() => {
-                              if (newSignaturePhrase.trim()) {
-                                handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
-                                setNewSignaturePhrase("");
-                              }
-                            }}
-                            size="icon"
-                            variant="outline"
-                            style={{ borderColor: "hsl(var(--border))" }}
-                          >
-                            <Plus className="h-4 w-4" />
-                          </Button>
-                        </div>
+                        {(soul.signaturePhrases || []).length >= 10 && (
+                          <p className="text-xs" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            {t("signaturePhrasesMaxReached")}
+                          </p>
+                        )}
+                        {(soul.signaturePhrases || []).length < 10 && (
+                          <div className="space-y-1.5">
+                            <div className="flex gap-2">
+                              <div className="relative flex-1">
+                                <Input
+                                  value={newSignaturePhrase}
+                                  onChange={(e) => setNewSignaturePhrase(e.target.value.slice(0, 50))}
+                                  placeholder={t("signaturePhrasesPlaceholder")}
+                                  maxLength={50}
+                                  className="rounded-xl pr-12"
+                                  style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                                  onKeyDown={(e) => {
+                                    if (e.key === "Enter" && newSignaturePhrase.trim()) {
+                                      handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
+                                      setNewSignaturePhrase("");
+                                    }
+                                  }}
+                                />
+                                <span
+                                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] tabular-nums"
+                                  style={{ color: newSignaturePhrase.length >= 45 ? "hsl(var(--destructive))" : "hsl(var(--foreground-muted))" }}
+                                >
+                                  {newSignaturePhrase.length}/50
+                                </span>
+                              </div>
+                              <Button
+                                onClick={() => {
+                                  if (newSignaturePhrase.trim()) {
+                                    handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
+                                    setNewSignaturePhrase("");
+                                  }
+                                }}
+                                size="icon"
+                                variant="outline"
+                                disabled={!newSignaturePhrase.trim()}
+                                style={{ borderColor: "hsl(var(--border))" }}
+                              >
+                                <Plus className="h-4 w-4" />
+                              </Button>
+                            </div>
+                            <p className="text-[10px] pl-1" style={{ color: "hsl(var(--foreground-muted))" }}>
+                              {t("signaturePhrasesCounter", { count: (soul.signaturePhrases || []).length })}
+                            </p>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
 
@@ -1199,16 +1221,19 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 // ─── Simple Preset Card (no Framer Motion) ───────────────────────────
 function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset; onSelect: (p: SoulPreset) => void; isSelected: boolean }) {
   return (
-    <div
+    <button
+      type="button"
       onClick={() => onSelect(preset)}
-      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01]"
+      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01] w-full text-left"
       style={{
         background: isSelected ? "hsl(var(--primary) / 0.1)" : "hsl(var(--card))",
         border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border))"}`,
       }}
+      aria-label={`${preset.name} — ${preset.creature}`}
+      aria-pressed={isSelected}
     >
       <div className="flex items-start gap-3">
-        <span className="text-3xl">{preset.emoji || "✨"}</span>
+        <span className="text-3xl" aria-hidden="true">{preset.emoji || "✨"}</span>
         <div className="flex-1 min-w-0">
           <h3 className="font-display tracking-wider text-base truncate" style={{ color: "hsl(var(--foreground))" }}>
             {preset.name}
@@ -1230,6 +1255,6 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
           )}
         </div>
       </div>
-    </div>
+    </button>
   );
 }
