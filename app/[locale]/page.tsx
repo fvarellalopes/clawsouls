@@ -1,108 +1,266 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Palette, Stars, Share2 } from "lucide-react";
 import Link from "next/link";
 
 export default function HomePage() {
   const t = useTranslations("home");
 
-  const features = [
-    {
-      icon: Palette,
-      title: t("features.visual"),
-      desc: t("features.visualDesc"),
-    },
-    {
-      icon: Stars,
-      title: t("features.presets"),
-      desc: t("features.presetsDesc"),
-    },
-    {
-      icon: Share2,
-      title: t("features.share"),
-      desc: t("features.shareDesc"),
-    },
-  ];
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-surface-dim">
       {/* Hero */}
       <section
-        className="min-h-[70vh] flex items-center justify-center px-4"
+        className="relative flex flex-col items-center justify-center px-4 py-32 text-center"
         style={{
-          background: "radial-gradient(ellipse at 50% 0%, oklch(0.45 0.13 270 / 0.04) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse at 50% 0%, oklch(from #facc15 l c h / 0.08) 0%, transparent 70%)",
         }}
       >
-        <div className="container mx-auto text-center max-w-3xl animate-fade-in">
+        <div className="animate-fade-in">
+          {/* Badge */}
+          <span className="inline-block mb-8 px-4 py-1.5 rounded-full border border-primary-container text-primary-container text-label-caps tracking-widest uppercase">
+            System Online
+          </span>
+
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6 font-display leading-tight text-foreground">
-            {t("heroTitle")}
+          <h1 className="text-h1 font-h1 text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-yellow-300 to-primary-container mb-6 max-w-3xl mx-auto">
+            UNLEASH THE SOUL OF AI
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed font-body">
-            {t("heroSubtitle")}
+          <p className="text-body-lg font-body-sm text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
+            The ultimate visual editor for OpenClaw SOUL.md personalities.
+            Craft, tweak, and deploy AI souls with surgical precision.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-6 text-base rounded-lg font-semibold transition-opacity duration-150"
+            <Link
+              href="/editor"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary-container text-on-primary-fixed font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
             >
-              <Link href="/editor">
-                {t("getStarted")}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+              Launch Editor
+              <span className="material-symbols-outlined text-base">arrow_forward</span>
+            </Link>
 
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-border text-foreground hover:bg-secondary px-8 py-6 text-base rounded-lg transition-colors duration-150"
+            <Link
+              href="/presets"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-container text-primary-container font-label-caps tracking-widest uppercase rounded-lg hover:bg-primary-container/10 transition-all duration-150"
             >
-              <Link href="/presets">
-                {t("browsePresets")}
-              </Link>
-            </Button>
+              Browse Presets
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-24 px-4">
+      {/* Bento Grid — Editor Mockup */}
+      <section className="px-4 pb-24">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Left — Editor Mockup (8 cols) */}
+            <div className="lg:col-span-8 rounded-2xl border border-outline-variant/30 bg-surface-container/80 backdrop-blur-xl overflow-hidden">
+              {/* Window Chrome */}
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/20">
+                <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <span className="w-3 h-3 rounded-full bg-green-500/80" />
+                <span className="ml-4 text-mono-data font-mono text-on-surface-variant/60">
+                  soul_architect.exe
+                </span>
+              </div>
+
+              {/* Editor Content */}
+              <div
+                className="relative p-8 min-h-[380px]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(0.15 0.02 270) 0%, oklch(0.10 0.01 200) 100%)",
+                }}
+              >
+                {/* Overlay grid effect */}
+                <div
+                  className="absolute inset-0 opacity-[0.03]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(oklch(1 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0) 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                  }}
+                />
+
+                <div className="relative z-10 space-y-8">
+                  {/* Personality Section */}
+                  <div>
+                    <h3 className="text-label-caps font-label-caps text-primary-container tracking-widest uppercase mb-4">
+                      Personality Matrix
+                    </h3>
+
+                    {/* Sliders */}
+                    <div className="space-y-5">
+                      <SliderMock label="Aggression" value={75} />
+                      <SliderMock label="Empathy" value={30} />
+                      <SliderMock label="Logic Bias" value={90} />
+                    </div>
+                  </div>
+
+                  {/* Tone Section */}
+                  <div>
+                    <h3 className="text-label-caps font-label-caps text-primary-container tracking-widest uppercase mb-3">
+                      Tone Profile
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["Sarcastic", "Direct", "Witty", "Minimal"].map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 rounded-full border border-outline-variant/40 text-body-sm font-mono text-on-surface-variant/70"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — Output Panel (4 cols) */}
+            <div className="lg:col-span-4 rounded-2xl border border-outline-variant/30 bg-surface-container/80 backdrop-blur-xl overflow-hidden">
+              {/* Window Chrome */}
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/20">
+                <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <span className="w-3 h-3 rounded-full bg-green-500/80" />
+                <span className="ml-4 text-mono-data font-mono text-on-surface-variant/60">
+                  Output
+                </span>
+              </div>
+
+              {/* Code Preview */}
+              <div className="p-6 min-h-[380px] bg-surface-container-lowest font-mono text-body-sm leading-relaxed">
+                <pre className="text-on-surface-variant/80">
+                  <code>
+{`{
+  `}
+                  <span className="text-primary-container">"personality"</span>
+{`: {
+    `}
+                  <span className="text-primary-container">"aggression"</span>
+{`: `}
+                  <span className="text-green-400">0.75</span>
+{`,
+    `}
+                  <span className="text-primary-container">"empathy"</span>
+{`: `}
+                  <span className="text-green-400">0.30</span>
+{`,
+    `}
+                  <span className="text-primary-container">"logic_bias"</span>
+{`: `}
+                  <span className="text-green-400">0.90</span>
+{`
+  },
+  `}
+                  <span className="text-primary-container">"tone"</span>
+{`: [
+    `}
+                  <span className="text-amber-300">"sarcastic"</span>
+{`,
+    `}
+                  <span className="text-amber-300">"direct"</span>
+{`,
+    `}
+                  <span className="text-amber-300">"witty"</span>
+{`,
+    `}
+                  <span className="text-amber-300">"minimal"</span>
+{`
+  ],
+  `}
+                  <span className="text-primary-container">"version"</span>
+{`: `}
+                  <span className="text-amber-300">"2.0"</span>
+{`
+}`}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="px-4 pb-24">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-3">
-              {t("forgedForCreators")}
+            <h2 className="text-h2 font-h2 text-on-surface mb-3">
+              Forged for Creators
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto font-body">
-              {t("forgedForCreatorsDesc")}
+            <p className="text-body-md font-body-sm text-on-surface-variant max-w-xl mx-auto">
+              Every tool you need to craft, customize, and share AI personalities.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="p-6 rounded-xl bg-card border border-border transition-shadow duration-150 hover:shadow-md"
-              >
-                <feature.icon className="h-8 w-8 text-primary mb-4" strokeWidth={1.5} />
-                <h3 className="text-lg font-display font-bold text-foreground mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  {feature.desc}
-                </p>
-              </div>
-            ))}
+            <FeatureCard
+              icon="tune"
+              title={t("features.visual")}
+              desc={t("features.visualDesc")}
+            />
+            <FeatureCard
+              icon="smart_toy"
+              title={t("features.presets")}
+              desc={t("features.presetsDesc")}
+            />
+            <FeatureCard
+              icon="share"
+              title={t("features.share")}
+              desc={t("features.shareDesc")}
+            />
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+/* ── Slider Mock Component ── */
+function SliderMock({ label, value }: { label: string; value: number }) {
+  return (
+    <div>
+      <div className="flex justify-between mb-1.5">
+        <span className="text-mono-data font-mono text-on-surface-variant/80">{label}</span>
+        <span className="text-mono-data font-mono text-primary-container">{value}%</span>
+      </div>
+      <div className="w-full h-1.5 rounded-full bg-surface-container-highest">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-primary-container to-yellow-400"
+          style={{ width: `${value}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+/* ── Feature Card Component ── */
+function FeatureCard({
+  icon,
+  title,
+  desc,
+}: {
+  icon: string;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <div className="group relative p-6 rounded-xl border border-outline-variant/20 bg-surface-container/60 backdrop-blur-sm transition-all duration-200 hover:bg-surface-container hover:border-primary-container/30">
+      {/* Top gold line on hover */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary-container rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+
+      <span className="material-symbols-outlined text-3xl text-primary-container mb-4 block transition-transform duration-200 group-hover:scale-110">
+        {icon}
+      </span>
+      <h3 className="text-h3 font-h3 text-on-surface mb-2">{title}</h3>
+      <p className="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">{desc}</p>
     </div>
   );
 }
