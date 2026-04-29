@@ -71,19 +71,23 @@ export default function PresetsPage() {
 
         <div className="max-w-md mx-auto mb-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-subtle-fg" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-subtle-fg" aria-hidden="true" />
+            <label htmlFor="presets-search" className="sr-only">{t("searchPlaceholder")}</label>
             <Input
+              id="presets-search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder={t("searchPlaceholder")}
               className="pl-10 bg-surface-alt border-border rounded-xl"
+              aria-label={t("searchPlaceholder")}
             />
             {search && (
               <button
                 onClick={() => setSearch("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-subtle-fg hover:text-muted-fg"
+                aria-label="Clear search"
               >
-                <X className="h-4 w-4" />
+                <X className="h-4 w-4" aria-hidden="true" />
               </button>
             )}
           </div>
