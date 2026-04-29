@@ -430,7 +430,7 @@ export function ABTestMode() {
                         y2="0%"
                       >
                         <stop offset="0%" stopColor="#4338ca" />
-                        <stop offset="100%" stopColor="#e8795a" />
+                        <stop offset="100%" stopColor="#f59e0b" />
                       </linearGradient>
                     </defs>
                   </svg>
