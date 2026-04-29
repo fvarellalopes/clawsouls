@@ -267,7 +267,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
   const soulMD = useMemo(() => generateSoulMD(soul), [soul]);
 
-  const vibeStyles = [
+  const vibeStyles = useMemo(() => [
     { value: "concise", label: t("vibeStyles.concise") },
     { value: "expressive", label: t("vibeStyles.expressive") },
     { value: "sharp", label: t("vibeStyles.sharp") },
@@ -279,7 +279,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     { value: "casual", label: t("vibeStyles.casual") },
     { value: "formal", label: t("vibeStyles.formal") },
     { value: "balanced", label: t("vibeStyles.balanced") },
-  ];
+  ], [t]);
 
   const showQuickStart = !quickStartDismissed && !soul.name;
 
