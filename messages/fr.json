@@ -173,8 +173,8 @@
     "signaturePhrases": "Phrases Signature",
     "signaturePhrasesDesc": "Phrases que l'IA utilise naturellement en conversation",
     "signaturePhrasesPlaceholder": "ex: Allons droit au but",
-    "signaturePhrasesMaxReached": "Nombre maximum de 10 phrases atteint",
-    "signaturePhrasesCounter": "{count}/10 phrases ajoutées",
+    "signaturePhrasesMaxReached": "Nombre maximum de 5 phrases atteint",
+    "signaturePhrasesCounter": "{count}/5 phrases ajoutées",
     "emotionalLabels": {
       "stoic": "Stoïque",
       "reserved": "Réservé",

@@ -173,8 +173,8 @@
     "signaturePhrases": "特徴的なフレーズ",
     "signaturePhrasesDesc": "会話で自然に使うフレーズ",
     "signaturePhrasesPlaceholder": "例: 早速本題に入ろう",
-    "signaturePhrasesMaxReached": "フレーズの最大数（10個）に達しました",
-    "signaturePhrasesCounter": "{count}/10 フレーズ追加済み",
+    "signaturePhrasesMaxReached": "フレーズの最大数（5個）に達しました",
+    "signaturePhrasesCounter": "{count}/5 フレーズ追加済み",
     "emotionalLabels": {
       "stoic": "ストイック",
       "reserved": "控えめ",

@@ -1073,12 +1073,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                             </Button>
                           </div>
                         ))}
-                        {(soul.signaturePhrases || []).length >= 10 && (
+                        {(soul.signaturePhrases || []).length >= 5 && (
                           <p className="text-xs" style={{ color: "hsl(var(--foreground-muted))" }}>
                             {t("signaturePhrasesMaxReached")}
                           </p>
                         )}
-                        {(soul.signaturePhrases || []).length < 10 && (
+                        {(soul.signaturePhrases || []).length < 5 && (
                           <div className="space-y-1.5">
                             <div className="flex gap-2">
                               <div className="relative flex-1">
