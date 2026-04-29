@@ -15,18 +15,25 @@ export function SoulPreview({ soul }: SoulPreviewProps) {
   const markdown = generateSoulMD(soul);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{t("title")}</CardTitle>
-        <CardDescription>
-          {t("description")}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap max-h-96 overflow-y-auto">
+    <div className="cyber-glass-gold overflow-hidden">
+      <div className="flex items-center gap-3 px-5 py-3" style={{ borderBottom: "1px solid rgba(250,204,21,0.1)" }}>
+        <div className="w-2 h-2 rounded-full cyber-pulse" style={{ background: "#facc15", boxShadow: "0 0 6px rgba(250,204,21,0.5)" }} />
+        <span className="mono-data" style={{ color: "#facc15" }}>{t("title") || "SOUL_PREVIEW.MD"}</span>
+      </div>
+      <div className="p-5">
+        <pre
+          className="overflow-x-auto whitespace-pre-wrap overflow-y-auto"
+          style={{
+            maxHeight: "24rem",
+            fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+            fontSize: "12px",
+            lineHeight: "1.7",
+            color: "rgba(255,255,255,0.65)",
+          }}
+        >
           {markdown}
         </pre>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
