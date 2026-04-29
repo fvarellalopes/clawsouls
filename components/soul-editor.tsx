@@ -346,13 +346,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           {/* Presets grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredPresets.map((preset, i) => (
-              <div key={preset.id} style={{ animation: `fadeInUp 0.3s ease-out ${i * 0.03}s both` }}>
-                <PresetCardSimple
-                  preset={preset}
-                  onSelect={handleSelectPreset}
-                  isSelected={selectedPresetId === preset.id}
-                />
-              </div>
+              <PresetCardSimple
+                key={preset.id}
+                preset={preset}
+                onSelect={handleSelectPreset}
+                isSelected={selectedPresetId === preset.id}
+              />
             ))}
           </div>
 
@@ -1255,8 +1254,7 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
               {preset.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider"
-                  style={{ background: "hsl(var(--muted))", color: "hsl(var(--foreground-muted))" }}
+                  className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full bg-primary/5 text-muted-fg border border-border"
                 >
                   {tag}
                 </span>
