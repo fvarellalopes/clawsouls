@@ -48,6 +48,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const [fillWithAIOpen, setFillWithAIOpen] = useState(false);
   const [exportDropdownOpen, setExportDropdownOpen] = useState(false);
   const [quickStartDismissed, setQuickStartDismissed] = useState(false);
+  const [previewFormat, setPreviewFormat] = useState<"soulmd" | "yaml">("soulmd");
 
   // Phase: presets selection or editor
   const [phase, setPhase] = useState<Phase>("presets");
@@ -266,6 +267,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   };
 
   const soulMD = useMemo(() => generateSoulMD(soul), [soul]);
+  const yamlContent = useMemo(() => exportYAML(soul), [soul]);
 
   const vibeStyles = useMemo(() => [
     { value: "concise", label: t("vibeStyles.concise") },
@@ -346,13 +348,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           {/* Presets grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredPresets.map((preset, i) => (
-              <div key={preset.id} style={{ animation: `fadeInUp 0.3s ease-out ${i * 0.03}s both` }}>
-                <PresetCardSimple
-                  preset={preset}
-                  onSelect={handleSelectPreset}
-                  isSelected={selectedPresetId === preset.id}
-                />
-              </div>
+              <PresetCardSimple
+                key={preset.id}
+                preset={preset}
+                onSelect={handleSelectPreset}
+                isSelected={selectedPresetId === preset.id}
+              />
             ))}
           </div>
 
@@ -1234,11 +1235,11 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
     <button
       type="button"
       onClick={() => onSelect(preset)}
-      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01] w-full text-left"
-      style={{
-        background: isSelected ? "hsl(var(--primary) / 0.1)" : "hsl(var(--card))",
-        border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border))"}`,
-      }}
+      className={`p-5 rounded-xl cursor-pointer w-full text-left border transition-all duration-200 ease-out ${isSelected
+          ? "border-primary/40"
+          : "border-border hover:shadow-md hover:scale-[1.02]"
+      }`}
+      style={{ background: "var(--surface)" }}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}
     >
@@ -1255,8 +1256,7 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
               {preset.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider"
-                  style={{ background: "hsl(var(--muted))", color: "hsl(var(--foreground-muted))" }}
+                  className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full bg-primary/5 text-muted-fg border border-border"
                 >
                   {tag}
                 </span>

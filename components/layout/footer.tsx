@@ -1,45 +1,50 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 
 export function Footer() {
-  const t = useTranslations("footer");
-
   return (
     <footer className="border-t border-border py-8 px-4">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        {/* Left — Brand */}
         <div className="flex items-center gap-2">
           <span className="font-display font-bold text-foreground">ClawSouls</span>
-          <span>·</span>
-          <span>Visual SOUL.md Editor</span>
+          <span className="hidden sm:inline">·</span>
+          <span className="hidden sm:inline">Visual SOUL.md editor for OpenClaw</span>
         </div>
+
+        {/* Center — Links */}
         <nav aria-label="Footer navigation" className="flex items-center gap-4">
           <a
             href="https://github.com/fvarellalopes/clawsouls"
             target="_blank"
             rel="noopener"
             className="hover:text-foreground transition-colors duration-150"
-            aria-label={t("github")}
           >
-            {t("github")}
+            GitHub
           </a>
-          <Link
-            href="/editor"
+          <a
+            href="https://github.com/fvarellalopes/clawsouls/blob/main/brainstorm.md"
+            target="_blank"
+            rel="noopener"
             className="hover:text-foreground transition-colors duration-150"
-            aria-label={t("editor")}
           >
-            {t("editor")}
-          </Link>
-          <Link
-            href="/presets"
+            Brainstorm
+          </a>
+          <a
+            href="https://github.com/fvarellalopes/clawsouls/blob/main/PLAN.md"
+            target="_blank"
+            rel="noopener"
             className="hover:text-foreground transition-colors duration-150"
-            aria-label={t("presets")}
           >
-            {t("presets")}
-          </Link>
+            PLAN
+          </a>
         </nav>
-        <span>{t("builtWith")} · {new Date().getFullYear()}</span>
+
+        {/* Right — Credit */}
+        <span className="text-muted-foreground">
+          Made with 🔩 by disconexo
+        </span>
       </div>
     </footer>
   );
