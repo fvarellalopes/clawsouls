@@ -32,14 +32,14 @@ export function KeyboardHelp() {
 
   return (
     <div className="fixed bottom-24 md:bottom-8 right-4 z-50 w-72 animate-fade-in">
-      <div className="bg-surface/95 backdrop-blur-xl border border-border rounded-2xl p-5 shadow-2xl">
+      <div className="bg-surface border border-border rounded-2xl p-5 shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Keyboard className="h-4 w-4 text-accent" />
             <span className="text-sm font-bold text-fg font-display">{t("title")}</span>
           </div>
-          <button onClick={() => setOpen(false)} className="text-muted-fg hover:text-fg">
-            <X className="h-4 w-4" />
+          <button onClick={() => setOpen(false)} className="text-muted-fg hover:text-fg" aria-label="Close keyboard shortcuts">
+            <X className="h-4 w-4" aria-hidden="true" />
           </button>
         </div>
         <div className="space-y-2">

@@ -29,7 +29,7 @@ export function AchievementToast() {
 
   return (
     <div className="fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 z-[100] pointer-events-auto animate-fade-up">
-      <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-surface/95 backdrop-blur-xl border border-accent/30 shadow-2xl">
+      <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-surface border border-accent/30 shadow-lg">
         <div className="text-4xl">{achievement.emoji}</div>
         <div>
           <div className="flex items-center gap-2">
@@ -51,8 +51,9 @@ export function AchievementToast() {
             clearNewAchievement();
           }}
           className="text-muted-fg hover:text-fg ml-2"
+          aria-label="Dismiss achievement notification"
         >
-          <X className="h-4 w-4" />
+          <X className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
     </div>
