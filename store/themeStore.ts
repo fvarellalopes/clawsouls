@@ -12,7 +12,7 @@ interface ThemeStore {
 export const useThemeStore = create<ThemeStore>()(
   persist(
     (set, get) => ({
-      themeId: "cyberpunk",
+      themeId: "paper",
 
       setTheme: (id: string) => {
         const theme = getThemeById(id);

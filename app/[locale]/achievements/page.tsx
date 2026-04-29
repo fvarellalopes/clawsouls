@@ -19,9 +19,7 @@ export default function AchievementsPage() {
     <div className="min-h-screen py-8 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="text-center mb-12"
         >
           <Trophy className="h-16 w-16 text-accent mx-auto mb-4" />
@@ -32,11 +30,8 @@ export default function AchievementsPage() {
             {t("unlockedSummary", { unlockedCount, totalCount, percentage })}
           </p>
           <div className="max-w-xs mx-auto h-2 rounded-full bg-primary/10 overflow-hidden">
-            <motion.div
+            <div
               className="h-full rounded-full bg-accent"
-              initial={{ width: 0 }}
-              animate={{ width: `${percentage}%` }}
-              transition={{ duration: 1, ease: "easeOut" }}
             />
           </div>
         </div>
@@ -48,11 +43,8 @@ export default function AchievementsPage() {
             { label: t("quizzes"), value: stats.quizzesTaken, emoji: "🧠" },
             { label: t("languages"), value: stats.languagesUsed.length, emoji: "🌍" },
           ].map((stat, i) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
             >
               <Card className="bg-surface-alt border-border">
                 <CardContent className="p-4 text-center">
@@ -69,11 +61,8 @@ export default function AchievementsPage() {
           {achievements.map((achievement, i) => {
             const isUnlocked = unlockedIds.includes(achievement.id);
             return (
-              <motion.div
+              <div
                 key={achievement.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
               >
                 <Card
                   className={`overflow-hidden transition-all duration-300 ${

@@ -73,18 +73,14 @@ export default function QuizPage() {
   if (phase === "intro") {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="text-center max-w-lg"
         >
-          <motion.div
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
+          <div
             className="text-7xl mb-8"
           >
             🧠
-          </motion.div>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold font-display text-primary font-display tracking-wider mb-4">
             {t("personalityQuiz")}
           </h1>
@@ -123,22 +119,15 @@ export default function QuizPage() {
               <span>{Math.round(progress)}%</span>
             </div>
             <div className="h-1.5 rounded-full bg-primary/10 overflow-hidden">
-              <motion.div
+              <div
                 className="h-full rounded-full bg-accent"
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.4 }}
               />
             </div>
           </div>
 
           {/* Question */}
-          <AnimatePresence mode="wait">
-            <motion.div
+            <div
               key={currentQuestion}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
             >
               <h2 className="text-2xl md:text-3xl font-bold text-fg font-display mb-8 leading-tight">
                 {question.question}
@@ -146,10 +135,8 @@ export default function QuizPage() {
 
               <div className="space-y-3">
                 {question.options.map((option, idx) => (
-                  <motion.button
+                  <button
                     key={idx}
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
                     onClick={() => handleSelectOption(idx)}
                     className={`w-full text-left p-5 rounded-xl border transition-all duration-200 ${
                       selectedOption === idx
@@ -164,9 +151,7 @@ export default function QuizPage() {
                         }`}
                       >
                         {selectedOption === idx && (
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
+                          <div
                             className="w-2.5 h-2.5 rounded-full bg-primary"
                           />
                         )}
@@ -207,9 +192,7 @@ export default function QuizPage() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="text-center mb-12"
         >
           <Trophy className="h-16 w-16 text-accent mx-auto mb-6" />
@@ -219,15 +202,12 @@ export default function QuizPage() {
           <p className="text-muted-fg text-lg">
             {t("matchesDesc")}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {results.map((result, i) => (
-            <motion.div
+            <div
               key={result.preset.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15 }}
             >
               <Card className="bg-surface-alt border-border overflow-hidden">
                 <div className="p-4 text-center">
