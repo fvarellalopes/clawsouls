@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F[locale]","\u002F[locale]\u002Feditor","\u002F[locale]\u002Fmy-presets","\u002F[locale]\u002Fpresets"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
