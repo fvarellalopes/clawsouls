@@ -91,8 +91,8 @@ export function Header({ locale, messages }: HeaderProps) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-muted-fg hover:text-fg rounded-lg">
-                <Globe className="h-4 w-4" />
+              <Button variant="ghost" size="icon" className="text-muted-fg hover:text-fg rounded-lg" aria-label="Change language">
+                <Globe className="h-4 w-4" aria-hidden="true" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-surface border-border rounded-xl">

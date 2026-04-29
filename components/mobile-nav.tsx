@@ -25,7 +25,7 @@ export function MobileNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <nav aria-label="Mobile navigation" className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <div className="mx-3 mb-3 rounded-2xl bg-surface/90  border border-border shadow-2xl">
         <div className="flex items-center justify-around px-2 py-2">
           {links.map((link) => {

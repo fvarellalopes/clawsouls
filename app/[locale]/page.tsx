@@ -32,7 +32,7 @@ export default function HomePage() {
       <section
         className="min-h-[70vh] flex items-center justify-center px-4"
         style={{
-          background: "radial-gradient(ellipse at 50% 0%, oklch(0.45 0.15 270 / 0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at 50% 0%, oklch(0.45 0.13 270 / 0.04) 0%, transparent 70%)",
         }}
       >
         <div className="container mx-auto text-center max-w-3xl animate-fade-in">
