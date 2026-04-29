@@ -52,7 +52,8 @@ export function ShareActions({ dataParam }: ShareActionsProps) {
           {t("copyShareLinkDesc")}
         </p>
         <div className="flex space-x-2">
-          <Input readOnly value={shareUrl} className="flex-1" />
+          <label htmlFor="share-url-input" className="sr-only">Share URL</label>
+          <Input id="share-url-input" readOnly value={shareUrl} className="flex-1" aria-label="Share URL" />
           <Button onClick={handleCopy} variant={copied ? "default" : "outline"}>
             {copied ? (
               <>

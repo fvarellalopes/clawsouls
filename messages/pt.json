@@ -175,6 +175,8 @@
     "signaturePhrases": "Frases de Efeito",
     "signaturePhrasesDesc": "Frases que a IA usa naturalmente na conversa",
     "signaturePhrasesPlaceholder": "ex: Vamos direto ao ponto",
+    "signaturePhrasesMaxReached": "Número máximo de 10 frases atingido",
+    "signaturePhrasesCounter": "{count}/10 frases adicionadas",
     "speechPatterns": "Padrões de Fala",
     "speechPatternsDesc": "Personalize como sua alma fala",
     "alliteration": "Aliteração",

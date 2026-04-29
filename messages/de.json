@@ -173,6 +173,8 @@
     "signaturePhrases": "Erkennungsphrasen",
     "signaturePhrasesDesc": "Phrasen, die die KI natürlich im Gespräch verwendet",
     "signaturePhrasesPlaceholder": "z.B.: Kommen wir direkt zur Sache",
+    "signaturePhrasesMaxReached": "Maximale Anzahl von 10 Phrasen erreicht",
+    "signaturePhrasesCounter": "{count}/10 Phrasen hinzugefügt",
     "emotionalLabels": {
       "stoic": "Stoisch",
       "reserved": "Zurückhaltend",
