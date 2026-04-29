@@ -70,9 +70,6 @@ export function Header({ locale, messages }: HeaderProps) {
             <Link href="/achievements">{t("achievements")}</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
-            <Link href="/editor">{t("create")}</Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
             <Link href="/compare">{t("compare")}</Link>
           </Button>
         </nav>

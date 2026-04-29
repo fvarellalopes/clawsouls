@@ -120,9 +120,7 @@ export default function PresetsPage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((preset, i) => (
-              <div key={preset.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.03}s` }}>
-                <PresetCard preset={preset} index={i} onSelect={handleSelect} />
-              </div>
+              <PresetCard key={preset.id} preset={preset} index={i} onSelect={handleSelect} />
             ))}
           </div>
         )}
