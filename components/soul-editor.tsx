@@ -1235,11 +1235,11 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
     <button
       type="button"
       onClick={() => onSelect(preset)}
-      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01] w-full text-left"
-      style={{
-        background: isSelected ? "hsl(var(--primary) / 0.1)" : "hsl(var(--card))",
-        border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border))"}`,
-      }}
+      className={`p-5 rounded-xl cursor-pointer w-full text-left border transition-all duration-200 ease-out ${isSelected
+          ? "border-primary/40"
+          : "border-border hover:shadow-md hover:scale-[1.02]"
+      }`}
+      style={{ background: "var(--surface)" }}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}
     >
