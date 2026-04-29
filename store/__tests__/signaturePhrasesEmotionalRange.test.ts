@@ -57,7 +57,6 @@ beforeEach(() => {
   useAutoSaveStore.setState({ lastSaved: null, isSaving: false });
 });
 
-// ─── Signature Phrases ───
 describe('soulStore — signaturePhrases', () => {
   it('defaults to empty array', () => {
     expect(useSoulStore.getState().soul.signaturePhrases).toEqual([]);
@@ -141,7 +140,6 @@ describe('soulStore — signaturePhrases', () => {
   });
 });
 
-// ─── Emotional Range ───
 describe('soulStore — emotionalRange', () => {
   it('defaults to 50', () => {
     expect(useSoulStore.getState().soul.emotionalRange).toBe(50);
