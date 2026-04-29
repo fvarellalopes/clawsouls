@@ -48,7 +48,7 @@ export function PresetCard({ preset, index, onSelect, isSelected }: PresetCardPr
           {preset.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-0.5 text-[10px] font-medium tracking-wider uppercase rounded-full bg-primary/5 text-muted-fg border border-border"
+              className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full bg-primary/5 text-muted-fg border border-border"
             >
               {tag}
             </span>

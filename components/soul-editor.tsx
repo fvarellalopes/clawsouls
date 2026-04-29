@@ -303,38 +303,44 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
           {/* Search */}
           <div className="relative max-w-md mx-auto mb-10" style={{ animation: "fadeInUp 0.4s ease-out 0.15s both" }}>
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4" style={{ color: "hsl(var(--foreground-muted))" }} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4" style={{ color: "hsl(var(--foreground-muted))" }} aria-hidden="true" />
+            <label htmlFor="preset-search" className="sr-only">{tPresets("searchPlaceholder")}</label>
             <Input
+              id="preset-search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={tPresets("searchPlaceholder")}
               className="pl-11 rounded-xl h-12"
               style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}
+              aria-label={tPresets("searchPlaceholder")}
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity"
                 style={{ color: "hsl(var(--foreground-muted))" }}
+                aria-label="Clear search"
               >
-                <X className="h-4 w-4" />
+                <X className="h-4 w-4" aria-hidden="true" />
               </button>
             )}
           </div>
 
           {/* Start from scratch button */}
           <div style={{ animation: "fadeInUp 0.4s ease-out 0.2s both" }}>
-            <div
+            <button
+              type="button"
               onClick={handleStartFromScratch}
-              className="max-w-md mx-auto mb-10 p-5 rounded-2xl border-2 border-dashed cursor-pointer transition-all group text-center hover:border-opacity-60"
-              style={{ borderColor: "hsl(var(--border))" }}
+              className="max-w-md mx-auto mb-10 p-5 rounded-2xl border-2 border-dashed cursor-pointer transition-all group text-center hover:border-opacity-60 w-full"
+              style={{ borderColor: "hsl(var(--border))", background: "transparent" }}
+              aria-label={t("startFromScratch")}
             >
-              <Wand2 className="h-8 w-8 mx-auto mb-2 transition-colors group-hover:scale-110" style={{ color: "hsl(var(--foreground-muted))" }} />
+              <Wand2 className="h-8 w-8 mx-auto mb-2 transition-colors group-hover:scale-110" style={{ color: "hsl(var(--foreground-muted))" }} aria-hidden="true" />
               <p className="font-display tracking-wide transition-colors" style={{ color: "hsl(var(--foreground))" }}>
                 {t("startFromScratch")}
               </p>
               <p className="text-xs mt-1" style={{ color: "hsl(var(--foreground-muted))" }}>{t("startFromScratchDesc")}</p>
-            </div>
+            </button>
           </div>
 
           {/* Presets grid */}
@@ -468,30 +474,34 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 {exportDropdownOpen && (
                   <div
                     className="export-dropdown"
+                    role="menu"
                     style={{ background: "hsl(var(--popover))", border: "1px solid hsl(var(--border))" }}
                   >
                     <button
+                      role="menuitem"
                       onClick={() => { handleExport(); setExportDropdownOpen(false); }}
                       style={{ color: "hsl(var(--foreground))" }}
                       className="hover:bg-[hsl(var(--accent)/0.1)]"
                     >
-                      <FileText className="h-4 w-4" />
+                      <FileText className="h-4 w-4" aria-hidden="true" />
                       {t("exportDropdown.soulmd")}
                     </button>
                     <button
+                      role="menuitem"
                       onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
                       style={{ color: "hsl(var(--foreground))" }}
                       className="hover:bg-[hsl(var(--accent)/0.1)]"
                     >
-                      <FileJson className="h-4 w-4" />
+                      <FileJson className="h-4 w-4" aria-hidden="true" />
                       {t("exportDropdown.json")}
                     </button>
                     <button
+                      role="menuitem"
                       onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
                       style={{ color: "hsl(var(--foreground))" }}
                       className="hover:bg-[hsl(var(--accent)/0.1)]"
                     >
-                      <FileText className="h-4 w-4" />
+                      <FileText className="h-4 w-4" aria-hidden="true" />
                       {t("exportDropdown.yaml")}
                     </button>
                   </div>
@@ -1199,13 +1209,16 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 // ─── Simple Preset Card (no Framer Motion) ───────────────────────────
 function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset; onSelect: (p: SoulPreset) => void; isSelected: boolean }) {
   return (
-    <div
+    <button
+      type="button"
       onClick={() => onSelect(preset)}
-      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01]"
+      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01] w-full text-left"
       style={{
         background: isSelected ? "hsl(var(--primary) / 0.1)" : "hsl(var(--card))",
         border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border))"}`,
       }}
+      aria-label={`${preset.name} — ${preset.creature}`}
+      aria-pressed={isSelected}
     >
       <div className="flex items-start gap-3">
         <span className="text-3xl">{preset.emoji || "✨"}</span>
@@ -1230,6 +1243,6 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
           )}
         </div>
       </div>
-    </div>
+    </button>
   );
 }

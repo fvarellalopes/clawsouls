@@ -51,8 +51,9 @@ export function AchievementToast() {
             clearNewAchievement();
           }}
           className="text-muted-fg hover:text-fg ml-2"
+          aria-label="Dismiss achievement notification"
         >
-          <X className="h-4 w-4" />
+          <X className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
     </div>
