@@ -163,11 +163,30 @@
     }
   }
 
+  /* Glass panel — frosted translucent */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+  }
+
   /* Glass — header only, opaque cards elsewhere */
   .glass {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
+  }
+
+  /* Gold glow effect */
+  .glow-gold {
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
+  }
+
+  /* Accent glow (stronger) */
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.35), 0 0 60px rgba(250, 204, 21, 0.1);
   }
 
   /* Surface */
@@ -204,6 +223,55 @@
   }
 }
 
+/* ─── Range Slider (Gold thumb, transparent track) ─── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-track {
+  height: 4px;
+  background: var(--outline-variant, #4d4632);
+  border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: var(--outline-variant, #4d4632);
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #facc15;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #facc15;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+  cursor: pointer;
+  border: none;
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   body {
@@ -226,9 +294,10 @@
     line-height: 1.5;
   }
 
-  .surface, .surface-alt {
+  .surface, .surface-alt, .glass-panel {
     background: white !important;
     border: 1px solid #ddd !important;
+    backdrop-filter: none !important;
   }
 
   .min-h-screen {
