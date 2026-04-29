@@ -5,77 +5,80 @@
 /* ─── Design Tokens ─── */
 @layer base {
   :root {
-    /* Light mode (default) — "Ink on Paper" palette, warm-tinted neutrals (hue 80) */
-    --color-paper: oklch(0.97 0.01 80);
-    --color-paper-dark: oklch(0.15 0.01 80);
-    --color-ink: oklch(0.12 0.02 80);
-    --color-ink-light: oklch(0.85 0.01 80);
-    --color-muted: oklch(0.55 0.01 80);
-    --color-subtle: oklch(0.40 0.01 80);
-    --color-border: oklch(0.85 0.01 80);
-    --color-border-dark: oklch(0.25 0.01 80);
+    /* Cyber Terminal — Dark-first palette (Stitch redesign) */
+    --color-paper: #09090b;
+    --color-paper-light: oklch(0.97 0.01 80);
+    --color-ink: #e5e1e4;
+    --color-ink-dark: oklch(0.12 0.02 80);
+    --color-muted: #d1c6ab;
+    --color-subtle: #9a9078;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-border-subtle: rgba(255, 255, 255, 0.05);
 
-    /* Primary — Deep Indigo */
-    --color-primary: oklch(0.45 0.15 270);
-    --color-primary-fg: oklch(0.97 0.01 270);
+    /* Primary — Gold */
+    --color-primary: #facc15;
+    --color-primary-fg: #3c2f00;
 
-    /* Accent — Warm Coral */
-    --color-accent: oklch(0.65 0.18 30);
-    --color-accent-fg: oklch(0.12 0.02 30);
+    /* Accent — Gold lighter */
+    --color-accent: #ffecb9;
+    --color-accent-fg: #3c2f00;
 
     /* Semantic */
     --color-success: oklch(0.60 0.15 145);
-    --color-error: oklch(0.55 0.20 25);
+    --color-error: #ffb4ab;
     --color-warning: oklch(0.70 0.15 75);
     --color-info: oklch(0.60 0.12 240);
 
-    /* Semantic aliases for components */
-    --background: var(--color-paper);
-    --foreground: var(--color-ink);
+    /* Semantic aliases for components (dark-first) */
+    --background: #09090b;
+    --foreground: #e5e1e4;
+    --surface: #131315;
+    --surface-alt: #1c1b1d;
+    --card: #131315;
+    --foreground-card: #e5e1e4;
+    --popover: #201f22;
+    --foreground-popover: #e5e1e4;
+    --primary: #facc15;
+    --foreground-primary: #3c2f00;
+    --secondary: #2a2a2c;
+    --foreground-secondary: #d1c6ab;
+    --muted: #9a9078;
+    --foreground-muted: #d1c6ab;
+    --accent: #ffecb9;
+    --foreground-accent: #3c2f00;
+    --destructive: #ffb4ab;
+    --foreground-destructive: #690005;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: #201f22;
+    --ring: #facc15;
+    --radius: 0.5rem;
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  /* Light mode override (opt-in) */
+  html.light {
+    --background: var(--color-paper-light);
+    --foreground: var(--color-ink-dark);
     --surface: oklch(0.99 0.005 80);
     --surface-alt: oklch(0.95 0.01 80);
     --card: oklch(0.99 0.005 80);
-    --foreground-card: var(--color-ink);
+    --foreground-card: var(--color-ink-dark);
     --popover: oklch(0.99 0.005 80);
-    --foreground-popover: var(--color-ink);
-    --primary: var(--color-primary);
-    --foreground-primary: var(--color-primary-fg);
+    --foreground-popover: var(--color-ink-dark);
+    --primary: oklch(0.45 0.15 270);
+    --foreground-primary: oklch(0.97 0.01 270);
     --secondary: oklch(0.94 0.005 80);
     --foreground-secondary: oklch(0.30 0.01 80);
-    --muted: var(--color-muted);
-    --foreground-muted: var(--color-muted);
-    --accent: var(--color-accent);
-    --foreground-accent: var(--color-accent-fg);
-    --destructive: var(--color-error);
-    --foreground-destructive: oklch(0.97 0.005 25);
-    --border: var(--color-border);
-    --input: oklch(0.92 0.005 80);
-    --ring: var(--color-primary);
-    --radius: 0.75rem;
-
-    --font-display: var(--font-display, 'Space Grotesk', system-ui, sans-serif);
-    --font-body: var(--font-body, 'Inter', system-ui, sans-serif);
-    --font-mono: var(--font-mono, 'JetBrains Mono', monospace);
-  }
-
-  html.dark {
-    --background: var(--color-paper-dark);
-    --foreground: var(--color-ink-light);
-    --surface: oklch(0.18 0.01 80);
-    --surface-alt: oklch(0.20 0.01 80);
-    --card: oklch(0.18 0.01 80);
-    --foreground-card: var(--color-ink-light);
-    --popover: oklch(0.20 0.01 80);
-    --foreground-popover: var(--color-ink-light);
-    --primary: oklch(0.55 0.14 270);
-    --foreground-primary: oklch(0.95 0.005 270);
-    --secondary: oklch(0.22 0.01 80);
-    --foreground-secondary: oklch(0.72 0.01 80);
-    --muted: oklch(0.42 0.01 80);
+    --muted: oklch(0.55 0.01 80);
     --foreground-muted: oklch(0.55 0.01 80);
-    --border: var(--color-border-dark);
-    --input: oklch(0.22 0.01 80);
-    --ring: oklch(0.55 0.14 270);
+    --accent: oklch(0.65 0.18 30);
+    --foreground-accent: oklch(0.12 0.02 30);
+    --border: oklch(0.85 0.01 80);
+    --input: oklch(0.92 0.005 80);
+    --ring: oklch(0.45 0.15 270);
   }
 }
 
