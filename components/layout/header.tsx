@@ -1,16 +1,16 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Globe } from "lucide-react";
+import { Sparkles, Globe, Sun, Moon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { motion } from "framer-motion";
 
 interface HeaderProps {
   locale: string;
@@ -19,6 +19,22 @@ interface HeaderProps {
 
 export function Header({ locale, messages }: HeaderProps) {
   const t = useTranslations("common");
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const dark = stored ? stored === "dark" : prefersDark;
+    setIsDark(dark);
+    document.documentElement.classList.toggle("dark", dark);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   const locales = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -32,54 +48,57 @@ export function Header({ locale, messages }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      <div className="absolute inset-0 bg-[#0a0514]/80 backdrop-blur-xl border-b border-purple-500/10" />
+      <div className="absolute inset-0 bg-bg/95  border-b border-border" />
       <div className="container mx-auto flex h-16 items-center justify-between px-4 relative">
         <Link href="/" className="flex items-center gap-3 group">
-          <motion.div
-            whileHover={{ rotate: 15, scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500 to-amber-500 flex items-center justify-center shadow-lg shadow-purple-500/20"
-          >
-            <Sparkles className="h-4 w-4 text-white" />
-          </motion.div>
-          <span className="text-xl font-bold tracking-wider font-display">
-            <span className="text-gradient">Claw</span>
-            <span className="text-gradient-gold">Souls</span>
+          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+            <Sparkles className="h-4 w-4 text-primary-fg" />
+          </div>
+          <span className="text-xl font-bold font-display text-primary">
+            ClawSouls
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
-          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
             <Link href="/presets">{t("presets")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
             <Link href="/quiz">{t("quiz")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
             <Link href="/achievements">{t("achievements")}</Link>
           </Button>
-          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
-            <Link href="/editor">{t("create")}</Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild className="text-purple-300/60 hover:text-purple-100 hover:bg-purple-500/10 rounded-lg">
+          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-lg">
             <Link href="/compare">{t("compare")}</Link>
           </Button>
         </nav>
 
         <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="text-muted-fg hover:text-fg rounded-xl"
+          >
+            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </Button>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-purple-300/50 hover:text-purple-100 hover:bg-purple-500/10 rounded-xl">
+              <Button variant="ghost" size="icon" className="text-muted-fg hover:text-fg hover:bg-surface-alt rounded-xl">
                 <Globe className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-[#1a0f2e] border-purple-500/20 rounded-xl">
+            <DropdownMenuContent align="end" className="bg-surface border-border rounded-xl">
               {locales.map((loc) => (
                 <DropdownMenuItem key={loc.code} asChild>
                   <Link
                     href={`/${loc.code}`}
-                    className={`text-purple-200/70 hover:text-purple-100 cursor-pointer rounded-lg ${
-                      locale === loc.code ? "text-amber-400 font-semibold bg-purple-500/10" : ""
+                    className={`text-fg hover:bg-surface-alt cursor-pointer rounded-lg ${
+                      locale === loc.code ? "text-accent font-semibold" : ""
                     }`}
                   >
                     <span className="mr-2">{loc.flag}</span>
@@ -93,7 +112,7 @@ export function Header({ locale, messages }: HeaderProps) {
           <Button
             asChild
             size="sm"
-            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white border-0 shadow-lg shadow-purple-500/20 rounded-xl"
+            className="bg-accent text-accent-fg border-0 rounded-xl hover:opacity-90"
           >
             <Link href="/editor">
               <Sparkles className="mr-2 h-4 w-4" />

@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import { motion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -24,16 +23,14 @@ interface ParchmentPreviewProps {
 function ToneBar({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="text-purple-300/50 w-20 text-right truncate">{label}</span>
-      <div className="flex-1 h-1.5 rounded-full bg-purple-500/10 overflow-hidden">
-        <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-purple-500 to-amber-400"
-          initial={{ width: 0 }}
-          animate={{ width: `${value}%` }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+      <span className="text-muted-fg w-20 text-right truncate">{label}</span>
+      <div className="flex-1 h-1.5 rounded-full bg-surface-alt overflow-hidden">
+        <div
+          className="h-full rounded-full bg-primary transition-all duration-500 ease-out"
+          style={{ width: `${value}%` }}
         />
       </div>
-      <span className="text-amber-400/50 w-8 font-mono">{value}</span>
+      <span className="text-accent w-8 font-mono">{value}</span>
     </div>
   );
 }
@@ -70,43 +67,27 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative"
-    >
+    <div className="relative animate-fade-in">
       {/* Parchment container */}
-      <div className="relative rounded-2xl overflow-hidden">
-        {/* Glow border effect */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/30 via-amber-500/20 to-purple-500/30 p-[1px]">
-          <div className="w-full h-full rounded-2xl bg-[#1a0f2e]" />
-        </div>
-
+      <div className="relative rounded-xl overflow-hidden border border-border bg-surface">
         {/* Content */}
         <div className="relative p-6 md:p-8">
           {/* Header with emoji and name */}
-          <div className="flex items-center justify-between mb-6 pb-4 border-b border-purple-500/20">
+          <div className="flex items-center justify-between mb-6 pb-4 border-b border-border">
             <div className="flex items-center gap-3">
-              <motion.span
-                className="text-4xl"
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                {emoji || "✨"}
-              </motion.span>
+              <span className="text-4xl">{emoji || "✨"}</span>
               <div>
-                <h3 className="text-xl font-bold text-gradient font-display">
+                <h3 className="text-xl font-bold text-fg font-display">
                   {name || t("unnamedSoul")}
                 </h3>
-                <p className="text-sm text-purple-300/60">{t("soulMdPreview")}</p>
+                <p className="text-sm text-muted-fg">{t("soulMdPreview")}</p>
               </div>
             </div>
             <Button
               size="sm"
               variant="ghost"
               onClick={handleCopy}
-              className="text-purple-300 hover:text-purple-100"
+              className="text-muted-fg hover:text-fg"
               aria-label={t("copySoulContent")}
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -115,8 +96,8 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
 
           {/* Tone Attributes Summary */}
           {toneAttributes && (
-            <div className="mb-6 pb-4 border-b border-purple-500/10">
-              <p className="text-[10px] text-purple-500/40 uppercase tracking-widest mb-3 font-display">
+            <div className="mb-6 pb-4 border-b border-border">
+              <p className="text-[10px] text-muted-fg uppercase tracking-widest mb-3 font-display">
                 {t("toneProfile")}
               </p>
               <div className="space-y-1.5">
@@ -135,76 +116,58 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
             {sections.map((section, i) => {
               if (section.type === "title") {
                 return (
-                  <motion.h2
+                  <h2
                     key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.03 }}
-                    className="text-2xl font-display font-bold text-amber-400/90 tracking-wider uppercase mt-4 first:mt-0"
+                    className="text-2xl font-display font-bold text-foreground mt-4 first:mt-0"
                   >
                     {section.content}
-                  </motion.h2>
+                  </h2>
                 );
               }
               if (section.type === "section") {
                 return (
-                  <motion.h3
+                  <h3
                     key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.03 }}
-                    className="text-lg font-display font-semibold text-purple-300 tracking-wide uppercase mt-5 mb-2 flex items-center gap-2"
+                    className="text-lg font-display font-semibold text-foreground mt-5 mb-2 flex items-center gap-2"
                   >
-                    <span className="w-2 h-2 rounded-full bg-purple-500/60" />
+                    <span className="w-2 h-2 rounded-full bg-primary/60" />
                     {section.content}
-                  </motion.h3>
+                  </h3>
                 );
               }
               if (section.type === "divider") {
                 return (
                   <div key={i} className="my-4 flex items-center gap-3">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-                    <span className="text-purple-500/40 text-xs">✦</span>
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+                    <div className="flex-1 h-px bg-border" />
+                    <span className="text-muted-fg text-xs">✦</span>
+                    <div className="flex-1 h-px bg-border" />
                   </div>
                 );
               }
               if (section.type === "item") {
                 return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -5 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.02 }}
-                    className="flex items-start gap-2 pl-2 text-purple-100/80"
-                  >
-                    <span className="text-amber-500/60 mt-1 text-xs">▸</span>
+                  <div key={i} className="flex items-start gap-2 pl-2 text-fg/80">
+                    <span className="text-muted-fg mt-1 text-xs">▸</span>
                     <span>{section.content}</span>
-                  </motion.div>
+                  </div>
                 );
               }
               return (
-                <motion.p
-                  key={i}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: i * 0.02 }}
-                  className="text-purple-100/70"
-                >
+                <p key={i} className="text-muted-fg">
                   {section.content}
-                </motion.p>
+                </p>
               );
             })}
           </div>
 
           {/* Footer watermark */}
-          <div className="mt-6 pt-4 border-t border-purple-500/10 text-center">
-            <span className="text-[10px] text-purple-500/30 tracking-widest uppercase font-display">
+          <div className="mt-6 pt-4 border-t border-border text-center">
+            <span className="text-[10px] text-muted-fg tracking-widest uppercase font-display">
               {t("forgedBy", { year: new Date().getFullYear() })}
             </span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: ["class", "[data-theme='dark']"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,39 +10,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        bg: "var(--bg)",
+        fg: "var(--fg)",
+        surface: "var(--surface)",
+        "surface-alt": "var(--surface-alt)",
+        border: "var(--border)",
+        "muted-fg": "var(--muted-fg)",
+        "subtle-fg": "var(--subtle-fg)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--foreground-primary))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--foreground-secondary))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--foreground-muted))",
+          DEFAULT: "var(--primary)",
+          fg: "var(--primary-fg)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--foreground-accent))",
+          DEFAULT: "var(--accent)",
+          fg: "var(--accent-fg)",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--foreground-destructive))",
-        },
+        /* Keep shadcn-compatible tokens mapped to new system */
+        background: "var(--bg)",
+        foreground: "var(--fg)",
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--foreground-card))",
+          DEFAULT: "var(--surface)",
+          foreground: "var(--fg)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--foreground-popover))",
+          DEFAULT: "var(--surface)",
+          foreground: "var(--fg)",
         },
+        secondary: {
+          DEFAULT: "var(--surface-alt)",
+          foreground: "var(--fg)",
+        },
+        muted: {
+          DEFAULT: "var(--surface-alt)",
+          foreground: "var(--muted-fg)",
+        },
+        destructive: {
+          DEFAULT: "var(--color-error)",
+          foreground: "var(--color-paper)",
+        },
+        input: "var(--border)",
+        ring: "var(--primary)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -51,14 +58,13 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       animation: {
-        "fade-in": "fadeIn 0.5s ease-out",
-        "slide-up": "slideUp 0.5s ease-out",
-        "pulse-slow": "pulse 3s ease-in-out infinite",
-        "float": "float 6s ease-in-out infinite",
+        "fade-in": "fadeIn 0.3s ease-out",
+        "slide-up": "slideUp 0.3s ease-out",
       },
       keyframes: {
         fadeIn: {
@@ -66,12 +72,8 @@ const config: Config = {
           "100%": { opacity: "1" },
         },
         slideUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

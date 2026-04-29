@@ -18,25 +18,25 @@ function Particles({ count = 600 }: { count?: number }) {
       speed: 0.001 + Math.random() * 0.003,
       offset: Math.random() * Math.PI * 2,
       scale: 0.02 + Math.random() * 0.06,
-      color: Math.random() > 0.6 ? "purple" : Math.random() > 0.5 ? "gold" : "white",
+      color: Math.random() > 0.6 ? "indigo" : Math.random() > 0.5 ? "coral" : "warm",
     }));
   }, [count]);
 
   const colors = useMemo(() => {
     const arr = new Float32Array(count * 3);
     particles.forEach((p, i) => {
-      if (p.color === "purple") {
-        arr[i * 3] = 0.66;
-        arr[i * 3 + 1] = 0.33;
-        arr[i * 3 + 2] = 0.97;
-      } else if (p.color === "gold") {
-        arr[i * 3] = 0.98;
-        arr[i * 3 + 1] = 0.75;
-        arr[i * 3 + 2] = 0.15;
+      if (p.color === "indigo") {
+        arr[i * 3] = 0.35;
+        arr[i * 3 + 1] = 0.30;
+        arr[i * 3 + 2] = 0.65;
+      } else if (p.color === "coral") {
+        arr[i * 3] = 0.85;
+        arr[i * 3 + 1] = 0.50;
+        arr[i * 3 + 2] = 0.40;
       } else {
-        arr[i * 3] = 0.95;
-        arr[i * 3 + 1] = 0.93;
-        arr[i * 3 + 2] = 1.0;
+        arr[i * 3] = 0.92;
+        arr[i * 3 + 1] = 0.90;
+        arr[i * 3 + 2] = 0.88;
       }
     });
     return arr;
@@ -83,15 +83,15 @@ function NebulaOrbs() {
     <group ref={group}>
       <mesh position={[-6, 2, -8]}>
         <sphereGeometry args={[3, 32, 32]} />
-        <meshBasicMaterial color="#7c3aed" transparent opacity={0.06} />
+        <meshBasicMaterial color="#4338ca" transparent opacity={0.06} />
       </mesh>
       <mesh position={[7, -3, -10]}>
         <sphereGeometry args={[4, 32, 32]} />
-        <meshBasicMaterial color="#f59e0b" transparent opacity={0.04} />
+        <meshBasicMaterial color="#d97756" transparent opacity={0.04} />
       </mesh>
       <mesh position={[0, 5, -12]}>
         <sphereGeometry args={[5, 32, 32]} />
-        <meshBasicMaterial color="#a855f7" transparent opacity={0.03} />
+        <meshBasicMaterial color="#6366f1" transparent opacity={0.03} />
       </mesh>
     </group>
   );
@@ -102,8 +102,8 @@ function Scene() {
 
   return (
     <>
-      <color attach="background" args={["#0a0514"]} />
-      <fog attach="fog" args={["#0a0514", 15, 35]} />
+      <color attach="background" args={["#f8f6f0"]} />
+      <fog attach="fog" args={["#f8f6f0", 15, 35]} />
       <Particles count={500} />
       <NebulaOrbs />
     </>

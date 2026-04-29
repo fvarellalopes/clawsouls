@@ -1,20 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 function SkeletonPulse({ className }: { className?: string }) {
   return (
-    <motion.div
-      className={`bg-purple-500/10 rounded-lg ${className || ""}`}
-      animate={{ opacity: [0.3, 0.6, 0.3] }}
-      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-    />
+    <div className={`bg-primary/10 rounded-lg animate-pulse-soft ${className || ""}`} />
   );
 }
 
 export function PresetCardSkeleton() {
   return (
-    <div className="rounded-2xl overflow-hidden ring-1 ring-purple-500/10 bg-[#140d24]/80 p-5">
+    <div className="rounded-xl overflow-hidden ring-1 ring-border bg-surface p-5">
       <div className="flex items-center gap-3 mb-3">
         <SkeletonPulse className="w-12 h-12 rounded-full" />
         <div className="flex-1">

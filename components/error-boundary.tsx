@@ -20,16 +20,16 @@ function ErrorFallback({ error, onReset }: { error: Error | null; onReset: () =>
   return (
     <div className="min-h-[400px] flex items-center justify-center p-8">
       <div className="text-center max-w-md">
-        <AlertTriangle className="h-12 w-12 text-amber-400/60 mx-auto mb-4" />
-        <h2 className="text-xl font-display font-bold text-purple-100 mb-2">
+        <AlertTriangle className="h-12 w-12 text-accent/70 mx-auto mb-4" />
+        <h2 className="text-xl font-display font-bold text-fg mb-2">
           {t("somethingWentWrong")}
         </h2>
-        <p className="text-sm text-purple-300/50 mb-6">
+        <p className="text-sm text-muted-fg mb-6">
           {error?.message || t("unexpectedError")}
         </p>
         <Button
           onClick={onReset}
-          className="bg-purple-600 text-white"
+          className="bg-primary text-primary-fg"
         >
           <RefreshCw className="mr-2 h-4 w-4" />
           {t("tryAgain")}

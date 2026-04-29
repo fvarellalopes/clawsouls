@@ -29,11 +29,11 @@
     "basicInfo": "Informações Básicas",
     "basicInfoDesc": "Nome, criatura, vibe, emoji, avatar",
     "personality": "Personalidade",
-    "personalityDesc": "Verdades fundamentais e limites",
+    "personalityDesc": "Traços profundos de personalidade e princípios",
     "attributes": "Atributos",
     "attributesDesc": "Ajuste fino da comunicação: humor, formalidade, verbosidade, etc.",
     "advanced": "Avançado",
-    "advancedDesc": "Presets e personalização",
+    "advancedDesc": "Padrões de fala e regras personalizadas",
     "nameLabel": "Nome",
     "creatureLabel": "Criatura",
     "vibeLabel": "Vibe",
@@ -189,7 +189,39 @@
       "expressive": "Expressivo",
       "dramatic": "Dramático"
     },
-    "fillWithAI": "Preencher com IA"
+    "fillWithAI": "Preencher com IA",
+    "tabsEssentials": "Essenciais",
+    "tabsStyle": "Estilo",
+    "tabsPersonality": "Personalidade",
+    "tabsAdvanced": "Avançado",
+    "quickStart": {
+      "title": "Início Rápido",
+      "scratch": "Começar do Zero",
+      "scratchDesc": "Tela em branco, possibilidades infinitas",
+      "preset": "Carregar um Preset",
+      "presetDesc": "Comece com um personagem famoso",
+      "ai": "Preencher com IA",
+      "aiDesc": "Descreva sua personalidade em tópicos"
+    },
+    "exportDropdown": {
+      "title": "Exportar",
+      "soulmd": "SOUL.md",
+      "json": "JSON",
+      "yaml": "YAML"
+    },
+    "bigFive": "Personalidade Big Five",
+    "bigFiveDesc": "As cinco grandes dimensões de personalidade",
+    "bigFiveTraits": {
+      "openness": "Abertura",
+      "conscientiousness": "Conscienciosidade",
+      "extraversion": "Extroversão",
+      "agreeableness": "Amabilidade",
+      "neuroticism": "Neuroticismo"
+    },
+    "essentialsDesc": "A identidade central da sua alma",
+    "styleDesc": "Tom, comunicação e domínios",
+    "copyPreview": "Copiar SOUL.md",
+    "dismissQuickStart": "Dispensar"
   },
   "presetsPage": {
     "title": "Personalidades Pré-definidas",
