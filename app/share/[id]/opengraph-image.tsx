@@ -53,7 +53,7 @@ export default async function OGImage({ params }: { params: Promise<{ id: string
             style={{
               fontSize: "64px",
               fontWeight: "bold",
-              background: "linear-gradient(135deg, #a855f7, #fbbf24)",
+              background: "linear-gradient(135deg, #4338ca, #e8795a)",
               backgroundClip: "text",
               color: "transparent",
               marginBottom: "12px",
@@ -61,14 +61,14 @@ export default async function OGImage({ params }: { params: Promise<{ id: string
           >
             {name}
           </div>
-          <div style={{ fontSize: "28px", color: "#c084fc", marginBottom: "20px" }}>
+          <div style={{ fontSize: "28px", color: "#6366f1", marginBottom: "20px" }}>
             {creature}
           </div>
           {vibe && (
             <div
               style={{
                 fontSize: "22px",
-                color: "rgba(192, 132, 252, 0.5)",
+                color: "rgba(99, 102, 241, 0.5)",
                 maxWidth: "800px",
                 lineHeight: 1.4,
               }}
@@ -81,7 +81,7 @@ export default async function OGImage({ params }: { params: Promise<{ id: string
               position: "absolute",
               bottom: "30px",
               fontSize: "16px",
-              color: "rgba(168, 85, 247, 0.3)",
+              color: "rgba(67, 56, 202, 0.3)",
               letterSpacing: "0.2em",
             }}
           >
