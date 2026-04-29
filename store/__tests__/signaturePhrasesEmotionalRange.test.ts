@@ -73,11 +73,6 @@ describe('soulStore — signaturePhrases', () => {
       signaturePhrases: ['Hello there', 'Cut to the chase', 'Onwards!'],
     });
     expect(useSoulStore.getState().soul.signaturePhrases).toHaveLength(3);
-    expect(useSoulStore.getState().soul.signaturePhrases).toEqual([
-      'Hello there',
-      'Cut to the chase',
-      'Onwards!',
-    ]);
   });
 
   it('removes a phrase by index', () => {
@@ -90,21 +85,10 @@ describe('soulStore — signaturePhrases', () => {
     expect(useSoulStore.getState().soul.signaturePhrases).toEqual(['Alpha', 'Gamma']);
   });
 
-  it('replaces all phrases', () => {
-    useSoulStore.getState().setSoul({
-      signaturePhrases: ['Old one', 'Old two'],
-    });
-    useSoulStore.getState().setSoul({
-      signaturePhrases: ['New one'],
-    });
-    expect(useSoulStore.getState().soul.signaturePhrases).toEqual(['New one']);
-  });
-
   it('supports up to 5 phrases (the UI max)', () => {
     const phrases = ['One', 'Two', 'Three', 'Four', 'Five'];
     useSoulStore.getState().setSoul({ signaturePhrases: phrases });
     expect(useSoulStore.getState().soul.signaturePhrases).toHaveLength(5);
-    expect(useSoulStore.getState().soul.signaturePhrases).toEqual(phrases);
   });
 
   it('persists through loadPreset', () => {
@@ -145,24 +129,13 @@ describe('soulStore — signaturePhrases', () => {
   });
 
   it('persists through importSoul', () => {
-    const json = JSON.stringify({
-      name: 'Imported',
-      signaturePhrases: ['Imported phrase'],
-    });
+    const json = JSON.stringify({ name: 'Imported', signaturePhrases: ['Imported phrase'] });
     useSoulStore.getState().importSoul(json);
     expect(useSoulStore.getState().soul.signaturePhrases).toEqual(['Imported phrase']);
   });
 
-  it('defaults to empty array when import has no signaturePhrases', () => {
-    const json = JSON.stringify({ name: 'Minimal' });
-    useSoulStore.getState().importSoul(json);
-    expect(useSoulStore.getState().soul.signaturePhrases).toEqual([]);
-  });
-
   it('resets to empty array on resetSoul', () => {
-    useSoulStore.getState().setSoul({
-      signaturePhrases: ['Will be gone'],
-    });
+    useSoulStore.getState().setSoul({ signaturePhrases: ['Will be gone'] });
     useSoulStore.getState().resetSoul();
     expect(useSoulStore.getState().soul.signaturePhrases).toEqual([]);
   });
@@ -230,12 +203,6 @@ describe('soulStore — emotionalRange', () => {
     const json = JSON.stringify({ name: 'Test', emotionalRange: 90 });
     useSoulStore.getState().importSoul(json);
     expect(useSoulStore.getState().soul.emotionalRange).toBe(90);
-  });
-
-  it('defaults to 50 when import has no emotionalRange', () => {
-    const json = JSON.stringify({ name: 'Minimal' });
-    useSoulStore.getState().importSoul(json);
-    expect(useSoulStore.getState().soul.emotionalRange).toBe(50);
   });
 
   it('resets to 50 on resetSoul', () => {

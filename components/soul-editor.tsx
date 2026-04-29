@@ -289,21 +289,21 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
       <div className="min-h-screen py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12" style={{ animation: "fadeInUp 0.4s ease-out" }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))" }}>
-              <Sparkles className="h-4 w-4" style={{ color: "hsl(var(--accent))" }} />
-              <span className="text-sm font-display tracking-wider" style={{ color: "hsl(var(--foreground-muted))" }}>{t("chooseYourBeginning")}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
+              <Sparkles className="h-4 w-4" style={{ color: "var(--accent)" }} />
+              <span className="text-sm font-display tracking-wider" style={{ color: "var(--foreground-muted)" }}>{t("chooseYourBeginning")}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-primary font-display tracking-wider mb-4">
               {t("pickASoul")}
             </h1>
-            <p className="text-lg max-w-xl mx-auto font-body" style={{ color: "hsl(var(--foreground-muted))" }}>
+            <p className="text-lg max-w-xl mx-auto font-body" style={{ color: "var(--foreground-muted)" }}>
               {t("pickASoulDesc")}
             </p>
           </div>
 
           {/* Search */}
           <div className="relative max-w-md mx-auto mb-10" style={{ animation: "fadeInUp 0.4s ease-out 0.15s both" }}>
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4" style={{ color: "hsl(var(--foreground-muted))" }} aria-hidden="true" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4" style={{ color: "var(--foreground-muted)" }} aria-hidden="true" />
             <label htmlFor="preset-search" className="sr-only">{tPresets("searchPlaceholder")}</label>
             <Input
               id="preset-search"
@@ -311,14 +311,14 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={tPresets("searchPlaceholder")}
               className="pl-11 rounded-xl h-12"
-              style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}
+              style={{ background: "var(--card)", borderColor: "var(--border)" }}
               aria-label={tPresets("searchPlaceholder")}
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity"
-                style={{ color: "hsl(var(--foreground-muted))" }}
+                style={{ color: "var(--foreground-muted)" }}
                 aria-label="Clear search"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
@@ -332,35 +332,34 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               type="button"
               onClick={handleStartFromScratch}
               className="max-w-md mx-auto mb-10 p-5 rounded-2xl border-2 border-dashed cursor-pointer transition-all group text-center hover:border-opacity-60 w-full"
-              style={{ borderColor: "hsl(var(--border))", background: "transparent" }}
+              style={{ borderColor: "var(--border)", background: "transparent" }}
               aria-label={t("startFromScratch")}
             >
-              <Wand2 className="h-8 w-8 mx-auto mb-2 transition-colors group-hover:scale-110" style={{ color: "hsl(var(--foreground-muted))" }} aria-hidden="true" />
-              <p className="font-display tracking-wide transition-colors" style={{ color: "hsl(var(--foreground))" }}>
+              <Wand2 className="h-8 w-8 mx-auto mb-2 transition-colors group-hover:scale-110" style={{ color: "var(--foreground-muted)" }} aria-hidden="true" />
+              <p className="font-display tracking-wide transition-colors" style={{ color: "var(--foreground)" }}>
                 {t("startFromScratch")}
               </p>
-              <p className="text-xs mt-1" style={{ color: "hsl(var(--foreground-muted))" }}>{t("startFromScratchDesc")}</p>
+              <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("startFromScratchDesc")}</p>
             </button>
           </div>
 
           {/* Presets grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredPresets.map((preset, i) => (
-              <div key={preset.id} style={{ animation: `fadeInUp 0.3s ease-out ${i * 0.03}s both` }}>
-                <PresetCardSimple
-                  preset={preset}
-                  onSelect={handleSelectPreset}
-                  isSelected={selectedPresetId === preset.id}
-                />
-              </div>
+              <PresetCardSimple
+                key={preset.id}
+                preset={preset}
+                onSelect={handleSelectPreset}
+                isSelected={selectedPresetId === preset.id}
+              />
             ))}
           </div>
 
           {loading ? (
-            <div className="text-center py-12" style={{ color: "hsl(var(--foreground-muted))" }}>{t("saving")}</div>
+            <div className="text-center py-12" style={{ color: "var(--foreground-muted)" }}>{t("saving")}</div>
           ) : filteredPresets.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-lg font-body" style={{ color: "hsl(var(--foreground-muted))" }}>{t("noPresetsFound", { query: searchQuery })}</p>
+              <p className="text-lg font-body" style={{ color: "var(--foreground-muted)" }}>{t("noPresetsFound", { query: searchQuery })}</p>
             </div>
           ) : null}
         </div>
@@ -413,12 +412,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => setPhase("presets")}
-                style={{ color: "hsl(var(--foreground-muted))" }}
+                style={{ color: "var(--foreground-muted)" }}
               >
                 <ArrowLeft className="h-4 w-4 mr-1" />
                 {t("presets")}
               </Button>
-              <div className="h-5 w-px" style={{ background: "hsl(var(--border))" }} />
+              <div className="h-5 w-px" style={{ background: "var(--border)" }} />
               <div className="flex items-center gap-1">
                 <Button onClick={undo} variant="ghost" size="icon" disabled={!canUndo()} title={t("undoTitle")} aria-label={t("undoTitle")}>
                   <Undo2 className="h-4 w-4" />
@@ -428,12 +427,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 </Button>
               </div>
               {isSaving && (
-                <span className="text-sm flex items-center" role="status" aria-live="polite" style={{ color: "hsl(var(--foreground-muted))" }}>
+                <span className="text-sm flex items-center" role="status" aria-live="polite" style={{ color: "var(--foreground-muted)" }}>
                   <Save className="h-3 w-3 mr-1 animate-pulse" /> {t("saving")}
                 </span>
               )}
               {!isSaving && lastSaved && (
-                <span className="text-xs" aria-live="off" style={{ color: "hsl(var(--foreground-muted))" }}>
+                <span className="text-xs" aria-live="off" style={{ color: "var(--foreground-muted)" }}>
                   {t("savedTime", { time: new Date(lastSaved).toLocaleTimeString() })}
                 </span>
               )}
@@ -447,11 +446,11 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 title={isDarkMode ? t("switchToLight") : t("switchToDark")}
                 aria-label={isDarkMode ? t("switchToLight") : t("switchToDark")}
-                style={{ color: "hsl(var(--foreground-muted))" }}
+                style={{ color: "var(--foreground-muted)" }}
               >
                 {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               </Button>
-              <div className="h-5 w-px" style={{ background: "hsl(var(--border))" }} />
+              <div className="h-5 w-px" style={{ background: "var(--border)" }} />
 
               {/* Import */}
               <ImportJsonDialog />
@@ -465,7 +464,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     e.stopPropagation();
                     setExportDropdownOpen(!exportDropdownOpen);
                   }}
-                  style={{ borderColor: "hsl(var(--border))" }}
+                  style={{ borderColor: "var(--border)" }}
                 >
                   <Download className="mr-2 h-4 w-4" />
                   {t("exportDropdown.title")}
@@ -475,12 +474,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   <div
                     className="export-dropdown"
                     role="menu"
-                    style={{ background: "hsl(var(--popover))", border: "1px solid hsl(var(--border))" }}
+                    style={{ background: "hsl(var(--popover))", border: "1px solid var(--border)" }}
                   >
                     <button
                       role="menuitem"
                       onClick={() => { handleExport(); setExportDropdownOpen(false); }}
-                      style={{ color: "hsl(var(--foreground))" }}
+                      style={{ color: "var(--foreground)" }}
                       className="hover:bg-[hsl(var(--accent)/0.1)]"
                     >
                       <FileText className="h-4 w-4" aria-hidden="true" />
@@ -489,7 +488,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     <button
                       role="menuitem"
                       onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
-                      style={{ color: "hsl(var(--foreground))" }}
+                      style={{ color: "var(--foreground)" }}
                       className="hover:bg-[hsl(var(--accent)/0.1)]"
                     >
                       <FileJson className="h-4 w-4" aria-hidden="true" />
@@ -498,7 +497,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     <button
                       role="menuitem"
                       onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
-                      style={{ color: "hsl(var(--foreground))" }}
+                      style={{ color: "var(--foreground)" }}
                       className="hover:bg-[hsl(var(--accent)/0.1)]"
                     >
                       <FileText className="h-4 w-4" aria-hidden="true" />
@@ -509,7 +508,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               </div>
 
               {/* Share */}
-              <Button onClick={handleShare} variant="outline" size="sm" style={{ borderColor: "hsl(var(--border))" }}>
+              <Button onClick={handleShare} variant="outline" size="sm" style={{ borderColor: "var(--border)" }}>
                 <Share2 className="mr-2 h-4 w-4" />
                 {t("share")}
               </Button>
@@ -521,16 +520,16 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
           {/* ─── QUICK START (conditional) ─── */}
           {showQuickStart && (
-            <div className="mb-6 rounded-xl p-5 transition-all" style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", animation: "fadeInUp 0.3s ease-out" }}>
+            <div className="mb-6 rounded-xl p-5 transition-all" style={{ background: "var(--card)", border: "1px solid var(--border)", animation: "fadeInUp 0.3s ease-out" }}>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-display tracking-wider text-base" style={{ color: "hsl(var(--foreground))" }}>
-                  <Zap className="inline h-4 w-4 mr-2" style={{ color: "hsl(var(--accent))" }} />
+                <h3 className="font-display tracking-wider text-base" style={{ color: "var(--foreground)" }}>
+                  <Zap className="inline h-4 w-4 mr-2" style={{ color: "var(--accent)" }} />
                   {t("quickStart.title")}
                 </h3>
                 <button
                   onClick={() => setQuickStartDismissed(true)}
                   className="text-xs hover:underline transition-colors"
-                  style={{ color: "hsl(var(--foreground-muted))" }}
+                  style={{ color: "var(--foreground-muted)" }}
                 >
                   {t("dismissQuickStart")}
                 </button>
@@ -539,29 +538,29 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <button
                   onClick={() => { resetSoul(); setQuickStartDismissed(true); }}
                   className="p-4 rounded-lg text-left transition-all hover:scale-[1.02] group"
-                  style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))" }}
+                  style={{ background: "hsl(var(--background))", border: "1px solid var(--border)" }}
                 >
-                  <RotateCcw className="h-5 w-5 mb-2 transition-colors" style={{ color: "hsl(var(--foreground-muted))" }} />
-                  <p className="font-display text-sm tracking-wide" style={{ color: "hsl(var(--foreground))" }}>{t("quickStart.scratch")}</p>
-                  <p className="text-xs mt-1" style={{ color: "hsl(var(--foreground-muted))" }}>{t("quickStart.scratchDesc")}</p>
+                  <RotateCcw className="h-5 w-5 mb-2 transition-colors" style={{ color: "var(--foreground-muted)" }} />
+                  <p className="font-display text-sm tracking-wide" style={{ color: "var(--foreground)" }}>{t("quickStart.scratch")}</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("quickStart.scratchDesc")}</p>
                 </button>
                 <button
                   onClick={handleLoadPresetFromQuickStart}
                   className="p-4 rounded-lg text-left transition-all hover:scale-[1.02] group"
-                  style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))" }}
+                  style={{ background: "hsl(var(--background))", border: "1px solid var(--border)" }}
                 >
-                  <Sparkles className="h-5 w-5 mb-2 transition-colors" style={{ color: "hsl(var(--foreground-muted))" }} />
-                  <p className="font-display text-sm tracking-wide" style={{ color: "hsl(var(--foreground))" }}>{t("quickStart.preset")}</p>
-                  <p className="text-xs mt-1" style={{ color: "hsl(var(--foreground-muted))" }}>{t("quickStart.presetDesc")}</p>
+                  <Sparkles className="h-5 w-5 mb-2 transition-colors" style={{ color: "var(--foreground-muted)" }} />
+                  <p className="font-display text-sm tracking-wide" style={{ color: "var(--foreground)" }}>{t("quickStart.preset")}</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("quickStart.presetDesc")}</p>
                 </button>
                 <button
                   onClick={() => { setQuickStartDismissed(true); setFillWithAIOpen(true); }}
                   className="p-4 rounded-lg text-left transition-all hover:scale-[1.02] group"
-                  style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))" }}
+                  style={{ background: "hsl(var(--background))", border: "1px solid var(--border)" }}
                 >
-                  <Wand2 className="h-5 w-5 mb-2 transition-colors" style={{ color: "hsl(var(--foreground-muted))" }} />
-                  <p className="font-display text-sm tracking-wide" style={{ color: "hsl(var(--foreground))" }}>{t("quickStart.ai")}</p>
-                  <p className="text-xs mt-1" style={{ color: "hsl(var(--foreground-muted))" }}>{t("quickStart.aiDesc")}</p>
+                  <Wand2 className="h-5 w-5 mb-2 transition-colors" style={{ color: "var(--foreground-muted)" }} />
+                  <p className="font-display text-sm tracking-wide" style={{ color: "var(--foreground)" }}>{t("quickStart.ai")}</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("quickStart.aiDesc")}</p>
                 </button>
               </div>
             </div>
@@ -572,23 +571,23 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
             {/* LEFT: Form */}
             <div className="space-y-6">
               <Tabs defaultValue="essentials" className="space-y-6">
-                <TabsList className="grid w-full grid-cols-4 rounded-xl p-1" style={{ background: "hsl(var(--card))" }}>
-                  <TabsTrigger value="essentials" className="rounded-lg text-xs sm:text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>
+                <TabsList className="grid w-full grid-cols-4 rounded-xl p-1" style={{ background: "var(--card)" }}>
+                  <TabsTrigger value="essentials" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
                     <MessageSquare className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     <span className="hidden sm:inline">{t("tabsEssentials")}</span>
                     <span className="sm:hidden">Ess.</span>
                   </TabsTrigger>
-                  <TabsTrigger value="style" className="rounded-lg text-xs sm:text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>
+                  <TabsTrigger value="style" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
                     <Palette className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     <span className="hidden sm:inline">{t("tabsStyle")}</span>
                     <span className="sm:hidden">Style</span>
                   </TabsTrigger>
-                  <TabsTrigger value="personality" className="rounded-lg text-xs sm:text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>
+                  <TabsTrigger value="personality" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
                     <Settings className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     <span className="hidden sm:inline">{t("tabsPersonality")}</span>
                     <span className="sm:hidden">Pers.</span>
                   </TabsTrigger>
-                  <TabsTrigger value="advanced" className="rounded-lg text-xs sm:text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>
+                  <TabsTrigger value="advanced" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
                     <Edit3 className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     <span className="hidden sm:inline">{t("tabsAdvanced")}</span>
                     <span className="sm:hidden">Adv.</span>
@@ -598,7 +597,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 {/* ─── TAB 1: ESSENTIALS ─── */}
                 <TabsContent value="essentials">
                   <div className="editor-tab-content">
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("tabsEssentials")}</CardTitle>
                         <CardDescription>{t("essentialsDesc")}</CardDescription>
@@ -606,54 +605,54 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <CardContent className="space-y-5">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                           <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("nameLabel")}</Label>
+                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("nameLabel")}</Label>
                             <Input
                               value={soul.name}
                               onChange={(e) => handleAttributeChange("name", e.target.value)}
                               placeholder="Nexo"
-                              style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                              style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                               className="rounded-xl"
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("creatureLabel")}</Label>
+                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("creatureLabel")}</Label>
                             <Input
                               value={soul.creature}
                               onChange={(e) => handleAttributeChange("creature", e.target.value)}
                               placeholder="AI / Ghost in the machine"
-                              style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                              style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                               className="rounded-xl"
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("emojiLabel")}</Label>
+                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("emojiLabel")}</Label>
                             <Input
                               value={soul.emoji}
                               onChange={(e) => handleAttributeChange("emoji", e.target.value)}
                               placeholder="👁️"
-                              style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                              style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                               className="rounded-xl"
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("avatarLabel")}</Label>
+                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("avatarLabel")}</Label>
                             <Input
                               value={soul.avatar || ""}
                               onChange={(e) => handleAttributeChange("avatar", e.target.value || undefined)}
                               placeholder="https://..."
-                              style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                              style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                               className="rounded-xl"
                             />
                           </div>
                           <div className="space-y-2 md:col-span-2">
                             <div className="flex items-center justify-between">
-                              <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("vibeLabel")}</Label>
+                              <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("vibeLabel")}</Label>
                               <Button
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => setFillWithAIOpen(true)}
                                 className="h-7 px-2 gap-1.5"
-                                style={{ color: "hsl(var(--foreground-muted))" }}
+                                style={{ color: "var(--foreground-muted)" }}
                               >
                                 <Wand2 className="h-3.5 w-3.5" />
                                 <span className="text-xs">{t("fillWithAI")}</span>
@@ -664,17 +663,17 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               onChange={(e) => handleAttributeChange("vibe", e.target.value)}
                               placeholder="e.g., Strong opinions, weakly held. I don't hedge..."
                               rows={3}
-                              style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                              style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                               className="rounded-xl resize-none"
                             />
                           </div>
                           <div className="space-y-2 md:col-span-2">
-                            <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("vibeStyleLabel")}</Label>
+                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("vibeStyleLabel")}</Label>
                             <Select value={soul.vibeStyle} onValueChange={(value) => handleAttributeChange("vibeStyle", value)}>
-                              <SelectTrigger className="rounded-xl" style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}>
+                              <SelectTrigger className="rounded-xl" style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}>
                                 <SelectValue placeholder={t("selectVibeStyle")} />
                               </SelectTrigger>
-                              <SelectContent style={{ background: "hsl(var(--popover))", borderColor: "hsl(var(--border))" }}>
+                              <SelectContent style={{ background: "hsl(var(--popover))", borderColor: "var(--border)" }}>
                                 {vibeStyles.map((style) => (
                                   <SelectItem key={style.value} value={style.value}>
                                     {style.label}
@@ -693,7 +692,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <TabsContent value="style">
                   <div className="editor-tab-content space-y-6">
                     {/* Tone Sliders */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("toneAttributes")}</CardTitle>
                         <CardDescription>{t("toneAttributesDesc")}</CardDescription>
@@ -702,8 +701,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                         {Object.entries(attributeOptions).map(([key, options]) => (
                           <div key={key} className="space-y-3">
                             <div className="flex justify-between items-center">
-                              <Label className="capitalize text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t(`attributes.${key}`)}</Label>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "hsl(var(--accent))", background: "hsl(var(--accent) / 0.1)" }}>
+                              <Label className="capitalize text-sm" style={{ color: "var(--foreground-muted)" }}>{t(`attributes.${key}`)}</Label>
+                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "hsl(var(--accent) / 0.1)" }}>
                                 {options.find(o => o.value === (soul as any)[key])?.label || "—"}
                               </span>
                             </div>
@@ -714,7 +713,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               min={0}
                               step={1}
                             />
-                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
                               <span>{t("low")}</span>
                               <span>{t("high")}</span>
                             </div>
@@ -724,7 +723,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Communication Mode */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("communicationMode")}</CardTitle>
                         <CardDescription>{t("communicationModeDesc")}</CardDescription>
@@ -734,10 +733,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                           value={soul.communicationMode || "direct"}
                           onValueChange={(value) => handleAttributeChange("communicationMode", value)}
                         >
-                          <SelectTrigger className="rounded-xl" style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}>
+                          <SelectTrigger className="rounded-xl" style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}>
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent style={{ background: "hsl(var(--popover))", borderColor: "hsl(var(--border))" }}>
+                          <SelectContent style={{ background: "hsl(var(--popover))", borderColor: "var(--border)" }}>
                             <SelectItem value="direct">{t("commModes.direct")}</SelectItem>
                             <SelectItem value="socratic">{t("commModes.socratic")}</SelectItem>
                             <SelectItem value="diagnostic">{t("commModes.diagnostic")}</SelectItem>
@@ -750,14 +749,14 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Emotional Range */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("emotionalRange")}</CardTitle>
                         <CardDescription>{t("emotionalRangeDesc")}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "hsl(var(--accent))", background: "hsl(var(--accent) / 0.1)" }}>
+                          <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "hsl(var(--accent) / 0.1)" }}>
                             {soul.emotionalRange <= 20 ? t("emotionalLabels.stoic") :
                              soul.emotionalRange <= 40 ? t("emotionalLabels.reserved") :
                              soul.emotionalRange <= 60 ? t("emotionalLabels.balanced") :
@@ -772,7 +771,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                           min={0}
                           step={1}
                         />
-                        <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "hsl(var(--foreground-muted))" }}>
+                        <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
                           <span>{t("emotionalLabels.stoic")}</span>
                           <span>{t("emotionalLabels.dramatic")}</span>
                         </div>
@@ -780,7 +779,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Knowledge Domains */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("knowledgeDomains")}</CardTitle>
                         <CardDescription>{t("knowledgeDomainsDesc")}</CardDescription>
@@ -814,8 +813,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                                 className="p-2.5 rounded-xl text-sm text-left transition-all"
                                 style={{
                                   background: isSelected ? "hsl(var(--primary) / 0.15)" : "hsl(var(--background))",
-                                  border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border))"}`,
-                                  color: isSelected ? "hsl(var(--foreground))" : "hsl(var(--foreground-muted))",
+                                  border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "var(--border)"}`,
+                                  color: isSelected ? "var(--foreground)" : "var(--foreground-muted)",
                                 }}
                               >
                                 {domain.label}
@@ -832,7 +831,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <TabsContent value="personality">
                   <div className="editor-tab-content space-y-6">
                     {/* Big Five */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("bigFive")}</CardTitle>
                         <CardDescription>{t("bigFiveDesc")}</CardDescription>
@@ -847,8 +846,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                         ].map(({ key, label }) => (
                           <div key={key} className="space-y-3">
                             <div className="flex justify-between items-center">
-                              <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{label}</Label>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "hsl(var(--accent))", background: "hsl(var(--accent) / 0.1)" }}>
+                              <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{label}</Label>
+                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "hsl(var(--accent) / 0.1)" }}>
                                 {(soul as any)[key] ?? 50}
                               </span>
                             </div>
@@ -859,7 +858,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               min={0}
                               step={1}
                             />
-                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
                               <span>{t("low")}</span>
                               <span>{t("high")}</span>
                             </div>
@@ -869,7 +868,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Core Truths */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("coreTruths")}</CardTitle>
                         <CardDescription>{t("coreTruthsDesc")}</CardDescription>
@@ -877,7 +876,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <CardContent className="space-y-3">
                         {Object.entries(soul.coreTruths).map(([key, value]) => (
                           <div key={key} className="flex items-center justify-between p-3 rounded-xl transition-colors" style={{ background: "hsl(var(--background))" }}>
-                            <Label htmlFor={`core-${key}`} className="capitalize cursor-pointer" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            <Label htmlFor={`core-${key}`} className="capitalize cursor-pointer" style={{ color: "var(--foreground-muted)" }}>
                               {t(`coreTruths.${key}`)}
                             </Label>
                             <Switch
@@ -891,7 +890,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Boundaries */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("boundaries")}</CardTitle>
                         <CardDescription>{t("boundariesDesc")}</CardDescription>
@@ -899,7 +898,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <CardContent className="space-y-3">
                         {Object.entries(soul.boundaries).map(([key, value]) => (
                           <div key={key} className="flex items-center justify-between p-3 rounded-xl transition-colors" style={{ background: "hsl(var(--background))" }}>
-                            <Label htmlFor={`boundary-${key}`} className="capitalize cursor-pointer" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            <Label htmlFor={`boundary-${key}`} className="capitalize cursor-pointer" style={{ color: "var(--foreground-muted)" }}>
                               {t(`boundaries.${key}`)}
                             </Label>
                             <Switch
@@ -918,14 +917,14 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 <TabsContent value="advanced">
                   <div className="editor-tab-content space-y-6">
                     {/* Speech Patterns */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("speechPatterns")}</CardTitle>
                         <CardDescription>{t("speechPatternsDesc")}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-6">
                         <div className="flex items-center justify-between p-3 rounded-xl transition-colors" style={{ background: "hsl(var(--background))" }}>
-                          <Label htmlFor="speech-alliteration" className="cursor-pointer" style={{ color: "hsl(var(--foreground-muted))" }}>
+                          <Label htmlFor="speech-alliteration" className="cursor-pointer" style={{ color: "var(--foreground-muted)" }}>
                             {t("alliteration")}
                           </Label>
                           <Switch
@@ -948,8 +947,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                         ].map(({ key, label, default: defaultVal }) => (
                           <div key={key} className="space-y-3">
                             <div className="flex justify-between items-center">
-                              <Label className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{label}</Label>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "hsl(var(--accent))", background: "hsl(var(--accent) / 0.1)" }}>
+                              <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{label}</Label>
+                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "hsl(var(--accent) / 0.1)" }}>
                                 {(soul.speechPatterns as any)?.[key] ?? defaultVal}
                               </span>
                             </div>
@@ -965,7 +964,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                               min={0}
                               step={1}
                             />
-                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
                               <span>{t("low")}</span>
                               <span>{t("high")}</span>
                             </div>
@@ -975,7 +974,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Custom Core Truths */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("customCoreTruths")}</CardTitle>
                         <CardDescription>{t("customCoreTruthsDesc")}</CardDescription>
@@ -983,7 +982,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <CardContent className="space-y-3">
                         {(soul.customCoreTruths || []).map((truth, i) => (
                           <div key={i} className="flex items-center gap-2 p-3 rounded-xl" style={{ background: "hsl(var(--background))" }}>
-                            <span className="flex-1 text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{truth}</span>
+                            <span className="flex-1 text-sm" style={{ color: "var(--foreground-muted)" }}>{truth}</span>
                             <Button
                               variant="ghost"
                               size="icon"
@@ -1001,10 +1000,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                             onChange={(e) => setNewCoreTruth(e.target.value)}
                             placeholder={t("customCoreTruthsPlaceholder")}
                             className="rounded-xl flex-1"
-                            style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                            style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                             onKeyDown={(e) => e.key === "Enter" && addCustomCoreTruth()}
                           />
-                          <Button onClick={addCustomCoreTruth} size="icon" variant="outline" style={{ borderColor: "hsl(var(--border))" }}>
+                          <Button onClick={addCustomCoreTruth} size="icon" variant="outline" style={{ borderColor: "var(--border)" }}>
                             <Plus className="h-4 w-4" />
                           </Button>
                         </div>
@@ -1012,7 +1011,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Custom Boundaries */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("customBoundaries")}</CardTitle>
                         <CardDescription>{t("customBoundariesDesc")}</CardDescription>
@@ -1020,7 +1019,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <CardContent className="space-y-3">
                         {(soul.customBoundaries || []).map((boundary, i) => (
                           <div key={i} className="flex items-center gap-2 p-3 rounded-xl" style={{ background: "hsl(var(--background))" }}>
-                            <span className="flex-1 text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{boundary}</span>
+                            <span className="flex-1 text-sm" style={{ color: "var(--foreground-muted)" }}>{boundary}</span>
                             <Button
                               variant="ghost"
                               size="icon"
@@ -1038,10 +1037,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                             onChange={(e) => setNewBoundary(e.target.value)}
                             placeholder={t("customBoundariesPlaceholder")}
                             className="rounded-xl flex-1"
-                            style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                            style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                             onKeyDown={(e) => e.key === "Enter" && addCustomBoundary()}
                           />
-                          <Button onClick={addCustomBoundary} size="icon" variant="outline" style={{ borderColor: "hsl(var(--border))" }}>
+                          <Button onClick={addCustomBoundary} size="icon" variant="outline" style={{ borderColor: "var(--border)" }}>
                             <Plus className="h-4 w-4" />
                           </Button>
                         </div>
@@ -1049,7 +1048,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Signature Phrases */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("signaturePhrases")}</CardTitle>
                         <CardDescription>{t("signaturePhrasesDesc")}</CardDescription>
@@ -1057,7 +1056,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       <CardContent className="space-y-3">
                         {(soul.signaturePhrases || []).map((phrase, i) => (
                           <div key={i} className="flex items-center gap-2 p-3 rounded-xl" style={{ background: "hsl(var(--background))" }}>
-                            <span className="flex-1 text-sm italic" style={{ color: "hsl(var(--foreground-muted))" }}>"{phrase}"</span>
+                            <span className="flex-1 text-sm italic" style={{ color: "var(--foreground-muted)" }}>"{phrase}"</span>
                             <Button
                               variant="ghost"
                               size="icon"
@@ -1074,7 +1073,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                           </div>
                         ))}
                         {(soul.signaturePhrases || []).length >= 10 && (
-                          <p className="text-xs" style={{ color: "hsl(var(--foreground-muted))" }}>
+                          <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
                             {t("signaturePhrasesMaxReached")}
                           </p>
                         )}
@@ -1088,7 +1087,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                                   placeholder={t("signaturePhrasesPlaceholder")}
                                   maxLength={50}
                                   className="rounded-xl pr-12"
-                                  style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+                                  style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
                                   onKeyDown={(e) => {
                                     if (e.key === "Enter" && newSignaturePhrase.trim()) {
                                       handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
@@ -1098,7 +1097,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                                 />
                                 <span
                                   className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] tabular-nums"
-                                  style={{ color: newSignaturePhrase.length >= 45 ? "hsl(var(--destructive))" : "hsl(var(--foreground-muted))" }}
+                                  style={{ color: newSignaturePhrase.length >= 45 ? "hsl(var(--destructive))" : "var(--foreground-muted)" }}
                                 >
                                   {newSignaturePhrase.length}/50
                                 </span>
@@ -1113,12 +1112,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                                 size="icon"
                                 variant="outline"
                                 disabled={!newSignaturePhrase.trim()}
-                                style={{ borderColor: "hsl(var(--border))" }}
+                                style={{ borderColor: "var(--border)" }}
                               >
                                 <Plus className="h-4 w-4" />
                               </Button>
                             </div>
-                            <p className="text-[10px] pl-1" style={{ color: "hsl(var(--foreground-muted))" }}>
+                            <p className="text-[10px] pl-1" style={{ color: "var(--foreground-muted)" }}>
                               {t("signaturePhrasesCounter", { count: (soul.signaturePhrases || []).length })}
                             </p>
                           </div>
@@ -1127,7 +1126,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                     </Card>
 
                     {/* Actions */}
-                    <Card style={{ background: "hsl(var(--card))", borderColor: "hsl(var(--border))" }}>
+                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
                       <CardHeader className="pb-4">
                         <CardTitle className="font-display tracking-wider text-lg">{t("customize")}</CardTitle>
                         <CardDescription>{t("customizeDesc")}</CardDescription>
@@ -1137,7 +1136,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                           <Button
                             variant="outline"
                             onClick={() => setPhase("presets")}
-                            style={{ borderColor: "hsl(var(--border))" }}
+                            style={{ borderColor: "var(--border)" }}
                           >
                             <Sparkles className="mr-2 h-4 w-4" />
                             {t("switchPreset")}
@@ -1167,8 +1166,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               <div className="sticky top-24">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <Eye className="h-4 w-4" style={{ color: "hsl(var(--accent))" }} />
-                    <span className="text-sm font-display tracking-wider" style={{ color: "hsl(var(--foreground-muted))" }}>{t("livePreview")}</span>
+                    <Eye className="h-4 w-4" style={{ color: "var(--accent)" }} />
+                    <span className="text-sm font-display tracking-wider" style={{ color: "var(--foreground-muted)" }}>{t("livePreview")}</span>
                   </div>
                 </div>
                 <ParchmentPreview
@@ -1192,7 +1191,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
       {/* Share Dialog */}
       <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
-        <DialogContent style={{ background: "hsl(var(--popover))", borderColor: "hsl(var(--border))" }}>
+        <DialogContent style={{ background: "hsl(var(--popover))", borderColor: "var(--border)" }}>
           <DialogHeader>
             <DialogTitle className="font-display tracking-wider">{t("shareLink")}</DialogTitle>
             <DialogDescription>{t("shareDesc")}</DialogDescription>
@@ -1202,12 +1201,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               readOnly
               value={shareUrl}
               className="rounded-xl"
-              style={{ background: "hsl(var(--background))", borderColor: "hsl(var(--border))" }}
+              style={{ background: "hsl(var(--background))", borderColor: "var(--border)" }}
             />
-            <p className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("shareTip")}</p>
+            <p className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("shareTip")}</p>
           </div>
           <DialogFooter>
-            <Button onClick={() => setShareDialogOpen(false)} style={{ background: "hsl(var(--primary))", color: "hsl(var(--foreground-primary))" }}>
+            <Button onClick={() => setShareDialogOpen(false)} style={{ background: "var(--primary)", color: "var(--foreground-primary)" }}>
               {t("close")}
             </Button>
           </DialogFooter>
@@ -1234,29 +1233,28 @@ function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset
     <button
       type="button"
       onClick={() => onSelect(preset)}
-      className="p-5 rounded-xl cursor-pointer transition-all hover:scale-[1.01] w-full text-left"
-      style={{
-        background: isSelected ? "hsl(var(--primary) / 0.1)" : "hsl(var(--card))",
-        border: `1px solid ${isSelected ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border))"}`,
-      }}
+      className={`p-5 rounded-xl cursor-pointer w-full text-left border transition-all duration-200 ease-out ${isSelected
+          ? "border-primary/40"
+          : "border-border hover:shadow-md hover:scale-[1.02]"
+      }`}
+      style={{ background: "var(--surface)" }}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}
     >
       <div className="flex items-start gap-3">
         <span className="text-3xl" aria-hidden="true">{preset.emoji || "✨"}</span>
         <div className="flex-1 min-w-0">
-          <h3 className="font-display tracking-wider text-base truncate" style={{ color: "hsl(var(--foreground))" }}>
+          <h3 className="font-display tracking-wider text-base truncate" style={{ color: "var(--foreground)" }}>
             {preset.name}
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: "hsl(var(--foreground-muted))" }}>{preset.creature}</p>
-          <p className="text-sm mt-2 line-clamp-2" style={{ color: "hsl(var(--foreground-muted))" }}>{preset.description}</p>
+          <p className="text-xs mt-0.5" style={{ color: "var(--foreground-muted)" }}>{preset.creature}</p>
+          <p className="text-sm mt-2 line-clamp-2" style={{ color: "var(--foreground-muted)" }}>{preset.description}</p>
           {preset.tags.length > 0 && (
             <div className="flex flex-wrap gap-1 mt-2">
               {preset.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider"
-                  style={{ background: "hsl(var(--muted))", color: "hsl(var(--foreground-muted))" }}
+                  className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full bg-primary/5 text-muted-fg border border-border"
                 >
                   {tag}
                 </span>
