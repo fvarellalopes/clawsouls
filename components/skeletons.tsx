@@ -10,19 +10,23 @@ function SkeletonPulse({ className }: { className?: string }) {
 
 export function PresetCardSkeleton() {
   return (
-    <div className="rounded-xl overflow-hidden ring-1 ring-border bg-surface p-5">
-      <div className="flex items-center gap-3 mb-3">
-        <SkeletonPulse className="w-12 h-12 rounded-full" />
-        <div className="flex-1">
-          <SkeletonPulse className="h-5 w-24 mb-1.5" />
-          <SkeletonPulse className="h-3 w-32" />
-        </div>
+    <div className="bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-lg overflow-hidden flex flex-col h-full">
+      <div className="absolute top-0 left-0 w-8 h-[2px] bg-primary-container/30" />
+      <div className="aspect-square bg-black/50 border-b border-white/5 flex items-center justify-center">
+        <SkeletonPulse className="w-20 h-20 rounded" />
       </div>
-      <SkeletonPulse className="h-3 w-full mb-1.5" />
-      <SkeletonPulse className="h-3 w-3/4 mb-3" />
-      <div className="flex gap-1.5">
-        <SkeletonPulse className="h-5 w-16 rounded-full" />
-        <SkeletonPulse className="h-5 w-20 rounded-full" />
+      <div className="p-6 flex flex-col gap-4 flex-grow">
+        <div className="flex flex-col gap-2">
+          <SkeletonPulse className="h-3 w-16" />
+          <SkeletonPulse className="h-6 w-32" />
+        </div>
+        <SkeletonPulse className="h-3 w-full" />
+        <SkeletonPulse className="h-3 w-3/4" />
+        <div className="flex gap-1.5">
+          <SkeletonPulse className="h-5 w-16 rounded-full" />
+          <SkeletonPulse className="h-5 w-20 rounded-full" />
+        </div>
+        <SkeletonPulse className="h-10 w-full rounded mt-auto" />
       </div>
     </div>
   );
@@ -30,7 +34,7 @@ export function PresetCardSkeleton() {
 
 export function PresetsGridSkeleton({ count = 6 }: { count?: number }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {Array.from({ length: count }).map((_, i) => (
         <PresetCardSkeleton key={i} />
       ))}

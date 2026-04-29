@@ -87,7 +87,7 @@ export default async function LocaleLayout({
           <ThemeInitializer />
           <div className="min-h-screen flex flex-col relative">
             <Header locale={locale} messages={typedMessages} />
-            <main id="main-content" className="flex-1 pb-24 md:pb-0 relative z-10">
+            <main id="main-content" className="flex-1 pt-16 pb-24 md:pb-0 relative z-10">
               <ErrorBoundary>{children}</ErrorBoundary>
             </main>
             <Footer />
