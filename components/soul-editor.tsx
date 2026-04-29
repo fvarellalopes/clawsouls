@@ -32,6 +32,72 @@ interface SoulEditorProps {
 
 type Phase = "presets" | "editor";
 
+// ─── Cyber Slider Component ──────────────────────────────────────────
+function CyberSlider({
+  label,
+  value,
+  onChange,
+  min = 0,
+  max = 100,
+  minLabel = "LOW",
+  maxLabel = "HIGH",
+}: {
+  label: string;
+  value: number;
+  onChange: (v: number) => void;
+  min?: number;
+  max?: number;
+  minLabel?: string;
+  maxLabel?: string;
+}) {
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <span className="mono-data">{label}</span>
+        <span style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", fontSize: "13px", fontWeight: 600 }}>
+          {value}
+        </span>
+      </div>
+      <input
+        type="range"
+        className="cyber-slider"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+      />
+      <div className="flex justify-between text-[9px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.25)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>
+        <span>{minLabel}</span>
+        <span>{maxLabel}</span>
+      </div>
+    </div>
+  );
+}
+
+// ─── Cyber Toggle Component ──────────────────────────────────────────
+function CyberToggle({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <div className="flex items-center justify-between py-2">
+      <span className="mono-data">{label}</span>
+      <button
+        type="button"
+        className={`cyber-toggle ${checked ? "active" : ""}`}
+        onClick={() => onChange(!checked)}
+        role="switch"
+        aria-checked={checked}
+      />
+    </div>
+  );
+}
+
 export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const t = useTranslations("editor");
   const tPresets = useTranslations("presetsPage");
@@ -49,6 +115,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const [exportDropdownOpen, setExportDropdownOpen] = useState(false);
   const [quickStartDismissed, setQuickStartDismissed] = useState(false);
   const [previewFormat, setPreviewFormat] = useState<"soulmd" | "yaml">("soulmd");
+  const [activeTab, setActiveTab] = useState("personality");
 
   // Phase: presets selection or editor
   const [phase, setPhase] = useState<Phase>("presets");
@@ -288,66 +355,70 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   // ─── PHASE 1: PRESET SELECTION ────────────────────────────────────────
   if (phase === "presets") {
     return (
-      <div className="min-h-screen py-8 px-4">
+      <div className="min-h-screen py-8 px-4" style={{ background: "#0a0a0f" }}>
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12" style={{ animation: "fadeInUp 0.4s ease-out" }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
-              <Sparkles className="h-4 w-4" style={{ color: "var(--accent)" }} />
-              <span className="text-sm font-display tracking-wider" style={{ color: "var(--foreground-muted)" }}>{t("chooseYourBeginning")}</span>
+          {/* Header */}
+          <div className="mb-12" style={{ animation: "fadeInUp 0.4s ease-out" }}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-1 h-8" style={{ background: "#facc15" }} />
+              <div>
+                <h1 className="text-2xl font-bold" style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.08em" }}>
+                  Terminal Session_01
+                </h1>
+                <p className="mono-data" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  STATUS: SELECTING PRESET // TARGET: SOUL.MD
+                </p>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary font-display tracking-wider mb-4">
-              {t("pickASoul")}
-            </h1>
-            <p className="text-lg max-w-xl mx-auto font-body" style={{ color: "var(--foreground-muted)" }}>
-              {t("pickASoulDesc")}
-            </p>
           </div>
 
           {/* Search */}
-          <div className="relative max-w-md mx-auto mb-10" style={{ animation: "fadeInUp 0.4s ease-out 0.15s both" }}>
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4" style={{ color: "var(--foreground-muted)" }} aria-hidden="true" />
+          <div className="relative max-w-md mb-10" style={{ animation: "fadeInUp 0.4s ease-out 0.15s both" }}>
+            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2" style={{ fontSize: "18px", color: "rgba(255,255,255,0.3)" }}>
+              search
+            </span>
             <label htmlFor="preset-search" className="sr-only">{tPresets("searchPlaceholder")}</label>
-            <Input
+            <input
               id="preset-search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={tPresets("searchPlaceholder")}
-              className="pl-11 rounded-xl h-12"
-              style={{ background: "var(--card)", borderColor: "var(--border)" }}
+              className="cyber-input pl-11"
               aria-label={tPresets("searchPlaceholder")}
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity"
-                style={{ color: "var(--foreground-muted)" }}
+                style={{ color: "rgba(255,255,255,0.3)" }}
                 aria-label="Clear search"
               >
-                <X className="h-4 w-4" aria-hidden="true" />
+                <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>close</span>
               </button>
             )}
           </div>
 
-          {/* Start from scratch button */}
+          {/* Start from scratch */}
           <div style={{ animation: "fadeInUp 0.4s ease-out 0.2s both" }}>
             <button
               type="button"
               onClick={handleStartFromScratch}
-              className="max-w-md mx-auto mb-10 p-5 rounded-2xl border-2 border-dashed cursor-pointer transition-all group text-center hover:border-opacity-60 w-full"
-              style={{ borderColor: "var(--border)", background: "transparent" }}
+              className="w-full max-w-md mb-10 p-5 cursor-pointer transition-all group text-left cyber-glass hover:border-[rgba(250,204,21,0.2)]"
               aria-label={t("startFromScratch")}
             >
-              <Wand2 className="h-8 w-8 mx-auto mb-2 transition-colors group-hover:scale-110" style={{ color: "var(--foreground-muted)" }} aria-hidden="true" />
-              <p className="font-display tracking-wide transition-colors" style={{ color: "var(--foreground)" }}>
-                {t("startFromScratch")}
-              </p>
-              <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("startFromScratchDesc")}</p>
+              <div className="flex items-center gap-4">
+                <span className="material-symbols-outlined" style={{ color: "#facc15", fontSize: "28px" }}>auto_awesome</span>
+                <div>
+                  <p className="mono-data" style={{ color: "rgba(255,255,255,0.85)" }}>{t("startFromScratch")}</p>
+                  <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("startFromScratchDesc")}</p>
+                </div>
+              </div>
             </button>
           </div>
 
           {/* Presets grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredPresets.map((preset, i) => (
+            {filteredPresets.map((preset) => (
               <PresetCardSimple
                 key={preset.id}
                 preset={preset}
@@ -358,10 +429,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           </div>
 
           {loading ? (
-            <div className="text-center py-12" style={{ color: "var(--foreground-muted)" }}>{t("saving")}</div>
+            <div className="text-center py-12 mono-data" style={{ color: "rgba(255,255,255,0.4)" }}>{t("saving")}</div>
           ) : filteredPresets.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-lg font-body" style={{ color: "var(--foreground-muted)" }}>{t("noPresetsFound", { query: searchQuery })}</p>
+              <p className="mono-data" style={{ color: "rgba(255,255,255,0.4)" }}>{t("noPresetsFound", { query: searchQuery })}</p>
             </div>
           ) : null}
         </div>
@@ -369,809 +440,674 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     );
   }
 
-  // ─── PHASE 2: SPLIT-PANE EDITOR ───────────────────────────────────────
+  // ─── PHASE 2: CYBER TERMINAL EDITOR ───────────────────────────────────
   return (
-    <>
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .editor-tab-content {
-          animation: fadeInUp 0.25s ease-out;
-        }
-        .export-dropdown {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          margin-top: 4px;
-          min-width: 160px;
-          border-radius: 8px;
-          overflow: hidden;
-          z-index: 50;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-          animation: fadeInUp 0.15s ease-out;
-        }
-        .export-dropdown button {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          width: 100%;
-          padding: 8px 12px;
-          text-align: left;
-          font-size: 0.875rem;
-          transition: background 0.15s;
-          cursor: pointer;
-        }
-      `}</style>
-      <div className="min-h-screen py-6 px-4">
-        <div className="container mx-auto max-w-7xl">
-          {/* ─── SIMPLIFIED TOOLBAR ─── */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            {/* Left: Back, Undo, Redo, Auto-save */}
-            <div className="flex items-center gap-3">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setPhase("presets")}
-                style={{ color: "var(--foreground-muted)" }}
-              >
-                <ArrowLeft className="h-4 w-4 mr-1" />
-                {t("presets")}
-              </Button>
-              <div className="h-5 w-px" style={{ background: "var(--border)" }} />
-              <div className="flex items-center gap-1">
-                <Button onClick={undo} variant="ghost" size="icon" disabled={!canUndo()} title={t("undoTitle")} aria-label={t("undoTitle")}>
-                  <Undo2 className="h-4 w-4" />
-                </Button>
-                <Button onClick={redo} variant="ghost" size="icon" disabled={!canRedo()} title={t("redoTitle")} aria-label={t("redoTitle")}>
-                  <Redo2 className="h-4 w-4" />
-                </Button>
-              </div>
-              {isSaving && (
-                <span className="text-sm flex items-center" role="status" aria-live="polite" style={{ color: "var(--foreground-muted)" }}>
-                  <Save className="h-3 w-3 mr-1 animate-pulse" /> {t("saving")}
-                </span>
-              )}
-              {!isSaving && lastSaved && (
-                <span className="text-xs" aria-live="off" style={{ color: "var(--foreground-muted)" }}>
-                  {t("savedTime", { time: new Date(lastSaved).toLocaleTimeString() })}
-                </span>
-              )}
-            </div>
-
-            {/* Right: Theme, Import, Export dropdown, Share, Save Preset */}
-            <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                title={isDarkMode ? t("switchToLight") : t("switchToDark")}
-                aria-label={isDarkMode ? t("switchToLight") : t("switchToDark")}
-                style={{ color: "var(--foreground-muted)" }}
-              >
-                {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-              </Button>
-              <div className="h-5 w-px" style={{ background: "var(--border)" }} />
-
-              {/* Import */}
-              <ImportJsonDialog />
-
-              {/* Export Dropdown */}
-              <div className="relative">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setExportDropdownOpen(!exportDropdownOpen);
-                  }}
-                  style={{ borderColor: "var(--border)" }}
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  {t("exportDropdown.title")}
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                </Button>
-                {exportDropdownOpen && (
-                  <div
-                    className="export-dropdown"
-                    role="menu"
-                    style={{ background: "var(--popover)", border: "1px solid var(--border)" }}
-                  >
-                    <button
-                      role="menuitem"
-                      onClick={() => { handleExport(); setExportDropdownOpen(false); }}
-                      style={{ color: "var(--foreground)" }}
-                      className="hover:bg-accent/10"
-                    >
-                      <FileText className="h-4 w-4" aria-hidden="true" />
-                      {t("exportDropdown.soulmd")}
-                    </button>
-                    <button
-                      role="menuitem"
-                      onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
-                      style={{ color: "var(--foreground)" }}
-                      className="hover:bg-accent/10"
-                    >
-                      <FileJson className="h-4 w-4" aria-hidden="true" />
-                      {t("exportDropdown.json")}
-                    </button>
-                    <button
-                      role="menuitem"
-                      onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
-                      style={{ color: "var(--foreground)" }}
-                      className="hover:bg-accent/10"
-                    >
-                      <FileText className="h-4 w-4" aria-hidden="true" />
-                      {t("exportDropdown.yaml")}
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Share */}
-              <Button onClick={handleShare} variant="outline" size="sm" style={{ borderColor: "var(--border)" }}>
-                <Share2 className="mr-2 h-4 w-4" />
-                {t("share")}
-              </Button>
-
-              {/* Save Preset */}
-              <SavePresetDialog />
+    <div className="min-h-screen" style={{ background: "#0a0a0f" }}>
+      {/* ─── TOP ACTIONS BAR ─── */}
+      <div className="px-6 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.3)" }}>
+        <div className="container mx-auto max-w-[1400px] flex items-center justify-between gap-4">
+          {/* Left: Title + Status */}
+          <div className="flex items-center gap-3">
+            <div className="w-1 h-8" style={{ background: "#facc15" }} />
+            <div>
+              <h1 className="text-lg font-bold" style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.06em" }}>
+                Terminal Session_01
+              </h1>
+              <p className="mono-data" style={{ color: "rgba(255,255,255,0.35)", fontSize: "10px" }}>
+                STATUS: CONFIGURING // TARGET: SOUL.MD
+              </p>
             </div>
           </div>
 
-          {/* ─── QUICK START (conditional) ─── */}
-          {showQuickStart && (
-            <div className="mb-6 rounded-xl p-5 transition-all" style={{ background: "var(--card)", border: "1px solid var(--border)", animation: "fadeInUp 0.3s ease-out" }}>
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-display tracking-wider text-base" style={{ color: "var(--foreground)" }}>
-                  <Zap className="inline h-4 w-4 mr-2" style={{ color: "var(--accent)" }} />
-                  {t("quickStart.title")}
-                </h3>
-                <button
-                  onClick={() => setQuickStartDismissed(true)}
-                  className="text-xs hover:underline transition-colors"
-                  style={{ color: "var(--foreground-muted)" }}
+          {/* Right: Actions */}
+          <div className="flex items-center gap-2">
+            <button onClick={() => setPhase("presets")} className="cyber-btn" style={{ padding: "6px 12px" }}>
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_back</span>
+              <span className="hidden sm:inline">{t("presets")}</span>
+            </button>
+            <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <button onClick={undo} disabled={!canUndo()} className="cyber-btn" style={{ padding: "6px 10px" }} title={t("undoTitle")}>
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
+            </button>
+            <button onClick={redo} disabled={!canRedo()} className="cyber-btn" style={{ padding: "6px 10px" }} title={t("redoTitle")}>
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
+            </button>
+            <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <button onClick={handleShare} className="cyber-btn" style={{ padding: "6px 12px" }}>
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
+              <span className="hidden sm:inline">{t("share")}</span>
+            </button>
+            <div className="relative">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExportDropdownOpen(!exportDropdownOpen);
+                }}
+                className="cyber-btn-gold"
+                style={{ padding: "6px 16px" }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>download</span>
+                <span className="hidden sm:inline">Export SOUL.md</span>
+                <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>expand_more</span>
+              </button>
+              {exportDropdownOpen && (
+                <div
+                  className="absolute top-full right-0 mt-2 min-w-[180px] z-50 cyber-glass overflow-hidden"
+                  role="menu"
+                  style={{ animation: "fadeInUp 0.15s ease-out" }}
                 >
-                  {t("dismissQuickStart")}
-                </button>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <button
-                  onClick={() => { resetSoul(); setQuickStartDismissed(true); }}
-                  className="p-4 rounded-lg text-left transition-all hover:scale-[1.02] group"
-                  style={{ background: "var(--background)", border: "1px solid var(--border)" }}
-                >
-                  <RotateCcw className="h-5 w-5 mb-2 transition-colors" style={{ color: "var(--foreground-muted)" }} />
-                  <p className="font-display text-sm tracking-wide" style={{ color: "var(--foreground)" }}>{t("quickStart.scratch")}</p>
-                  <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("quickStart.scratchDesc")}</p>
-                </button>
-                <button
-                  onClick={handleLoadPresetFromQuickStart}
-                  className="p-4 rounded-lg text-left transition-all hover:scale-[1.02] group"
-                  style={{ background: "var(--background)", border: "1px solid var(--border)" }}
-                >
-                  <Sparkles className="h-5 w-5 mb-2 transition-colors" style={{ color: "var(--foreground-muted)" }} />
-                  <p className="font-display text-sm tracking-wide" style={{ color: "var(--foreground)" }}>{t("quickStart.preset")}</p>
-                  <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("quickStart.presetDesc")}</p>
-                </button>
-                <button
-                  onClick={() => { setQuickStartDismissed(true); setFillWithAIOpen(true); }}
-                  className="p-4 rounded-lg text-left transition-all hover:scale-[1.02] group"
-                  style={{ background: "var(--background)", border: "1px solid var(--border)" }}
-                >
-                  <Wand2 className="h-5 w-5 mb-2 transition-colors" style={{ color: "var(--foreground-muted)" }} />
-                  <p className="font-display text-sm tracking-wide" style={{ color: "var(--foreground)" }}>{t("quickStart.ai")}</p>
-                  <p className="text-xs mt-1" style={{ color: "var(--foreground-muted)" }}>{t("quickStart.aiDesc")}</p>
-                </button>
-              </div>
+                  <button
+                    role="menuitem"
+                    onClick={() => { handleExport(); setExportDropdownOpen(false); }}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[rgba(255,255,255,0.05)]"
+                    style={{ color: "rgba(255,255,255,0.7)" }}
+                  >
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>description</span>
+                    {t("exportDropdown.soulmd")}
+                  </button>
+                  <button
+                    role="menuitem"
+                    onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[rgba(255,255,255,0.05)]"
+                    style={{ color: "rgba(255,255,255,0.7)" }}
+                  >
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>data_object</span>
+                    {t("exportDropdown.json")}
+                  </button>
+                  <button
+                    role="menuitem"
+                    onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[rgba(255,255,255,0.05)]"
+                    style={{ color: "rgba(255,255,255,0.7)" }}
+                  >
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>code</span>
+                    {t("exportDropdown.yaml")}
+                  </button>
+                </div>
+              )}
             </div>
-          )}
+          </div>
+        </div>
+      </div>
 
-          {/* ─── SPLIT PANE: 50/50 ─── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* LEFT: Form */}
-            <div className="space-y-6">
-              <Tabs defaultValue="essentials" className="space-y-6">
-                <TabsList className="grid w-full grid-cols-4 rounded-xl p-1" style={{ background: "var(--card)" }}>
-                  <TabsTrigger value="essentials" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
-                    <MessageSquare className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">{t("tabsEssentials")}</span>
-                    <span className="sm:hidden">Ess.</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="style" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
-                    <Palette className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">{t("tabsStyle")}</span>
-                    <span className="sm:hidden">Style</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="personality" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
-                    <Settings className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">{t("tabsPersonality")}</span>
-                    <span className="sm:hidden">Pers.</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="advanced" className="rounded-lg text-xs sm:text-sm" style={{ color: "var(--foreground-muted)" }}>
-                    <Edit3 className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">{t("tabsAdvanced")}</span>
-                    <span className="sm:hidden">Adv.</span>
-                  </TabsTrigger>
-                </TabsList>
+      {/* ─── MAIN CONTENT: 7/5 SPLIT ─── */}
+      <div className="px-6 py-6">
+        <div className="container mx-auto max-w-[1400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* ─── LEFT COLUMN (7 cols) — Editor ─── */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Tabs */}
+              <div className="flex gap-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                {[
+                  { id: "personality", label: t("tabsPersonality") || "PERSONALITY" },
+                  { id: "essentials", label: t("tabsEssentials") || "BASIC INFO" },
+                  { id: "style", label: t("tabsStyle") || "TONE ATTRIBUTES" },
+                  { id: "advanced", label: t("tabsAdvanced") || "ADVANCED" },
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    className={`cyber-tab ${activeTab === tab.id ? "active" : ""}`}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
 
-                {/* ─── TAB 1: ESSENTIALS ─── */}
-                <TabsContent value="essentials">
-                  <div className="editor-tab-content">
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("tabsEssentials")}</CardTitle>
-                        <CardDescription>{t("essentialsDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-5">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                          <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("nameLabel")}</Label>
-                            <Input
-                              value={soul.name}
-                              onChange={(e) => handleAttributeChange("name", e.target.value)}
-                              placeholder="Nexo"
-                              style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                              className="rounded-xl"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("creatureLabel")}</Label>
-                            <Input
-                              value={soul.creature}
-                              onChange={(e) => handleAttributeChange("creature", e.target.value)}
-                              placeholder="AI / Ghost in the machine"
-                              style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                              className="rounded-xl"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("emojiLabel")}</Label>
-                            <Input
-                              value={soul.emoji}
-                              onChange={(e) => handleAttributeChange("emoji", e.target.value)}
-                              placeholder="👁️"
-                              style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                              className="rounded-xl"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("avatarLabel")}</Label>
-                            <Input
-                              value={soul.avatar || ""}
-                              onChange={(e) => handleAttributeChange("avatar", e.target.value || undefined)}
-                              placeholder="https://..."
-                              style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                              className="rounded-xl"
-                            />
-                          </div>
-                          <div className="space-y-2 md:col-span-2">
-                            <div className="flex items-center justify-between">
-                              <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("vibeLabel")}</Label>
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={() => setFillWithAIOpen(true)}
-                                className="h-7 px-2 gap-1.5"
-                                style={{ color: "var(--foreground-muted)" }}
-                              >
-                                <Wand2 className="h-3.5 w-3.5" />
-                                <span className="text-xs">{t("fillWithAI")}</span>
-                              </Button>
-                            </div>
-                            <Textarea
-                              value={soul.vibe}
-                              onChange={(e) => handleAttributeChange("vibe", e.target.value)}
-                              placeholder="e.g., Strong opinions, weakly held. I don't hedge..."
-                              rows={3}
-                              style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                              className="rounded-xl resize-none"
-                            />
-                          </div>
-                          <div className="space-y-2 md:col-span-2">
-                            <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("vibeStyleLabel")}</Label>
-                            <Select value={soul.vibeStyle} onValueChange={(value) => handleAttributeChange("vibeStyle", value)}>
-                              <SelectTrigger className="rounded-xl" style={{ background: "var(--background)", borderColor: "var(--border)" }}>
-                                <SelectValue placeholder={t("selectVibeStyle")} />
-                              </SelectTrigger>
-                              <SelectContent style={{ background: "var(--popover)", borderColor: "var(--border)" }}>
-                                {vibeStyles.map((style) => (
-                                  <SelectItem key={style.value} value={style.value}>
-                                    {style.label}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </TabsContent>
-
-                {/* ─── TAB 2: STYLE ─── */}
-                <TabsContent value="style">
-                  <div className="editor-tab-content space-y-6">
-                    {/* Tone Sliders */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("toneAttributes")}</CardTitle>
-                        <CardDescription>{t("toneAttributesDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-8">
-                        {Object.entries(attributeOptions).map(([key, options]) => (
-                          <div key={key} className="space-y-3">
-                            <div className="flex justify-between items-center">
-                              <Label className="capitalize text-sm" style={{ color: "var(--foreground-muted)" }}>{t(`attributes.${key}`)}</Label>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "oklch(from var(--accent) l c h / 0.1)" }}>
-                                {options.find(o => o.value === (soul as any)[key])?.label || "—"}
-                              </span>
-                            </div>
-                            <Slider
-                              value={[(soul as any)[key] as number]}
-                              onValueChange={(value) => handleAttributeChange(key as any, value[0])}
-                              max={100}
-                              min={0}
-                              step={1}
-                            />
-                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
-                              <span>{t("low")}</span>
-                              <span>{t("high")}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </CardContent>
-                    </Card>
-
-                    {/* Communication Mode */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("communicationMode")}</CardTitle>
-                        <CardDescription>{t("communicationModeDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <Select
-                          value={soul.communicationMode || "direct"}
-                          onValueChange={(value) => handleAttributeChange("communicationMode", value)}
-                        >
-                          <SelectTrigger className="rounded-xl" style={{ background: "var(--background)", borderColor: "var(--border)" }}>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent style={{ background: "var(--popover)", borderColor: "var(--border)" }}>
-                            <SelectItem value="direct">{t("commModes.direct")}</SelectItem>
-                            <SelectItem value="socratic">{t("commModes.socratic")}</SelectItem>
-                            <SelectItem value="diagnostic">{t("commModes.diagnostic")}</SelectItem>
-                            <SelectItem value="encouraging">{t("commModes.encouraging")}</SelectItem>
-                            <SelectItem value="challenging">{t("commModes.challenging")}</SelectItem>
-                            <SelectItem value="flirty">{t("commModes.flirty")}</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </CardContent>
-                    </Card>
-
-                    {/* Emotional Range */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("emotionalRange")}</CardTitle>
-                        <CardDescription>{t("emotionalRangeDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        <div className="flex justify-between items-center">
-                          <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "oklch(from var(--accent) l c h / 0.1)" }}>
-                            {soul.emotionalRange <= 20 ? t("emotionalLabels.stoic") :
-                             soul.emotionalRange <= 40 ? t("emotionalLabels.reserved") :
-                             soul.emotionalRange <= 60 ? t("emotionalLabels.balanced") :
-                             soul.emotionalRange <= 80 ? t("emotionalLabels.expressive") :
-                             t("emotionalLabels.dramatic")}
-                          </span>
-                        </div>
-                        <Slider
-                          value={[soul.emotionalRange ?? 50]}
-                          onValueChange={(value) => handleAttributeChange("emotionalRange", value[0])}
-                          max={100}
-                          min={0}
-                          step={1}
+              {/* ─── TAB: PERSONALITY (Big Five + Core Truths + Boundaries) ─── */}
+              {activeTab === "personality" && (
+                <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
+                  {/* Cognitive Parameters — Big Five */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>psychology</span>
+                      Cognitive Parameters
+                    </h3>
+                    <div className="space-y-6">
+                      {[
+                        { key: "openness", label: t("bigFiveTraits.openness") || "OPENNESS" },
+                        { key: "conscientiousness", label: t("bigFiveTraits.conscientiousness") || "CONSCIENTIOUSNESS" },
+                        { key: "extraversion", label: t("bigFiveTraits.extraversion") || "EXTRAVERSION" },
+                        { key: "agreeableness", label: t("bigFiveTraits.agreeableness") || "AGREEABLENESS" },
+                        { key: "neuroticism", label: t("bigFiveTraits.neuroticism") || "NEUROTICISM" },
+                      ].map(({ key, label }) => (
+                        <CyberSlider
+                          key={key}
+                          label={label}
+                          value={(soul as any)[key] ?? 50}
+                          onChange={(v) => handleAttributeChange(key as any, v)}
                         />
-                        <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
-                          <span>{t("emotionalLabels.stoic")}</span>
-                          <span>{t("emotionalLabels.dramatic")}</span>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    {/* Knowledge Domains */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("knowledgeDomains")}</CardTitle>
-                        <CardDescription>{t("knowledgeDomainsDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="grid grid-cols-2 gap-2">
-                          {[
-                            { value: "tech", label: t("domains.tech") },
-                            { value: "philosophy", label: t("domains.philosophy") },
-                            { value: "pop-culture", label: t("domains.popCulture") },
-                            { value: "science", label: t("domains.science") },
-                            { value: "history", label: t("domains.history") },
-                            { value: "arts", label: t("domains.arts") },
-                            { value: "sports", label: t("domains.sports") },
-                            { value: "business", label: t("domains.business") },
-                            { value: "psychology", label: t("domains.psychology") },
-                            { value: "literature", label: t("domains.literature") },
-                          ].map((domain) => {
-                            const isSelected = (soul.knowledgeDomains || []).includes(domain.value);
-                            return (
-                              <button
-                                key={domain.value}
-                                type="button"
-                                onClick={() => {
-                                  const current = soul.knowledgeDomains || [];
-                                  const updated = isSelected
-                                    ? current.filter((d) => d !== domain.value)
-                                    : [...current, domain.value];
-                                  handleAttributeChange("knowledgeDomains", updated);
-                                }}
-                                className="p-2.5 rounded-xl text-sm text-left transition-all"
-                                style={{
-                                  background: isSelected ? "oklch(from var(--primary) l c h / 0.15)" : "var(--background)",
-                                  border: `1px solid ${isSelected ? "oklch(from var(--primary) l c h / 0.4)" : "var(--border)"}`,
-                                  color: isSelected ? "var(--foreground)" : "var(--foreground-muted)",
-                                }}
-                              >
-                                {domain.label}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </CardContent>
-                    </Card>
+                      ))}
+                    </div>
                   </div>
-                </TabsContent>
 
-                {/* ─── TAB 3: PERSONALITY ─── */}
-                <TabsContent value="personality">
-                  <div className="editor-tab-content space-y-6">
-                    {/* Big Five */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("bigFive")}</CardTitle>
-                        <CardDescription>{t("bigFiveDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-8">
-                        {[
-                          { key: "openness", label: t("bigFiveTraits.openness") },
-                          { key: "conscientiousness", label: t("bigFiveTraits.conscientiousness") },
-                          { key: "extraversion", label: t("bigFiveTraits.extraversion") },
-                          { key: "agreeableness", label: t("bigFiveTraits.agreeableness") },
-                          { key: "neuroticism", label: t("bigFiveTraits.neuroticism") },
-                        ].map(({ key, label }) => (
-                          <div key={key} className="space-y-3">
-                            <div className="flex justify-between items-center">
-                              <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{label}</Label>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "oklch(from var(--accent) l c h / 0.1)" }}>
-                                {(soul as any)[key] ?? 50}
-                              </span>
-                            </div>
-                            <Slider
-                              value={[(soul as any)[key] ?? 50]}
-                              onValueChange={(value) => handleAttributeChange(key as any, value[0])}
-                              max={100}
-                              min={0}
-                              step={1}
-                            />
-                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
-                              <span>{t("low")}</span>
-                              <span>{t("high")}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </CardContent>
-                    </Card>
-
-                    {/* Core Truths */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("coreTruths")}</CardTitle>
-                        <CardDescription>{t("coreTruthsDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        {Object.entries(soul.coreTruths).map(([key, value]) => (
-                          <div key={key} className="flex items-center justify-between p-3 rounded-xl transition-colors" style={{ background: "var(--background)" }}>
-                            <Label htmlFor={`core-${key}`} className="capitalize cursor-pointer" style={{ color: "var(--foreground-muted)" }}>
-                              {t(`coreTruths.${key}`)}
-                            </Label>
-                            <Switch
-                              id={`core-${key}`}
-                              checked={value}
-                              onCheckedChange={(checked) => handleCoreTruthChange(key as any, checked)}
-                            />
-                          </div>
-                        ))}
-                      </CardContent>
-                    </Card>
-
-                    {/* Boundaries */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("boundaries")}</CardTitle>
-                        <CardDescription>{t("boundariesDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        {Object.entries(soul.boundaries).map(([key, value]) => (
-                          <div key={key} className="flex items-center justify-between p-3 rounded-xl transition-colors" style={{ background: "var(--background)" }}>
-                            <Label htmlFor={`boundary-${key}`} className="capitalize cursor-pointer" style={{ color: "var(--foreground-muted)" }}>
-                              {t(`boundaries.${key}`)}
-                            </Label>
-                            <Switch
-                              id={`boundary-${key}`}
-                              checked={value}
-                              onCheckedChange={(checked) => handleBoundaryChange(key as any, checked)}
-                            />
-                          </div>
-                        ))}
-                      </CardContent>
-                    </Card>
+                  {/* Core Truths */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>verified</span>
+                      {t("coreTruths") || "Core Truths"}
+                    </h3>
+                    <div className="space-y-1">
+                      {Object.entries(soul.coreTruths).map(([key, value]) => (
+                        <CyberToggle
+                          key={key}
+                          label={t(`coreTruths.${key}`) || key}
+                          checked={value}
+                          onChange={(checked) => handleCoreTruthChange(key as any, checked)}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </TabsContent>
 
-                {/* ─── TAB 4: ADVANCED ─── */}
-                <TabsContent value="advanced">
-                  <div className="editor-tab-content space-y-6">
-                    {/* Speech Patterns */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("speechPatterns")}</CardTitle>
-                        <CardDescription>{t("speechPatternsDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-6">
-                        <div className="flex items-center justify-between p-3 rounded-xl transition-colors" style={{ background: "var(--background)" }}>
-                          <Label htmlFor="speech-alliteration" className="cursor-pointer" style={{ color: "var(--foreground-muted)" }}>
-                            {t("alliteration")}
-                          </Label>
-                          <Switch
-                            id="speech-alliteration"
-                            checked={soul.speechPatterns?.alliteration ?? false}
-                            onCheckedChange={(checked) =>
-                              handleAttributeChange("speechPatterns", {
-                                ...soul.speechPatterns,
-                                alliteration: checked,
-                              })
-                            }
-                          />
-                        </div>
-
-                        {[
-                          { key: "rhymeTendency", label: t("rhymeTendency"), default: 10 },
-                          { key: "metaphorFrequency", label: t("metaphorFrequency"), default: 30 },
-                          { key: "technicalJargon", label: t("technicalJargon"), default: 40 },
-                          { key: "slangUsage", label: t("slangUsage"), default: 20 },
-                        ].map(({ key, label, default: defaultVal }) => (
-                          <div key={key} className="space-y-3">
-                            <div className="flex justify-between items-center">
-                              <Label className="text-sm" style={{ color: "var(--foreground-muted)" }}>{label}</Label>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded-md" style={{ color: "var(--accent)", background: "oklch(from var(--accent) l c h / 0.1)" }}>
-                                {(soul.speechPatterns as any)?.[key] ?? defaultVal}
-                              </span>
-                            </div>
-                            <Slider
-                              value={[(soul.speechPatterns as any)?.[key] ?? defaultVal]}
-                              onValueChange={(value) =>
-                                handleAttributeChange("speechPatterns", {
-                                  ...soul.speechPatterns,
-                                  [key]: value[0],
-                                })
-                              }
-                              max={100}
-                              min={0}
-                              step={1}
-                            />
-                            <div className="flex justify-between text-[10px] px-1 uppercase tracking-wider" style={{ color: "var(--foreground-muted)" }}>
-                              <span>{t("low")}</span>
-                              <span>{t("high")}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </CardContent>
-                    </Card>
-
-                    {/* Custom Core Truths */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("customCoreTruths")}</CardTitle>
-                        <CardDescription>{t("customCoreTruthsDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        {(soul.customCoreTruths || []).map((truth, i) => (
-                          <div key={i} className="flex items-center gap-2 p-3 rounded-xl" style={{ background: "var(--background)" }}>
-                            <span className="flex-1 text-sm" style={{ color: "var(--foreground-muted)" }}>{truth}</span>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-7 w-7"
-                              style={{ color: "oklch(from var(--destructive) l c h / 0.5)" }}
-                              onClick={() => removeCustomCoreTruth(i)}
-                            >
-                              <Trash2 className="h-3 w-3" />
-                            </Button>
-                          </div>
-                        ))}
-                        <div className="flex gap-2">
-                          <Input
-                            value={newCoreTruth}
-                            onChange={(e) => setNewCoreTruth(e.target.value)}
-                            placeholder={t("customCoreTruthsPlaceholder")}
-                            className="rounded-xl flex-1"
-                            style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                            onKeyDown={(e) => e.key === "Enter" && addCustomCoreTruth()}
-                          />
-                          <Button onClick={addCustomCoreTruth} size="icon" variant="outline" style={{ borderColor: "var(--border)" }}>
-                            <Plus className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    {/* Custom Boundaries */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("customBoundaries")}</CardTitle>
-                        <CardDescription>{t("customBoundariesDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        {(soul.customBoundaries || []).map((boundary, i) => (
-                          <div key={i} className="flex items-center gap-2 p-3 rounded-xl" style={{ background: "var(--background)" }}>
-                            <span className="flex-1 text-sm" style={{ color: "var(--foreground-muted)" }}>{boundary}</span>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-7 w-7"
-                              style={{ color: "oklch(from var(--destructive) l c h / 0.5)" }}
-                              onClick={() => removeCustomBoundary(i)}
-                            >
-                              <Trash2 className="h-3 w-3" />
-                            </Button>
-                          </div>
-                        ))}
-                        <div className="flex gap-2">
-                          <Input
-                            value={newBoundary}
-                            onChange={(e) => setNewBoundary(e.target.value)}
-                            placeholder={t("customBoundariesPlaceholder")}
-                            className="rounded-xl flex-1"
-                            style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                            onKeyDown={(e) => e.key === "Enter" && addCustomBoundary()}
-                          />
-                          <Button onClick={addCustomBoundary} size="icon" variant="outline" style={{ borderColor: "var(--border)" }}>
-                            <Plus className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    {/* Signature Phrases */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("signaturePhrases")}</CardTitle>
-                        <CardDescription>{t("signaturePhrasesDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        {(soul.signaturePhrases || []).map((phrase, i) => (
-                          <div key={i} className="flex items-center gap-2 p-3 rounded-xl" style={{ background: "var(--background)" }}>
-                            <span className="flex-1 text-sm italic" style={{ color: "var(--foreground-muted)" }}>"{phrase}"</span>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-7 w-7"
-                              style={{ color: "oklch(from var(--destructive) l c h / 0.5)" }}
-                              onClick={() => {
-                                const updated = [...(soul.signaturePhrases || [])];
-                                updated.splice(i, 1);
-                                handleAttributeChange("signaturePhrases", updated);
-                              }}
-                            >
-                              <Trash2 className="h-3 w-3" />
-                            </Button>
-                          </div>
-                        ))}
-                        {(soul.signaturePhrases || []).length >= 5 && (
-                          <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
-                            {t("signaturePhrasesMaxReached")}
-                          </p>
-                        )}
-                        {(soul.signaturePhrases || []).length < 5 && (
-                          <div className="space-y-1.5">
-                            <div className="flex gap-2">
-                              <div className="relative flex-1">
-                                <Input
-                                  value={newSignaturePhrase}
-                                  onChange={(e) => setNewSignaturePhrase(e.target.value.slice(0, 50))}
-                                  placeholder={t("signaturePhrasesPlaceholder")}
-                                  maxLength={50}
-                                  className="rounded-xl pr-12"
-                                  style={{ background: "var(--background)", borderColor: "var(--border)" }}
-                                  onKeyDown={(e) => {
-                                    if (e.key === "Enter" && newSignaturePhrase.trim()) {
-                                      handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
-                                      setNewSignaturePhrase("");
-                                    }
-                                  }}
-                                />
-                                <span
-                                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] tabular-nums"
-                                  style={{ color: newSignaturePhrase.length >= 45 ? "var(--destructive)" : "var(--foreground-muted)" }}
-                                >
-                                  {newSignaturePhrase.length}/50
-                                </span>
-                              </div>
-                              <Button
-                                onClick={() => {
-                                  if (newSignaturePhrase.trim()) {
-                                    handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
-                                    setNewSignaturePhrase("");
-                                  }
-                                }}
-                                size="icon"
-                                variant="outline"
-                                disabled={!newSignaturePhrase.trim()}
-                                style={{ borderColor: "var(--border)" }}
-                              >
-                                <Plus className="h-4 w-4" />
-                              </Button>
-                            </div>
-                            <p className="text-[10px] pl-1" style={{ color: "var(--foreground-muted)" }}>
-                              {t("signaturePhrasesCounter", { count: (soul.signaturePhrases || []).length })}
-                            </p>
-                          </div>
-                        )}
-                      </CardContent>
-                    </Card>
-
-                    {/* Actions */}
-                    <Card style={{ background: "var(--card)", borderColor: "var(--border)" }}>
-                      <CardHeader className="pb-4">
-                        <CardTitle className="font-display tracking-wider text-lg">{t("customize")}</CardTitle>
-                        <CardDescription>{t("customizeDesc")}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex flex-wrap gap-3">
-                          <Button
-                            variant="outline"
-                            onClick={() => setPhase("presets")}
-                            style={{ borderColor: "var(--border)" }}
-                          >
-                            <Sparkles className="mr-2 h-4 w-4" />
-                            {t("switchPreset")}
-                          </Button>
-                          <Button
-                            variant="outline"
-                            onClick={() => {
-                              if (confirm(t("resetConfirm"))) {
-                                resetSoul();
-                                setQuickStartDismissed(false);
-                              }
-                            }}
-                            style={{ borderColor: "oklch(from var(--destructive) l c h / 0.3)", color: "var(--destructive)" }}
-                          >
-                            {t("reset")}
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </TabsContent>
-              </Tabs>
-            </div>
-
-            {/* ─── RIGHT: LIVE PREVIEW (50%) ─── */}
-            <div>
-              <div className="sticky top-24">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <Eye className="h-4 w-4" style={{ color: "var(--accent)" }} />
-                    <span className="text-sm font-display tracking-wider" style={{ color: "var(--foreground-muted)" }}>{t("livePreview")}</span>
+                  {/* Boundaries */}
+                  <div className="cyber-glass p-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>shield</span>
+                      {t("boundaries") || "Boundaries"}
+                    </h3>
+                    <div className="space-y-1">
+                      {Object.entries(soul.boundaries).map(([key, value]) => (
+                        <CyberToggle
+                          key={key}
+                          label={t(`boundaries.${key}`) || key}
+                          checked={value}
+                          onChange={(checked) => handleBoundaryChange(key as any, checked)}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
+              )}
+
+              {/* ─── TAB: BASIC INFO (Essentials) ─── */}
+              {activeTab === "essentials" && (
+                <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>badge</span>
+                      {t("tabsEssentials") || "Basic Info"}
+                    </h3>
+                    <div className="space-y-5">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div className="space-y-2">
+                          <label className="mono-data">{t("nameLabel") || "NAME"}</label>
+                          <input
+                            value={soul.name}
+                            onChange={(e) => handleAttributeChange("name", e.target.value)}
+                            placeholder="Nexo"
+                            className="cyber-input"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="mono-data">{t("creatureLabel") || "CREATURE"}</label>
+                          <input
+                            value={soul.creature}
+                            onChange={(e) => handleAttributeChange("creature", e.target.value)}
+                            placeholder="AI / Ghost in the machine"
+                            className="cyber-input"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="mono-data">{t("emojiLabel") || "EMOJI"}</label>
+                          <input
+                            value={soul.emoji}
+                            onChange={(e) => handleAttributeChange("emoji", e.target.value)}
+                            placeholder="👁️"
+                            className="cyber-input"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="mono-data">{t("avatarLabel") || "AVATAR"}</label>
+                          <input
+                            value={soul.avatar || ""}
+                            onChange={(e) => handleAttributeChange("avatar", e.target.value || undefined)}
+                            placeholder="https://..."
+                            className="cyber-input"
+                          />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <label className="mono-data">{t("vibeLabel") || "VIBE"}</label>
+                          <button
+                            onClick={() => setFillWithAIOpen(true)}
+                            className="cyber-btn"
+                            style={{ padding: "4px 10px", fontSize: "10px" }}
+                          >
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>auto_awesome</span>
+                            <span>{t("fillWithAI") || "FILL WITH AI"}</span>
+                          </button>
+                        </div>
+                        <textarea
+                          value={soul.vibe}
+                          onChange={(e) => handleAttributeChange("vibe", e.target.value)}
+                          placeholder="e.g., Strong opinions, weakly held. I don't hedge..."
+                          rows={3}
+                          className="cyber-textarea"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="mono-data">{t("vibeStyleLabel") || "VIBE STYLE"}</label>
+                        <select
+                          value={soul.vibeStyle}
+                          onChange={(e) => handleAttributeChange("vibeStyle", e.target.value)}
+                          className="cyber-input"
+                          style={{ cursor: "pointer" }}
+                        >
+                          {vibeStyles.map((style) => (
+                            <option key={style.value} value={style.value} style={{ background: "#0a0a0f", color: "#fff" }}>
+                              {style.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quick Actions */}
+                  {showQuickStart && (
+                    <div className="cyber-glass p-6" style={{ animation: "fadeInUp 0.3s ease-out" }}>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="mono-data" style={{ color: "#facc15" }}>
+                          <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle" }}>bolt</span>
+                          {t("quickStart.title") || "QUICK START"}
+                        </h3>
+                        <button
+                          onClick={() => setQuickStartDismissed(true)}
+                          className="text-xs hover:underline transition-colors mono-data"
+                          style={{ color: "rgba(255,255,255,0.3)" }}
+                        >
+                          {t("dismissQuickStart") || "DISMISS"}
+                        </button>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button
+                          onClick={() => { resetSoul(); setQuickStartDismissed(true); }}
+                          className="p-4 text-left transition-all hover:scale-[1.02] cyber-glass"
+                        >
+                          <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>restart_alt</span>
+                          <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.scratch")}</p>
+                          <p className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("quickStart.scratchDesc")}</p>
+                        </button>
+                        <button
+                          onClick={handleLoadPresetFromQuickStart}
+                          className="p-4 text-left transition-all hover:scale-[1.02] cyber-glass"
+                        >
+                          <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>auto_awesome</span>
+                          <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.preset")}</p>
+                          <p className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("quickStart.presetDesc")}</p>
+                        </button>
+                        <button
+                          onClick={() => { setQuickStartDismissed(true); setFillWithAIOpen(true); }}
+                          className="p-4 text-left transition-all hover:scale-[1.02] cyber-glass"
+                        >
+                          <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>wand_stars</span>
+                          <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.ai")}</p>
+                          <p className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("quickStart.aiDesc")}</p>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* ─── TAB: TONE ATTRIBUTES (Style) ─── */}
+              {activeTab === "style" && (
+                <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
+                  {/* Syntactic Tone Profile */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>tune</span>
+                      Syntactic Tone Profile
+                    </h3>
+                    <div className="space-y-6">
+                      {/* Verbosity + Humor sliders */}
+                      <CyberSlider
+                        label={t("attributes.verbosity") || "VERBOSITY"}
+                        value={soul.verbosity ?? 50}
+                        onChange={(v) => handleAttributeChange("verbosity", v)}
+                        minLabel="TERSE"
+                        maxLabel="VERBOSE"
+                      />
+                      <CyberSlider
+                        label={t("attributes.humor") || "HUMOR"}
+                        value={soul.humor ?? 50}
+                        onChange={(v) => handleAttributeChange("humor", v)}
+                        minLabel="SERIOUS"
+                        maxLabel="PLAYFUL"
+                      />
+                      <CyberSlider
+                        label={t("attributes.formality") || "FORMALITY"}
+                        value={soul.formality ?? 50}
+                        onChange={(v) => handleAttributeChange("formality", v)}
+                        minLabel="CASUAL"
+                        maxLabel="FORMAL"
+                      />
+                      <CyberSlider
+                        label={t("attributes.emojiUsage") || "EMOJI USAGE"}
+                        value={soul.emojiUsage ?? 50}
+                        onChange={(v) => handleAttributeChange("emojiUsage", v)}
+                        minLabel="NONE"
+                        maxLabel="HEAVY"
+                      />
+                      <CyberSlider
+                        label={t("attributes.consciousness") || "CONSCIOUSNESS"}
+                        value={soul.consciousness ?? 50}
+                        onChange={(v) => handleAttributeChange("consciousness", v)}
+                        minLabel="REFLEXIVE"
+                        maxLabel="DELIBERATE"
+                      />
+                      <CyberSlider
+                        label={t("attributes.questioning") || "QUESTIONING"}
+                        value={soul.questioning ?? 50}
+                        onChange={(v) => handleAttributeChange("questioning", v)}
+                        minLabel="DECLARATIVE"
+                        maxLabel="INQUISITIVE"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Communication Mode */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>forum</span>
+                      {t("communicationMode") || "Communication Mode"}
+                    </h3>
+                    <select
+                      value={soul.communicationMode || "direct"}
+                      onChange={(e) => handleAttributeChange("communicationMode", e.target.value)}
+                      className="cyber-input"
+                      style={{ cursor: "pointer" }}
+                    >
+                      <option value="direct" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.direct")}</option>
+                      <option value="socratic" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.socratic")}</option>
+                      <option value="diagnostic" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.diagnostic")}</option>
+                      <option value="encouraging" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.encouraging")}</option>
+                      <option value="challenging" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.challenging")}</option>
+                      <option value="flirty" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.flirty")}</option>
+                    </select>
+                  </div>
+
+                  {/* Emotional Range */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>mood</span>
+                      {t("emotionalRange") || "Emotional Range"}
+                    </h3>
+                    <CyberSlider
+                      label={t("emotionalRange") || "RANGE"}
+                      value={soul.emotionalRange ?? 50}
+                      onChange={(v) => handleAttributeChange("emotionalRange", v)}
+                      minLabel={t("emotionalLabels.stoic") || "STOIC"}
+                      maxLabel={t("emotionalLabels.dramatic") || "DRAMATIC"}
+                    />
+                  </div>
+
+                  {/* Knowledge Domains */}
+                  <div className="cyber-glass p-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>school</span>
+                      {t("knowledgeDomains") || "Knowledge Domains"}
+                    </h3>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { value: "tech", label: t("domains.tech") },
+                        { value: "philosophy", label: t("domains.philosophy") },
+                        { value: "pop-culture", label: t("domains.popCulture") },
+                        { value: "science", label: t("domains.science") },
+                        { value: "history", label: t("domains.history") },
+                        { value: "arts", label: t("domains.arts") },
+                        { value: "sports", label: t("domains.sports") },
+                        { value: "business", label: t("domains.business") },
+                        { value: "psychology", label: t("domains.psychology") },
+                        { value: "literature", label: t("domains.literature") },
+                      ].map((domain) => {
+                        const isSelected = (soul.knowledgeDomains || []).includes(domain.value);
+                        return (
+                          <button
+                            key={domain.value}
+                            type="button"
+                            onClick={() => {
+                              const current = soul.knowledgeDomains || [];
+                              const updated = isSelected
+                                ? current.filter((d) => d !== domain.value)
+                                : [...current, domain.value];
+                              handleAttributeChange("knowledgeDomains", updated);
+                            }}
+                            className="p-2.5 text-xs text-left transition-all rounded"
+                            style={{
+                              background: isSelected ? "rgba(250,204,21,0.1)" : "rgba(255,255,255,0.02)",
+                              border: `1px solid ${isSelected ? "rgba(250,204,21,0.3)" : "rgba(255,255,255,0.06)"}`,
+                              color: isSelected ? "#facc15" : "rgba(255,255,255,0.5)",
+                              fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                            }}
+                          >
+                            {domain.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ─── TAB: ADVANCED ─── */}
+              {activeTab === "advanced" && (
+                <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
+                  {/* Speech Patterns */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>record_voice_over</span>
+                      {t("speechPatterns") || "Speech Patterns"}
+                    </h3>
+                    <div className="space-y-5">
+                      <CyberToggle
+                        label={t("alliteration") || "ALLITERATION"}
+                        checked={soul.speechPatterns?.alliteration ?? false}
+                        onChange={(checked) =>
+                          handleAttributeChange("speechPatterns", {
+                            ...soul.speechPatterns,
+                            alliteration: checked,
+                          })
+                        }
+                      />
+                      {[
+                        { key: "rhymeTendency", label: t("rhymeTendency") || "RHYME TENDENCY", default: 10 },
+                        { key: "metaphorFrequency", label: t("metaphorFrequency") || "METAPHOR FREQUENCY", default: 30 },
+                        { key: "technicalJargon", label: t("technicalJargon") || "TECHNICAL JARGON", default: 40 },
+                        { key: "slangUsage", label: t("slangUsage") || "SLANG USAGE", default: 20 },
+                      ].map(({ key, label, default: defaultVal }) => (
+                        <CyberSlider
+                          key={key}
+                          label={label}
+                          value={(soul.speechPatterns as any)?.[key] ?? defaultVal}
+                          onChange={(v) =>
+                            handleAttributeChange("speechPatterns", {
+                              ...soul.speechPatterns,
+                              [key]: v,
+                            })
+                          }
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Custom Core Truths */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>add_circle</span>
+                      {t("customCoreTruths") || "Custom Core Truths"}
+                    </h3>
+                    <div className="space-y-2 mb-4">
+                      {(soul.customCoreTruths || []).map((truth, i) => (
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                          <span className="flex-1 text-xs" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>{truth}</span>
+                          <button
+                            onClick={() => removeCustomCoreTruth(i)}
+                            className="cyber-btn"
+                            style={{ padding: "4px", border: "none" }}
+                          >
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "rgba(255,100,100,0.6)" }}>delete</span>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <input
+                        value={newCoreTruth}
+                        onChange={(e) => setNewCoreTruth(e.target.value)}
+                        placeholder={t("customCoreTruthsPlaceholder") || "Add a core truth..."}
+                        className="cyber-input flex-1"
+                        onKeyDown={(e) => e.key === "Enter" && addCustomCoreTruth()}
+                      />
+                      <button onClick={addCustomCoreTruth} className="cyber-btn" style={{ padding: "8px" }}>
+                        <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>add</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Custom Boundaries */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>add_circle</span>
+                      {t("customBoundaries") || "Custom Boundaries"}
+                    </h3>
+                    <div className="space-y-2 mb-4">
+                      {(soul.customBoundaries || []).map((boundary, i) => (
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                          <span className="flex-1 text-xs" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>{boundary}</span>
+                          <button
+                            onClick={() => removeCustomBoundary(i)}
+                            className="cyber-btn"
+                            style={{ padding: "4px", border: "none" }}
+                          >
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "rgba(255,100,100,0.6)" }}>delete</span>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <input
+                        value={newBoundary}
+                        onChange={(e) => setNewBoundary(e.target.value)}
+                        placeholder={t("customBoundariesPlaceholder") || "Add a boundary..."}
+                        className="cyber-input flex-1"
+                        onKeyDown={(e) => e.key === "Enter" && addCustomBoundary()}
+                      />
+                      <button onClick={addCustomBoundary} className="cyber-btn" style={{ padding: "8px" }}>
+                        <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>add</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Signature Phrases */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>format_quote</span>
+                      {t("signaturePhrases") || "Signature Phrases"}
+                    </h3>
+                    <div className="space-y-2 mb-4">
+                      {(soul.signaturePhrases || []).map((phrase, i) => (
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                          <span className="flex-1 text-xs italic" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>"{phrase}"</span>
+                          <button
+                            onClick={() => {
+                              const updated = [...(soul.signaturePhrases || [])];
+                              updated.splice(i, 1);
+                              handleAttributeChange("signaturePhrases", updated);
+                            }}
+                            className="cyber-btn"
+                            style={{ padding: "4px", border: "none" }}
+                          >
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "rgba(255,100,100,0.6)" }}>delete</span>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    {(soul.signaturePhrases || []).length >= 5 ? (
+                      <p className="mono-data text-[10px]" style={{ color: "rgba(255,255,255,0.3)" }}>
+                        {t("signaturePhrasesMaxReached") || "Maximum 5 phrases reached"}
+                      </p>
+                    ) : (
+                      <div className="space-y-2">
+                        <div className="flex gap-2">
+                          <div className="relative flex-1">
+                            <input
+                              value={newSignaturePhrase}
+                              onChange={(e) => setNewSignaturePhrase(e.target.value.slice(0, 50))}
+                              placeholder={t("signaturePhrasesPlaceholder") || "Add a phrase..."}
+                              maxLength={50}
+                              className="cyber-input pr-12"
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" && newSignaturePhrase.trim()) {
+                                  handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
+                                  setNewSignaturePhrase("");
+                                }
+                              }}
+                            />
+                            <span
+                              className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] tabular-nums"
+                              style={{ color: newSignaturePhrase.length >= 45 ? "rgba(255,100,100,0.6)" : "rgba(255,255,255,0.25)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}
+                            >
+                              {newSignaturePhrase.length}/50
+                            </span>
+                          </div>
+                          <button
+                            onClick={() => {
+                              if (newSignaturePhrase.trim()) {
+                                handleAttributeChange("signaturePhrases", [...(soul.signaturePhrases || []), newSignaturePhrase.trim()]);
+                                setNewSignaturePhrase("");
+                              }
+                            }}
+                            disabled={!newSignaturePhrase.trim()}
+                            className="cyber-btn"
+                            style={{ padding: "8px" }}
+                          >
+                            <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>add</span>
+                          </button>
+                        </div>
+                        <p className="mono-data text-[10px]" style={{ color: "rgba(255,255,255,0.25)" }}>
+                          {t("signaturePhrasesCounter", { count: (soul.signaturePhrases || []).length }) || `${(soul.signaturePhrases || []).length}/5`}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="cyber-glass p-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>settings</span>
+                      {t("customize") || "Actions"}
+                    </h3>
+                    <div className="flex flex-wrap gap-3">
+                      <button
+                        onClick={() => setPhase("presets")}
+                        className="cyber-btn"
+                      >
+                        <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>auto_awesome</span>
+                        {t("switchPreset") || "Switch Preset"}
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (confirm(t("resetConfirm") || "Reset all fields?")) {
+                            resetSoul();
+                            setQuickStartDismissed(false);
+                          }
+                        }}
+                        className="cyber-btn"
+                        style={{ borderColor: "rgba(255,100,100,0.3)", color: "rgba(255,100,100,0.7)" }}
+                      >
+                        {t("reset") || "Reset"}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* ─── RIGHT COLUMN (5 cols) — Live Preview ─── */}
+            <div className="lg:col-span-5">
+              <div className="sticky top-24">
                 <ParchmentPreview
                   content={soulMD}
                   name={soul.name}
@@ -1193,24 +1129,27 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
       {/* Share Dialog */}
       <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
-        <DialogContent style={{ background: "var(--popover)", borderColor: "var(--border)" }}>
+        <DialogContent style={{ background: "#111118", borderColor: "rgba(255,255,255,0.1)" }}>
           <DialogHeader>
-            <DialogTitle className="font-display tracking-wider">{t("shareLink")}</DialogTitle>
-            <DialogDescription>{t("shareDesc")}</DialogDescription>
+            <DialogTitle style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.06em" }}>
+              {t("shareLink") || "Share Link"}
+            </DialogTitle>
+            <DialogDescription style={{ color: "rgba(255,255,255,0.5)" }}>
+              {t("shareDesc") || "Share this link with others"}
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
-            <Input
+            <input
               readOnly
               value={shareUrl}
-              className="rounded-xl"
-              style={{ background: "var(--background)", borderColor: "var(--border)" }}
+              className="cyber-input"
             />
-            <p className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("shareTip")}</p>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{t("shareTip") || "Link copied to clipboard"}</p>
           </div>
           <DialogFooter>
-            <Button onClick={() => setShareDialogOpen(false)} style={{ background: "var(--primary)", color: "var(--foreground-primary)" }}>
-              {t("close")}
-            </Button>
+            <button onClick={() => setShareDialogOpen(false)} className="cyber-btn-gold">
+              {t("close") || "Close"}
+            </button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -1225,38 +1164,44 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           setQuickStartDismissed(true);
         }}
       />
-    </>
+    </div>
   );
 }
 
-// ─── Simple Preset Card (no Framer Motion) ───────────────────────────
+// ─── Cyber Preset Card ───────────────────────────────────────────────
 function PresetCardSimple({ preset, onSelect, isSelected }: { preset: SoulPreset; onSelect: (p: SoulPreset) => void; isSelected: boolean }) {
   return (
     <button
       type="button"
       onClick={() => onSelect(preset)}
-      className={`p-5 rounded-xl cursor-pointer w-full text-left border transition-all duration-200 ease-out ${isSelected
-          ? "border-primary/40"
-          : "border-border hover:shadow-md hover:scale-[1.02]"
-      }`}
-      style={{ background: "var(--surface)" }}
+      className="p-5 cursor-pointer w-full text-left transition-all duration-200 ease-out cyber-glass hover:border-[rgba(250,204,21,0.2)]"
+      style={{
+        borderColor: isSelected ? "rgba(250,204,21,0.3)" : undefined,
+        boxShadow: isSelected ? "0 0 15px rgba(250,204,21,0.1)" : undefined,
+      }}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}
     >
       <div className="flex items-start gap-3">
-        <span className="text-3xl" aria-hidden="true">{preset.emoji || "✨"}</span>
+        <span className="text-2xl" aria-hidden="true">{preset.emoji || "✨"}</span>
         <div className="flex-1 min-w-0">
-          <h3 className="font-display tracking-wider text-base truncate" style={{ color: "var(--foreground)" }}>
+          <h3 className="text-sm font-semibold truncate" style={{ color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.04em" }}>
             {preset.name}
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: "var(--foreground-muted)" }}>{preset.creature}</p>
-          <p className="text-sm mt-2 line-clamp-2" style={{ color: "var(--foreground-muted)" }}>{preset.description}</p>
+          <p className="text-[10px] mt-0.5 mono-data" style={{ color: "rgba(255,255,255,0.35)" }}>{preset.creature}</p>
+          <p className="text-xs mt-2 line-clamp-2" style={{ color: "rgba(255,255,255,0.4)" }}>{preset.description}</p>
           {preset.tags.length > 0 && (
             <div className="flex flex-wrap gap-1 mt-2">
               {preset.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full bg-primary/5 text-muted-fg border border-border"
+                  className="px-2 py-0.5 text-[9px] rounded"
+                  style={{
+                    background: "rgba(250,204,21,0.08)",
+                    color: "rgba(250,204,21,0.6)",
+                    border: "1px solid rgba(250,204,21,0.15)",
+                    fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                  }}
                 >
                   {tag}
                 </span>

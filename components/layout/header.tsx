@@ -3,14 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { Sparkles, Globe, Sun, Moon } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 interface HeaderProps {
   locale: string;
@@ -19,108 +11,69 @@ interface HeaderProps {
 
 export function Header({ locale, messages }: HeaderProps) {
   const t = useTranslations("common");
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const dark = stored ? stored === "dark" : prefersDark;
+    const dark = stored ? stored === "dark" : true;
     setIsDark(dark);
     document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.classList.toggle("light", !dark);
   }, []);
 
   const toggleTheme = () => {
     const next = !isDark;
     setIsDark(next);
     document.documentElement.classList.toggle("dark", next);
+    document.documentElement.classList.toggle("light", !next);
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
-  const locales = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "pt", name: "Português", flag: "🇧🇷" },
-    { code: "es", name: "Español", flag: "🇪🇸" },
-    { code: "ja", name: "日本語", flag: "🇯🇵" },
-    { code: "zh", name: "中文", flag: "🇨🇳" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
+  const navLinks = [
+    { href: `/${locale}/editor`, label: "Editor" },
+    { href: `/${locale}/presets`, label: "Presets" },
+    { href: `/${locale}/quiz`, label: "Quiz" },
+    { href: `/${locale}/compare`, label: "Compare" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="absolute inset-0 bg-bg/80 backdrop-blur-lg border-b border-border" />
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 relative">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-            <Sparkles className="h-4 w-4 text-primary-fg" />
-          </div>
-          <span className="text-xl font-bold font-display text-fg">
-            ClawSouls
-          </span>
+    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-16 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(250,204,21,0.05)]">
+      {/* Left — Logo + Nav */}
+      <div className="flex items-center gap-8">
+        <Link href={`/${locale}`} className="text-2xl font-bold tracking-tighter text-[#facc15] font-['Space_Grotesk']">
+          ClawSouls
         </Link>
-
-        <nav className="hidden md:flex items-center gap-1">
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
-            <Link href="/presets">{t("presets")}</Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
-            <Link href="/quiz">{t("quiz")}</Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
-            <Link href="/achievements">{t("achievements")}</Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild className="text-muted-fg hover:text-fg rounded-lg">
-            <Link href="/compare">{t("compare")}</Link>
-          </Button>
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            className="text-muted-fg hover:text-fg rounded-xl"
-          >
-            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </Button>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-muted-fg hover:text-fg rounded-lg" aria-label="Change language">
-                <Globe className="h-4 w-4" aria-hidden="true" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-surface border-border rounded-xl">
-              {locales.map((loc) => (
-                <DropdownMenuItem key={loc.code} asChild>
-                  <Link
-                    href={`/${loc.code}`}
-                    className={`text-fg hover:text-fg cursor-pointer rounded-lg ${
-                      locale === loc.code ? "font-semibold bg-primary/10" : ""
-                    }`}
-                  >
-                    <span className="mr-2">{loc.flag}</span>
-                    {loc.name}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <Button
-            asChild
-            size="sm"
-            className="bg-primary text-primary-fg border-0 rounded-lg transition-opacity duration-200 hover:opacity-90"
-          >
-            <Link href="/editor">
-              <Sparkles className="mr-2 h-4 w-4" />
-              {t("create")}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="font-['Space_Grotesk'] tracking-tight text-sm uppercase text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200 px-2 py-1 rounded"
+            >
+              {link.label}
             </Link>
-          </Button>
+          ))}
         </div>
       </div>
-    </header>
+
+      {/* Right — Actions */}
+      <div className="flex items-center gap-4">
+        <button
+          onClick={toggleTheme}
+          className="text-white/60 hover:text-[#facc15] transition-colors"
+          aria-label="Toggle theme"
+        >
+          <span className="material-symbols-outlined text-xl">
+            {isDark ? "light_mode" : "dark_mode"}
+          </span>
+        </button>
+        <Link
+          href={`/${locale}/editor`}
+          className="hidden md:flex items-center px-4 py-2 bg-[#facc15] text-[#3c2f00] font-['Space_Grotesk'] text-xs font-bold uppercase tracking-[0.1em] rounded hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(250,204,21,0.3)] transition-all"
+        >
+          Connect Terminal
+        </Link>
+      </div>
+    </nav>
   );
 }

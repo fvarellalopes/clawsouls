@@ -4,47 +4,46 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-8 px-4">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+    <footer className="w-full py-12 bg-[#09090b] border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Left — Brand */}
-        <div className="flex items-center gap-2">
-          <span className="font-display font-bold text-foreground">ClawSouls</span>
-          <span className="hidden sm:inline">·</span>
-          <span className="hidden sm:inline">Visual SOUL.md editor for OpenClaw</span>
+        <div className="flex flex-col items-center md:items-start gap-1">
+          <span className="text-[#facc15] font-bold font-['Space_Grotesk'] text-xs tracking-[0.2em] uppercase">
+            © 2024 CLAWSOULS TERMINAL // SYSTEM STATUS: NOMINAL
+          </span>
         </div>
 
-        {/* Center — Links */}
-        <nav aria-label="Footer navigation" className="flex items-center gap-4">
+        {/* Right — Links */}
+        <div className="flex flex-wrap justify-center gap-6">
           <a
             href="https://github.com/fvarellalopes/clawsouls"
             target="_blank"
             rel="noopener"
-            className="hover:text-foreground transition-colors duration-150"
+            className="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-neutral-600 hover:text-[#facc15] transition-all opacity-70 hover:opacity-100"
           >
             GitHub
           </a>
           <a
-            href="https://github.com/fvarellalopes/clawsouls/blob/main/brainstorm.md"
+            href="https://discord.com/invite/clawd"
             target="_blank"
             rel="noopener"
-            className="hover:text-foreground transition-colors duration-150"
+            className="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-neutral-600 hover:text-[#facc15] transition-all opacity-70 hover:opacity-100"
           >
-            Brainstorm
+            Discord
           </a>
-          <a
-            href="https://github.com/fvarellalopes/clawsouls/blob/main/PLAN.md"
-            target="_blank"
-            rel="noopener"
-            className="hover:text-foreground transition-colors duration-150"
+          <Link
+            href="/terms"
+            className="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-neutral-600 hover:text-[#facc15] transition-all opacity-70 hover:opacity-100"
           >
-            PLAN
-          </a>
-        </nav>
-
-        {/* Right — Credit */}
-        <span className="text-muted-foreground">
-          Made with 🔩 by disconexo
-        </span>
+            Terms of Service
+          </Link>
+          <Link
+            href="/privacy"
+            className="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-neutral-600 hover:text-[#facc15] transition-all opacity-70 hover:opacity-100"
+          >
+            Privacy Protocol
+          </Link>
+        </div>
       </div>
     </footer>
   );

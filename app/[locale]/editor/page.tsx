@@ -16,7 +16,7 @@ export default function EditorPage({ params }: EditorPageProps) {
   }, [params]);
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative" style={{ background: "#0a0a0f" }}>
       <div className="relative z-10">
         <SoulEditor locale={locale} messages={messages} />
       </div>

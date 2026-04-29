@@ -70,6 +70,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        />
+      </head>
       <JsonLd />
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
@@ -81,7 +87,7 @@ export default async function LocaleLayout({
           <ThemeInitializer />
           <div className="min-h-screen flex flex-col relative">
             <Header locale={locale} messages={typedMessages} />
-            <main id="main-content" className="flex-1 pb-24 md:pb-0 relative z-10">
+            <main id="main-content" className="flex-1 pt-16 pb-24 md:pb-0 relative z-10">
               <ErrorBoundary>{children}</ErrorBoundary>
             </main>
             <Footer />

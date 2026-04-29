@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ClawSouls — Create Your OpenClaw Soul",
-  description: "Design, customize, and share AI personality profiles. The visual SOUL.md editor for OpenClaw agents.",
-  keywords: ["openclaw", "ai personality", "soul.md", "agent customization", "ai character creator"],
+  title: "ClawSouls — Unleash the Soul of AI",
+  description: "The ultimate visual editor for OpenClaw SOUL.md personalities. Architect, refine, and deploy complex AI identities with unprecedented precision.",
+  keywords: ["openclaw", "ai personality", "soul.md", "agent customization", "ai character creator", "visual editor"],
   authors: [{ name: "ClawSouls" }],
   manifest: "/manifest.json",
   openGraph: {
@@ -52,8 +52,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans">
+    <html lang="en" className={`dark ${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans bg-background text-foreground">
         {children}
       </body>
     </html>
