@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { Cinzel, Crimson_Pro, Fira_Code } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
@@ -13,19 +13,19 @@ import { KeyboardHelp } from "@/components/keyboard-help";
 import { JsonLd } from "@/components/json-ld";
 import { ThemeInitializer } from "@/components/theme-initializer";
 
-const cinzel = Cinzel({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const crimsonPro = Crimson_Pro({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
 });
 
-const firaCode = Fira_Code({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   weight: ["400", "500"],
@@ -69,10 +69,10 @@ export default async function LocaleLayout({
   const typedMessages = messages as Record<string, any>;
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale}>
       <JsonLd />
       <body
-        className={`${cinzel.variable} ${crimsonPro.variable} ${firaCode.variable}`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       >
         <a href="#main-content" className="skip-to-content">
           Skip to content

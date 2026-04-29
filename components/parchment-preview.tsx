@@ -1,10 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
-import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 interface ParchmentPreviewProps {
@@ -24,16 +22,17 @@ interface ParchmentPreviewProps {
 function ToneBar({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="text-purple-300/50 w-20 text-right truncate">{label}</span>
-      <div className="flex-1 h-1.5 rounded-full bg-purple-500/10 overflow-hidden">
-        <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-purple-500 to-amber-400"
-          initial={{ width: 0 }}
-          animate={{ width: `${value}%` }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+      <span className="w-20 text-right truncate" style={{ color: "hsl(var(--foreground-muted))" }}>{label}</span>
+      <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: "hsl(var(--muted))" }}>
+        <div
+          className="h-full rounded-full transition-all duration-500 ease-out"
+          style={{
+            width: `${value}%`,
+            background: "hsl(var(--primary))",
+          }}
         />
       </div>
-      <span className="text-amber-400/50 w-8 font-mono">{value}</span>
+      <span className="w-8 font-mono" style={{ color: "hsl(var(--accent))" }}>{value}</span>
     </div>
   );
 }
@@ -70,53 +69,51 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative"
-    >
+    <div className="relative" style={{ animation: "fadeInUp 0.4s ease-out" }}>
       {/* Parchment container */}
-      <div className="relative rounded-2xl overflow-hidden">
-        {/* Glow border effect */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/30 via-amber-500/20 to-purple-500/30 p-[1px]">
-          <div className="w-full h-full rounded-2xl bg-[#1a0f2e]" />
-        </div>
-
+      <div className="relative rounded-2xl overflow-hidden" style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))" }}>
         {/* Content */}
         <div className="relative p-6 md:p-8">
           {/* Header with emoji and name */}
-          <div className="flex items-center justify-between mb-6 pb-4 border-b border-purple-500/20">
+          <div className="flex items-center justify-between mb-6 pb-4" style={{ borderBottom: "1px solid hsl(var(--border))" }}>
             <div className="flex items-center gap-3">
-              <motion.span
-                className="text-4xl"
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                {emoji || "✨"}
-              </motion.span>
+              <span className="text-4xl">{emoji || "✨"}</span>
               <div>
-                <h3 className="text-xl font-bold text-gradient font-display">
+                <h3 className="text-xl font-bold font-display font-display text-primary">
                   {name || t("unnamedSoul")}
                 </h3>
-                <p className="text-sm text-purple-300/60">{t("soulMdPreview")}</p>
+                <p className="text-sm" style={{ color: "hsl(var(--foreground-muted))" }}>{t("soulMdPreview")}</p>
               </div>
             </div>
             <Button
               size="sm"
-              variant="ghost"
+              variant="outline"
               onClick={handleCopy}
-              className="text-purple-300 hover:text-purple-100"
+              className="gap-1.5 transition-all"
+              style={{
+                borderColor: copied ? "hsl(var(--success, 145 60% 50%))" : "hsl(var(--border))",
+                color: copied ? "hsl(var(--success, 145 60% 50%))" : "hsl(var(--foreground))",
+              }}
               aria-label={t("copySoulContent")}
             >
-              {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4" />
+                  <span className="text-xs">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="h-4 w-4" />
+                  <span className="text-xs">Copy</span>
+                </>
+              )}
             </Button>
           </div>
 
           {/* Tone Attributes Summary */}
           {toneAttributes && (
-            <div className="mb-6 pb-4 border-b border-purple-500/10">
-              <p className="text-[10px] text-purple-500/40 uppercase tracking-widest mb-3 font-display">
+            <div className="mb-6 pb-4" style={{ borderBottom: "1px solid hsl(var(--border))" }}>
+              <p className="text-[10px] uppercase tracking-widest mb-3 font-display" style={{ color: "hsl(var(--foreground-muted))" }}>
                 {t("toneProfile")}
               </p>
               <div className="space-y-1.5">
@@ -135,76 +132,67 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
             {sections.map((section, i) => {
               if (section.type === "title") {
                 return (
-                  <motion.h2
+                  <h2
                     key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.03 }}
-                    className="text-2xl font-display font-bold text-amber-400/90 tracking-wider uppercase mt-4 first:mt-0"
+                    className="text-2xl font-display font-bold tracking-wider mt-4 first:mt-0"
+                    style={{ color: "hsl(var(--accent))" }}
                   >
                     {section.content}
-                  </motion.h2>
+                  </h2>
                 );
               }
               if (section.type === "section") {
                 return (
-                  <motion.h3
+                  <h3
                     key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.03 }}
-                    className="text-lg font-display font-semibold text-purple-300 tracking-wide uppercase mt-5 mb-2 flex items-center gap-2"
+                    className="text-lg font-display font-semibold tracking-wide mt-5 mb-2 flex items-center gap-2"
+                    style={{ color: "hsl(var(--foreground))" }}
                   >
-                    <span className="w-2 h-2 rounded-full bg-purple-500/60" />
+                    <span className="w-2 h-2 rounded-full" style={{ background: "hsl(var(--primary))" }} />
                     {section.content}
-                  </motion.h3>
+                  </h3>
                 );
               }
               if (section.type === "divider") {
                 return (
                   <div key={i} className="my-4 flex items-center gap-3">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-                    <span className="text-purple-500/40 text-xs">✦</span>
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+                    <div className="flex-1 h-px" style={{ background: "hsl(var(--border))" }} />
+                    <span className="text-xs" style={{ color: "hsl(var(--foreground-muted))" }}>✦</span>
+                    <div className="flex-1 h-px" style={{ background: "hsl(var(--border))" }} />
                   </div>
                 );
               }
               if (section.type === "item") {
                 return (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, x: -5 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.02 }}
-                    className="flex items-start gap-2 pl-2 text-purple-100/80"
+                    className="flex items-start gap-2 pl-2"
+                    style={{ color: "hsl(var(--foreground))" }}
                   >
-                    <span className="text-amber-500/60 mt-1 text-xs">▸</span>
+                    <span className="mt-1 text-xs" style={{ color: "hsl(var(--accent))" }}>▸</span>
                     <span>{section.content}</span>
-                  </motion.div>
+                  </div>
                 );
               }
               return (
-                <motion.p
+                <p
                   key={i}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: i * 0.02 }}
-                  className="text-purple-100/70"
+                  style={{ color: "hsl(var(--foreground-muted))" }}
                 >
                   {section.content}
-                </motion.p>
+                </p>
               );
             })}
           </div>
 
           {/* Footer watermark */}
-          <div className="mt-6 pt-4 border-t border-purple-500/10 text-center">
-            <span className="text-[10px] text-purple-500/30 tracking-widest uppercase font-display">
+          <div className="mt-6 pt-4 text-center" style={{ borderTop: "1px solid hsl(var(--border))" }}>
+            <span className="text-[10px] tracking-widest uppercase font-display" style={{ color: "hsl(var(--foreground-muted))" }}>
               {t("forgedBy", { year: new Date().getFullYear() })}
             </span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

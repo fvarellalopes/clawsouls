@@ -29,11 +29,11 @@
     "basicInfo": "Basic Info",
     "basicInfoDesc": "Name, creature, vibe, emoji, avatar",
     "personality": "Personality",
-    "personalityDesc": "Core truths and boundaries",
+    "personalityDesc": "Deep personality traits and principles",
     "attributes": "Attributes",
     "attributesDesc": "Tone sliders: humor, formality, verbosity, etc.",
     "advanced": "Advanced",
-    "advancedDesc": "Presets and customization",
+    "advancedDesc": "Speech patterns and custom rules",
     "nameLabel": "Name",
     "creatureLabel": "Creature",
     "vibeLabel": "Vibe",
@@ -189,7 +189,45 @@
     "customBoundaries": "Custom Boundaries",
     "customBoundariesDesc": "Add your own rules beyond the defaults.",
     "customBoundariesPlaceholder": "e.g., Never mention training data",
-    "fillWithAI": "Fill with AI"
+    "fillWithAI": "Fill with AI",
+    "tabs": {
+      "essentials": "Essentials",
+      "style": "Style",
+      "personality": "Personality",
+      "advanced": "Advanced"
+    },
+    "tabsEssentials": "Essentials",
+    "tabsStyle": "Style",
+    "tabsPersonality": "Personality",
+    "tabsAdvanced": "Advanced",
+    "quickStart": {
+      "title": "Quick Start",
+      "scratch": "Start from Scratch",
+      "scratchDesc": "Blank canvas, infinite possibilities",
+      "preset": "Load a Preset",
+      "presetDesc": "Start from a famous character",
+      "ai": "Fill with AI",
+      "aiDesc": "Describe your personality in bullet points"
+    },
+    "exportDropdown": {
+      "title": "Export",
+      "soulmd": "SOUL.md",
+      "json": "JSON",
+      "yaml": "YAML"
+    },
+    "bigFive": "Big Five Personality",
+    "bigFiveDesc": "The five major personality dimensions",
+    "bigFiveTraits": {
+      "openness": "Openness",
+      "conscientiousness": "Conscientiousness",
+      "extraversion": "Extraversion",
+      "agreeableness": "Agreeableness",
+      "neuroticism": "Neuroticism"
+    },
+    "essentialsDesc": "The core identity of your soul",
+    "styleDesc": "Tone, communication, and domains",
+    "copyPreview": "Copy SOUL.md",
+    "dismissQuickStart": "Dismiss"
   },
   "presetsPage": {
     "title": "Preset Personalities",
@@ -220,18 +258,8 @@
       "shareDesc": "Generate unique links to share your creations with the world",
       "exportDesc": "Download SOUL.md files compatible with OpenClaw and other frameworks"
     },
-    "featureDesc": "Modern, interactive, and internationalized.",
-    "ctaTitle": "Ready to Create?",
-    "ctaDesc": "Start building your AI's personality now. No coding required.",
-    "ctaButton": "Open the Forge",
-    "presetsCount": "30+ presets",
-    "scroll": "Scroll",
-    "capabilities": "Capabilities",
     "forgedForCreators": "Forged for Creators",
-    "forgedForCreatorsDesc": "Every tool you need to craft, customize, and share AI personalities.",
-    "readyToForge": "Ready to Forge?",
-    "readyToForgeDesc": "Start from scratch or pick a preset. Your AI's soul awaits.",
-    "startCreating": "Start Creating"
+    "forgedForCreatorsDesc": "Every tool you need to craft, customize, and share AI personalities."
   },
   "myPresets": {
     "title": "My Presets",
@@ -2182,5 +2210,11 @@
     "suggestedAttributes": "Suggested Attributes",
     "regenerate": "Regenerate",
     "apply": "Apply to Editor"
+  },
+  "footer": {
+    "github": "GitHub",
+    "editor": "Editor",
+    "presets": "Presets",
+    "builtWith": "Built with Next.js"
   }
 }

@@ -57,7 +57,7 @@ function ShareByIdContent() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="h-8 w-8 text-purple-400 animate-spin" />
+        <Loader2 className="h-8 w-8 text-subtle-fg animate-spin" />
       </div>
     );
   }
@@ -67,7 +67,7 @@ function ShareByIdContent() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">{t("shareNotFound")}</h1>
-          <p className="text-purple-300/50 mb-6">{t("linkExpired")}</p>
+          <p className="text-muted-fg mb-6">{t("linkExpired")}</p>
           <Button asChild>
             <Link href="/">{t("backToHome")}</Link>
           </Button>

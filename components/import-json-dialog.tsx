@@ -86,15 +86,15 @@ export function ImportJsonDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="border-purple-500/20">
+        <Button variant="outline" size="sm" className="border-border">
           <Upload className="mr-2 h-4 w-4" />
           {t("importJson")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-[#1a0f2e] border-purple-500/30 max-w-lg">
+      <DialogContent className="bg-surface border-border max-w-lg">
         <DialogHeader>
           <DialogTitle className="font-display tracking-wider flex items-center gap-2">
-            <FileJson className="h-5 w-5 text-purple-400" />
+            <FileJson className="h-5 w-5 text-subtle-fg" />
             {t("importSoulConfig")}
           </DialogTitle>
           <DialogDescription>
@@ -106,11 +106,11 @@ export function ImportJsonDialog() {
           <div
             onDrop={handleFileDrop}
             onDragOver={(e) => e.preventDefault()}
-            className="border-2 border-dashed border-purple-500/20 rounded-xl p-6 text-center hover:border-purple-400/40 transition-colors cursor-pointer"
+            className="border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors cursor-pointer"
             onClick={() => fileRef.current?.click()}
           >
-            <Upload className="h-8 w-8 text-purple-400/30 mx-auto mb-2" />
-            <p className="text-sm text-purple-300/50">
+            <Upload className="h-8 w-8 text-subtle-fg/30 mx-auto mb-2" />
+            <p className="text-sm text-muted-fg">
               {t("dropJsonFile")}
             </p>
             <input
@@ -127,7 +127,7 @@ export function ImportJsonDialog() {
             onChange={(e) => setJsonText(e.target.value)}
             placeholder='{"name": "MyBot", "creature": "AI Assistant", "emoji": "🤖", ...}'
             rows={8}
-            className="bg-[#0d0820]/80 border-purple-500/20 rounded-xl resize-none font-mono text-sm"
+            className="bg-surface border-border rounded-xl resize-none font-mono text-sm"
           />
 
           {result && (
@@ -151,14 +151,14 @@ export function ImportJsonDialog() {
         </div>
 
         {/* SOUL.md Import */}
-        <div className="border-t border-purple-500/10 pt-4">
-          <p className="text-xs text-purple-400/40 mb-3 uppercase tracking-wider">
+        <div className="border-t border-border pt-4">
+          <p className="text-xs text-subtle-fg/40 mb-3 uppercase tracking-wider">
             {t("orImportSoulMd")}
           </p>
           <Button
             variant="outline"
             size="sm"
-            className="w-full border-purple-500/20"
+            className="w-full border-border"
             onClick={() => mdFileRef.current?.click()}
           >
             <FileText className="mr-2 h-4 w-4" />
@@ -180,7 +180,7 @@ export function ImportJsonDialog() {
           <Button
             onClick={handleImport}
             disabled={!jsonText.trim()}
-            className="bg-purple-600 text-white"
+            className="bg-primary text-primary-fg"
           >
             {t("import")}
           </Button>

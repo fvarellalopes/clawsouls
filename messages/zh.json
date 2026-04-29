@@ -210,18 +210,8 @@
       "shareDesc": "生成唯一链接，与世界分享你的创作",
       "exportDesc": "下载兼容 OpenClaw 和其他框架的 SOUL.md 文件"
     },
-    "featureDesc": "现代化、互动、支持多语言。",
-    "ctaTitle": "准备好创建了吗？",
-    "ctaDesc": "立即开始构建你的 AI 人格。无需编程。",
-    "ctaButton": "打开锻造炉",
-    "presetsCount": "30+ 预设",
-    "scroll": "滚动",
-    "capabilities": "功能",
     "forgedForCreators": "为创作者打造",
-    "forgedForCreatorsDesc": "打造、自定义和分享 AI 人格所需的一切工具。",
-    "readyToForge": "准备锻造了吗？",
-    "readyToForgeDesc": "从零开始或选择一个预设。你的 AI 灵魂在等待。",
-    "startCreating": "开始创建"
+    "forgedForCreatorsDesc": "打造、自定义和分享 AI 人格所需的一切工具。"
   },
   "myPresets": {
     "title": "我的预设",
@@ -2146,5 +2136,11 @@
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
     }
+  },
+  "footer": {
+    "github": "GitHub",
+    "editor": "Editor",
+    "presets": "Presets",
+    "builtWith": "Built with Next.js"
   }
 }

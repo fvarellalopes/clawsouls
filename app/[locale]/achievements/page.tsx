@@ -25,16 +25,16 @@ export default function AchievementsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <Trophy className="h-16 w-16 text-amber-400 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-gradient font-display tracking-wider mb-3">
+          <Trophy className="h-16 w-16 text-accent mx-auto mb-4" />
+          <h1 className="text-4xl font-bold font-display text-primary font-display tracking-wider mb-3">
             {t("title")}
           </h1>
-          <p className="text-purple-200/50 text-lg mb-4">
+          <p className="text-muted-fg text-lg mb-4">
             {t("unlockedSummary", { unlockedCount, totalCount, percentage })}
           </p>
-          <div className="max-w-xs mx-auto h-2 rounded-full bg-purple-500/10 overflow-hidden">
+          <div className="max-w-xs mx-auto h-2 rounded-full bg-primary/10 overflow-hidden">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-purple-500 to-amber-400"
+              className="h-full rounded-full bg-accent"
               initial={{ width: 0 }}
               animate={{ width: `${percentage}%` }}
               transition={{ duration: 1, ease: "easeOut" }}
@@ -56,11 +56,11 @@ export default function AchievementsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              <Card className="bg-[#140d24]/60 border-purple-500/15">
+              <Card className="bg-surface-alt border-border">
                 <CardContent className="p-4 text-center">
                   <div className="text-2xl mb-1">{stat.emoji}</div>
-                  <div className="text-2xl font-bold text-purple-100">{stat.value}</div>
-                  <div className="text-xs text-purple-300/50">{stat.label}</div>
+                  <div className="text-2xl font-bold text-fg">{stat.value}</div>
+                  <div className="text-xs text-muted-fg">{stat.label}</div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -82,8 +82,8 @@ export default function AchievementsPage() {
                 <Card
                   className={`overflow-hidden transition-all duration-300 ${
                     isUnlocked
-                      ? "bg-[#140d24]/80 border-amber-500/30 ring-1 ring-amber-500/10"
-                      : "bg-[#140d24]/40 border-purple-500/10 opacity-60"
+                      ? "bg-surface-alt border-accent/30 ring-1 ring-accent/10"
+                      : "bg-surface/40 border-border opacity-60"
                   }`}
                 >
                   <CardContent className="p-5">
@@ -93,12 +93,12 @@ export default function AchievementsPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className={`font-bold font-display tracking-wide ${
-                          isUnlocked ? "text-amber-300" : "text-purple-300/40"
+                          isUnlocked ? "text-accent" : "text-subtle-fg"
                         }`}>
                           {achievement.name}
                         </h3>
                         <p className={`text-sm mt-1 ${
-                          isUnlocked ? "text-purple-200/60" : "text-purple-300/30"
+                          isUnlocked ? "text-muted-fg" : "text-muted-fg/30"
                         }`}>
                           {achievement.description}
                         </p>
@@ -122,7 +122,7 @@ export default function AchievementsPage() {
         </div>
 
         <div className="text-center mt-12">
-          <Button asChild variant="outline" className="border-purple-500/20">
+          <Button asChild variant="outline" className="border-border">
             <Link href="/editor">
               <Sparkles className="mr-2 h-4 w-4" />
               {t("keepCreating")}

@@ -45,34 +45,34 @@ function CompareBar({
   return (
     <div className="space-y-1">
       <div className="flex items-center justify-between text-xs">
-        <span className="text-purple-300/60 font-medium">{label}</span>
-        <span className="text-purple-400/40 font-mono text-[10px]">
+        <span className="text-muted-fg font-medium">{label}</span>
+        <span className="text-subtle-fg font-mono text-[10px]">
           {diff > 0 ? `±${diff}` : "="}
         </span>
       </div>
       <div className="relative h-6 flex items-center gap-2">
-        <span className="text-amber-400/70 font-mono text-xs w-8 text-right">
+        <span className="text-accent/80 font-mono text-xs w-8 text-right">
           {valueA}
         </span>
-        <div className="flex-1 h-2 rounded-full bg-purple-500/10 relative overflow-hidden">
+        <div className="flex-1 h-2 rounded-full bg-primary/10 relative overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-purple-500 to-purple-400"
+            className="absolute top-0 left-0 h-full rounded-full bg-primary"
             initial={{ width: 0 }}
             animate={{ width: `${valueA}%` }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           <motion.div
-            className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-400 opacity-50"
+            className="absolute top-0 left-0 h-full rounded-full bg-accent opacity-50"
             initial={{ width: 0 }}
             animate={{ width: `${valueB}%` }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           />
         </div>
-        <span className="text-amber-400/70 font-mono text-xs w-8">
+        <span className="text-accent/80 font-mono text-xs w-8">
           {valueB}
         </span>
         {winner && (
-          <span className="text-[10px] text-amber-500/60 w-12 truncate">
+          <span className="text-[10px] text-accent/60 w-12 truncate">
             {winner}
           </span>
         )}
@@ -99,12 +99,12 @@ function PresetSelector({
 
   return (
     <div className="space-y-3">
-      <label className="text-sm font-medium text-purple-300/80 flex items-center gap-2">
+      <label className="text-sm font-medium text-fg/80 flex items-center gap-2">
         <span
           className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold ${
             side === "A"
-              ? "bg-purple-500/20 text-purple-300"
-              : "bg-amber-500/20 text-amber-300"
+              ? "bg-primary/15 text-muted-fg"
+              : "bg-accent/15 text-accent"
           }`}
         >
           {side}
@@ -113,20 +113,20 @@ function PresetSelector({
       </label>
 
       <Select value={selectedId || ""} onValueChange={onSelect}>
-        <SelectTrigger className="bg-[#1a0f2e] border-purple-500/20 text-purple-100 rounded-xl">
+        <SelectTrigger className="bg-surface border-border text-fg rounded-xl">
           <SelectValue placeholder={t("selectPreset")} />
         </SelectTrigger>
-        <SelectContent className="bg-[#1a0f2e] border-purple-500/20 max-h-72 rounded-xl">
+        <SelectContent className="bg-surface border-border max-h-72 rounded-xl">
           {presets.map((p) => (
             <SelectItem
               key={p.id}
               value={p.id}
-              className="text-purple-200/80 focus:bg-purple-500/20 focus:text-purple-100 rounded-lg"
+              className="text-fg/80 focus:bg-primary/15 focus:text-fg rounded-lg"
             >
               <span className="flex items-center gap-2">
                 <span>{p.emoji}</span>
                 <span>{p.name}</span>
-                <span className="text-purple-400/40 text-xs">
+                <span className="text-subtle-fg text-xs">
                   {p.creature}
                 </span>
               </span>
@@ -139,18 +139,18 @@ function PresetSelector({
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="p-3 rounded-xl bg-purple-500/5 border border-purple-500/10"
+          className="p-3 rounded-xl bg-primary/5 border border-border"
         >
           <div className="flex items-center gap-2 mb-2">
             <span className="text-2xl">{preset.emoji}</span>
             <div>
-              <p className="text-sm font-semibold text-purple-100">
+              <p className="text-sm font-semibold text-fg">
                 {preset.name}
               </p>
-              <p className="text-xs text-purple-300/50">{preset.creature}</p>
+              <p className="text-xs text-muted-fg">{preset.creature}</p>
             </div>
           </div>
-          <p className="text-xs text-purple-200/60 leading-relaxed line-clamp-3">
+          <p className="text-xs text-muted-fg leading-relaxed line-clamp-3">
             {preset.vibe}
           </p>
         </motion.div>
@@ -204,11 +204,11 @@ function DiffViewer({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <p className="text-sm font-medium text-purple-300/80 flex items-center gap-2">
+        <p className="text-sm font-medium text-fg/80 flex items-center gap-2">
           <ArrowLeftRight className="h-4 w-4" />
           Differences
         </p>
-        <div className="flex items-center gap-3 text-xs text-purple-400/50">
+        <div className="flex items-center gap-3 text-xs text-subtle-fg">
           <span className="flex items-center gap-1">
             <span className="w-2 h-2 rounded-full bg-red-500/50" />
             {differentLines.length} changed
@@ -225,7 +225,7 @@ function DiffViewer({
           variant="ghost"
           size="sm"
           onClick={() => setShowAll(!showAll)}
-          className="text-purple-300/60 hover:text-purple-100"
+          className="text-muted-fg hover:text-fg"
         >
           {showAll ? (
             <>
@@ -239,15 +239,15 @@ function DiffViewer({
         </Button>
       </div>
 
-      <div className="max-h-[400px] overflow-y-auto rounded-xl border border-purple-500/10">
+      <div className="max-h-[400px] overflow-y-auto rounded-xl border border-border">
         <table className="w-full text-xs font-mono">
-          <thead className="sticky top-0 bg-[#1a0f2e] z-10">
-            <tr className="border-b border-purple-500/10">
-              <th className="px-3 py-2 text-left text-purple-400/50 w-8">#</th>
-              <th className="px-3 py-2 text-left text-purple-400/50">
+          <thead className="sticky top-0 bg-surface z-10">
+            <tr className="border-b border-border">
+              <th className="px-3 py-2 text-left text-subtle-fg w-8">#</th>
+              <th className="px-3 py-2 text-left text-subtle-fg">
                 {nameA}
               </th>
-              <th className="px-3 py-2 text-left text-purple-400/50">
+              <th className="px-3 py-2 text-left text-subtle-fg">
                 {nameB}
               </th>
             </tr>
@@ -260,32 +260,32 @@ function DiffViewer({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className={`border-b border-purple-500/5 ${
+                  className={`border-b border-border/50 ${
                     line.same
                       ? "bg-transparent"
-                      : "bg-purple-500/5"
+                      : "bg-primary/5"
                   }`}
                 >
-                  <td className="px-3 py-1.5 text-purple-500/30 align-top">
+                  <td className="px-3 py-1.5 text-subtle-fg align-top">
                     {line.index + 1}
                   </td>
                   <td
                     className={`px-3 py-1.5 whitespace-pre-wrap break-all align-top ${
                       !line.same
                         ? "text-red-400/70 bg-red-500/5"
-                        : "text-purple-200/50"
+                        : "text-muted-fg"
                     }`}
                   >
-                    {line.lineA || <span className="text-purple-500/20 italic">—</span>}
+                    {line.lineA || <span className="text-subtle-fg/30 italic">—</span>}
                   </td>
                   <td
                     className={`px-3 py-1.5 whitespace-pre-wrap break-all align-top ${
                       !line.same
                         ? "text-green-400/70 bg-green-500/5"
-                        : "text-purple-200/50"
+                        : "text-muted-fg"
                     }`}
                   >
-                    {line.lineB || <span className="text-purple-500/20 italic">—</span>}
+                    {line.lineB || <span className="text-subtle-fg/30 italic">—</span>}
                   </td>
                 </motion.tr>
               ))}
@@ -367,7 +367,7 @@ export function ABTestMode() {
         <Button
           onClick={() => setShowComparison(true)}
           disabled={!canCompare}
-          className="bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-500 hover:to-amber-400 text-white border-0 shadow-lg shadow-purple-500/20 rounded-xl px-8 py-3 text-base font-semibold disabled:opacity-30"
+          className="bg-primary  text-primary-fg border-0 shadow-lg  rounded-xl px-8 py-3 text-base font-semibold disabled:opacity-30"
         >
           <GitCompareArrows className="mr-2 h-5 w-5" />
           {t("compare")}
@@ -385,11 +385,11 @@ export function ABTestMode() {
             className="space-y-8"
           >
             {/* Compatibility score */}
-            <Card className="p-6 bg-[#1a0f2e] border-purple-500/20 rounded-2xl">
+            <Card className="p-6 bg-surface border-border rounded-2xl">
               <div className="flex flex-col items-center space-y-4">
                 <div className="flex items-center gap-3">
-                  <Trophy className="h-6 w-6 text-amber-400" />
-                  <h3 className="text-lg font-display font-bold text-purple-100">
+                  <Trophy className="h-6 w-6 text-accent" />
+                  <h3 className="text-lg font-display font-bold text-fg">
                     {t("similarity")}
                   </h3>
                 </div>
@@ -436,14 +436,14 @@ export function ABTestMode() {
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <motion.span
-                      className="text-3xl font-bold text-gradient font-display"
+                      className="text-3xl font-bold font-display text-primary font-display"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
                       {compatibility.overall}%
                     </motion.span>
-                    <span className="text-xs text-purple-300/50">{t("match")}</span>
+                    <span className="text-xs text-muted-fg">{t("match")}</span>
                   </div>
                 </div>
 
@@ -459,12 +459,12 @@ export function ABTestMode() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="text-center p-3 rounded-xl bg-purple-500/5"
+                      className="text-center p-3 rounded-xl bg-primary/5"
                     >
-                      <p className="text-xs text-purple-400/50 mb-1">
+                      <p className="text-xs text-subtle-fg mb-1">
                         {item.label}
                       </p>
-                      <p className="text-lg font-bold text-purple-100">
+                      <p className="text-lg font-bold text-fg">
                         {item.value}%
                       </p>
                     </div>
@@ -488,19 +488,19 @@ export function ABTestMode() {
             </Card>
 
             {/* Attribute sliders comparison */}
-            <Card className="p-6 bg-[#1a0f2e] border-purple-500/20 rounded-2xl">
+            <Card className="p-6 bg-surface border-border rounded-2xl">
               <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="h-4 w-4 text-amber-400" />
-                <h3 className="text-sm font-display font-semibold text-purple-100">
+                <Sparkles className="h-4 w-4 text-accent" />
+                <h3 className="text-sm font-display font-semibold text-fg">
                   Attribute Comparison
                 </h3>
-                <span className="ml-auto text-xs text-purple-400/40 flex items-center gap-2">
+                <span className="ml-auto text-xs text-subtle-fg flex items-center gap-2">
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-purple-400" />
+                    <span className="w-2 h-2 rounded-full bg-primary" />
                     {presetA.name}
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-amber-400" />
+                    <span className="w-2 h-2 rounded-full bg-accent" />
                     {presetB.name}
                   </span>
                 </span>
@@ -509,7 +509,7 @@ export function ABTestMode() {
               <div className="space-y-6">
                 {/* Tone attributes */}
                 <div>
-                  <p className="text-[10px] text-purple-500/40 uppercase tracking-widest mb-3">
+                  <p className="text-[10px] text-subtle-fg uppercase tracking-widest mb-3">
                     Tone
                   </p>
                   <div className="space-y-2">
@@ -528,7 +528,7 @@ export function ABTestMode() {
 
                 {/* Big Five */}
                 <div>
-                  <p className="text-[10px] text-purple-500/40 uppercase tracking-widest mb-3">
+                  <p className="text-[10px] text-subtle-fg uppercase tracking-widest mb-3">
                     Personality (Big Five)
                   </p>
                   <div className="space-y-2">
@@ -555,20 +555,20 @@ export function ABTestMode() {
               ].map(({ preset, md }) => (
                 <Card
                   key={preset.id}
-                  className="p-4 bg-[#1a0f2e] border-purple-500/20 rounded-2xl"
+                  className="p-4 bg-surface border-border rounded-2xl"
                 >
-                  <div className="flex items-center gap-2 mb-3 pb-2 border-b border-purple-500/10">
+                  <div className="flex items-center gap-2 mb-3 pb-2 border-b border-border">
                     <span className="text-xl">{preset.emoji}</span>
                     <div>
-                      <p className="text-sm font-semibold text-purple-100">
+                      <p className="text-sm font-semibold text-fg">
                         {preset.name}
                       </p>
-                      <p className="text-xs text-purple-300/40">
+                      <p className="text-xs text-subtle-fg">
                         SOUL.md Preview
                       </p>
                     </div>
                   </div>
-                  <pre className="text-xs text-purple-200/60 whitespace-pre-wrap break-words max-h-64 overflow-y-auto font-body leading-relaxed">
+                  <pre className="text-xs text-muted-fg whitespace-pre-wrap break-words max-h-64 overflow-y-auto font-body leading-relaxed">
                     {md}
                   </pre>
                 </Card>
@@ -576,7 +576,7 @@ export function ABTestMode() {
             </div>
 
             {/* Diff viewer */}
-            <Card className="p-6 bg-[#1a0f2e] border-purple-500/20 rounded-2xl">
+            <Card className="p-6 bg-surface border-border rounded-2xl">
               <DiffViewer
                 contentA={soulMDA}
                 contentB={soulMDB}

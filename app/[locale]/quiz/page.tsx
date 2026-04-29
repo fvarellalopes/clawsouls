@@ -90,22 +90,22 @@ export default function QuizPage() {
           >
             🧠
           </motion.div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gradient font-display tracking-wider mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold font-display text-primary font-display tracking-wider mb-4">
             {t("personalityQuiz")}
           </h1>
-          <p className="text-purple-200/60 text-lg mb-8 leading-relaxed">
+          <p className="text-muted-fg text-lg mb-8 leading-relaxed">
             {t("quizIntro", { count: quizQuestions.length })}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               onClick={() => setPhase("quiz")}
-              className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-8 py-6 text-lg rounded-2xl"
+              className="bg-primary text-primary-fg px-8 py-6 text-lg rounded-2xl"
             >
               <Sparkles className="mr-2 h-5 w-5" />
               {t("start")}
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-purple-500/20 px-8 py-6 text-lg rounded-2xl">
+            <Button asChild size="lg" variant="outline" className="border-border px-8 py-6 text-lg rounded-2xl">
               <Link href="/presets">
                 <ArrowLeft className="mr-2 h-5 w-5" />
                 {t("browseAll")}
@@ -126,13 +126,13 @@ export default function QuizPage() {
         <div className="max-w-2xl w-full">
           {/* Progress */}
           <div className="mb-8">
-            <div className="flex justify-between text-sm text-purple-300/50 mb-2">
+            <div className="flex justify-between text-sm text-muted-fg mb-2">
               <span>{t("questionProgress", { current: currentQuestion + 1, total: quizQuestions.length })}</span>
               <span>{Math.round(progress)}%</span>
             </div>
-            <div className="h-1.5 rounded-full bg-purple-500/10 overflow-hidden">
+            <div className="h-1.5 rounded-full bg-primary/10 overflow-hidden">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-purple-500 to-amber-400"
+                className="h-full rounded-full bg-accent"
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.4 }}
               />
@@ -148,7 +148,7 @@ export default function QuizPage() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-purple-100 font-display mb-8 leading-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-fg font-display mb-8 leading-tight">
                 {question.question}
               </h2>
 
@@ -161,21 +161,21 @@ export default function QuizPage() {
                     onClick={() => handleSelectOption(idx)}
                     className={`w-full text-left p-5 rounded-xl border transition-all duration-200 ${
                       selectedOption === idx
-                        ? "border-purple-400/60 bg-purple-500/15 text-purple-100"
-                        : "border-purple-500/15 bg-[#140d24]/60 text-purple-200/70 hover:border-purple-400/30 hover:bg-[#140d24]/80"
+                        ? "border-accent/60 bg-primary/15 text-fg"
+                        : "border-border bg-surface-alt text-muted-fg hover:border-border hover:bg-surface-alt"
                     }`}
                   >
                     <div className="flex items-center gap-4">
                       <div
                         className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
-                          selectedOption === idx ? "border-purple-400" : "border-purple-500/30"
+                          selectedOption === idx ? "border-primary" : "border-border"
                         }`}
                       >
                         {selectedOption === idx && (
                           <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
-                            className="w-2.5 h-2.5 rounded-full bg-purple-400"
+                            className="w-2.5 h-2.5 rounded-full bg-primary"
                           />
                         )}
                       </div>
@@ -193,7 +193,7 @@ export default function QuizPage() {
               variant="ghost"
               onClick={handleBack}
               disabled={currentQuestion === 0}
-              className="text-purple-300"
+              className="text-muted-fg"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               {t("back")}
@@ -201,7 +201,7 @@ export default function QuizPage() {
             <Button
               onClick={handleNext}
               disabled={selectedOption === null}
-              className="bg-purple-600 text-white px-8"
+              className="bg-primary text-primary-fg px-8"
             >
               {currentQuestion === quizQuestions.length - 1 ? t("seeResults") : t("next")}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -221,11 +221,11 @@ export default function QuizPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <Trophy className="h-16 w-16 text-amber-400 mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold text-gradient font-display tracking-wider mb-4">
+          <Trophy className="h-16 w-16 text-accent mx-auto mb-6" />
+          <h1 className="text-4xl md:text-5xl font-bold font-display text-primary font-display tracking-wider mb-4">
             {t("yourMatches")}
           </h1>
-          <p className="text-purple-200/60 text-lg">
+          <p className="text-muted-fg text-lg">
             {t("matchesDesc")}
           </p>
         </motion.div>
@@ -238,25 +238,25 @@ export default function QuizPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15 }}
             >
-              <Card className="bg-[#140d24]/60 border-purple-500/15 overflow-hidden">
+              <Card className="bg-surface-alt border-border overflow-hidden">
                 <div className="p-4 text-center">
                   {i === 0 && (
-                    <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold mb-3">
+                    <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold mb-3">
                       🏆 {t("bestMatch")}
                     </div>
                   )}
                   <div className="text-5xl mb-3">{result.preset.emoji}</div>
-                  <h3 className="text-xl font-bold text-purple-100 font-display">{result.preset.name}</h3>
-                  <p className="text-sm text-purple-300/50 mb-2">{result.preset.creature}</p>
-                  <div className="text-3xl font-bold text-amber-400 mb-4">
+                  <h3 className="text-xl font-bold text-fg font-display">{result.preset.name}</h3>
+                  <p className="text-sm text-muted-fg mb-2">{result.preset.creature}</p>
+                  <div className="text-3xl font-bold text-accent mb-4">
                     {result.matchPercentage}%
                   </div>
-                  <p className="text-sm text-purple-200/50 line-clamp-3 mb-4">
+                  <p className="text-sm text-muted-fg line-clamp-3 mb-4">
                     {result.preset.description}
                   </p>
                   <Button
                     onClick={() => handleLoadPreset(result.preset)}
-                    className="w-full bg-purple-600 text-white"
+                    className="w-full bg-primary text-primary-fg"
                   >
                     {t("useThis")}
                   </Button>
@@ -267,7 +267,7 @@ export default function QuizPage() {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" onClick={handleRestart} className="border-purple-500/20">
+          <Button variant="outline" onClick={handleRestart} className="border-border">
             <RotateCcw className="mr-2 h-4 w-4" />
             {t("retake")}
           </Button>

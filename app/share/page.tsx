@@ -72,7 +72,7 @@ function SharePageContent() {
   if (loading) {
     return (
       <div className="min-h-screen py-12 px-4 flex items-center justify-center">
-        <div className="animate-pulse text-purple-300/50">{t("loading")}</div>
+        <div className="animate-pulse text-muted-fg">{t("loading")}</div>
       </div>
     );
   }
@@ -82,7 +82,7 @@ function SharePageContent() {
       <div className="min-h-screen py-12 px-4 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">{t("personalityNotFound")}</h1>
-          <p className="text-purple-300/50 mb-6">{t("shareLinkExpired")}</p>
+          <p className="text-muted-fg mb-6">{t("shareLinkExpired")}</p>
           <Button asChild>
             <Link href="/">{t("backToHome")}</Link>
           </Button>
