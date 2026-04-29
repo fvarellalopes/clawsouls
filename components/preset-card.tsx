@@ -16,10 +16,10 @@ export const PresetCard = React.memo(function PresetCard({ preset, index, onSele
     <button
       type="button"
       onClick={() => onSelect(preset)}
-      className={`relative group cursor-pointer rounded-xl overflow-hidden transition-all duration-200 w-full text-left ${
+      className={`relative group cursor-pointer rounded-xl w-full text-left border transition-all duration-200 ease-out ${
         isSelected
-          ? "ring-2 ring-accent/60 shadow-lg"
-          : "ring-1 ring-border hover:ring-primary/30 hover:shadow-md"
+          ? "border-accent/60 shadow-lg"
+          : "border-border hover:shadow-md hover:scale-[1.02]"
       }`}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}

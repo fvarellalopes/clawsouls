@@ -48,6 +48,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const [fillWithAIOpen, setFillWithAIOpen] = useState(false);
   const [exportDropdownOpen, setExportDropdownOpen] = useState(false);
   const [quickStartDismissed, setQuickStartDismissed] = useState(false);
+  const [previewFormat, setPreviewFormat] = useState<"soulmd" | "yaml">("soulmd");
 
   // Phase: presets selection or editor
   const [phase, setPhase] = useState<Phase>("presets");
@@ -266,6 +267,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   };
 
   const soulMD = useMemo(() => generateSoulMD(soul), [soul]);
+  const yamlContent = useMemo(() => exportYAML(soul), [soul]);
 
   const vibeStyles = useMemo(() => [
     { value: "concise", label: t("vibeStyles.concise") },
