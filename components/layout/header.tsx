@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
@@ -11,29 +10,12 @@ interface HeaderProps {
 
 export function Header({ locale, messages }: HeaderProps) {
   const t = useTranslations("common");
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const dark = stored ? stored === "dark" : true;
-    setIsDark(dark);
-    document.documentElement.classList.toggle("dark", dark);
-    document.documentElement.classList.toggle("light", !dark);
-  }, []);
-
-  const toggleTheme = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    document.documentElement.classList.toggle("light", !next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-  };
 
   const navLinks = [
     { href: `/${locale}/editor`, label: "Editor" },
     { href: `/${locale}/presets`, label: "Presets" },
-    { href: `/${locale}/quiz`, label: "Quiz" },
-    { href: `/${locale}/compare`, label: "Compare" },
+    { href: `/${locale}/library`, label: "Library" },
+    { href: `/${locale}/docs`, label: "Docs" },
   ];
 
   return (
@@ -59,12 +41,19 @@ export function Header({ locale, messages }: HeaderProps) {
       {/* Right — Actions */}
       <div className="flex items-center gap-4">
         <button
-          onClick={toggleTheme}
           className="text-white/60 hover:text-[#facc15] transition-colors"
-          aria-label="Toggle theme"
+          aria-label="Settings"
         >
           <span className="material-symbols-outlined text-xl">
-            {isDark ? "light_mode" : "dark_mode"}
+            settings
+          </span>
+        </button>
+        <button
+          className="text-white/60 hover:text-[#facc15] transition-colors"
+          aria-label="Account"
+        >
+          <span className="material-symbols-outlined text-xl">
+            account_circle
           </span>
         </button>
         <Link
