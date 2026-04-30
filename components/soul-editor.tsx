@@ -20,7 +20,8 @@ import { generateSoulMD } from "@/lib/soulGenerator";
 import { exportYAML } from "@/lib/exportYAML";
 import { useTranslations } from "next-intl";
 import { SavePresetDialog } from "@/components/save-preset-dialog";
-import { ParchmentPreview } from "@/components/parchment-preview";
+import { LiveStreamPreview } from "@/components/live-stream-preview";
+import { ExportAnimation } from "@/components/export-animation";
 import { ImportJsonDialog } from "@/components/import-json-dialog";
 import { FillWithAIDialog } from "@/components/fill-with-ai-dialog";
 import { useAchievementsStore } from "@/store/achievementsStore";
@@ -105,6 +106,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   const { lastSaved, isSaving } = useAutoSaveStore();
   const { incrementExport, incrementShare, addLanguageUsed } = useAchievementsStore();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
   const presetsMessages = (messages as any)?.presets as Record<string, Record<string, string>> | undefined;
   const { presets, loading } = usePresets(presetsMessages);
@@ -191,18 +193,80 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
     setSoul({ boundaries: { ...soul.boundaries, [key]: value } });
   };
 
+  const [exportFormat, setExportFormat] = useState<"md" | "json" | "yaml" | null>(null);
+
+  const executeExport = () => {
+    if (exportFormat === "md") {
+      const content = generateSoulMD(soul);
+      const blob = new Blob([content], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase()}-SOUL.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      incrementExport();
+    } else if (exportFormat === "json") {
+      const exportData = {
+        name: soul.name,
+        creature: soul.creature,
+        vibe: soul.vibe,
+        emoji: soul.emoji,
+        avatar: soul.avatar,
+        coreTruths: soul.coreTruths,
+        boundaries: soul.boundaries,
+        customCoreTruths: soul.customCoreTruths,
+        customBoundaries: soul.customBoundaries,
+        vibeStyle: soul.vibeStyle,
+        humor: soul.humor,
+        formality: soul.formality,
+        emojiUsage: soul.emojiUsage,
+        verbosity: soul.verbosity,
+        consciousness: soul.consciousness,
+        questioning: soul.questioning,
+        openness: soul.openness,
+        conscientiousness: soul.conscientiousness,
+        extraversion: soul.extraversion,
+        agreeableness: soul.agreeableness,
+        neuroticism: soul.neuroticism,
+        communicationMode: soul.communicationMode,
+        knowledgeDomains: soul.knowledgeDomains,
+        signaturePhrases: soul.signaturePhrases,
+        emotionalRange: soul.emotionalRange,
+        speechPatterns: soul.speechPatterns,
+      };
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      incrementExport();
+    } else if (exportFormat === "yaml") {
+      const content = exportYAML(soul);
+      const blob = new Blob([content], { type: "text/yaml" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.yaml`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      incrementExport();
+    }
+    setExportFormat(null);
+    setIsExporting(false);
+  };
+
   const handleExport = () => {
-    const content = generateSoulMD(soul);
-    const blob = new Blob([content], { type: "text/markdown" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase()}-SOUL.md`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    incrementExport();
+    setExportFormat("md");
+    setIsExporting(true);
   };
 
   const handleShare = async () => {
@@ -236,58 +300,13 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   };
 
   const handleExportJSON = () => {
-    const exportData = {
-      name: soul.name,
-      creature: soul.creature,
-      vibe: soul.vibe,
-      emoji: soul.emoji,
-      avatar: soul.avatar,
-      coreTruths: soul.coreTruths,
-      boundaries: soul.boundaries,
-      customCoreTruths: soul.customCoreTruths,
-      customBoundaries: soul.customBoundaries,
-      vibeStyle: soul.vibeStyle,
-      humor: soul.humor,
-      formality: soul.formality,
-      emojiUsage: soul.emojiUsage,
-      verbosity: soul.verbosity,
-      consciousness: soul.consciousness,
-      questioning: soul.questioning,
-      openness: soul.openness,
-      conscientiousness: soul.conscientiousness,
-      extraversion: soul.extraversion,
-      agreeableness: soul.agreeableness,
-      neuroticism: soul.neuroticism,
-      communicationMode: soul.communicationMode,
-      knowledgeDomains: soul.knowledgeDomains,
-      signaturePhrases: soul.signaturePhrases,
-      emotionalRange: soul.emotionalRange,
-      speechPatterns: soul.speechPatterns,
-    };
-    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    incrementExport();
+    setExportFormat("json");
+    setIsExporting(true);
   };
 
   const handleExportYAML = () => {
-    const content = exportYAML(soul);
-    const blob = new Blob([content], { type: "text/yaml" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${soul.name.replace(/\s+/g, "-").toLowerCase() || "soul"}.yaml`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    incrementExport();
+    setExportFormat("yaml");
+    setIsExporting(true);
   };
 
   const addCustomCoreTruth = () => {
@@ -1108,7 +1127,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
             {/* ─── RIGHT COLUMN (5 cols) — Live Preview ─── */}
             <div className="lg:col-span-5">
               <div className="sticky top-24">
-                <ParchmentPreview
+                <LiveStreamPreview
                   content={soulMD}
                   name={soul.name}
                   emoji={soul.emoji}
@@ -1164,6 +1183,8 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           setQuickStartDismissed(true);
         }}
       />
+
+      {isExporting && <ExportAnimation onComplete={executeExport} />}
     </div>
   );
 }

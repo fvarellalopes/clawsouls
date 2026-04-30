@@ -90,8 +90,8 @@ export default function PresetsPage() {
             </div>
 
             {/* Filter dropdown */}
-            <div className="relative flex-grow md:flex-grow-0">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xl">
+            <div className="relative flex-grow md:flex-grow-0 group">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xl group-hover:text-primary-container transition-colors">
                 filter_list
               </span>
               <select
@@ -99,7 +99,7 @@ export default function PresetsPage() {
                 onChange={(e) =>
                   setSelectedTag(e.target.value || null)
                 }
-                className="bg-black border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-primary-container focus:ring-0 focus:outline-none appearance-none w-full md:w-48 cursor-pointer transition-colors"
+                className="bg-black border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-primary-container focus:ring-0 focus:outline-none appearance-none w-full md:w-48 cursor-pointer transition-all hover:border-primary-container hover:glow-gold"
                 aria-label="Filter by tag"
               >
                 <option value="">ALL ARCHETYPES</option>

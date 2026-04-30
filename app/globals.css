@@ -57,29 +57,6 @@
     --font-body: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
-
-  /* Light mode override (opt-in) */
-  html.light {
-    --background: var(--color-paper-light);
-    --foreground: var(--color-ink-dark);
-    --surface: oklch(0.99 0.005 80);
-    --surface-alt: oklch(0.95 0.01 80);
-    --card: oklch(0.99 0.005 80);
-    --foreground-card: var(--color-ink-dark);
-    --popover: oklch(0.99 0.005 80);
-    --foreground-popover: var(--color-ink-dark);
-    --primary: oklch(0.45 0.15 270);
-    --foreground-primary: oklch(0.97 0.01 270);
-    --secondary: oklch(0.94 0.005 80);
-    --foreground-secondary: oklch(0.30 0.01 80);
-    --muted: oklch(0.55 0.01 80);
-    --foreground-muted: oklch(0.55 0.01 80);
-    --accent: oklch(0.65 0.18 30);
-    --foreground-accent: oklch(0.12 0.02 30);
-    --border: oklch(0.85 0.01 80);
-    --input: oklch(0.92 0.005 80);
-    --ring: oklch(0.45 0.15 270);
-  }
 }
 
 /* ─── Base ─── */
