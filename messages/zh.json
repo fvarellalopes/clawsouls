@@ -4,7 +4,8 @@
     "editor": "编辑器",
     "presets": "预设",
     "myPresets": "我的预设",
-    "achievements": "成就"
+    "achievements": "成就",
+    "compare": "Compare"
   },
   "common": {
     "presets": "预设",
@@ -17,7 +18,8 @@
     "loading": "加载中...",
     "backToHome": "返回首页",
     "cancel": "取消",
-    "import": "导入"
+    "import": "导入",
+    "compare": "Compare"
   },
   "editor": {
     "title": "灵魂编辑器",
@@ -181,7 +183,53 @@
       "balanced": "平衡",
       "expressive": "感性",
       "dramatic": "戏剧化"
-    }
+    },
+    "alliteration": "Alliteration",
+    "bigFive": "Big Five Personality",
+    "bigFiveDesc": "The five major personality dimensions",
+    "bigFiveTraits": {
+      "agreeableness": "Agreeableness",
+      "conscientiousness": "Conscientiousness",
+      "extraversion": "Extraversion",
+      "neuroticism": "Neuroticism",
+      "openness": "Openness"
+    },
+    "copyPreview": "Copy SOUL.md",
+    "dismissQuickStart": "Dismiss",
+    "essentialsDesc": "The core identity of your soul",
+    "exportDropdown": {
+      "json": "JSON",
+      "soulmd": "SOUL.md",
+      "title": "Export",
+      "yaml": "YAML"
+    },
+    "fillWithAI": "Fill with AI",
+    "metaphorFrequency": "Metaphor Frequency",
+    "quickStart": {
+      "ai": "Fill with AI",
+      "aiDesc": "Describe your personality in bullet points",
+      "preset": "Load a Preset",
+      "presetDesc": "Start from a famous character",
+      "scratch": "Start from Scratch",
+      "scratchDesc": "Blank canvas, infinite possibilities",
+      "title": "Quick Start"
+    },
+    "rhymeTendency": "Rhyme Tendency",
+    "slangUsage": "Slang Usage",
+    "speechPatterns": "Speech Patterns",
+    "speechPatternsDesc": "Customize how your soul speaks",
+    "styleDesc": "Tone, communication, and domains",
+    "tabs": {
+      "advanced": "Advanced",
+      "essentials": "Essentials",
+      "personality": "Personality",
+      "style": "Style"
+    },
+    "tabsAdvanced": "Advanced",
+    "tabsEssentials": "Essentials",
+    "tabsPersonality": "Personality",
+    "tabsStyle": "Style",
+    "technicalJargon": "Technical Jargon"
   },
   "presetsPage": {
     "title": "预设人格",
@@ -2144,5 +2192,31 @@
     "editor": "Editor",
     "presets": "Presets",
     "builtWith": "Made with 👁️👄👁️"
+  },
+  "compare": {
+    "compare": "Compare",
+    "description": "Select two presets to compare side-by-side. See compatibility scores, attribute differences, and SOUL.md diff.",
+    "differences": "Differences",
+    "match": "match",
+    "personality": "Personality",
+    "selectPreset": "Choose a preset...",
+    "selectPresetA": "Preset A",
+    "selectPresetB": "Preset B",
+    "similarity": "Compatibility Score",
+    "style": "Style",
+    "title": "Compare Presets",
+    "tone": "Tone"
+  },
+  "fillWithAI": {
+    "apply": "Apply to Editor",
+    "bulletPoints": "Bullet Points",
+    "description": "Describe your desired personality with bullet points, and we will generate a vibe and attribute suggestions.",
+    "generate": "Generate Vibe",
+    "generatedVibe": "Generated Vibe",
+    "hint": "One trait per line. Use quotes for signature phrases. Be as specific or vague as you like.",
+    "placeholder": "Loves dark humor\nExpert in Python\nSpeaks like a pirate\n\"Ahoy, matey!\"\nEnergetic and always curious",
+    "regenerate": "Regenerate",
+    "suggestedAttributes": "Suggested Attributes",
+    "title": "Fill with AI"
   }
 }
