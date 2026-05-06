@@ -7,23 +7,17 @@ export default function HomePage() {
   const t = useTranslations("home");
 
   return (
-    <div className="min-h-screen bg-surface-dim">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,#09090b_0%,#131315_50%,#09090b_100%)]">
       {/* Hero */}
-      <section
-        className="relative flex flex-col items-center justify-center px-4 py-32 text-center"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, oklch(from #facc15 l c h / 0.08) 0%, transparent 70%)",
-        }}
-      >
+      <section className="relative flex flex-col items-center justify-center px-4 py-32 text-center">
         <div className="animate-fade-in">
           {/* Badge */}
-          <span className="inline-block mb-8 px-4 py-1.5 rounded-full border border-primary-container text-primary-container text-label-caps tracking-widest uppercase">
+          <span className="inline-block mb-8 px-4 py-1 rounded-full border border-yellow-400 text-yellow-400 text-label-caps tracking-widest uppercase">
             System Online
           </span>
 
           {/* Title */}
-          <h1 className="text-h1 font-h1 text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-yellow-300 to-primary-container mb-6 max-w-3xl mx-auto">
+          <h1 className="text-[48px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-6 max-w-3xl mx-auto">
             UNLEASH THE SOUL OF AI
           </h1>
 
@@ -37,7 +31,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/editor"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary-container text-on-primary-fixed font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-yellow-400 text-black font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
             >
               Launch Editor
               <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -45,7 +39,7 @@ export default function HomePage() {
 
             <Link
               href="/presets"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-container text-primary-container font-label-caps tracking-widest uppercase rounded-lg hover:bg-primary-container/10 transition-all duration-150"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-yellow-400 text-yellow-400 font-label-caps tracking-widest uppercase rounded-lg hover:bg-yellow-400/10 transition-all duration-150"
             >
               Browse Presets
             </Link>
@@ -53,12 +47,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bento Grid — Editor Mockup */}
+      {/* Bento Grid — Editor Mockup + Code Output */}
       <section className="px-4 pb-24">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             {/* Left — Editor Mockup (8 cols) */}
-            <div className="lg:col-span-8 rounded-2xl border border-outline-variant/30 bg-surface-container/80 backdrop-blur-xl overflow-hidden">
+            <div className="lg:col-span-8 rounded-2xl glass-panel overflow-hidden">
               {/* Window Chrome */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/20">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -123,7 +117,7 @@ export default function HomePage() {
             </div>
 
             {/* Right — Output Panel (4 cols) */}
-            <div className="lg:col-span-4 rounded-2xl border border-outline-variant/30 bg-surface-container/80 backdrop-blur-xl overflow-hidden">
+            <div className="lg:col-span-4 rounded-2xl glass-panel overflow-hidden">
               {/* Window Chrome */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/20">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -140,44 +134,44 @@ export default function HomePage() {
                   <code>
 {`{
   `}
-                  <span className="text-primary-container">"personality"</span>
+                    <span className="text-primary-container">"personality"</span>
 {`: {
     `}
-                  <span className="text-primary-container">"aggression"</span>
+                    <span className="text-primary-container">"aggression"</span>
 {`: `}
-                  <span className="text-green-400">0.75</span>
+                    <span className="text-green-400">0.75</span>
 {`,
     `}
-                  <span className="text-primary-container">"empathy"</span>
+                    <span className="text-primary-container">"empathy"</span>
 {`: `}
-                  <span className="text-green-400">0.30</span>
+                    <span className="text-green-400">0.30</span>
 {`,
     `}
-                  <span className="text-primary-container">"logic_bias"</span>
+                    <span className="text-primary-container">"logic_bias"</span>
 {`: `}
-                  <span className="text-green-400">0.90</span>
+                    <span className="text-green-400">0.90</span>
 {`
   },
   `}
-                  <span className="text-primary-container">"tone"</span>
+                    <span className="text-primary-container">"tone"</span>
 {`: [
     `}
-                  <span className="text-amber-300">"sarcastic"</span>
+                    <span className="text-amber-300">"sarcastic"</span>
 {`,
     `}
-                  <span className="text-amber-300">"direct"</span>
+                    <span className="text-amber-300">"direct"</span>
 {`,
     `}
-                  <span className="text-amber-300">"witty"</span>
+                    <span className="text-amber-300">"witty"</span>
 {`,
     `}
-                  <span className="text-amber-300">"minimal"</span>
+                    <span className="text-amber-300">"minimal"</span>
 {`
   ],
   `}
-                  <span className="text-primary-container">"version"</span>
+                    <span className="text-primary-container">"version"</span>
 {`: `}
-                  <span className="text-amber-300">"2.0"</span>
+                    <span className="text-amber-300">"2.0"</span>
 {`
 }`}
                   </code>
@@ -203,17 +197,17 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <FeatureCard
               icon="tune"
-              title={t("features.visual")}
+              title="Visual Editor"
               desc={t("features.visualDesc")}
             />
             <FeatureCard
               icon="smart_toy"
-              title={t("features.presets")}
+              title="30+ Presets"
               desc={t("features.presetsDesc")}
             />
             <FeatureCard
               icon="share"
-              title={t("features.share")}
+              title="Instant Share"
               desc={t("features.shareDesc")}
             />
           </div>
