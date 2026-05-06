@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class", "[data-theme='dark']"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        background: "#09090b",
         foreground: "var(--foreground)",
         surface: "var(--surface)",
         "surface-alt": "var(--surface-alt)",
@@ -23,7 +23,7 @@ const config: Config = {
           foreground: "var(--foreground-popover)",
         },
         primary: {
-          DEFAULT: "var(--primary)",
+          DEFAULT: "#facc15",
           foreground: "var(--foreground-primary)",
         },
         secondary: {
