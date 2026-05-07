@@ -261,7 +261,20 @@
       "exportDesc": "下载兼容 OpenClaw 和其他框架的 SOUL.md 文件"
     },
     "forgedForCreators": "为创作者打造",
-    "forgedForCreatorsDesc": "打造、自定义和分享 AI 人格所需的一切工具。"
+    "forgedForCreatorsDesc": "打造、自定义和分享 AI 人格所需的一切工具。",
+    "systemOnline": "System Online",
+    "heroTitleMain": "UNLEASH THE SOUL OF AI",
+    "heroSubtitleMain": "The ultimate visual editor for OpenClaw SOUL.md personalities. Craft, tweak, and deploy AI souls with surgical precision.",
+    "launchEditor": "Launch Editor",
+    "personalityMatrix": "Personality Matrix",
+    "aggression": "Aggression",
+    "empathy": "Empathy",
+    "logicBias": "Logic Bias",
+    "toneProfile": "Tone Profile",
+    "sarcastic": "Sarcastic",
+    "direct": "Direct",
+    "witty": "Witty",
+    "minimal": "Minimal"
   },
   "myPresets": {
     "title": "我的预设",
