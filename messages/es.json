@@ -231,14 +231,18 @@
     "load": "Cargar Preset",
     "description": "Selecciona un preset para cargar su perfil completo",
     "backToEditor": "Volver al Editor",
-    "backToHome": "Volver al Inicio",
+    "backToHome": "BACK TO HOME",
     "searchPlaceholder": "Buscar presets...",
     "allCreatures": "Todas las criaturas",
     "loading": "Cargando...",
     "all": "Todos",
     "noPresetsFound": "No se encontraron presets",
     "noPresetsFoundSearch": "No se encontraron presets para \"{query}\"",
-    "directory": "Global Directory"
+    "directory": "Global Directory",
+    "entry": "ENTRY",
+    "entries": "ENTRIES",
+    "found": "FOUND",
+    "allArchetypes": "ALL ARCHETYPES"
   },
   "home": {
     "heroTitle": "Crea el Alma de tu AI",

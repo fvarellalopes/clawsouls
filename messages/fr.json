@@ -237,14 +237,18 @@
     "load": "Charger le Preset",
     "description": "Sélectionnez un preset pour charger son profil complet",
     "backToEditor": "Retour à l'Éditeur",
-    "backToHome": "Retour à l'accueil",
+    "backToHome": "BACK TO HOME",
     "searchPlaceholder": "Rechercher des presets...",
     "allCreatures": "Toutes les créatures",
     "loading": "Chargement...",
     "all": "Tous",
     "noPresetsFound": "Aucun preset trouvé",
     "noPresetsFoundSearch": "Aucun preset trouvé pour \"{query}\"",
-    "directory": "Global Directory"
+    "directory": "Global Directory",
+    "entry": "ENTRY",
+    "entries": "ENTRIES",
+    "found": "FOUND",
+    "allArchetypes": "ALL ARCHETYPES"
   },
   "home": {
     "heroTitle": "Créez l'Âme de votre IA",

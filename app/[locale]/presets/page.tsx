@@ -102,7 +102,7 @@ export default function PresetsPage() {
                 className="glass-panel bg-white/5 backdrop-blur border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 focus:outline-none appearance-none w-full md:w-48 cursor-pointer transition-colors"
                 aria-label="Filter by tag"
               >
-                <option value="">ALL ARCHETYPES</option>
+                <option value="">{t("allArchetypes")}</option>
                 {allTags.map((tag) => (
                   <option key={tag} value={tag}>
                     {tag.toUpperCase()}
@@ -117,17 +117,17 @@ export default function PresetsPage() {
         {!loading && (
           <div className="flex items-center justify-between">
             <span className="font-mono-data text-mono-data text-white/40">
-              {filtered.length} {filtered.length === 1 ? "ENTRY" : "ENTRIES"} FOUND
+              {filtered.length} {filtered.length === 1 ? t("entry") : t("entries")} {t("found")}
             </span>
-            <Link
-              href="/"
-              className="font-label-caps text-label-caps text-white/40 hover:text-primary-container transition-colors flex items-center gap-2"
-            >
-              <span className="material-symbols-outlined text-[18px]">
-                arrow_back
-              </span>
-              BACK TO HOME
-            </Link>
+              <Link
+                href="/"
+                className="font-label-caps text-label-caps text-white/40 hover:text-primary-container transition-colors flex items-center gap-2"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  arrow_back
+                </span>
+                {t("backToHome")}
+              </Link>
           </div>
         )}
 

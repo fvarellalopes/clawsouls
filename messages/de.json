@@ -237,14 +237,18 @@
     "load": "Preset laden",
     "description": "Wähle ein Preset, um das vollständige Persönlichkeitsprofil zu laden",
     "backToEditor": "Zum Editor",
-    "backToHome": "Zurück zur Startseite",
+    "backToHome": "BACK TO HOME",
     "searchPlaceholder": "Presets suchen...",
     "allCreatures": "Alle Kreaturen",
     "loading": "Laden...",
     "all": "Alle",
     "noPresetsFound": "Keine Presets gefunden",
     "noPresetsFoundSearch": "Keine Presets für \"{query}\" gefunden",
-    "directory": "Global Directory"
+    "directory": "Global Directory",
+    "entry": "ENTRY",
+    "entries": "ENTRIES",
+    "found": "FOUND",
+    "allArchetypes": "ALL ARCHETYPES"
   },
   "home": {
     "heroTitle": "Erschaffe die Seele deiner KI",

@@ -237,14 +237,18 @@
     "load": "加载预设",
     "description": "选择一个预设以加载其完整人格配置",
     "backToEditor": "返回编辑器",
-    "backToHome": "返回首页",
+    "backToHome": "BACK TO HOME",
     "searchPlaceholder": "搜索预设...",
     "allCreatures": "所有类型",
     "loading": "加载中...",
     "all": "全部",
     "noPresetsFound": "未找到预设",
     "noPresetsFoundSearch": "未找到 \"{query}\" 相关预设",
-    "directory": "Global Directory"
+    "directory": "Global Directory",
+    "entry": "ENTRY",
+    "entries": "ENTRIES",
+    "found": "FOUND",
+    "allArchetypes": "ALL ARCHETYPES"
   },
   "home": {
     "heroTitle": "打造 AI 的灵魂",

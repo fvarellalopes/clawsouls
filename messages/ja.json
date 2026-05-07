@@ -237,14 +237,18 @@
     "load": "プリセットをロード",
     "description": "プリセットを選択して完全なプロフィールをロード",
     "backToEditor": "エディタに戻る",
-    "backToHome": "ホームに戻る",
+    "backToHome": "BACK TO HOME",
     "searchPlaceholder": "プリセットを検索...",
     "allCreatures": "すべてのクリーチャー",
     "loading": "読み込み中...",
     "all": "すべて",
     "noPresetsFound": "プリセットが見つかりません",
     "noPresetsFoundSearch": "\"{query}\" に該当するプリセットが見つかりません",
-    "directory": "Global Directory"
+    "directory": "Global Directory",
+    "entry": "ENTRY",
+    "entries": "ENTRIES",
+    "found": "FOUND",
+    "allArchetypes": "ALL ARCHETYPES"
   },
   "home": {
     "heroTitle": "AIの魂を作ろう",
