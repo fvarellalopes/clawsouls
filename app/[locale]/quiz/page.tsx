@@ -5,9 +5,10 @@ import { useTranslations, useMessages } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { quizQuestions, scorePresets } from "@/lib/quiz";
+import { scorePresets } from "@/lib/quiz";
 import { usePresets } from "@/lib/usePresets";
 import { SoulPreset } from "@/store/soulStore";
+import type { QuizQuestion } from "@/lib/quiz";
 import { ArrowLeft, ArrowRight, Sparkles, RotateCcw, Trophy } from "lucide-react";
 import { useAchievementsStore } from "@/store/achievementsStore";
 import Link from "next/link";
@@ -18,6 +19,7 @@ export default function QuizPage() {
   const t = useTranslations("quiz");
   const router = useRouter();
   const messages = useMessages();
+  const quizQuestions = messages.quizData as QuizQuestion[];
   const presetsMessages = (messages as any)?.presets as Record<string, Record<string, string>> | undefined;
   const { presets } = usePresets(presetsMessages);
   const [phase, setPhase] = useState<Phase>("intro");
@@ -28,8 +30,8 @@ export default function QuizPage() {
 
   const results = useMemo(() => {
     if (Object.keys(answers).length < quizQuestions.length) return [];
-    return scorePresets(presets, answers).slice(0, 3);
-  }, [answers, presets]);
+    return scorePresets(presets, answers, quizQuestions).slice(0, 3);
+  }, [answers, presets, quizQuestions]);
 
   const progress = (Object.keys(answers).length / quizQuestions.length) * 100;
 
