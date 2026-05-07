@@ -24,7 +24,9 @@
     "connectTerminal": "Connect Terminal",
     "termsOfService": "Terms of Service",
     "privacyProtocol": "Privacy Protocol",
-    "systemStatus": "SYSTEM STATUS: NOMINAL"
+    "systemStatus": "SYSTEM STATUS: NOMINAL",
+    "github": "GitHub",
+    "discord": "Discord"
   },
   "editor": {
     "title": "Soul Editor",

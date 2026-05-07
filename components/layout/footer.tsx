@@ -24,7 +24,7 @@ export function Footer() {
             rel="noopener"
             className="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-neutral-600 hover:text-[#facc15] transition-all opacity-70 hover:opacity-100"
           >
-            GitHub
+            {t("github")}
           </a>
           <a
             href="https://discord.com/invite/clawd"
@@ -32,7 +32,7 @@ export function Footer() {
             rel="noopener"
             className="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-neutral-600 hover:text-[#facc15] transition-all opacity-70 hover:opacity-100"
           >
-            Discord
+            {t("discord")}
           </a>
           <Link
             href="/terms"
