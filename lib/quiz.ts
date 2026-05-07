@@ -2,7 +2,9 @@ import { SoulPreset } from "../store/soulStore";
 
 export interface QuizQuestion {
   id: string;
+  question?: string; // virá das traduções
   options: {
+    label?: string; // virá das traduções
     traits: Partial<Record<keyof SoulPreset, number>>;
   }[];
 }

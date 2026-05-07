@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useTranslations, useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { scorePresets } from "@/lib/quiz";
+import { quizQuestions, scorePresets } from "@/lib/quiz";
 import { usePresets } from "@/lib/usePresets";
 import { SoulPreset } from "@/store/soulStore";
-import type { QuizQuestion } from "@/lib/quiz";
 import { ArrowLeft, ArrowRight, Sparkles, RotateCcw, Trophy } from "lucide-react";
 import { useAchievementsStore } from "@/store/achievementsStore";
 import Link from "next/link";
@@ -18,10 +17,7 @@ type Phase = "intro" | "quiz" | "results";
 export default function QuizPage() {
   const t = useTranslations("quiz");
   const router = useRouter();
-  const messages = useMessages();
-  const quizQuestions = messages.quizData as QuizQuestion[];
-  const presetsMessages = (messages as any)?.presets as Record<string, Record<string, string>> | undefined;
-  const { presets } = usePresets(presetsMessages);
+  const { presets } = usePresets();
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -116,9 +112,9 @@ export default function QuizPage() {
           </div>
 
           <div key={currentQuestion} className="animate-fade-up">
-            <h2 className="text-2xl md:text-3xl font-bold text-fg font-display mb-8 leading-tight">
-              {question.question}
-            </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-fg font-display mb-8 leading-tight">
+            {t(`questions.${question.id}`)}
+          </h2>
             <div className="space-y-3">
               {question.options.map((option, idx) => (
                 <button
@@ -136,7 +132,7 @@ export default function QuizPage() {
                     }`}>
                       {selectedOption === idx && <div className="w-2.5 h-2.5 rounded-full bg-primary" />}
                     </div>
-                    <span className="text-base">{option.label}</span>
+                    <span className="text-base">{t(`options.${question.id}.${idx}`)}</span>
                   </div>
                 </button>
               ))}
