@@ -19,7 +19,9 @@
     "backToHome": "Retour à l'accueil",
     "cancel": "Annuler",
     "import": "Importer",
-    "compare": "Compare"
+    "compare": "Compare",
+    "editor": "Editor",
+    "connectTerminal": "Connect Terminal"
   },
   "editor": {
     "title": "Éditeur d'Âme",

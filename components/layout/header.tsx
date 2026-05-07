@@ -30,10 +30,10 @@ export function Header({ locale, messages }: HeaderProps) {
   };
 
   const navLinks = [
-    { href: `/${locale}/editor`, label: "Editor" },
-    { href: `/${locale}/presets`, label: "Presets" },
-    { href: `/${locale}/quiz`, label: "Quiz" },
-    { href: `/${locale}/compare`, label: "Compare" },
+    { href: `/${locale}/editor`, key: "editor" },
+    { href: `/${locale}/presets`, key: "presets" },
+    { href: `/${locale}/quiz`, key: "quiz" },
+    { href: `/${locale}/compare`, key: "compare" },
   ];
 
   return (
@@ -50,7 +50,7 @@ export function Header({ locale, messages }: HeaderProps) {
               href={link.href}
               className="font-['Space_Grotesk'] tracking-tight text-sm uppercase text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200 px-2 py-1 rounded"
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
         </div>
@@ -71,7 +71,7 @@ export function Header({ locale, messages }: HeaderProps) {
           href={`/${locale}/editor`}
           className="hidden md:flex items-center px-4 py-2 bg-[#facc15] text-[#3c2f00] font-['Space_Grotesk'] text-xs font-bold uppercase tracking-[0.1em] rounded hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(250,204,21,0.3)] transition-all"
         >
-          Connect Terminal
+          {t("connectTerminal")}
         </Link>
       </div>
     </nav>

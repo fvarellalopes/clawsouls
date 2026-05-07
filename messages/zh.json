@@ -19,7 +19,9 @@
     "backToHome": "返回首页",
     "cancel": "取消",
     "import": "导入",
-    "compare": "Compare"
+    "compare": "Compare",
+    "editor": "Editor",
+    "connectTerminal": "Connect Terminal"
   },
   "editor": {
     "title": "灵魂编辑器",

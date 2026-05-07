@@ -19,7 +19,9 @@
     "backToHome": "Back to Home",
     "cancel": "Cancel",
     "import": "Import",
-    "compare": "Compare"
+    "compare": "Compare",
+    "editor": "Editor",
+    "connectTerminal": "Connect Terminal"
   },
   "editor": {
     "title": "Soul Editor",

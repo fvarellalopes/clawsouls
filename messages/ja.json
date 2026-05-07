@@ -19,7 +19,9 @@
     "backToHome": "ホームに戻る",
     "cancel": "キャンセル",
     "import": "インポート",
-    "compare": "Compare"
+    "compare": "Compare",
+    "editor": "Editor",
+    "connectTerminal": "Connect Terminal"
   },
   "editor": {
     "title": "ソウルエディタ",

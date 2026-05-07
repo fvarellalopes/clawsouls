@@ -19,7 +19,9 @@
     "backToHome": "Zurück zur Startseite",
     "cancel": "Abbrechen",
     "import": "Importieren",
-    "compare": "Compare"
+    "compare": "Compare",
+    "editor": "Editor",
+    "connectTerminal": "Connect Terminal"
   },
   "editor": {
     "title": "Seelen-Editor",
