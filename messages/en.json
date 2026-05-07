@@ -258,10 +258,26 @@
       "visualDesc": "Intuitive interface to craft your AI's personality with real-time preview",
       "presetsDesc": "Start from 300+ presets inspired by famous characters and archetypes",
       "shareDesc": "Generate unique links to share your creations with the world",
-      "exportDesc": "Download SOUL.md files compatible with OpenClaw and other frameworks"
+      "exportDesc": "Download SOUL.md files compatible with OpenClaw and other frameworks",
+      "visualTitle": "Visual Editor",
+      "presetsTitle": "30+ Presets",
+      "shareTitle": "Instant Share"
     },
     "forgedForCreators": "Forged for Creators",
-    "forgedForCreatorsDesc": "Every tool you need to craft, customize, and share AI personalities."
+    "forgedForCreatorsDesc": "Every tool you need to craft, customize, and share AI personalities.",
+    "systemOnline": "System Online",
+    "heroTitleMain": "UNLEASH THE SOUL OF AI",
+    "heroSubtitleMain": "The ultimate visual editor for OpenClaw SOUL.md personalities. Craft, tweak, and deploy AI souls with surgical precision.",
+    "launchEditor": "Launch Editor",
+    "personalityMatrix": "Personality Matrix",
+    "aggression": "Aggression",
+    "empathy": "Empathy",
+    "logicBias": "Logic Bias",
+    "toneProfile": "Tone Profile",
+    "sarcastic": "Sarcastic",
+    "direct": "Direct",
+    "witty": "Witty",
+    "minimal": "Minimal"
   },
   "myPresets": {
     "title": "My Presets",

@@ -13,18 +13,17 @@ export default function HomePage() {
         <div className="animate-fade-in">
           {/* Badge */}
           <span className="inline-block mb-8 px-4 py-1 rounded-full border border-yellow-400 text-yellow-400 text-label-caps tracking-widest uppercase">
-            System Online
+            {t("systemOnline")}
           </span>
 
           {/* Title */}
           <h1 className="text-[48px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-6 max-w-3xl mx-auto">
-            UNLEASH THE SOUL OF AI
+            {t("heroTitleMain")}
           </h1>
 
           {/* Subtitle */}
           <p className="text-body-lg font-body-sm text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
-            The ultimate visual editor for OpenClaw SOUL.md personalities.
-            Craft, tweak, and deploy AI souls with surgical precision.
+            {t("heroSubtitleMain")}
           </p>
 
           {/* CTAs */}
@@ -32,17 +31,17 @@ export default function HomePage() {
             <Link
               href="/editor"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-yellow-400 text-black font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
-            >
-              Launch Editor
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
+              >
+                {t("launchEditor")}
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
             </Link>
 
             <Link
               href="/presets"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-yellow-400 text-yellow-400 font-label-caps tracking-widest uppercase rounded-lg hover:bg-yellow-400/10 transition-all duration-150"
-            >
-              Browse Presets
-            </Link>
+              >
+                {t("browsePresets")}
+              </Link>
           </div>
         </div>
       </section>
@@ -85,29 +84,29 @@ export default function HomePage() {
                   {/* Personality Section */}
                   <div>
                     <h3 className="text-label-caps font-label-caps text-primary-container tracking-widest uppercase mb-4">
-                      Personality Matrix
+                      {t("personalityMatrix")}
                     </h3>
 
                     {/* Sliders */}
                     <div className="space-y-5">
-                      <SliderMock label="Aggression" value={75} />
-                      <SliderMock label="Empathy" value={30} />
-                      <SliderMock label="Logic Bias" value={90} />
+                      <SliderMock label={t("aggression")} value={75} />
+                      <SliderMock label={t("empathy")} value={30} />
+                      <SliderMock label={t("logicBias")} value={90} />
                     </div>
                   </div>
 
                   {/* Tone Section */}
                   <div>
                     <h3 className="text-label-caps font-label-caps text-primary-container tracking-widest uppercase mb-3">
-                      Tone Profile
+                      {t("toneProfile")}
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {["Sarcastic", "Direct", "Witty", "Minimal"].map((tag) => (
+                      {["sarcastic", "direct", "witty", "minimal"].map((key) => (
                         <span
-                          key={tag}
+                          key={key}
                           className="px-3 py-1 rounded-full border border-outline-variant/40 text-body-sm font-mono text-on-surface-variant/70"
                         >
-                          {tag}
+                          {t(key)}
                         </span>
                       ))}
                     </div>
@@ -187,27 +186,27 @@ export default function HomePage() {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-h2 font-h2 text-on-surface mb-3">
-              Forged for Creators
+              {t("forgedForCreators")}
             </h2>
             <p className="text-body-md font-body-sm text-on-surface-variant max-w-xl mx-auto">
-              Every tool you need to craft, customize, and share AI personalities.
+              {t("forgedForCreatorsDesc")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <FeatureCard
               icon="tune"
-              title="Visual Editor"
+              title={t("features.visualTitle")}
               desc={t("features.visualDesc")}
             />
             <FeatureCard
               icon="smart_toy"
-              title="30+ Presets"
+              title={t("features.presetsTitle")}
               desc={t("features.presetsDesc")}
             />
             <FeatureCard
               icon="share"
-              title="Instant Share"
+              title={t("features.shareTitle")}
               desc={t("features.shareDesc")}
             />
           </div>
