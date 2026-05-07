@@ -258,7 +258,10 @@
       "visualDesc": "直观的界面，实时预览，打造 AI 人格",
       "presetsDesc": "从 300+ 个受著名角色和原型启发的预设开始",
       "shareDesc": "生成唯一链接，与世界分享你的创作",
-      "exportDesc": "下载兼容 OpenClaw 和其他框架的 SOUL.md 文件"
+      "exportDesc": "下载兼容 OpenClaw 和其他框架的 SOUL.md 文件",
+      "visualTitle": "Visual Editor",
+      "presetsTitle": "30+ Presets",
+      "shareTitle": "Instant Share"
     },
     "forgedForCreators": "为创作者打造",
     "forgedForCreatorsDesc": "打造、自定义和分享 AI 人格所需的一切工具。",

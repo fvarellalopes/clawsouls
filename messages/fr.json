@@ -258,7 +258,10 @@
       "visualDesc": "Interface intuitive pour créer la personnalité de votre IA avec aperçu en temps réel",
       "presetsDesc": "Commencez avec plus de 300 presets inspirés de personnages célèbres et d'archétypes",
       "shareDesc": "Générez des liens uniques pour partager vos créations avec le monde",
-      "exportDesc": "Téléchargez des fichiers SOUL.md compatibles avec OpenClaw et d'autres frameworks"
+      "exportDesc": "Téléchargez des fichiers SOUL.md compatibles avec OpenClaw et d'autres frameworks",
+      "visualTitle": "Visual Editor",
+      "presetsTitle": "30+ Presets",
+      "shareTitle": "Instant Share"
     },
     "forgedForCreators": "Forgé pour les Créateurs",
     "forgedForCreatorsDesc": "Tous les outils dont vous avez besoin pour créer, personnaliser et partager des personnalités IA.",

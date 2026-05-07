@@ -258,7 +258,10 @@
       "visualDesc": "リアルタイムプレビューでAIの人格を直感的に作成",
       "presetsDesc": "有名なキャラクターやアーキタイプに基づいた300以上のプリセット",
       "shareDesc": "世界中と作品を共有するユニークなリンクを生成",
-      "exportDesc": "OpenClawや他のフレームワークと互換性のあるSOUL.mdファイルをダウンロード"
+      "exportDesc": "OpenClawや他のフレームワークと互換性のあるSOUL.mdファイルをダウンロード",
+      "visualTitle": "Visual Editor",
+      "presetsTitle": "30+ Presets",
+      "shareTitle": "Instant Share"
     },
     "forgedForCreators": "クリエイターのために鍛えられた",
     "forgedForCreatorsDesc": "AIの人格を作成、カスタマイズ、共有するために必要なすべてのツール。",

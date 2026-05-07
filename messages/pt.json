@@ -251,7 +251,10 @@
       "visualDesc": "Interface intuitiva para criar a personalidade da sua AI com preview em tempo real",
       "presetsDesc": "Comece com 300+ presets inspirados em personagens famosos e arquétipos",
       "shareDesc": "Gere links únicos para compartilhar suas criações com o mundo",
-      "exportDesc": "Baixe arquivos SOUL.md compatíveis com OpenClaw e outros frameworks"
+      "exportDesc": "Baixe arquivos SOUL.md compatíveis com OpenClaw e outros frameworks",
+      "visualTitle": "Visual Editor",
+      "presetsTitle": "30+ Presets",
+      "shareTitle": "Instant Share"
     },
     "forgedForCreators": "Forjado para Criadores",
     "forgedForCreatorsDesc": "Todas as ferramentas que você precisa para criar, personalizar e compartilhar personalidades de AI.",

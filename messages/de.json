@@ -258,7 +258,10 @@
       "visualDesc": "Intuitive Oberfläche zur Erstellung der KI-Persönlichkeit mit Echtzeit-Vorschau",
       "presetsDesc": "Starte mit über 300 Presets inspiriert von berühmten Charakteren und Archetypen",
       "shareDesc": "Generiere einzigartige Links, um deine Erstellungen mit der Welt zu teilen",
-      "exportDesc": "Lade SOUL.md-Dateien herunter, die mit OpenClaw und anderen Frameworks kompatibel sind"
+      "exportDesc": "Lade SOUL.md-Dateien herunter, die mit OpenClaw und anderen Frameworks kompatibel sind",
+      "visualTitle": "Visual Editor",
+      "presetsTitle": "30+ Presets",
+      "shareTitle": "Instant Share"
     },
     "forgedForCreators": "Geschmiedet für Kreative",
     "forgedForCreatorsDesc": "Alle Werkzeuge, die du brauchst, um KI-Persönlichkeiten zu erstellen, anzupassen und zu teilen.",
