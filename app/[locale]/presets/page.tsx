@@ -57,10 +57,10 @@ export default function PresetsPage() {
         {/* Header Section */}
         <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
           <div className="flex flex-col gap-2">
-            <span className="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">
-              Global Directory
+            <span className="font-display text-yellow-400 uppercase tracking-widest">
+              {t("directory")}
             </span>
-            <h1 className="font-h1 text-h1 text-on-surface">
+            <h1 className="font-display text-yellow-400 text-3xl">
               {t("title")}
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-2">
@@ -99,7 +99,7 @@ export default function PresetsPage() {
                 onChange={(e) =>
                   setSelectedTag(e.target.value || null)
                 }
-                className="bg-black border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-primary-container focus:ring-0 focus:outline-none appearance-none w-full md:w-48 cursor-pointer transition-colors"
+                className="glass-panel bg-white/5 backdrop-blur border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 focus:outline-none appearance-none w-full md:w-48 cursor-pointer transition-colors"
                 aria-label="Filter by tag"
               >
                 <option value="">ALL ARCHETYPES</option>

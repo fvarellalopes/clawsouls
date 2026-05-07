@@ -450,7 +450,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
           <div className="flex items-center gap-3">
             <div className="w-1 h-8" style={{ background: "#facc15" }} />
             <div>
-              <h1 className="text-lg font-bold" style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.06em" }}>
+              <h1 className="text-lg font-bold font-display text-yellow-400" style={{ letterSpacing: "0.06em" }}>
                 Terminal Session_01
               </h1>
               <p className="mono-data" style={{ color: "rgba(255,255,255,0.35)", fontSize: "10px" }}>
@@ -466,16 +466,18 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
               <span className="hidden sm:inline">{t("presets")}</span>
             </button>
             <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={undo} disabled={!canUndo()} className="cyber-btn" style={{ padding: "6px 10px" }} title={t("undoTitle")}>
+            <button onClick={undo} disabled={!canUndo()} className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors" title={t("undoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
+              <span className="hidden sm:inline">Undo</span>
             </button>
-            <button onClick={redo} disabled={!canRedo()} className="cyber-btn" style={{ padding: "6px 10px" }} title={t("redoTitle")}>
+            <button onClick={redo} disabled={!canRedo()} className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors" title={t("redoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
+              <span className="hidden sm:inline">Redo</span>
             </button>
             <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={handleShare} className="cyber-btn" style={{ padding: "6px 12px" }}>
+            <button onClick={handleShare} className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors">
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
-              <span className="hidden sm:inline">{t("share")}</span>
+              <span className="hidden sm:inline">Share</span>
             </button>
             <div className="relative">
               <button
@@ -483,11 +485,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   e.stopPropagation();
                   setExportDropdownOpen(!exportDropdownOpen);
                 }}
-                className="cyber-btn-gold"
-                style={{ padding: "6px 16px" }}
+                className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors"
               >
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>download</span>
-                <span className="hidden sm:inline">Export SOUL.md</span>
+                <span className="hidden sm:inline">Export</span>
                 <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>expand_more</span>
               </button>
               {exportDropdownOpen && (
@@ -546,7 +547,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`cyber-tab ${activeTab === tab.id ? "active" : ""}`}
+                    className={`uppercase font-SpaceGrotesk ${activeTab === tab.id ? "border-b-2 border-yellow-400 text-yellow-400" : "text-white/70 hover:text-yellow-400"} px-4 py-2 transition-colors`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}

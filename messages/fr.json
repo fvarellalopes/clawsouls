@@ -243,7 +243,8 @@
     "loading": "Chargement...",
     "all": "Tous",
     "noPresetsFound": "Aucun preset trouvé",
-    "noPresetsFoundSearch": "Aucun preset trouvé pour \"{query}\""
+    "noPresetsFoundSearch": "Aucun preset trouvé pour \"{query}\"",
+    "directory": "Global Directory"
   },
   "home": {
     "heroTitle": "Créez l'Âme de votre IA",

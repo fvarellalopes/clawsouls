@@ -237,7 +237,8 @@
     "loading": "Cargando...",
     "all": "Todos",
     "noPresetsFound": "No se encontraron presets",
-    "noPresetsFoundSearch": "No se encontraron presets para \"{query}\""
+    "noPresetsFoundSearch": "No se encontraron presets para \"{query}\"",
+    "directory": "Global Directory"
   },
   "home": {
     "heroTitle": "Crea el Alma de tu AI",

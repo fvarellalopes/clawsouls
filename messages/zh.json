@@ -243,7 +243,8 @@
     "loading": "加载中...",
     "all": "全部",
     "noPresetsFound": "未找到预设",
-    "noPresetsFoundSearch": "未找到 \"{query}\" 相关预设"
+    "noPresetsFoundSearch": "未找到 \"{query}\" 相关预设",
+    "directory": "Global Directory"
   },
   "home": {
     "heroTitle": "打造 AI 的灵魂",

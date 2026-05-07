@@ -10,7 +10,7 @@ interface EditorPageProps {
 
 export default function EditorPage({ params }: EditorPageProps) {
   const [locale, setLocale] = useState("en");
-  const { messages } = useTranslations();
+  const messages = {};
 
   useEffect(() => {
     params.then((p) => setLocale(p.locale));

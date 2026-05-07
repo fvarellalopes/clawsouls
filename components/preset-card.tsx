@@ -61,10 +61,10 @@ export const PresetCard = React.memo(function PresetCard({
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow gap-4">
         <div className="flex flex-col gap-1">
-          <span className="font-mono-data text-mono-data text-primary-container">
+          <span className="font-mono-data text-mono-data text-sm text-primary-container">
             {archCode}
           </span>
-          <h3 className="font-h3 text-h3 text-white">{preset.name}</h3>
+          <h3 className="font-display text-lg text-white">{preset.name}</h3>
         </div>
 
         <p className="font-body-sm text-body-sm text-white/60 flex-grow line-clamp-3 leading-relaxed">

@@ -243,7 +243,8 @@
     "loading": "Laden...",
     "all": "Alle",
     "noPresetsFound": "Keine Presets gefunden",
-    "noPresetsFoundSearch": "Keine Presets für \"{query}\" gefunden"
+    "noPresetsFoundSearch": "Keine Presets für \"{query}\" gefunden",
+    "directory": "Global Directory"
   },
   "home": {
     "heroTitle": "Erschaffe die Seele deiner KI",

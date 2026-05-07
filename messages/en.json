@@ -243,7 +243,8 @@
     "loading": "Loading...",
     "all": "All",
     "noPresetsFound": "No presets found",
-    "noPresetsFoundSearch": "No presets found for \"{query}\""
+    "noPresetsFoundSearch": "No presets found for \"{query}\"",
+    "directory": "Global Directory"
   },
   "home": {
     "heroTitle": "Create Your AI's Soul",
