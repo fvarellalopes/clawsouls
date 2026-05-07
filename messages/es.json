@@ -21,7 +21,10 @@
     "import": "Importar",
     "compare": "Comparar",
     "editor": "Editor",
-    "connectTerminal": "Connect Terminal"
+    "connectTerminal": "Connect Terminal",
+    "termsOfService": "Terms of Service",
+    "privacyProtocol": "Privacy Protocol",
+    "systemStatus": "SYSTEM STATUS: NOMINAL"
   },
   "editor": {
     "title": "Editor de Alma",

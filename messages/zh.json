@@ -21,7 +21,10 @@
     "import": "导入",
     "compare": "Compare",
     "editor": "Editor",
-    "connectTerminal": "Connect Terminal"
+    "connectTerminal": "Connect Terminal",
+    "termsOfService": "Terms of Service",
+    "privacyProtocol": "Privacy Protocol",
+    "systemStatus": "SYSTEM STATUS: NOMINAL"
   },
   "editor": {
     "title": "灵魂编辑器",
