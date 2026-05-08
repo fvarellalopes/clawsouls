@@ -3,6 +3,9 @@ import { SoulPreset } from '@/store/soulStore'
 
 const API_BASE = process.env.NEXT_PUBLIC_PRESETS_API || '/api/presets'
 
+// Blacklist of preset IDs to filter out (historical figures with harmful associations)
+const PRESET_BLACKLIST = new Set(['adolf-hitler'])
+
 // Converter formato Supabase (campos planos) para SoulPreset (objetos)
 function mapSupabaseToSoulPreset(data: any): SoulPreset {
   // Parse tags if it's a string
@@ -102,12 +105,14 @@ export function usePresets(presetsMessages?: Record<string, Record<string, strin
 
   // Apply translations when messages change
   const presets = useMemo(() => {
-    if (!presetsMessages) return rawPresets;
-    return rawPresets.map(preset => {
-      const presetTranslations = presetsMessages[preset.id];
-      return applyTranslations(preset, presetTranslations);
-    });
-  }, [rawPresets, presetsMessages]);
+    // Filter out blacklisted presets
+    const filtered = rawPresets.filter(preset => !PRESET_BLACKLIST.has(preset.id))
+    if (!presetsMessages) return filtered
+    return filtered.map(preset => {
+      const presetTranslations = presetsMessages[preset.id]
+      return applyTranslations(preset, presetTranslations)
+    })
+  }, [rawPresets, presetsMessages])
 
   return { presets, loading, error }
 }

@@ -26,7 +26,6 @@ new_historical_figures = [
     "William Shakespeare",
     "Abraham Lincoln",
     "George Washington",
-    "Adolf Hitler",
     "Aristotle",
     "Alexander the Great",
     "Thomas Jefferson",
