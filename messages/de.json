@@ -37,7 +37,12 @@
     "basicInfoDesc": "Name, Kreatur, Vibe, Emoji, Avatar",
     "personality": "Persönlichkeit",
     "personalityDesc": "Kernwahrheiten und Grenzen",
-    "attributes": "Attribute",
+    "attributes": {
+      "humor": "Humor",
+      "formality": "Formalität",
+      "emojiUsage": "Emoji-Nutzung",
+      "verbosity": "Wortausdruck"
+    },
     "attributesDesc": "Ton-Regler: Humor, Formalität, Ausführlichkeit usw.",
     "advanced": "Erweitert",
     "advancedDesc": "Presets und Anpassung",
@@ -52,7 +57,7 @@
     "coreTruthsDesc": "Grundprinzipien, nach denen deine KI lebt",
     "boundaries": "Grenzen",
     "boundariesDesc": "Ethische Richtlinien und Einschränkungen",
-    "toneAttributes": "Ton-Attribute",
+    "toneAttributes": "Syntaktisches Tonprofil",
     "toneAttributesDesc": "Feinabstimmung der Kommunikation deiner KI",
     "low": "Niedrig",
     "high": "Hoch",
@@ -236,7 +241,9 @@
     "tabsEssentials": "Essentials",
     "tabsPersonality": "Personality",
     "tabsStyle": "Style",
-    "technicalJargon": "Technical Jargon"
+    "technicalJargon": "Technical Jargon",
+    "savePreset": "Preset Speichern",
+    "presetName": "Preset Name"
   },
   "presetsPage": {
     "title": "Vorgefertigte Persönlichkeiten",

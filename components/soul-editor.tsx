@@ -759,7 +759,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
                       <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>tune</span>
-                      Syntactic Tone Profile
+                      {t("toneAttributes") || "Syntactic Tone Profile"}
                     </h3>
                     <div className="space-y-6">
                       {/* Verbosity + Humor sliders */}

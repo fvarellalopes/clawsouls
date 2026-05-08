@@ -37,7 +37,12 @@
     "basicInfoDesc": "Name, creature, vibe, emoji, avatar",
     "personality": "Personality",
     "personalityDesc": "Deep personality traits and principles",
-    "attributes": "Attributes",
+    "attributes": {
+      "humor": "Humor",
+      "formality": "Formality",
+      "emojiUsage": "Emoji Usage",
+      "verbosity": "Verbosity"
+    },
     "attributesDesc": "Tone sliders: humor, formality, verbosity, etc.",
     "advanced": "Advanced",
     "advancedDesc": "Speech patterns and custom rules",
@@ -52,7 +57,7 @@
     "coreTruthsDesc": "Fundamental principles your AI lives by",
     "boundaries": "Boundaries",
     "boundariesDesc": "Limits and ethical guidelines",
-    "toneAttributes": "Tone Attributes",
+    "toneAttributes": "Syntactic Tone Profile",
     "toneAttributesDesc": "Fine-tune how your AI communicates",
     "low": "Low",
     "high": "High",
@@ -236,7 +241,9 @@
     "essentialsDesc": "The core identity of your soul",
     "styleDesc": "Tone, communication, and domains",
     "copyPreview": "Copy SOUL.md",
-    "dismissQuickStart": "Dismiss"
+    "dismissQuickStart": "Dismiss",
+    "savePreset": "Save Preset",
+    "presetName": "Preset Name"
   },
   "presetsPage": {
     "title": "Preset Personalities",

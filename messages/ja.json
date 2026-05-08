@@ -37,7 +37,12 @@
     "basicInfoDesc": "名前、生物、バイブ、絵文字、アバター",
     "personality": "人格",
     "personalityDesc": "コアの真理と境界線",
-    "attributes": "属性",
+    "attributes": {
+      "humor": "ユーモア",
+      "formality": "丁寧さ",
+      "emojiUsage": "絵文字使用",
+      "verbosity": "語りの多さ"
+    },
     "attributesDesc": "コミュニケーションの調整：ユーモア、フォーマリティ、丁寧さなど",
     "advanced": "詳細設定",
     "advancedDesc": "プリセットとカスタマイズ",
@@ -52,7 +57,7 @@
     "coreTruthsDesc": "AIが生きる基本原則",
     "boundaries": "境界線",
     "boundariesDesc": "倫理的ガイドラインと行動制限",
-    "toneAttributes": "トーン属性",
+    "toneAttributes": "構文トーンプロファイル",
     "toneAttributesDesc": "AIのコミュニケーション方法を調整",
     "low": "低",
     "high": "高",
@@ -236,7 +241,9 @@
     "tabsEssentials": "Essentials",
     "tabsPersonality": "Personality",
     "tabsStyle": "Style",
-    "technicalJargon": "Technical Jargon"
+    "technicalJargon": "Technical Jargon",
+    "savePreset": "プリセットを保存",
+    "presetName": "プリセット名"
   },
   "presetsPage": {
     "title": "プリセット人格",

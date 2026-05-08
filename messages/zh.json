@@ -37,7 +37,12 @@
     "basicInfoDesc": "名称、生物类型、氛围、表情符号、头像",
     "personality": "人格",
     "personalityDesc": "核心真理与边界",
-    "attributes": "属性",
+    "attributes": {
+      "humor": "幽默",
+      "formality": "正式程度",
+      "emojiUsage": "表情符号使用",
+      "verbosity": "冗长程度"
+    },
     "attributesDesc": "语气调节：幽默、正式程度、详细程度等",
     "advanced": "高级",
     "advancedDesc": "预设与自定义",
@@ -52,7 +57,7 @@
     "coreTruthsDesc": "AI 遵循的基本原则",
     "boundaries": "边界",
     "boundariesDesc": "限制与伦理准则",
-    "toneAttributes": "语气属性",
+    "toneAttributes": "句法语气配置",
     "toneAttributesDesc": "微调 AI 的沟通方式",
     "low": "低",
     "high": "高",
@@ -236,7 +241,9 @@
     "tabsEssentials": "Essentials",
     "tabsPersonality": "Personality",
     "tabsStyle": "Style",
-    "technicalJargon": "Technical Jargon"
+    "technicalJargon": "Technical Jargon",
+    "savePreset": "保存预设",
+    "presetName": "预设名称"
   },
   "presetsPage": {
     "title": "预设人格",

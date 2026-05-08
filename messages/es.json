@@ -37,7 +37,12 @@
     "basicInfoDesc": "Nombre, criatura, vibe, emoji, avatar",
     "personality": "Personalidad",
     "personalityDesc": "Rasgos profundos de personalidad y principios",
-    "attributes": "Atributos",
+    "attributes": {
+      "humor": "Humor",
+      "formality": "Formalidad",
+      "emojiUsage": "Uso de Emojis",
+      "verbosity": "Verbosidad"
+    },
     "attributesDesc": "Ajustar comunicación: humor, formalidad, verbosidad, etc.",
     "advanced": "Avanzado",
     "advancedDesc": "Patrones de habla y reglas personalizadas",
@@ -52,7 +57,7 @@
     "coreTruthsDesc": "Principios que tu AI vive",
     "boundaries": "Límites",
     "boundariesDesc": "Pautas éticas y de comportamiento",
-    "toneAttributes": "Atributos de Tono",
+    "toneAttributes": "Perfil de Tono Sintáctico",
     "toneAttributesDesc": "Ajusta cómo se comunica tu AI",
     "low": "Bajo",
     "high": "Alto",
@@ -236,7 +241,9 @@
       "style": "Estilo",
       "personality": "Personalidad",
       "advanced": "Avanzado"
-    }
+    },
+    "savePreset": "Guardar Preset",
+    "presetName": "Nombre del Preset"
   },
   "presetsPage": {
     "title": "Personalidades Predefinidas",

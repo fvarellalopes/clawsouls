@@ -37,7 +37,12 @@
     "basicInfoDesc": "Nom, créature, vibe, emoji, avatar",
     "personality": "Personnalité",
     "personalityDesc": "Vérités fondamentales et limites",
-    "attributes": "Attributs",
+    "attributes": {
+      "humor": "Humour",
+      "formality": "Formalité",
+      "emojiUsage": "Usage d'Émojis",
+      "verbosity": "Verbosité"
+    },
     "attributesDesc": "Réglages du ton : humour, formalité, verbosité, etc.",
     "advanced": "Avancé",
     "advancedDesc": "Presets et personnalisation",
@@ -52,7 +57,7 @@
     "coreTruthsDesc": "Principes fondamentaux que votre IA vit",
     "boundaries": "Limites",
     "boundariesDesc": "Directives éthiques et restrictions",
-    "toneAttributes": "Attributs de Ton",
+    "toneAttributes": "Profil de Ton Syntaxique",
     "toneAttributesDesc": "Ajustez la communication de votre IA",
     "low": "Bas",
     "high": "Haut",
@@ -236,7 +241,9 @@
     "tabsEssentials": "Essentials",
     "tabsPersonality": "Personality",
     "tabsStyle": "Style",
-    "technicalJargon": "Technical Jargon"
+    "technicalJargon": "Technical Jargon",
+    "savePreset": "Enregistrer le Preset",
+    "presetName": "Nom du Preset"
   },
   "presetsPage": {
     "title": "Personnalités Prédéfinies",
