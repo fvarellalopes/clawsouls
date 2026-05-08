@@ -46,10 +46,11 @@ function getSupabase(): SupabaseClient | null {
   if (supabase) return supabase;
 
   const url = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  // Accept either service_role or publishable key
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
-  if (url && serviceRoleKey) {
-    supabase = createClient(url, serviceRoleKey);
+  if (url && key) {
+    supabase = createClient(url, key);
     return supabase;
   }
 
