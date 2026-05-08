@@ -547,7 +547,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`uppercase font-SpaceGrotesk ${activeTab === tab.id ? "border-b-2 border-yellow-400 text-yellow-400" : "text-white/70 hover:text-yellow-400"} px-4 py-2 transition-colors`}
+                    className={`uppercase font-display ${activeTab === tab.id ? "border-b-2 border-yellow-400 text-yellow-400" : "text-white/70 hover:text-yellow-400"} px-4 py-2 transition-colors`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}
