@@ -388,6 +388,14 @@ input[type="range"],
   margin: 4px 0;
 }
 
+/* WebKit - need both for full coverage */
+input[type="range"]::-webkit-slider-runnable-track,
+.cyber-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
 input[type="range"]::-webkit-slider-track,
 .cyber-slider::-webkit-slider-track {
   height: 4px;
