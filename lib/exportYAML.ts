@@ -40,7 +40,7 @@ export interface SoulExportState {
 /**
  * Build a YAML string with human-readable section comments.
  */
-export function exportYAML(soul: SoulExportState): string {
+export function exportYAML(soul: SoulExportState & { name: string }): string {
   const lines: string[] = [];
   const push = (text: string) => lines.push(text);
   const blank = () => lines.push("");

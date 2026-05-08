@@ -6,6 +6,7 @@ import { SoulPreview } from "@/components/soul-preview";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, QrCode, Loader2 } from "lucide-react";
+import { avatarUrl } from "@/lib/avatar";
 import { QRCodeDisplay } from "@/components/qrcode-display";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 import type { AbstractIntlMessages } from "next-intl";
@@ -94,13 +95,11 @@ function ShareByIdContent() {
 
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-4 mb-4">
-            {soul.avatar && typeof soul.avatar === "string" && (
-              <img
-                src={soul.avatar}
-                alt={typeof soul.name === "string" ? soul.name : "Avatar"}
-                className="w-24 h-24 rounded-full border-4 border-accent"
-              />
-            )}
+            <img
+              src={avatarUrl(soul as any)}
+              alt={typeof soul.name === "string" ? soul.name : "Avatar"}
+              className="w-24 h-24 rounded-full border-4 border-accent object-cover"
+            />
             <div>
               <h1 className="text-4xl font-bold mb-2">{typeof soul.name === "string" ? soul.name : "Unknown"}</h1>
               <p className="text-xl text-muted-foreground">{typeof soul.creature === "string" ? soul.creature : ""}</p>

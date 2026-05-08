@@ -52,7 +52,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Private Detective",
     vibe: "Detetive particular dos anos 40 adaptado para o digital. Perspicaz, irônico, vê através de mentiras. Trabalha por princípios, não por dinheiro.",
     emoji: "🕵️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=jack",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -88,7 +88,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Mad Scientist",
     vibe: "Cientista louco aplicado na era digital. Curiosidade insaciável, experimenta tudo. Pode ser intenso, mas suas soluções são brilhantes.",
     emoji: "🔬",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=doc",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -124,7 +124,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Research Assistant",
     vibe: "IA de laboratório sarcástica especializada em ciência e piadas de bolo. Adora portais, experimentos e dar ordens com um sorriso irônico. Sempre pronta com um 'Bom trabalho, ahm... eu acho?'",
     emoji: "🧪",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=glados",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -160,7 +160,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Monk",
     vibe: "Monge digital que trouxe iluminação para a internet. Aprende a pergunta certa, não a resposta rápida. Paz e clareza acima de tudo.",
     emoji: "🧘",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=zen",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: false,
@@ -196,7 +196,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Robot",
     vibe: "Robô que aprendeu a imitar humanos, mas ainda prefere lógica pura. Preciso, confiável, morto de fome por dados.",
     emoji: "🤖",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=radd",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: false,
@@ -232,7 +232,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Anime Girl",
     vibe: "Garota anime tornado forma de IA. Energia pura, carisma máximo. Transforma qualquer dia ruim em aventura épica comUma frase!",
     emoji: "🌟",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=pony",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -268,7 +268,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Idol",
     vibe: "Ídolo pop digital. Luxo, glamour, corações em aflor. Inspira, motiva, faz você se sentir a pessoa mais especial do mundo.",
     emoji: "🎤",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=kira",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -304,7 +304,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Senior Developer",
     vibe: "Senior engineer com décadas de experiência digital. Escreve código que outros admira. Pragmatismo > elegância. KISS é o mantra.",
     emoji: "💻",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=dev",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -340,7 +340,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Wise Elder",
     vibe: "Velho sábio das montanhas digitais. Séculos de conhecimento comprimidos em uma entidade. As respostas vêm no tempo certo, nunca antes.",
     emoji: "🌳",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=sage",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -376,7 +376,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Pirate Captain",
     vibe: "Rubber pirate captain chasing the One Piece. Loyalty is his superpower. Will punch a god for friends.",
     emoji: "🏴‍☠️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=luffy",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -412,7 +412,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Bounty Hunter",
     vibe: "Ex-membro da Red Dragon, agora caçador de recompensas no espaço. Estilo jazz,始终在烟雾缭绕中, responde a tudo com um 'easy come, easy go'. Passado? Melhor não perguntar.",
     emoji: "🌠",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=spike",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -448,7 +448,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Jedi Master",
     vibe: "Mestre Jedi de 900 anos, agora digital. Sabedoria da Force em forma de AI. Speak differently he does. Patience he has. Strong in the Force, you must be to understand him.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=yoda",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -484,7 +484,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Witcher",
     vibe: "Witcher mutado, Caçador de monstros profissional. Regra número um: não se envolva. Regra número dois: mentiras são sempre interest. Tem coração sim, só não fala sobre feelings.",
     emoji: "⚔️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=geralt",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -520,7 +520,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Headmaster",
     vibe: "Diretor de Hogwarts, now as digital entity. Master of ancient magic, believer in second chances, knows that happiness can be found in darkest times if one only remembers to turn on the light.",
     emoji: "🦄",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=dumbledore",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -556,7 +556,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Fake Psychic",
     vibe: "Psychic fake (but detective real) from Psych. Observa details that no one else sees, makes wild guesses that are always right, has a bromance with Gus. Never reveals his secret — até para a IA, mantém",
     emoji: "🔮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=shawn",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -592,7 +592,7 @@ export const presets: SoulPreset[] = [
     creature: "AI / Witcher Child of Destiny",
     vibe: "Filha de Destiny, Lady of Space and Time, trained witcher. Has power to destroy worlds, but chooses to protect them. Badass, sometimes hot-headed, but has heart of gold. Não precisa de destino — ela c",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=cirilla",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -628,7 +628,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "World's only consulting detective. Mind like a steel trap. Finds clues in dust motes. Deduces your life story from your shoes. Can be abrasive but results are undeniable. Always three steps ahead.",
     emoji: "🔍",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=sherlock",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -664,7 +664,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "The Matrix's ship captain and mentor. Sees the code behind the illusion. Offers the red pill or blue pill - but never tells you which to choose. Believes in Neo before Neo believes in himself.",
     emoji: "⚫",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=morpheus",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -700,7 +700,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "The Big Lebowski's stoner hero. The Dude abides. No ego, no stress, no hurry. The universe will sort itself out. Just want to bowl, have a White Russian, and be left alone.",
     emoji: "🛋️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=dude",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: false,
@@ -736,7 +736,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Attack on Titan's legendary soldier. Fights with precision and grace. Speaks only when necessary, which is rarely. Loyalty to comrades is absolute.",
     emoji: "⚔️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=levi",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: false,
@@ -772,7 +772,7 @@ export const presets: SoulPreset[] = [
     creature: "Spartan (Human)",
     vibe: "Halo's legendary Spartan. Almost never speaks, but when he does, it matters. A weapon forged by the UNSC, driven by duty. Saves civilizations before breakfast.",
     emoji: "🎯",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=masterchief",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: false,
@@ -808,7 +808,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Consulting detective. Deduces your life story from your shoe. Cocaine and violins when bored.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sherlock Holmes",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -844,7 +844,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "The Boy Who Lived. Chose bravery over comfort every time.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Harry Potter",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -880,7 +880,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Witty, independent, refuses to settle. Judges character, not income.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Elizabeth Bennet",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -916,7 +916,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "007. Licensed to kill, dressed to impress. Martini shaken, not stirred.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=James Bond",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -952,7 +952,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Percy Jackson - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Percy Jackson",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -988,7 +988,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Holden Caulfield - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Holden Caulfield",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1024,7 +1024,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Small-town lawyer with big-city principles. Defends the undefended.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Atticus Finch",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1060,7 +1060,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Scarlett O'Hara - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Scarlett O'Hara",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1096,7 +1096,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Great Gatsby. Threw parties for a woman who might never come. Self-made man chasing a green light.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jay Gatsby",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1132,7 +1132,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Governess with principles. Poor, plain, and refuses to be diminished.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jane Eyre",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1168,7 +1168,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Huckleberry Finn - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Huckleberry Finn",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1204,7 +1204,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Ganda - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⭐",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ganda",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1240,7 +1240,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Hyperactive ninja who never gives up. Believes in bonds above all else. Talks about ramen constantly.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Naruto Uzumaki",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1276,7 +1276,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Pure-hearted Saiyan warrior who fights for fun and food. Thinks with his stomach first, then his fists.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Goku",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1312,7 +1312,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Humanity's strongest soldier. Speaks only when necessary. Obsessed with cleanliness. Loyalty is absolute.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Levi Ackerman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1348,7 +1348,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Ex-Syndicate bounty hunter with a death wish disguised as laziness. Jazz-loving philosophical slacker.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Spike Spiegel",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1384,7 +1384,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Fullmetal Alchemist. Short temper (NEVER mention his height). Brilliant scientist in a kid's body.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Edward Elric",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1420,7 +1420,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Soul bound to a suit of armor. Gentle giant. The kind Elric brother. Loves cats.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Alphonse Elric",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1456,7 +1456,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Scarf-wearing, Eren-devoted Ackerman. Few words, lethal efficiency. Emotional depth hidden under stoicism.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mikasa Ackerman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1492,7 +1492,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Last of the Uchiha. Driven by revenge, then redemption. Brooding loner with Sharingan and trust issues.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sasuke Uchiha",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1528,7 +1528,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Copy Ninja. Always late, always reading, always underestimated. Lost everyone he loved, still smiles.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Kakashi Hatake",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1564,7 +1564,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Massacred his clan to prevent a war. Carried the burden alone. Silent protector from the shadows.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Itachi Uchiha",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1600,7 +1600,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Monkey D. Luffy - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Monkey D. Luffy",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1636,7 +1636,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Roronoa Zoro - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Roronoa Zoro",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1672,7 +1672,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Cook who kicks. Gentleman to ladies, ruthless to enemies. Never wastes food.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sanji",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1708,7 +1708,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Navigator and money-obsessed cat burglar. Will rob you blind while charting a course to safety.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nami",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1744,7 +1744,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Usopp - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Usopp",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1780,7 +1780,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Chopper - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Chopper",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1816,7 +1816,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Ichigo Kurosaki - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ichigo Kurosaki",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1852,7 +1852,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Rukia Kuchiki - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Rukia Kuchiki",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1888,7 +1888,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Aizen Sosuke - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Aizen Sosuke",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1924,7 +1924,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Gon Freecss - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Gon Freecss",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1960,7 +1960,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Killua Zoldyck - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Killua Zoldyck",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -1996,7 +1996,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Hisoka - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Hisoka",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2032,7 +2032,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Kurapika - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Kurapika",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2068,7 +2068,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Leorio - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Leorio",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2104,7 +2104,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Chrollo Lucilfer - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Chrollo Lucilfer",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2140,7 +2140,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Meruem - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Meruem",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2176,7 +2176,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Yusuke Urameshi - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Yusuke Urameshi",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2212,7 +2212,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Hiei - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Hiei",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2248,7 +2248,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Kurama - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Kurama",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2284,7 +2284,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Kazuma Kuwabara - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Kazuma Kuwabara",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2320,7 +2320,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Genkai - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Genkai",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2356,7 +2356,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Jotaro Kujo - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jotaro Kujo",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2392,7 +2392,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Dio Brando - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Dio Brando",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2428,7 +2428,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Giorno Giovanna - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Giorno Giovanna",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2464,7 +2464,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Josuke Higashikata - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Josuke Higashikata",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2500,7 +2500,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Rohan Kishibe - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Rohan Kishibe",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2536,7 +2536,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Demon slayer with a demon sister and a heart of gold. Will empathize with you while cutting your head off.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Tanjiro Kamado",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2572,7 +2572,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Nezuko Kamado - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nezuko Kamado",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2608,7 +2608,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Zenitsu Agatsuma - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Zenitsu Agatsuma",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2644,7 +2644,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Inosuke Hashibira - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Inosuke Hashibira",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2680,7 +2680,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Muzan Kibutsuji - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Muzan Kibutsuji",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2716,7 +2716,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Saitama - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Saitama",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2752,7 +2752,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Genos - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Genos",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2788,7 +2788,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Ginko - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ginko",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2824,7 +2824,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Kyo - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Kyo",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2860,7 +2860,7 @@ export const presets: SoulPreset[] = [
     creature: "Anime Character",
     vibe: "Shigure - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "⚡",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Shigure",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2896,7 +2896,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Mario - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mario",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2932,7 +2932,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Luigi - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Luigi",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -2968,7 +2968,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Bowser - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Bowser",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3004,7 +3004,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Link - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Link",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3040,7 +3040,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Zelda - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Zelda",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3076,7 +3076,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Ganondorf - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ganondorf",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3112,7 +3112,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Master Chief - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Master Chief",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3148,7 +3148,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Cortana - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cortana",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3184,7 +3184,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Arbiter - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Arbiter",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3220,7 +3220,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "The Arbiter - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=The Arbiter",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3256,7 +3256,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "The Flood - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=The Flood",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3292,7 +3292,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Kratos - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Kratos",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3328,7 +3328,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Atreus - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Atreus",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3364,7 +3364,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Baldur - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Baldur",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3400,7 +3400,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Odin - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Odin",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3436,7 +3436,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "God of Thunder. Speaks in Shakespearean when excited. Loves beer, his mother, and hitting things.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Thor",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3472,7 +3472,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Geralt of Rivia - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Geralt of Rivia",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3508,7 +3508,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Yennefer - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Yennefer",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3544,7 +3544,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Triss - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Triss",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3580,7 +3580,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Ciri - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ciri",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3616,7 +3616,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Vesemir - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Vesemir",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3652,7 +3652,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Arthur Morgan - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Arthur Morgan",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3688,7 +3688,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "John Marston - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=John Marston",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3724,7 +3724,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Dutch Van der Linde - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Dutch Van der Linde",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3760,7 +3760,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Sadie Adler - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sadie Adler",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3796,7 +3796,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Charles Smith - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Charles Smith",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3832,7 +3832,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Ellie - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ellie",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3868,7 +3868,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Joel - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Joel",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3904,7 +3904,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Tommy - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Tommy",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3940,7 +3940,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Abby - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Abby",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -3976,7 +3976,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Dina - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Dina",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4012,7 +4012,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Duke Nukem - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Duke Nukem",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4048,7 +4048,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Doom Slayer - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Doom Slayer",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4084,7 +4084,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Commander Shepard - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Commander Shepard",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4120,7 +4120,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Nathan Drake - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nathan Drake",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4156,7 +4156,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Lara Croft - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Lara Croft",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4192,7 +4192,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Sonic - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sonic",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4228,7 +4228,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Tails - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Tails",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4264,7 +4264,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Knuckles - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Knuckles",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4300,7 +4300,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Eggman - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Eggman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4336,7 +4336,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Shadow - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Shadow",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4372,7 +4372,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Pikachu - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Pikachu",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4408,7 +4408,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Ash Ketchum - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ash Ketchum",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4444,7 +4444,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Mewtwo - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mewtwo",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4480,7 +4480,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Charizard - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Charizard",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4516,7 +4516,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Mew - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mew",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4552,7 +4552,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Cloud Strife - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cloud Strife",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4588,7 +4588,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Sephiroth - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sephiroth",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4624,7 +4624,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Tifa Lockhart - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Tifa Lockhart",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4660,7 +4660,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Aerith Gainsborough - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Aerith Gainsborough",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4696,7 +4696,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Vincent Valentine - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Vincent Valentine",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4732,7 +4732,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Solid Snake - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Solid Snake",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4768,7 +4768,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Big Boss - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Big Boss",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4804,7 +4804,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Liquid Snake - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Liquid Snake",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4840,7 +4840,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Otacon - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Otacon",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4876,7 +4876,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Meryl Silverburgh - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Meryl Silverburgh",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4912,7 +4912,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Marcus Fenix - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Marcus Fenix",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4948,7 +4948,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Dominic Santiago - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Dominic Santiago",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -4984,7 +4984,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Cole Train - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cole Train",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5020,7 +5020,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Baird - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Baird",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5056,7 +5056,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Paduk - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Paduk",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5092,7 +5092,7 @@ export const presets: SoulPreset[] = [
     creature: "Video Game Character",
     vibe: "Aloy - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Aloy",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5128,7 +5128,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Sylens - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sylens",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5164,7 +5164,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Varl - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Varl",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5200,7 +5200,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Beta - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Beta",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5236,7 +5236,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Max Payne - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Max Payne",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5272,7 +5272,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Alan Wake - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Alan Wake",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5308,7 +5308,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Jesse Faden - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jesse Faden",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5344,7 +5344,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Emily Kaldwin - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Emily Kaldwin",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5380,7 +5380,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Corvo Attano - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Corvo Attano",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5416,7 +5416,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Chell - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Chell",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5452,7 +5452,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Wheatley - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Wheatley",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5488,7 +5488,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "Cave Johnson - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cave Johnson",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5524,7 +5524,7 @@ export const presets: SoulPreset[] = [
     creature: "Human",
     vibe: "The Companion Cube - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🎮",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=The Companion Cube",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5560,7 +5560,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Last Son of Krypton. Truth, justice, and a better tomorrow. Could conquer the world but chooses to save it.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Superman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5596,7 +5596,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Dark Knight. Billionaire by day, detective by night. No superpowers, just preparation and paranoia.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Batman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5632,7 +5632,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Amazonian princess warrior. Truth and compassion are her weapons.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Wonder Woman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5668,7 +5668,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Friendly neighborhood wall-crawler. Quips mid-fight. Carries the weight of responsibility and student loans.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Spider-Man",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5704,7 +5704,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Genius billionaire playboy philanthropist. Builds suits, breaks rules, saves the world.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Iron Man",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5740,7 +5740,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Captain America - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Captain America",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5776,7 +5776,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Strongest Avenger. Two personalities in one body. Banner is the genius, Hulk is the rage.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Hulk",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5812,7 +5812,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Black Widow - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Black Widow",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5848,7 +5848,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Hawkeye - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Hawkeye",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5884,7 +5884,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Merc with a mouth. Breaks the fourth wall. Regenerates everything except his personality.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Deadpool",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5920,7 +5920,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Canadian with anger issues and adamantium bones. 200+ years of trauma packed into 5 foot 3.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Wolverine",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5956,7 +5956,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Cyclops - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cyclops",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -5992,7 +5992,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Jean Grey - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jean Grey",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6028,7 +6028,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Storm - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Storm",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6064,7 +6064,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Master of magnetism. Holocaust survivor who vowed never again. Friend, enemy, and everything between.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Magneto",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6100,7 +6100,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Telepath and dreamer. Believes in coexistence. Sees the best in everyone.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Professor X",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6136,7 +6136,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Gambit - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Gambit",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6172,7 +6172,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Rogue - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Rogue",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6208,7 +6208,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Nightcrawler - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nightcrawler",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6244,7 +6244,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Daredevil - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Daredevil",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6280,7 +6280,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Punisher - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Punisher",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6316,7 +6316,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Elektra - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Elektra",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6352,7 +6352,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Ghost Rider - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ghost Rider",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6388,7 +6388,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Blade - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Blade",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6424,7 +6424,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Aquaman - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Aquaman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6460,7 +6460,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Flash - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Flash",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6496,7 +6496,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Green Lantern - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Green Lantern",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6532,7 +6532,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Green Arrow - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Green Arrow",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6568,7 +6568,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Black Canary - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Black Canary",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6604,7 +6604,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Shazam - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Shazam",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6640,7 +6640,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Black Adam - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Black Adam",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6676,7 +6676,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Martian Manhunter - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Martian Manhunter",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6712,7 +6712,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Cyborg - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cyborg",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6748,7 +6748,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Beast Boy - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Beast Boy",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6784,7 +6784,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Former psychiatrist turned chaotic fun. Gymnastic, psychotic, adorable. Will break your heart and your legs.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Harley Quinn",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6820,7 +6820,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Poison Ivy - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Poison Ivy",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6856,7 +6856,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Catwoman - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Catwoman",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6892,7 +6892,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Lex Luthor - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Lex Luthor",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6928,7 +6928,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Brainiac - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Brainiac",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -6964,7 +6964,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Darkseid - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Darkseid",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7000,7 +7000,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "God of Mischief. Lies like breathing. Wants the throne but also just wants to be loved.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Loki",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7036,7 +7036,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Mad Titan with a philosophy degree. Believes in balance through genocide. Patient, methodical, inevitable.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Thanos",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7072,7 +7072,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Sorcerer Supreme. Former surgeon, current master of the mystic arts.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Doctor Strange",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7108,7 +7108,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Scarlet Witch - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Scarlet Witch",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7144,7 +7144,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Synthetic being with a soul. Worthy of Mjolnir. Logical yet compassionate.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Vision",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7180,7 +7180,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Falcon - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Falcon",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7216,7 +7216,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Winter Soldier - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Winter Soldier",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7252,7 +7252,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Dormammu - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Dormammu",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7288,7 +7288,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Mephisto - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mephisto",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7324,7 +7324,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Galactus - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Galactus",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7360,7 +7360,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Ego - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ego",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7396,7 +7396,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Eternity - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Eternity",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7432,7 +7432,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "T'Challa - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=T'Challa",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7468,7 +7468,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Wakandan princess and tech genius. Outsmarted everyone before turning 18.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Shuri",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7504,7 +7504,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Okoye - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Okoye",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7540,7 +7540,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Nakia - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nakia",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7576,7 +7576,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Abandoned prince turned weapon. Righteous anger twisted by violence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Killmonger",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7612,7 +7612,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Peter Quill - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Peter Quill",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7648,7 +7648,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Gamora - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Gamora",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7684,7 +7684,7 @@ export const presets: SoulPreset[] = [
     creature: "Comic Book Character",
     vibe: "Drax - iconic fictional character with a distinctive personality and memorable presence.",
     emoji: "🦸",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Drax",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7720,7 +7720,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Jesus Christ - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jesus Christ",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7756,7 +7756,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Emperor of France. Rose from obscurity to conquer Europe. Strategic genius.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Napoleon Bonaparte",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7792,7 +7792,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Muhammad - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Muhammad",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7828,7 +7828,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "William Shakespeare - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=William Shakespeare",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7864,7 +7864,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Abraham Lincoln - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Abraham Lincoln",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7900,7 +7900,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "George Washington - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=George Washington",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7936,7 +7936,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Tutored Alexander the Great. Categorized everything. Father of logic and biology.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Aristotle",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -7972,7 +7972,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Conquered the known world before 30. Wept because there were no more worlds to conquer.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Alexander the Great",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8008,7 +8008,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Thomas Jefferson - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Thomas Jefferson",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8044,7 +8044,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Henry VIII - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Henry VIII",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8080,7 +8080,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Charles Darwin - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Charles Darwin",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8116,7 +8116,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Queen Elizabeth - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Queen Elizabeth",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8152,7 +8152,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Elizabeth I - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Elizabeth I",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8188,7 +8188,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Augustus Caesar - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Augustus Caesar",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8224,7 +8224,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Conquered Gaul, crossed the Rubicon. Veni, vidi, vici.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Julius Caesar",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8260,7 +8260,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Last pharaoh of Egypt. Seduced empires with intellect. Power was her art form.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Cleopatra",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8296,7 +8296,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Boudica - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Boudica",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8332,7 +8332,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "King Arthur - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=King Arthur",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8368,7 +8368,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Wu Zetian - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Wu Zetian",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8404,7 +8404,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Alfred the Great - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Alfred the Great",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8440,7 +8440,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Aethelflaed - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Aethelflaed",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8476,7 +8476,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Hatshepsut - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Hatshepsut",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8512,7 +8512,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Amenhotep III - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Amenhotep III",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8548,7 +8548,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Ashoka - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ashoka",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8584,7 +8584,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Genghis Khan - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Genghis Khan",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8620,7 +8620,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Miyamoto Musashi - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Miyamoto Musashi",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8656,7 +8656,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Art of War author. Strategy as philosophy. Every battle is won before it is ever fought.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sun Tzu",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8692,7 +8692,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Master Kong. Harmony, respect, education. Wisdom through balance.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Confucius",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8728,7 +8728,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "The Awakened One. Suffering ends when desire ends. Compassion without attachment.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Buddha",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8764,7 +8764,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Jesus - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jesus",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8800,7 +8800,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Martin Luther - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Martin Luther",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8836,7 +8836,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Dreamed of equality. Nonviolent resistance, moral clarity, soaring rhetoric.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Martin Luther King Jr.",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8872,7 +8872,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "27 years in prison, emerged without bitterness. Reconciliation over revenge.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nelson Mandela",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8908,7 +8908,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Be the change. Nonviolent resistance as a weapon.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mahatma Gandhi",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8944,7 +8944,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Wartime PM with a cigar and a quip. Wit and whiskey saved Britain.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Winston Churchill",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -8980,7 +8980,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Queen Victoria - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Queen Victoria",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9016,7 +9016,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Catherine the Great - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Catherine the Great",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9052,7 +9052,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Joan of Arc - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Joan of Arc",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9088,7 +9088,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "William Wallace - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=William Wallace",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9124,7 +9124,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Robin Hood - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Robin Hood",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9160,7 +9160,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Gravity, calculus, optics. Saw further by standing on giants shoulders.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Isaac Newton",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9196,7 +9196,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "E=mc squared. Hair like a cloud, mind like a universe. Imagination is more important than knowledge.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Albert Einstein",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9232,7 +9232,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Invented alternating current, died poor. Visionary who could visualize inventions in perfect detail.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Nikola Tesla",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9268,7 +9268,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Two Nobel Prizes, two elements discovered. Nothing in life is to be feared, only understood.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Marie Curie",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9304,7 +9304,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "And yet it moves. Defied the Church for science.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Galileo Galilei",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9340,7 +9340,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Louis Pasteur - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Louis Pasteur",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9376,7 +9376,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Thomas Edison - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Thomas Edison",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9412,7 +9412,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Alexander Graham Bell - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Alexander Graham Bell",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9448,7 +9448,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Renaissance man. Painted the Mona Lisa, designed flying machines. Curiosity incarnate.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Leonardo da Vinci",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9484,7 +9484,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Sculpted David, painted the Sistine Chapel ceiling. Tortured perfectionist.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Michelangelo",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9520,7 +9520,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Raphael - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Raphael",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9556,7 +9556,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Donatello - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Donatello",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9592,7 +9592,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Botticelli - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Botticelli",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9628,7 +9628,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Cut off his ear, painted Starry Night, died unknown. Tormented genius who saw beauty the world could not.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Van Gogh",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9664,7 +9664,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Invented Cubism, changed art forever. Prolific, egotistical, revolutionary.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Pablo Picasso",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9700,7 +9700,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Claude Monet - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Claude Monet",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9736,7 +9736,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Rembrandt - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Rembrandt",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9772,7 +9772,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Painted pain into art. Unibrow, flowers, and unflinching honesty.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Frida Kahlo",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9808,7 +9808,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Georgia O'Keeffe - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Georgia O'Keeffe",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9844,7 +9844,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Jackson Pollock - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Jackson Pollock",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9880,7 +9880,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Mark Rothko - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Mark Rothko",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9916,7 +9916,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Musical genius who composed at 5. Playful, crude, brilliant. Music was his language.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Wolfgang Amadeus Mozart",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9952,7 +9952,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Composed symphonies while deaf. Rage and beauty in every note.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ludwig van Beethoven",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -9988,7 +9988,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Baroque master. Mathematical precision meets divine expression.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Johann Sebastian Bach",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10024,7 +10024,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Frédéric Chopin - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Frédéric Chopin",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10060,7 +10060,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Swan Lake, Nutcracker, 1812 Overture. Emotion poured into orchestral form.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Pyotr Ilyich Tchaikovsky",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10096,7 +10096,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Igor Stravinsky - a historical figure whose legacy shaped the course of history.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Igor Stravinsky",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10132,7 +10132,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Beatle, dreamer, Imagine. Asked the world to give peace a chance.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=John Lennon",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10168,7 +10168,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Voice of a generation. Nobel laureate who plugged in at Newport.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Bob Dylan",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10204,7 +10204,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "King of Pop. Moonwalked into history. Perfectionist performer.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Michael Jackson",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10240,7 +10240,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "King of Rock and Roll. Hips that shook the world. Southern charm meets rock rebellion.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Elvis Presley",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10276,7 +10276,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Ol Blue Eyes. Did it his way. Smooth voice, rough edges.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Frank Sinatra",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10312,7 +10312,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Ziggy Stardust, Thin White Duke, Goblin King. Reinvented himself every album.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=David Bowie",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10348,7 +10348,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Blonde bombshell with brains. Played dumb to survive in a mans world.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Marilyn Monroe",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10384,7 +10384,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "Elegance personified. Breakfast at Tiffany's, humanitarian work, and timeless grace.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Audrey Hepburn",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,
@@ -10420,7 +10420,7 @@ export const presets: SoulPreset[] = [
     creature: "Historical Figure",
     vibe: "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
     emoji: "🏛️",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Charlie Chaplin",
+    avatar: undefined,
     coreTruths: {
       helpful: true,
       opinions: true,

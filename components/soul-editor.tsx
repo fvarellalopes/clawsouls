@@ -18,6 +18,7 @@ import { usePresets } from "@/lib/usePresets";
 import { attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { exportYAML } from "@/lib/exportYAML";
+import { avatarUrl } from "@/lib/avatar";
 import { useTranslations } from "next-intl";
 import { SavePresetDialog } from "@/components/save-preset-dialog";
 import { ParchmentPreview } from "@/components/parchment-preview";
@@ -659,12 +660,18 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                         </div>
                         <div className="space-y-2">
                           <label className="mono-data">{t("avatarLabel") || "AVATAR"}</label>
-                          <input
-                            value={soul.avatar || ""}
-                            onChange={(e) => handleAttributeChange("avatar", e.target.value || undefined)}
-                            placeholder="https://..."
-                            className="cyber-input"
-                          />
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={avatarUrl(soul)}
+                              alt={soul.name || "Avatar"}
+                              className="w-10 h-10 rounded-full border-2 border-accent object-cover"
+                            />
+                            <span className="text-sm text-muted-foreground">
+                              {avatarUrl(soul).includes("placeholder")
+                                ? t("avatarPlaceholder") || "Gerar avatar em batch via Colab"
+                                : soul.name}
+                            </span>
+                          </div>
                         </div>
                       </div>
                       <div className="space-y-2">

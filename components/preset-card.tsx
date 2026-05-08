@@ -2,6 +2,7 @@
 
 import React from "react";
 import { SoulPreset } from "@/store/soulStore";
+import { avatarUrl } from "@/lib/avatar";
 
 interface PresetCardProps {
   preset: SoulPreset;
@@ -35,20 +36,11 @@ export const PresetCard = React.memo(function PresetCard({
 
       {/* Image / Emoji section */}
       <div className="relative p-4 border-b border-white/5 aspect-square overflow-hidden bg-black/50 flex items-center justify-center">
-        {preset.avatar ? (
-          <img
-            src={preset.avatar}
-            alt={preset.name}
-            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 rounded"
-          />
-        ) : (
-          <span
-            className="text-7xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 select-none"
-            aria-hidden="true"
-          >
-            {preset.emoji}
-          </span>
-        )}
+        <img
+          src={avatarUrl(preset) || preset.avatar}
+          alt={preset.name}
+          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 rounded"
+        />
 
         {/* Version badge — top-right */}
         <div className="absolute top-6 right-6 bg-black/80 backdrop-blur-sm border border-white/10 px-2 py-1 rounded">
