@@ -22,9 +22,9 @@
     "compare": "Comparar",
     "editor": "Editor",
     "connectTerminal": "Connect Terminal",
-    "termsOfService": "Terms of Service",
-    "privacyProtocol": "Privacy Protocol",
-    "systemStatus": "SYSTEM STATUS: NOMINAL",
+    "termsOfService": "Términos de Servicio",
+    "privacyProtocol": "Protocolo de Privacidad",
+    "systemStatus": "ESTADO DEL SISTEMA: NOMINAL",
     "github": "GitHub",
     "discord": "Discord"
   },

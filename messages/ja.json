@@ -22,9 +22,9 @@
     "compare": "Compare",
     "editor": "Editor",
     "connectTerminal": "Connect Terminal",
-    "termsOfService": "Terms of Service",
-    "privacyProtocol": "Privacy Protocol",
-    "systemStatus": "SYSTEM STATUS: NOMINAL",
+    "termsOfService": "利用規約",
+    "privacyProtocol": "プライバシープロトコル",
+    "systemStatus": "システムステータス: 正常",
     "github": "GitHub",
     "discord": "Discord"
   },
