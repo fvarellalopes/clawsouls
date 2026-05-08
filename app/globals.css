@@ -374,15 +374,15 @@
   }
 }
 
-/* ─── Range Slider (Gold thumb, track) ─── */
+/* ─── Range Slider (Gold thumb, cyber style) ─── */
 input[type="range"],
 .cyber-slider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 6px;
+  height: 4px;
   background: transparent;
-  border-radius: 3px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   margin: 4px 0;
@@ -390,27 +390,27 @@ input[type="range"],
 
 input[type="range"]::-webkit-slider-track,
 .cyber-slider::-webkit-slider-track {
-  height: 6px;
-  background: var(--outline-variant, #4d4632);
-  border-radius: 3px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
 }
 
 input[type="range"]::-moz-range-track,
 .cyber-slider::-moz-range-track {
-  height: 6px;
-  background: var(--outline-variant, #4d4632);
-  border-radius: 3px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
 }
 
 input[type="range"]::-webkit-slider-thumb,
 .cyber-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
   background: #facc15;
-  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
   cursor: pointer;
   margin-top: -6px;
   transition: all 0.15s ease;
@@ -418,11 +418,11 @@ input[type="range"]::-webkit-slider-thumb,
 
 input[type="range"]::-moz-range-thumb,
 .cyber-slider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
   background: #facc15;
-  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
   cursor: pointer;
   border: none;
   transition: all 0.15s ease;
@@ -430,19 +430,19 @@ input[type="range"]::-moz-range-thumb,
 
 input[type="range"]::-webkit-slider-thumb:hover,
 .cyber-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.7);
 }
 
 input[type="range"]::-moz-range-thumb:hover,
 .cyber-slider::-moz-range-thumb:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.7);
 }
 
 input[type="range"]:focus-visible::-webkit-slider-thumb,
 .cyber-slider:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.8);
 }
 
 input[type="range"]:focus-visible,
