@@ -227,10 +227,10 @@
     "speechPatternsDesc": "Customize how your soul speaks",
     "styleDesc": "Tone, communication, and domains",
     "tabs": {
-      "advanced": "Advanced",
       "essentials": "Essentials",
-      "personality": "Personality",
-      "style": "Style"
+      "style": "Stil",
+      "personality": "Persönlichkeit",
+      "advanced": "Erweitert"
     },
     "tabsAdvanced": "Advanced",
     "tabsEssentials": "Essentials",
@@ -243,7 +243,7 @@
     "subtitle": "Starte mit einem berühmten Charakter oder erstelle deinen eigenen",
     "load": "Preset laden",
     "description": "Wähle ein Preset, um das vollständige Persönlichkeitsprofil zu laden",
-    "backToEditor": "Zum Editor",
+    "backToEditor": "Zurück zum Editor",
     "backToHome": "BACK TO HOME",
     "searchPlaceholder": "Presets suchen...",
     "allCreatures": "Alle Kreaturen",

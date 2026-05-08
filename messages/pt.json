@@ -230,7 +230,13 @@
     "essentialsDesc": "A identidade central da sua alma",
     "styleDesc": "Tom, comunicação e domínios",
     "copyPreview": "Copiar SOUL.md",
-    "dismissQuickStart": "Dispensar"
+    "dismissQuickStart": "Dispensar",
+    "tabs": {
+      "essentials": "Essenciais",
+      "style": "Estilo",
+      "personality": "Personalidade",
+      "advanced": "Avançado"
+    }
   },
   "presetsPage": {
     "title": "Personalidades Pré-definidas",
@@ -248,7 +254,8 @@
     "entry": "ENTRY",
     "entries": "ENTRIES",
     "found": "FOUND",
-    "allArchetypes": "ALL ARCHETYPES"
+    "allArchetypes": "ALL ARCHETYPES",
+    "backToEditor": "Voltar ao Editor"
   },
   "home": {
     "heroTitle": "Crie a Alma da sua AI",

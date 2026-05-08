@@ -227,10 +227,10 @@
     "speechPatternsDesc": "Customize how your soul speaks",
     "styleDesc": "Tone, communication, and domains",
     "tabs": {
-      "advanced": "Advanced",
-      "essentials": "Essentials",
-      "personality": "Personality",
-      "style": "Style"
+      "essentials": "エッセンシャル",
+      "style": "スタイル",
+      "personality": "パーソナリティ",
+      "advanced": "上級"
     },
     "tabsAdvanced": "Advanced",
     "tabsEssentials": "Essentials",
@@ -243,7 +243,7 @@
     "subtitle": "有名なキャラクターから始める、または自分で作成",
     "load": "プリセットをロード",
     "description": "プリセットを選択して完全なプロフィールをロード",
-    "backToEditor": "エディタに戻る",
+    "backToEditor": "エディターに戻る",
     "backToHome": "BACK TO HOME",
     "searchPlaceholder": "プリセットを検索...",
     "allCreatures": "すべてのクリーチャー",

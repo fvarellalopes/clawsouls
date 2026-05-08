@@ -230,7 +230,13 @@
     "essentialsDesc": "La identidad central de tu alma",
     "styleDesc": "Tono, comunicación y dominios",
     "copyPreview": "Copiar SOUL.md",
-    "dismissQuickStart": "Descartar"
+    "dismissQuickStart": "Descartar",
+    "tabs": {
+      "essentials": "Esenciales",
+      "style": "Estilo",
+      "personality": "Personalidad",
+      "advanced": "Avanzado"
+    }
   },
   "presetsPage": {
     "title": "Personalidades Predefinidas",

@@ -227,10 +227,10 @@
     "speechPatternsDesc": "Customize how your soul speaks",
     "styleDesc": "Tone, communication, and domains",
     "tabs": {
-      "advanced": "Advanced",
-      "essentials": "Essentials",
-      "personality": "Personality",
-      "style": "Style"
+      "essentials": "基本",
+      "style": "样式",
+      "personality": "个性",
+      "advanced": "高级"
     },
     "tabsAdvanced": "Advanced",
     "tabsEssentials": "Essentials",
