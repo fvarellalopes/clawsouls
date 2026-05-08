@@ -43,8 +43,11 @@ const config: Config = {
           foreground: "var(--foreground-destructive)",
         },
         border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
+        input: "#facc1533",
+        ring: "#facc15",
+        /* Stitch Cyber Terminal tokens */
+        gold: "#facc15",
+        obsidian: "#09090b",
         /* Stitch Cyber Terminal tokens */
         "surface-container": "#201f22",
         "surface-container-low": "#1c1b1d",
@@ -94,11 +97,26 @@ const config: Config = {
       },
       animation: {
         "fade-in": "fadeIn 0.4s ease-out both",
+        "fade-in-up": "fadeInUp 0.4s ease-out both",
+        "scale-in": "scaleIn 0.3s ease-out both",
+        "gold-pulse": "goldPulse 2s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        scaleIn: {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        goldPulse: {
+          "0%, 100%": { boxShadow: "0 0 0 rgba(250, 204, 21, 0)" },
+          "50%": { boxShadow: "0 0 16px rgba(250, 204, 21, 0.5)" },
         },
       },
     },
