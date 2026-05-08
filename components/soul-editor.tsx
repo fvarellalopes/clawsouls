@@ -485,10 +485,10 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   e.stopPropagation();
                   setExportDropdownOpen(!exportDropdownOpen);
                 }}
-                className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors"
+                className="px-4 py-2 bg-gold text-obsidian rounded font-mono text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 glow-gold"
               >
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>download</span>
-                <span className="hidden sm:inline">Export</span>
+                <span className="hidden sm:inline">{t("exportSoulMd")}</span>
                 <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>expand_more</span>
               </button>
               {exportDropdownOpen && (
@@ -500,28 +500,28 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                   <button
                     role="menuitem"
                     onClick={() => { handleExport(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[rgba(255,255,255,0.05)]"
-                    style={{ color: "rgba(255,255,255,0.7)" }}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10"
+                    style={{ color: "rgba(255,255,255,0.85)" }}
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>description</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>description</span>
                     {t("exportDropdown.soulmd")}
                   </button>
                   <button
                     role="menuitem"
                     onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[rgba(255,255,255,0.05)]"
-                    style={{ color: "rgba(255,255,255,0.7)" }}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10"
+                    style={{ color: "rgba(255,255,255,0.85)" }}
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>data_object</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>data_object</span>
                     {t("exportDropdown.json")}
                   </button>
                   <button
                     role="menuitem"
                     onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[rgba(255,255,255,0.05)]"
-                    style={{ color: "rgba(255,255,255,0.7)" }}
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10"
+                    style={{ color: "rgba(255,255,255,0.85)" }}
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>code</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>code</span>
                     {t("exportDropdown.yaml")}
                   </button>
                 </div>
