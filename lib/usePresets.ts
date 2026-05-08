@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { SoulPreset } from '@/store/soulStore'
 
-const API_BASE = process.env.NEXT_PUBLIC_PRESETS_API || '/api/presets'
+const API_BASE = '/api/presets' // Always use local API to ensure filtering
 
 // Blacklist of preset IDs to filter out (historical figures with harmful associations)
 const PRESET_BLACKLIST = new Set(['adolf-hitler'])
