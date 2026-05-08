@@ -355,7 +355,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   // ─── PHASE 1: PRESET SELECTION ────────────────────────────────────────
   if (phase === "presets") {
     return (
-      <div className="min-h-screen py-8 px-4" style={{ background: "#0a0a0f" }}>
+      <div className="min-h-screen py-8 px-4" style={{ background: "#09090b" }}>
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
           <div className="mb-12" style={{ animation: "fadeInUp 0.4s ease-out" }}>
@@ -442,7 +442,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
   // ─── PHASE 2: CYBER TERMINAL EDITOR ───────────────────────────────────
   return (
-    <div className="min-h-screen" style={{ background: "#0a0a0f" }}>
+    <div className="min-h-screen" style={{ background: "#09090b" }}>
       {/* ─── TOP ACTIONS BAR ─── */}
       <div className="px-6 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.3)" }}>
         <div className="container mx-auto max-w-[1400px] flex items-center justify-between gap-4">
@@ -696,7 +696,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                           style={{ cursor: "pointer" }}
                         >
                           {vibeStyles.map((style) => (
-                            <option key={style.value} value={style.value} style={{ background: "#0a0a0f", color: "#fff" }}>
+                            <option key={style.value} value={style.value} style={{ background: "#09090b", color: "#fff" }}>
                               {style.label}
                             </option>
                           ))}
@@ -820,12 +820,12 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                       className="cyber-input"
                       style={{ cursor: "pointer" }}
                     >
-                      <option value="direct" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.direct")}</option>
-                      <option value="socratic" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.socratic")}</option>
-                      <option value="diagnostic" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.diagnostic")}</option>
-                      <option value="encouraging" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.encouraging")}</option>
-                      <option value="challenging" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.challenging")}</option>
-                      <option value="flirty" style={{ background: "#0a0a0f", color: "#fff" }}>{t("commModes.flirty")}</option>
+                      <option value="direct" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.direct")}</option>
+                      <option value="socratic" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.socratic")}</option>
+                      <option value="diagnostic" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.diagnostic")}</option>
+                      <option value="encouraging" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.encouraging")}</option>
+                      <option value="challenging" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.challenging")}</option>
+                      <option value="flirty" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.flirty")}</option>
                     </select>
                   </div>
 
