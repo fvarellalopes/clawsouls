@@ -461,23 +461,23 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
 
           {/* Right: Actions */}
           <div className="flex items-center gap-2">
-            <button onClick={() => setPhase("presets")} className="cyber-btn" style={{ padding: "6px 12px" }}>
+            <button onClick={() => setPhase("presets")} className="px-3 py-1.5 bg-transparent border border-gold/50 text-gold rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 transition-all flex items-center gap-1.5" style={{ padding: "6px 12px" }}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_back</span>
               <span className="hidden sm:inline">{t("presets")}</span>
             </button>
             <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={undo} disabled={!canUndo()} className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors" title={t("undoTitle")}>
+            <button onClick={undo} disabled={!canUndo()} className="px-3 py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed" title={t("undoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
-              <span className="hidden sm:inline">Undo</span>
+              <span className="hidden sm:inline">{t("undo")}</span>
             </button>
-            <button onClick={redo} disabled={!canRedo()} className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors" title={t("redoTitle")}>
+            <button onClick={redo} disabled={!canRedo()} className="px-3 py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed" title={t("redoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
-              <span className="hidden sm:inline">Redo</span>
+              <span className="hidden sm:inline">{t("redo")}</span>
             </button>
             <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={handleShare} className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-3 py-1 rounded flex items-center gap-2 transition-colors">
+            <button onClick={handleShare} className="px-3 py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5">
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
-              <span className="hidden sm:inline">Share</span>
+              <span className="hidden sm:inline">{t("share")}</span>
             </button>
             <div className="relative">
               <button
@@ -547,7 +547,7 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`uppercase font-display ${activeTab === tab.id ? "border-b-2 border-yellow-400 text-yellow-400" : "text-white/70 hover:text-yellow-400"} px-4 py-2 transition-colors`}
+                    className={`uppercase font-display ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-white/50 hover:text-gold/80"} px-4 py-2 transition-all duration-200`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}
