@@ -135,17 +135,17 @@
 
   /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.55 0.01 80 / 0.3);
-    border-radius: 3px;
+    background: #facc1533;
+    border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.55 0.01 80 / 0.5);
+    background: #facc1566;
   }
 }
 
@@ -168,7 +168,7 @@
 
   /* Glass panel — frosted translucent */
   .glass-panel {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -184,7 +184,15 @@
 
   /* Gold glow effect */
   .glow-gold {
-    box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
+    box-shadow: 0 0 20px #facc1526;
+  }
+
+  /* Gold text gradient */
+  .text-gradient-gold {
+    background: linear-gradient(to right, #facc15, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   /* Accent glow (stronger) */
@@ -226,14 +234,6 @@
   }
 
   /* ─── Cyber Classes (Stitch redesign) ─── */
-  .cyber-glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-  }
-
   .mono-data {
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
     font-size: 13px;
