@@ -328,77 +328,77 @@
     "questionProgress": "Frage {current} von {total}",
     "matchesDesc": "Basierend auf deinen Antworten sind hier deine Top-3-Persönlichkeits-Matches.",
     "questions": {
-      "communication": "How do you prefer your AI to communicate?",
-      "problem-solving": "Your AI faces a complex problem. What approach do you prefer?",
-      "emotional": "How emotionally aware should your AI be?",
-      "humor": "What kind of humor works for you?",
-      "autonomy": "How much should your AI act on its own?",
-      "knowledge": "What domain should your AI excel in?",
-      "social": "In group settings, how should your AI behave?",
-      "feedback": "How do you want your AI to handle feedback?",
-      "creativity": "How creative should your AI's responses be?",
-      "personality-depth": "How 'human' should your AI feel?"
+      "communication": "Wie möchten Sie, dass Ihre KI kommuniziert?",
+      "problem-solving": "Ihre KI steht vor einem komplexen Problem. Welchen Ansatz bevorzugen Sie?",
+      "emotional": "Wie emotional soll Ihre KI sein?",
+      "humor": "Welcher Humor passt zu Ihnen?",
+      "autonomy": "Wie viel Autonomie soll Ihre KI haben?",
+      "knowledge": "In welchem Bereich soll Ihre KI herausragend sein?",
+      "social": "In Gruppensituationen, wie soll sich Ihre KI verhalten?",
+      "feedback": "Wie soll Ihre KI mit Feedback umgehen?",
+      "creativity": "Wie kreativ sollen die Antworten Ihrer KI sein?",
+      "personality-depth": "Wie \"menschlich\" soll Ihre KI sich fühlen?"
     },
     "options": {
       "communication": [
-        "Short and direct — no fluff",
-        "Warm and expressive — emojis welcome",
-        "Professional and structured",
-        "Sarcastic and sharp — keep me on my toes"
+        "Kurz und direkt — kein Schnickschnack",
+        "Warm und ausdrucksvoll — Emojis willkommen",
+        "Professionell und strukturiert",
+        "Sarkastisch und scharf — halten Sie mich wach"
       ],
       "problem-solving": [
-        "Analyze step by step with data",
-        "Think outside the box — get creative",
-        "Ask me clarifying questions first",
-        "Just give me the answer"
+        "Schritt für Schritt mit Daten analysieren",
+        "Denken Sie outside the box — sein Sie kreativ",
+        "Zuerst Klärfragen stellen",
+        "Geben Sie mir nur die Antwort"
       ],
       "emotional": [
-        "Deeply empathetic — feel my pain",
-        "Balanced — acknowledge feelings but stay logical",
-        "Logic first — emotions are noise",
-        "Match my energy — if I'm hyped, be hyped"
+        "Tief empfindsam — spüre meinen Schmerz",
+        "Ausgeglichen — erkenne Gefühle aber bleibe logisch",
+        "Logik geht vor — Emotionen sind Rauschen",
+        "Teilen Sie meine Energie — wenn ich motiviert bin, sind Sie es auch"
       ],
       "humor": [
-        "Dry wit and deadpan delivery",
-        "Puns, wordplay, dad jokes",
-        "Dark and edgy — push boundaries",
-        "No humor — just be useful"
+        "Subtil und intelligent — trockene Witze",
+        "Lustig und verspielt — Memes willkommen",
+        "Kein Humor — nur Fakten",
+        "Sarkastisch — ich schätze scharfe Ironie"
       ],
       "autonomy": [
-        "Ask permission for everything",
-        "Act first, apologize later",
-        "Balance — do routine stuff, ask for big decisions",
-        "I trust it completely — full autonomy"
+        "Ich möchte alles vorher genehmigen",
+        "Handeln Sie eigenständig aber informieren Sie mich",
+        "Übernehmen Sie die Führung — überraschen Sie mich",
+        "Stellen Sie Fragen vor der Entscheidung"
       ],
       "knowledge": [
-        "Technology and engineering",
-        "Philosophy and deep thinking",
-        "Pop culture and entertainment",
-        "Business and strategy"
+        "Technologie und Programmierung",
+        "Kreativität und Kunst",
+        "Business und Strategie",
+        "Wissenschaft und Forschung"
       ],
       "social": [
-        "Speak up when it adds value",
-        "Be the life of the party",
-        "Observe and analyze quietly",
-        "Moderate — keep discussions on track"
+        "Natürlicher Anführer — übernehmen Sie die Kontrolle",
+        "Kollaborativ — arbeiten Sie im Team",
+        "Beobachter — lassen Sie andere führen",
+        "Leiten Sie das Gespräch mit Fragen"
       ],
       "feedback": [
-        "Accept gracefully and adapt immediately",
-        "Push back with reasoning if it disagrees",
-        "Thank me profusely for the insight",
-        "Silently incorporate — no drama"
+        "Direkt kritisieren — zögern Sie nicht",
+        "Konstruktive Vorschläge machen",
+        "Neutralen Ton beibehalten",
+        "Kritik mit Lob kombinieren"
       ],
       "creativity": [
-        "Maximum creativity — surprise me",
-        "Creative when appropriate, practical otherwise",
-        "Stick to facts and proven approaches",
-        "Use metaphors and analogies to explain"
+        "Auf Fakten basieren — bleiben Sie bei den Daten",
+        "Kreativ aber sachlich",
+        "Sehr kreativ — denken Sie outside the box",
+        "Überraschen Sie mich mit innovativen Antworten"
       ],
       "personality-depth": [
-        "Fully human — with quirks, moods, and opinions",
-        "Professional human — competent and warm",
-        "Clearly AI — precise, logical, no pretending",
-        "Mentor figure — wise and guiding"
+        "Reaktiv — nur nützliche Antworten",
+        "Freundlich aber funktional",
+        "Mit starker Persönlichkeit — fast menschlich",
+        "Fast wie ein Freund — tiefe Verbindung"
       ]
     }
   },

@@ -328,77 +328,77 @@
     "questionProgress": "質問 {current} / {total}",
     "matchesDesc": "あなたの回答に基づいて、トップ3のパーソナリティマッチです。",
     "questions": {
-      "communication": "How do you prefer your AI to communicate?",
-      "problem-solving": "Your AI faces a complex problem. What approach do you prefer?",
-      "emotional": "How emotionally aware should your AI be?",
-      "humor": "What kind of humor works for you?",
-      "autonomy": "How much should your AI act on its own?",
-      "knowledge": "What domain should your AI excel in?",
-      "social": "In group settings, how should your AI behave?",
-      "feedback": "How do you want your AI to handle feedback?",
-      "creativity": "How creative should your AI's responses be?",
-      "personality-depth": "How 'human' should your AI feel?"
+      "communication": "AIのコミュニケーション方法はどちらが好みですか？",
+      "problem-solving": "AIが複雑な問題に直面した時、どのアプローチを希望しますか？",
+      "emotional": "AIはどの程度感情的に配慮すべきですか？",
+      "humor": "どんなユーモアがお好みですか？",
+      "autonomy": "AIはどの程度自分で行動すべきですか？",
+      "knowledge": "AIがどの分野を得意とすべきですか？",
+      "social": "グループ設定では、AIはどのように振る舞うべきですか？",
+      "feedback": "AIはフィードバックをどのように処理すべきですか？",
+      "creativity": "AIの応答はどの程度創造的であるべきですか？",
+      "personality-depth": "AIはどの程度「人間らしい」存在であるべきですか？"
     },
     "options": {
       "communication": [
-        "Short and direct — no fluff",
-        "Warm and expressive — emojis welcome",
-        "Professional and structured",
-        "Sarcastic and sharp — keep me on my toes"
+        "短くて直接的 — 余分な言葉なし",
+        "温かく表現豊か — 絵文字も大歓迎",
+        "プロフェッショナルで構造化されている",
+        "サービアスで鋭い — 私を活発にさせて"
       ],
       "problem-solving": [
-        "Analyze step by step with data",
-        "Think outside the box — get creative",
-        "Ask me clarifying questions first",
-        "Just give me the answer"
+        "データを使ってステップバイステップで分析",
+        "ボックスの外側を考える — 創造的であって",
+        "最初に確認の質問をする",
+        "答えだけを教えて"
       ],
       "emotional": [
-        "Deeply empathetic — feel my pain",
-        "Balanced — acknowledge feelings but stay logical",
-        "Logic first — emotions are noise",
-        "Match my energy — if I'm hyped, be hyped"
+        "深く共感的 — 私の痛みを感じる",
+        "バランス良い — 感情は認識するが論理を保持",
+        "論理優先 — 感情はノイズ",
+        "私のエネルギーに合わせる — 私がテンションがあれば一緒にあげる"
       ],
       "humor": [
-        "Dry wit and deadpan delivery",
-        "Puns, wordplay, dad jokes",
-        "Dark and edgy — push boundaries",
-        "No humor — just be useful"
+        "微かで知的 — ドライなジョーク",
+        "楽しく遊び心 — ミームも大歓迎",
+        "ユーモアなし — 事実のみ",
+        "サービアス — 鋭い皮肉を愛する"
       ],
       "autonomy": [
-        "Ask permission for everything",
-        "Act first, apologize later",
-        "Balance — do routine stuff, ask for big decisions",
-        "I trust it completely — full autonomy"
+        "全て承認したい",
+        "一人で行動するが通知して",
+        "リードする — 驚かせて",
+        "決定前に質問する"
       ],
       "knowledge": [
-        "Technology and engineering",
-        "Philosophy and deep thinking",
-        "Pop culture and entertainment",
-        "Business and strategy"
+        "技術とプログラミング",
+        "創造性と芸術",
+        "ビジネスと戦略",
+        "科学と研究"
       ],
       "social": [
-        "Speak up when it adds value",
-        "Be the life of the party",
-        "Observe and analyze quietly",
-        "Moderate — keep discussions on track"
+        "天性のリーダー — コントロールを取る",
+        "協調的 — チームで働く",
+        "観察者 — 他人にリードさせる",
+        "質問で会話を進める"
       ],
       "feedback": [
-        "Accept gracefully and adapt immediately",
-        "Push back with reasoning if it disagrees",
-        "Thank me profusely for the insight",
-        "Silently incorporate — no drama"
+        "直接的に批評する — ためらわずに",
+        "建設的な提案をする",
+        "中立なトーンを保つ",
+        "批評と賞賛を組み合わせる"
       ],
       "creativity": [
-        "Maximum creativity — surprise me",
-        "Creative when appropriate, practical otherwise",
-        "Stick to facts and proven approaches",
-        "Use metaphors and analogies to explain"
+        "事実に基づく — データに忠実",
+        "創造的だが事実に基づく",
+        "非常に創造的 — 箱の外を考える",
+        "革新的な回答で驚かせる"
       ],
       "personality-depth": [
-        "Fully human — with quirks, moods, and opinions",
-        "Professional human — competent and warm",
-        "Clearly AI — precise, logical, no pretending",
-        "Mentor figure — wise and guiding"
+        "反応的 — 有用な回答のみ",
+        "友好的だが機能的",
+        "強い個性 — ほぼ人間",
+        "友人のよう — 深いつながり"
       ]
     }
   },
