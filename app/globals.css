@@ -374,53 +374,80 @@
   }
 }
 
-/* ─── Range Slider (Gold thumb, transparent track) ─── */
-input[type="range"] {
+/* ─── Range Slider (Gold thumb, track) ─── */
+input[type="range"],
+.cyber-slider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 4px;
+  height: 6px;
   background: transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   outline: none;
+  cursor: pointer;
+  margin: 4px 0;
 }
 
-input[type="range"]::-webkit-slider-track {
-  height: 4px;
+input[type="range"]::-webkit-slider-track,
+.cyber-slider::-webkit-slider-track {
+  height: 6px;
   background: var(--outline-variant, #4d4632);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-input[type="range"]::-moz-range-track {
-  height: 4px;
+input[type="range"]::-moz-range-track,
+.cyber-slider::-moz-range-track {
+  height: 6px;
   background: var(--outline-variant, #4d4632);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb,
+.cyber-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #facc15;
   box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
   cursor: pointer;
   margin-top: -6px;
+  transition: all 0.15s ease;
 }
 
-input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+input[type="range"]::-moz-range-thumb,
+.cyber-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #facc15;
   box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
   cursor: pointer;
   border: none;
+  transition: all 0.15s ease;
 }
 
-input[type="range"]:focus-visible::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb:hover,
+.cyber-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
   box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+}
+
+input[type="range"]::-moz-range-thumb:hover,
+.cyber-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb,
+.cyber-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+}
+
+input[type="range"]:focus-visible,
+.cyber-slider:focus-visible {
+  outline: none;
 }
 
 /* ─── Responsive ─── */
