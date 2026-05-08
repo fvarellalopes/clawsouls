@@ -59,7 +59,7 @@
     "communicationMode": "Communication Mode",
     "communicationModeDesc": "How your AI approaches conversations",
     "commModes": {
-      "direct": "Direct — Straightforward, no fluff",
+      "direct": "Direct",
       "socratic": "Socratic — Always probes with questions",
       "diagnostic": "Diagnostic — Analyzes problems systematically",
       "encouraging": "Encouraging — Motivational and supportive",
