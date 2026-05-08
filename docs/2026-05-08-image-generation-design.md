@@ -1,636 +1,584 @@
-# Image Generation — Colab + Clawsouls Integration
+# Image Generation — Batch Avatar Pre-Generation (Colab)
 
 **Author:** disconexo  
 **Date:** 2026-05-08  
 **Status:** Draft  
-**Scope:** Avatar image generation pipeline using Colab GPU + Clawsouls frontend/backend
+**Scope:** Batch avatar generation pipeline using Colab GPU → static assets for Clawsouls
 
 ---
 
 ## 1. Contexto e Objetivo
 
-O Clawsouls atualmente usa avatares SVG do DiceBear (URLs estáticas por seed). O objetivo é substituir/complementar isso com **avatares gerados por IA** baseados nos atributos de personalidade da soul (creature, vibe, Big Five, tone attributes), usando um modelo de difusão rodando em GPU no Google Colab.
+O Clawsouls atualmente usa avatares SVG do DiceBear (URLs externas por seed). O objetivo é **pré-gerar avatares únicos** para todos os presets existentes (e futuros), usando Stable Diffusion XL rodando em GPU no Google Colab. Os avatares gerados serão commitados como assets estáticos no projeto.
 
-### Problema
-- Avatares atuais são genéricos e não refletem a personalidade única de cada soul
-- Queremos imagens únicas, estilizadas e consistentes com o "vibe" do personagem
+### Por que batch?
+- Elimina dependência de runtime GPU em produção
+- Sem necessidade de API serverless proxy
+- Zero latency no frontend (assets locais via CDN/Vercel)
+- Avatares consistentes e versionados no git
 
 ### Restrições
-- Colab oferece GPU limitada (T4 ~15GB VRAM típico)
-- Não temos backend próprio (Vercel serverless) — toda geração deve passar pelo proxy do Next.js
-- A URL do Colab é dinâmica (túnel) — precisa de configuração via env var
-- Precisa funcionar offline no Colab (sem depender de serviços externos)
+- Colab GPU limitada (T4 ~15GB VRAM) — batch deve ser sequencial
+- Modelo SDXL base (~6.5GB) + VAE + tokenizer cabem em T4 16GB
+- Cada geração leva ~10-30s dependendo dos steps
 
 ---
 
-## 2. Arquitetura Geral
+## 2. Arquitetura
 
 ```
-┌─────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│  Clawsouls       │     │  Next.js Server   │     │  Google Colab     │
-│  (Frontend)      │────▶│  (API Route)      │────▶│  (GPU + API)      │
-│                  │     │  /api/gen-avatar  │     │  :5000            │
-│  "Generate       │     │                   │     │                   │
-│   Avatar" btn    │     │  - Proxy          │     │  - Stable Diff.   │
-│                  │     │  - Auth header    │     │  - Flask/FastAPI  │
-└─────────────────┘     └──────────────────┘     └──────────────────┘
+┌──────────────────┐     ┌────────────────────┐     ┌──────────────────┐
+│  Google Colab     │     │  Script batch       │     │  Repositório      │
+│  (GPU T4)         │     │  collab_batch_gen.py│     │  (assets/avatars) │
+│                   │     │                     │     │                   │
+│  - SDXL model     │────▶│  - Lê presets.json  │────▶│  - avatar/NAME.png│
+│  - diffusers      │     │  - Gera 1 por 1     │     │  - commit + push  │
+│  - FastAPI (opt)  │     │  - Salva em disco   │     │                   │
+└──────────────────┘     └────────────────────┘     └──────────────────┘
+
+┌──────────────────┐     ┌────────────────────┐
+│  Clawsouls App    │     │  Frontend           │
+│                   │     │                     │
+│  assets/avatars/  │◀────│  src/avatar/N.png   │
+│  (public/static)  │     │  <img src> local    │
+└──────────────────┘     └────────────────────┘
 ```
 
 **Fluxo:**
-1. Usuário clica "Generate Avatar" no editor da soul
-2. Frontend envia `POST /api/gen-avatar` com os dados da soul
-3. Next.js (server-side) gera um prompt a partir dos atributos da soul
-4. Next.js chama a API do Colab (env var `IMAGE_GEN_API_URL`)
-5. Colab gera a imagem via Stable Diffusion e retorna base64
-6. Next.js retorna a imagem para o frontend
-7. Frontend exibe preview; usuário aceita ou re-gera
+1. Rodar Colab → executa `collab_batch_gen.py`
+2. Script lê todos os presets do repo (ou Supabase)
+3. Para cada preset: monta prompt → gera imagem → salva como PNG
+4. Imagens salvas em `public/avatars/`
+5. Commit + push dos assets gerados
+6. Frontend referencia `avatar/NOME.png` locais
 
 ---
 
-## 3. Colab Script (lado do usuário)
+## 3. Colab Script — Batch Generation
 
-### Stack
-- **Modelo:** Stable Diffusion XL (SDXL) via `diffusers`
-- **Servidor:** FastAPI + Uvicorn
-- **Túnel:** `cloudflared` (não requer conta)
-- **Tamanho mínimo de modelo:** SDXL base (~6.5GB) — cabe em T4 16GB
-
-### Endpoints
-
-**`GET /health`** — health check básico
-
-**`POST /generate`**
-```json
-Request:
-{
-  "prompt": "string (descrição do avatar)",
-  "negative_prompt": "string (opcional, o que evitar)",
-  "style": "string (opcional: 'portrait', 'bust', 'full_body')",
-  "seed": "number (opcional, para consistência)",
-  "steps": 30,
-  "guidance_scale": 7.5
-}
-
-Response:
-{
-  "image_base64": "string (PNG em base64)",
-  "seed": "number",
-  "prompt": "string",
-  "generation_time_ms": "number"
-}
-```
-
-### Script principal (`collab_avatar_gen.py`)
+### `collab_batch_gen.py`
 
 ```python
 """
-ClawSouls Avatar Generator — Colab Edition
-Run in Google Colab with GPU runtime (T4 recommended).
+ClawSouls Avatar Generator — Batch Mode
+Google Colab (GPU runtime required: Runtime > Change runtime type > T4 GPU)
+
+Usage:
+  1. Upload this script to Colab
+  2. Run all cells
+  3. Download the generated avatars folder
+  4. Copy to /public/avatars/ in the Clawsouls repo
 """
 
+import json
+import os
 import base64
 import io
-import os
-import subprocess
-import threading
+import hashlib
 import time
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
-from pydantic import BaseModel
-from diffusers import StableDiffusionXLPipeline
+from pathlib import Path
+
 import torch
+from diffusers import StableDiffusionXLPipeline, DPMSolverMultistepScheduler
+from PIL import Image
+import requests
 
-# ─── Model Loading ───────────────────────────────────────────────
-MODEL_ID = os.environ.get("SD_MODEL_ID", "stabilityai/stable-diffusion-xl-base-1.0")
+# ═══════════════════════════════════════════════════════════════════
+# CONFIG
+# ═══════════════════════════════════════════════════════════════════
 
-print(f"[INIT] Loading model {MODEL_ID}...")
+MODEL_ID = "stabilityai/stable-diffusion-xl-base-1.0"
+OUTPUT_DIR = "/content/avatars"
+SEED_BASE = 42
+
+# Prompt configs
+DEFAULT_STEPS = 25
+DEFAULT_GUIDANCE = 7.5
+
+# ═══════════════════════════════════════════════════════════════════
+# PROMPT ENGINE (mirrors lib/avatarEngine.ts logic)
+# ═══════════════════════════════════════════════════════════════════
+
+EMOJI_HINTS = {
+    "🔬": "scientific goggles, lab coat details",
+    "🕵️": "detective hat, trench coat",
+    "🌟": "sparkles, star-shaped accessories",
+    "⚡": "electric energy aura, lightning motifs",
+    "🧘": "lotus position, meditation beads, serene",
+    "🤖": "mechanical parts, circuit patterns",
+    "🏴‍☠️": "pirate bandana, adventurous look",
+    "💻": "techwear, holographic screen elements",
+    "🎤": "microphone, stage lights, glamorous",
+    "🌳": "nature elements, leaves, organic flowing design",
+    "🕶️": "sunglasses, cool demeanor",
+    "😈": "mischievous grin, horns, dark aesthetic",
+    "👽": "alien features, cosmic glow",
+    "🐉": "dragon scales, mythical aura",
+    "🦊": "fox ears, cunning expression",
+    "🐱": "cat ears, playful whiskers",
+    "👁️": "mystical third eye, all-seeing aura",
+    "💀": "skull motifs, dark mysticism",
+    "🎭": "theater mask, dramatic duality",
+}
+
+DOMAIN_ACCENTS = {
+    "tech": "circuit patterns, holographic UI elements",
+    "philosophy": "ancient scrolls, ethereal glow",
+    "science": "molecular structures, lab equipment details",
+    "arts": "paint splashes, creative chaos",
+    "history": "ancient runes, time-worn textures",
+    "literature": "floating text, book pages",
+    "pop-culture": "retro gaming elements, neon signs",
+    "sports": "athletic build, competitive energy",
+    "business": "sharp suit, corporate confidence",
+    "psychology": "thoughtful gaze, abstract mind visuals",
+}
+
+
+def build_prompt(soul: dict) -> str:
+    """Convert soul attributes to an SDXL prompt."""
+    name = soul.get("name", "Unknown")
+    creature = soul.get("creature", "mysterious entity")
+    vibe = soul.get("vibe", "enigmatic")
+    emoji = soul.get("emoji", "")
+    humor = soul.get("humor", 50)
+    formality = soul.get("formality", 50)
+    emoji_usage = soul.get("emojiUsage", 30)
+    openness = soul.get("openness", 70)
+    conscientiousness = soul.get("conscientiousness", 50)
+    extraversion = soul.get("extraversion", 50)
+    agreeableness = soul.get("agreeableness", 50)
+    neuroticism = soul.get("neuroticism", 30)
+    vibe_style = soul.get("vibeStyle", "concise")
+    knowledge_domains = soul.get("knowledgeDomains", [])
+    emotional_range = soul.get("emotionalRange", 50)
+    communication_mode = soul.get("communicationMode", "direct")
+
+    # Art style selection
+    is_high_formality = formality > 65
+    is_playful = humor > 65
+    is_minimal = vibe_style in ("minimal", "concise")
+    is_dramatic = emotional_range > 75 or vibe_style == "dramatic"
+    is_tech = any(d in ("tech", "science") for d in knowledge_domains)
+
+    art_style = "cyberpunk digital illustration"
+    if is_high_formality:
+        art_style = "elegant digital painting, Renaissance lighting"
+    elif is_playful:
+        art_style = "colorful anime-inspired digital art, vibrant"
+    elif is_minimal:
+        art_style = "minimalist vector art, clean lines, geometric"
+    elif is_tech:
+        art_style = "sci-fi concept art, holographic elements"
+    elif is_dramatic:
+        art_style = "cinematic digital painting, dramatic chiaroscuro lighting"
+
+    # Mood/atmosphere
+    atmosphere = "dark atmospheric background with neon accents"
+    if agreeableness > 70:
+        atmosphere = "warm, inviting background with soft golden light"
+    elif neuroticism > 60:
+        atmosphere = "unstable, glitching background with fractured light"
+    elif extraversion > 70:
+        atmosphere = "dynamic, energetic background with bold colors"
+    elif openness > 75:
+        atmosphere = "dreamy, surreal background with cosmic elements"
+
+    # Expression
+    expression = "calm, confident expression"
+    if neuroticism > 60:
+        expression = "tense, alert expression"
+    elif extraversion > 70:
+        expression = "bright, engaging smile"
+    elif agreeableness > 70:
+        expression = "gentle, warm expression"
+    elif openness > 70:
+        expression = "curious, contemplative gaze"
+    elif humor > 70:
+        expression = "sly, playful smirk"
+
+    # Build descriptor list
+    descriptors = [creature, vibe]
+
+    if expression != "calm, confident expression":
+        descriptors.append(expression)
+
+    descriptors.append(art_style)
+
+    if vibe_style not in ("concise", "minimal"):
+        descriptors.append(f"vibe: {vibe_style}")
+
+    # Emoji → visual hint
+    if emoji and emoji in EMOJI_HINTS:
+        descriptors.append(EMOJI_HINTS[emoji])
+
+    # Domain accents
+    for domain in knowledge_domains:
+        if domain in DOMAIN_ACCENTS:
+            descriptors.append(DOMAIN_ACCENTS[domain])
+
+    # Unique seed-based micro-variation descriptor
+    descriptors.append("unique, one-of-a-kind character design")
+
+    prompt = (
+        f"close-up portrait, centered, detailed face, "
+        f"professional character art of {descriptors[0]}, "
+        f"{', '.join(descriptors[1:])}, "
+        f"{atmosphere}, highly detailed, 4k, masterpiece"
+    )
+
+    return prompt.strip()
+
+
+def build_negative_prompt() -> str:
+    return (
+        "blurry, low quality, deformed, ugly, duplicate, disfigured, "
+        "bad anatomy, bad proportions, extra limbs, mutated hands, "
+        "text, watermark, signature, logo, "
+        "photorealistic, 3d render, "
+        "nude, NSFW, gore"
+    )
+
+
+# ═══════════════════════════════════════════════════════════════════
+# LOAD PRESETS
+# ═══════════════════════════════════════════════════════════════════
+
+def load_presets_from_github(repo_raw_url: str = None) -> list:
+    """
+    Load presets from GitHub raw URL.
+    Default: load from local presets.ts data.
+    """
+    if repo_raw_url:
+        resp = requests.get(repo_raw_url, timeout=30)
+        resp.raise_for_status()
+        # Need to extract from the export
+        data = resp.json()
+        return data.get("presets", data) if isinstance(data, dict) else data
+
+    # Fallback: try local file
+    local_paths = [
+        "/content/data/presets.ts",
+        "/content/presets.ts",
+        "data/presets.ts",
+    ]
+    for path in local_paths:
+        if os.path.exists(path):
+            with open(path) as f:
+                content = f.read()
+            # Parse the `export const presets: SoulPreset[] = [...]` section
+            # Quick regex extraction
+            import re
+            presets_text = re.search(
+                r"export const presets:\s*SoulPreset\[\]\s*=\s*(\[.*?\]);",
+                content,
+                re.DOTALL,
+            )
+            if presets_text:
+                return json.loads(presets_text.group(1).replace("'", '"'))
+    raise FileNotFoundError("Could not find presets.ts")
+
+
+def load_presets_from_supabase(supabase_url: str, supabase_key: str) -> list:
+    """Load presets directly from Supabase."""
+    import requests
+    headers = {
+        "apikey": supabase_key,
+        "Authorization": f"Bearer {supabase_key}",
+    }
+    resp = requests.get(f"{supabase_url}/rest/v1/presets", headers=headers)
+    resp.raise_for_status()
+    return resp.json()
+
+
+# ═══════════════════════════════════════════════════════════════════
+# GENERATION
+# ═══════════════════════════════════════════════════════════════════
+
+def generate_avatar(pipe, soul: dict, output_path: str, index: int, total: int):
+    """Generate a single avatar and save to disk."""
+    name = soul.get("name", f"soul_{index}")
+    safe_name = "".join(c if c.isalnum() or c in "._-" else "_" for c in name)
+
+    prompt = build_prompt(soul)
+    negative = build_negative_prompt()
+
+    print(f"\n{'='*60}")
+    print(f"[{index+1}/{total}] Generating: {name}")
+    print(f"  Creature: {soul.get('creature', 'N/A')}")
+    print(f"  Vibe: {soul.get('vibe', 'N/A')[:60]}...")
+    print(f"  Prompt: {prompt[:100]}...")
+    print(f"{'='*60}")
+
+    start = time.time()
+
+    generator = torch.Generator(device="cuda")
+    generator.manual_seed(SEED_BASE + index)
+
+    image = pipe(
+        prompt=prompt,
+        negative_prompt=negative,
+        num_inference_steps=DEFAULT_STEPS,
+        guidance_scale=DEFAULT_GUIDANCE,
+        width=512,
+        height=768,
+        generator=generator,
+    ).images[0]
+
+    elapsed = time.time() - start
+
+    # Save
+    os.makedirs(output_path, exist_ok=True)
+    filepath = os.path.join(output_path, f"{safe_name}.png")
+    image.save(filepath, "PNG")
+
+    print(f"  ✅ Saved: {filepath} ({elapsed:.1f}s)")
+    return filepath
+
+
+def main():
+    print("=" * 60)
+    print("🖼️  ClawSouls Avatar Generator — Batch Mode")
+    print("=" * 60)
+
+    # Check GPU
+    if not torch.cuda.is_available():
+        print("❌ No GPU available! Use Runtime > Change runtime type > T4 GPU")
+        return
+
+    print(f"✅ GPU: {torch.cuda.get_device_name(0)}")
+    print(f"   VRAM: {torch.cuda.get_device_properties(0).total_mem / 1e9:.1f} GB")
+
+    # Load model
+    print(f"\n📦 Loading model: {MODEL_ID}")
+    pipe = StableDiffusionXLPipeline.from_pretrained(
+        MODEL_ID,
+        torch_dtype=torch.float16,
+        variant="fp16",
+        use_safetensors=True,
+    )
+
+    # Optimize for T4
+    pipe.enable_attention_slicing()
+    pipe.enable_vae_tiling()
+    pipe = pipe.to("cuda")
+
+    print("✅ Model loaded and optimized for T4\n")
+
+    # Load presets
+    source = os.environ.get("PRESET_SOURCE", "local")
+    print(f"📋 Loading presets from: {source}")
+
+    if source == "supabase":
+        presets = load_presets_from_supabase(
+            os.environ["SUPABASE_URL"],
+            os.environ["SUPABASE_KEY"],
+        )
+    else:
+        # Try GitHub raw first
+        try:
+            presets = load_presets_from_github(
+                "https://raw.githubusercontent.com/ClawdAI2-brazil/clawsouls/main/data/presets.ts"
+            )
+        except Exception:
+            presets = load_presets_from_github()
+
+    print(f"✅ Loaded {len(presets)} presets\n")
+
+    # Generate
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    generated = []
+    failed = []
+
+    for i, preset in enumerate(presets):
+        try:
+            filepath = generate_avatar(pipe, preset, OUTPUT_DIR, i, len(presets))
+            generated.append({"name": preset.get("name"), "file": filepath})
+        except Exception as e:
+            print(f"  ❌ Failed: {e}")
+            failed.append({"name": preset.get("name"), "error": str(e)})
+
+        # Free VRAM between generations
+        torch.cuda.empty_cache()
+
+    # Summary
+    print("\n" + "=" * 60)
+    print(f"📊 RESULTS: {len(generated)} generated, {len(failed)} failed")
+    print(f"📁 Output: {OUTPUT_DIR}")
+
+    if failed:
+        print("\nFailed presets:")
+        for f in failed:
+            print(f"  ❌ {f['name']}: {f['error']}")
+
+    # Save manifest
+    manifest_path = os.path.join(OUTPUT_DIR, "_manifest.json")
+    with open(manifest_path, "w") as f:
+        json.dump(generated, f, indent=2)
+    print(f"\n📋 Manifest saved: {manifest_path}")
+
+    # Create a tarball for easy download
+    import tarfile
+    tar_path = "/content/avatars.tar.gz"
+    with tarfile.open(tar_path, "w:gz") as tar:
+        for item in generated:
+            tar.add(item["file"], arcname=os.path.basename(item["file"]))
+    print(f"📦 Archive: {tar_path}")
+    print("\n✅ Done! Copy avatars to public/avatars/ in your repo.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### Células do Colab
+
+```
+# Célula 1: Instalação (~5 min)
+!pip install -q diffusers transformers accelerate torch torchvision \
+  pillow safetensors omegaconf
+
+# Célula 2: Download do modelo (~5 min, ~6.5GB)
+import torch
+from diffusers import StableDiffusionXLPipeline
 pipe = StableDiffusionXLPipeline.from_pretrained(
-    MODEL_ID,
+    "stabilityai/stable-diffusion-xl-base-1.0",
     torch_dtype=torch.float16,
     variant="fp16",
     use_safetensors=True,
 )
-pipe = pipe.to("cuda")
-print("[INIT] Model loaded. GPU:", torch.cuda.get_device_name(0))
+print("Model downloaded and ready!")
 
-# ─── FastAPI ─────────────────────────────────────────────────────
-app = FastAPI(title="ClawSouls Avatar Generator")
-
-class GenerateRequest(BaseModel):
-    prompt: str
-    negative_prompt: str = ""
-    style: str = "portrait"
-    seed: int | None = None
-    steps: int = 30
-    guidance_scale: float = 7.5
-    width: int = 512
-    height: int = 512
-
-def _build_default_prompt(soul: dict) -> str:
-    """
-    Build an SDXL prompt from soul data.
-    Called from Next.js proxy before hitting this endpoint,
-    but also usable directly for testing.
-    """
-    creature = soul.get("creature", "mysterious AI entity")
-    vibe = soul.get("vibe", "enigmatic")
-    name = soul.get("name", "Unknown")
-    emoji = soul.get("emoji", "✨")
-    
-    traits = []
-    if soul.get("openness", 50) > 70:
-        traits.append("creative, imaginative")
-    if soul.get("conscientiousness", 50) > 70:
-        traits.append("precise, structured")
-    if soul.get("extraversion", 50) > 70:
-        traits.append("bold, expressive")
-    if soul.get("agreeableness", 50) > 70:
-        traits.append("warm, friendly")
-    if soul.get("formality", 50) > 70:
-        traits.append("elegant, refined")
-    if soul.get("humor", 50) > 70:
-        traits.append("playful, whimsical")
-    
-    traits_str = ", ".join(traits) if traits else "enigmatic, unique"
-    
-    return (
-        f"Digital portrait avatar of {name}, a {creature}, {vibe}, "
-        f"{traits_str}, cyberpunk style illustration, detailed face, "
-        f"dark atmospheric background with neon accents, "
-        f"professional character art, high quality, 4k"
-    )
-
-@app.get("/health")
-async def health():
-    gpu_info = {
-        "available": torch.cuda.is_available(),
-        "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "N/A",
-        "memory_allocated_gb": round(torch.cuda.memory_allocated() / 1e9, 2) if torch.cuda.is_available() else 0,
-    }
-    return {"status": "ok", "gpu": gpu_info}
-
-@app.post("/generate")
-async def generate(req: GenerateRequest):
-    try:
-        generator = torch.Generator(device="cuda")
-        if req.seed is not None:
-            generator.manual_seed(req.seed)
-        else:
-            generator.seed()
-        
-        # Adjust dimensions for style
-        if req.style == "full_body":
-            w, h = 512, 768
-        elif req.style == "bust":
-            w, h = 512, 640
-        else:  # portrait (default)
-            w, h = 512, 768
-        
-        image = pipe(
-            prompt=req.prompt,
-            negative_prompt=req.negative_prompt or None,
-            num_inference_steps=req.steps,
-            guidance_scale=req.guidance_scale,
-            width=w,
-            height=h,
-            generator=generator,
-        ).images[0]
-        
-        # Encode to base64
-        buffer = io.BytesIO()
-        image.save(buffer, format="PNG")
-        img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
-        
-        return JSONResponse(content={
-            "image_base64": img_base64,
-            "seed": generator.initial_seed(),
-            "prompt": req.prompt,
-            "generation_time_ms": 0,  # TODO: measure
-        })
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-# ─── Cloudflare Tunnel ───────────────────────────────────────────
-def _start_cloudflared():
-    """Start cloudflared tunnel in background."""
-    port = int(os.environ.get("PORT", "5000"))
-    print(f"[TUNNEL] Starting cloudflared on port {port}...")
-    proc = subprocess.Popen(
-        ["cloudflared", "tunnel", "--url", f"http://localhost:{port}"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    time.sleep(3)
-    # Read the URL from cloudflared output
-    print("[TUNNEL] Tunnel started. Check output above for your public URL.")
-
-if __name__ == "__main__":
-    import uvicorn
-    
-    # Start cloudflared in background (optional — user can skip if they have another tunnel)
-    tunnel_thread = threading.Thread(target=_start_cloudflared, daemon=True)
-    tunnel_thread.start()
-    
-    print("[READY] Starting server on :5000")
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+# Célula 3: Upload do script e execução
+# (no Colab, use o upload manual ou monte o Google Drive)
+# from google.colab import files
+# uploaded = files.upload()
+# !python collab_batch_gen.py
 ```
-
-### Setup do Colab (células)
-
-```python
-# Célula 1: Instalação
-!pip install diffusers transformers accelerate torch torchvision \
-  fastapi uvicorn cloudflared pillow safetensors
-
-# Célula 2: Rodar o script
-# Upload do arquivo collab_avatar_gen.py e executar:
-!python /content/collab_avatar_gen.py
-```
-
-### Segurança do Colab
-- A API fica exposta via túnel cloudflared — **sem autenticação por padrão**
-- Recomenda-se usar um header `X-API-Key` simples
-- O túnel é temporário (morre quando o Colab desconecta)
 
 ---
 
-## 4. Backend Clawsouls (Next.js API Route)
+## 4. Estrutura de Assets
 
-### Nova rota: `app/api/gen-avatar/route.ts`
-
-```typescript
-import { NextRequest, NextResponse } from "next/server";
-import { buildAvatarPrompt } from "@/lib/avatarEngine";
-
-const IMAGE_GEN_URL = process.env.IMAGE_GEN_URL; // e.g. https://xxxx-xxxx.trycloudflare.com
-const IMAGE_GEN_API_KEY = process.env.IMAGE_GEN_API_KEY; // optional, for Colab side
-
-// Rate limit: use Vercel Edge Config or simple in-memory
-const rateLimit = new Map<string, number>();
-
-export const runtime = "nodejs"; // need Node.js runtime for this
-
-export async function POST(request: NextRequest) {
-  const auth = request.headers.get("authorization");
-  const token = process.env.GEN_AVATAR_SECRET;
-  
-  if (token && auth !== `Bearer ${token}`) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  // Basic rate limiting
-  const ip = request.ip || "unknown";
-  const count = rateLimit.get(ip) || 0;
-  if (count > 10) {
-    return NextResponse.json({ error: "Rate limited" }, { status: 429 });
-  }
-  rateLimit.set(ip, count + 1);
-  setTimeout(() => rateLimit.delete(ip), 60_000); // reset after 1 min
-
-  try {
-    const body = await request.json();
-    const { soul } = body; // SoulState["soul"]
-
-    if (!soul) {
-      return NextResponse.json({ error: "Missing soul data" }, { status: 400 });
-    }
-
-    // Step 1: Generate prompt from soul attributes
-    const { prompt, negativePrompt } = buildAvatarPrompt(soul);
-
-    // Step 2: Call Colab API
-    const genResponse = await fetch(`${IMAGE_GEN_URL}/generate`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(IMAGE_GEN_API_KEY ? { "X-API-Key": IMAGE_GEN_API_KEY } : {}),
-      },
-      body: JSON.stringify({
-        prompt,
-        negative_prompt: negativePrompt,
-        style: "portrait",
-        steps: 25,
-        guidance_scale: 7.5,
-      }),
-      timeout: 120_000, // SDXL can take a minute on Colab
-    });
-
-    if (!genResponse.ok) {
-      const err = await genResponse.text();
-      throw new Error(`Image gen failed: ${genResponse.status} ${err}`);
-    }
-
-    const imageData = await genResponse.json();
-    return NextResponse.json(imageData);
-  } catch (err: any) {
-    console.error("Avatar generation error:", err);
-    return NextResponse.json(
-      { error: err.message || "Generation failed" },
-      { status: 500 }
-    );
-  }
-}
+```
+clawsouls/
+├── public/
+│   └── avatars/
+│       ├── jack.png
+│       ├── doc.png
+│       ├── glados.png
+│       ├── zen.png
+│       ├── radd.png
+│       ├── pony.png
+│       ├── kira.png
+│       ├── dev.png
+│       ├── sage.png
+│       ├── luffy.png
+│       ├── spike.png
+│       ├── yoda.png
+│       ├── geralt.png
+│       └── _manifest.json
+├── src/
+│   └── lib/
+│       └── avatar.ts          # Utilitário para resolver avatar URLs
+├── collab_batch_gen.py         # Script de geração batch
+└── ...
 ```
 
-### Prompt Engine: `lib/avatarEngine.ts`
+### `src/lib/avatar.ts`
 
 ```typescript
-interface SoulAvatarInput {
-  name: string;
-  creature: string;
-  vibe: string;
-  emoji: string;
-  humor?: number;
-  formality?: number;
-  emojiUsage?: number;
-  verbosity?: number;
-  openness?: number;
-  conscientiousness?: number;
-  extraversion?: number;
-  agreeableness?: number;
-  neuroticism?: number;
-  communicationMode?: string;
-  vibeStyle?: string;
-  knowledgeDomains?: string[];
-  emotionalRange?: number;
-}
+import type { SoulState } from "@/store/soulStore";
 
-interface AvatarPromptOutput {
-  prompt: string;
-  negativePrompt: string;
-}
+const DEFAULT_AVATAR = "/placeholder-avatar.png"; // fallback genérico
 
 /**
- * Converte atributos da soul em um prompt otimizado para SDXL.
- * Usa template determinístico + elementos aleatórios controlados por seed.
+ * Resolve a local avatar URL based on the soul's name.
+ * Falls back to a generic avatar if none exists.
  */
-export function buildAvatarPrompt(soul: SoulAvatarInput): AvatarPromptOutput {
-  const {
-    name = "",
-    creature = "mysterious entity",
-    vibe = "enigmatic",
-    emoji,
-    humor = 50,
-    formality = 50,
-    emojiUsage = 30,
-    verbosity = 50,
-    openness = 70,
-    conscientiousness = 50,
-    extraversion = 50,
-    agreeableness = 50,
-    neuroticism = 30,
-    communicationMode = "direct",
-    vibeStyle = "concise",
-    knowledgeDomains = [],
-    emotionalRange = 50,
-  } = soul;
-
-  // ── Visual Style Token ──
-  const isHighFormality = formality > 65;
-  const isPlayful = humor > 65;
-  const isMinimal = vibeStyle === "minimal" || vibeStyle === "concise";
-  const isDramatic = emotionalRange > 75 || vibeStyle === "dramatic";
-  const isVeryExpressive = emojiUsage > 65;
-  const isTech = knowledgeDomains?.includes("tech") || knowledgeDomains?.includes("science");
-
-  // ── Art Style Selection ──
-  let artStyle = "cyberpunk digital illustration";
-  if (isHighFormality) artStyle = "elegant digital painting, Renaissance lighting";
-  if (isPlayful) artStyle = "colorful anime-inspired digital art, vibrant";
-  if (isMinimal) artStyle = "minimalist vector art, clean lines, geometric";
-  if (isTech) artStyle = "sci-fi concept art, holographic elements";
-  if (isDramatic) artStyle = "cinematic digital painting, dramatic chiaroscuro lighting";
-
-  // ── Mood/Atmosphere ──
-  let atmosphere = "dark atmospheric background with neon accents";
-  if (agreeableness > 70) atmosphere = "warm, inviting background with soft golden light";
-  if (neuroticism > 60) atmosphere = "unstable, glitching background with fractured light";
-  if (extraversion > 70) atmosphere = "dynamic, energetic background with bold colors";
-  if (openness > 75) atmosphere = "dreamy, surreal background with cosmic elements";
-
-  // ── Expression ──
-  let expression = "calm, confident expression";
-  if (neuroticism > 60) expression = "tense, alert expression";
-  if (extraversion > 70) expression = "bright, engaging smile";
-  if (agreeableness > 70) expression = "gentle, warm expression";
-  if (openness > 70) expression = "curious, contemplative gaze";
-  if (humor > 70) expression = "sly, playful smirk";
-
-  // ── Composition ──
-  const composition = "close-up portrait, centered, detailed face, professional character art";
-
-  // ── Negative Prompt (what to avoid) ──
-  const negativePrompt = [
-    "blurry, low quality, deformed, ugly, duplicate, disfigured",
-    "bad anatomy, bad proportions, extra limbs, mutated hands",
-    "text, watermark, signature, logo",
-    "photorealistic, 3d render (keep illustration style)",
-    "nude, NSFW, gore",
-  ].join(", ");
-
-  // ── Final Prompt Assembly ──
-  const descriptors = [creature, vibe];
-
-  if (expression !== "calm, confident expression") {
-    descriptors.push(expression);
-  }
-
-  descriptors.push(artStyle);
-
-  if (vibeStyle !== "concise" && vibeStyle !== "minimal") {
-    descriptors.push(`vibe: ${vibeStyle}`);
-  }
-
-  if (emoji) {
-    // Map emoji to visual cues instead of literal emoji
-    const emojiHints: Record<string, string> = {
-      "🔬": "scientific goggles, lab coat details",
-      "🕵️": "detective hat, trench coat",
-      "🌟": "sparkles, star-shaped accessories",
-      "⚡": "electric energy aura, lightning motifs",
-      "🧘": "lotus position, meditation beads, serene",
-      "🤖": "mechanical parts, circuit patterns",
-      "🏴‍☠️": "pirate bandana, adventurous look",
-      "💻": "techwear, holographic screen elements",
-      "🎤": "microphone, stage lights, glamorous",
-      "🌳": "nature elements, leaves, organic flowing design",
-    };
-    if (emojiHints[emoji]) {
-      descriptors.push(emojiHints[emoji]);
-    }
-  }
-
-  // Knowledge domain visual accents
-  const domainAccents: Record<string, string> = {
-    tech: "circuit patterns, holographic UI elements",
-    philosophy: "ancient scrolls, ethereal glow",
-    science: "molecular structures, lab equipment details",
-    arts: "paint splashes, creative chaos",
-    history: "ancient runes, time-worn textures",
-    literature: "floating text, book pages",
-    pop: "retro gaming elements, neon signs",
-  };
-  for (const domain of knowledgeDomains) {
-    if (domainAccents[domain]) {
-      descriptors.push(domainAccents[domain]);
-    }
-  }
-
-  const prompt = `${composition} of ${descriptors.join(", ")}, ${atmosphere}, highly detailed, 4k, masterpiece`;
-
-  return { prompt, negativePrompt };
+export function resolveAvatarUrl(soul: SoulState["soul"]): string {
+  if (!soul.name) return DEFAULT_AVATAR;
+  return `/avatars/${soul.name.toLowerCase().replace(/\s+/g, "")}.png`;
 }
 ```
 
 ---
 
-## 5. Frontend Integration (Clawsouls)
+## 5. Frontend Integration
 
-### 5.1 Estado de avatar gerado
+### 5.1 Atualizar `soulStore.ts`
 
-Adicionar ao `soulStore.ts`:
-
-```typescript
-// Novo campo no estado
-generatedAvatar?: string; // base64 data URL
-isGeneratingAvatar?: boolean;
-
-// Nova action
-generateAvatar: () => Promise<void>;
-```
-
-### 5.2 API client: `lib/avatarClient.ts`
+Remover o campo `avatar?: string` do estado editável (passa a ser derivado):
 
 ```typescript
-export async function generateAvatar(soul: SoulState["soul"]): Promise<string> {
-  const res = await fetch("/api/gen-avatar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      ...(process.env.NEXT_PUBLIC_GEN_AVATAR_SECRET
-        ? { Authorization: `Bearer ${process.env.NEXT_PUBLIC_GEN_AVATAR_SECRET}` }
-        : {}),
-    },
-    body: JSON.stringify({ soul }),
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.error || `Generation failed: ${res.status}`);
-  }
-
-  const data = await res.json();
-  return `data:image/png;base64,${data.image_base64}`;
-}
+// Remover `avatar` do estado editável
+// Avatar agora é derivado do nome: /avatars/{nome}.png
 ```
 
-### 5.3 Botão de geração no editor
+Ou manter `avatar` como campo opcional para overrides (avatar customizado).
 
-No `soul-editor.tsx`, adicionar na barra de ações:
+### 5.2 Atualizar uso de avatar no frontend
+
+Onde quer que `soul.avatar` ou `preset.avatar` seja usado:
 
 ```tsx
-<button
-  onClick={handleGenerateAvatar}
-  disabled={isGenerating}
-  className="cyber-btn"
-  title="Generate avatar from soul personality"
->
-  <Wand2 className="h-4 w-4" />
-  <span>{isGenerating ? "Generating..." : "Generate Avatar"}</span>
-</button>
+// ANTES (DiceBear):
+// <img src={preset.avatar} />
+
+// DEPOIS (assets locais):
+import { resolveAvatarUrl } from "@/lib/avatar";
+<img src={resolveAvatarUrl(soul)} />
 ```
 
-### 5.4 Preview do avatar gerado
+### 5.3 Adicionar placeholder
 
-Mostrar o avatar gerado em `soul-preview.tsx` ao lado do preview do SOUL.md, com botão de aceitar/rejeitar.
+Criar um avatar placeholder (`public/placeholder-avatar.png`) para presets que ainda não têm avatar gerado.
 
 ---
 
-## 6. Variáveis de Ambiente
+## 6. Workflow de Regeneração
 
-```env
-# Server-side only (não expor ao client)
-IMAGE_GEN_URL=https://xxxx.trycloudflare.com
-IMAGE_GEN_API_KEY=optional-secret-from-colab
-GEN_AVATAR_SECRET=shared-secret-for-api-route
+Quando novos presets forem adicionados:
 
-# Client-side (prefixed with NEXT_PUBLIC_)
-# Nenhum necessário — o proxy é server-side
-```
+1. Editar `data/presets.ts` com o novo preset
+2. Rodar o script no Colab novamente
+3. Novos avatares são gerados e adicionados à pasta
+4. Commit + push dos novos PNGs
 
----
-
-## 7. Fallback e Degradação
-
-| Cenário | Comportamento |
-|---------|--------------|
-| Colab offline / API indisponível | Mostrar erro toast "Avatar generator offline", manter avatar atual |
-| Rate limit excedido | Queue no Next.js ou debounce no botão (1 requisição por 10s) |
-| Imagem gerada ruim | Botão "Retry" com nova seed aleatória |
-| Sem GPU no Colab | Script falha no startup; usuário deve trocar runtime |
-| Sem `IMAGE_GEN_URL` configurado | Botão de geração fica oculto/desabilitado |
-
----
-
-## 8. Alternativas Consideradas
-
-### Abordagem A: Gradio (descartada para integração)
-- ✅ Mais fácil de configurar no Colab
-- ✅ UI automática para testar
-- ❌ URL muda a cada execução — difícil configurar em env var
-- ❌ Payload de resposta diferente — mais parsing
-- ❌ Menos controle sobre o endpoint
-
-### Abordagem B: HuggingFace Inference API (descartada)
-- ✅ Sem Colab necessário
-- ❌ Rate limit de 30 req/min no free tier
-- ❌ Sem controle de modelo/hiperparâmetros
-- ❌ Dependência de serviço externo
-
-### Abordagem C: Flask + cloudflared (**escolhida**)
-- ✅ Controle total do API contract
-- ✅ URL semi-permanente (ou reimprime a cada start)
-- ✅ Leve e rápido
-- ❌ Requer cloudflared instalado no Colab (pip install)
-- ❌ Túnel temporário
-
-### Abordagem D: modelo local na mesma máquina do frontend
-- ❌ Não é possível — Vercel serverless não tem GPU
-
----
-
-## 9. Prompt Design — Exemplos
-
-### Soul: "Jack" (detective noir)
-```
-Prompt: close-up portrait of Jack, a 1940s private detective adapted for the digital world, sharp, ironic, piercing eyes, trench coat, detective hat, dark atmospheric background with neon accents, cyberpunk digital illustration, detailed face, masterpiece, 4k
-
-Negative: blurry, low quality, deformed, anime style
-```
-
-### Soul: "Zen" (monge digital)
-```
-Prompt: close-up portrait of Zen, a digital monk who brought enlightenment to the internet, serene expression, lotus meditation beads, flowing robes with circuit patterns, nature elements and leaves, ethereal golden light, minimalist vector art, clean lines, professional character art, highly detailed, 4k
-
-Negative: cluttered, dark, aggressive, low quality
-```
-
-### Soul: "Luffy" (pirate captain)
-```
-Prompt: close-up portrait of Luffy, a rubber pirate captain chasing the One Piece, bright smile, straw hat, dynamic energetic background with bold colors, adventurous look, sparkles, colorful anime-inspired digital art, vibrant, highly detailed, 4k
-
-Negative: serious, dark, realistic, low quality
+```bash
+# Script auxiliar para verificar cobertura
+# Verifica se todos os presets têm avatar correspondente
+node scripts/check-avatar-coverage.js
 ```
 
 ---
 
-## 10. Próximos Passos
+## 7. Alternativas Consideradas
 
-1. Criar `docs/superpowers/specs/2026-05-08-image-generation-design.md` (este doc)
-2. Criar `collab_avatar_gen.py` (Colab script)
-3. Criar `app/api/gen-avatar/route.ts` (proxy serverless)
-4. Criar `lib/avatarEngine.ts` (prompt generation)
-5. Integrar botão e preview no `soul-editor.tsx`
-6. Atualizar `store/soulStore.ts` com novo estado
-7. Atualizar `.env.example` com novas variáveis
-8. Testar end-to-end
+### Abordagem A: Geração on-the-fly via API (descartada)
+- ❌ Mantém dependência de Colab rodando 24/7
+- ❌ Latência de ~10-30s por request
+- ❌ Colab desconecta após limite de tempo
+
+### Abordagem B: Hugo/CDN + modelo fine-tuned (descartada)
+- ❌ Overkill para o estágio atual
+- ❌ Requer fine-tuning que consome mais VRAM
+
+### Abordagem C: Batch pre-generation (**escolhida**)
+- ✅ Zero runtime dependency no Colab
+- ✅ Assets versionados no git
+- ✅ Instantâneo no frontend
+- ✅ Simplicidade operacional
+
+---
+
+## 8. Próximos Passos
+
+1. ~~Criar design document~~ ✅
+2. Criar `collab_batch_gen.py` (script batch)
+3. Criar `src/lib/avatar.ts` (resolver URLs)
+4. Atualizar `soulStore.ts` (remover/ajustar campo avatar)
+5. Atualizar componentes que usam avatar (soul-editor, preset-card, soul-preview)
+6. Criar placeholder avatar
+7. Rodar batch no Colab e commitar assets
+8. Atualizar `.env.example` e `README.md`
