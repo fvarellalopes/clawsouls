@@ -1,207 +1,111 @@
 #!/usr/bin/env python3
 """
-ClawSouls Avatar Batch Generator
-Gera avatares via API do Colab (Z-Image-Turbo) em lotes com retry.
+Generate all 289 ClawSouls avatars via Colab API
 """
 
 import json
-import urllib.request
-import urllib.parse
-import ssl
+import base64
 import os
 import time
-import hashlib
-import sys
-from datetime import datetime
+import urllib.request
+import urllib.error
+from pathlib import Path
 
-# ── Config ────────────────────────────────────────────────
-SERVER_URL = os.environ.get("CLAWSOULS_SERVER", "http://localhost:8000")
-SECRET_TOKEN = os.environ.get("CLAWSOULS_SECRET", "cs-secret-2026")
-OUTPUT_DIR = os.environ.get("CLAWSOULS_OUTPUT", "/tmp/clawsouls_avatars")
-BATCH_SIZE = int(os.environ.get("CLAWSOULS_BATCH_SIZE", "50"))
+# Config
+API_URL = os.environ.get("CLAWSOUL_API_URL", "http://localhost:8000")
+TOKEN = os.environ.get("CLAWSOUL_TOKEN", "cs-secret-2026")
+PROMPTS_FILE = Path(__file__).parent.parent / "clawsouls_cyberpunk_prompts.json"
+OUTPUT_DIR = Path("/tmp/clawsouls_avatars")
+LOG_FILE = OUTPUT_DIR / "_generation_log.json"
+
+# Rate limiting
+DELAY_BETWEEN_REQUESTS = 2.5  # seconds
 MAX_RETRIES = 3
-RETRY_DELAY = 5  # segundos
-
-# SSL context (sem verificação para localhost/cloudflare)
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
-
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-# ── Carregar prompts ──────────────────────────────────────
-PROMPTS_FILE = "/tmp/clawsouls_all_prompts.json"
-LOG_FILE = os.path.join(OUTPUT_DIR, "_generation_log.json")
 
 def load_prompts():
     with open(PROMPTS_FILE) as f:
         return json.load(f)
 
-def load_log():
-    if os.path.exists(LOG_FILE):
-        with open(LOG_FILE) as f:
-            return json.load(f)
-    return {"generated": [], "failed": [], "skipped": []}
+def generate_avatar(prompt_data):
+    """Generate a single avatar via API"""
+    url = f"{API_URL}/generate?token={TOKEN}"
+    
+    data = json.dumps({
+        "name": prompt_data["name"],
+        "custom_prompt": prompt_data["prompt"]
+    }).encode()
+    
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={"Content-Type": "application/json"},
+        method="POST"
+    )
+    
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                result = json.loads(resp.read().decode())
+                return result
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                print(f"   ⚠️  Rate limited, waiting 5s...")
+                time.sleep(5)
+                continue
+            raise
+        except Exception as e:
+            if attempt < MAX_RETRIES - 1:
+                print(f"   ⚠️  Retry {attempt+1}/{MAX_RETRIES}: {e}")
+                time.sleep(3)
+                continue
+            raise
 
-def save_log(log_data):
-    with open(LOG_FILE, 'w') as f:
-        json.dump(log_data, f, indent=2, ensure_ascii=False)
+def save_image(img_b64, name):
+    """Save base64 image to file"""
+    img_bytes = base64.b64decode(img_b64)
+    safe_name = "".join(c if c.isalnum() or c in "._-" else "_" for c in name.lower().strip())
+    path = OUTPUT_DIR / f"{safe_name}.png"
+    path.write_bytes(img_bytes)
+    return path
 
-# ── Gerar uma imagem ───────────────────────────────────────
-def generate_avatar(avatar_data, attempt=1):
-    name = avatar_data['name']
-    prompt = avatar_data['prompt']
-    slug = avatar_data.get('slug', name.lower().replace(' ', '_'))
-    
-    # Montar payload
-    payload = json.dumps({
-        "name": name,
-        "custom_prompt": prompt,
-        "steps": 8,
-    }).encode('utf-8')
-    
-    url = f"{SERVER_URL}/generate?token={SECRET_TOKEN}"
-    
-    headers = {
-        'User-Agent': 'ClawSouls/3.0',
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-Token': SECRET_TOKEN,
-    }
-    
-    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-    
-    try:
-        with urllib.request.urlopen(req, context=ctx, timeout=120) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            
-        if 'image_base64' in data:
-            # Salvar imagem
-            img_bytes = __import__('base64').b64decode(data['image_base64'])
-            img_path = os.path.join(OUTPUT_DIR, f"{slug}.png")
-            with open(img_path, 'wb') as f:
-                f.write(img_bytes)
-            
-            return {
-                'success': True,
-                'name': name,
-                'slug': slug,
-                'path': img_path,
-                'size': len(img_bytes),
-                'elapsed': data.get('elapsed_s', 0),
-                'seed': data.get('seed', 0),
-                'attempt': attempt,
-            }
-        else:
-            return {
-                'success': False,
-                'name': name,
-                'error': f"Sem image_base64 na resposta: {data.get('detail', 'unknown')}",
-                'attempt': attempt,
-            }
-            
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode('utf-8', errors='replace')
-        if e.code == 429:
-            # Rate limited — esperar e tentar de novo
-            wait = RETRY_DELAY * attempt
-            print(f"  ⏳ 429 Rate Limited — esperando {wait}s...")
-            time.sleep(wait)
-            return generate_avatar(avatar_data, attempt + 1)
-        elif e.code == 401:
-            return {'success': False, 'name': name, 'error': 'Auth falhou (401)', 'attempt': attempt}
-        else:
-            return {'success': False, 'name': name, 'error': f"HTTP {e.code}: {error_body[:200]}", 'attempt': attempt}
-            
-    except Exception as e:
-        if attempt < MAX_RETRIES:
-            print(f"  ⏳ Retry {attempt+1}/{MAX_RETRIES} em {RETRY_DELAY}s...")
-            time.sleep(RETRY_DELAY)
-            return generate_avatar(avatar_data, attempt + 1)
-        return {'success': False, 'name': name, 'error': str(e), 'attempt': attempt}
-
-# ── Health Check ───────────────────────────────────────────
-def check_server():
-    try:
-        url = f"{SERVER_URL}/health"
-        with urllib.request.urlopen(url, context=ctx, timeout=5) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            print(f"✅ Servidor ativo: {data}")
-            return True
-    except Exception as e:
-        print(f"❌ Servidor não responde: {e}")
-        return False
-
-# ── MAIN ──────────────────────────────────────────────────
 def main():
-    print("=" * 60)
-    print("🖼️  ClawSouls Avatar Batch Generator")
-    print(f"   Server: {SERVER_URL}")
-    print(f"   Output: {OUTPUT_DIR}")
-    print(f"   Batch size: {BATCH_SIZE}")
-    print("=" * 60)
-    
-    if not check_server():
-        print("\n❌ Servidor indisponível. Abortando.")
-        sys.exit(1)
-        return
-    
+    OUTPUT_DIR.mkdir(exist_ok=True)
     prompts = load_prompts()
-    log = load_log()
-    generated_set = set(g['name'] for g in log.get('generated', []))
-    
-    remaining = [p for p in prompts if p['name'] not in generated_set]
     total = len(prompts)
-    already_done = total - len(remaining)
     
-    print(f"\n📊 Total: {total} | ✅ Feitos: {already_done} | ⏳ Restantes: {len(remaining)}")
+    print(f"🎨 Generating {total} avatars...")
+    print(f"   API: {API_URL}")
+    print(f"   Output: {OUTPUT_DIR}")
+    print()
     
-    if not remaining:
-        print("🎉 Todos os avatares já foram gerados!")
-        return
+    results = []
+    success = 0
+    failed = 0
     
-    print(f"\n🔄 Gerando {len(remaining)} avatares em lotes de {BATCH_SIZE}...\n")
+    for i, p in enumerate(prompts, 1):
+        print(f"[{i}/{total}] {p['name']}...", end=" ")
+        try:
+            result = generate_avatar(p)
+            path = save_image(result["image_base64"], p["name"])
+            print(f"✅ {result['elapsed_s']}s")
+            results.append({"id": p["id"], "name": p["name"], "path": str(path), "status": "ok"})
+            success += 1
+        except Exception as e:
+            print(f"❌ {e}")
+            results.append({"id": p["id"], "name": p["name"], "error": str(e), "status": "failed"})
+            failed += 1
+        
+        time.sleep(DELAY_BETWEEN_REQUESTS)
     
-    batch_num = 1
-    for i, avatar in enumerate(remaining):
-        batch_idx = i % BATCH_SIZE
-        
-        if batch_idx == 0:
-            batch_start = i
-            remaining_count = len(remaining) - i
-            print(f"\n--- Lote {batch_num} ({min(BATCH_SIZE, remaining_count)} avatares) ---")
-            batch_num += 1
-        
-        print(f"  [{i+1}/{len(remaining)}] Gerando {avatar['name']}...", end=" ")
-        
-        result = generate_avatar(avatar)
-        
-        if result['success']:
-            print(f"✅ ({result['elapsed']}s, seed={result['seed']})")
-            log['generated'].append(result)
-        else:
-            print(f"❌ {result.get('error', 'unknown')}")
-            log['failed'].append(result)
-        
-        # Salvar log a cada imagem (para não perder progresso)
-        save_log(log)
-        
-        # Pequeno delay entre gerações para não sobrecarregar
-        if i < len(remaining) - 1:
-            time.sleep(0.5)
+    # Save log
+    LOG_FILE.write_text(json.dumps({
+        "total": total, "success": success, "failed": failed,
+        "results": results
+    }, indent=2))
     
-    # Resumo final
-    print("\n" + "=" * 60)
-    print("📊 RESUMO FINAL")
-    print(f"   ✅ Gerados com sucesso: {len(log['generated'])}")
-    print(f"   ❌ Falhas: {len(log['failed'])}")
-    print(f"   📁 Imagens salvas em: {OUTPUT_DIR}")
-    print("=" * 60)
-    
-    if log['failed']:
-        print("\n❌ Falhas:")
-        for f in log['failed']:
-            print(f"   - {f['name']}: {f.get('error', '?')}")
+    print()
+    print(f"📊 Complete: {success} OK, {failed} failed")
+    print(f"   Log: {LOG_FILE}")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
