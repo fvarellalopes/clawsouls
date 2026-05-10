@@ -27,34 +27,42 @@ def norm(s):
     return s.lower().replace('-', '').replace('_', '')
 
 def get_existing_ids():
-    repo_files = set()
-    if os.path.exists(REPO_AVATARS_DIR):
-        repo_files = set(os.listdir(REPO_AVATARS_DIR))
-    staging_files = set()
-    if os.path.exists(STAGING_DIR):
-        staging_files = set(os.listdir(STAGING_DIR))
-    all_existing = {f.replace('.png', '') for f in repo_files | staging_files if f.endswith('.png')}
-    return {norm(f) for f in all_existing}
+    """Retorna set de IDs normalizados ja gerados (repo ou staging)"""
+    ids = set()
+    for d in [REPO_AVATARS_DIR, STAGING_DIR]:
+        if not os.path.exists(d):
+            continue
+        for f in os.listdir(d):
+            if not f.endswith('.png'):
+                continue
+            base = os.path.splitext(f)[0].lower()
+            # Tentar match exato com algum prompt id
+            for p in prompts:
+                if norm(p['id']) == norm(base):
+                    ids.add(norm(p['id']))
+                    break
+    return ids
 
-norm_existing = get_existing_ids()
-total_generated = sum(1 for p in prompts if norm(p['id']) in norm_existing)
-print(f"Progresso inicial: {total_generated}/{len(prompts)} gerados")
+generated = get_existing_ids()
+total_done = sum(1 for p in prompts if norm(p['id']) in generated)
+print(f"Progresso: {total_done}/{len(prompts)} ja gerados")
 
-if total_generated >= len(prompts):
+if total_done >= len(prompts):
     print("TODOS GERADOS!")
     sys.exit(0)
 
-generated_this_run = 0
+new_this_run = 0
 
 for i, p in enumerate(prompts):
-    if norm(p['id']) in norm_existing:
+    pid_norm = norm(p['id'])
+    if pid_norm in generated:
         continue
 
-    total_generated += 1
-    generated_this_run += 1
+    total_done += 1
+    new_this_run += 1
     print(f"\n{'='*60}")
-    print(f"[{total_generated}/{len(prompts)}] Gerando: {p['name']} (id={p['id']})")
-    print(f"   Prompt: {p['prompt'][:120]}...")
+    print(f"[{total_done}/{len(prompts)}] Gerando: {p['name']} (id={p['id']})")
+    print(f"  Prompt: {p['prompt'][:120]}...")
 
     out_path = f"{STAGING_DIR}/{p['id']}.png"
 
@@ -76,7 +84,9 @@ for i, p in enumerate(prompts):
         '--max-time', str(REQUEST_TIMEOUT)
     ]
 
+    ok = False
     try:
+        sys.stdout.flush()
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=REQUEST_TIMEOUT + 10)
 
         if result.returncode == 0 and result.stdout.strip():
@@ -86,56 +96,45 @@ for i, p in enumerate(prompts):
                     img_data = base64.b64decode(resp['image'])
                     with open(out_path, 'wb') as f:
                         f.write(img_data)
-                    print(f"   Salvo: {len(img_data)//1024} KB em {out_path}")
+                    print(f"  Salvo: {len(img_data)//1024} KB")
 
                     dest = f"{REPO_AVATARS_DIR}/{p['id']}.png"
                     shutil.copy2(out_path, dest)
 
-                    subprocess.run(
-                        ['git', '-C', REPO_DIR, 'add', f'public/avatars/{p["id"]}.png'],
-                        capture_output=True
-                    )
-                    r_commit = subprocess.run(
+                    subprocess.run(['git', '-C', REPO_DIR, 'add', f'public/avatars/{p["id"]}.png'], capture_output=True)
+                    rc = subprocess.run(
                         ['git', '-C', REPO_DIR, 'commit', '-m',
-                         f'Add avatar: {p["name"]} ({p["id"]}) [{total_generated}/{len(prompts)}]'],
+                         f'Add avatar: {p["name"]} ({p["id"]}) [{total_done}/{len(prompts)}]'],
                         capture_output=True, text=True
                     )
-                    commit_msg = (r_commit.stdout + r_commit.stderr).strip()
-                    print(f"   Commit: {commit_msg[:80]}")
+                    print(f"  Commit: {(rc.stdout+rc.stderr).strip()[:80]}")
 
-                    r_push = subprocess.run(
-                        ['git', '-C', REPO_DIR, 'push'],
-                        capture_output=True, text=True, timeout=30
-                    )
-                    print(f"   Push OK")
-
-                    norm_existing.add(norm(p['id']))
+                    subprocess.run(['git', '-C', REPO_DIR, 'push'], capture_output=True, text=True, timeout=30)
+                    print(f"  Push: OK")
+                    generated.add(pid_norm)
+                    ok = True
+                    print(f"  >>> DONE")
                 else:
-                    print(f"   API erro: {resp.get('detail', resp)}")
-                    total_generated -= 1
-                    generated_this_run -= 1
+                    print(f"  API erro: {resp.get('detail', resp)}")
             except json.JSONDecodeError:
-                print(f"   Resposta nao JSON: {result.stdout[:200]}")
-                total_generated -= 1
-                generated_this_run -= 1
+                print(f"  JSON erro: {result.stdout[:200]}")
         else:
-            print(f"   curl erro: {result.stderr[:200]}")
-            total_generated -= 1
-            generated_this_run -= 1
+            print(f"  curl erro: {result.stderr[:200]}")
     except subprocess.TimeoutExpired:
-        print(f"   Timeout para {p['name']}")
-        total_generated -= 1
-        generated_this_run -= 1
+        print(f"  Timeout: {p['name']}")
     except Exception as e:
-        print(f"   Erro: {e}")
-        total_generated -= 1
-        generated_this_run -= 1
+        print(f"  Erro: {e}")
 
-    remaining = len(prompts) - total_generated
+    if not ok:
+        total_done -= 1
+        new_this_run -= 1
+        # Nao pula — tenta de novo na proxima execucao
+
+    remaining = len(prompts) - total_done
     if remaining > 0:
-        print(f"   Aguardando {DELAY_BETWEEN}s... ({remaining} restantes)")
+        print(f"  Esperando {DELAY_BETWEEN}s... ({remaining} restantes)")
         time.sleep(DELAY_BETWEEN)
 
 print(f"\n{'='*60}")
-print(f"BATCH COMPLETO: {generated_this_run} novos avatares")
-print(f"Total geral: {total_generated}/{len(prompts)}")
+print(f"Novos nesta execucao: {new_this_run}")
+print(f"Total geral: {total_done}/{len(prompts)}")
