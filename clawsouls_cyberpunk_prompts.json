@@ -4445,5 +4445,653 @@
       "mythology",
       "centzon-totochtin"
     ]
+  },
+  {
+    "id": "beyonce",
+    "name": "Beyoncé",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Beyoncé, pop superstar, female, glamorous, confident, iconic stage presence, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "beyonce"
+    ]
+  },
+  {
+    "id": "taylor-swift",
+    "name": "Taylor Swift",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Taylor Swift, pop singer-songwriter, blonde, red lips, iconic pop star, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "taylor-swift"
+    ]
+  },
+  {
+    "id": "katy-perry",
+    "name": "Katy Perry",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Katy Perry, pop singer, female, colorful hair, playful, theatrical, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "katy-perry"
+    ]
+  },
+  {
+    "id": "lady-gaga",
+    "name": "Lady Gaga",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Lady Gaga, female pop star, avant-garde, fierce costumes, eccentric fashion, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "lady-gaga"
+    ]
+  },
+  {
+    "id": "madonna",
+    "name": "Madonna",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Madonna, queen of pop, female, iconic, cone bra, reinvented constantly, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "madonna"
+    ]
+  },
+  {
+    "id": "rihanna",
+    "name": "Rihanna",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Rihanna, pop and R&B icon, female, fearless, bold fashion, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "rihanna"
+    ]
+  },
+  {
+    "id": "adele",
+    "name": "Adele",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Adele, soulful British singer, female, powerful voice, elegant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "adele"
+    ]
+  },
+  {
+    "id": "billie-eilish",
+    "name": "Billie Eilish",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Billie Eilish, alternative pop singer, female, baggy clothes, neon green hair, haunting vocals, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "billie-eilish"
+    ]
+  },
+  {
+    "id": "dua-lipa",
+    "name": "Dua Lipa",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Dua Lipa, pop singer, female, dark hair, sharp style, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "dua-lipa"
+    ]
+  },
+  {
+    "id": "ariana-grande",
+    "name": "Ariana Grande",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Ariana Grande, pop star, female, high ponytail, cute, powerful vocals, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "ariana-grande"
+    ]
+  },
+  {
+    "id": "miley-cyrus",
+    "name": "Miley Cyrus",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Miley Cyrus, pop star, female, wild, rebellious, tongue out, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "miley-cyrus"
+    ]
+  },
+  {
+    "id": "shakira",
+    "name": "Shakira",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Shakira, Latin pop star, female, curly blonde hair, belly dancer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "shakira"
+    ]
+  },
+  {
+    "id": "britney-spears",
+    "name": "Britney Spears",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Britney Spears, pop princess, female, schoolgirl outfit, blonde braids, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "britney-spears"
+    ]
+  },
+  {
+    "id": "selena-gomez",
+    "name": "Selena Gomez",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Selena Gomez, singer actress, female, elegant, classy, dark hair, warm smile, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "selena-gomez"
+    ]
+  },
+  {
+    "id": "jay-z",
+    "name": "Jay-Z",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Jay-Z, hip hop mogul, male, confident, suit, chain, legendary rapper, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "jay-z"
+    ]
+  },
+  {
+    "id": "kanye-west",
+    "name": "Kanye West",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Kanye West, hip hop artist, male, bold, visionary, controversial, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "kanye-west"
+    ]
+  },
+  {
+    "id": "kendrick-lamar",
+    "name": "Kendrick Lamar",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Kendrick Lamar, conscious hip hop artist, male, crown of thorns, poetic, intense, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "kendrick-lamar"
+    ]
+  },
+  {
+    "id": "drake",
+    "name": "Drake",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Drake, Canadian rapper, male, emotional, tattoos, versatile, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "drake"
+    ]
+  },
+  {
+    "id": "nicki-minaj",
+    "name": "Nicki Minaj",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Nicki Minaj, female rapper, colorful wigs, bold, larger than life, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "nicki-minaj"
+    ]
+  },
+  {
+    "id": "card-b",
+    "name": "Cardi B",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Cardi B, female rapper, unapologetic, glamorous, bold, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "card-b"
+    ]
+  },
+  {
+    "id": "lil-wayne",
+    "name": "Lil Wayne",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Lil Wayne, rapper, male, dreads, tattoos, grills, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "lil-wayne"
+    ]
+  },
+  {
+    "id": "snoop-dogg",
+    "name": "Snoop Dogg",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Snoop Dogg, west coast rapper, male, laid back, long braids, sunglasses, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "snoop-dogg"
+    ]
+  },
+  {
+    "id": "eminem",
+    "name": "Eminem",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Eminem, rapper, male, blonde hair, scowl, microphone, intense, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "eminem"
+    ]
+  },
+  {
+    "id": "lil-nas-x",
+    "name": "Lil Nas X",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Lil Nas X, rapper singer, male, colorful, provocative, bold fashion, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "lil-nas-x"
+    ]
+  },
+  {
+    "id": "travis-scott",
+    "name": "Travis Scott",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Travis Scott, rapper, male, dreads, intense, wild energy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "travis-scott"
+    ]
+  },
+  {
+    "id": "megan-thee-stallion",
+    "name": "Megan Thee Stallion",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Megan Thee Stallion, female rapper, confident, glamorous, curves, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "megan-thee-stallion"
+    ]
+  },
+  {
+    "id": "lizzo",
+    "name": "Lizzo",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Lizzo, female singer rapper, body positive, flute, bold, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "lizzo"
+    ]
+  },
+  {
+    "id": "doja-cat",
+    "name": "Doja Cat",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Doja Cat, female singer rapper, cat ears, playful, creative, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "doja-cat"
+    ]
+  },
+  {
+    "id": "post-malone",
+    "name": "Post Malone",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Post Malone, male singer rapper, face tattoos, blonde dreads, laid back, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "post-malone"
+    ]
+  },
+  {
+    "id": "ozzy-osbourne",
+    "name": "Ozzy Osbourne",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Ozzy Osbourne, Prince of Darkness, male rock legend, bat bite, wild, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "ozzy-osbourne"
+    ]
+  },
+  {
+    "id": "slash",
+    "name": "Slash",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Slash, male rock guitarist, top hat, long curly hair, sunglasses, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "slash"
+    ]
+  },
+  {
+    "id": "kurt-cobain",
+    "name": "Kurt Cobain",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Kurt Cobain, Nirvana frontman, male, blonde hair, flannel, grunge icon, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "kurt-cobain"
+    ]
+  },
+  {
+    "id": "freddie-mercury",
+    "name": "Freddie Mercury",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Freddie Mercury, Queen frontman, male, iconic mustache, theatrical, powerful vocals, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "freddie-mercury"
+    ]
+  },
+  {
+    "id": "jimi-hendrix",
+    "name": "Jimi Hendrix",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Jimi Hendrix, legendary guitarist, male, afro, guitar on fire, psychedelic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "jimi-hendrix"
+    ]
+  },
+  {
+    "id": "harry-styles",
+    "name": "Harry Styles",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Harry Styles, pop rock singer, male, colorful suits, curly hair, charming, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "harry-styles"
+    ]
+  },
+  {
+    "id": "sam-smith",
+    "name": "Sam Smith",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Sam Smith, singer, male, soulful voice, elegant, emotional ballads, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "sam-smith"
+    ]
+  },
+  {
+    "id": "elton-john",
+    "name": "Elton John",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Elton John, rock legend, male, flamboyant glasses, colorful outfits, piano, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "elton-john"
+    ]
+  },
+  {
+    "id": "prince",
+    "name": "Prince",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Prince, pop funk icon, male, purple, high heeled boots, guitar, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "prince"
+    ]
+  },
+  {
+    "id": "bad-bunny",
+    "name": "Bad Bunny",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Bad Bunny, Latin trap star, male, bold fashion, sunglasses, colorful hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "bad-bunny"
+    ]
+  },
+  {
+    "id": "rosalia",
+    "name": "Rosalía",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Rosalía, Spanish singer, female, flamenco pop, red nails, braids, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "rosalia"
+    ]
+  },
+  {
+    "id": "daddy-yankee",
+    "name": "Daddy Yankee",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Daddy Yankee, king of reggaeton, male, baseball cap, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "daddy-yankee"
+    ]
+  },
+  {
+    "id": "anitta",
+    "name": "Anitta",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Anitta, Brazilian pop star, female, powerful, versatile, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "anitta"
+    ]
+  },
+  {
+    "id": "caetano-veloso",
+    "name": "Caetano Veloso",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Caetano Veloso, Brazilian MPB legend, male, white hair, poet, intellectual, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "caetano-veloso"
+    ]
+  },
+  {
+    "id": "gilberto-gil",
+    "name": "Gilberto Gil",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Gilberto Gil, Brazilian musician, male, gray hair, smile, guitar, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "gilberto-gil"
+    ]
+  },
+  {
+    "id": "ivete-sangalo",
+    "name": "Ivete Sangalo",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Ivete Sangalo, Brazilian axé singer, female, big hair, energetic, powerful voice, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "ivete-sangalo"
+    ]
+  },
+  {
+    "id": "dolly-parton",
+    "name": "Dolly Parton",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Dolly Parton, country legend, female, big blonde wig, rhinestones, guitar, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "dolly-parton"
+    ]
+  },
+  {
+    "id": "johnny-cash",
+    "name": "Johnny Cash",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Johnny Cash, man in black, male country legend, guitar, deep voice, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "johnny-cash"
+    ]
+  },
+  {
+    "id": "psy",
+    "name": "Psy",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Psy, K-pop star, male, Gangnam Style, sunglasses, suit, funny, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "psy"
+    ]
+  },
+  {
+    "id": "david-bowie",
+    "name": "David Bowie",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a David Bowie, Ziggy Stardust, male, lightning bolt makeup, androgynous, alien rock star, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "david-bowie"
+    ]
+  },
+  {
+    "id": "tony-bennett",
+    "name": "Tony Bennett",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Tony Bennett, jazz legend, male, suit, hat, crooner, timeless, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "tony-bennett"
+    ]
+  },
+  {
+    "id": "stevie-wonder",
+    "name": "Stevie Wonder",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Stevie Wonder, soul legend, male, sunglasses, braids, blind, joyful piano, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "stevie-wonder"
+    ]
+  },
+  {
+    "id": "aretha-franklin",
+    "name": "Aretha Franklin",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Aretha Franklin, queen of soul, female, powerful voice, church hat, iconic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "aretha-franklin"
+    ]
+  },
+  {
+    "id": "ray-charles",
+    "name": "Ray Charles",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Ray Charles, soul pioneer, male, sunglasses, piano, gravelly voice, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "ray-charles"
+    ]
+  },
+  {
+    "id": "tina-turner",
+    "name": "Tina Turner",
+    "creature": "Musician / Celebrity",
+    "category": "celebrity",
+    "prompt": "a Tina Turner, rock and soul queen, female, big hair, legs, powerful voice, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "celebrity",
+      "music",
+      "tina-turner"
+    ]
   }
 ]
