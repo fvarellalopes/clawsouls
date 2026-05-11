@@ -2241,6 +2241,19 @@
     ]
   },
   {
+    "id": "ultron",
+    "name": "Ultron",
+    "creature": "AI / Android Villain",
+    "category": "comics_marvel",
+    "prompt": "a Ultron from Marvel Comics, malevolent AI android, robotic face, red glowing eyes, metal body, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "villain",
+      "ai",
+      "android",
+      "marvel"
+    ]
+  },
+  {
     "id": "falcon",
     "name": "Falcon",
     "creature": "Comic Book Character",
