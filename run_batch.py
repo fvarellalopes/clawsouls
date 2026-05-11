@@ -11,8 +11,8 @@ Gera todos os 289 avatares via Z-Image-Turbo API (cloudflared tunnel).
 
 import json, subprocess, os, shutil, base64, time, sys, urllib.request
 
-API_URL = "https://dc69-136-110-51-158.ngrok-free.app"
-TOKEN = "cs-secret-2026"
+API_URL = os.environ.get("CLAWSOULS_API_URL", "https://absolutely-racial-klein-polyester.trycloudflare.com").rstrip("/")
+TOKEN = os.environ.get("CLAWSOULS_TOKEN", "cs-secret-2026")
 STAGING_DIR = "/tmp/clawsouls_avatars"
 REPO_AVATARS_DIR = "/home/ubuntu/clawsouls/public/avatars"
 PROMPTS_FILE = "/home/ubuntu/clawsouls/clawsouls_cyberpunk_prompts.json"
@@ -103,19 +103,13 @@ for i, p in enumerate(prompts):
 
     ok = False
 
-    # Healthcheck pré-request
-    healthcheck_counter += 1
-    if healthcheck_counter >= HEALTHCHECK_INTERVAL:
+    # Healthcheck pré-request (sempre, inclusive 1ª imagem)
+    while True:
         print("  Healthcheck...")
-        if not healthcheck():
-            print("  Tunnel fora! Tentando novamente em 30s...")
-            time.sleep(30)
-            if not healthcheck():
-                print("  Tunnel ainda fora, pulando por agora")
-                total_done -= 1
-                new_this_run -= 1
-                continue
-        healthcheck_counter = 0
+        if healthcheck():
+            break
+        print("  Tunnel fora! Esperando 30s...")
+        time.sleep(30)
 
     # Retry com backoff
     for attempt in range(MAX_RETRIES):
@@ -169,7 +163,12 @@ for i, p in enumerate(prompts):
             print(f"  Erro (tentativa {attempt+1}/{MAX_RETRIES}): {e}")
 
         if not ok and attempt < MAX_RETRIES - 1:
-            wait = 30 * (attempt + 1)
+            # Re-check tunnel antes de retry
+            print(f"  Verificando tunnel antes do retry {attempt+2}...")
+            while not healthcheck():
+                print("  Tunnel fora! Esperando 30s...")
+                time.sleep(30)
+            wait = 10 * (attempt + 1)
             print(f"  Retry em {wait}s...")
             time.sleep(wait)
 
