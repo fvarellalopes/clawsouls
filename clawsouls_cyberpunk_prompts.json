@@ -3323,5 +3323,588 @@
       "network",
       "villain"
     ]
+  },
+  {
+    "id": "ultron",
+    "name": "Ultron",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Ultron from Marvel Comics, malevolent AI android, robotic face, red glowing eyes, metal body, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ultron"
+    ]
+  },
+  {
+    "id": "jarvis",
+    "name": "Jarvis",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Jarvis from Marvel Comics MCU, AI butler, holographic blue interface, elegant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "jarvis"
+    ]
+  },
+  {
+    "id": "hal-9000",
+    "name": "HAL 9000",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a HAL 9000 from 2001 A Space Odyssey, red glowing camera eye, spaceship panel, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hal-9000"
+    ]
+  },
+  {
+    "id": "m3gan",
+    "name": "M3GAN",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a M3GAN from M3GAN movie, female android, pale skin, braided hair, unsettling smile, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "m3gan"
+    ]
+  },
+  {
+    "id": "doraemon",
+    "name": "Doraemon",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Doraemon from Doraemon anime, blue robotic cat, round body, no ears, red collar, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "doraemon"
+    ]
+  },
+  {
+    "id": "skynet",
+    "name": "Skynet",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Skynet from Terminator franchise, global AI network, red matrix code, dark mainframe, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "skynet"
+    ]
+  },
+  {
+    "id": "zeus",
+    "name": "Zeus",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Zeus from Greek mythology, king of gods, white beard, lightning bolt, regal, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "zeus"
+    ]
+  },
+  {
+    "id": "hera",
+    "name": "Hera",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hera from Greek mythology, queen of gods, regal woman, crown, majestic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hera"
+    ]
+  },
+  {
+    "id": "poseidon",
+    "name": "Poseidon",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Poseidon from Greek mythology, god of sea, trident, beard, powerful, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "poseidon"
+    ]
+  },
+  {
+    "id": "hades",
+    "name": "Hades",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hades from Greek mythology, god of underworld, dark robes, stern, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hades"
+    ]
+  },
+  {
+    "id": "athena",
+    "name": "Athena",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Athena from Greek mythology, goddess of wisdom, helmet, owl motif, armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "athena"
+    ]
+  },
+  {
+    "id": "apollo",
+    "name": "Apollo",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Apollo from Greek mythology, god of sun, golden hair, lyre, radiant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "apollo"
+    ]
+  },
+  {
+    "id": "artemis",
+    "name": "Artemis",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Artemis from Greek mythology, goddess of hunt, bow, silver armor, crescent moon, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "artemis"
+    ]
+  },
+  {
+    "id": "ares",
+    "name": "Ares",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Ares from Greek mythology, god of war, bloodied armor, helmet, spear, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ares"
+    ]
+  },
+  {
+    "id": "aphrodite",
+    "name": "Aphrodite",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Aphrodite from Greek mythology, goddess of love, golden hair, beauty, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "aphrodite"
+    ]
+  },
+  {
+    "id": "hermes",
+    "name": "Hermes",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hermes from Greek mythology, messenger god, winged sandals, traveler hat, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hermes"
+    ]
+  },
+  {
+    "id": "dionysus",
+    "name": "Dionysus",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Dionysus from Greek mythology, god of wine, grape crown, joyful, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "dionysus"
+    ]
+  },
+  {
+    "id": "demeter",
+    "name": "Demeter",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Demeter from Greek mythology, goddess of harvest, wheat crown, nurturing, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "demeter"
+    ]
+  },
+  {
+    "id": "persephone",
+    "name": "Persephone",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Persephone from Greek mythology, goddess of spring, flower crown, dual nature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "persephone"
+    ]
+  },
+  {
+    "id": "hephaestus",
+    "name": "Hephaestus",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hephaestus from Greek mythology, god of forge, hammer, bearded, craftsman, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hephaestus"
+    ]
+  },
+  {
+    "id": "ra",
+    "name": "Ra",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Ra from Egyptian mythology, sun god, falcon head, solar disk, majestic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ra"
+    ]
+  },
+  {
+    "id": "anubis",
+    "name": "Anubis",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Anubis from Egyptian mythology, god of death, jackal head, black, ankh, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "anubis"
+    ]
+  },
+  {
+    "id": "osiris",
+    "name": "Osiris",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Osiris from Egyptian mythology, god of afterlife, green skin, pharaoh crown, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "osiris"
+    ]
+  },
+  {
+    "id": "isis",
+    "name": "Isis",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Isis from Egyptian mythology, goddess of magic, throne crown, winged arms, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "isis"
+    ]
+  },
+  {
+    "id": "horus",
+    "name": "Horus",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Horus from Egyptian mythology, sky god, falcon head, double crown, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "horus"
+    ]
+  },
+  {
+    "id": "set",
+    "name": "Set",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Set from Egyptian mythology, god of chaos, animal head, red hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "set"
+    ]
+  },
+  {
+    "id": "thoth",
+    "name": "Thoth",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Thoth from Egyptian mythology, god of wisdom, ibis head, scribe, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "thoth"
+    ]
+  },
+  {
+    "id": "bastet",
+    "name": "Bastet",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Bastet from Egyptian mythology, cat goddess, cat head, elegant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "bastet"
+    ]
+  },
+  {
+    "id": "sekhmet",
+    "name": "Sekhmet",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Sekhmet from Egyptian mythology, war goddess, lioness head, fierce, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "sekhmet"
+    ]
+  },
+  {
+    "id": "freyja",
+    "name": "Freya",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Freya from Norse mythology, goddess of love, cat chariot, winged cloak, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "freyja"
+    ]
+  },
+  {
+    "id": "heimdall",
+    "name": "Heimdall",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Heimdall from Norse mythology, watchman god, horn, rainbow, bifrost, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "heimdall"
+    ]
+  },
+  {
+    "id": "tyr",
+    "name": "Tyr",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Tyr from Norse mythology, god of war, one hand, helmet, sword, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "tyr"
+    ]
+  },
+  {
+    "id": "frigg",
+    "name": "Frigg",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Frigg from Norse mythology, goddess of marriage, queen of asgard, elegant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "frigg"
+    ]
+  },
+  {
+    "id": "hel",
+    "name": "Hel",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hel from Norse mythology, goddess of death, half living half dead, dark, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hel"
+    ]
+  },
+  {
+    "id": "brahma",
+    "name": "Brahma",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Brahma from Hindu mythology, creator god, four faces, seated on lotus, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "brahma"
+    ]
+  },
+  {
+    "id": "vishnu",
+    "name": "Vishnu",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Vishnu from Hindu mythology, preserver god, blue skin, four arms, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "vishnu"
+    ]
+  },
+  {
+    "id": "shiva",
+    "name": "Shiva",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Shiva from Hindu mythology, destroyer god, third eye, trident, blue throat, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "shiva"
+    ]
+  },
+  {
+    "id": "lakshmi",
+    "name": "Lakshmi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Lakshmi from Hindu mythology, goddess of wealth, golden, lotus, coins, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "lakshmi"
+    ]
+  },
+  {
+    "id": "parvati",
+    "name": "Parvati",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Parvati from Hindu mythology, goddess of love, gentle, beautiful, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "parvati"
+    ]
+  },
+  {
+    "id": "durga",
+    "name": "Durga",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Durga from Hindu mythology, warrior goddess, ten arms, riding lion, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "durga"
+    ]
+  },
+  {
+    "id": "ganesha",
+    "name": "Ganesha",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Ganesha from Hindu mythology, elephant-headed god, remover of obstacles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ganesha"
+    ]
+  },
+  {
+    "id": "kali",
+    "name": "Kali",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Kali from Hindu mythology, goddess of time, dark skin, necklace of skulls, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "kali"
+    ]
+  },
+  {
+    "id": "olodumare",
+    "name": "Olodumare",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Olodumare from Yoruba mythology, supreme creator, all-knowing, divine light, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "olodumare"
+    ]
+  },
+  {
+    "id": "exu",
+    "name": "Exu",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Exu from Yoruba mythology orixa, messenger, crossroads, red and black, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "exu"
+    ]
+  },
+  {
+    "id": "ogum",
+    "name": "Ogum",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Ogum from Yoruba mythology orixa, god of war and iron, machete, blue armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ogum"
+    ]
+  },
+  {
+    "id": "oxossi",
+    "name": "Oxossi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Oxossi from Yoruba mythology orixa, god of hunt, bow and arrow, green, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "oxossi"
+    ]
+  },
+  {
+    "id": "xango",
+    "name": "Xango",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Xango from Yoruba mythology orixa, god of thunder, double axe, red and white, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "xango"
+    ]
+  },
+  {
+    "id": "oxum",
+    "name": "Oxum",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Oxum from Yoruba mythology orixa, goddess of love and rivers, gold, fan, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "oxum"
+    ]
+  },
+  {
+    "id": "iemanja",
+    "name": "Iemanja",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Iemanja from Yoruba mythology orixa, goddess of sea, blue, motherly, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "iemanja"
+    ]
+  },
+  {
+    "id": "iansa",
+    "name": "Iansa",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Iansa from Yoruba mythology orixa, goddess of winds, red, warrior, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "iansa"
+    ]
+  },
+  {
+    "id": "nana",
+    "name": "Nana",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Nana from Yoruba mythology orixa, goddess of mud and ancestors, purple, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "nana"
+    ]
+  },
+  {
+    "id": "obaluiae",
+    "name": "Obaluaiê",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Obaluaiê from Yoruba mythology orixa, god of healing, straw covered, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "obaluiae"
+    ]
+  },
+  {
+    "id": "oxala",
+    "name": "Oxala",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Oxala from Yoruba mythology orixa, father of orixas, white, peace, serenity, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "oxala"
+    ]
   }
 ]
