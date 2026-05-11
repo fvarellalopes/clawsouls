@@ -3253,5 +3253,75 @@
       "historical",
       "influential"
     ]
+  },
+  {
+    "id": "jarvis",
+    "name": "Jarvis",
+    "creature": "AI / Butler",
+    "category": "ai_digital",
+    "prompt": "a Jarvis from Marvel Comics / MCU, AI butler, holographic blue interface, polished british elegance, elegant male voice interface, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "AI",
+      "butler",
+      "iron-man",
+      "marvel",
+      "hologram"
+    ]
+  },
+  {
+    "id": "hal9000",
+    "name": "HAL 9000",
+    "creature": "AI / Spaceship Computer",
+    "category": "ai_digital",
+    "prompt": "a HAL 9000 from 2001 A Space Odyssey, red glowing camera eye, spaceship panel, calm malevolent red eye, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "AI",
+      "space",
+      "odyssey",
+      "sci-fi",
+      "red-eye"
+    ]
+  },
+  {
+    "id": "m3gan",
+    "name": "M3GAN",
+    "creature": "AI / Android",
+    "category": "ai_digital",
+    "prompt": "a M3GAN from the movie M3GAN, female android, pale skin, braided hair, unsettling smile, creepy doll aesthetic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "AI",
+      "android",
+      "horror",
+      "doll",
+      "female"
+    ]
+  },
+  {
+    "id": "doraemon",
+    "name": "Doraemon",
+    "creature": "Robot / Cat",
+    "category": "ai_digital",
+    "prompt": "a Doraemon from Doraemon anime, blue robotic cat, round body, no ears, red collar with golden bell, large pocket on belly, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "anime",
+      "robot",
+      "cat",
+      "kids",
+      "future"
+    ]
+  },
+  {
+    "id": "skynet",
+    "name": "Skynet",
+    "creature": "AI / Global Network",
+    "category": "ai_digital",
+    "prompt": "a Skynet from Terminator franchise, global AI network, red matrix code, nuclear warning symbols, dark ominous mainframe, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "AI",
+      "terminator",
+      "sci-fi",
+      "network",
+      "villain"
+    ]
   }
 ]
