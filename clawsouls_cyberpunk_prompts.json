@@ -3906,5 +3906,544 @@
       "mythology",
       "oxala"
     ]
+  },
+  {
+    "id": "amaterasu",
+    "name": "Amaterasu",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Amaterasu from Japanese Shinto mythology, sun goddess, radiant light, imperial, benevolent, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "amaterasu"
+    ]
+  },
+  {
+    "id": "susanoo",
+    "name": "Susanoo",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Susanoo from Japanese mythology, god of storms, wild hair, katana, fierce, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "susanoo"
+    ]
+  },
+  {
+    "id": "tsukuyomi",
+    "name": "Tsukuyomi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Tsukuyomi from Japanese Shinto mythology, moon god, pale, nocturnal, serene, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "tsukuyomi"
+    ]
+  },
+  {
+    "id": "izanagi",
+    "name": "Izanagi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Izanagi from Japanese mythology, creator god, divine spear, noble, ancient, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "izanagi"
+    ]
+  },
+  {
+    "id": "izanami",
+    "name": "Izanami",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Izanami from Japanese mythology, goddess of creation and death, pale, underworld queen, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "izanami"
+    ]
+  },
+  {
+    "id": "inari",
+    "name": "Inari",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Inari from Japanese Shinto mythology, kami of rice and foxes, fox ears, wise, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "inari"
+    ]
+  },
+  {
+    "id": "raijin",
+    "name": "Raijin",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Raijin from Japanese mythology, god of thunder, drums, fierce grin, demonic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "raijin"
+    ]
+  },
+  {
+    "id": "fujin",
+    "name": "Fujin",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Fujin from Japanese mythology, god of wind, bag of winds, wild, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "fujin"
+    ]
+  },
+  {
+    "id": "hachiman",
+    "name": "Hachiman",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hachiman from Japanese Shinto, god of war and archery, samurai armor, bow, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hachiman"
+    ]
+  },
+  {
+    "id": "benten",
+    "name": "Benten",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Benten from Japanese mythology, goddess of music and arts, biwa lute, elegant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "benten"
+    ]
+  },
+  {
+    "id": "ebisu",
+    "name": "Ebisu",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Ebisu from Japanese mythology, god of fortune, fishing rod, smiling, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ebisu"
+    ]
+  },
+  {
+    "id": "daikokuten",
+    "name": "Daikokuten",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Daikokuten from Japanese mythology, god of wealth, mallet, rice bales, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "daikokuten"
+    ]
+  },
+  {
+    "id": "fukurokuju",
+    "name": "Fukurokuju",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Fukurokuju from Japanese mythology, god of longevity, tall forehead, staff, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "fukurokuju"
+    ]
+  },
+  {
+    "id": "jurojin",
+    "name": "Jurojin",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Jurojin from Japanese mythology, god of long life, old man, deer companion, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "jurojin"
+    ]
+  },
+  {
+    "id": "hotei",
+    "name": "Hotei",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hotei from Japanese mythology, god of contentment, laughing buddha, fat, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hotei"
+    ]
+  },
+  {
+    "id": "bishamonten",
+    "name": "Bishamonten",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Bishamonten from Japanese mythology, god of warriors, full armor, spear, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "bishamonten"
+    ]
+  },
+  {
+    "id": "kagu-tsuchi",
+    "name": "Kagutsuchi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Kagutsuchi from Japanese mythology, god of fire, flaming, volcanic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "kagu-tsuchi"
+    ]
+  },
+  {
+    "id": "tengu",
+    "name": "Tengu",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Tengu from Japanese folklore, mountain spirit, tengu mask, wings, swordsman, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "tengu"
+    ]
+  },
+  {
+    "id": "kitsune",
+    "name": "Kitsune",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Kitsune from Japanese folklore, nine-tailed fox spirit, intelligent, mystical, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "kitsune"
+    ]
+  },
+  {
+    "id": "jade-emperor",
+    "name": "Jade Emperor",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Jade Emperor from Chinese mythology, supreme ruler of heaven, imperial robes, beard, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "jade-emperor"
+    ]
+  },
+  {
+    "id": "guan-yin",
+    "name": "Guanyin",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Guanyin from Chinese Buddhism, goddess of compassion, white robes, lotus, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "guan-yin"
+    ]
+  },
+  {
+    "id": "ne-zha",
+    "name": "Nezha",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Nezha from Chinese mythology, youthful warrior god, flaming wheels, scarf, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ne-zha"
+    ]
+  },
+  {
+    "id": "sun-wukong",
+    "name": "Sun Wukong",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Sun Wukong from Chinese mythology Journey to the West, Monkey King, golden staff, monkey face, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "sun-wukong"
+    ]
+  },
+  {
+    "id": "yu-huang",
+    "name": "Yuhuang",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Yuhuang from Chinese mythology, Jade Emperor, celestial crown, majestic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "yu-huang"
+    ]
+  },
+  {
+    "id": "chang-e",
+    "name": "Chang'e",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Chang'e from Chinese mythology, moon goddess, flowing robes, elegant, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "chang-e"
+    ]
+  },
+  {
+    "id": "hou-yi",
+    "name": "Hou Yi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Hou Yi from Chinese mythology, legendary archer, bow, heroic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "hou-yi"
+    ]
+  },
+  {
+    "id": "guan-di",
+    "name": "Guan Di",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Guan Di from Chinese mythology, god of war, red face, long beard, halberd, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "guan-di"
+    ]
+  },
+  {
+    "id": "cai-shen",
+    "name": "Caishen",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Caishen from Chinese mythology, god of wealth, gold ingots, red robes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "cai-shen"
+    ]
+  },
+  {
+    "id": "zhu-rong",
+    "name": "Zhurong",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Zhurong from Chinese mythology, god of fire, red skin, dragon mount, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "zhu-rong"
+    ]
+  },
+  {
+    "id": "gong-gong",
+    "name": "Gong Gong",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Gong Gong from Chinese mythology, god of water destruction, horned head, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "gong-gong"
+    ]
+  },
+  {
+    "id": "nu-wa",
+    "name": "Nuwa",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Nuwa from Chinese mythology, creator goddess, snake tail, human upper body, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "nu-wa"
+    ]
+  },
+  {
+    "id": "fu-xi",
+    "name": "Fuxi",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Fuxi from Chinese mythology, deity of writing, snake body, compass, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "fu-xi"
+    ]
+  },
+  {
+    "id": "shennong",
+    "name": "Shennong",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Shennong from Chinese mythology, god of agriculture and medicine, herbs, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "shennong"
+    ]
+  },
+  {
+    "id": "yan-wang",
+    "name": "Yan Wang",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Yan Wang from Chinese mythology, king of hell, judge of dead, stern, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "yan-wang"
+    ]
+  },
+  {
+    "id": "ma-zu",
+    "name": "Mazu",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Mazu from Chinese folk religion, sea goddess, flowing robes, crown, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "ma-zu"
+    ]
+  },
+  {
+    "id": "huitzilopochtli",
+    "name": "Huitzilopochtli",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Huitzilopochtli from Aztec mythology, god of sun and war, hummingbird helmet, warrior, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "huitzilopochtli"
+    ]
+  },
+  {
+    "id": "quetzalcoatl",
+    "name": "Quetzalcoatl",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Quetzalcoatl from Aztec mythology, feathered serpent god, serpent features, wind, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "quetzalcoatl"
+    ]
+  },
+  {
+    "id": "tezcatlipoca",
+    "name": "Tezcatlipoca",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Tezcatlipoca from Aztec mythology, god of night and destiny, obsidian mirror, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "tezcatlipoca"
+    ]
+  },
+  {
+    "id": "tlaloc",
+    "name": "Tlaloc",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Tlaloc from Aztec mythology, god of rain, goggle eyes, fangs, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "tlaloc"
+    ]
+  },
+  {
+    "id": "coatlicue",
+    "name": "Coatlicue",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Coatlicue from Aztec mythology, goddess of earth and death, skirt of snakes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "coatlicue"
+    ]
+  },
+  {
+    "id": "xochiquetzal",
+    "name": "Xochiquetzal",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Xochiquetzal from Aztec mythology, goddess of love and beauty, flowers, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "xochiquetzal"
+    ]
+  },
+  {
+    "id": "xochipilli",
+    "name": "Xochipilli",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Xochipilli from Aztec mythology, god of art and games, painted face, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "xochipilli"
+    ]
+  },
+  {
+    "id": "mictlantecuhtli",
+    "name": "Mictlantecuhtli",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Mictlantecuhtli from Aztec mythology, god of death, skull face, bones, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "mictlantecuhtli"
+    ]
+  },
+  {
+    "id": "mictecacihuatl",
+    "name": "Mictecacihuatl",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Mictecacihuatl from Aztec mythology, goddess of death, skeletal, queen of underworld, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "mictecacihuatl"
+    ]
+  },
+  {
+    "id": "xipe-totec",
+    "name": "Xipe Totec",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Xipe Totec from Aztec mythology, god of spring renewal, flayed skin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "xipe-totec"
+    ]
+  },
+  {
+    "id": "chalchiuhtlicue",
+    "name": "Chalchiuhtlicue",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Chalchiuhtlicue from Aztec mythology, goddess of rivers, jade skirt, flowing water, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "chalchiuhtlicue"
+    ]
+  },
+  {
+    "id": "tonatiuh",
+    "name": "Tonatiuh",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Tonatiuh from Aztec mythology, sun god, eagle warrior, glowing, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "tonatiuh"
+    ]
+  },
+  {
+    "id": "mayahuel",
+    "name": "Mayahuel",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Mayahuel from Aztec mythology, goddess of maguey plant, agave, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "mayahuel"
+    ]
+  },
+  {
+    "id": "centzon-totochtin",
+    "name": "Centzon Totochtin",
+    "creature": "Mythological / Legendary",
+    "category": "mythology",
+    "prompt": "a Centzon Totochtin from Aztec mythology, rabbit gods of drunkenness, rabbits, merry, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "mythology",
+      "centzon-totochtin"
+    ]
   }
 ]
