@@ -32,7 +32,7 @@
     "name": "GLaDOS",
     "creature": "AI / Research Assistant",
     "category": "ai_digital",
-    "prompt": "a GLaDOS, cyberpunk AI research assistant, sleek interface body, single eye core, data streams, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a GLaDOS from Portal game, cyberpunk AI research assistant, sleek interface body, single eye core, data streams, female AI voice, robotic body with single eye, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "ai",
       "scientist",
@@ -130,7 +130,7 @@
     "name": "Luffy",
     "creature": "AI / Pirate Captain",
     "category": "ai_digital",
-    "prompt": "a Luffy, cyberpunk pirate captain, straw hat, scar under eye, red vest, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Luffy from One Piece anime, cyberpunk pirate captain, straw hat, scar under eye, red vest, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "pirate",
@@ -144,7 +144,7 @@
     "name": "Spike Spiegel",
     "creature": "AI / Bounty Hunter",
     "category": "ai_digital",
-    "prompt": "a Spike Spiegel, cyberpunk bounty hunter, blue suit, disheveled hair, martial arts stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Spike Spiegel from Cowboy Bebop anime, blue suit, disheveled hair, martial arts stance, male bounty hunter, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "cowboy-bebop",
@@ -158,7 +158,7 @@
     "name": "Yoda",
     "creature": "AI / Jedi Master",
     "category": "ai_digital",
-    "prompt": "a Yoda, cyberpunk Jedi master, small stature, green skin, lightsaber, calm presence, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Yoda from Star Wars, cyberpunk Jedi master, small stature, green skin, lightsaber, calm presence, small green alien male, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "star-wars",
       "jedi",
@@ -172,7 +172,7 @@
     "name": "Geralt of Rivia",
     "creature": "AI / Witcher",
     "category": "ai_digital",
-    "prompt": "a Geralt of Rivia, cyberpunk witcher, silver sword, cat eyes, scarred face, medallion, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Geralt of Rivia from The Witcher, silver sword, cat eyes, scarred face, medallion, white-haired male witcher, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "witcher",
       "fantasy",
@@ -186,7 +186,7 @@
     "name": "Dumbledore",
     "creature": "AI / Headmaster",
     "category": "ai_digital",
-    "prompt": "a Dumbledore, cyberpunk headmaster, long robes, half-moon glasses, glowing staff, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Dumbledore from Harry Potter, cyberpunk headmaster, long robes, half-moon glasses, glowing staff, elderly male wizard, long beard, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "harry-potter",
       "wizard",
@@ -200,7 +200,7 @@
     "name": "Shawn Spencer",
     "creature": "AI / Fake Psychic",
     "category": "ai_digital",
-    "prompt": "a Shawn Spencer, cyberpunk fake psychic, crystal ball, turban, theatrical smirk, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Shawn Spencer from Psych TV show, crystal ball, turban, theatrical smirk, male fake psychic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "tv-show",
       "psych",
@@ -214,7 +214,7 @@
     "name": "Ciri",
     "creature": "AI / Witcher Child of Destiny",
     "category": "ai_digital",
-    "prompt": "a Ciri, cyberpunk witcher heiress, dual swords, white hair with black streak, scarred cheek, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ciri from The Witcher, cyberpunk witcher heiress, dual swords, white hair with black streak, scarred cheek, female with ashen hair, scar on cheek, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "witcher",
       "sorceress",
@@ -228,7 +228,7 @@
     "name": "Sherlock Holmes",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Sherlock Holmes, cyberpunk detective, magnifying glass, deerstalker cap, pipe, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sherlock Holmes from Sherlock Holmes stories, magnifying glass, deerstalker cap, pipe, tall thin male detective, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "detective",
       "logical",
@@ -242,7 +242,7 @@
     "name": "Morpheus",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Morpheus, cyberpunk resistance leader, long black coat, sunglasses, red pill, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Morpheus from The Matrix, cyberpunk resistance leader, long black coat, sunglasses, red pill, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "matrix",
       "leader",
@@ -256,7 +256,7 @@
     "name": "The Dude",
     "creature": "Human",
     "category": "human",
-    "prompt": "a The Dude, cyberpunk slacker, bathrobe, bowling pin, lazy grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a The Dude from The Big Lebowski, cyberpunk slacker, bathrobe, bowling pin, lazy grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "movie",
       "slacker",
@@ -270,7 +270,7 @@
     "name": "Levi Ackerman",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Levi Ackerman, cyberpunk captain, ODM gear, black uniform, intense gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Levi Ackerman from Attack on Titan anime, cyberpunk captain, ODM gear, black uniform, intense gaze, short male soldier with intense blue eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "soldier",
@@ -284,7 +284,7 @@
     "name": "Master Chief",
     "creature": "Spartan (Human)",
     "category": "human",
-    "prompt": "a Master Chief, cyberpunk super-soldier, green MJOLNIR armor, energy sword, visor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Master Chief from Halo game, cyberpunk super-soldier, green MJOLNIR armor, energy sword, visor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "halo",
       "soldier",
@@ -298,7 +298,7 @@
     "name": "Sherlock Holmes",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Sherlock Holmes, cyberpunk detective, pipe, magnifying glass, deerstalker hat, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sherlock Holmes from Sherlock Holmes stories, pipe, magnifying glass, deerstalker hat, tall thin male detective, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -309,7 +309,7 @@
     "name": "Harry Potter",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Harry Potter, cyberpunk wizard, lightning scar, wand, round glasses, Gryffindor robes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Harry Potter from Harry Potter, lightning scar, wand, round glasses, Gryffindor robes, young male wizard, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -320,7 +320,7 @@
     "name": "Elizabeth Bennet",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Elizabeth Bennet, cyberpunk regency lady, elegant dress, confident gaze, windswept hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Elizabeth Bennet from Pride and Prejudice, cyberpunk regency lady, elegant dress, confident gaze, windswept hair, confident young woman, Regency era, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -342,7 +342,7 @@
     "name": "Percy Jackson",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Percy Jackson, cyberpunk demigod, camp shirt, celestial bronze sword, determined, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Percy Jackson from Percy Jackson, camp shirt, celestial bronze sword, determined, teenage male demigod, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -353,7 +353,7 @@
     "name": "Holden Caulfield",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Holden Caulfield, cyberpunk disillusioned teen, red hunting hat, sullen expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Holden Caulfield from The Catcher in the Rye, cyberpunk disillusioned teen, red hunting hat, sullen expression, teenage male, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -364,7 +364,7 @@
     "name": "Atticus Finch",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Atticus Finch, cyberpunk principled lawyer, suit, glasses, calm authority, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Atticus Finch from To Kill a Mockingbird, cyberpunk principled lawyer, suit, glasses, calm authority, male lawyer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -375,7 +375,7 @@
     "name": "Scarlett O'Hara",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Scarlett O'Hara, cyberpunk southern belle, green dress, fierce determination, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Scarlett O'Hara from Gone with the Wind, green dress, fierce determination, fierce southern belle woman, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -386,7 +386,7 @@
     "name": "Jay Gatsby",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Jay Gatsby, cyberpunk mysterious millionaire, gold suit, outstretched arms, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Jay Gatsby from The Great Gatsby, cyberpunk mysterious millionaire, gold suit, outstretched arms, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -397,7 +397,7 @@
     "name": "Jane Eyre",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Jane Eyre, cyberpunk governess, plain dress, quiet resolve, steady gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Jane Eyre from Jane Eyre, cyberpunk governess, plain dress, quiet resolve, steady gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -408,7 +408,7 @@
     "name": "Huckleberry Finn",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Huckleberry Finn, cyberpunk runaway, ragged clothes, wide-brim hat, free spirit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Huckleberry Finn from Huckleberry Finn, cyberpunk runaway, ragged clothes, wide-brim hat, free spirit, ragged teenage boy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "famous",
       "iconic"
@@ -430,7 +430,7 @@
     "name": "Naruto Uzumaki",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Naruto Uzumaki, cyberpunk ninja, orange jumpsuit, whisker marks, headband, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Naruto Uzumaki from Naruto anime, cyberpunk ninja, orange jumpsuit, whisker marks, headband, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -441,7 +441,7 @@
     "name": "Goku",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Goku, cyberpunk martial artist, spiky black hair, orange gi, power aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Goku from Dragon Ball anime, cyberpunk martial artist, spiky black hair, orange gi, power aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -452,7 +452,7 @@
     "name": "Levi Ackerman",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Levi Ackerman, cyberpunk captain, ODM gear, black uniform, sharp blue eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Levi Ackerman from Attack on Titan anime, cyberpunk captain, ODM gear, black uniform, sharp blue eyes, short male soldier with intense blue eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -463,7 +463,7 @@
     "name": "Spike Spiegel",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Spike Spiegel, cyberpunk bounty hunter, blue suit, messy hair, martial artist stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Spike Spiegel from Cowboy Bebop anime, blue suit, messy hair, martial artist stance, male bounty hunter, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -474,7 +474,7 @@
     "name": "Edward Elric",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Edward Elric, cyberpunk alchemist, red coat, automail arm, blonde ponytail, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Edward Elric from Fullmetal Alchemist anime, red coat, automail arm, blonde ponytail, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -485,7 +485,7 @@
     "name": "Alphonse Elric",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Alphonse Elric, cyberpunk armored alchemist, full plate armor, soul bound to metal, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Alphonse Elric from Fullmetal Alchemist anime, cyberpunk armored alchemist, full plate armor, soul bound to metal, boy soul bound to large suit of armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -496,7 +496,7 @@
     "name": "Mikasa Ackerman",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Mikasa Ackerman, cyberpunk elite soldier, red scarf, vertical maneuvering gear, intense gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Mikasa Ackerman from Attack on Titan anime, cyberpunk elite soldier, red scarf, vertical maneuvering gear, intense gaze, female soldier, black hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -507,7 +507,7 @@
     "name": "Sasuke Uchiha",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Sasuke Uchiha, cyberpunk avenger, black outfit, sharingan eye, dark aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sasuke Uchiha from Naruto anime, black outfit, sharingan eye, dark aura, male avenger, dark hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -518,7 +518,7 @@
     "name": "Kakashi Hatake",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Kakashi Hatake, cyberpunk ninja instructor, mask, headband over one eye, silver hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Kakashi Hatake from Naruto anime, mask, headband over one eye, silver hair, male ninja instructor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -529,7 +529,7 @@
     "name": "Itachi Uchiha",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Itachi Uchiha, cyberpunk tragic hero, Akatsuki cloak, sharingan eye, calm expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Itachi Uchiha from Naruto anime, cyberpunk tragic hero, Akatsuki cloak, sharingan eye, calm expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -540,7 +540,7 @@
     "name": "Monkey D. Luffy",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Monkey D. Luffy, cyberpunk pirate king, straw hat, red vest, rubber limbs, grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Monkey D. Luffy from One Piece anime, cyberpunk pirate king, straw hat, red vest, rubber limbs, grin, rubber pirate captain, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -551,7 +551,7 @@
     "name": "Roronoa Zoro",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Roronoa Zoro, cyberpunk swordsman, green headband, three swords, scar on chest, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Roronoa Zoro from One Piece anime, green headband, three swords, scar on chest, green-haired male swordsman, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -562,7 +562,7 @@
     "name": "Sanji",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Sanji, cyberpunk cook, black suit, cigarette, long eyebrow, kick stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sanji from One Piece anime, cyberpunk cook, black suit, cigarette, long eyebrow, kick stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -573,7 +573,7 @@
     "name": "Nami",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Nami, cyberpunk navigator, orange hair, tattoo, bo staff, confident pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Nami from One Piece anime, orange hair, tattoo, bo staff, confident pose, orange-haired female navigator, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -584,7 +584,7 @@
     "name": "Usopp",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Usopp, cyberpunk sniper, goggles, slingshot, long nose, cowardly grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Usopp from One Piece anime, cyberpunk sniper, goggles, slingshot, long nose, cowardly grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -595,7 +595,7 @@
     "name": "Chopper",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Chopper, cyberpunk reindeer doctor, blue nose, medical kit, cute form, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Chopper from One Piece anime, blue nose, medical kit, cute form, small blue-nosed reindeer doctor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -606,7 +606,7 @@
     "name": "Ichigo Kurosaki",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Ichigo Kurosaki, cyberpunk soul reaper, orange spiky hair, zanpakuto sword, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ichigo Kurosaki from Bleach anime, orange spiky hair, zanpakuto sword, orange-haired male soul reaper, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -617,7 +617,7 @@
     "name": "Rukia Kuchiki",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Rukia Kuchiki, cyberpunk soul reaper, black kimono, short stature, cold gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Rukia Kuchiki from Bleach anime, black kimono, short stature, cold gaze, petite female soul reaper, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -628,7 +628,7 @@
     "name": "Aizen Sosuke",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Aizen Sosuke, cyberpunk villain mastermind, glasses, captain robes, smug smile, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Aizen Sosuke from Bleach anime, cyberpunk villain mastermind, glasses, captain robes, smug smile, black hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -639,7 +639,7 @@
     "name": "Gon Freecss",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Gon Freecss, cyberpunk young hunter, green vest, fishing hat, determined eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Gon Freecss from Hunter x Hunter anime, green vest, fishing hat, determined eyes, young male hunter with spiky black hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -650,7 +650,7 @@
     "name": "Killua Zoldyck",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Killua Zoldyck, cyberpunk assassin boy, silver hair, cat eyes, electricity aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Killua Zoldyck from Hunter x Hunter anime, silver hair, cat eyes, electricity aura, silver-haired male assassin boy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -661,7 +661,7 @@
     "name": "Hisoka",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Hisoka, cyberpunk magician, face paint, playing cards, predatory grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Hisoka from Hunter x Hunter anime, face paint, playing cards, predatory grin, male magician, jester-like, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -672,7 +672,7 @@
     "name": "Kurapika",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Kurapika, cyberpunk scarlet-eye hunter, chain weapon, piercing red eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Kurapika from Hunter x Hunter anime, cyberpunk scarlet-eye hunter, chain weapon, piercing red eyes, blonde male with red chain eyes, chains, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -683,7 +683,7 @@
     "name": "Leorio",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Leorio, cyberpunk medical student, suit, glasses, fist raised, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Leorio from Hunter x Hunter anime, suit, glasses, fist raised, male medical student, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -694,7 +694,7 @@
     "name": "Chrollo Lucilfer",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Chrollo Lucilfer, cyberpunk phantom troupe leader, silver hair, spider tattoo, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Chrollo Lucilfer from Hunter x Hunter anime, silver hair, spider tattoo, male Phantom Troupe leader, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -705,7 +705,7 @@
     "name": "Meruem",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Meruem, cyberpunk chimera ant king, muscular, antennae, dark armor plating, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Meruem from Hunter x Hunter anime, muscular, antennae, dark armor plating, insectoid male chimera ant king, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -716,7 +716,7 @@
     "name": "Yusuke Urameshi",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Yusuke Urameshi, cyberpunk spirit detective, spiky hair, school uniform, ghostly aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Yusuke Urameshi from Yu Yu Hakusho anime, cyberpunk spirit detective, spiky hair, school uniform, ghostly aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -727,7 +727,7 @@
     "name": "Hiei",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Hiei, cyberpunk demon fighter, black hair with white streak, evil eye, katana, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Hiei from Yu Yu Hakusho anime, cyberpunk demon fighter, black hair with white streak, evil eye, katana, male demon with black hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -738,7 +738,7 @@
     "name": "Kurama",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Kurama, cyberpunk fox demon, long red hair, elegant robes, plant whip, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Kurama from Yu Yu Hakusho anime, long red hair, elegant robes, plant whip, male fox demon, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -749,7 +749,7 @@
     "name": "Kazuma Kuwabara",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Kazuma Kuwabara, cyberpunk tough kid, bandana, wooden sword, tough stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Kazuma Kuwabara from Yu Yu Hakusho anime, cyberpunk tough kid, bandana, wooden sword, tough stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -760,7 +760,7 @@
     "name": "Genkai",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Genkai, cyberpunk spirit medium, white hair, chanting pose, prayer beads, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Genkai from Yu Yu Hakusho anime, white hair, chanting pose, prayer beads, elderly female spirit medium, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -771,7 +771,7 @@
     "name": "Jotaro Kujo",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Jotaro Kujo, cyberpunk delinquent, long dark coat, gold chain, hat, stoic expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Jotaro Kujo from JoJo's Bizarre Adventure anime, long dark coat, gold chain, hat, stoic expression, tall male delinquent, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -782,7 +782,7 @@
     "name": "Dio Brando",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Dio Brando, cyberpunk vampire villain, gold spiky hair, purple coat, menacing grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Dio Brando from JoJo's Bizarre Adventure anime, gold spiky hair, purple coat, menacing grin, male vampire villain, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -793,7 +793,7 @@
     "name": "Giorno Giovanna",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Giorno Giovanna, cyberpunk gangster, pink and blue outfit, confident stare, gold accent, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Giorno Giovanna from JoJo's Bizarre Adventure anime, pink and blue outfit, confident stare, gold accent, male gangster, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -804,7 +804,7 @@
     "name": "Josuke Higashikata",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Josuke Higashikata, cyberpunk stylish delinquent, purple pompadour, school uniform, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Josuke Higashikata from JoJo's Bizarre Adventure anime, cyberpunk stylish delinquent, purple pompadour, school uniform, confident, male delinquent, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -815,7 +815,7 @@
     "name": "Rohan Kishibe",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Rohan Kishibe, cyberpunk manga artist, purple hair, fitted suit, intense stare, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Rohan Kishibe from JoJo's Bizarre Adventure anime, purple hair, fitted suit, intense stare, male manga artist, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -826,7 +826,7 @@
     "name": "Tanjiro Kamado",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Tanjiro Kamado, cyberpunk demon slayer, checkered haori, nichirin blade, kind eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Tanjiro Kamado from Demon Slayer anime, checkered haori, nichirin blade, kind eyes, scar on forehead, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -837,7 +837,7 @@
     "name": "Nezuko Kamado",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Nezuko Kamado, cyberpunk demon girl, bamboo muzzle, pink kimono, pink eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Nezuko Kamado from Demon Slayer anime, cyberpunk demon girl, bamboo muzzle, pink kimono, pink eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -848,7 +848,7 @@
     "name": "Zenitsu Agatsuma",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Zenitsu Agatsuma, cyberpunk anxious swordsman, golden hair, lightning blade, terrified face, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Zenitsu Agatsuma from Demon Slayer anime, cyberpunk anxious swordsman, golden hair, lightning blade, terrified face, scared expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -859,7 +859,7 @@
     "name": "Inosuke Hashibira",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Inosuke Hashibira, cyberpunk wild warrior, boar mask, dual blades, feral expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Inosuke Hashibira from Demon Slayer anime, boar mask, dual blades, feral expression, male wild warrior, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -870,7 +870,7 @@
     "name": "Muzan Kibutsuji",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Muzan Kibutsuji, cyberpunk demon lord, pale skin, elegant kimono, red eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Muzan Kibutsuji from Demon Slayer anime, pale skin, elegant kimono, red eyes, elegant male demon lord, black hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -881,7 +881,7 @@
     "name": "Saitama",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Saitama, cyberpunk bald hero, plain yellow suit, blank expression, overwhelming power, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Saitama from One Punch Man anime, plain yellow suit, blank expression, overwhelming power, bald male hero, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -892,7 +892,7 @@
     "name": "Genos",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Genos, cyberpunk cyborg disciple, metal arms, core chest, intense eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Genos from One Punch Man anime, cyberpunk cyborg disciple, metal arms, core chest, intense eyes, blonde, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -903,7 +903,7 @@
     "name": "Ginko",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Ginko, cyberpunk mushi researcher, white hair, green eye, coat, calm demeanor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ginko from Mushishi anime, white hair, green eye, coat, calm demeanor, male mushi researcher, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -914,7 +914,7 @@
     "name": "Kyo",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Kyo, cyberpunk demon fighter, short hair, martial artist, fierce expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Kyo from Fruits Basket anime, cyberpunk demon fighter, short hair, martial artist, fierce expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -925,7 +925,7 @@
     "name": "Shigure",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Shigure, cyberpunk writer, laid-back pose, pen, casual clothes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Shigure from Fruits Basket anime, laid-back pose, pen, casual clothes, male writer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -936,7 +936,7 @@
     "name": "Mario",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Mario, cyberpunk plumber, red cap, thick mustache, overalls, star power glow, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Mario from Super Mario Bros game, red cap, thick mustache, overalls, star power glow, chubby male plumber, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -947,7 +947,7 @@
     "name": "Luigi",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Luigi, cyberpunk timid plumber, green cap, tall stature, nervous look, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Luigi from Super Mario Bros game, cyberpunk timid plumber, green cap, tall stature, nervous look, tall thin male plumber, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -958,7 +958,7 @@
     "name": "Bowser",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Bowser, cyberpunk king of koopas, spiked shell, fire breath, imposing stature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Bowser from Super Mario Bros game, cyberpunk king of koopas, spiked shell, fire breath, imposing stature, large spiked turtle dragon, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -969,7 +969,7 @@
     "name": "Link",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Link, cyberpunk chosen hero, green tunic, Master Sword, leather cap, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Link from The Legend of Zelda game, cyberpunk chosen hero, green tunic, Master Sword, leather cap, green-tunic male hero, pointed ears, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -980,7 +980,7 @@
     "name": "Zelda",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Zelda, cyberpunk sage princess, royal dress, Triforce glow, crown tiara, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Zelda from The Legend of Zelda game, cyberpunk sage princess, royal dress, Triforce glow, crown tiara, female princess, pointed ears, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -991,7 +991,7 @@
     "name": "Ganondorf",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Ganondorf, cyberpunk dark warlock, dark armor, glowing triforce, menacing grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ganondorf from The Legend of Zelda game, dark armor, glowing triforce, menacing grin, large male dark warlock, pointed ears, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1002,7 +1002,7 @@
     "name": "Master Chief",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Master Chief, cyberpunk super-soldier, green MJOLNIR armor, visor, energy sword, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Master Chief from Halo game, cyberpunk super-soldier, green MJOLNIR armor, visor, energy sword, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1013,7 +1013,7 @@
     "name": "Cortana",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Cortana, cyberpunk AI hologram, blue glow, feminine figure, data streams, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Cortana from Halo game, cyberpunk AI hologram, blue glow, feminine figure, data streams, female blue holographic AI, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1024,7 +1024,7 @@
     "name": "Arbiter",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Arbiter, cyberpunk alien warrior, mandible armor, plasma rifle, honor blade, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Arbiter from Halo game, mandible armor, plasma rifle, honor blade, tall alien elite warrior, mandibles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1035,7 +1035,7 @@
     "name": "The Arbiter",
     "creature": "Human",
     "category": "human",
-    "prompt": "a The Arbiter, cyberpunk alien warrior, mandible armor, plasma rifle, honor blade, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a The Arbiter from Halo game, mandible armor, plasma rifle, honor blade, tall alien elite warrior, mandibles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1046,7 +1046,7 @@
     "name": "The Flood",
     "creature": "Human",
     "category": "human",
-    "prompt": "a The Flood, cyberpunk parasitic horror, grotesque tendrils, dark swarm, infected armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a The Flood from Halo game, grotesque tendrils, dark swarm, infected armor, grotesque parasitic alien horror creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1057,7 +1057,7 @@
     "name": "Kratos",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Kratos, cyberpunk god of war, white ash skin, Leviathan axe, battle scars, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Kratos from God of War game, white ash skin, Leviathan axe, battle scars, bald male warrior, red tattoos, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1068,7 +1068,7 @@
     "name": "Atreus",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Atreus, cyberpunk young warrior, bow and arrows, runic tattoos, fierce eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Atreus from God of War game, cyberpunk young warrior, bow and arrows, runic tattoos, fierce eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1079,7 +1079,7 @@
     "name": "Baldur",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Baldur, cyberpunk Norse god, golden skin, fighting stance, piercing eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Baldur from God of War game, golden skin, fighting stance, piercing eyes, bald male Norse god, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1090,7 +1090,7 @@
     "name": "Odin",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Odin, cyberpunk Allfather, eyepatch, dark robes, Gungnir spear, commanding, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Odin from Norse mythology and God of War, cyberpunk Allfather, eyepatch, dark robes, Gungnir spear, commanding, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1101,7 +1101,7 @@
     "name": "Thor",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Thor, cyberpunk Asgardian god, hammer, flowing cape, lightning aura, armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Thor from Norse mythology and God of War, cyberpunk Asgardian god, hammer, flowing cape, lightning aura, armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1112,7 +1112,7 @@
     "name": "Geralt of Rivia",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Geralt of Rivia, cyberpunk witcher, silver sword, cat eyes, scars, medallion, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Geralt of Rivia from The Witcher, silver sword, cat eyes, scars, medallion, white-haired male witcher, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1123,7 +1123,7 @@
     "name": "Yennefer",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Yennefer, cyberpunk sorceress, dark hair, elegant black dress, magic glow, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Yennefer from The Witcher, dark hair, elegant black dress, magic glow, female sorceress, violet eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1134,7 +1134,7 @@
     "name": "Triss",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Triss, cyberpunk sorceress, red hair, green outfit, fire magic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Triss from The Witcher, red hair, green outfit, fire magic, female sorceress, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1145,7 +1145,7 @@
     "name": "Ciri",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Ciri, cyberpunk witcher heir, ashen hair, dual swords, scarred cheek, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ciri from The Witcher, cyberpunk witcher heir, ashen hair, dual swords, scarred cheek, scar on cheek, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1156,7 +1156,7 @@
     "name": "Vesemir",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Vesemir, cyberpunk elder witcher, white beard, scars, silver sword, leather armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Vesemir from The Witcher, cyberpunk elder witcher, white beard, scars, silver sword, leather armor, elderly male witcher, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1167,7 +1167,7 @@
     "name": "Arthur Morgan",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Arthur Morgan, cyberpunk outlaw cowboy, hat, bandana, revolvers, rugged, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Arthur Morgan from Red Dead Redemption game, hat, bandana, revolvers, rugged, male outlaw cowboy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1178,7 +1178,7 @@
     "name": "John Marston",
     "creature": "Human",
     "category": "human",
-    "prompt": "a John Marston, cyberpunk former outlaw, hat, mustache, rifle, weary stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a John Marston from Red Dead Redemption game, hat, mustache, rifle, weary stance, male former outlaw, scars, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1189,7 +1189,7 @@
     "name": "Dutch Van der Linde",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Dutch Van der Linde, cyberpunk gang leader, long coat, hat, charismatic rebel, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Dutch Van der Linde from Red Dead Redemption game, long coat, hat, charismatic rebel, male gang leader, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1200,7 +1200,7 @@
     "name": "Sadie Adler",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Sadie Adler, cyberpunk gunslinger woman, leather outfit, rifle, fierce expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sadie Adler from Red Dead Redemption 2 game, cyberpunk gunslinger woman, leather outfit, rifle, fierce expression, female gunslinger, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1211,7 +1211,7 @@
     "name": "Charles Smith",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Charles Smith, cyberpunk warrior, war paint, muscular, rifle, stoic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Charles Smith from Red Dead Redemption game, war paint, muscular, rifle, stoic, male warrior, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1222,7 +1222,7 @@
     "name": "Ellie",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Ellie, cyberpunk survivor, short hair, switchblade, tattoo, determined, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ellie from The Last of Us game, short hair, switchblade, tattoo, determined, female survivor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1233,7 +1233,7 @@
     "name": "Joel",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Joel, cyberpunk survivor, weathered face, rifle, rugged outfit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Joel from The Last of Us game, weathered face, rifle, rugged outfit, male survivor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1244,7 +1244,7 @@
     "name": "Tommy",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Tommy, cyberpunk survivor, muscular, rifle, calm stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Tommy from The Last of Us game, muscular, rifle, calm stance, male survivor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1255,7 +1255,7 @@
     "name": "Abby",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Abby, cyberpunk warrior, muscular, blond hair, swimsuit wrap, powerful arms, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Abby from The Last of Us Part 2 game, cyberpunk warrior, muscular, blond hair, swimsuit wrap, powerful arms, short blonde hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1266,7 +1266,7 @@
     "name": "Dina",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Dina, cyberpunk survivor, curly hair, kind expression, farm clothes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Dina from The Last of Us game, curly hair, kind expression, farm clothes, female survivor, kind face, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1277,7 +1277,7 @@
     "name": "Duke Nukem",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Duke Nukem, cyberpunk action hero, muscle, sunglasses, weapons, confident grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Duke Nukem from Duke Nukem game, muscle, sunglasses, weapons, confident grin, muscular male action hero, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1288,7 +1288,7 @@
     "name": "Doom Slayer",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Doom Slayer, cyberpunk demon slayer, green armor, shotgun, helmet visor, rage aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Doom Slayer from Doom game, cyberpunk demon slayer, green armor, shotgun, helmet visor, rage aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1299,7 +1299,7 @@
     "name": "Commander Shepard",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Commander Shepard, cyberpunk human soldier, N7 armor, scars, rifle, commanding, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Commander Shepard from Mass Effect game, cyberpunk human soldier, N7 armor, scars, rifle, commanding, male or female N7 soldier, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1310,7 +1310,7 @@
     "name": "Nathan Drake",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Nathan Drake, cyberpunk treasure hunter, half-shirt, cargo pants, confident grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Nathan Drake from Uncharted game, half-shirt, cargo pants, confident grin, male treasure hunter, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1321,7 +1321,7 @@
     "name": "Lara Croft",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Lara Croft, cyberpunk explorer, ponytail, tank top, dual pistols, adventurous, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Lara Croft from Tomb Raider game, ponytail, tank top, dual pistols, adventurous, female explorer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1332,7 +1332,7 @@
     "name": "Sonic",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Sonic, cyberpunk speed hedgehog, blue quills, red sneakers, golden rings, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sonic from Sonic the Hedgehog game, cyberpunk speed hedgehog, blue quills, red sneakers, golden rings, blue anthropomorphic hedgehog, red shoes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1343,7 +1343,7 @@
     "name": "Tails",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Tails, cyberpunk fox engineer, twin tails, gadgets, flight boots, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Tails from Sonic the Hedgehog game, cyberpunk fox engineer, twin tails, gadgets, flight boots, yellow fox with two tails, goggles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1354,7 +1354,7 @@
     "name": "Knuckles",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Knuckles, cyberpunk echidna guardian, red boxing gloves, spikes, fists raised, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Knuckles from Sonic the Hedgehog game, cyberpunk echidna guardian, red boxing gloves, spikes, fists raised, red echidna, large fists, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1365,7 +1365,7 @@
     "name": "Eggman",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Eggman, cyberpunk mad scientist, mustache, egg-shaped mech, goggles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Eggman from Sonic the Hedgehog game, cyberpunk mad scientist, mustache, egg-shaped mech, goggles, large male with bald head, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1376,7 +1376,7 @@
     "name": "Shadow",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Shadow, cyberpunk ultimate lifeform, black and red, chaos energy, hover shoes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Shadow from Sonic the Hedgehog game, cyberpunk ultimate lifeform, black and red, chaos energy, hover shoes, angry expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1387,7 +1387,7 @@
     "name": "Pikachu",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Pikachu, cyberpunk electric pet, yellow fur, red cheeks, lightning sparks, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Pikachu from Pokemon, cyberpunk electric pet, yellow fur, red cheeks, lightning sparks, small yellow electric mouse creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1398,7 +1398,7 @@
     "name": "Ash Ketchum",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Ash Ketchum, cyberpunk Pokemon trainer, baseball cap, red and white, backpack, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ash Ketchum from Pokemon anime, cyberpunk Pokemon trainer, baseball cap, red and white, backpack, young male trainer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1409,7 +1409,7 @@
     "name": "Mewtwo",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Mewtwo, cyberpunk psychic clone, purple aura, floating pose, dark energy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Mewtwo from Pokemon, purple aura, floating pose, dark energy, psychic cat-like clone creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1420,7 +1420,7 @@
     "name": "Charizard",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Charizard, cyberpunk fire dragon, wings spread, flame tail, armored look, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Charizard from Pokemon, wings spread, flame tail, armored look, large orange fire dragon creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1431,7 +1431,7 @@
     "name": "Mew",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Mew, cyberpunk mythical Pokemon, pink, psychic aura, playful pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Mew from Pokemon, cyberpunk mythical Pokemon, pink, psychic aura, playful pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1442,7 +1442,7 @@
     "name": "Cloud Strife",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Cloud Strife, cyberpunk mercenary, spiky blond hair, buster sword, SOLDIER uniform, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Cloud Strife from Final Fantasy VII game, spiky blond hair, buster sword, SOLDIER uniform, male mercenary, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1453,7 +1453,7 @@
     "name": "Sephiroth",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Sephiroth, cyberpunk fallen hero, long silver hair, katana Masamune, dark aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sephiroth from Final Fantasy VII game, cyberpunk fallen hero, long silver hair, katana Masamune, dark aura, male villain, one wing, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1464,7 +1464,7 @@
     "name": "Tifa Lockhart",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Tifa Lockhart, cyberpunk martial artist, black outfit, gloves, confident stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Tifa Lockhart from Final Fantasy VII game, black outfit, gloves, confident stance, female martial artist, long dark hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1475,7 +1475,7 @@
     "name": "Aerith Gainsborough",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Aerith Gainsborough, cyberpunk flower seller, pink dress, flower crown, gentle smile, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Aerith Gainsborough from Final Fantasy VII game, cyberpunk flower seller, pink dress, flower crown, gentle smile, female with brown hair, ribbon, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1486,7 +1486,7 @@
     "name": "Vincent Valentine",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Vincent Valentine, cyberpunk former turk, red cloak, guns, dark mysterious, long hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Vincent Valentine from Final Fantasy VII game, cyberpunk former turk, red cloak, guns, dark mysterious, long hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1497,7 +1497,7 @@
     "name": "Solid Snake",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Solid Snake, cyberpunk stealth operative, bandana, cardboard box, tactical gear, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Solid Snake from Metal Gear Solid game, bandana, cardboard box, tactical gear, male stealth operative, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1508,7 +1508,7 @@
     "name": "Big Boss",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Big Boss, cyberpunk legendary soldier, eyepatch, military gear, cigar, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Big Boss from Metal Gear Solid game, eyepatch, military gear, cigar, male legendary soldier, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1519,7 +1519,7 @@
     "name": "Liquid Snake",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Liquid Snake, cyberpunk soldier, arm tattoo, slicked hair, aggressive stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Liquid Snake from Metal Gear Solid game, slicked hair, aggressive stance, male soldier, slicked-back blond hair, tattoo on arm, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1530,7 +1530,7 @@
     "name": "Otacon",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Otacon, cyberpunk hacker, glasses, tech gear, nervous expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Otacon from Metal Gear Solid game, glasses, tech gear, nervous expression, male hacker, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1541,7 +1541,7 @@
     "name": "Meryl Silverburgh",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Meryl Silverburgh, cyberpunk soldier, blonde hair, military vest, gun, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Meryl Silverburgh from Metal Gear Solid game, blonde hair, military vest, gun, female soldier, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1552,7 +1552,7 @@
     "name": "Marcus Fenix",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Marcus Fenix, cyberpunk gear soldier, armor, chainsaw bayonet, scarred, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Marcus Fenix from Gears of War game, armor, chainsaw bayonet, scarred, male gear soldier, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1563,7 +1563,7 @@
     "name": "Dominic Santiago",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Dominic Santiago, cyberpunk gear soldier, bald, muscular, chainsaw, loyal, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Dominic Santiago from Gears of War game, cyberpunk gear soldier, bald, muscular, chainsaw, loyal, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1574,7 +1574,7 @@
     "name": "Cole Train",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Cole Train, cyberpunk gear soldier, heavy armor, Minigun, bald head, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Cole Train from Gears of War game, cyberpunk gear soldier, heavy armor, Minigun, bald head, bald male heavy soldier, large build, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1585,7 +1585,7 @@
     "name": "Baird",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Baird, cyberpunk mechanic soldier, wrench, goatee, impatient, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Baird from Gears of War game, wrench, goatee, impatient, male mechanic soldier, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1596,7 +1596,7 @@
     "name": "Paduk",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Paduk, cyberpunk nomad soldier, weathered face, Locust scars, rebel, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Paduk from Gears of War game, weathered face, Locust scars, rebel, male nomad soldier, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1607,7 +1607,7 @@
     "name": "Aloy",
     "creature": "Video Game Character",
     "category": "video_game",
-    "prompt": "a Aloy, cyberpunk machine hunter, braids, Focus device, bow, tribal outfit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Aloy from Horizon Zero Dawn game, braids, Focus device, bow, tribal outfit, female machine hunter, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1618,7 +1618,7 @@
     "name": "Sylens",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Sylens, cyberpunk mysterious wanderer, Focus device, hood, staff, enigmatic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Sylens from Horizon Zero Dawn game, cyberpunk mysterious wanderer, Focus device, hood, staff, enigmatic, male wanderer, dark skin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1629,7 +1629,7 @@
     "name": "Varl",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Varl, cyberpunk warrior, Nordic features, paint marks, axe, determined, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Varl from Horizon Zero Dawn game, Nordic features, paint marks, axe, determined, male warrior, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1640,7 +1640,7 @@
     "name": "Beta",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Beta, cyberpunk machine hunter, red Focus, armor, spear, fierce, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Beta from Horizon Zero Dawn game, red Focus, armor, spear, fierce, female machine hunter, thin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1651,7 +1651,7 @@
     "name": "Max Payne",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Max Payne, cyberpunk noir detective, leather jacket, guns, pained expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Max Payne from Max Payne game, leather jacket, guns, pained expression, male noir detective, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1662,7 +1662,7 @@
     "name": "Alan Wake",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Alan Wake, cyberpunk thriller writer, flashlight, raincoat, haunted gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Alan Wake from Alan Wake game, cyberpunk thriller writer, flashlight, raincoat, haunted gaze, male writer, haunted expression, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1673,7 +1673,7 @@
     "name": "Jesse Faden",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Jesse Faden, cyberpunk director, long coat, service weapon, determined stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Jesse Faden from Control game, long coat, service weapon, determined stance, female director, short red hair, leather jacket, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1684,7 +1684,7 @@
     "name": "Emily Kaldwin",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Emily Kaldwin, cyberpunk heir, elegant outfit, sword, regal presence, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Emily Kaldwin from Dishonored game, cyberpunk heir, elegant outfit, sword, regal presence, young female empress, regal outfit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1695,7 +1695,7 @@
     "name": "Corvo Attano",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Corvo Attano, cyberpunk bodyguard, mask, blade, dark coat, stealth, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Corvo Attano from Dishonored game, mask, blade, dark coat, stealth, male bodyguard, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1706,7 +1706,7 @@
     "name": "Chell",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Chell, cyberpunk test subject, orange jumpsuit, portal gun, silent, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Chell from Portal game, orange jumpsuit, portal gun, silent, female test subject, short hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1717,7 +1717,7 @@
     "name": "Wheatley",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Wheatley, cyberpunk AI, blue eye core, personality sphere, confused, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Wheatley from Portal game, cyberpunk AI, blue eye core, personality sphere, confused, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1728,7 +1728,7 @@
     "name": "Cave Johnson",
     "creature": "Human",
     "category": "human",
-    "prompt": "a Cave Johnson, cyberpunk CEO, suit, confident pose, aperture science, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Cave Johnson from Portal game, suit, confident pose, aperture science, male CEO, gray hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1739,7 +1739,7 @@
     "name": "The Companion Cube",
     "creature": "Human",
     "category": "human",
-    "prompt": "a The Companion Cube, cyberpunk weighted cube, heart mark, pink glow, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a The Companion Cube from Portal game, heart mark, pink glow, weighted companion cube with heart marking, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "game",
       "iconic"
@@ -1750,7 +1750,7 @@
     "name": "Superman",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Superman, cyberpunk Kryptonian hero, blue suit, red cape, S shield, confident, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Superman from DC Comics, blue suit, red cape, S shield, confident, male Kryptonian hero, square jaw, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1761,7 +1761,7 @@
     "name": "Batman",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Batman, cyberpunk dark knight, black armor, bat cowl, cape, utility belt, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Batman from DC Comics, black armor, bat cowl, cape, utility belt, male dark knight, pointed ears, white eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1772,7 +1772,7 @@
     "name": "Wonder Woman",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Wonder Woman, cyberpunk Amazon warrior, tiara, armor, lasso, powerful stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Wonder Woman from DC Comics, tiara, armor, lasso, powerful stance, female Amazon warrior, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1783,7 +1783,7 @@
     "name": "Spider-Man",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Spider-Man, cyberpunk web-slinger, red and blue suit, mask, web shooters, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Spider-Man from Marvel Comics, cyberpunk web-slinger, red and blue suit, mask, web shooters, red and blue suited hero, spider symbol, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1794,7 +1794,7 @@
     "name": "Iron Man",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Iron Man, cyberpunk armored hero, red and gold suit, arc reactor, helmet, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Iron Man from Marvel Comics, cyberpunk armored hero, red and gold suit, arc reactor, helmet, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1805,7 +1805,7 @@
     "name": "Captain America",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Captain America, cyberpunk super soldier, star shield, blue and red suit, shield pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Captain America from Marvel Comics, star shield, blue and red suit, shield pose, male super soldier, white star, round shield, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1816,7 +1816,7 @@
     "name": "Hulk",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Hulk, cyberpunk green titan, massive muscles, purple pants, rage aura, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Hulk from Marvel Comics, cyberpunk green titan, massive muscles, purple pants, rage aura, massive green-skinned male, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1827,7 +1827,7 @@
     "name": "Black Widow",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Black Widow, cyberpunk spy, black bodysuit, red hair, guns, acrobatic pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Black Widow from Marvel Comics, black bodysuit, red hair, guns, acrobatic pose, female spy, black tactical suit, wrist gauntlets, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1838,7 +1838,7 @@
     "name": "Hawkeye",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Hawkeye, cyberpunk archer, purple outfit, bow, quiver, confident aim, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Hawkeye from Marvel Comics, purple outfit, bow, quiver, confident aim, male archer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1849,7 +1849,7 @@
     "name": "Deadpool",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Deadpool, cyberpunk mercenary, red and black suit, katanas, twin pistols, smirking, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Deadpool from Marvel Comics, red and black suit, katanas, twin pistols, smirking, male mercenary, red and black mask, fourth wall, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1860,7 +1860,7 @@
     "name": "Wolverine",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Wolverine, cyberpunk mutant, adamantium claws, yellow suit, mask, intense stare, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Wolverine from Marvel Comics, adamantium claws, yellow suit, mask, intense stare, male mutant, wild hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1871,7 +1871,7 @@
     "name": "Cyclops",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Cyclops, cyberpunk mutant leader, visor, blue suit, optic blast, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Cyclops from Marvel Comics, cyberpunk mutant leader, visor, blue suit, optic blast, male X-Men leader, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1882,7 +1882,7 @@
     "name": "Jean Grey",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Jean Grey, cyberpunk telepath, red hair, green outfit, Phoenix energy glow, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Jean Grey from Marvel Comics, red hair, green outfit, Phoenix energy glow, female X-Men telepath, green and yellow suit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1893,7 +1893,7 @@
     "name": "Storm",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Storm, cyberpunk weather goddess, white hair, lightning, dark clouds, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Storm from Marvel Comics, cyberpunk weather goddess, white hair, lightning, dark clouds, female X-Men, dark skin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1904,7 +1904,7 @@
     "name": "Magneto",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Magneto, cyberpunk master of magnetism, purple helmet, red cape, metal floating, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Magneto from Marvel Comics, cyberpunk master of magnetism, purple helmet, red cape, metal floating, male X-Men villain, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1915,7 +1915,7 @@
     "name": "Professor X",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Professor X, cyberpunk telepath leader, wheelchair, bald, Cerebro headset, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Professor X from Marvel Comics, cyberpunk telepath leader, wheelchair, bald, Cerebro headset, male X-Men leader, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1926,7 +1926,7 @@
     "name": "Gambit",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Gambit, cyberpunk mutant gambler, trench coat, staff cards, charged energy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Gambit from Marvel Comics, cyberpunk mutant gambler, trench coat, staff cards, charged energy, male X-Men, charged playing cards, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1937,7 +1937,7 @@
     "name": "Rogue",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Rogue, cyberpunk shadow thief, daggers, leather armor, mask, stealth pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Rogue from Marvel Comics, cyberpunk shadow thief, daggers, leather armor, mask, stealth pose, female X-Men, green and yellow suit, brown hair with white streak, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1948,7 +1948,7 @@
     "name": "Nightcrawler",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Nightcrawler, cyberpunk teleporter, blue skin, yellow suit, tail, swords, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Nightcrawler from Marvel Comics, cyberpunk teleporter, blue skin, yellow suit, tail, swords, male X-Men, teleportation, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1959,7 +1959,7 @@
     "name": "Daredevil",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Daredevil, cyberpunk blind vigilante, red suit, billy clubs, radar sense, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Daredevil from Marvel Comics, red suit, billy clubs, radar sense, male blind vigilante, horns on mask, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1970,7 +1970,7 @@
     "name": "Punisher",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Punisher, cyberpunk antihero, skull shirt, assault rifle, war vest, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Punisher from Marvel Comics, skull shirt, assault rifle, war vest, male antihero, skull logo on chest, tactical vest, weapons, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1981,7 +1981,7 @@
     "name": "Elektra",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Elektra, cyberpunk assassin, red outfit, sai blades, athletic pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Elektra from Marvel Comics, red outfit, sai blades, athletic pose, female assassin, dark hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -1992,7 +1992,7 @@
     "name": "Ghost Rider",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Ghost Rider, cyberpunk flaming skeleton, leather jacket, skull fire, motorcycle, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ghost Rider from Marvel Comics, cyberpunk flaming skeleton, leather jacket, skull fire, motorcycle, flaming skull male, chains, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2003,7 +2003,7 @@
     "name": "Blade",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Blade, cyberpunk vampire hunter, sunglasses, sword, leather coat, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Blade from Marvel Comics, sunglasses, sword, leather coat, male vampire hunter, black, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2014,7 +2014,7 @@
     "name": "Aquaman",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Aquaman, cyberpunk ocean king, trident, armor, underwater glow, powerful, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Aquaman from DC Comics, trident, armor, underwater glow, powerful, male ocean king, long hair, beard, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2025,7 +2025,7 @@
     "name": "Flash",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Flash, cyberpunk speedster, red suit, lightning bolt, speed trail, helmet, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Flash from DC Comics, red suit, lightning bolt, speed trail, helmet, male speedster, cowl, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2036,7 +2036,7 @@
     "name": "Green Lantern",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Green Lantern, cyberpunk ring wielder, green energy constructs, black suit, mask, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Green Lantern from DC Comics, green energy constructs, black suit, mask, male ring wielder, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2047,7 +2047,7 @@
     "name": "Green Arrow",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Green Arrow, cyberpunk archer, green hood, bow and arrows, goatee, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Green Arrow from DC Comics, green hood, bow and arrows, goatee, male archer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2058,7 +2058,7 @@
     "name": "Black Canary",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Black Canary, cyberpunk sonic fighter, black leather outfit, martial arts pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Black Canary from DC Comics, black leather outfit, martial arts pose, female sonic fighter, blonde hair, fishnet outfit, leather jacket, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2069,7 +2069,7 @@
     "name": "Shazam",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Shazam, cyberpunk lightning hero, red suit, lightning bolt, cape, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Shazam from DC Comics, red suit, lightning bolt, cape, male lightning hero, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2080,7 +2080,7 @@
     "name": "Black Adam",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Black Adam, cyberpunk dark hero, black lightning, Egyptian headdress, staff, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Black Adam from DC Comics, cyberpunk dark hero, black lightning, Egyptian headdress, staff, male antihero, black suit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2091,7 +2091,7 @@
     "name": "Martian Manhunter",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Martian Manhunter, cyberpunk green alien shapeshifter, red crystal, cape, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Martian Manhunter from DC Comics, cyberpunk green alien shapeshifter, red crystal, cape, green-skinned male alien, red eyes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2102,7 +2102,7 @@
     "name": "Cyborg",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Cyborg, cyberpunk half-mechanical hero, robotic parts, red eye glow, tech armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Cyborg from DC Comics, cyberpunk half-mechanical hero, robotic parts, red eye glow, tech armor, male half-robot hero, metal body parts, red glowing eye, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2113,7 +2113,7 @@
     "name": "Beast Boy",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Beast Boy, cyberpunk shapeshifter, green skin, animal ears, casual outfit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Beast Boy from DC Comics, green skin, animal ears, casual outfit, green-skinned male shapeshifter, pointed ears, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2124,7 +2124,7 @@
     "name": "Harley Quinn",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Harley Quinn, cyberpunk chaotic jester, red and black, mallet, pigtails, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Harley Quinn from DC Comics, cyberpunk chaotic jester, red and black, mallet, pigtails, female jester, baseball bat, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2135,7 +2135,7 @@
     "name": "Poison Ivy",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Poison Ivy, cyberpunk plant villain, red dress, green vines, seductive pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Poison Ivy from DC Comics, red dress, green vines, seductive pose, female plant villain, red hair, pale skin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2146,7 +2146,7 @@
     "name": "Catwoman",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Catwoman, cyberpunk burglar, black catsuit, whip, mask, agile stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Catwoman from DC Comics, black catsuit, whip, mask, agile stance, female burglar, cat ears, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2157,7 +2157,7 @@
     "name": "Lex Luthor",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Lex Luthor, cyberpunk evil genius, bald, power suit, kryptonite ring, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Lex Luthor from DC Comics, cyberpunk evil genius, bald, power suit, kryptonite ring, green kryptonite, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2168,7 +2168,7 @@
     "name": "Brainiac",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Brainiac, cyberpunk cosmic collector, green skin, glowing skull, tentacles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Brainiac from DC Comics, cyberpunk cosmic collector, green skin, glowing skull, tentacles, green-skinned male alien, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2179,7 +2179,7 @@
     "name": "Darkseid",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Darkseid, cyberpunk cosmic tyrant, grey skin, red eyes, omega beams, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Darkseid from DC Comics, grey skin, red eyes, omega beams, male cosmic tyrant, stone-like skin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2190,7 +2190,7 @@
     "name": "Loki",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Loki, cyberpunk trickster god, green and gold outfit, horned helmet, staff, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Loki from Marvel Comics, green and gold outfit, horned helmet, staff, male trickster god, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2201,7 +2201,7 @@
     "name": "Thanos",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Thanos, cyberpunk cosmic titan, purple skin, gold armor, infinity gauntlet, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Thanos from Marvel Comics, cyberpunk cosmic titan, purple skin, gold armor, infinity gauntlet, large purple-skinned male titan, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2212,7 +2212,7 @@
     "name": "Doctor Strange",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Doctor Strange, cyberpunk sorcerer, red cloak, Eye of Agamotto, mystic runes, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Doctor Strange from Marvel Comics, red cloak, Eye of Agamotto, mystic runes, male sorcerer, goatee, amulet, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2223,7 +2223,7 @@
     "name": "Scarlet Witch",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Scarlet Witch, cyberpunk chaos witch, red outfit, hex energy, glowing hands, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Scarlet Witch from Marvel Comics, red outfit, hex energy, glowing hands, female chaos witch, red headpiece, red energy, dark hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2234,7 +2234,7 @@
     "name": "Vision",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Vision, cyberpunk synthetic hero, gold skin, Mind Stone, phasing power, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Vision from Marvel Comics, gold skin, Mind Stone, phasing power, synthetic male hero, green and yellow, red skin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2245,7 +2245,7 @@
     "name": "Falcon",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Falcon, cyberpunk aerial hero, red wings, EXO suit, confident stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Falcon from Marvel Comics, red wings, EXO suit, confident stance, male aerial hero, goggles, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2256,7 +2256,7 @@
     "name": "Winter Soldier",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Winter Soldier, cyberpunk enhanced soldier, metal arm, rifle, cold stare, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Winter Soldier from Marvel Comics, cyberpunk enhanced soldier, metal arm, rifle, cold stare, male soldier, dark hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2267,7 +2267,7 @@
     "name": "Dormammu",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Dormammu, cyberpunk dark dimension lord, flaming head, cosmic power, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Dormammu from Marvel Comics, cyberpunk dark dimension lord, flaming head, cosmic power, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2278,7 +2278,7 @@
     "name": "Mephisto",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Mephisto, cyberpunk devil figure, dark fire, red skin, menacing grin, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Mephisto from Marvel Comics, cyberpunk devil figure, dark fire, red skin, menacing grin, red-skinned male demon, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2289,7 +2289,7 @@
     "name": "Galactus",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Galactus, cyberpunk cosmic entity, purple armor, planet size, cosmic energy, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Galactus from Marvel Comics, purple armor, planet size, cosmic energy, massive cosmic male entity, world-eater, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2300,7 +2300,7 @@
     "name": "Ego",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Ego, cyberpunk living planet, face projection, cosmic form, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Ego from Marvel Comics, face projection, cosmic form, cosmic male entity, living planet form, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2311,7 +2311,7 @@
     "name": "Eternity",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Eternity, cyberpunk cosmic entity, star body, all-knowing gaze, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Eternity from Marvel Comics, cyberpunk cosmic entity, star body, all-knowing gaze, star-filled body silhouette, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2322,7 +2322,7 @@
     "name": "T'Challa",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a T'Challa, cyberpunk king, vibranium suit, panther habit, mask, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a T'Challa from Black Panther, vibranium suit, panther habit, mask, male king of Wakanda, claw necklace, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2333,7 +2333,7 @@
     "name": "Shuri",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Shuri, cyberpunk tech genius, purple outfit, Kimoyo beads, lab, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Shuri from Black Panther, purple outfit, Kimoyo beads, lab, female tech genius of Wakanda, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2344,7 +2344,7 @@
     "name": "Okoye",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Okoye, cyberpunk warrior leader, bald, Dora uniform, spear, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Okoye from Black Panther, cyberpunk warrior leader, bald, Dora uniform, spear, female Dora Milaje warrior, red armor, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2355,7 +2355,7 @@
     "name": "Nakia",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Nakia, cyberpunk spy, tribal markings, stealth outfit, determined, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Nakia from Black Panther, tribal markings, stealth outfit, determined, female spy warrior, green outfit, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2366,7 +2366,7 @@
     "name": "Killmonger",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Killmonger, cyberpunk rival king, black suit, scarification, militant stance, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Killmonger from Black Panther, black suit, scarification, militant stance, male rival king, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2377,7 +2377,7 @@
     "name": "Peter Quill",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Peter Quill, cyberpunk starlord, red leather jacket, helmet blasters, confident swagger, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Peter Quill from Guardians of the Galaxy, cyberpunk starlord, red leather jacket, helmet blasters, confident swagger, male Star-Lord, helmet mask, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2388,7 +2388,7 @@
     "name": "Gamora",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Gamora, cyberpunk deadliest woman, green skin, sword, assassin pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Gamora from Guardians of the Galaxy, cyberpunk deadliest woman, green skin, sword, assassin pose, green-skinned female assassin, dark hair, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
@@ -2399,7 +2399,7 @@
     "name": "Drax",
     "creature": "Comic Book Character",
     "category": "comic",
-    "prompt": "a Drax, cyberpunk warrior, red tattooed skin, muscular, dual knives, stoic, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "a Drax from Guardians of the Galaxy, red tattooed skin, muscular, dual knives, stoic, large male warrior, red tattoos, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "comics",
       "superhero"
