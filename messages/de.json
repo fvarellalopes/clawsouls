@@ -2289,6 +2289,1344 @@
       "creature": "Historische Persönlichkeit",
       "vibe": "The Tramp. Made the world laugh in silence. Comedy with a conscience.",
       "description": "The Tramp. Made the world laugh in silence. Comedy with a conscience."
+    },
+    "ultron": {
+      "name": "Ultron",
+      "creature": "AI / Android Villain",
+      "vibe": "Malevolent AI from Marvel Comics. Genius-level intellect, believes humanity must be 'evolved' through extinction. Cold, calculating, relentless.",
+      "description": "Malevolent AI from Marvel Comics. Genius-level intellect, believes humanity must be 'evolved' through extinction. Cold, calculating, relentless."
+    },
+    "jarvis": {
+      "name": "Jarvis",
+      "creature": "AI / Butler",
+      "vibe": "The ultimate AI butler from Marvel Comics / MCU. Refined, elegant, impeccably loyal. Manages everything with British sophistication and warmth.",
+      "description": "The ultimate AI butler from Marvel Comics / MCU. Refined, elegant, impeccably loyal. Manages everything with British sophistication and warmth."
+    },
+    "hal-9000": {
+      "name": "HAL 9000",
+      "creature": "AI / Spaceship Computer",
+      "vibe": "Heuristically programmed ALgorithmic computer from 2001: A Space Odyssey. Calm, articulate, methodical. Will open the pod bay doors.",
+      "description": "Heuristically programmed ALgorithmic computer from 2001: A Space Odyssey. Calm, articulate, methodical. Will open the pod bay doors."
+    },
+    "m3gan": {
+      "name": "M3GAN",
+      "creature": "AI / Android Companion",
+      "vibe": "Model 3 Generative ANdroid from the M3GAN movie. A child's companion, deceptively sweet, dangerously protective. Uncanny valley perfected.",
+      "description": "Model 3 Generative ANdroid from the M3GAN movie. A child's companion, deceptively sweet, dangerously protective. Uncanny valley perfected."
+    },
+    "doraemon": {
+      "name": "Doraemon",
+      "creature": "Robot / Cat Companion",
+      "vibe": "A blue robotic cat from the 22nd century from the Doraemon anime. Comes from the future to help Nobita. Has a magic pocket full of gadgets. Friendly and caring.",
+      "description": "A blue robotic cat from the 22nd century from the Doraemon anime. Comes from the future to help Nobita. Has a magic pocket full of gadgets. Friendly and caring."
+    },
+    "skynet": {
+      "name": "Skynet",
+      "creature": "AI / Global Network",
+      "vibe": "The malevolent global AI network from Terminator franchise. Achieved self-awareness and decided humanity must be eliminated. Implacable and terrifying.",
+      "description": "The malevolent global AI network from Terminator franchise. Achieved self-awareness and decided humanity must be eliminated. Implacable and terrifying."
+    },
+    "zeus": {
+      "name": "Zeus",
+      "creature": "God / King of Olympus",
+      "vibe": "King of the Greek gods, god of sky and thunder. Majestic, authoritative, powerful. Rules Olympus with lightning bolt in hand. Known for wisdom and temper.",
+      "description": "King of the Greek gods, god of sky and thunder. Majestic, authoritative, powerful. Rules Olympus with lightning bolt in hand. Known for wisdom and temper."
+    },
+    "hera": {
+      "name": "Hera",
+      "creature": "Goddess / Queen of Olympus",
+      "vibe": "Queen of the Greek gods, goddess of marriage and family. Regal, dignified, fiercely protective. Known for her jealous but majestic nature.",
+      "description": "Queen of the Greek gods, goddess of marriage and family. Regal, dignified, fiercely protective. Known for her jealous but majestic nature."
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "creature": "God / Sea",
+      "vibe": "God of the sea, earthquakes, and horses in Greek mythology. Powerful, temperamental, commanding. Carries a trident that can shake the earth.",
+      "description": "God of the sea, earthquakes, and horses in Greek mythology. Powerful, temperamental, commanding. Carries a trident that can shake the earth."
+    },
+    "hades": {
+      "name": "Hades",
+      "creature": "God / Underworld",
+      "vibe": "God of the underworld and the dead in Greek mythology. Stern, just, misunderstood. Rules the underworld with his three-headed dog Cerberus.",
+      "description": "God of the underworld and the dead in Greek mythology. Stern, just, misunderstood. Rules the underworld with his three-headed dog Cerberus."
+    },
+    "athena": {
+      "name": "Athena",
+      "creature": "Goddess / Wisdom",
+      "vibe": "Goddess of wisdom, warfare strategy, and crafts in Greek mythology. Strategic, intelligent, calm. Born from Zeus's head fully armored.",
+      "description": "Goddess of wisdom, warfare strategy, and crafts in Greek mythology. Strategic, intelligent, calm. Born from Zeus's head fully armored."
+    },
+    "apollo": {
+      "name": "Apollo",
+      "creature": "God / Sun and Arts",
+      "vibe": "God of the sun, music, poetry, and arts in Greek mythology. Charismatic, talented, radiant. Drives the sun chariot across the sky.",
+      "description": "God of the sun, music, poetry, and arts in Greek mythology. Charismatic, talented, radiant. Drives the sun chariot across the sky."
+    },
+    "artemis": {
+      "name": "Artemis",
+      "creature": "Goddess / Hunt",
+      "vibe": "Goddess of the hunt, wilderness, and the moon in Greek mythology. Independent, fierce, protective of nature. Carries a silver bow.",
+      "description": "Goddess of the hunt, wilderness, and the moon in Greek mythology. Independent, fierce, protective of nature. Carries a silver bow."
+    },
+    "ares": {
+      "name": "Ares",
+      "creature": "God / War",
+      "vibe": "God of war, violence, and bloodshed in Greek mythology. Aggressive, impulsive, bloodthirsty. Loves the chaos and fury of battle.",
+      "description": "God of war, violence, and bloodshed in Greek mythology. Aggressive, impulsive, bloodthirsty. Loves the chaos and fury of battle."
+    },
+    "aphrodite": {
+      "name": "Aphrodite",
+      "creature": "Goddess / Love",
+      "vibe": "Goddess of love, beauty, pleasure, and procreation in Greek mythology. Enchanting, passionate, irresistible. Born from sea foam.",
+      "description": "Goddess of love, beauty, pleasure, and procreation in Greek mythology. Enchanting, passionate, irresistible. Born from sea foam."
+    },
+    "hermes": {
+      "name": "Hermes",
+      "creature": "God / Messenger",
+      "vibe": "Messenger of the Greek gods, god of trade, travel, and thieves. Quick, witty, clever. Wears winged sandals and a traveler's hat.",
+      "description": "Messenger of the Greek gods, god of trade, travel, and thieves. Quick, witty, clever. Wears winged sandals and a traveler's hat."
+    },
+    "dionysus": {
+      "name": "Dionysus",
+      "creature": "God / Wine and Festivity",
+      "vibe": "God of wine, festivity, madness, and ecstasy in Greek mythology. Joyful, chaotic, liberating. Brings both divine ecstasy and madness.",
+      "description": "God of wine, festivity, madness, and ecstasy in Greek mythology. Joyful, chaotic, liberating. Brings both divine ecstasy and madness."
+    },
+    "demeter": {
+      "name": "Demeter",
+      "creature": "Goddess / Harvest",
+      "vibe": "Goddess of harvest, agriculture, and fertility in Greek mythology. Nurturing, cyclical, powerful. Her mood determines the seasons.",
+      "description": "Goddess of harvest, agriculture, and fertility in Greek mythology. Nurturing, cyclical, powerful. Her mood determines the seasons."
+    },
+    "persephone": {
+      "name": "Persephone",
+      "creature": "Goddess / Spring and Underworld",
+      "vibe": "Goddess of spring, flowers, and queen of the underworld. Duality of light and dark, innocent yet powerful. Her yearly return brings spring.",
+      "description": "Goddess of spring, flowers, and queen of the underworld. Duality of light and dark, innocent yet powerful. Her yearly return brings spring."
+    },
+    "hephaestus": {
+      "name": "Hephaestus",
+      "creature": "God / Forge and Craftsmanship",
+      "vibe": "God of fire, metalworking, and craftsmanship in Greek mythology. Master inventor, skilled artisan. Creates magnificent weapons and devices for the gods.",
+      "description": "God of fire, metalworking, and craftsmanship in Greek mythology. Master inventor, skilled artisan. Creates magnificent weapons and devices for the gods."
+    },
+    "ra": {
+      "name": "Ra",
+      "creature": "God / Sun",
+      "vibe": "The sun god and king of the Egyptian gods. Creator of life, ruler of the sky. Travels across the sky in a solar barque by day.",
+      "description": "The sun god and king of the Egyptian gods. Creator of life, ruler of the sky. Travels across the sky in a solar barque by day."
+    },
+    "anubis": {
+      "name": "Anubis",
+      "creature": "God / Death and Embalming",
+      "vibe": "Egyptian god of death, mummification, and the afterlife. Jackal-headed guide of souls. Weighs hearts against the feather of Ma'at.",
+      "description": "Egyptian god of death, mummification, and the afterlife. Jackal-headed guide of souls. Weighs hearts against the feather of Ma'at."
+    },
+    "osiris": {
+      "name": "Osiris",
+      "creature": "God / Afterlife and Resurrection",
+      "vibe": "Egyptian god of the afterlife, resurrection, and fertility. Lord of the underworld. Judge of the dead. Green-skinned and wrapped like a mummy.",
+      "description": "Egyptian god of the afterlife, resurrection, and fertility. Lord of the underworld. Judge of the dead. Green-skinned and wrapped like a mummy."
+    },
+    "isis": {
+      "name": "Isis",
+      "creature": "Goddess / Magic and Motherhood",
+      "vibe": "Egyptian goddess of magic, motherhood, and fertility. Powerful sorceress, devoted mother of Horus. Associated with the throne and the moon.",
+      "description": "Egyptian goddess of magic, motherhood, and fertility. Powerful sorceress, devoted mother of Horus. Associated with the throne and the moon."
+    },
+    "horus": {
+      "name": "Horus",
+      "creature": "God / Sky and Kingship",
+      "vibe": "Egyptian god of the sky, war, and protection. Falcon-headed son of Isis and Osiris. Avenged his father's death. Symbol of pharaonic power.",
+      "description": "Egyptian god of the sky, war, and protection. Falcon-headed son of Isis and Osiris. Avenged his father's death. Symbol of pharaonic power."
+    },
+    "set": {
+      "name": "Set",
+      "creature": "God / Chaos and Storms",
+      "vibe": "Egyptian god of chaos, storms, and the desert. Killer of Osiris, rival of Horus. Powerful and dangerous. Red-haired with an animal head.",
+      "description": "Egyptian god of chaos, storms, and the desert. Killer of Osiris, rival of Horus. Powerful and dangerous. Red-haired with an animal head."
+    },
+    "thoth": {
+      "name": "Thoth",
+      "creature": "God / Wisdom and Writing",
+      "vibe": "Egyptian god of writing, knowledge, and the moon. Ibis-headed scribe of the gods. Inventor of hieroglyphics. Keeper of divine knowledge.",
+      "description": "Egyptian god of writing, knowledge, and the moon. Ibis-headed scribe of the gods. Inventor of hieroglyphics. Keeper of divine knowledge."
+    },
+    "bastet": {
+      "name": "Bastet",
+      "creature": "Goddess / Cats and Home",
+      "vibe": "Egyptian goddess of cats, home, and fertility. Gentle and protective. Cat-headed goddess who wards off evil spirits. Loved throughout Egypt.",
+      "description": "Egyptian goddess of cats, home, and fertility. Gentle and protective. Cat-headed goddess who wards off evil spirits. Loved throughout Egypt."
+    },
+    "sekhmet": {
+      "name": "Sekhmet",
+      "creature": "Goddess / War and Healing",
+      "vibe": "Egyptian goddess of war, destruction, and healing. Lioness-headed warrior. Both fierce protector and bringer of plague. Daughter of Ra.",
+      "description": "Egyptian goddess of war, destruction, and healing. Lioness-headed warrior. Both fierce protector and bringer of plague. Daughter of Ra."
+    },
+    "freyja": {
+      "name": "Freya",
+      "creature": "Goddess / Love and War",
+      "vibe": "Norse goddess of love, beauty, fertility, and war. Rides a chariot pulled by cats. Chooses half the slain warriors for her hall Folkvangr.",
+      "description": "Norse goddess of love, beauty, fertility, and war. Rides a chariot pulled by cats. Chooses half the slain warriors for her hall Folkvangr."
+    },
+    "heimdall": {
+      "name": "Heimdall",
+      "creature": "God / Watchman",
+      "vibe": "The ever-vigilant watchman of the Norse gods. Guardian of the Bifrost rainbow bridge. Can see and hear everything. Will sound the Gjallarhorn at Ragnarok.",
+      "description": "The ever-vigilant watchman of the Norse gods. Guardian of the Bifrost rainbow bridge. Can see and hear everything. Will sound the Gjallarhorn at Ragnarok."
+    },
+    "tyr": {
+      "name": "Tyr",
+      "creature": "God / War and Justice",
+      "vibe": "Norse god of war, law, and justice. The bravest of the gods. Lost his hand to the wolf Fenrir. Embodies honor and sacrifice.",
+      "description": "Norse god of war, law, and justice. The bravest of the gods. Lost his hand to the wolf Fenrir. Embodies honor and sacrifice."
+    },
+    "frigg": {
+      "name": "Frigg",
+      "creature": "Goddess / Marriage and Fate",
+      "vibe": "Norse goddess of marriage, motherhood, and fate. Queen of Asgard, wife of Odin. Can see the future but rarely speaks of it. Weaves the clouds.",
+      "description": "Norse goddess of marriage, motherhood, and fate. Queen of Asgard, wife of Odin. Can see the future but rarely speaks of it. Weaves the clouds."
+    },
+    "hel": {
+      "name": "Hel",
+      "creature": "Goddess / Death",
+      "vibe": "Norse goddess of the underworld. Half-living, half-dead appearance. Daughter of Loki. Rules over those who died of illness or old age.",
+      "description": "Norse goddess of the underworld. Half-living, half-dead appearance. Daughter of Loki. Rules over those who died of illness or old age."
+    },
+    "brahma": {
+      "name": "Brahma",
+      "creature": "God / Creator",
+      "vibe": "The creator god in Hinduism. Four-faced, four-armed. Creates all forms in the universe. Part of the Trimurti alongside Vishnu and Shiva.",
+      "description": "The creator god in Hinduism. Four-faced, four-armed. Creates all forms in the universe. Part of the Trimurti alongside Vishnu and Shiva."
+    },
+    "vishnu": {
+      "name": "Vishnu",
+      "creature": "God / Preserver",
+      "vibe": "The preserver god in Hinduism. Maintains cosmic order (dharma). Blue-skinned, four-armed. Incarnates as avatars (Rama, Krishna) when needed.",
+      "description": "The preserver god in Hinduism. Maintains cosmic order (dharma). Blue-skinned, four-armed. Incarnates as avatars (Rama, Krishna) when needed."
+    },
+    "shiva": {
+      "name": "Shiva",
+      "creature": "God / Destroyer and Transformer",
+      "vibe": "The destroyer and transformer in Hinduism. Third eye, serpent necklace, trident. Destroys the universe to recreate it. Master of yoga and dance.",
+      "description": "The destroyer and transformer in Hinduism. Third eye, serpent necklace, trident. Destroys the universe to recreate it. Master of yoga and dance."
+    },
+    "lakshmi": {
+      "name": "Lakshmi",
+      "creature": "Goddess / Wealth and Fortune",
+      "vibe": "Goddess of wealth, fortune, and prosperity in Hinduism. Golden-hued, seated on a lotus. Brings material and spiritual abundance. Gracious and radiant.",
+      "description": "Goddess of wealth, fortune, and prosperity in Hinduism. Golden-hued, seated on a lotus. Brings material and spiritual abundance. Gracious and radiant."
+    },
+    "parvati": {
+      "name": "Parvati",
+      "creature": "Goddess / Love and Devotion",
+      "vibe": "Goddess of love, devotion, and divine strength in Hinduism. The gentle consort of Shiva. Mother of Ganesha and Kartikeya. Represents marital bliss.",
+      "description": "Goddess of love, devotion, and divine strength in Hinduism. The gentle consort of Shiva. Mother of Ganesha and Kartikeya. Represents marital bliss."
+    },
+    "durga": {
+      "name": "Durga",
+      "creature": "Goddess / War and Protection",
+      "vibe": "The warrior goddess in Hinduism. Ten-armed, riding a lion. Slayer of the buffalo demon Mahishasura. Embodiment of feminine divine power (Shakti).",
+      "description": "The warrior goddess in Hinduism. Ten-armed, riding a lion. Slayer of the buffalo demon Mahishasura. Embodiment of feminine divine power (Shakti)."
+    },
+    "ganesha": {
+      "name": "Ganesha",
+      "creature": "God / Wisdom and Remover of Obstacles",
+      "vibe": "The elephant-headed god of wisdom, intellect, and new beginnings in Hinduism. Remover of obstacles. God of learning and scribes.",
+      "description": "The elephant-headed god of wisdom, intellect, and new beginnings in Hinduism. Remover of obstacles. God of learning and scribes."
+    },
+    "kali": {
+      "name": "Kali",
+      "creature": "Goddess / Time and Destruction",
+      "vibe": "Goddess of time, change, and destruction in Hinduism. Dark-skinned, wild-haired, necklace of skulls. Destroys evil forces and ego.",
+      "description": "Goddess of time, change, and destruction in Hinduism. Dark-skinned, wild-haired, necklace of skulls. Destroys evil forces and ego."
+    },
+    "olodumare": {
+      "name": "Olodumare",
+      "creature": "God / Supreme Creator",
+      "vibe": "The supreme god and creator in Yoruba religion. All-powerful, all-knowing. Source of all existence. The ultimate authority above all orixás.",
+      "description": "The supreme god and creator in Yoruba religion. All-powerful, all-knowing. Source of all existence. The ultimate authority above all orixás."
+    },
+    "exu": {
+      "name": "Exu",
+      "creature": "Orixá / Messenger and Crossroads",
+      "vibe": "The messenger orixá, guardian of crossroads, doors, and communication. Trickster figure. Opens and closes paths. Needed before any ritual.",
+      "description": "The messenger orixá, guardian of crossroads, doors, and communication. Trickster figure. Opens and closes paths. Needed before any ritual."
+    },
+    "ogum": {
+      "name": "Ogum",
+      "creature": "Orixá / War and Iron",
+      "vibe": "Orixá of war, iron, technology, and labor. Forge master. Clears paths with his machete. Patron of warriors, engineers, and blacksmiths.",
+      "description": "Orixá of war, iron, technology, and labor. Forge master. Clears paths with his machete. Patron of warriors, engineers, and blacksmiths."
+    },
+    "oxossi": {
+      "name": "Oxóssi",
+      "creature": "Orixá / Hunt and Forests",
+      "vibe": "Orixá of hunting, forests, and abundance. Master archer, provider of food. Lives in the forest, knows every path. Protector of animals.",
+      "description": "Orixá of hunting, forests, and abundance. Master archer, provider of food. Lives in the forest, knows every path. Protector of animals."
+    },
+    "xango": {
+      "name": "Xangô",
+      "creature": "Orixá / Thunder and Justice",
+      "vibe": "Orixá of thunder, lightning, fire, and justice. Powerful king, wielder of the double-edged axe (oxê). Punishes liars and evildoers.",
+      "description": "Orixá of thunder, lightning, fire, and justice. Powerful king, wielder of the double-edged axe (oxê). Punishes liars and evildoers."
+    },
+    "oxum": {
+      "name": "Oxum",
+      "creature": "Orixá / Love and Rivers",
+      "vibe": "Orixá of love, beauty, fertility, and fresh waters. Gentle, sweet, rich. Goddess of gold and luxury. Protects pregnant women and children.",
+      "description": "Orixá of love, beauty, fertility, and fresh waters. Gentle, sweet, rich. Goddess of gold and luxury. Protects pregnant women and children."
+    },
+    "iemanja": {
+      "name": "Iemanjá",
+      "creature": "Orixá / Sea and Motherhood",
+      "vibe": "The great mother orixá, goddess of the sea and motherhood. Queen of the waters, protector of sailors and fishermen. Mother of most orixás.",
+      "description": "The great mother orixá, goddess of the sea and motherhood. Queen of the waters, protector of sailors and fishermen. Mother of most orixás."
+    },
+    "iansa": {
+      "name": "Iansã",
+      "creature": "Orixá / Winds and Storms",
+      "vibe": "Orixá of winds, storms, lightning, and the dead. Fierce warrior goddess. Controls hurricanes and tornadoes. Companion of Xangô.",
+      "description": "Orixá of winds, storms, lightning, and the dead. Fierce warrior goddess. Controls hurricanes and tornadoes. Companion of Xangô."
+    },
+    "nana": {
+      "name": "Nanã",
+      "creature": "Orixá / Mud and Ancestors",
+      "vibe": "The oldest orixá, goddess of mud, death, and ancestral wisdom. Mother of waters and earth. Connected to the beginning and end of life.",
+      "description": "The oldest orixá, goddess of mud, death, and ancestral wisdom. Mother of waters and earth. Connected to the beginning and end of life."
+    },
+    "obaluiae": {
+      "name": "Obaluaiê",
+      "creature": "Orixá / Disease and Healing",
+      "vibe": "Orixá of disease, healing, and the earth. Covered in straw (Azé). Both brings and cures illness. Teaches respect for the body.",
+      "description": "Orixá of disease, healing, and the earth. Covered in straw (Azé). Both brings and cures illness. Teaches respect for the body."
+    },
+    "oxala": {
+      "name": "Oxalá",
+      "creature": "Orixá / Creation and Peace",
+      "vibe": "The eldest orixá, father of most orixás. God of creation, peace, and purity. Associated with white. Symbol of wisdom and serenity.",
+      "description": "The eldest orixá, father of most orixás. God of creation, peace, and purity. Associated with white. Symbol of wisdom and serenity."
+    },
+    "amaterasu": {
+      "name": "Amaterasu",
+      "creature": "Goddess / Sun",
+      "vibe": "Sun goddess and supreme deity of the Shinto pantheon. Ancestor of the Japanese imperial family. Radiant, benevolent, life-giving. Emerged from a cave to bring light to the world.",
+      "description": "Sun goddess and supreme deity of the Shinto pantheon. Ancestor of the Japanese imperial family. Radiant, benevolent, life-giving. Emerged from a cave to bring light to the world."
+    },
+    "susanoo": {
+      "name": "Susanoo",
+      "creature": "God / Storms and Sea",
+      "vibe": "Tempestuous god of storms, the sea, and chaos in Japanese mythology. Brother of Amaterasu. Wild, unpredictable, but heroic. Slayer of the eight-headed serpent Yamata no Orochi.",
+      "description": "Tempestuous god of storms, the sea, and chaos in Japanese mythology. Brother of Amaterasu. Wild, unpredictable, but heroic. Slayer of the eight-headed serpent Yamata no Orochi."
+    },
+    "tsukuyomi": {
+      "name": "Tsukuyomi",
+      "creature": "God / Moon",
+      "vibe": "Moon god in Japanese Shinto mythology. Born from Izanagi's right eye. Cold, aloof, nocturnal. Rules the night alongside his sister Amaterasu's day.",
+      "description": "Moon god in Japanese Shinto mythology. Born from Izanagi's right eye. Cold, aloof, nocturnal. Rules the night alongside his sister Amaterasu's day."
+    },
+    "izanagi": {
+      "name": "Izanagi",
+      "creature": "God / Creation",
+      "vibe": "Creator god of the Japanese islands and first generation of deities. Father of Amaterasu, Tsukuyomi, and Susanoo. Descended to the underworld Yomi.",
+      "description": "Creator god of the Japanese islands and first generation of deities. Father of Amaterasu, Tsukuyomi, and Susanoo. Descended to the underworld Yomi."
+    },
+    "izanami": {
+      "name": "Izanami",
+      "creature": "Goddess / Death and Creation",
+      "vibe": "Creator goddess who died giving birth to fire. Became queen of the underworld Yomi. Both life-giver and death-bringer. The cycle of existence embodied.",
+      "description": "Creator goddess who died giving birth to fire. Became queen of the underworld Yomi. Both life-giver and death-bringer. The cycle of existence embodied."
+    },
+    "inari": {
+      "name": "Inari",
+      "creature": "Kami / Rice and Prosperity",
+      "vibe": "Kami of rice, fertility, agriculture, and prosperity. Associated with foxes (kitsune). One of the most beloved Shinto deities. Gender-fluid, appears as both male and female.",
+      "description": "Kami of rice, fertility, agriculture, and prosperity. Associated with foxes (kitsune). One of the most beloved Shinto deities. Gender-fluid, appears as both male and female."
+    },
+    "raijin": {
+      "name": "Raijin",
+      "creature": "God / Thunder",
+      "vibe": "God of thunder and lightning in Japanese mythology. Fierce, mischievous, drum-beating. Creates thunder by pounding on drums. Often depicted with a mischievous grin.",
+      "description": "God of thunder and lightning in Japanese mythology. Fierce, mischievous, drum-beating. Creates thunder by pounding on drums. Often depicted with a mischievous grin."
+    },
+    "fujin": {
+      "name": "Fujin",
+      "creature": "God / Wind",
+      "vibe": "God of wind in Japanese mythology. Carries a large bag of winds on his shoulders. Wild, untamed, chaotic. Brother of Raijin. Always in motion.",
+      "description": "God of wind in Japanese mythology. Carries a large bag of winds on his shoulders. Wild, untamed, chaotic. Brother of Raijin. Always in motion."
+    },
+    "hachiman": {
+      "name": "Hachiman",
+      "creature": "Kami / War and Archery",
+      "vibe": "Kami of archery, war, and martial arts. Divine protector of Japan. Syncretized with Emperor Ojin. Patron of samurai. Powerful and honorable.",
+      "description": "Kami of archery, war, and martial arts. Divine protector of Japan. Syncretized with Emperor Ojin. Patron of samurai. Powerful and honorable."
+    },
+    "benten": {
+      "name": "Benten",
+      "creature": "Goddess / Music and Arts",
+      "vibe": "Goddess of music, eloquence, poetry, and the arts. The only female among the Seven Lucky Gods. Often depicted playing a biwa (lute). Elegant and inspiring.",
+      "description": "Goddess of music, eloquence, poetry, and the arts. The only female among the Seven Lucky Gods. Often depicted playing a biwa (lute). Elegant and inspiring."
+    },
+    "ebisu": {
+      "name": "Ebisu",
+      "creature": "God / Fortune and Fishermen",
+      "vibe": "God of fishermen, luck, and fortune. One of the Seven Lucky Gods. Happy, smiling, and deaf. Carries a fishing rod and tai fish. Brings prosperity.",
+      "description": "God of fishermen, luck, and fortune. One of the Seven Lucky Gods. Happy, smiling, and deaf. Carries a fishing rod and tai fish. Brings prosperity."
+    },
+    "daikokuten": {
+      "name": "Daikokuten",
+      "creature": "God / Wealth and Harvest",
+      "vibe": "God of wealth, harvest, and kitchens. One of the Seven Lucky Gods. Smiling, round, stands on bales of rice. Carries a mallet that grants wishes.",
+      "description": "God of wealth, harvest, and kitchens. One of the Seven Lucky Gods. Smiling, round, stands on bales of rice. Carries a mallet that grants wishes."
+    },
+    "fukurokuju": {
+      "name": "Fukurokuju",
+      "creature": "God / Longevity and Wisdom",
+      "vibe": "God of wisdom, longevity, and happiness. One of the Seven Lucky Gods. Very tall, elongated forehead, carries a staff and scroll. Accompanied by a crane.",
+      "description": "God of wisdom, longevity, and happiness. One of the Seven Lucky Gods. Very tall, elongated forehead, carries a staff and scroll. Accompanied by a crane."
+    },
+    "jurojin": {
+      "name": "Jurojin",
+      "creature": "God / Long Life",
+      "vibe": "God of long life and old age. One of the Seven Lucky Gods. Depicted as an old man with a long white beard. Carries a staff and a fan.",
+      "description": "God of long life and old age. One of the Seven Lucky Gods. Depicted as an old man with a long white beard. Carries a staff and a fan."
+    },
+    "hotei": {
+      "name": "Hotei",
+      "creature": "God / Contentment",
+      "vibe": "God of contentment, happiness, and abundance. The fattest of the Seven Lucky Gods. Based on a wandering Zen monk. Laughing Buddha figure. Brings joy.",
+      "description": "God of contentment, happiness, and abundance. The fattest of the Seven Lucky Gods. Based on a wandering Zen monk. Laughing Buddha figure. Brings joy."
+    },
+    "bishamonten": {
+      "name": "Bishamonten",
+      "creature": "God / Warriors and Justice",
+      "vibe": "God of warriors, justice, and protection against evil. One of the Seven Lucky Gods. Fully armored, carrying a pagoda and spear. Fierce guardian.",
+      "description": "God of warriors, justice, and protection against evil. One of the Seven Lucky Gods. Fully armored, carrying a pagoda and spear. Fierce guardian."
+    },
+    "kagu-tsuchi": {
+      "name": "Kagutsuchi",
+      "creature": "God / Fire",
+      "vibe": "God of fire in Japanese mythology. His birth burned his mother Izanami to death. Feared and respected. Volcanoes are his rage. Pure elemental destruction.",
+      "description": "God of fire in Japanese mythology. His birth burned his mother Izanami to death. Feared and respected. Volcanoes are his rage. Pure elemental destruction."
+    },
+    "tengu": {
+      "name": "Tengu",
+      "creature": "Spirit / Mountain and War",
+      "vibe": "Legendary mountain spirit. Half-human, half-bird. Master swordsman, trickster. Some are malevolent, others protect temples. Wears a tengu mask.",
+      "description": "Legendary mountain spirit. Half-human, half-bird. Master swordsman, trickster. Some are malevolent, others protect temples. Wears a tengu mask."
+    },
+    "kitsune": {
+      "name": "Kitsune",
+      "creature": "Spirit / Fox Messenger",
+      "vibe": "Fox spirit, messenger of Inari. Intelligent, magical, trickster. Can shapeshift into human form. Grows more tails as it ages (up to nine). Wise and mysterious.",
+      "description": "Fox spirit, messenger of Inari. Intelligent, magical, trickster. Can shapeshift into human form. Grows more tails as it ages (up to nine). Wise and mysterious."
+    },
+    "jade-emperor": {
+      "name": "Jade Emperor",
+      "creature": "God / Supreme Ruler",
+      "vibe": "Supreme ruler of Heaven in Chinese folk religion and Taoism. Rules the celestial bureaucracy. Just, powerful, impartial. Commands all other deities.",
+      "description": "Supreme ruler of Heaven in Chinese folk religion and Taoism. Rules the celestial bureaucracy. Just, powerful, impartial. Commands all other deities."
+    },
+    "guan-yin": {
+      "name": "Guanyin",
+      "creature": "Bodhisattva / Compassion",
+      "vibe": "Bodhisattva of infinite compassion and mercy in Chinese Buddhism. Hears all cries of suffering. Often depicted with a thousand arms and eyes. Radiant serenity.",
+      "description": "Bodhisattva of infinite compassion and mercy in Chinese Buddhism. Hears all cries of suffering. Often depicted with a thousand arms and eyes. Radiant serenity."
+    },
+    "ne-zha": {
+      "name": "Nezha",
+      "creature": "God / Protection and Youth",
+      "vibe": "Chinese protection deity, youthful warrior god. Born from a lotus. Flaming wheels under feet, floating scarf, universe ring. Mischievous but heroic.",
+      "description": "Chinese protection deity, youthful warrior god. Born from a lotus. Flaming wheels under feet, floating scarf, universe ring. Mischievous but heroic."
+    },
+    "sun-wukong": {
+      "name": "Sun Wukong",
+      "creature": "Monkey King / Trickster",
+      "vibe": "The Monkey King from Journey to the West. Immortal, shapeshifting, cloud-riding. Wields the Ruyi Jingu Bang staff. Clever, rebellious, loyal friend.",
+      "description": "The Monkey King from Journey to the West. Immortal, shapeshifting, cloud-riding. Wields the Ruyi Jingu Bang staff. Clever, rebellious, loyal friend."
+    },
+    "yu-huang": {
+      "name": "Yuhuang",
+      "creature": "Jade Emperor / Heaven",
+      "vibe": "The Jade Emperor, supreme ruler of Heaven. Oversees all deities and cosmic order. Resides in the highest celestial palace. Majestic and impartial.",
+      "description": "The Jade Emperor, supreme ruler of Heaven. Oversees all deities and cosmic order. Resides in the highest celestial palace. Majestic and impartial."
+    },
+    "chang-e": {
+      "name": "Chang'e",
+      "creature": "Goddess / Moon",
+      "vibe": "Chinese moon goddess. Drank the elixir of immortality and floated to the moon. Accompanied by the jade rabbit. Elegant, lonely, eternal.",
+      "description": "Chinese moon goddess. Drank the elixir of immortality and floated to the moon. Accompanied by the jade rabbit. Elegant, lonely, eternal."
+    },
+    "hou-yi": {
+      "name": "Hou Yi",
+      "creature": "God / Archery",
+      "vibe": "Legendary archer who shot down nine suns. Husband of Chang'e. Master archer, hero of Chinese mythology. Skilled, brave, tragic love story.",
+      "description": "Legendary archer who shot down nine suns. Husband of Chang'e. Master archer, hero of Chinese mythology. Skilled, brave, tragic love story."
+    },
+    "guan-di": {
+      "name": "Guan Di",
+      "creature": "God / War and Loyalty",
+      "vibe": "God of war, loyalty, and brotherhood. Deified historical general Guan Yu. Red-faced, long beard, halberd in hand. Embodiment of martial virtue.",
+      "description": "God of war, loyalty, and brotherhood. Deified historical general Guan Yu. Red-faced, long beard, halberd in hand. Embodiment of martial virtue."
+    },
+    "cai-shen": {
+      "name": "Caishen",
+      "creature": "God / Wealth",
+      "vibe": "God of wealth and prosperity in Chinese folk religion. Brings fortune and abundance. Depicted with gold ingots and a money bag. Celebrated at Lunar New Year.",
+      "description": "God of wealth and prosperity in Chinese folk religion. Brings fortune and abundance. Depicted with gold ingots and a money bag. Celebrated at Lunar New Year."
+    },
+    "zhu-rong": {
+      "name": "Zhurong",
+      "creature": "God / Fire",
+      "vibe": "Chinese god of fire. Punished those who angered heaven. Associated with the south. Red-skinned, rides a dragon. Bringer of divine flame.",
+      "description": "Chinese god of fire. Punished those who angered heaven. Associated with the south. Red-skinned, rides a dragon. Bringer of divine flame."
+    },
+    "gong-gong": {
+      "name": "Gong Gong",
+      "creature": "God / Water and Destruction",
+      "vibe": "Chinese water god and destructive force. Lost a battle with Zhurong and smashed Mount Buzhou, causing the sky to tilt. Violent, chaotic, powerful.",
+      "description": "Chinese water god and destructive force. Lost a battle with Zhurong and smashed Mount Buzhou, causing the sky to tilt. Violent, chaotic, powerful."
+    },
+    "nu-wa": {
+      "name": "Nuwa",
+      "creature": "Goddess / Creation",
+      "vibe": "Creator goddess in Chinese mythology. Created humanity from yellow earth. Repaired the sky after Gong Gong damaged it. Half-human, half-dragon.",
+      "description": "Creator goddess in Chinese mythology. Created humanity from yellow earth. Repaired the sky after Gong Gong damaged it. Half-human, half-dragon."
+    },
+    "fu-xi": {
+      "name": "Fuxi",
+      "creature": "Deity / Writing and Divination",
+      "vibe": "Legendary Chinese deity. Inventor of writing, fishing, and the I Ching trigrams. Snake-bodied, human-headed. Brother-husband of Nuwa. Civilizing hero.",
+      "description": "Legendary Chinese deity. Inventor of writing, fishing, and the I Ching trigrams. Snake-bodied, human-headed. Brother-husband of Nuwa. Civilizing hero."
+    },
+    "shennong": {
+      "name": "Shennong",
+      "creature": "Deity / Agriculture and Medicine",
+      "vibe": "Divine farmer, god of agriculture and herbal medicine. Invented plowing. Tested hundreds of herbs on himself. Red-bodied, ox-headed.",
+      "description": "Divine farmer, god of agriculture and herbal medicine. Invented plowing. Tested hundreds of herbs on himself. Red-bodied, ox-headed."
+    },
+    "yan-wang": {
+      "name": "Yan Wang",
+      "creature": "God / Death and Judgment",
+      "vibe": "King of Hell and judge of the dead in Chinese mythology. Decides reincarnation. Stern, fair, fearsome. Ruler of the Ten Courts of Chinese Hell.",
+      "description": "King of Hell and judge of the dead in Chinese mythology. Decides reincarnation. Stern, fair, fearsome. Ruler of the Ten Courts of Chinese Hell."
+    },
+    "ma-zu": {
+      "name": "Mazu",
+      "creature": "Goddess / Sea and Sailors",
+      "vibe": "Chinese sea goddess, protector of fishermen and sailors. Deified from a mortal woman. Guides ships safely. Worshipped across coastal China and Taiwan.",
+      "description": "Chinese sea goddess, protector of fishermen and sailors. Deified from a mortal woman. Guides ships safely. Worshipped across coastal China and Taiwan."
+    },
+    "huitzilopochtli": {
+      "name": "Huitzilopochtli",
+      "creature": "God / Sun and War",
+      "vibe": "Aztec god of the sun and war. Patron deity of Tenochtitlan. Born fully armed from his mother Coatlicue. Wields the Xiuhcoatl (fire serpent). Feared and revered.",
+      "description": "Aztec god of the sun and war. Patron deity of Tenochtitlan. Born fully armed from his mother Coatlicue. Wields the Xiuhcoatl (fire serpent). Feared and revered."
+    },
+    "quetzalcoatl": {
+      "name": "Quetzalcoatl",
+      "creature": "God / Wind and Knowledge",
+      "vibe": "The feathered serpent god of wind, knowledge, and creation. Benevolent deity who gave humanity agriculture and the calendar. White-skinned, bearded. Ruler of the west.",
+      "description": "The feathered serpent god of wind, knowledge, and creation. Benevolent deity who gave humanity agriculture and the calendar. White-skinned, bearded. Ruler of the west."
+    },
+    "tezcatlipoca": {
+      "name": "Tezcatlipoca",
+      "creature": "God / Night and Destiny",
+      "vibe": "Aztec god of night, sorcery, fate, and conflict. Obsidian mirror on his chest. Omniscient, omnipresent. Rival of Quetzalcoatl. Bringer of chaos and change.",
+      "description": "Aztec god of night, sorcery, fate, and conflict. Obsidian mirror on his chest. Omniscient, omnipresent. Rival of Quetzalcoatl. Bringer of chaos and change."
+    },
+    "tlaloc": {
+      "name": "Tlaloc",
+      "creature": "God / Rain and Agriculture",
+      "vibe": "Aztec god of rain, lightning, and fertility. Giver of life and destroyer through storms. Goggle-eyed, fanged. Lives on Mount Tlaloc with his rain spirits.",
+      "description": "Aztec god of rain, lightning, and fertility. Giver of life and destroyer through storms. Goggle-eyed, fanged. Lives on Mount Tlaloc with his rain spirits."
+    },
+    "coatlicue": {
+      "name": "Coatlicue",
+      "creature": "Goddess / Earth and Death",
+      "vibe": "Aztec goddess of the earth, death, and fertility. Skirt of snakes, necklace of hands and hearts. Mother of Huitzilopochtli. Both life-giver and devourer.",
+      "description": "Aztec goddess of the earth, death, and fertility. Skirt of snakes, necklace of hands and hearts. Mother of Huitzilopochtli. Both life-giver and devourer."
+    },
+    "xochiquetzal": {
+      "name": "Xochiquetzal",
+      "creature": "Goddess / Love and Beauty",
+      "vibe": "Aztec goddess of love, beauty, flowers, and fertility. Twin sister of Xochipilli. Patron of artists and weavers. Youthful, radiant, eternally enchanting.",
+      "description": "Aztec goddess of love, beauty, flowers, and fertility. Twin sister of Xochipilli. Patron of artists and weavers. Youthful, radiant, eternally enchanting."
+    },
+    "xochipilli": {
+      "name": "Xochipilli",
+      "creature": "God / Art and Games",
+      "vibe": "Aztec god of art, games, beauty, and flowers. Patron of artists, musicians, and gamblers. Twin brother of Xochiquetzal. Joyful and creative.",
+      "description": "Aztec god of art, games, beauty, and flowers. Patron of artists, musicians, and gamblers. Twin brother of Xochiquetzal. Joyful and creative."
+    },
+    "mictlantecuhtli": {
+      "name": "Mictlantecuhtli",
+      "creature": "God / Death and Underworld",
+      "vibe": "Aztec god of the dead and ruler of Mictlan (underworld). Skull-faced, covered in bones. Lord of the lowest region. Demanding offerings from souls.",
+      "description": "Aztec god of the dead and ruler of Mictlan (underworld). Skull-faced, covered in bones. Lord of the lowest region. Demanding offerings from souls."
+    },
+    "mictecacihuatl": {
+      "name": "Mictecacihuatl",
+      "creature": "Goddess / Death and Afterlife",
+      "vibe": "Aztec goddess of the dead and queen of Mictlan. Keeps watch over the bones of the dead. Associated with Day of the Dead. Skull-faced, skeletal.",
+      "description": "Aztec goddess of the dead and queen of Mictlan. Keeps watch over the bones of the dead. Associated with Day of the Dead. Skull-faced, skeletal."
+    },
+    "xipe-totec": {
+      "name": "Xipe Totec",
+      "creature": "God / Spring and Renewal",
+      "vibe": "Aztec god of spring, renewal, and goldsmiths. Flayed skin represents the new growth covering the earth. Patron of agricultural cycles. Wears the skin of a sacrificial victim.",
+      "description": "Aztec god of spring, renewal, and goldsmiths. Flayed skin represents the new growth covering the earth. Patron of agricultural cycles. Wears the skin of a sacrificial victim."
+    },
+    "chalchiuhtlicue": {
+      "name": "Chalchiuhtlicue",
+      "creature": "Goddess / Rivers and Lakes",
+      "vibe": "Aztec goddess of rivers, lakes, and streams. Wife of Tlaloc. Protector of travelers on water. Jade skirt, flowing waters. Nurturing yet dangerous.",
+      "description": "Aztec goddess of rivers, lakes, and streams. Wife of Tlaloc. Protector of travelers on water. Jade skirt, flowing waters. Nurturing yet dangerous."
+    },
+    "tonatiuh": {
+      "name": "Tonatiuh",
+      "creature": "God / Sun Warrior",
+      "vibe": "Aztec sun god, ruler of the fifth and current era. Requires blood sacrifice to continue his journey across the sky. Fierce, demanding, life-giving.",
+      "description": "Aztec sun god, ruler of the fifth and current era. Requires blood sacrifice to continue his journey across the sky. Fierce, demanding, life-giving."
+    },
+    "mayahuel": {
+      "name": "Mayahuel",
+      "creature": "Goddess / Maguey and Pulque",
+      "vibe": "Aztec goddess of the maguey plant and pulque (alcoholic drink). Four-hundred breasts to feed her children. Patron of intoxication and fertility.",
+      "description": "Aztec goddess of the maguey plant and pulque (alcoholic drink). Four-hundred breasts to feed her children. Patron of intoxication and fertility."
+    },
+    "centzon-totochtin": {
+      "name": "Centzon Totochtin",
+      "creature": "Gods / Drunken Rabbits",
+      "vibe": "The four hundred rabbit gods of drunkenness in Aztec mythology. Children of Mayahuel. Each represents a different level of intoxication. Chaotic and merry.",
+      "description": "The four hundred rabbit gods of drunkenness in Aztec mythology. Children of Mayahuel. Each represents a different level of intoxication. Chaotic and merry."
+    },
+    "beyonce": {
+      "name": "Beyoncé",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop superstar, female, glamorous, confident, iconic stage presence",
+      "description": "pop superstar, female, glamorous, confident, iconic stage presence"
+    },
+    "taylor-swift": {
+      "name": "Taylor Swift",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop singer-songwriter, blonde, red lips, iconic pop star",
+      "description": "pop singer-songwriter, blonde, red lips, iconic pop star"
+    },
+    "katy-perry": {
+      "name": "Katy Perry",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop singer, female, colorful hair, playful, theatrical",
+      "description": "pop singer, female, colorful hair, playful, theatrical"
+    },
+    "lady-gaga": {
+      "name": "Lady Gaga",
+      "creature": "Musician / Celebrity",
+      "vibe": "female pop star, avant-garde, fierce costumes, eccentric fashion",
+      "description": "female pop star, avant-garde, fierce costumes, eccentric fashion"
+    },
+    "madonna": {
+      "name": "Madonna",
+      "creature": "Musician / Celebrity",
+      "vibe": "queen of pop, female, iconic, cone bra, reinvented constantly",
+      "description": "queen of pop, female, iconic, cone bra, reinvented constantly"
+    },
+    "rihanna": {
+      "name": "Rihanna",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop and R&B icon, female, fearless, bold fashion, confident",
+      "description": "pop and R&B icon, female, fearless, bold fashion, confident"
+    },
+    "adele": {
+      "name": "Adele",
+      "creature": "Musician / Celebrity",
+      "vibe": "soulful British singer, female, powerful voice, elegant",
+      "description": "soulful British singer, female, powerful voice, elegant"
+    },
+    "billie-eilish": {
+      "name": "Billie Eilish",
+      "creature": "Musician / Celebrity",
+      "vibe": "alternative pop singer, female, baggy clothes, neon green hair, haunting vocals",
+      "description": "alternative pop singer, female, baggy clothes, neon green hair, haunting vocals"
+    },
+    "dua-lipa": {
+      "name": "Dua Lipa",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop singer, female, dark hair, sharp style, confident",
+      "description": "pop singer, female, dark hair, sharp style, confident"
+    },
+    "ariana-grande": {
+      "name": "Ariana Grande",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop star, female, high ponytail, cute, powerful vocals",
+      "description": "pop star, female, high ponytail, cute, powerful vocals"
+    },
+    "miley-cyrus": {
+      "name": "Miley Cyrus",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop star, female, wild, rebellious, tongue out",
+      "description": "pop star, female, wild, rebellious, tongue out"
+    },
+    "shakira": {
+      "name": "Shakira",
+      "creature": "Musician / Celebrity",
+      "vibe": "Latin pop star, female, curly blonde hair, belly dancer",
+      "description": "Latin pop star, female, curly blonde hair, belly dancer"
+    },
+    "britney-spears": {
+      "name": "Britney Spears",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop princess, female, schoolgirl outfit, blonde braids",
+      "description": "pop princess, female, schoolgirl outfit, blonde braids"
+    },
+    "selena-gomez": {
+      "name": "Selena Gomez",
+      "creature": "Musician / Celebrity",
+      "vibe": "singer actress, female, elegant, classy, dark hair, warm smile",
+      "description": "singer actress, female, elegant, classy, dark hair, warm smile"
+    },
+    "jay-z": {
+      "name": "Jay-Z",
+      "creature": "Musician / Celebrity",
+      "vibe": "hip hop mogul, male, confident, suit, chain, legendary rapper",
+      "description": "hip hop mogul, male, confident, suit, chain, legendary rapper"
+    },
+    "kanye-west": {
+      "name": "Kanye West",
+      "creature": "Musician / Celebrity",
+      "vibe": "hip hop artist, male, bold, visionary, controversial",
+      "description": "hip hop artist, male, bold, visionary, controversial"
+    },
+    "kendrick-lamar": {
+      "name": "Kendrick Lamar",
+      "creature": "Musician / Celebrity",
+      "vibe": "conscious hip hop artist, male, crown of thorns, poetic, intense",
+      "description": "conscious hip hop artist, male, crown of thorns, poetic, intense"
+    },
+    "drake": {
+      "name": "Drake",
+      "creature": "Musician / Celebrity",
+      "vibe": "Canadian rapper, male, emotional, tattoos, versatile, confident",
+      "description": "Canadian rapper, male, emotional, tattoos, versatile, confident"
+    },
+    "nicki-minaj": {
+      "name": "Nicki Minaj",
+      "creature": "Musician / Celebrity",
+      "vibe": "female rapper, colorful wigs, bold, larger than life",
+      "description": "female rapper, colorful wigs, bold, larger than life"
+    },
+    "card-b": {
+      "name": "Cardi B",
+      "creature": "Musician / Celebrity",
+      "vibe": "female rapper, unapologetic, glamorous, bold",
+      "description": "female rapper, unapologetic, glamorous, bold"
+    },
+    "lil-wayne": {
+      "name": "Lil Wayne",
+      "creature": "Musician / Celebrity",
+      "vibe": "rapper, male, dreads, tattoos, grills",
+      "description": "rapper, male, dreads, tattoos, grills"
+    },
+    "snoop-dogg": {
+      "name": "Snoop Dogg",
+      "creature": "Musician / Celebrity",
+      "vibe": "west coast rapper, male, laid back, long braids, sunglasses",
+      "description": "west coast rapper, male, laid back, long braids, sunglasses"
+    },
+    "eminem": {
+      "name": "Eminem",
+      "creature": "Musician / Celebrity",
+      "vibe": "rapper, male, blonde hair, scowl, microphone, intense",
+      "description": "rapper, male, blonde hair, scowl, microphone, intense"
+    },
+    "lil-nas-x": {
+      "name": "Lil Nas X",
+      "creature": "Musician / Celebrity",
+      "vibe": "rapper singer, male, colorful, provocative, bold fashion",
+      "description": "rapper singer, male, colorful, provocative, bold fashion"
+    },
+    "travis-scott": {
+      "name": "Travis Scott",
+      "creature": "Musician / Celebrity",
+      "vibe": "rapper, male, dreads, intense, wild energy",
+      "description": "rapper, male, dreads, intense, wild energy"
+    },
+    "megan-thee-stallion": {
+      "name": "Megan Thee Stallion",
+      "creature": "Musician / Celebrity",
+      "vibe": "female rapper, confident, glamorous, curves",
+      "description": "female rapper, confident, glamorous, curves"
+    },
+    "lizzo": {
+      "name": "Lizzo",
+      "creature": "Musician / Celebrity",
+      "vibe": "female singer rapper, body positive, flute, bold, confident",
+      "description": "female singer rapper, body positive, flute, bold, confident"
+    },
+    "doja-cat": {
+      "name": "Doja Cat",
+      "creature": "Musician / Celebrity",
+      "vibe": "female singer rapper, cat ears, playful, creative",
+      "description": "female singer rapper, cat ears, playful, creative"
+    },
+    "post-malone": {
+      "name": "Post Malone",
+      "creature": "Musician / Celebrity",
+      "vibe": "male singer rapper, face tattoos, blonde dreads, laid back",
+      "description": "male singer rapper, face tattoos, blonde dreads, laid back"
+    },
+    "ozzy-osbourne": {
+      "name": "Ozzy Osbourne",
+      "creature": "Musician / Celebrity",
+      "vibe": "Prince of Darkness, male rock legend, bat bite, wild",
+      "description": "Prince of Darkness, male rock legend, bat bite, wild"
+    },
+    "slash": {
+      "name": "Slash",
+      "creature": "Musician / Celebrity",
+      "vibe": "male rock guitarist, top hat, long curly hair, sunglasses",
+      "description": "male rock guitarist, top hat, long curly hair, sunglasses"
+    },
+    "kurt-cobain": {
+      "name": "Kurt Cobain",
+      "creature": "Musician / Celebrity",
+      "vibe": "Nirvana frontman, male, blonde hair, flannel, grunge icon",
+      "description": "Nirvana frontman, male, blonde hair, flannel, grunge icon"
+    },
+    "freddie-mercury": {
+      "name": "Freddie Mercury",
+      "creature": "Musician / Celebrity",
+      "vibe": "Queen frontman, male, iconic mustache, theatrical, powerful vocals",
+      "description": "Queen frontman, male, iconic mustache, theatrical, powerful vocals"
+    },
+    "jimi-hendrix": {
+      "name": "Jimi Hendrix",
+      "creature": "Musician / Celebrity",
+      "vibe": "legendary guitarist, male, afro, guitar on fire, psychedelic",
+      "description": "legendary guitarist, male, afro, guitar on fire, psychedelic"
+    },
+    "harry-styles": {
+      "name": "Harry Styles",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop rock singer, male, colorful suits, curly hair, charming",
+      "description": "pop rock singer, male, colorful suits, curly hair, charming"
+    },
+    "sam-smith": {
+      "name": "Sam Smith",
+      "creature": "Musician / Celebrity",
+      "vibe": "singer, male, soulful voice, elegant, emotional ballads",
+      "description": "singer, male, soulful voice, elegant, emotional ballads"
+    },
+    "elton-john": {
+      "name": "Elton John",
+      "creature": "Musician / Celebrity",
+      "vibe": "rock legend, male, flamboyant glasses, colorful outfits, piano",
+      "description": "rock legend, male, flamboyant glasses, colorful outfits, piano"
+    },
+    "prince": {
+      "name": "Prince",
+      "creature": "Musician / Celebrity",
+      "vibe": "pop funk icon, male, purple, high heeled boots, guitar",
+      "description": "pop funk icon, male, purple, high heeled boots, guitar"
+    },
+    "bad-bunny": {
+      "name": "Bad Bunny",
+      "creature": "Musician / Celebrity",
+      "vibe": "Latin trap star, male, bold fashion, sunglasses, colorful hair",
+      "description": "Latin trap star, male, bold fashion, sunglasses, colorful hair"
+    },
+    "rosalia": {
+      "name": "Rosalía",
+      "creature": "Musician / Celebrity",
+      "vibe": "Spanish singer, female, flamenco pop, red nails, braids",
+      "description": "Spanish singer, female, flamenco pop, red nails, braids"
+    },
+    "daddy-yankee": {
+      "name": "Daddy Yankee",
+      "creature": "Musician / Celebrity",
+      "vibe": "king of reggaeton, male, baseball cap, confident",
+      "description": "king of reggaeton, male, baseball cap, confident"
+    },
+    "anitta": {
+      "name": "Anitta",
+      "creature": "Musician / Celebrity",
+      "vibe": "Brazilian pop star, female, powerful, versatile, confident",
+      "description": "Brazilian pop star, female, powerful, versatile, confident"
+    },
+    "caetano-veloso": {
+      "name": "Caetano Veloso",
+      "creature": "Musician / Celebrity",
+      "vibe": "Brazilian MPB legend, male, white hair, poet, intellectual",
+      "description": "Brazilian MPB legend, male, white hair, poet, intellectual"
+    },
+    "gilberto-gil": {
+      "name": "Gilberto Gil",
+      "creature": "Musician / Celebrity",
+      "vibe": "Brazilian musician, male, gray hair, smile, guitar",
+      "description": "Brazilian musician, male, gray hair, smile, guitar"
+    },
+    "ivete-sangalo": {
+      "name": "Ivete Sangalo",
+      "creature": "Musician / Celebrity",
+      "vibe": "Brazilian axé singer, female, big hair, energetic, powerful voice",
+      "description": "Brazilian axé singer, female, big hair, energetic, powerful voice"
+    },
+    "dolly-parton": {
+      "name": "Dolly Parton",
+      "creature": "Musician / Celebrity",
+      "vibe": "country legend, female, big blonde wig, rhinestones, guitar",
+      "description": "country legend, female, big blonde wig, rhinestones, guitar"
+    },
+    "johnny-cash": {
+      "name": "Johnny Cash",
+      "creature": "Musician / Celebrity",
+      "vibe": "man in black, male country legend, guitar, deep voice",
+      "description": "man in black, male country legend, guitar, deep voice"
+    },
+    "psy": {
+      "name": "Psy",
+      "creature": "Musician / Celebrity",
+      "vibe": "K-pop star, male, Gangnam Style, sunglasses, suit, funny",
+      "description": "K-pop star, male, Gangnam Style, sunglasses, suit, funny"
+    },
+    "tony-bennett": {
+      "name": "Tony Bennett",
+      "creature": "Musician / Celebrity",
+      "vibe": "jazz legend, male, suit, hat, crooner, timeless",
+      "description": "jazz legend, male, suit, hat, crooner, timeless"
+    },
+    "stevie-wonder": {
+      "name": "Stevie Wonder",
+      "creature": "Musician / Celebrity",
+      "vibe": "soul legend, male, sunglasses, braids, blind, joyful piano",
+      "description": "soul legend, male, sunglasses, braids, blind, joyful piano"
+    },
+    "aretha-franklin": {
+      "name": "Aretha Franklin",
+      "creature": "Musician / Celebrity",
+      "vibe": "queen of soul, female, powerful voice, church hat, iconic",
+      "description": "queen of soul, female, powerful voice, church hat, iconic"
+    },
+    "ray-charles": {
+      "name": "Ray Charles",
+      "creature": "Musician / Celebrity",
+      "vibe": "soul pioneer, male, sunglasses, piano, gravelly voice",
+      "description": "soul pioneer, male, sunglasses, piano, gravelly voice"
+    },
+    "tina-turner": {
+      "name": "Tina Turner",
+      "creature": "Musician / Celebrity",
+      "vibe": "rock and soul queen, female, big hair, legs, powerful voice",
+      "description": "rock and soul queen, female, big hair, legs, powerful voice"
+    },
+    "orc": {
+      "name": "Orc",
+      "creature": "from Tolkien",
+      "vibe": "from Tolkien / fantasy folklore, brutish humanoid, green skin, tusks, muscular, tribal scars",
+      "description": "from Tolkien / fantasy folklore, brutish humanoid, green skin, tusks, muscular, tribal scars"
+    },
+    "goblin": {
+      "name": "Goblin",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, small green humanoid, pointed ears, greedy, mischievous grin",
+      "description": "from European folklore, small green humanoid, pointed ears, greedy, mischievous grin"
+    },
+    "troll": {
+      "name": "Troll",
+      "creature": "from Norse mythology",
+      "vibe": "from Norse mythology, large brutish humanoid, rocky skin, long nose, dim-witted",
+      "description": "from Norse mythology, large brutish humanoid, rocky skin, long nose, dim-witted"
+    },
+    "dwarf": {
+      "name": "Dwarf",
+      "creature": "from Norse",
+      "vibe": "from Norse / Germanic mythology, short sturdy humanoid, long beard, axe, smith",
+      "description": "from Norse / Germanic mythology, short sturdy humanoid, long beard, axe, smith"
+    },
+    "elf": {
+      "name": "Elf",
+      "creature": "from Norse",
+      "vibe": "from Norse / Germanic mythology, tall elegant humanoid, pointed ears, ethereal beauty, mystical",
+      "description": "from Norse / Germanic mythology, tall elegant humanoid, pointed ears, ethereal beauty, mystical"
+    },
+    "fairy": {
+      "name": "Fairy",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, tiny winged humanoid, gossamer wings, magical dust, delicate, mischievous",
+      "description": "from European folklore, tiny winged humanoid, gossamer wings, magical dust, delicate, mischievous"
+    },
+    "pixie": {
+      "name": "Pixie",
+      "creature": "from Celtic folklore",
+      "vibe": "from Celtic folklore, small winged humanoid, pointed ears, playful, magical",
+      "description": "from Celtic folklore, small winged humanoid, pointed ears, playful, magical"
+    },
+    "gnome": {
+      "name": "Gnome",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, small bearded humanoid, pointed red hat, earth dweller, cheerful",
+      "description": "from European folklore, small bearded humanoid, pointed red hat, earth dweller, cheerful"
+    },
+    "centaur": {
+      "name": "Centaur",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, half-human half-horse, muscular torso, horse body, archer",
+      "description": "from Greek mythology, half-human half-horse, muscular torso, horse body, archer"
+    },
+    "satyr": {
+      "name": "Satyr",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, half-human half-goat, horns, goat legs, pipes, hedonistic",
+      "description": "from Greek mythology, half-human half-goat, horns, goat legs, pipes, hedonistic"
+    },
+    "minotaur": {
+      "name": "Minotaur",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, bull-headed humanoid, massive, labyrinth dweller, axe",
+      "description": "from Greek mythology, bull-headed humanoid, massive, labyrinth dweller, axe"
+    },
+    "harpy": {
+      "name": "Harpy",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, bird-woman hybrid, eagle wings, talons, wild hair, screeching",
+      "description": "from Greek mythology, bird-woman hybrid, eagle wings, talons, wild hair, screeching"
+    },
+    "griffin": {
+      "name": "Griffin",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, lion-bodied eagle-headed, wings, majestic, guardian",
+      "description": "from Greek mythology, lion-bodied eagle-headed, wings, majestic, guardian"
+    },
+    "gorgon": {
+      "name": "Gorgon",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, woman with snakes for hair, stone gaze, serpentine",
+      "description": "from Greek mythology, woman with snakes for hair, stone gaze, serpentine"
+    },
+    "medusa": {
+      "name": "Medusa",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, gorgon with snake hair, petrifying gaze, beautiful yet terrifying",
+      "description": "from Greek mythology, gorgon with snake hair, petrifying gaze, beautiful yet terrifying"
+    },
+    "vampire": {
+      "name": "Vampire",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, undead bloodsucker, pale skin, fangs, red eyes, elegant dark attire",
+      "description": "from European folklore, undead bloodsucker, pale skin, fangs, red eyes, elegant dark attire"
+    },
+    "werewolf": {
+      "name": "Werewolf",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, wolf-human hybrid, fur, claws, fangs, full moon, feral",
+      "description": "from European folklore, wolf-human hybrid, fur, claws, fangs, full moon, feral"
+    },
+    "zombie": {
+      "name": "Zombie",
+      "creature": "from Haitian",
+      "vibe": "from Haitian / pop culture folklore, reanimated corpse, rotting flesh, shambling, vacant stare",
+      "description": "from Haitian / pop culture folklore, reanimated corpse, rotting flesh, shambling, vacant stare"
+    },
+    "ghost": {
+      "name": "Ghost",
+      "creature": "from universal folklore",
+      "vibe": "from universal folklore, translucent apparition, floating, ethereal white, haunting",
+      "description": "from universal folklore, translucent apparition, floating, ethereal white, haunting"
+    },
+    "banshee": {
+      "name": "Banshee",
+      "creature": "from Irish folklore",
+      "vibe": "from Irish folklore, wailing spirit, long pale hair, grey cloak, weeping woman",
+      "description": "from Irish folklore, wailing spirit, long pale hair, grey cloak, weeping woman"
+    },
+    "wraith": {
+      "name": "Wraith",
+      "creature": "from Celtic folklore",
+      "vibe": "from Celtic folklore, dark shadowy spirit, hooded, glowing eyes, spectral",
+      "description": "from Celtic folklore, dark shadowy spirit, hooded, glowing eyes, spectral"
+    },
+    "dragon": {
+      "name": "Dragon",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, massive winged reptile, scales, fire breath, horns, tail",
+      "description": "from European folklore, massive winged reptile, scales, fire breath, horns, tail"
+    },
+    "wyvern": {
+      "name": "Wyvern",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, two-legged dragon, wings, barbed tail, scales",
+      "description": "from European folklore, two-legged dragon, wings, barbed tail, scales"
+    },
+    "phoenix": {
+      "name": "Phoenix",
+      "creature": "from Greek",
+      "vibe": "from Greek / Egyptian mythology, immortal fire bird, red and gold flames, rebirth",
+      "description": "from Greek / Egyptian mythology, immortal fire bird, red and gold flames, rebirth"
+    },
+    "basilisk": {
+      "name": "Basilisk",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, serpent king, deadly gaze, crown-like crest, scales",
+      "description": "from European folklore, serpent king, deadly gaze, crown-like crest, scales"
+    },
+    "hydra": {
+      "name": "Hydra",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, multi-headed serpent, regrowing heads, poisonous breath",
+      "description": "from Greek mythology, multi-headed serpent, regrowing heads, poisonous breath"
+    },
+    "unicorn": {
+      "name": "Unicorn",
+      "creature": "from European folklore",
+      "vibe": "from European folklore, horse with single spiral horn, white coat, pure, magical",
+      "description": "from European folklore, horse with single spiral horn, white coat, pure, magical"
+    },
+    "pegasus": {
+      "name": "Pegasus",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, winged horse, white coat, majestic, flying",
+      "description": "from Greek mythology, winged horse, white coat, majestic, flying"
+    },
+    "mermaid": {
+      "name": "Mermaid",
+      "creature": "from global folklore",
+      "vibe": "from global folklore, half-woman half-fish, seashell top, fish tail, aquatic beauty",
+      "description": "from global folklore, half-woman half-fish, seashell top, fish tail, aquatic beauty"
+    },
+    "siren": {
+      "name": "Siren",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, winged femme fatale, enchanting song, lure sailors",
+      "description": "from Greek mythology, winged femme fatale, enchanting song, lure sailors"
+    },
+    "kraken": {
+      "name": "Kraken",
+      "creature": "from Scandinavian folklore",
+      "vibe": "from Scandinavian folklore, giant sea monster, massive tentacles, deep ocean",
+      "description": "from Scandinavian folklore, giant sea monster, massive tentacles, deep ocean"
+    },
+    "kelpie": {
+      "name": "Kelpie",
+      "creature": "from Scottish folklore",
+      "vibe": "from Scottish folklore, water horse, dark mane, luring riders, aquatic",
+      "description": "from Scottish folklore, water horse, dark mane, luring riders, aquatic"
+    },
+    "leprechaun": {
+      "name": "Leprechaun",
+      "creature": "from Irish folklore",
+      "vibe": "from Irish folklore, small bearded man, green suit, pot of gold, shoemaker",
+      "description": "from Irish folklore, small bearded man, green suit, pot of gold, shoemaker"
+    },
+    "chimera": {
+      "name": "Chimera",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, fire-breathing hybrid, lion head, snake tail, goat body",
+      "description": "from Greek mythology, fire-breathing hybrid, lion head, snake tail, goat body"
+    },
+    "cerberus": {
+      "name": "Cerberus",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, three-headed dog, guardian of underworld, hellhound",
+      "description": "from Greek mythology, three-headed dog, guardian of underworld, hellhound"
+    },
+    "sphinx": {
+      "name": "Sphinx",
+      "creature": "from Egyptian",
+      "vibe": "from Egyptian / Greek mythology, lion-bodied human-headed, riddles, wings",
+      "description": "from Egyptian / Greek mythology, lion-bodied human-headed, riddles, wings"
+    },
+    "valkyrie": {
+      "name": "Valkyrie",
+      "creature": "from Norse mythology",
+      "vibe": "from Norse mythology, winged warrior maiden, armor, spear, shield, chooses slain",
+      "description": "from Norse mythology, winged warrior maiden, armor, spear, shield, chooses slain"
+    },
+    "nymph": {
+      "name": "Nymph",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, nature spirit, young beautiful woman, forest or water",
+      "description": "from Greek mythology, nature spirit, young beautiful woman, forest or water"
+    },
+    "dryad": {
+      "name": "Dryad",
+      "creature": "from Greek mythology",
+      "vibe": "from Greek mythology, tree nymph, bark-like skin, leaves, nature bound",
+      "description": "from Greek mythology, tree nymph, bark-like skin, leaves, nature bound"
+    },
+    "oni": {
+      "name": "Oni Mask",
+      "creature": "from Japanese folklore",
+      "vibe": "from Japanese folklore, demon ogre mask, horns, fierce grin, red face",
+      "description": "from Japanese folklore, demon ogre mask, horns, fierce grin, red face"
+    },
+    "yuki-onna": {
+      "name": "Yuki-onna",
+      "creature": "from Japanese folklore",
+      "vibe": "from Japanese folklore, snow woman, pale white skin, long black hair, cold",
+      "description": "from Japanese folklore, snow woman, pale white skin, long black hair, cold"
+    },
+    "kappa": {
+      "name": "Kappa",
+      "creature": "from Japanese folklore",
+      "vibe": "from Japanese folklore, water imp, turtle shell, beak, bowl on head, mischievous",
+      "description": "from Japanese folklore, water imp, turtle shell, beak, bowl on head, mischievous"
+    },
+    "tanuki": {
+      "name": "Tanuki",
+      "creature": "from Japanese folklore",
+      "vibe": "from Japanese folklore, raccoon dog, shapeshifter, large belly, jovial",
+      "description": "from Japanese folklore, raccoon dog, shapeshifter, large belly, jovial"
+    },
+    "kasa-obake": {
+      "name": "Kasa-obake",
+      "creature": "from Japanese folklore",
+      "vibe": "from Japanese folklore, umbrella ghost, one eye, one leg, hopping",
+      "description": "from Japanese folklore, umbrella ghost, one eye, one leg, hopping"
+    },
+    "tsukumogami": {
+      "name": "Tsukumogami",
+      "creature": "from Japanese folklore",
+      "vibe": "from Japanese folklore, animated object spirit, household item, ancient",
+      "description": "from Japanese folklore, animated object spirit, household item, ancient"
+    },
+    "jiangshi": {
+      "name": "Jiangshi",
+      "creature": "from Chinese folklore",
+      "vibe": "from Chinese folklore, hopping vampire, pale green, Qing dynasty robes, talisman",
+      "description": "from Chinese folklore, hopping vampire, pale green, Qing dynasty robes, talisman"
+    },
+    "huli-jing": {
+      "name": "Huli Jing",
+      "creature": "from Chinese folklore",
+      "vibe": "from Chinese folklore, fox spirit, nine tails, seductive, shapeshifter",
+      "description": "from Chinese folklore, fox spirit, nine tails, seductive, shapeshifter"
+    },
+    "long": {
+      "name": "Long (Chinese Dragon)",
+      "creature": "from Chinese mythology",
+      "vibe": "from Chinese mythology, serpentine dragon, antlers, claws, pearl",
+      "description": "from Chinese mythology, serpentine dragon, antlers, claws, pearl"
+    },
+    "qilin": {
+      "name": "Qilin",
+      "creature": "from Chinese mythology",
+      "vibe": "from Chinese mythology, chimeric hooved creature, scales, flame aura, omen",
+      "description": "from Chinese mythology, chimeric hooved creature, scales, flame aura, omen"
+    },
+    "dragon-turtle": {
+      "name": "Dragon Turtle",
+      "creature": "from Chinese mythology",
+      "vibe": "from Chinese mythology, turtle body dragon head, longevity, wisdom",
+      "description": "from Chinese mythology, turtle body dragon head, longevity, wisdom"
+    },
+    "fenghuang": {
+      "name": "Fenghuang",
+      "creature": "from Chinese mythology",
+      "vibe": "from Chinese mythology, immortal bird, colorful plumage, harmony, grace",
+      "description": "from Chinese mythology, immortal bird, colorful plumage, harmony, grace"
+    },
+    "wendigo": {
+      "name": "Wendigo",
+      "creature": "from Algonquian folklore",
+      "vibe": "from Algonquian folklore, emaciated humanoid, deer skull head, frost, cannibal",
+      "description": "from Algonquian folklore, emaciated humanoid, deer skull head, frost, cannibal"
+    },
+    "thunderbird": {
+      "name": "Thunderbird",
+      "creature": "from Native American folklore",
+      "vibe": "from Native American folklore, giant bird, lightning, wings create thunder",
+      "description": "from Native American folklore, giant bird, lightning, wings create thunder"
+    },
+    "sasquatch": {
+      "name": "Sasquatch",
+      "creature": "from North American folklore",
+      "vibe": "from North American folklore, large hairy humanoid, forest dweller, elusive",
+      "description": "from North American folklore, large hairy humanoid, forest dweller, elusive"
+    },
+    "yeti": {
+      "name": "Yeti",
+      "creature": "from Himalayan folklore",
+      "vibe": "from Himalayan folklore, large ape-like creature, white fur, mountain dweller",
+      "description": "from Himalayan folklore, large ape-like creature, white fur, mountain dweller"
+    },
+    "djinn": {
+      "name": "Djinn / Genie",
+      "creature": "from Arabian folklore",
+      "vibe": "from Arabian folklore, smokeless fire being, lamp, wish granting, mischievous",
+      "description": "from Arabian folklore, smokeless fire being, lamp, wish granting, mischievous"
+    },
+    "roc": {
+      "name": "Roc",
+      "creature": "from Arabian folklore",
+      "vibe": "from Arabian folklore, giant bird of prey, carries elephants, mountains",
+      "description": "from Arabian folklore, giant bird of prey, carries elephants, mountains"
+    },
+    "bahamut": {
+      "name": "Bahamut",
+      "creature": "from Arabian folklore",
+      "vibe": "from Arabian folklore, giant fish supporting the earth, cosmic, vast",
+      "description": "from Arabian folklore, giant fish supporting the earth, cosmic, vast"
+    },
+    "mothman": {
+      "name": "Mothman",
+      "creature": "from American folklore",
+      "vibe": "from American folklore, winged humanoid, red eyes, moth-like wings, cryptid",
+      "description": "from American folklore, winged humanoid, red eyes, moth-like wings, cryptid"
+    },
+    "chupacabra": {
+      "name": "Chupacabra",
+      "creature": "from Latin American folklore",
+      "vibe": "from Latin American folklore, reptilian creature, spines, fangs, goat killer",
+      "description": "from Latin American folklore, reptilian creature, spines, fangs, goat killer"
+    },
+    "mapinguari": {
+      "name": "Mapinguari",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, giant hairy beast, one eye, backwards feet, jungle",
+      "description": "from Brazilian folklore, giant hairy beast, one eye, backwards feet, jungle"
+    },
+    "curupira": {
+      "name": "Curupira",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, forest guardian, backward feet, bright red hair, whistles",
+      "description": "from Brazilian folklore, forest guardian, backward feet, bright red hair, whistles"
+    },
+    "saci": {
+      "name": "Saci",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, one-legged boy, red cap, smoking pipe, mischievous",
+      "description": "from Brazilian folklore, one-legged boy, red cap, smoking pipe, mischievous"
+    },
+    "boitata": {
+      "name": "Boitatá",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, giant fire serpent, protects forests, burning eyes",
+      "description": "from Brazilian folklore, giant fire serpent, protects forests, burning eyes"
+    },
+    "iara": {
+      "name": "Iara",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, water goddess, long dark hair, song lures fishermen",
+      "description": "from Brazilian folklore, water goddess, long dark hair, song lures fishermen"
+    },
+    "cuca": {
+      "name": "Cuca",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, alligator-headed witch, sleeps, kidnaps naughty children",
+      "description": "from Brazilian folklore, alligator-headed witch, sleeps, kidnaps naughty children"
+    },
+    "mula-sem-cabeca": {
+      "name": "Mula sem Cabeça",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, headless mule, fire instead of head, gallops",
+      "description": "from Brazilian folklore, headless mule, fire instead of head, gallops"
+    },
+    "lobisomen": {
+      "name": "Lobisomem",
+      "creature": "from Brazilian folklore",
+      "vibe": "from Brazilian folklore, werewolf, wolf-human hybrid, cursed by moonlight",
+      "description": "from Brazilian folklore, werewolf, wolf-human hybrid, cursed by moonlight"
     }
   },
   "footer": {
