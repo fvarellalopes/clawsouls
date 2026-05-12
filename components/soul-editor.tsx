@@ -29,6 +29,7 @@ import { useAchievementsStore } from "@/store/achievementsStore";
 interface SoulEditorProps {
   locale: string;
   messages: Record<string, unknown>;
+  initialPresetSlug?: string;
 }
 
 type Phase = "presets" | "editor";
@@ -99,7 +100,7 @@ function CyberToggle({
   );
 }
 
-export function SoulEditor({ locale, messages }: SoulEditorProps) {
+export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorProps) {
   const t = useTranslations("editor");
   const tPresets = useTranslations("presetsPage");
   const { soul, setSoul, resetSoul, loadPreset, undo, redo, canUndo, canRedo, isDarkMode, setIsDarkMode } = useSoulStore();
@@ -127,6 +128,17 @@ export function SoulEditor({ locale, messages }: SoulEditorProps) {
   useEffect(() => {
     addLanguageUsed(locale);
   }, [locale, addLanguageUsed]);
+
+  // Auto-load preset from URL slug
+  useEffect(() => {
+    if (!initialPresetSlug) return;
+    const target = presets.find((p) => p.id === initialPresetSlug);
+    if (target) {
+      loadPreset(target);
+      setSelectedPresetId(target.id);
+      setTimeout(() => setPhase("editor"), 300);
+    }
+  }, [initialPresetSlug, presets]);
 
   // Filter presets
   const filteredPresets = useMemo(() => {

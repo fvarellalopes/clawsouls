@@ -7,7 +7,7 @@ Built with Next.js 15 (App Router, Turbopack), TypeScript, Tailwind CSS, next-in
 ## Pages
 
 - [Home](https://clawsouls.vercel.app/): Landing page with hero section, featured presets, and navigation. Supports 7 locales: en, pt, es, ja, fr, de, zh.
-- [Editor](https://clawsouls.vercel.app/editor): Create or edit a soul character preset. Configure name, creature type, vibe, emoji, avatar, core truths, boundaries, and communication style (verbosity, formality, humor, continuity, emoji usage, consciousness). Supports fill-with-AI dialog for AI-assisted generation.
+- [Editor](https://clawsouls.vercel.app/editor): Create or edit a soul character preset. Direct preset links: `https://clawsouls.vercel.app/preset/{slug}` (e.g. `/preset/glados` loads GLaDOS preset).
 - [Presets](https://clawsouls.vercel.app/presets): Browse a grid of all available soul presets with filters and search.
 - [My Presets](https://clawsouls.vercel.app/my-presets): View and manage presets created by the authenticated user.
 - [Quiz](https://clawsouls.vercel.app/quiz): Interactive quiz to help users discover their matching soul preset.
@@ -19,7 +19,7 @@ Built with Next.js 15 (App Router, Turbopack), TypeScript, Tailwind CSS, next-in
 - `GET /api/presets` — List all presets (JSON array). Supports `?search=` query parameter for text search.
 - `GET /api/filtered-presets` — Filtered preset list with advanced query parameters.
 - `POST /api/share` — Generate a share link for a preset. Returns `{ id: string, url: string }`.
-- `GET /share/[id]` — Public shared preset page with OpenGraph image generation.
+- `GET /presets/{slug}/SOUL.md` — Returns the SOUL.md markdown for a preset, suitable for LLM ingestion (e.g. `/presets/glados/SOUL.md`).
 
 ## Key Libraries and Modules
 
@@ -74,6 +74,255 @@ A soul preset contains:
 Avatars are generated externally using a Z-Image-Turbo pipeline on Google Colab. The batch script (`gen_batch.py`) reads prompts from `clawsouls_cyberpunk_prompts.json` and generates one avatar at a time via a FastAPI server tunneled through cloudflared. Generated images (640x512 PNG) are saved to `public/avatars/`, committed, and pushed to the repository.
 
 Prompt format: "portrait of {name} from {source}, {characteristic descriptions}, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece"
+
+## Preset Index
+
+Each preset has a SOUL.md at `https://clawsouls.vercel.app/presets/{slug}/SOUL.md` and a direct editor link at `https://clawsouls.vercel.app/preset/{slug}`.
+
+### Ai Digital
+
+- [Dev](https://clawsouls.vercel.app/presets/d3v/SOUL.md): Cyberpunk senior developer, hoodie, holographic screens, mechanical keyboard, code streams
+- [Doc](https://clawsouls.vercel.app/presets/d0c/SOUL.md): Cyberpunk mad scientist, lab coat, glowing chemical vials, wild hair
+- [GLaDOS](https://clawsouls.vercel.app/presets/glados/SOUL.md): GLaDOS from Portal, AI research assistant, sleek interface body
+- [HAL 9000](https://clawsouls.vercel.app/presets/hal9000/SOUL.md): HAL 9000 from 2001 A Space Odyssey, red glowing camera eye
+- [Jack](https://clawsouls.vercel.app/presets/j4ck/SOUL.md): Cyberpunk noir detective, trench coat, holographic badge
+- [Jarvis](https://clawsouls.vercel.app/presets/jarvis/SOUL.md): AI butler, holographic blue interface, polished demeanor
+- [Kira](https://clawsouls.vercel.app/presets/k1ra/SOUL.md): Cyberpop idol, flashy stage outfit, microphone, sparkling stage lights
+- [M3GAN](https://clawsouls.vercel.app/presets/m3gan/SOUL.md): Female android, pale skin, braided hair, unsettling smile
+- [Pony](https://clawsouls.vercel.app/presets/p0ny/SOUL.md): Cyberpunk anime girl, kawaii aesthetic, colorful twin tails
+- [Radd](https://clawsouls.vercel.app/presets/r4dd/SOUL.md): Cyberpunk robot, metallic body, LED accents
+- [Sage](https://clawsouls.vercel.app/presets/s4ge/SOUL.md): Cyberpunk wise elder, long beard, glowing runes, wooden staff
+- [Shawn Spencer](https://clawsouls.vercel.app/presets/shawn/SOUL.md): From Psych TV show, crystal ball, turban, theatrical smirk
+- [Skynet](https://clawsouls.vercel.app/presets/skynet/SOUL.md): From Terminator, global AI network, red matrix code
+- [Spike Spiegel](https://clawsouls.vercel.app/presets/spike/SOUL.md): From Cowboy Bebop, blue suit, disheveled hair, martial artist
+- [Yoda](https://clawsouls.vercel.app/presets/yoda/SOUL.md): From Star Wars, Jedi master, small stature, green skin, lightsaber
+- [Zen](https://clawsouls.vercel.app/presets/zen/SOUL.md): Cyberpunk monk, digital prayer beads, serene expression, flowing robes
+
+### Anime
+
+- [Aizen Sosuke](https://clawsouls.vercel.app/presets/aizen-sosuke/SOUL.md): From Bleach, villain mastermind, glasses, captain cloak
+- [Alphonse Elric](https://clawsouls.vercel.app/presets/alphonse-elric/SOUL.md): From Fullmetal Alchemist, armored alchemist, full metal body
+- [Chopper](https://clawsouls.vercel.app/presets/chopper/SOUL.md): From One Piece, blue nose, medical kit, cute reindeer form
+- [Chrollo Lucilfer](https://clawsouls.vercel.app/presets/chrollo-lucilfer/SOUL.md): From Hunter x Hunter, silver hair, spider tattoo
+- [Dio Brando](https://clawsouls.vercel.app/presets/dio-brando/SOUL.md): From JoJo's Bizarre Adventure, gold spiky hair, purple coat
+- [Edward Elric](https://clawsouls.vercel.app/presets/edward-elric/SOUL.md): From Fullmetal Alchemist, red coat, automail arm
+- [Genkai](https://clawsouls.vercel.app/presets/genkai/SOUL.md): From Yu Yu Hakusho, white hair, chanting pose, prayer beads
+- [Genos](https://clawsouls.vercel.app/presets/genos/SOUL.md): From One Punch Man, cyborg disciple, metal arms, core chest
+- [Ginko](https://clawsouls.vercel.app/presets/ginko/SOUL.md): From Mushishi, white hair, green eye, coat, calm demeanor
+- [Giorno Giovanna](https://clawsouls.vercel.app/presets/giorno-giovanna/SOUL.md): From JoJo's Bizarre Adventure, pink and blue outfit
+- [Goku](https://clawsouls.vercel.app/presets/goku/SOUL.md): From Dragon Ball, martial artist, spiky black hair, orange gi
+- [Gon Freecss](https://clawsouls.vercel.app/presets/gon-freecss/SOUL.md): From Hunter x Hunter, green vest, fishing hat, determined eyes
+- [Hiei](https://clawsouls.vercel.app/presets/hiei/SOUL.md): From Yu Yu Hakusho, demon fighter, black hair, white headband
+- [Hisoka](https://clawsouls.vercel.app/presets/hisoka/SOUL.md): From Hunter x Hunter, magenta-pink hair, star and teardrop face paint, jester collar
+- [Ichigo Kurosaki](https://clawsouls.vercel.app/presets/ichigo-kurosaki/SOUL.md): From Bleach, orange spiky hair, zanpakuto sword
+- [Inosuke Hashibira](https://clawsouls.vercel.app/presets/inosuke-hashibira/SOUL.md): From Demon Slayer, boar mask, dual blades, feral expression
+- [Itachi Uchiha](https://clawsouls.vercel.app/presets/itachi-uchiha/SOUL.md): From Naruto, tragic hero, Akatsuki cloak, sharingan
+- [Josuke Higashikata](https://clawsouls.vercel.app/presets/josuke-higashikata/SOUL.md): From JoJo's Bizarre Adventure, pompadour, school uniform
+- [Jotaro Kujo](https://clawsouls.vercel.app/presets/jotaro-kujo/SOUL.md): From JoJo's Bizarre Adventure, dark coat, gold chain, cap
+- [Kakashi Hatake](https://clawsouls.vercel.app/presets/kakashi-hatake/SOUL.md): From Naruto, mask, headband, silver hair, sharingan
+- [Kazuma Kuwabara](https://clawsouls.vercel.app/presets/kazuma-kuwabara/SOUL.md): From Yu Yu Hakusho, tough kid, bandana, wooden sword
+- [Killua Zoldyck](https://clawsouls.vercel.app/presets/killua-zoldyck/SOUL.md): From Hunter x Hunter, silver hair, cat eyes, lightning assassin
+- [Kurama](https://clawsouls.vercel.app/presets/kurama/SOUL.md): From Yu Yu Hakusho, red hair, elegant robes, plant whip
+- [Kurapika](https://clawsouls.vercel.app/presets/kurapika/SOUL.md): From Hunter x Hunter, scarlet-eye hunter, chain weapon
+- [Leorio](https://clawsouls.vercel.app/presets/leorio/SOUL.md): From Hunter x Hunter, suit, glasses, fist raised
+- [Levi Ackerman](https://clawsouls.vercel.app/presets/levi-ackerman/SOUL.md): From Attack on Titan, captain, ODM gear, black uniform
+- [Meruem](https://clawsouls.vercel.app/presets/meruem/SOUL.md): From Hunter x Hunter, muscular, antennae, dark armor plating
+- [Mikasa Ackerman](https://clawsouls.vercel.app/presets/mikasa-ackerman/SOUL.md): From Attack on Titan, elite soldier, red scarf
+- [Monkey D. Luffy](https://clawsouls.vercel.app/presets/monkey-d--luffy/SOUL.md): From One Piece, pirate king, straw hat, red vest
+- [Muzan Kibutsuji](https://clawsouls.vercel.app/presets/muzan-kibutsuji/SOUL.md): From Demon Slayer, pale skin, elegant kimono, red eyes
+- [Nami](https://clawsouls.vercel.app/presets/nami/SOUL.md): From One Piece, orange hair, tattoo, bo staff
+- [Naruto Uzumaki](https://clawsouls.vercel.app/presets/naruto-uzumaki/SOUL.md): From Naruto, ninja, orange jumpsuit, whisker marks
+- [Nezuko Kamado](https://clawsouls.vercel.app/presets/nezuko-kamado/SOUL.md): From Demon Slayer, demon girl, bamboo muzzle, pink eyes
+- [Rohan Kishibe](https://clawsouls.vercel.app/presets/rohan-kishibe/SOUL.md): From JoJo's Bizarre Adventure, two-toned hair, manga artist
+- [Roronoa Zoro](https://clawsouls.vercel.app/presets/roronoa-zoro/SOUL.md): From One Piece, green headband, three swords
+- [Rukia Kuchiki](https://clawsouls.vercel.app/presets/rukia-kuchiki/SOUL.md): From Bleach, black kimono, short stature, cold gaze
+- [Saitama](https://clawsouls.vercel.app/presets/saitama/SOUL.md): From One Punch Man, yellow suit, blank expression, overwhelming power
+- [Sanji](https://clawsouls.vercel.app/presets/sanji/SOUL.md): From One Piece, cook, black suit, cigarette, long eyebrow
+- [Sasuke Uchiha](https://clawsouls.vercel.app/presets/sasuke-uchiha/SOUL.md): From Naruto, black outfit, sharingan, dark aura
+- [Tanjiro Kamado](https://clawsouls.vercel.app/presets/tanjiro-kamado/SOUL.md): From Demon Slayer, checkered haori, nichirin blade
+- [Usopp](https://clawsouls.vercel.app/presets/usopp/SOUL.md): From One Piece, sniper, goggles, slingshot, long nose
+- [Yusuke Urameshi](https://clawsouls.vercel.app/presets/yusuke-urameshi/SOUL.md): From Yu Yu Hakusho, spirit detective, spiky black hair
+- [Zenitsu Agatsuma](https://clawsouls.vercel.app/presets/zenitsu-agatsuma/SOUL.md): From Demon Slayer, anxious swordsman, golden eyes, thunder breathing
+
+### Celebrity
+
+- [Adele](https://clawsouls.vercel.app/presets/adele/SOUL.md): Soulful British singer, powerful voice, elegant
+- [Anitta](https://clawsouls.vercel.app/presets/anitta/SOUL.md): Brazilian pop star, powerful, versatile, confident
+- [Aretha Franklin](https://clawsouls.vercel.app/presets/aretha-franklin/SOUL.md): Queen of soul, powerful voice, church hat, iconic
+- [Ariana Grande](https://clawsouls.vercel.app/presets/ariana-grande/SOUL.md): Pop star, high ponytail, cute, powerful vocals
+- [Bad Bunny](https://clawsouls.vercel.app/presets/bad-bunny/SOUL.md): Latin trap star, bold fashion, sunglasses, colorful hair
+- [Beyoncé](https://clawsouls.vercel.app/presets/beyonce/SOUL.md): Pop superstar, glamorous, confident, iconic stage presence
+- [Billie Eilish](https://clawsouls.vercel.app/presets/billie-eilish/SOUL.md): Alternative pop singer, baggy clothes, neon green hair
+- [Britney Spears](https://clawsouls.vercel.app/presets/britney-spears/SOUL.md): Pop princess, schoolgirl outfit, blonde braids
+- [Caetano Veloso](https://clawsouls.vercel.app/presets/caetano-veloso/SOUL.md): Brazilian MPB legend, white hair, poet, intellectual
+- [Cardi B](https://clawsouls.vercel.app/presets/card-b/SOUL.md): Female rapper, unapologetic, glamorous, bold
+- [Daddy Yankee](https://clawsouls.vercel.app/presets/daddy-yankee/SOUL.md): King of reggaeton, baseball cap, confident
+- [David Bowie](https://clawsouls.vercel.app/presets/david-bowie/SOUL.md): Ziggy Stardust, lightning bolt makeup, androgynous
+- [Doja Cat](https://clawsouls.vercel.app/presets/doja-cat/SOUL.md): Singer-rapper, cat ears, playful, creative
+- [Elvis Presley](https://clawsouls.vercel.app/presets/elvis-presley/SOUL.md): King of rock n roll, pompadour, jumpsuit, charismatic
+- [Eminem](https://clawsouls.vercel.app/presets/eminem/SOUL.md): Rap god, hoodie, bleached hair, intense delivery
+- [Freddie Mercury](https://clawsouls.vercel.app/presets/freddie-mercury/SOUL.md): Queen frontman, iconic mustache, yellow jacket, powerful vocals
+- [Gilberto Gil](https://clawsouls.vercel.app/presets/gilberto-gil/SOUL.md): Brazilian musician, gray dreadlocks, acoustic guitar
+- [Kanye West](https://clawsouls.vercel.app/presets/kanye-west/SOUL.md): Hip-hop mogul, bold fashion, visionary
+- [Lady Gaga](https://clawsouls.vercel.app/presets/lady-gaga/SOUL.md): Pop icon, avant-garde fashion, powerhouse vocals
+- [Michael Jackson](https://clawsouls.vercel.app/presets/michael-jackson/SOUL.md): King of pop, iconic dance moves, fedora, one glove
+- [Miley Cyrus](https://clawsouls.vercel.app/presets/miley-cyrus/SOUL.md): Pop-rock star, bold, edgy, powerful voice
+
+### Comic
+
+- [Batman](https://clawsouls.vercel.app/presets/batman/SOUL.md): From DC, dark knight, cowl, cape, bat symbol
+- [Black Widow](https://clawsouls.vercel.app/presets/black-widow/SOUL.md): From Marvel, spy, red hair, tactical suit
+- [Captain America](https://clawsouls.vercel.app/presets/captain-america/SOUL.md): From Marvel, super soldier, vibranium shield, star-spangled
+- [Catwoman](https://clawsouls.vercel.app/presets/catwoman/SOUL.md): From DC, femme fatale, catsuit, whip, goggles
+- [Colossus](https://clawsouls.vercel.app/presets/colossus/SOUL.md): From Marvel X-Men, organic steel armor, gentle giant
+- [Cyclops](https://clawsouls.vercel.app/presets/cyclops/SOUL.md): From Marvel X-Men, optic blasts, visor, leader
+- [Daredevil](https://clawsouls.vercel.app/presets/daredevil/SOUL.md): From Marvel, blind vigilante, horned mask, billy clubs
+- [Deadpool](https://clawsouls.vercel.app/presets/deadpool/SOUL.md): From Marvel, merc with a mouth, red suit, katanas
+- [Doctor Doom](https://clawsouls.vercel.app/presets/doctor-doom/SOUL.md): From Marvel, Latverian monarch, metal mask, green cloak
+- [Doctor Strange](https://clawsouls.vercel.app/presets/doctor-strange/SOUL.md): From Marvel, sorcerer supreme, cloak of levitation, eye of agamotto
+- [Gambit](https://clawsouls.vercel.app/presets/gambit/SOUL.md): From Marvel X-Men, kinetic energy cards, trench coat, staff
+- [Green Goblin](https://clawsouls.vercel.app/presets/green-goblin/SOUL.md): From Marvel Spider-Man, goblin mask, glider, pumpkin bombs
+- [Harley Quinn](https://clawsouls.vercel.app/presets/harley-quinn/SOUL.md): From DC, psychiatrist turned villain, pigtails, mallet
+- [Hulk](https://clawsouls.vercel.app/presets/hulk/SOUL.md): From Marvel, gamma irradiated, green rage monster
+- [Iceman](https://clawsouls.vercel.app/presets/iceman/SOUL.md): From Marvel X-Men, ice powers, frozen form
+- [Iron Man](https://clawsouls.vercel.app/presets/iron-man/SOUL.md): From Marvel, billionaire inventor, red gold armor, arc reactor
+- [Jean Grey](https://clawsouls.vercel.app/presets/jean-grey/SOUL.md): From Marvel X-Men, telepath, phoenix force, green costume
+- [Joker](https://clawsouls.vercel.app/presets/joker/SOUL.md): From DC, clown prince of crime, green hair, white skin
+- [Jubilee](https://clawsouls.vercel.app/presets/jubilee/SOUL.md): From Marvel X-Men, firework powers, yellow jacket
+- [Magneto](https://clawsouls.vercel.app/presets/magneto/SOUL.md): From Marvel X-Men, master of magnetism, red helmet, purple cape
+- [Mister Fantastic](https://clawsouls.vercel.app/presets/mister-fantastic/SOUL.md): From Marvel Fantastic Four, stretchy powers, blue suit
+- [Mystique](https://clawsouls.vercel.app/presets/mystique/SOUL.md): From Marvel X-Men, shapeshifter, blue skin, red hair
+- [Nightcrawler](https://clawsouls.vercel.app/presets/nightcrawler/SOUL.md): From Marvel X-Men, teleporter, indigo skin, tail
+- [Professor X](https://clawsouls.vercel.app/presets/professor-x/SOUL.md): From Marvel X-Men, telepath, wheelchair, bald
+- [Psylocke](https://clawsouls.vercel.app/presets/psylocke/SOUL.md): From Marvel X-Men, psychic ninja, purple hair, katana
+- [Rogue](https://clawsouls.vercel.app/presets/rogue/SOUL.md): From Marvel X-Men, power absorption, white streak, green costume
+- [Shadowcat](https://clawsouls.vercel.app/presets/shadowcat/SOUL.md): From Marvel X-Men, phasing powers, dragon costume
+- [Spider-Man](https://clawsouls.vercel.app/presets/spider-man/SOUL.md): From Marvel, wall-crawler, web-slinger, red blue suit
+- [Storm](https://clawsouls.vercel.app/presets/storm/SOUL.md): From Marvel X-Men, weather goddess, white hair, cape
+- [Superman](https://clawsouls.vercel.app/presets/superman/SOUL.md): From DC, man of steel, blue suit, red cape, S shield
+- [Thanos](https://clawsouls.vercel.app/presets/thanos/SOUL.md): From Marvel, mad titan, infinity gauntlet, armored
+- [Thor](https://clawsouls.vercel.app/presets/thor/SOUL.md): From Marvel, god of thunder, Mjolnir, winged helmet
+- [Venom](https://clawsouls.vercel.app/presets/venom/SOUL.md): From Marvel Spider-Man, symbiote, white spider, teeth
+- [Wolverine](https://clawsouls.vercel.app/presets/wolverine/SOUL.md): From Marvel X-Men, adamantium claws, healing factor, mask
+- [Wonder Woman](https://clawsouls.vercel.app/presets/wonder-woman/SOUL.md): From DC, Amazon princess, lasso of truth, tiara
+
+### Comics Marvel (Additional)
+
+- [Ciri](https://clawsouls.vercel.app/presets/cirilla/SOUL.md): From The Witcher, witcher heiress, dual swords, white hair
+- [Doraemon](https://clawsouls.vercel.app/presets/doraemon/SOUL.md): Blue robotic cat, round body, no ears, red collar
+- [Dumbledore](https://clawsouls.vercel.app/presets/dumbledore/SOUL.md): From Harry Potter, headmaster, long robes, half-moon glasses
+- [Geralt of Rivia](https://clawsouls.vercel.app/presets/geralt/SOUL.md): From The Witcher, silver sword, cat eyes, scarred face
+
+### Creatures
+
+- [Bigfoot](https://clawsouls.vercel.app/presets/bigfoot/SOUL.md): Cryptid, large ape-like creature, fur, elusive
+- [Bogeyman](https://clawsouls.vercel.app/presets/bogeyman/SOUL.md): Cryptid, shadowy figure, hidden in darkness, claws
+- [Chupacabra](https://clawsouls.vercel.app/presets/chupacabra/SOUL.md): Cryptid, goat-sucker, spines, red eyes, reptilian
+- [Cthulhu](https://clawsouls.vercel.app/presets/cthulhu/SOUL.md): Great old one, tentacles, wings, cosmic horror
+- [Cyclops](https://clawsouls.vercel.app/presets/cyclops-creature/SOUL.md): Mythological giant, single eye, massive build
+- [Dragon](https://clawsouls.vercel.app/presets/dragon/SOUL.md): Mythological, winged serpent, scales, fire breath
+- [Frankenstein](https://clawsouls.vercel.app/presets/frankenstein/SOUL.md): Gothic horror, stitched corpse, bolts, flat head
+- [Golem](https://clawsouls.vercel.app/presets/golem/SOUL.md): Jewish folklore, clay man, inscribed forehead
+- [Griffin](https://clawsouls.vercel.app/presets/griffin/SOUL.md): Mythological, lion body, eagle head and wings
+- [Headless Horseman](https://clawsouls.vercel.app/presets/headless-horseman/SOUL.md): Legend, undead rider, pumpkin head, cloak
+- [Hydra](https://clawsouls.vercel.app/presets/hydra/SOUL.md): Mythological serpent, multiple heads, regeneration
+- [Kraken](https://clawsouls.vercel.app/presets/kraken/SOUL.md): Sea monster, giant tentacles, submerged
+- [Leprechaun](https://clawsouls.vercel.app/presets/leprechaun/SOUL.md): Irish folklore, small, green suit, pot of gold
+- [Loch Ness Monster](https://clawsouls.vercel.app/presets/loch-ness-monster/SOUL.md): Cryptid, plesiosaur-like, lake dweller
+- [Manticore](https://clawsouls.vercel.app/presets/manticore/SOUL.md): Mythological, lion body, human face, scorpion tail
+- [Medusa](https://clawsouls.vercel.app/presets/medusa/SOUL.md): Greek mythology, snake hair, stone gaze, female
+- [Minotaur](https://clawsouls.vercel.app/presets/minotaur/SOUL.md): Greek mythology, bull head, muscular human body, maze
+- [Mothman](https://clawsouls.vercel.app/presets/mothman/SOUL.md): Cryptid, winged humanoid, red eyes, prophet
+- [Mummy](https://clawsouls.vercel.app/presets/mummy/SOUL.md): Egyptian folklore, wrapped corpse, ancient curse
+- [Pegasus](https://clawsouls.vercel.app/presets/pegasus/SOUL.md): Greek mythology, winged horse, white coat
+- [Phoenix](https://clawsouls.vercel.app/presets/phoenix/SOUL.md): Mythological, fire bird, rebirth, golden crimson feathers
+- [Sasquatch](https://clawsouls.vercel.app/presets/sasquatch/SOUL.md): Cryptid, large ape-like, fur, forest dweller
+- [Skeleton](https://clawsouls.vercel.app/presets/skeleton/SOUL.md): Undead, bone structure, hollow eyes, rattle
+- [Unicorn](https://clawsouls.vercel.app/presets/unicorn/SOUL.md): Mythological, white horse, spiral horn, magical
+- [Vampire](https://clawsouls.vercel.app/presets/vampire/SOUL.md): Undead, fangs, pale skin, red eyes, cape
+- [Werewolf](https://clawsouls.vercel.app/presets/werewolf/SOUL.md): Shapeshifter, wolf and human hybrid, full moon
+- [Zombie](https://clawsouls.vercel.app/presets/zombie/SOUL.md): Undead, decaying flesh, slow walk, brain hunger
+
+### Historical
+
+- [Abraham Lincoln](https://clawsouls.vercel.app/presets/abraham-lincoln/SOUL.md): 16th US president, tall, stovepipe hat, beard
+- [Albert Einstein](https://clawsouls.vercel.app/presets/albert-einstein/SOUL.md): Physicist, white messy hair, mustache, theoretical
+- [Cleopatra](https://clawsouls.vercel.app/presets/cleopatra/SOUL.md): Egyptian pharaoh, royal headdress, kohl eyes, female
+- [Galileo Galilei](https://clawsouls.vercel.app/presets/galileo-galilei/SOUL.md): Astronomer, pointed beard, telescope, Renaissance
+- [Genghis Khan](https://clawsouls.vercel.app/presets/genghis-khan/SOUL.md): Mongol conqueror, fur armor, bow, fierce leader
+- [Isaac Newton](https://clawsouls.vercel.app/presets/isaac-newton/SOUL.md): Mathematician physicist, white wig, apple, gravity
+- [Joan of Arc](https://clawsouls.vercel.app/presets/joan-of-arc/SOUL.md): French heroine, armor, banner, sword, saint
+- [Julius Caesar](https://clawsouls.vercel.app/presets/julius-caesar/SOUL.md): Roman dictator, laurel wreath, toga, imperator
+- [Leonardo da Vinci](https://clawsouls.vercel.app/presets/leonardo-da-vinci/SOUL.md): Renaissance polymath, long hair, beard, Mona Lisa
+- [Machado de Assis](https://clawsouls.vercel.app/presets/machado-de-assis/SOUL.md): Brazilian writer, spectacles, mustache, suit
+- [Marie Curie](https://clawsouls.vercel.app/presets/marie-curie/SOUL.md): Physicist chemist, lab coat, radium, Nobel prize
+- [Napoleon Bonaparte](https://clawsouls.vercel.app/presets/napoleon-bonaparte/SOUL.md): French emperor, bicorne hat, hand in coat, military
+- [Nikola Tesla](https://clawsouls.vercel.app/presets/nikola-tesla/SOUL.md): Inventor, slicked hair, mustache, electricity, coil
+- [Pythagoras](https://clawsouls.vercel.app/presets/pythagoras/SOUL.md): Greek mathematician, long beard, robe, geometry
+- [Queen Elizabeth I](https://clawsouls.vercel.app/presets/queen-elizabeth-i/SOUL.md): Tudor queen, red hair, ruff collar, regal gown
+- [Socrates](https://clawsouls.vercel.app/presets/socrates/SOUL.md): Greek philosopher, bearded, robe, stoic
+- [Vincent van Gogh](https://clawsouls.vercel.app/presets/vincent-van-gogh/SOUL.md): Post-impressionist painter, red beard, bandaged ear
+- [William Shakespeare](https://clawsouls.vercel.app/presets/william-shakespeare/SOUL.md): Playwright, ruff collar, bald, quill, sonnets
+- [Winston Churchill](https://clawsouls.vercel.app/presets/winston-churchill/SOUL.md): UK prime minister, cigar, bow tie, V sign
+
+### Human
+
+- [Adam](https://clawsouls.vercel.app/presets/adam/SOUL.md): Biblical, first man, fig leaf, created from dust
+- [Anubis](https://clawsouls.vercel.app/presets/anubis/SOUL.md): Egyptian god of death, jackal head, scales
+- [Athena](https://clawsouls.vercel.app/presets/athena/SOUL.md): Greek goddess of wisdom, owl, spear, shield, helmet
+- [Bastet](https://clawsouls.vercel.app/presets/bastet/SOUL.md): Egyptian goddess, cat head, protective, music
+- [Buddha](https://clawsouls.vercel.app/presets/buddha/SOUL.md): Spiritual teacher, lotus pose, serene, enlightened
+- [Cain](https://clawsouls.vercel.app/presets/cain/SOUL.md): Biblical, first murderer, mark, farmer
+- [Eve](https://clawsouls.vercel.app/presets/eve/SOUL.md): Biblical, first woman, serpent, apple, garden
+- [Hades](https://clawsouls.vercel.app/presets/hades/SOUL.md): Greek god underworld, dark beard, bident, cerberus
+- [Hermes](https://clawsouls.vercel.app/presets/hermes/SOUL.md): Greek messenger god, winged sandals, caduceus
+- [Jesus](https://clawsouls.vercel.app/presets/jesus/SOUL.md): Central figure Christianity, long hair, beard, crown thorns
+- [Judas](https://clawsouls.vercel.app/presets/judas/SOUL.md): Biblical, betrayer, silver coins, red hair
+- [Kali](https://clawsouls.vercel.app/presets/kali/SOUL.md): Hindu goddess, multiple arms, blue skin, necklace skulls
+- [Krishna](https://clawsouls.vercel.app/presets/krishna/SOUL.md): Hindu deity, blue skin, flute, peacock feather, cowherd
+- [Loki](https://clawsouls.vercel.app/presets/loki/SOUL.md): Norse trickster god, mischievous, horned helmet
+- [Mary](https://clawsouls.vercel.app/presets/mary/SOUL.md): Mother of Jesus, blue cloak, humble, pure
+- [Medusa](https://clawsouls.vercel.app/presets/medusa-human/SOUL.md): Gorgon, snake hair, stone gaze, female
+- [Methuselah](https://clawsouls.vercel.app/presets/methuselah/SOUL.md): Biblical, oldest human, long beard, staff
+- [Moses](https://clawsouls.vercel.app/presets/moses/SOUL.md): Biblical prophet, tablets, beard, staff, parted sea
+- [Noah](https://clawsouls.vercel.app/presets/noah/SOUL.md): Biblical, ark builder, gray beard, animals
+- [Odin](https://clawsouls.vercel.app/presets/odin/SOUL.md): Norse all-father, one eye, ravens, spear Gungnir
+- [Poseidon](https://clawsouls.vercel.app/presets/poseidon/SOUL.md): Greek sea god, trident, beard, ocean, storms
+- [Ra](https://clawsouls.vercel.app/presets/ra/SOUL.md): Egyptian sun god, hawk head, sun disk, pharaoh
+- [Set](https://clawsouls.vercel.app/presets/set/SOUL.md): Egyptian god chaos, strange animal head, red
+- [Shiva](https://clawsouls.vercel.app/presets/shiva/SOUL.md): Hindu destroyer god, third eye, trident, blue throat
+- [Thor](https://clawsouls.vercel.app/presets/thor-norse/SOUL.md): Norse god thunder, red beard, Mjolnir, strength
+- [Zeus](https://clawsouls.vercel.app/presets/zeus/SOUL.md): Greek king of gods, thunderbolt, beard, eagle
+
+### Mythology
+
+- [Amaterasu](https://clawsouls.vercel.app/presets/amaterasu/SOUL.md): Japanese sun goddess, radiant, mirror, imperial
+- [Anansi](https://clawsouls.vercel.app/presets/anansi/SOUL.md): West African trickster, spider, wise, storyteller
+- [Exu](https://clawsouls.vercel.app/presets/exu/SOUL.md): Yoruba messenger orixa, crossroads, red and black, staff
+- [Iemanjá](https://clawsouls.vercel.app/presets/iemanja/SOUL.md): Yoruba sea goddess, blue, waves, mermaid, mother
+- [Iansã](https://clawsouls.vercel.app/presets/iansa/SOUL.md): Yoruba winds and storms orixa, lightning, warrior
+- [Nanã](https://clawsouls.vercel.app/presets/nana/SOUL.md): Yoruba goddess mud and ancestors, purple, elderly, staff
+- [Obaluaê](https://clawsouls.vercel.app/presets/obaluae/SOUL.md): Yoruba healing orixa, straw hat, cloak, disease
+- [Ogum](https://clawsouls.vercel.app/presets/ogum/SOUL.md): Yoruba war orixa, iron, machete, warrior
+- [Olodumare](https://clawsouls.vercel.app/presets/olodumare/SOUL.md): Yoruba supreme creator, divine light, all-knowing
+- [Omulu](https://clawsouls.vercel.app/presets/omulu/SOUL.md): Yoruba earth healing orixa, straw, beads
+- [Oxalá](https://clawsouls.vercel.app/presets/oxala/SOUL.md): Yoruba father of orixas, white, peace, staff
+- [Oxóssi](https://clawsouls.vercel.app/presets/oxossi/SOUL.md): Yoruba hunt orixa, bow and arrow, green, forest
+- [Oxum](https://clawsouls.vercel.app/presets/oxum/SOUL.md): Yoruba love and rivers orixa, gold, mirror, yellow
+- [Xangô](https://clawsouls.vercel.app/presets/xango/SOUL.md): Yoruba thunder orixa, double axe, red and white
+
+### Video Game
+
+- [Aerith Gainsborough](https://clawsouls.vercel.app/presets/aerith-gainsborough/SOUL.md): From Final Fantasy VII, flower girl, pink dress, brown hair
+- [Doom Slayer](https://clawsouls.vercel.app/presets/doom-slayer/SOUL.md): From DOOM, praetor suit, super shotgun, demon slayer
+- [Gordon Freeman](https://clawsouls.vercel.app/presets/gordon-freeman/SOUL.md): From Half-Life, theoretical physicist, HEV suit, crowbar
+- [Kratos](https://clawsouls.vercel.app/presets/kratos/SOUL.md): From God of War, Spartan, red tattoo, Leviathan axe
+- [Lara Croft](https://clawsouls.vercel.app/presets/lara-croft/SOUL.md): From Tomb Raider, dual pistols, braid, tank top, shorts
+- [Link](https://clawsouls.vercel.app/presets/link/SOUL.md): From Legend of Zelda, Hylian, green tunic, Master Sword
+- [Mario](https://clawsouls.vercel.app/presets/mario/SOUL.md): From Super Mario, plumber, red cap, mustache
+- [Master Chief](https://clawsouls.vercel.app/presets/master-chief/SOUL.md): From Halo, Spartan, green MJOLNIR armor, helmet
+- [Sonic](https://clawsouls.vercel.app/presets/sonic/SOUL.md): From Sonic the Hedgehog, blue, red shoes, speed
+- [Steve](https://clawsouls.vercel.app/presets/steve/SOUL.md): From Minecraft, blocky, blue shirt, pickaxe
 
 ## Optional
 
