@@ -1,45 +1,80 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
 import { generateShareId } from "@/lib/compress";
 
-// In-memory store for shares (replace with DB in production)
-// For now, use the existing Supabase/SQLite if available
-const shareStore = new Map<string, { soul: Record<string, unknown>; createdAt: number }>();
-
-// Clean up shares older than 7 days
-setInterval(() => {
-  const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  for (const [key, value] of shareStore) {
-    if (value.createdAt < cutoff) shareStore.delete(key);
-  }
-}, 60 * 60 * 1000);
-
-export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    if (!body.soul || typeof body.soul !== "object") {
-      return NextResponse.json({ error: "Missing 'soul' object" }, { status: 400 });
-    }
-
-    const id = generateShareId();
-    shareStore.set(id, { soul: body.soul, createdAt: Date.now() });
-
-    return NextResponse.json({ id, url: `/share/${id}` }, { status: 201 });
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
-  }
-}
-
+/**
+ * GET /api/share?id=xxx — fetch a shared soul by its short ID
+ */
 export async function GET(request: NextRequest) {
-  const url = new URL(request.url);
-  const id = url.searchParams.get("id");
+  const id = request.nextUrl.searchParams.get("id");
+
   if (!id) {
-    return NextResponse.json({ error: "Missing 'id' param" }, { status: 400 });
+    return NextResponse.json({ error: "Missing 'id' query param" }, { status: 400 });
   }
 
-  const entry = shareStore.get(id);
-  if (!entry) {
+  if (!isSupabaseConfigured()) {
+    return NextResponse.json(
+      { error: "Share storage not configured (Supabase env vars missing)" },
+      { status: 503 }
+    );
+  }
+
+  const supabase = getSupabase();
+  if (!supabase) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 500 });
+  }
+
+  const { data, error } = await supabase
+    .from("shared_souls")
+    .select("soul")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
     return NextResponse.json({ error: "Share not found" }, { status: 404 });
   }
 
-  return NextResponse.json({ soul: entry.soul });
+  return NextResponse.json({ soul: data.soul });
+}
+
+/**
+ * POST /api/share — store a soul and return a short ID
+ * Body: { soul: Record<string, any> }
+ */
+export async function POST(request: NextRequest) {
+  if (!isSupabaseConfigured()) {
+    return NextResponse.json(
+      { error: "Share storage not configured (Supabase env vars missing)" },
+      { status: 503 }
+    );
+  }
+
+  const supabase = getSupabase();
+  if (!supabase) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 500 });
+  }
+
+  let body: { soul?: Record<string, unknown> };
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
+
+  if (!body.soul || typeof body.soul !== "object") {
+    return NextResponse.json({ error: "Missing 'soul' field in body" }, { status: 400 });
+  }
+
+  const id = generateShareId();
+
+  const { error, status } = await supabase
+    .from("shared_souls")
+    .insert({ id, soul: body.soul, created_at: new Date().toISOString() });
+
+  if (error) {
+    console.error("Supabase insert error:", error);
+    return NextResponse.json({ error: "Failed to save share" }, { status: 500 });
+  }
+
+  return NextResponse.json({ id, url: `/share/${id}` }, { status: 201 });
 }
