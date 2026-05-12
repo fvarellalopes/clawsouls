@@ -1,0 +1,32 @@
+<svg width="512" height="768" viewBox="0 0 512 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="768" fill="#131315"/>
+  <!-- Cyberpunk grid background -->
+  <g opacity="0.15">
+    <line x1="0" y1="192" x2="512" y2="192" stroke="#FACC15" stroke-width="0.5"/>
+    <line x1="0" y1="384" x2="512" y2="384" stroke="#FACC15" stroke-width="0.5"/>
+    <line x1="0" y1="576" x2="512" y2="576" stroke="#FACC15" stroke-width="0.5"/>
+    <line x1="128" y1="0" x2="128" y2="768" stroke="#FACC15" stroke-width="0.5"/>
+    <line x1="256" y1="0" x2="256" y2="768" stroke="#FACC15" stroke-width="0.5"/>
+    <line x1="384" y1="0" x2="384" y2="768" stroke="#FACC15" stroke-width="0.5"/>
+  </g>
+  <!-- Circular placeholder -->
+  <circle cx="256" cy="280" r="100" fill="#1A1A1D" stroke="#FACC15" stroke-width="2" stroke-dasharray="8 4"/>
+  <!-- Question mark -->
+  <text x="256" y="305" font-family="monospace" font-size="80" fill="#FACC15" text-anchor="middle" opacity="0.6">?</text>
+  <!-- Claw icon -->
+  <g transform="translate(256, 480)" opacity="0.8">
+    <path d="M0 -30 C-20 -30 -40 -15 -40 0 C-40 15 -20 30 0 30 C20 30 40 15 40 0 C40 -15 20 -30 0 -30Z" fill="none" stroke="#FACC15" stroke-width="2"/>
+    <path d="M0 -20 L-15 0 L0 20 L15 0 Z" fill="#FACC15" opacity="0.3"/>
+  </g>
+  <!-- Text -->
+  <text x="256" y="540" font-family="monospace" font-size="14" fill="#A1A1AA" text-anchor="middle" opacity="0.5">NO AVATAR</text>
+  <!-- Glow -->
+  <circle cx="256" cy="280" r="120" fill="url(#glow)"/>
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

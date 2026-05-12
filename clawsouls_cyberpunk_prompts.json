@@ -661,7 +661,7 @@
     "name": "Hisoka",
     "creature": "Anime Character",
     "category": "anime",
-    "prompt": "a Hisoka from Hunter x Hunter anime, face paint, playing cards, predatory grin, male magician, jester-like, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "prompt": "portrait of Hisoka from Hunter x Hunter anime, man with wild spiky magenta-pink hair slicked up, pale skin, golden yellow predatory eyes, teal blue teardrop neon electrical circuit below right eye, five-pointed pink star neon electric circuit below left eye, creepy playful grin showing teeth, lean muscular neck and shoulders, jester ruffled collar, holding playing cards, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
     "tags": [
       "anime",
       "iconic"
@@ -5862,6 +5862,19 @@
     "tags": [
       "creature",
       "lobisomen"
+    ]
+  },
+  {
+    "id": "frieren",
+    "name": "Frieren",
+    "creature": "Elven Mage",
+    "category": "anime",
+    "prompt": "a Frieren, elven mage, long white hair, calm expression, magical aura, spells, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
+    "tags": [
+      "anime",
+      "mage",
+      "elf",
+      "frieren"
     ]
   }
 ]
