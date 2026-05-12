@@ -1,0 +1,85 @@
+# ClawSouls
+
+> ClawSouls is a Next.js web application for creating, editing, sharing, and comparing AI soul characters (presets) with cyberpunk-themed generated avatars. Users define a character's personality traits, boundaries, core truths, and communication style, then export or share the resulting preset.
+
+Built with Next.js 15 (App Router, Turbopack), TypeScript, Tailwind CSS, next-intl (i18n), Supabase (auth + database), Zustand (state), and shadcn/ui components. Avatars are generated via a Z-Image-Turbo pipeline on Colab GPU and served from `/public/avatars/`.
+
+## Pages
+
+- [Home](https://clawsouls.vercel.app/): Landing page with hero section, featured presets, and navigation. Supports 7 locales: en, pt, es, ja, fr, de, zh.
+- [Editor](https://clawsouls.vercel.app/editor): Create or edit a soul character preset. Configure name, creature type, vibe, emoji, avatar, core truths, boundaries, and communication style (verbosity, formality, humor, continuity, emoji usage, consciousness). Supports fill-with-AI dialog for AI-assisted generation.
+- [Presets](https://clawsouls.vercel.app/presets): Browse a grid of all available soul presets with filters and search.
+- [My Presets](https://clawsouls.vercel.app/my-presets): View and manage presets created by the authenticated user.
+- [Quiz](https://clawsouls.vercel.app/quiz): Interactive quiz to help users discover their matching soul preset.
+- [Compare](https://clawsouls.vercel.app/compare): Side-by-side comparison of two soul presets.
+- [Achievements](https://clawsouls.vercel.app/achievements): Gamified achievement tracking system.
+
+## API Endpoints
+
+- `GET /api/presets` — List all presets (JSON array). Supports `?search=` query parameter for text search.
+- `GET /api/filtered-presets` — Filtered preset list with advanced query parameters.
+- `POST /api/share` — Generate a share link for a preset. Returns `{ id: string, url: string }`.
+- `GET /share/[id]` — Public shared preset page with OpenGraph image generation.
+
+## Key Libraries and Modules
+
+- `lib/avatar.ts` — Resolves avatar file paths from soul names. Avatars are stored as `public/avatars/{slug}.png`.
+- `lib/soulGenerator.ts` — Generates markdown descriptions of soul characters from their state object.
+- `lib/soulParser.ts` — Parses soul markdown into structured state.
+- `lib/themes.ts` — Color theme system with 12 themes (Paper, Clean, Cyberpunk, Ocean, Forest, Sunset, Monochrome, Sakura, Bloodborne, Matrix, Arctic, Royal). Each theme defines CSS custom properties for colors.
+- `lib/db.ts` — Database access layer.
+- `lib/supabase.ts` — Supabase client configuration.
+- `lib/compatibility.ts` — Compatibility checking between soul presets.
+- `lib/quiz.ts` — Quiz matching logic.
+- `lib/compress.ts` — String compression utilities.
+- `lib/usePresets.ts` — React hook for preset data fetching and state.
+- `lib/auth.ts` — Authentication utilities.
+- `lib/rateLimit.ts` — Rate limiting for API routes.
+- `lib/exportYAML.ts` — Export preset data as YAML.
+- `lib/vibeGenerator.ts` — AI-powered vibe generation.
+
+## Components
+
+- `Header` — Top navigation header with theme selector.
+- `MobileNav` — Bottom navigation bar (mobile only) with links to Home, Editor, Presets, My Presets, Quiz, Compare, Achievements.
+- `Footer` — Site footer.
+- `ThemeSelector` — Theme picker dropdown.
+- `AchievementToast` — Achievement unlock notification.
+- `KeyboardHelp` — Keyboard shortcut help dialog.
+- `ErrorBoundary` — React error boundary wrapper.
+- `JsonLd` — Structured data (JSON-LD) injection.
+
+## Preset Data Structure
+
+A soul preset contains:
+- `name` (string): Character name
+- `creature` (string): Type/category (e.g., "Anime Character", "Mythological / Legendary")
+- `vibe` (string): Short vibe/description text
+- `emoji` (string): Emoji representation
+- `avatar` (string): Avatar image path
+- `coreTruths` (string[]): Character's core beliefs/truths
+- `boundaries` (string[]): Character's boundaries/limitations
+- `vibeStyle` (string): Communication style description
+- `continuity` (number): Memory/continuity level (1-10)
+- `humor` (number): Humor level (1-10)
+- `formality` (number): Formality level (1-10)
+- `emojiUsage` (number): Emoji usage frequency (1-10)
+- `verbosity` (number): Verbosity level (1-10)
+- `consciousness` (number): Self-awareness level (1-10)
+- `customCoreTruths` (string[]): User-defined core truths
+- `customBoundaries` (string[]): User-defined boundaries
+
+## Avatar Generation Pipeline
+
+Avatars are generated externally using a Z-Image-Turbo pipeline on Google Colab. The batch script (`gen_batch.py`) reads prompts from `clawsouls_cyberpunk_prompts.json` and generates one avatar at a time via a FastAPI server tunneled through cloudflared. Generated images (640x512 PNG) are saved to `public/avatars/`, committed, and pushed to the repository.
+
+Prompt format: "portrait of {name} from {source}, {characteristic descriptions}, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece"
+
+## Optional
+
+- [Z-Image-Turbo model](https://huggingface.co/T5B/Z-Image-Turbo-FP8): FP8 quantized diffusion model used for avatar generation. ZImagePipeline, CFG=0, 8 inference steps, 1024x1024 → crop to 640x512.
+- [Supabase project](https://supabase.com): Database and authentication backend.
+- [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/): Tunnel service used to expose the Colab generation API.
+- [next-intl](https://next-intl.dev/): Internationalization library for Next.js App Router.
+- [shadcn/ui](https://ui.shadcn.com/): UI component library used for dialogs, selects, and other primitives.
+- [Zustand](https://github.com/pmndrs/zustand): State management for the soul editor store.
