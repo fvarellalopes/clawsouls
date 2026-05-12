@@ -1,28 +1,29 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://clawsouls.hub";
-const locales = ["en", "pt", "es", "ja", "zh", "de", "fr"];
-const routes = ["", "/editor", "/presets", "/my-presets"];
+const locales = ["en", "pt", "es", "ja", "fr", "de", "zh"];
+const baseUrl = "https://clawsouls.hub";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const staticRoutes = [
+    "",
+    "/editor",
+    "/presets",
+    "/quiz",
+    "/compare",
+    "/achievements",
+    "/my-presets",
+    "/share",
+  ];
+
   const entries: MetadataRoute.Sitemap = [];
 
-  // Add root redirect
-  entries.push({
-    url: BASE_URL,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 1,
-  });
-
-  // Add locale-specific routes
   for (const locale of locales) {
-    for (const route of routes) {
+    for (const route of staticRoutes) {
       entries.push({
-        url: `${BASE_URL}/${locale}${route}`,
+        url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
-        changeFrequency: route === "" ? "weekly" : "monthly",
-        priority: route === "" ? 0.9 : route === "/editor" ? 0.8 : 0.6,
+        changeFrequency: route === "" || route === "/presets" ? "weekly" : "monthly",
+        priority: route === "" ? 1.0 : 0.8,
       });
     }
   }
