@@ -10,6 +10,8 @@
     "format": "prettier --write .",
     "clawsouls": "node cli/index.js",
     "test": "jest",
+    "scan-avatars": "node scripts/scan-avatars.mjs",
+    "prebuild": "npm run scan-avatars",
     "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
