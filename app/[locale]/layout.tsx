@@ -47,6 +47,7 @@ export async function generateMetadata({
   const messages = await getMessages();
   const typedMessages = messages as Record<string, any>;
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://clawsouls.vercel.app'),
     title: typedMessages?.home?.heroTitle || "ClawSouls — Create Your OpenClaw Soul",
     description: typedMessages?.home?.heroSubtitle || "Visual SOUL.md editor for OpenClaw agents",
   };

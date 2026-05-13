@@ -15,6 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://clawsouls.vercel.app'),
   title: "ClawSouls — Unleash the Soul of AI",
   description:
     "The ultimate visual editor for OpenClaw SOUL.md personalities. Architect, refine, and deploy complex AI identities with unprecedented precision.",
