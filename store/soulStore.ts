@@ -94,7 +94,7 @@ export interface SoulPreset {
   vibeStyle: string;
   description: string;
   tags: string[];
-  source: "character" | "custom";
+  source: "character" | "custom" | "original";
   humor?: number;
   formality?: number;
   emojiUsage?: number;

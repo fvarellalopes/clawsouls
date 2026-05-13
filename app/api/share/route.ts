@@ -30,11 +30,13 @@ export async function GET(request: NextRequest) {
     .eq("id", id)
     .single();
 
-  if (error || !data) {
+  const record = data as { soul: Record<string, unknown> } | null;
+
+  if (error || !record) {
     return NextResponse.json({ error: "Share not found" }, { status: 404 });
   }
 
-  return NextResponse.json({ soul: data.soul });
+  return NextResponse.json({ soul: record.soul });
 }
 
 /**
@@ -69,7 +71,7 @@ export async function POST(request: NextRequest) {
 
   const { error, status } = await supabase
     .from("shared_souls")
-    .insert({ id, soul: body.soul, created_at: new Date().toISOString() });
+    .insert({ id, soul: body.soul, created_at: new Date().toISOString() } as never);
 
   if (error) {
     console.error("Supabase insert error:", error);
