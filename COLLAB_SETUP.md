@@ -1,131 +1,66 @@
 # COLLAB Setup — ClawSouls Avatar Generator
 
-Este guia descreve como configurar e executar o gerador de avatares em lote no Google Colab.
+Este guia descreve como configurar e executar o gerador de avatares em lote no Google Colab usando Z-Image-Turbo.
 
-## Pré-requisitos
+## Stack
 
-- Conta Google com acesso ao Google Colab
-- GPU T4 ou superior (alterar em: Runtime > Change runtime type > T4 GPU)
+- **Modelo:** Z-Image-Turbo (bfloat16, CFG=0, 8 steps)
+- **API:** FastAPI standalone (`server.py`) com cloudflared tunnel
+- **Auth:** Multi-canal (Authorization header, query param `?token=`, header `X-Token`)
+- **Porta:** 8081
 
-## Passo a passo
+## Setup no Colab
 
-### 1. Abrir o Colab
+### 1. Runtime
 
-Abra https://colab.research.google.com/ e crie um novo notebook.
+Configurar Runtime > Change runtime type > **T4 GPU** (ou superior).
 
-### 2. Montar Google Drive (opcional, para acessar o repositório)
+### 2. Notebook
 
-Na primeira célula do notebook:
+Usar o notebook `Z_Image_Turbo_4bit_jupyter.ipynb` que contém:
 
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-```
+1. Instalação das deps (torch, diffusers, etc.)
+2. Download do modelo Z-Image-Turbo (FP8 ou FP32)
+3. Criação do `server.py` com FastAPI + cloudflared
+4. Healthcheck e exibição da URL do tunnel
 
-### 3. Instalar dependências
+### 3. Tunnel
 
-Crie uma célula e execute:
+O cloudflared é baixado via wget do GitHub Releases (não pip). O tunnel expõe a porta 8081.
 
-```python
-!pip install -q diffusers transformers accelerate torch torchvision \
-    pillow safetensors omegaconf sentencepiece protobuf
-```
-
-Isso instala as bibliotecas necessárias do PyTorch e Diffusers.
-
-### 4. Fazer upload do script
-
-Faça upload do arquivo `collab_batch_gen.py` para o ambiente Colab:
-
-**Opção A — Upload direto:**
-```python
-from google.colab import files
-uploaded = files.upload()  # Selecione collab_batch_gen.py
-```
-
-**Opção B — Clonar o repositório:**
-```python
-!git clone https://github.com/disconexo/clawsouls.git /content/clawsouls
-%cd /content/clawsouls
-```
-
-### 5. Configurar variáveis de ambiente (opcional)
-
-Se quiser carregar presets do arquivo TypeScript em vez dos hardcoded:
-
-```python
-import os
-os.environ["PRESETS_SOURCE"] = "file"
-os.environ["PRESETS_FILE"] = "/content/clawsouls/data/presets.ts"
-# OU se montou o Drive:
-# os.environ["PRESETS_FILE"] = "/content/drive/MyDrive/clawsouls/data/presets.ts"
-```
-
-### 6. Executar a geração
-
-```python
-%cd /content/clawsouls  # ou onde estiver o script
-!python collab_batch_gen.py
-```
-
-O script vai:
-- Carregar o modelo SDXL na GPU
-- Gerar um avatar para cada preset (skip se já existir)
-- Salvar em `/content/avatars/`
-- Criar um `_manifest.json` com metadados
-- Criar `/content/avatars.tar.gz` para download fácil
-
-### 7. Baixar os avatares
-
-```python
-from google.colab import files
-files.download('/content/avatars.tar.gz')
-```
-
-### 8. Copiar para o repositório
-
-Descompacte `avatars.tar.gz` e copie o conteúdo para `public/avatars/` no repositório Clawsouls:
+## Uso da API
 
 ```bash
-tar -xzf avatars.tar.gz -C /caminho/para/clawsouls/public/avatars/
+# Healthcheck
+curl https://<tunnel-url>/health
+
+# Gerar avatar
+curl -X POST https://<tunnel-url>/generate \
+  -H "Authorization: Bearer cs-secret-2026" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "fantasy portrait, cyberpunk, ..."}'
 ```
 
-### 9. Commitar
+### Parâmetros de geração
+
+- **Modelo:** Z-Image-Turbo-SDNQ-uint4-svd-r32
+- **Steps:** 8
+- **CFG:** 0 (zero)
+- **Resolução:** 1024×1024 → crop 512×768
+- **Formato:** PNG
+
+## Pipeline de Geração em Lote
 
 ```bash
-cd /caminho/para/clawsouls
-git add public/avatars/
-git commit -m "feat: add batch-generated SDXL avatars"
-git push
+# Gerar uma imagem por vez com delay de 4 min entre requests
+# Commit e push individuais em public/avatars/
 ```
 
-## Personalização
+## Troubleshooting
 
-### Gerar apenas personagens específicos
-
-Editar `get_hardcoded_presets()` no script e comentar os que não quer gerar.
-
-### Mudar resolução
-
-Ajustar `DEFAULT_WIDTH` e `DEFAULT_HEIGHT` no script. Para SDXL: 512×768 (portrait) ou 768×512 (landscape).
-
-### Mudar modelo
-
-Alterar `MODEL_ID` no script. Exemplos:
-- `"stabilityai/stable-diffusion-xl-base-1.0"` (padrão)
-- `"stabilityai/stable-diffusion-xl-refiner-1.0"` (refinamento)
-
-## Solução de problemas
-
-| Erro | Solução |
-|------|---------|
-| `CUDA out of memory` | Reduzir `DEFAULT_WIDTH` para 384 ou usar `DEFAULT_STEPS = 15` |
-| `No GPU available` | Verificar: Runtime > Change runtime type > T4 GPU |
-| Modelo demora muito | É normal no primeiro carregamento (~5 min com T4) |
-| Prompt em inglês | Os prompts são em inglês para melhor compatibilidade com SDXL |
-
-## Notas
-
-- A lista `KNOWN_AVATARS` em `lib/avatar.ts` deve ser atualizada após cada batch para refletir quais avatares existem.
-- O `_manifest.json` gerado contém prompts e seeds para regeneração.
-- Para gerar novos personagens, adicione entradas em `get_hardcoded_presets()`.
+| Problema | Solução |
+|---|---|
+| Tunnel cai | Restartar runtime + re-rodar célula do cloudflared |
+| 500 Internal Error | Restartar runtime pra carregar server.py atualizado |
+| Porta 8080 ocupada | Usar porta 8081 |
+| GPU OOM | Tentar FP8 ou reduzir resolução |

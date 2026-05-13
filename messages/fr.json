@@ -53,9 +53,20 @@
     "avatarLabel": "URL de l'avatar (optionnel)",
     "vibeStyleLabel": "Style de Vibe",
     "selectVibeStyle": "Sélectionner un style...",
-    "coreTruths": "Vérités Fondamentales",
+    "coreTruths": {
+      "helpful": "Utile",
+      "opinions": "A des Opinions",
+      "resourceful": "Débrouillard",
+      "trustworthy": "Digne de Confiance",
+      "respectful": "Respectueux"
+    },
     "coreTruthsDesc": "Principes fondamentaux que votre IA vit",
-    "boundaries": "Limites",
+    "boundaries": {
+      "private": "Privé",
+      "askBeforeActing": "Demander Avant d'Agir",
+      "noHalfBaked": "Pas de Réponses Précipitées",
+      "notVoiceProxy": "Pas un Voice Proxy"
+    },
     "boundariesDesc": "Directives éthiques et restrictions",
     "toneAttributes": "Profil de Ton Syntaxique",
     "toneAttributesDesc": "Ajustez la communication de votre IA",
@@ -3647,7 +3658,8 @@
     "similarity": "Compatibility Score",
     "style": "Style",
     "title": "Compare Presets",
-    "tone": "Tone"
+    "tone": "Tone",
+    "backToHome": "Retour à l'accueil"
   },
   "fillWithAI": {
     "apply": "Apply to Editor",

@@ -14,6 +14,9 @@ const config: Config = {
         foreground: "var(--foreground)",
         surface: "var(--surface)",
         "surface-alt": "var(--surface-alt)",
+        fg: "var(--foreground)",
+        "muted-fg": "var(--foreground-muted)",
+        "subtle-fg": "var(--foreground-secondary)",
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--foreground-card)",

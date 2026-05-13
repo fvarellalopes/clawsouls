@@ -170,6 +170,8 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
       const custom = e as CustomEvent;
       if (custom.detail) {
         setSoul(custom.detail);
+        setSelectedPresetId(custom.detail.id);
+        setPhase("editor");
       }
     };
 
@@ -179,7 +181,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("load-soul-preset", handleLoadPreset);
     };
-  }, [undo, redo, setSoul]);
+  }, [undo, redo, setSoul, setSelectedPresetId, setPhase]);
 
   // Close export dropdown on outside click
   useEffect(() => {

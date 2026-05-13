@@ -5,7 +5,7 @@
 ## 📦 Installation
 
 ```bash
-cd /root/clawsouls
+cd clawsouls
 npm install
 ```
 

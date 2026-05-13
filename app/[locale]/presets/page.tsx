@@ -8,6 +8,13 @@ import { useState, useMemo } from "react";
 import { SoulPreset } from "@/store/soulStore";
 import { useRouter } from "next/navigation";
 import { PresetsGridSkeleton } from "@/components/skeletons";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
@@ -45,10 +52,7 @@ export default function PresetsPage() {
   }, [presets, search, selectedTag]);
 
   const handleSelect = (preset: SoulPreset) => {
-    window.dispatchEvent(
-      new CustomEvent("load-soul-preset", { detail: preset })
-    );
-    router.push("/editor");
+    router.push(`/editor?preset=${preset.id}`);
   };
 
   return (
@@ -91,24 +95,25 @@ export default function PresetsPage() {
 
             {/* Filter dropdown */}
             <div className="relative flex-grow md:flex-grow-0">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xl">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xl pointer-events-none z-10">
                 filter_list
               </span>
-              <select
+              <Select
                 value={selectedTag || ""}
-                onChange={(e) =>
-                  setSelectedTag(e.target.value || null)
-                }
-                className="glass-panel bg-white/5 backdrop-blur border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 focus:outline-none appearance-none w-full md:w-48 cursor-pointer transition-colors"
-                aria-label="Filter by tag"
+                onValueChange={(value) => setSelectedTag(value || null)}
               >
-                <option value="">{t("allArchetypes")}</option>
-                {allTags.map((tag) => (
-                  <option key={tag} value={tag}>
-                    {tag.toUpperCase()}
-                  </option>
-                ))}
-              </select>
+                <SelectTrigger className="bg-white/5 backdrop-blur border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 w-full md:w-48 h-10 transition-colors">
+                  <SelectValue placeholder={t("allArchetypes")} />
+                </SelectTrigger>
+                <SelectContent className="bg-[#131315] border border-white/10 text-white">
+                  <SelectItem value="">{t("allArchetypes")}</SelectItem>
+                  {allTags.map((tag) => (
+                    <SelectItem key={tag} value={tag}>
+                      {tag.toUpperCase()}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </section>

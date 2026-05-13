@@ -53,9 +53,20 @@
     "avatarLabel": "Avatar-URL (optional)",
     "vibeStyleLabel": "Vibe-Stil",
     "selectVibeStyle": "Stil auswählen...",
-    "coreTruths": "Kernwahrheiten",
+    "coreTruths": {
+      "helpful": "Hilfreich",
+      "opinions": "Hat Meinungen",
+      "resourceful": "Einfallsreich",
+      "trustworthy": "Vertrauenswürdig",
+      "respectful": "Respektvoll"
+    },
     "coreTruthsDesc": "Grundprinzipien, nach denen deine KI lebt",
-    "boundaries": "Grenzen",
+    "boundaries": {
+      "private": "Privat",
+      "askBeforeActing": "Vor Handeln Fragen",
+      "noHalfBaked": "Keine Halbgarren Antworten",
+      "notVoiceProxy": "Kein Voice Proxy"
+    },
     "boundariesDesc": "Ethische Richtlinien und Einschränkungen",
     "toneAttributes": "Syntaktisches Tonprofil",
     "toneAttributesDesc": "Feinabstimmung der Kommunikation deiner KI",
@@ -3647,7 +3658,8 @@
     "similarity": "Compatibility Score",
     "style": "Style",
     "title": "Compare Presets",
-    "tone": "Tone"
+    "tone": "Tone",
+    "backToHome": "Zurück zur Startseite"
   },
   "fillWithAI": {
     "apply": "Apply to Editor",

@@ -53,9 +53,20 @@
     "avatarLabel": "头像链接（可选）",
     "vibeStyleLabel": "氛围风格",
     "selectVibeStyle": "选择风格...",
-    "coreTruths": "核心真理",
+    "coreTruths": {
+      "helpful": "乐于助人",
+      "opinions": "有主见",
+      "resourceful": "足智多谋",
+      "trustworthy": "值得信赖",
+      "respectful": "尊重他人"
+    },
     "coreTruthsDesc": "AI 遵循的基本原则",
-    "boundaries": "边界",
+    "boundaries": {
+      "private": "私密",
+      "askBeforeActing": "行动前询问",
+      "noHalfBaked": "不提供不完整回答",
+      "notVoiceProxy": "不是语音代理"
+    },
     "boundariesDesc": "限制与伦理准则",
     "toneAttributes": "句法语气配置",
     "toneAttributesDesc": "微调 AI 的沟通方式",
@@ -3646,7 +3657,8 @@
     "similarity": "Compatibility Score",
     "style": "Style",
     "title": "Compare Presets",
-    "tone": "Tone"
+    "tone": "Tone",
+    "backToHome": "返回首页"
   },
   "fillWithAI": {
     "apply": "Apply to Editor",

@@ -1,114 +1,99 @@
-# ClawSouls — Visual SOUL.md Editor for OpenClaw
+# ClawSouls — Visual SOUL.md Editor
 
 > Create, customize, and share AI personalities with a modern, interactive editor.
 
-## 🌟 Features
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Version](https://img.shields.io/badge/version-0.5.0-blue) ![Presets](https://img.shields.io/badge/presets-522-gold)
 
-- **Visual Editor**: Intuitive sliders, switches, and inputs to tweak every aspect of your AI's personality
-- **Big Five Personality Model**: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism
-- **Tone Attributes**: Humor, Formality, Emoji Usage, Verbosity, Consciousness, Questioning
-- **Famous Presets**: Start from 30+ iconic characters (Shadow, Jack, Doc, Zen, Yoda, Sherlock, Rick Sanchez, and more)
-- **Shareable Links**: Generate OpenGraph-enabled URLs for social sharing
-- **Export SOUL.md**: Download ready-to-use Markdown files with personality + tone
-- **Export JSON**: Full state export including Big Five and tone attributes
-- **International**: Full support for English, Portuguese, Spanish, Japanese, Chinese, German, and French
-- **Modern UI**: Dark/light mode, smooth animations, accessible components
-- **PWA**: Installable on mobile, offline caching
-- **Undo/Redo**: Full history with Ctrl+Z / Ctrl+Y support
-- **Auto-Save**: Persistent state with visual save indicator
+---
+
+## ✨ Features
+
+### 🎭 Editor Visual
+- **522 presets** de personagens icônicos (anime, filmes, games, literatura)
+- Sliders interativos para **Big Five**, tom, registro, emojis
+- **Signature Phrases** — padrões de fala customizáveis
+- **Fill with AI** — descreva em bullets, gere a vibe automaticamente
+- **AB Test Mode** — compare duas configurações lado a lado
+- **Export** — YAML, SOUL.md, JSON
+
+### 🎨 Design System "Stitch"
+- Paleta dark com acento gold (#facc15)
+- Glass panels com backdrop-blur
+- Theme toggle (light/dark mode)
+- Tipografia: Space Grotesk (display) + Inter (body)
+- Ícones: Material Symbols
+
+### 🌍 i18n — 7 Idiomas
+| Idioma | Presets |
+|---|---|
+| 🇺🇸 English | 522 |
+| 🇧🇷 Português | 522 |
+| 🇪🇸 Español | 522 |
+| 🇫🇷 Français | 522 |
+| 🇩🇪 Deutsch | 522 |
+| 🇯🇵 日本語 | 522 |
+| 🇨🇳 中文 | 522 |
+
+### 🖼️ Avatar Pipeline
+Geração de avatares via **Z-Image-Turbo** no Google Colab:
+- 1024×1024 → crop 512×768
+- CFG=0, 8 steps
+- FastAPI + cloudflared tunnel
+- 24+ avatares gerados
+
+---
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
+git clone git@github.com:fvarellalopes/clawsouls.git
+cd clawsouls
 npm install
-
-# Run development server
 npm run dev
-# Open http://localhost:3000
-
-# Build for production
-npm run build
-npm start
 ```
 
-## 📁 Project Structure
-
-```
-/clawsouls
-├── app/
-│   ├── [locale]/           # Internationalized routes
-│   │   ├── page.tsx        # Home page
-│   │   ├── editor/page.tsx # Editor
-│   │   ├── presets/page.tsx # Presets catalog
-│   │   ├── my-presets/page.tsx # Saved presets
-│   │   └── layout.tsx      # Locale layout
-│   ├── share/page.tsx      # Share/export page with OG tags
-│   ├── api/                # API routes
-│   ├── robots.ts           # SEO: robots.txt
-│   ├── sitemap.ts          # SEO: sitemap.xml
-│   └── globals.css         # Global styles
-├── components/
-│   ├── ui/                 # Shadcn-style UI components
-│   ├── layout/             # Header, Footer
-│   ├── soul-editor.tsx     # Main editor component
-│   ├── parchment-preview.tsx # Live preview with tone bars
-│   ├── preset-card.tsx     # Preset card component
-│   └── animated.tsx        # Animation primitives
-├── store/
-│   ├── soulStore.ts        # Zustand state management
-│   ├── historyStore.ts     # Undo/redo history
-│   ├── autoSaveStore.ts    # Auto-save indicator
-│   └── myPresetsStore.ts   # User's saved presets
-├── data/
-│   └── presets.ts          # 30+ preset personalities
-├── lib/
-│   ├── soulGenerator.ts    # SOUL.md generation (with tone)
-│   ├── usePresets.ts       # Preset fetching hook
-│   └── utils.ts            # cn() helper
-├── messages/               # i18n translations (en, pt, es, ja, zh, de, fr)
-└── middleware.ts            # Next-intl middleware
-```
-
-## 🎨 Design System
-
-Based on **shadcn/ui** patterns with:
-- Tailwind CSS v3
-- Radix UI primitives
-- Custom design tokens in `tailwind.config.ts`
-- Dark mode by default (cyberpunk aesthetic)
-
-## 🛠️ Stack
-
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Components**: Radix UI + custom shadcn-style
-- **State**: Zustand (persisted)
-- **i18n**: next-intl (en, pt, es, ja, zh, de, fr)
-- **Deploy**: Vercel
-
-## 🚢 Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ClawdAI2-brazil/clawsouls)
-
-Or manually:
-
-1. Push this repo to GitHub
-2. Import project in Vercel
-3. Set environment: `NEXT_PUBLIC_SITE_URL=https://clawsouls.hub`
-4. Deploy!
-
-## 📄 License
-
-MIT — feel free to use, modify, and distribute.
-
-## 🤝 Contributing
-
-This is a solo project for now. PRs are welcome if you find bugs or want to add presets.
+Acesse em [http://localhost:3000](http://localhost:3000)
 
 ---
 
-Made with 👁️👄👁️ by the ClawSouls team (that's just me right now!)
+## 🏗️ Tech Stack
 
-Questions? Open an issue or reach out on [OpenClaw Discord](https://discord.com/invite/clawd).
+| Camada | Tecnologia |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Linguagem | TypeScript |
+| Estilo | Tailwind CSS |
+| Estado | Zustand |
+| Ícones | Material Symbols |
+| Fontes | Space Grotesk + Inter |
+| Deploy | Vercel |
+| Storage | Supabase |
+| Auth | GitHub OAuth (em breve) |
+| Avatares | Z-Image-Turbo + Colab |
+
+---
+
+## 📁 Estrutura
+
+```
+clawsouls/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Landing
+│   ├── presets/            # Global directory
+│   └── soul-editor.tsx     # Editor principal
+├── components/
+│   ├── layout/             # Header, Footer
+│   └── ui/                 # GlassPanel, CyberSlider, etc.
+├── presets/                # Dados dos personagens (7 idiomas)
+├── public/
+│   └── avatars/            # Avatares gerados
+├── scripts/                # Utilitários (tradução, etc.)
+└── docs/
+    └── archive/            # Documentos históricos
+```
+
+---
+
+## 📄 Licença
+
+Projeto pessoal — © 2026 Fernando Lopes (disconexo)

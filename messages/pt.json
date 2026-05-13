@@ -53,9 +53,20 @@
     "avatarLabel": "URL do Avatar (opcional)",
     "vibeStyleLabel": "Estilo de Vibe",
     "selectVibeStyle": "Selecione o estilo...",
-    "coreTruths": "Verdades Fundamentais",
+    "coreTruths": {
+      "helpful": "Útil",
+      "opinions": "Tem Opiniões",
+      "resourceful": "Engenhoso",
+      "trustworthy": "Confiável",
+      "respectful": "Respeitoso"
+    },
     "coreTruthsDesc": "Princípios que sua AI vive",
-    "boundaries": "Limites",
+    "boundaries": {
+      "private": "Privacidade",
+      "askBeforeActing": "Perguntar Antes de Agir",
+      "noHalfBaked": "Sem Respostas Incompletas",
+      "notVoiceProxy": "Não é um Voice Proxy"
+    },
     "boundariesDesc": "Guidelines éticos e de comportamento",
     "toneAttributes": "Perfil de Tom Sintático",
     "toneAttributesDesc": "Ajuste como sua AI se comunica",
@@ -3640,7 +3651,8 @@
     "differences": "Diferenças",
     "tone": "Tom",
     "personality": "Personalidade",
-    "style": "Estilo"
+    "style": "Estilo",
+    "backToHome": "Voltar ao Início"
   },
   "fillWithAI": {
     "title": "Preencher com IA",

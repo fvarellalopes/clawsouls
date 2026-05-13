@@ -53,9 +53,20 @@
     "avatarLabel": "アバターURL (オプション)",
     "vibeStyleLabel": "バイブスタイル",
     "selectVibeStyle": "スタイルを選択...",
-    "coreTruths": "コアの真理",
+    "coreTruths": {
+      "helpful": "役立つ",
+      "opinions": "意見を持つ",
+      "resourceful": "機知に富む",
+      "trustworthy": "信頼できる",
+      "respectful": "敬意を持つ"
+    },
     "coreTruthsDesc": "AIが生きる基本原則",
-    "boundaries": "境界線",
+    "boundaries": {
+      "private": "プライベート",
+      "askBeforeActing": "行動前に確認する",
+      "noHalfBaked": "中途半端な回答をしない",
+      "notVoiceProxy": "Voice Proxyではない"
+    },
     "boundariesDesc": "倫理的ガイドラインと行動制限",
     "toneAttributes": "構文トーンプロファイル",
     "toneAttributesDesc": "AIのコミュニケーション方法を調整",
@@ -3646,7 +3657,8 @@
     "similarity": "Compatibility Score",
     "style": "Style",
     "title": "Compare Presets",
-    "tone": "Tone"
+    "tone": "Tone",
+    "backToHome": "ホームに戻る"
   },
   "fillWithAI": {
     "apply": "Apply to Editor",

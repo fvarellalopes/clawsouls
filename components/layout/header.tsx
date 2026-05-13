@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useThemeStore } from "@/store/themeStore";
 
 interface HeaderProps {
   locale?: string;
@@ -13,22 +13,11 @@ export function Header({ locale }: HeaderProps) {
   const t = useTranslations("common");
   const params = useParams();
   const activeLocale = locale || (params?.locale as string) || "en";
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const dark = stored ? stored === "dark" : true;
-    setIsDark(dark);
-    document.documentElement.classList.toggle("dark", dark);
-    document.documentElement.classList.toggle("light", !dark);
-  }, []);
+  const { themeId, setTheme } = useThemeStore();
+  const isDark = themeId !== "paper";
 
   const toggleTheme = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    document.documentElement.classList.toggle("light", !next);
-    localStorage.setItem("theme", next ? "dark" : "light");
+    setTheme(isDark ? "paper" : "cyberpunk");
   };
 
   const navLinks = [

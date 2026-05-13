@@ -53,9 +53,20 @@
     "avatarLabel": "Avatar URL (optional)",
     "vibeStyleLabel": "Vibe Style",
     "selectVibeStyle": "Select vibe style...",
-    "coreTruths": "Core Truths",
+    "coreTruths": {
+      "helpful": "Helpful",
+      "opinions": "Has Opinions",
+      "resourceful": "Resourceful",
+      "trustworthy": "Trustworthy",
+      "respectful": "Respectful"
+    },
     "coreTruthsDesc": "Fundamental principles your AI lives by",
-    "boundaries": "Boundaries",
+    "boundaries": {
+      "private": "Private",
+      "askBeforeActing": "Ask Before Acting",
+      "noHalfBaked": "No Half-Baked Answers",
+      "notVoiceProxy": "Not a Voice Proxy"
+    },
     "boundariesDesc": "Limits and ethical guidelines",
     "toneAttributes": "Syntactic Tone Profile",
     "toneAttributesDesc": "Fine-tune how your AI communicates",
@@ -3640,7 +3651,8 @@
     "differences": "Differences",
     "tone": "Tone",
     "personality": "Personality",
-    "style": "Style"
+    "style": "Style",
+    "backToHome": "Back to Home"
   },
   "fillWithAI": {
     "title": "Fill with AI",
