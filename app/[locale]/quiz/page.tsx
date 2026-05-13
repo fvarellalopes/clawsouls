@@ -64,8 +64,7 @@ export default function QuizPage() {
   };
 
   const handleLoadPreset = (preset: SoulPreset) => {
-    window.dispatchEvent(new CustomEvent("load-soul-preset", { detail: preset }));
-    router.push("/editor");
+    router.push(`/editor?preset=${preset.id}`);
   };
 
   if (phase === "intro") {

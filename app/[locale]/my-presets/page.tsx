@@ -22,9 +22,9 @@ export default function MyPresetsPage() {
   const fmtLocale = locales[locale] || enUS;
 
   const handleLoad = (soul: any) => {
-    // Dispatch custom event to update editor state
-    window.dispatchEvent(new CustomEvent("load-soul-preset", { detail: soul }));
-    router.push("/editor");
+    // Pass preset id via query param to editor
+    const presetId = soul.id || soul.name?.toLowerCase().replace(/\s+/g, '-');
+    router.push(`/editor?preset=${presetId}`);
   };
 
   return (
