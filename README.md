@@ -2,14 +2,14 @@
 
 > Create, customize, and share AI personalities with a modern, interactive editor.
 
-![Status](https://img.shields.io/badge/status-active-brightgreen) ![Version](https://img.shields.io/badge/version-0.5.0-blue) ![Presets](https://img.shields.io/badge/presets-522-gold)
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Version](https://img.shields.io/badge/version-0.5.0-blue) ![Presets](https://img.shields.io/badge/presets-516-gold) ![Avatars](https://img.shields.io/badge/avatars-526-purple)
 
 ---
 
 ## ✨ Features
 
 ### 🎭 Editor Visual
-- **522 presets** de personagens icônicos (anime, filmes, games, literatura)
+- **516 presets** de personagens icônicos (anime, filmes, games, literatura, mitologia)
 - Sliders interativos para **Big Five**, tom, registro, emojis
 - **Signature Phrases** — padrões de fala customizáveis
 - **Fill with AI** — descreva em bullets, gere a vibe automaticamente
@@ -26,20 +26,20 @@
 ### 🌍 i18n — 7 Idiomas
 | Idioma | Presets |
 |---|---|
-| 🇺🇸 English | 522 |
-| 🇧🇷 Português | 522 |
-| 🇪🇸 Español | 522 |
-| 🇫🇷 Français | 522 |
-| 🇩🇪 Deutsch | 522 |
-| 🇯🇵 日本語 | 522 |
-| 🇨🇳 中文 | 522 |
+| 🇺🇸 English | 516 |
+| 🇧🇷 Português | 516 |
+| 🇪🇸 Español | 516 |
+| 🇫🇷 Français | 516 |
+| 🇩🇪 Deutsch | 516 |
+| 🇯🇵 日本語 | 516 |
+| 🇨🇳 中文 | 516 |
 
 ### 🖼️ Avatar Pipeline
 Geração de avatares via **Z-Image-Turbo** no Google Colab:
 - 1024×1024 → crop 512×768
 - CFG=0, 8 steps
 - FastAPI + cloudflared tunnel
-- 24+ avatares gerados
+- **526 avatares** gerados
 
 ---
 
@@ -67,8 +67,8 @@ Acesse em [http://localhost:3000](http://localhost:3000)
 | Ícones | Material Symbols |
 | Fontes | Space Grotesk + Inter |
 | Deploy | Vercel |
-| Storage | Supabase |
-| Auth | GitHub OAuth (em breve) |
+| Storage | Supabase + SQLite |
+| Dados | data/presets.ts (516 presets) |
 | Avatares | Z-Image-Turbo + Colab |
 
 ---
@@ -77,19 +77,60 @@ Acesse em [http://localhost:3000](http://localhost:3000)
 
 ```
 clawsouls/
-├── app/                    # Next.js App Router pages
-│   ├── page.tsx            # Landing
-│   ├── presets/            # Global directory
-│   └── soul-editor.tsx     # Editor principal
+├── app/                    # Next.js App Router
+│   ├── page.tsx            # Landing page
+│   ├── [locale]/           # Rotas i18n
+│   │   ├── editor/         # Editor visual
+│   │   ├── presets/        # Galeria de presets
+│   │   ├── quiz/           # Quiz de personalidade
+│   │   ├── compare/        # Comparação lado a lado
+│   │   ├── my-presets/     # Presets salvos
+│   │   ├── preset/[slug]/  # Detalhe do preset + SOUL.md
+│   │   └── achievements/   # Conquistas
+│   ├── api/                # API routes (presets, share, filtered-presets)
+│   └── share/              # Página de compartilhamento
 ├── components/
 │   ├── layout/             # Header, Footer
-│   └── ui/                 # GlassPanel, CyberSlider, etc.
-├── presets/                # Dados dos personagens (7 idiomas)
+│   ├── ui/                 # GlassPanel, CyberSlider, Select, etc.
+│   ├── soul-editor.tsx     # Editor principal
+│   ├── preset-card.tsx     # Card de preset
+│   ├── preset-detail.tsx   # Detalhe do preset
+│   ├── fill-with-ai-dialog.tsx
+│   ├── ab-test-mode.tsx
+│   └── ...                 # +15 componentes
+├── data/
+│   ├── presets.ts          # Dados dos 516 presets
+│   ├── database.sqlite     # SQLite cache
+│   └── migrations/         # Esquemas SQL
+├── lib/                    # Lógica de negócio
+│   ├── soulGenerator.ts    # Geração de SOUL.md
+│   ├── supabase.ts         # Cliente Supabase
+│   ├── usePresets.ts       # Hook de presets
+│   └── ...                 # quiz, themes, export, etc.
+├── store/                  # Zustand stores
+│   ├── soulStore.ts
+│   ├── themeStore.ts
+│   ├── achievementsStore.ts
+│   └── ...
+├── messages/               # Traduções i18n JSON (7 idiomas)
 ├── public/
-│   └── avatars/            # Avatares gerados
-├── scripts/                # Utilitários (tradução, etc.)
-└── docs/
-    └── archive/            # Documentos históricos
+│   └── avatars/            # 526 avatares gerados
+├── scripts/
+│   ├── scan-avatars.mjs    # Scan de avatares
+│   ├── translate_presets.mjs
+│   ├── setup_supabase_schema.py
+│   └── archive/             # Scripts históricos
+├── docs/                   # Documentação
+│   ├── CHANGELOG.md         # Histórico de versões
+│   ├── QUICKSTART.md        # Guia rápido
+│   ├── DEPLOY.md            # Instruções de deploy
+│   ├── COLLAB_SETUP.md      # Setup do Colab para avatares
+│   ├── PLAN.md              # Roadmap
+│   ├── brainstorm.md        # Backlog de ideias
+│   └── archive/             # Documentos históricos
+├── cli/                    # CLI clawsouls
+├── sql/                    # Queries SQL
+└── supabase/               # Config Supabase
 ```
 
 ---

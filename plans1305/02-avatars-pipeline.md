@@ -2,7 +2,7 @@
 
 > **For agentic workers:** Continuar a geração em lote dos avatares ClawSouls via pipeline Z-Image-Turbo no Google Colab.
 
-**Goal:** Gerar os ~265 avatares restantes (total 522, ~257 já gerados) usando Z-Image-Turbo FP8 no Colab.
+**Goal:** Gerar avatares ClawSouls via Z-Image-Turbo FP8 no Colab. **Total gerado: 526 avatares.**
 
 **Arquitetura:**
 - Colab notebook com FastAPI + cloudflared tunnel

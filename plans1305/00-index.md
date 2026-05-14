@@ -2,10 +2,10 @@
 
 ## Análise do App — Resumo Executivo
 
-**Versão atual:** 0.1.0
-**Presets:** 522 personagens
+**Versão atual:** 0.5.1
+**Presets:** 516 personagens
 **Idiomas:** 7 (en, pt, es, fr, de, ja, zh)
-**Avatares gerados:** ~257 de 522
+**Avatares gerados:** 526
 
 ---
 
@@ -15,7 +15,7 @@
 | # | Problema | Plano |
 |---|---|---|
 | 1 | My Presets + Quiz usam `CustomEvent` quebrado | `01-fix-custom-event-navigation.md` |
-| 2 | Avatares não aparecem nos cards (só ~257/522) | `02-avatars-pipeline.md` |
+| 2 | Avatares pipeline (526 gerados, pipeline concluída) | `02-avatars-pipeline.md` |
 | 3 | `metadataBase` não configurado (SEO quebrado) | `03-seo-metadata.md` |
 
 ### 🟡 Melhoria
