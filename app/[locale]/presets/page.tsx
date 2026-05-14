@@ -99,14 +99,14 @@ export default function PresetsPage() {
                 filter_list
               </span>
               <Select
-                value={selectedTag || ""}
-                onValueChange={(value) => setSelectedTag(value || null)}
+                value={selectedTag || "all"}
+                onValueChange={(value) => setSelectedTag(value === "all" ? null : value)}
               >
                 <SelectTrigger className="bg-white/5 backdrop-blur border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 w-full md:w-48 h-10 transition-colors">
                   <SelectValue placeholder={t("allArchetypes")} />
                 </SelectTrigger>
                 <SelectContent className="bg-[#131315] border border-white/10 text-white">
-                  <SelectItem value="">{t("allArchetypes")}</SelectItem>
+                  <SelectItem value="all">{t("allArchetypes")}</SelectItem>
                   {allTags.map((tag) => (
                     <SelectItem key={tag} value={tag}>
                       {tag.toUpperCase()}
