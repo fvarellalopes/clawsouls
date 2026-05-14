@@ -125,7 +125,9 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
     if (!initialPresetSlug) return;
     const target = presets.find((p) => p.id === initialPresetSlug);
     if (target) {
-      loadPreset(target);
+      // Delay via setTimeout to ensure zustand persist hydration completes first
+      const id = setTimeout(() => loadPreset(target), 0);
+      return () => clearTimeout(id);
     }
   }, [initialPresetSlug, presets]);
 
@@ -331,58 +333,59 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
 
   // ─── CYBER TERMINAL EDITOR ───────────────────────────────────────────
   return (
-    <div className="min-h-screen" style={{ background: "#09090b" }}>
+    <div className="min-h-screen overflow-x-hidden" style={{ background: "#09090b" }}>
       {/* ─── TOP ACTIONS BAR ─── */}
-      <div className="px-6 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.3)" }}>
-        <div className="container mx-auto max-w-[1400px] flex items-center justify-between gap-4">
+      <div className="px-3 sm:px-6 py-3 sm:py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.3)" }}>
+        <div className="container mx-auto max-w-[1400px] flex items-center justify-between gap-2 sm:gap-4">
           {/* Left: Title + Status */}
-          <div className="flex items-center gap-3">
-            <div className="w-1 h-8" style={{ background: "#facc15" }} />
-            <div>
-              <h1 className="text-lg font-bold font-display text-yellow-400" style={{ letterSpacing: "0.06em" }}>
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink">
+            <div className="w-0.5 sm:w-1 h-6 sm:h-8 flex-shrink-0" style={{ background: "#facc15" }} />
+            <div className="min-w-0">
+              <h1 className="text-sm sm:text-lg font-bold font-display text-yellow-400 truncate" style={{ letterSpacing: "0.06em" }}>
                 Terminal Session_01
               </h1>
-              <p className="mono-data" style={{ color: "rgba(255,255,255,0.35)", fontSize: "10px" }}>
+              <p className="mono-data hidden sm:block" style={{ color: "rgba(255,255,255,0.35)", fontSize: "10px" }}>
                 STATUS: CONFIGURING // TARGET: SOUL.MD
               </p>
             </div>
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <Link
               href={`/${activeLocale}/presets`}
-              className="px-3 py-1.5 bg-transparent border border-gold/50 text-gold rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 transition-all flex items-center gap-1.5"
-              style={{ padding: "6px 12px" }}
+              className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/50 text-gold rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 transition-all flex items-center gap-1.5 flex-shrink-0"
+              title={t("presets")}
             >
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_back</span>
               <span className="hidden sm:inline">{t("presets")}</span>
             </Link>
-            <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={undo} disabled={!canUndo()} className="px-3 py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed" title={t("undoTitle")}>
+            <div className="w-px h-4 sm:h-6 flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <button onClick={undo} disabled={!canUndo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0" title={t("undoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
               <span className="hidden sm:inline">{t("undo")}</span>
             </button>
-            <button onClick={redo} disabled={!canRedo()} className="px-3 py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed" title={t("redoTitle")}>
+            <button onClick={redo} disabled={!canRedo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0" title={t("redoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
               <span className="hidden sm:inline">{t("redo")}</span>
             </button>
-            <div className="w-px h-6" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={handleShare} className="px-3 py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5">
+            <div className="w-px h-4 sm:h-6 flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <button onClick={handleShare} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 flex-shrink-0" title={t("share")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
               <span className="hidden sm:inline">{t("share")}</span>
             </button>
-            <div className="relative">
+            <div className="relative flex-shrink-0">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   setExportDropdownOpen(!exportDropdownOpen);
                 }}
-                className="px-4 py-2 bg-gold text-obsidian rounded font-mono text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 glow-gold"
+                className="px-2 sm:px-4 py-2 bg-gold text-obsidian rounded font-mono text-[10px] sm:text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2 glow-gold"
+                title={t("exportSoulMd")}
               >
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>download</span>
                 <span className="hidden sm:inline">{t("exportSoulMd")}</span>
-                <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>expand_more</span>
+                <span className="material-symbols-outlined hidden sm:inline" style={{ fontSize: "14px" }}>expand_more</span>
               </button>
               {exportDropdownOpen && (
                 <div
@@ -425,13 +428,13 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
       </div>
 
       {/* ─── MAIN CONTENT: 7/5 SPLIT ─── */}
-      <div className="px-6 py-6">
+      <div className="px-3 sm:px-6 py-4 sm:py-6">
         <div className="container mx-auto max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
             {/* ─── LEFT COLUMN (7 cols) — Editor ─── */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
               {/* Tabs */}
-              <div className="flex gap-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+              <div className="flex gap-0 overflow-x-auto no-scrollbar" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                 {[
                   { id: "essentials", label: t("tabsEssentials") || "BASIC INFO" },
                   { id: "personality", label: t("tabsPersonality") || "PERSONALITY" },
@@ -440,7 +443,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`uppercase font-display ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-white/50 hover:text-gold/80"} px-4 py-2 transition-all duration-200`}
+                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-white/50 hover:text-gold/80"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}

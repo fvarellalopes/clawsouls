@@ -254,7 +254,10 @@
     "tabsStyle": "Style",
     "technicalJargon": "Technical Jargon",
     "savePreset": "保存预设",
-    "presetName": "预设名称"
+    "presetName": "预设名称",
+    "undo": "撤销",
+    "redo": "重做",
+    "avatarPlaceholder": "头像链接或占位符"
   },
   "presetsPage": {
     "title": "预设人格",

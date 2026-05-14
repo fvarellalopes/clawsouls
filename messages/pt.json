@@ -254,7 +254,10 @@
       "advanced": "Avançado"
     },
     "savePreset": "Salvar Preset",
-    "presetName": "Nome do Preset"
+    "presetName": "Nome do Preset",
+    "undo": "Desfazer",
+    "redo": "Refazer",
+    "avatarPlaceholder": "URL do Avatar ou placeholder"
   },
   "presetsPage": {
     "title": "Personalidades Pré-definidas",

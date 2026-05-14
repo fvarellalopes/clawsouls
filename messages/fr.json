@@ -254,7 +254,10 @@
     "tabsStyle": "Style",
     "technicalJargon": "Technical Jargon",
     "savePreset": "Enregistrer le Preset",
-    "presetName": "Nom du Preset"
+    "presetName": "Nom du Preset",
+    "undo": "Annuler",
+    "redo": "Rétablir",
+    "avatarPlaceholder": "URL de l'avatar ou placeholder"
   },
   "presetsPage": {
     "title": "Personnalités Prédéfinies",

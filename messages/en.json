@@ -254,7 +254,10 @@
     "copyPreview": "Copy SOUL.md",
     "dismissQuickStart": "Dismiss",
     "savePreset": "Save Preset",
-    "presetName": "Preset Name"
+    "presetName": "Preset Name",
+    "undo": "Undo",
+    "redo": "Redo",
+    "avatarPlaceholder": "Avatar URL or placeholder"
   },
   "presetsPage": {
     "title": "Preset Personalities",

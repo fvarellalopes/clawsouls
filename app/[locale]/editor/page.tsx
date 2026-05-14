@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { use } from "react";
 import { SoulEditor } from "@/components/soul-editor";
 
 interface EditorPageProps {
@@ -10,15 +9,9 @@ interface EditorPageProps {
 }
 
 export default function EditorPage({ params, searchParams }: EditorPageProps) {
-  const [locale, setLocale] = useState("en");
-  const [presetSlug, setPresetSlug] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    params.then((p) => setLocale(p.locale));
-    searchParams.then((sp) => {
-      if (sp.preset) setPresetSlug(sp.preset);
-    });
-  }, [params, searchParams]);
+  const { locale } = use(params);
+  const sp = use(searchParams);
+  const presetSlug = sp?.preset;
 
   return (
     <div className="min-h-screen relative" style={{ background: "#09090b" }}>

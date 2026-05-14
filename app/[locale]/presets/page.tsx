@@ -6,7 +6,7 @@ import { PresetCard } from "@/components/preset-card";
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import { SoulPreset } from "@/store/soulStore";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { PresetsGridSkeleton } from "@/components/skeletons";
 import {
   Select,
@@ -26,6 +26,8 @@ export default function PresetsPage() {
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const router = useRouter();
+  const params = useParams();
+  const locale = (params?.locale as string) || "en";
 
   const allTags = useMemo(() => {
     const tags = new Set<string>();
@@ -52,7 +54,7 @@ export default function PresetsPage() {
   }, [presets, search, selectedTag]);
 
   const handleSelect = (preset: SoulPreset) => {
-    router.push(`/editor?preset=${preset.id}`);
+    router.push(`/${locale}/editor?preset=${preset.id}`);
   };
 
   return (

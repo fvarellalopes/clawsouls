@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
@@ -12,24 +11,6 @@ import { AchievementToast } from "@/components/achievement-toast";
 import { KeyboardHelp } from "@/components/keyboard-help";
 import { JsonLd } from "@/components/json-ld";
 import { ThemeInitializer } from "@/components/theme-initializer";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
-});
 
 const locales = ["en", "pt", "es", "ja", "fr", "de", "zh"] as const;
 
@@ -70,35 +51,20 @@ export default async function LocaleLayout({
   const typedMessages = messages as Record<string, any>;
 
   return (
-    <html lang={locale}>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-        />
-      </head>
+    <NextIntlClientProvider locale={locale} messages={typedMessages}>
       <JsonLd />
-      <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
-      >
-        <a href="#main-content" className="skip-to-content">
-          Skip to content
-        </a>
-        <NextIntlClientProvider locale={locale} messages={typedMessages}>
-          <ThemeInitializer />
-          <div className="min-h-screen flex flex-col relative">
-            <Header locale={locale} />
-            <main id="main-content" className="flex-1 pt-16 pb-24 md:pb-0 relative z-10">
-              <ErrorBoundary>{children}</ErrorBoundary>
-            </main>
-            <Footer />
-            <MobileNav />
-            <AchievementToast />
-            <KeyboardHelp />
-            <Analytics />
-          </div>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+      <ThemeInitializer />
+      <div className="min-h-screen flex flex-col relative">
+        <Header locale={locale} />
+        <main id="main-content" className="flex-1 pt-16 pb-24 md:pb-0 relative z-10">
+          <ErrorBoundary>{children}</ErrorBoundary>
+        </main>
+        <Footer />
+        <MobileNav />
+        <AchievementToast />
+        <KeyboardHelp />
+        <Analytics />
+      </div>
+    </NextIntlClientProvider>
   );
 }
