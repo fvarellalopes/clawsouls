@@ -16,7 +16,7 @@ export function MobileNav() {
 
   const links = [
     { href: "/", label: t("home"), icon: Home },
-    { href: "/editor", label: t("editor"), icon: Edit3 },
+    { href: "/editor", label: tCommon("create"), icon: Edit3 },
     { href: "/presets", label: t("presets"), icon: LayoutGrid },
     { href: "/my-presets", label: t("myPresets"), icon: Bookmark },
     { href: "/quiz", label: tCommon("quiz"), icon: Sparkles },

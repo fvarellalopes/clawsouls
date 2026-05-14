@@ -21,7 +21,7 @@ export function Header({ locale }: HeaderProps) {
   };
 
   const navLinks = [
-    { href: `/${activeLocale}/editor`, key: "editor" },
+    { href: `/${activeLocale}/editor`, key: "create" },
     { href: `/${activeLocale}/presets`, key: "presets" },
     { href: `/${activeLocale}/quiz`, key: "quiz" },
     { href: `/${activeLocale}/compare`, key: "compare" },
