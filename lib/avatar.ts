@@ -9,19 +9,26 @@ export interface SoulAvatarFields {
 }
 
 /**
+ * Normaliza um nome para slug de arquivo:
+ * - remove acentos (á → a, ç → c, etc.)
+ * - lowercase
+ * - remove tudo que não for a-z, 0-9, underscore
+ */
+function makeSlug(name: string): string {
+  return name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")  // strip combining marks (accents)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9_]+/g, "");
+}
+
+/**
  * Resolve a static avatar URL based on the soul's name.
- * Avatars são gerados em batch via Colab (Z-Image-Turbo), convertidos para WebP e armazenados em /public/avatars/.
- * Nome do arquivo: {nome_em_lowercase_sem_espacos}.webp
  */
 export function resolveAvatarUrl(soul: SoulAvatarFields): string {
   if (!soul?.name?.trim()) return FALLBACK_AVATAR;
-
-  const slug = soul.name
-    .toLowerCase()
-    .trim()
-    .replace(/[^\wáàâãéèêíïóôõöúçñ]+/g, "");
-
-  return `/avatars/${slug}.png`;
+  return `/avatars/${makeSlug(soul.name)}.webp`;
 }
 
 /**
@@ -29,13 +36,7 @@ export function resolveAvatarUrl(soul: SoulAvatarFields): string {
  */
 export function hasAvatar(soul: SoulAvatarFields): boolean {
   if (!soul?.name?.trim()) return false;
-
-  const slug = soul.name
-    .toLowerCase()
-    .trim()
-    .replace(/[^\wáàâãéèêíïóôõöúçñ]+/g, "");
-
-  return KNOWN_AVATARS.has(slug);
+  return KNOWN_AVATARS.has(makeSlug(soul.name));
 }
 
 /**
@@ -43,15 +44,9 @@ export function hasAvatar(soul: SoulAvatarFields): boolean {
  */
 export function avatarUrl(soul: SoulAvatarFields): string {
   if (!soul?.name?.trim()) return FALLBACK_AVATAR;
-
-  const slug = soul.name
-    .toLowerCase()
-    .trim()
-    .replace(/[^\wáàâãéèêíïóôõöúçñ]+/g, "");
-
+  const slug = makeSlug(soul.name);
   if (KNOWN_AVATARS.has(slug)) {
     return `/avatars/${slug}.webp`;
   }
-
   return FALLBACK_AVATAR;
 }
