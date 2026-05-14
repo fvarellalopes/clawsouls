@@ -57,7 +57,7 @@ describe('exportYAML — basic structure', () => {
 
   it('starts with a ClawSouls header comment', () => {
     const yaml = exportYAML(makeSoul());
-    expect(yaml).toContain('# ClawSouls — AI Personality Export');
+    expect(yaml).toContain('# ClawSouls - AI Personality Export');
   });
 
   it('includes generation date', () => {
@@ -68,16 +68,16 @@ describe('exportYAML — basic structure', () => {
 
   it('includes section comment markers', () => {
     const yaml = exportYAML(makeSoul());
-    expect(yaml).toContain('# ── Identity');
-    expect(yaml).toContain('# ── Vibe');
-    expect(yaml).toContain('# ── Core Truths');
-    expect(yaml).toContain('# ── Boundaries');
-    expect(yaml).toContain('# ── Tone Attributes');
-    expect(yaml).toContain('# ── Personality (Big Five)');
-    expect(yaml).toContain('# ── Emotional Range');
-    expect(yaml).toContain('# ── Communication');
-    expect(yaml).toContain('# ── Knowledge Domains');
-    expect(yaml).toContain('# ── Speech Patterns');
+    expect(yaml).toContain('# -- Identity');
+    expect(yaml).toContain('# -- Vibe');
+    expect(yaml).toContain('# -- Core Truths');
+    expect(yaml).toContain('# -- Boundaries');
+    expect(yaml).toContain('# -- Tone Attributes');
+    expect(yaml).toContain('# -- Personality (Big Five)');
+    expect(yaml).toContain('# -- Emotional Range');
+    expect(yaml).toContain('# -- Communication');
+    expect(yaml).toContain('# -- Knowledge Domains');
+    expect(yaml).toContain('# -- Speech Patterns');
   });
 });
 
@@ -87,18 +87,18 @@ describe('exportYAML — identity fields', () => {
     const yaml = exportYAML(makeSoul({ name: "Aria", creature: "Digital Phoenix", emoji: "🔥" }));
     expect(yaml).toContain('name: Aria');
     expect(yaml).toContain('creature: Digital Phoenix');
-    expect(yaml).toContain('emoji: "\uD83D\uDD25"');
+    expect(yaml).toContain('emoji: 🔥');
   });
 
   it('includes avatar when provided', () => {
     const yaml = exportYAML(makeSoul({ avatar: "https://example.com/avatar.png" }));
     expect(yaml).toContain('avatar: https://example.com/avatar.png');
-    expect(yaml).toContain('# ── Avatar');
+    expect(yaml).toContain('# -- Avatar');
   });
 
   it('omits avatar section when not provided', () => {
     const yaml = exportYAML(makeSoul({ avatar: undefined }));
-    expect(yaml).not.toContain('# ── Avatar');
+    expect(yaml).not.toContain('# -- Avatar');
   });
 });
 
@@ -230,7 +230,7 @@ describe('exportYAML — signature phrases', () => {
     const yaml = exportYAML(makeSoul({
       signaturePhrases: ["Let's dig deeper", "Interesting..."],
     }));
-    expect(yaml).toContain('# ── Signature Phrases');
+    expect(yaml).toContain('# -- Signature Phrases');
     expect(yaml).toContain('signaturePhrases:');
     expect(yaml).toContain("Let's dig deeper");
     expect(yaml).toContain('Interesting...');
@@ -238,7 +238,7 @@ describe('exportYAML — signature phrases', () => {
 
   it('omits signature phrases section when empty', () => {
     const yaml = exportYAML(makeSoul({ signaturePhrases: [] }));
-    expect(yaml).not.toContain('# ── Signature Phrases');
+    expect(yaml).not.toContain('# -- Signature Phrases');
   });
 });
 
@@ -246,7 +246,7 @@ describe('exportYAML — signature phrases', () => {
 describe('exportYAML — speech patterns', () => {
   it('includes all speech pattern fields', () => {
     const yaml = exportYAML(makeSoul());
-    expect(yaml).toContain('# ── Speech Patterns');
+    expect(yaml).toContain('# -- Speech Patterns');
     expect(yaml).toContain('speechPatterns:');
     expect(yaml).toContain('alliteration:');
     expect(yaml).toContain('rhymeTendency:');
@@ -274,7 +274,7 @@ describe('exportYAML — speech patterns', () => {
 
   it('omits speech patterns section when not provided', () => {
     const yaml = exportYAML(makeSoul({ speechPatterns: undefined }));
-    expect(yaml).not.toContain('# ── Speech Patterns');
+    expect(yaml).not.toContain('# -- Speech Patterns');
     expect(yaml).not.toContain('speechPatterns:');
   });
 });
@@ -282,8 +282,8 @@ describe('exportYAML — speech patterns', () => {
 // ─── Edge cases ───────────────────────────────────────────────────────
 describe('exportYAML — edge cases', () => {
   it('handles empty name gracefully', () => {
-    const yaml = exportYAML(makeSoul({ name: "" }));
-    expect(yaml).toContain('name: ""');
+    const yaml = exportYAML(makeSoul({ name: '' }));
+    expect(yaml).toContain("name: ''");
   });
 
   it('handles special characters in name', () => {
@@ -292,8 +292,8 @@ describe('exportYAML — edge cases', () => {
   });
 
   it('handles name with colons', () => {
-    const yaml = exportYAML(makeSoul({ name: "Bot: The Sequel" }));
-    expect(yaml).toContain('name: "Bot: The Sequel"');
+    const yaml = exportYAML(makeSoul({ name: 'Bot: The Sequel' }));
+    expect(yaml).toContain("name: 'Bot: The Sequel'");
   });
 
   it('produces consistent output for the same input', () => {

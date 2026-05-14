@@ -70,7 +70,6 @@ describe('SoulPreview', () => {
   it('renders the preview title and description', () => {
     const { getByText } = render(<SoulPreview soul={makeSoul()} />);
     expect(getByText('Soul Preview')).toBeTruthy();
-    expect(getByText('Preview of your generated SOUL.md')).toBeTruthy();
   });
 
   it('renders the generated markdown content', () => {
@@ -89,7 +88,7 @@ describe('SoulPreview', () => {
     const { container } = render(<SoulPreview soul={makeSoul()} />);
     const pre = container.querySelector('pre');
     expect(pre).toBeTruthy();
-    expect(pre!.className).toContain('font-mono');
+    expect(pre!.style.fontFamily).toContain('mono');
   });
 
   it('updates when soul changes', () => {

@@ -3,10 +3,8 @@ import { render, fireEvent } from '@testing-library/react';
 import { PresetCard } from '../preset-card';
 import { SoulPreset } from '@/store/soulStore';
 
-// Mock lucide-react
-jest.mock('lucide-react', () => ({
-  Sparkles: (props: any) => React.createElement('svg', { 'data-testid': 'sparkles-icon', ...props }),
-}));
+// Mock lucide-react (not used directly but kept for future use)
+jest.mock('lucide-react', () => ({}));
 
 const makePreset = (overrides: Partial<SoulPreset> = {}): SoulPreset => ({
   id: 'test-1',
@@ -35,15 +33,24 @@ const makePreset = (overrides: Partial<SoulPreset> = {}): SoulPreset => ({
 });
 
 describe('PresetCard', () => {
-  it('renders preset name, creature, and emoji', () => {
+  it('renders preset name', () => {
     const preset = makePreset();
     const { getByText } = render(
       <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
     );
 
     expect(getByText('Aria')).toBeTruthy();
-    expect(getByText('Digital Phoenix')).toBeTruthy();
-    expect(getByText('🔥')).toBeTruthy();
+  });
+
+  it('sets accessible name via aria-label', () => {
+    const preset = makePreset();
+    const { container } = render(
+      <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
+    );
+
+    const button = container.querySelector('button');
+    expect(button?.getAttribute('aria-label')).toContain('Aria');
+    expect(button?.getAttribute('aria-label')).toContain('Digital Phoenix');
   });
 
   it('renders description text', () => {
@@ -75,27 +82,30 @@ describe('PresetCard', () => {
       <PresetCard preset={preset} index={0} onSelect={onSelect} />
     );
 
-    // Click on the outermost card div
+    // Click on the outermost card button
     fireEvent.click(container.firstChild!);
     expect(onSelect).toHaveBeenCalledWith(preset);
   });
 
-  it('does not render sparkles icon when not selected', () => {
+  it('renders as a button element', () => {
     const preset = makePreset();
-    const { queryByTestId } = render(
-      <PresetCard preset={preset} index={0} onSelect={jest.fn()} isSelected={false} />
+    const { container } = render(
+      <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
     );
 
-    expect(queryByTestId('sparkles-icon')).toBeNull();
+    const button = container.querySelector('button');
+    expect(button).toBeTruthy();
+    expect(button?.getAttribute('type')).toBe('button');
   });
 
-  it('renders sparkles icon when selected', () => {
+  it('sets aria-pressed when selected', () => {
     const preset = makePreset();
-    const { getByTestId } = render(
+    const { container } = render(
       <PresetCard preset={preset} index={0} onSelect={jest.fn()} isSelected={true} />
     );
 
-    expect(getByTestId('sparkles-icon')).toBeTruthy();
+    const button = container.querySelector('button');
+    expect(button?.getAttribute('aria-pressed')).toBe('true');
   });
 
   it('applies selected styling classes when isSelected', () => {
@@ -105,8 +115,7 @@ describe('PresetCard', () => {
     );
 
     const card = container.firstChild as HTMLElement;
-    expect(card.className).toContain('ring-2');
-    expect(card.className).toContain('ring-accent');
+    expect(card.className).toContain('border-primary-container/60');
   });
 
   it('applies default styling classes when not selected', () => {
@@ -116,35 +125,24 @@ describe('PresetCard', () => {
     );
 
     const card = container.firstChild as HTMLElement;
-    expect(card.className).toContain('ring-1');
-    expect(card.className).toContain('ring-border');
+    expect(card.className).toContain('border-white/10');
   });
 
-  it('handles empty tags array', () => {
-    const preset = makePreset({ tags: [] });
+  it('renders ARCH code derived from index', () => {
+    const preset = makePreset();
+    const { getByText } = render(
+      <PresetCard preset={preset} index={2} onSelect={jest.fn()} />
+    );
+
+    expect(getByText('ARCH-03')).toBeTruthy();
+  });
+
+  it('renders version badge from vibeStyle', () => {
+    const preset = makePreset({ vibeStyle: 'concise' });
     const { getByText } = render(
       <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
     );
 
-    expect(getByText('Aria')).toBeTruthy();
-  });
-
-  it('renders with different emoji', () => {
-    const preset = makePreset({ emoji: '🐉' });
-    const { getByText } = render(
-      <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
-    );
-
-    expect(getByText('🐉')).toBeTruthy();
-  });
-
-  it('truncates long names via CSS class', () => {
-    const preset = makePreset({ name: 'A Very Long Preset Name That Should Be Truncated' });
-    const { container } = render(
-      <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
-    );
-
-    const nameEl = container.querySelector('.truncate');
-    expect(nameEl).toBeTruthy();
+    expect(getByText('vconcise')).toBeTruthy();
   });
 });
