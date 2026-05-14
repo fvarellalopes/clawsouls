@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       title: preset.name,
       description: preset.description,
-      images: [`/avatars/${preset.id}.png`],
+      images: [`/avatars/${preset.id}.webp`],
     },
   };
 }

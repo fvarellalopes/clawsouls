@@ -2,7 +2,7 @@
 
 > Create, customize, and share AI personalities with a modern, interactive editor.
 
-![Status](https://img.shields.io/badge/status-active-brightgreen) ![Version](https://img.shields.io/badge/version-0.5.0-blue) ![Presets](https://img.shields.io/badge/presets-516-gold) ![Avatars](https://img.shields.io/badge/avatars-526-purple)
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Version](https://img.shields.io/badge/version-0.5.0-blue) ![Presets](https://img.shields.io/badge/presets-516-gold) ![Avatars](https://img.shields.io/badge/avatars-524-cyan)
 
 ---
 
@@ -39,7 +39,7 @@ Geração de avatares via **Z-Image-Turbo** no Google Colab:
 - 1024×1024 → crop 512×768
 - CFG=0, 8 steps
 - FastAPI + cloudflared tunnel
-- **526 avatares** gerados
+- **524 avatares WebP** gerados (-91% tamanho vs PNG)
 
 ---
 
@@ -114,7 +114,7 @@ clawsouls/
 │   └── ...
 ├── messages/               # Traduções i18n JSON (7 idiomas)
 ├── public/
-│   └── avatars/            # 526 avatares gerados
+│   └── avatars/            # 524 avatares WebP gerados
 ├── scripts/
 │   ├── scan-avatars.mjs    # Scan de avatares
 │   ├── translate_presets.mjs

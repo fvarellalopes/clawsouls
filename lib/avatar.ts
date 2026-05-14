@@ -10,8 +10,8 @@ export interface SoulAvatarFields {
 
 /**
  * Resolve a static avatar URL based on the soul's name.
- * Avatars são gerados em batch via Colab (Z-Image-Turbo) e armazenados em /public/avatars/.
- * Nome do arquivo: {nome_em_lowercase_sem_espacos}.png
+ * Avatars são gerados em batch via Colab (Z-Image-Turbo), convertidos para WebP e armazenados em /public/avatars/.
+ * Nome do arquivo: {nome_em_lowercase_sem_espacos}.webp
  */
 export function resolveAvatarUrl(soul: SoulAvatarFields): string {
   if (!soul?.name?.trim()) return FALLBACK_AVATAR;
@@ -50,7 +50,7 @@ export function avatarUrl(soul: SoulAvatarFields): string {
     .replace(/[^\wáàâãéèêíïóôõöúçñ]+/g, "");
 
   if (KNOWN_AVATARS.has(slug)) {
-    return `/avatars/${slug}.webp`; // tenta WebP primeiro; servidor faz fallback para PNG se não existir
+    return `/avatars/${slug}.webp`;
   }
 
   return FALLBACK_AVATAR;
