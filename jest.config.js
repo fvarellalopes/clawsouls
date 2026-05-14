@@ -7,7 +7,7 @@ const config = {
   },
   testMatch: ['**/__tests__/**/*.test.ts', '**/__tests__/**/*.test.tsx'],
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', { tsconfig: { jsx: 'react-jsx' } }],
+    '^.+\\.tsx?$': ['ts-jest', { tsconfig: { jsx: 'react-jsx', ignoreDeprecations: '6.0', rootDir: '.' } }],
   },
   collectCoverageFrom: [
     'lib/**/*.ts',

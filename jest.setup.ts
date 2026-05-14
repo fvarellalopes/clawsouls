@@ -1,4 +1,5 @@
 // Jest setup file
+// jest is a global in Jest 30 — no import needed
 
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
