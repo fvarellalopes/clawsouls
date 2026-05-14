@@ -10,28 +10,20 @@ import { avatarUrl } from "@/lib/avatar";
 import { QRCodeDisplay } from "@/components/qrcode-display";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 import type { AbstractIntlMessages } from "next-intl";
-import enMessages from "@/messages/en.json";
-import ptMessages from "@/messages/pt.json";
-import esMessages from "@/messages/es.json";
-import jaMessages from "@/messages/ja.json";
-import frMessages from "@/messages/fr.json";
-import deMessages from "@/messages/de.json";
-import zhMessages from "@/messages/zh.json";
-
-const localeMessages: Record<string, AbstractIntlMessages> = {
-  en: enMessages as unknown as AbstractIntlMessages,
-  pt: ptMessages as unknown as AbstractIntlMessages,
-  es: esMessages as unknown as AbstractIntlMessages,
-  ja: jaMessages as unknown as AbstractIntlMessages,
-  fr: frMessages as unknown as AbstractIntlMessages,
-  de: deMessages as unknown as AbstractIntlMessages,
-  zh: zhMessages as unknown as AbstractIntlMessages,
+const localeLoaders: Record<string, () => Promise<{ default: AbstractIntlMessages }>> = {
+  en: () => import("@/messages/en.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
+  pt: () => import("@/messages/pt.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
+  es: () => import("@/messages/es.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
+  fr: () => import("@/messages/fr.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
+  de: () => import("@/messages/de.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
+  ja: () => import("@/messages/ja.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
+  zh: () => import("@/messages/zh.json") as unknown as Promise<{ default: AbstractIntlMessages }>,
 };
 
 function detectLocale(): string {
   if (typeof window === "undefined") return "en";
   const lang = navigator.language?.split("-")[0];
-  return localeMessages[lang] ? lang : "en";
+  return localeLoaders[lang] ? lang : "en";
 }
 
 function ShareByIdContent() {
@@ -136,9 +128,19 @@ function ShareByIdContent() {
 }
 
 export default function ShareByIdPage() {
+  const [messages, setMessages] = useState<AbstractIntlMessages | null>(null);
   const locale = detectLocale();
+
+  useEffect(() => {
+    localeLoaders[locale]?.().then(mod => setMessages(mod.default as unknown as AbstractIntlMessages));
+  }, [locale]);
+
+  if (!messages) {
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  }
+
   return (
-    <NextIntlClientProvider locale={locale} messages={localeMessages[locale] || enMessages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <ShareByIdContent />
     </NextIntlClientProvider>
   );
