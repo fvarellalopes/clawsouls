@@ -50,7 +50,7 @@ export function avatarUrl(soul: SoulAvatarFields): string {
     .replace(/[^\wáàâãéèêíïóôõöúçñ]+/g, "");
 
   if (KNOWN_AVATARS.has(slug)) {
-    return `/avatars/${slug}.png`;
+    return `/avatars/${slug}.webp`; // tenta WebP primeiro; servidor faz fallback para PNG se não existir
   }
 
   return FALLBACK_AVATAR;

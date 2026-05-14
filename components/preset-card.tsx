@@ -39,6 +39,8 @@ export const PresetCard = React.memo(function PresetCard({
         <img
           src={avatarUrl(preset) || preset.avatar}
           alt={preset.name}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 rounded"
         />
 
