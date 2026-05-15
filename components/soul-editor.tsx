@@ -18,7 +18,7 @@ import { usePresets } from "@/lib/usePresets";
 import { attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { exportYAML } from "@/lib/exportYAML";
-import { avatarUrl } from "@/lib/avatar";
+import { avatarUrl, hasAvatar } from "@/lib/avatar";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -1007,8 +1007,53 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               )}
             </div>
 
-            {/* ─── RIGHT COLUMN (5 cols) — Live Preview ─── */}
-            <div className="lg:col-span-5">
+            {/* ─── RIGHT COLUMN (5 cols) — Avatar + Live Preview ─── */}
+            <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+              {/* Avatar Display */}
+              <div className="cyber-glass p-6 text-center">
+                <div className="relative mx-auto mb-4 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden"
+                     style={{
+                       background: "rgba(255,255,255,0.03)",
+                       border: "1px solid rgba(250,204,21,0.2)",
+                       boxShadow: "0 0 30px rgba(250,204,21,0.08), inset 0 0 30px rgba(250,204,21,0.03)",
+                     }}>
+                  {avatarUrl(soul).includes("placeholder") ? (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-6xl sm:text-7xl">{soul.emoji || "✨"}</span>
+                    </div>
+                  ) : (
+                    <img
+                      src={avatarUrl(soul)}
+                      alt={soul.name || "Avatar"}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {/* Cyber corner decorations */}
+                  <div className="absolute top-0 left-0 w-4 h-4" style={{ borderTop: "2px solid rgba(250,204,21,0.4)", borderLeft: "2px solid rgba(250,204,21,0.4)" }} />
+                  <div className="absolute top-0 right-0 w-4 h-4" style={{ borderTop: "2px solid rgba(250,204,21,0.4)", borderRight: "2px solid rgba(250,204,21,0.4)" }} />
+                  <div className="absolute bottom-0 left-0 w-4 h-4" style={{ borderBottom: "2px solid rgba(250,204,21,0.4)", borderLeft: "2px solid rgba(250,204,21,0.4)" }} />
+                  <div className="absolute bottom-0 right-0 w-4 h-4" style={{ borderBottom: "2px solid rgba(250,204,21,0.4)", borderRight: "2px solid rgba(250,204,21,0.4)" }} />
+                </div>
+
+                {/* Info below avatar */}
+                <h2 className="text-xl font-bold font-display text-yellow-400 truncate max-w-full"
+                    style={{ letterSpacing: "0.04em" }}>
+                  {soul.name || t("unnamedSoul") || "UNNAMED SOUL"}
+                </h2>
+                <p className="mono-data text-xs mt-1 truncate max-w-full" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  {soul.creature || "—"}
+                </p>
+                <div className="flex items-center justify-center gap-2 mt-3">
+                  <span className="w-1.5 h-1.5 rounded-full"
+                        style={{ background: hasAvatar(soul) ? "#22c55e" : "rgba(255,255,255,0.2)" }} />
+                  <span className="mono-data text-[10px]"
+                        style={{ color: hasAvatar(soul) ? "rgba(34,197,94,0.7)" : "rgba(255,255,255,0.25)" }}>
+                    {hasAvatar(soul) ? "AVATAR GENERATED" : "NO AVATAR"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Parchment Preview */}
               <div className="sticky top-24">
                 <ParchmentPreview
                   content={soulMD}
