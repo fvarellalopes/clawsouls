@@ -356,13 +356,126 @@ export function getThemeById(id: string): ColorTheme {
 
 /**
  * Apply a theme's CSS variables to the document root.
+ * Sets both basic design tokens and derived Tailwind v4 color tokens.
  */
 export function applyTheme(theme: ColorTheme): void {
   if (typeof document === "undefined") return;
   const root = document.documentElement;
-  for (const [key, value] of Object.entries(theme.cssVars)) {
+  const v = theme.cssVars;
+
+  // Basic tokens
+  for (const [key, value] of Object.entries(v)) {
     root.style.setProperty(key, value);
   }
+
+  // Derived color tokens for Tailwind v4 @theme
+  const bg = v["--bg"] ?? "#09090b";
+  const fg = v["--fg"] ?? "#e5e1e4";
+  const surface = v["--surface"] ?? "#201f22";
+  const surfaceAlt = v["--surface-alt"] ?? "#1c1b1d";
+  const mutedFg = v["--muted-fg"] ?? "#d1c6ab";
+  const border = v["--border"] ?? "rgba(255,255,255,0.1)";
+  const primary = v["--primary"] ?? "#facc15";
+  const primaryFg = v["--primary-fg"] ?? "#3c2f00";
+  const accent = v["--accent"] ?? "#ffecb9";
+  const accentFg = v["--accent-fg"] ?? "#3c2f00";
+
+  // Container/surface hierarchy
+  root.style.setProperty("--surface-container", surface);
+  root.style.setProperty("--surface-container-low", surfaceAlt);
+  root.style.setProperty("--surface-container-lowest", darken(bg, 0.15));
+  root.style.setProperty("--surface-container-high", lighten(surface, 0.08));
+  root.style.setProperty("--surface-container-highest", lighten(surface, 0.12));
+  root.style.setProperty("--surface-dim", darken(bg, 0.05));
+  root.style.setProperty("--surface-bright", lighten(surface, 0.15));
+
+  // On-surface / variant
+  root.style.setProperty("--on-surface", fg);
+  root.style.setProperty("--on-surface-variant", mutedFg);
+
+  // Primary container / on-primary-fixed
+  root.style.setProperty("--primary-container", primary);
+  root.style.setProperty("--on-primary-fixed", primaryFg);
+
+  // Outline tokens
+  root.style.setProperty("--outline", mutedFg);
+  root.style.setProperty("--outline-variant", interpolate(bg, mutedFg, 0.3));
+
+  // Error tokens (hardcoded defaults stored in CSS)
+  root.style.setProperty("--error-container", "#93000a");
+  root.style.setProperty("--on-error", "#690005");
+  root.style.setProperty("--on-error-container", "#ffdad6");
+
+  // Border subtle
+  root.style.setProperty("--border-subtle", border?.replace?.("1)", "0.05)") ?? "rgba(255,255,255,0.05)");
+
+  // Subtle fg
+  root.style.setProperty("--subtle-fg", mutedFg);
+
+  // Tailwind v4 direct color tokens (override @theme defaults)
+  root.style.setProperty("--color-background", bg);
+  root.style.setProperty("--color-foreground", fg);
+  root.style.setProperty("--color-surface", surface);
+  root.style.setProperty("--color-surface-alt", surfaceAlt);
+  root.style.setProperty("--color-muted-fg", mutedFg);
+  root.style.setProperty("--color-border", border);
+  root.style.setProperty("--color-primary", primary);
+  root.style.setProperty("--color-primary-foreground", primaryFg);
+  root.style.setProperty("--color-accent", accent);
+  root.style.setProperty("--color-accent-foreground", accentFg);
+  root.style.setProperty("--color-on-surface", fg);
+  root.style.setProperty("--color-on-surface-variant", mutedFg);
+  root.style.setProperty("--color-muted", surface);
+  root.style.setProperty("--color-muted-foreground", mutedFg);
+}
+
+/**
+ * Parse hex color and return [r, g, b]
+ */
+function parseHex(hex: string): [number, number, number] {
+  const clean = hex.replace("#", "");
+  return [
+    parseInt(clean.slice(0, 2), 16),
+    parseInt(clean.slice(2, 4), 16),
+    parseInt(clean.slice(4, 6), 16),
+  ];
+}
+
+/**
+ * Darken a hex color by a ratio (0 = unchanged, 1 = black)
+ */
+function darken(hex: string, ratio: number): string {
+  if (!hex.startsWith("#") || hex.length < 7) return hex;
+  const [r, g, b] = parseHex(hex);
+  const nr = Math.round(r * (1 - ratio));
+  const ng = Math.round(g * (1 - ratio));
+  const nb = Math.round(b * (1 - ratio));
+  return `#${nr.toString(16).padStart(2, "0")}${ng.toString(16).padStart(2, "0")}${nb.toString(16).padStart(2, "0")}`;
+}
+
+/**
+ * Lighten a hex color by a ratio (0 = unchanged, 1 = white)
+ */
+function lighten(hex: string, ratio: number): string {
+  if (!hex.startsWith("#") || hex.length < 7) return hex;
+  const [r, g, b] = parseHex(hex);
+  const nr = Math.min(255, Math.round(r + (255 - r) * ratio));
+  const ng = Math.min(255, Math.round(g + (255 - g) * ratio));
+  const nb = Math.min(255, Math.round(b + (255 - b) * ratio));
+  return `#${nr.toString(16).padStart(2, "0")}${ng.toString(16).padStart(2, "0")}${nb.toString(16).padStart(2, "0")}`;
+}
+
+/**
+ * Interpolate between two hex colors by ratio (0 = first, 1 = second)
+ */
+function interpolate(hex1: string, hex2: string, ratio: number): string {
+  if (!hex1.startsWith("#") || !hex2.startsWith("#")) return hex1;
+  const [r1, g1, b1] = parseHex(hex1);
+  const [r2, g2, b2] = parseHex(hex2);
+  const nr = Math.round(r1 + (r2 - r1) * ratio);
+  const ng = Math.round(g1 + (g2 - g1) * ratio);
+  const nb = Math.round(b1 + (b2 - b1) * ratio);
+  return `#${nr.toString(16).padStart(2, "0")}${ng.toString(16).padStart(2, "0")}${nb.toString(16).padStart(2, "0")}`;
 }
 
 /**

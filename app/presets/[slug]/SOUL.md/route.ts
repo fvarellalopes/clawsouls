@@ -49,6 +49,14 @@ export async function GET(
       technicalJargon: preset.speechPatterns?.technicalJargon ?? 50,
       slangUsage: preset.speechPatterns?.slangUsage ?? 50,
     },
+    role: preset.role ?? "Autonomous operator and thought partner",
+    roleDescription: preset.roleDescription ?? "",
+    mandateRules: preset.mandateRules ?? [],
+    voicePrivate: preset.voicePrivate ?? "",
+    voicePublic: preset.voicePublic ?? "",
+    autonomyAuto: preset.autonomyAuto ?? "",
+    autonomyRequireApproval: preset.autonomyRequireApproval ?? "",
+    activeProjects: preset.activeProjects ?? "",
   };
 
   const md = generateSoulMD(soul);

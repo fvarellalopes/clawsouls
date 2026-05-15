@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   const t = useTranslations("legal");
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,#09090b_0%,#131315_50%,#09090b_100%)]">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg,#09090b)_0%,var(--surface-dim,#131315)_50%,var(--bg,#09090b)_100%)]">
       <div className="max-w-4xl mx-auto px-6 py-32">
         {/* Header */}
         <div className="mb-16">

@@ -12,8 +12,13 @@ export function ThemeInitializer() {
   const { getTheme } = useThemeStore();
 
   useEffect(() => {
+    console.log("[ThemeInitializer] useEffect fired");
     const theme = getTheme();
-    applyTheme(theme);
+    console.log("[ThemeInitializer] theme:", theme?.id);
+    if (theme) {
+      applyTheme(theme);
+      console.log("[ThemeInitializer] applyTheme called, style:", document.documentElement.style.cssText.slice(0, 100));
+    }
   }, [getTheme]);
 
   return null;

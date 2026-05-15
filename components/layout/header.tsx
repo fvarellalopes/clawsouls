@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { useThemeStore } from "@/store/themeStore";
+import { applyTheme } from "@/lib/themes";
+import { getThemeById } from "@/lib/themes";
 
 interface HeaderProps {
   locale?: string;
@@ -15,6 +18,12 @@ export function Header({ locale }: HeaderProps) {
   const activeLocale = locale || (params?.locale as string) || "en";
   const { themeId, setTheme } = useThemeStore();
   const isDark = themeId !== "paper";
+
+  // Apply persisted theme on mount
+  useEffect(() => {
+    const theme = getThemeById(themeId);
+    applyTheme(theme);
+  }, [themeId]);
 
   const toggleTheme = () => {
     setTheme(isDark ? "paper" : "cyberpunk");
@@ -28,7 +37,7 @@ export function Header({ locale }: HeaderProps) {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-16 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(250,204,21,0.05)]">
+<nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-16 bg-background/80 backdrop-blur-xl border-b border-border shadow-[0_0_20px_rgba(250,204,21,0.05)]">
       {/* Left — Logo + Nav */}
       <div className="flex items-center gap-8">
         <Link

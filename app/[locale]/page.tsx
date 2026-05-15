@@ -7,7 +7,7 @@ export default function HomePage() {
   const t = useTranslations("home");
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,#09090b_0%,#131315_50%,#09090b_100%)]">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg,#09090b)_0%,var(--surface-dim,#131315)_50%,var(--bg,#09090b)_100%)]">
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center px-4 py-32 text-center">
         <div className="animate-fade-in">
