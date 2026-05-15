@@ -54,7 +54,7 @@ export function Header({ locale }: HeaderProps) {
       <div className="flex items-center gap-4">
         <button
           onClick={toggleTheme}
-          className="text-white/60 hover:text-[#facc15] transition-colors"
+          className="text-white/60 hover:text-[#facc15] transition-colors cursor-pointer"
           aria-label="Toggle theme"
         >
           <span className="material-symbols-outlined text-xl">

@@ -361,16 +361,16 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               <span className="hidden sm:inline">{t("presets")}</span>
             </Link>
             <div className="w-px h-4 sm:h-6 flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={undo} disabled={!canUndo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0" title={t("undoTitle")}>
+            <button onClick={undo} disabled={!canUndo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("undoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
               <span className="hidden sm:inline">{t("undo")}</span>
             </button>
-            <button onClick={redo} disabled={!canRedo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0" title={t("redoTitle")}>
+            <button onClick={redo} disabled={!canRedo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("redoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
               <span className="hidden sm:inline">{t("redo")}</span>
             </button>
             <div className="w-px h-4 sm:h-6 flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <button onClick={handleShare} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 flex-shrink-0" title={t("share")}>
+            <button onClick={handleShare} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer flex-shrink-0" title={t("share")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
               <span className="hidden sm:inline">{t("share")}</span>
             </button>
@@ -380,7 +380,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   e.stopPropagation();
                   setExportDropdownOpen(!exportDropdownOpen);
                 }}
-                className="px-2 sm:px-4 py-2 bg-gold text-obsidian rounded font-mono text-[10px] sm:text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2 glow-gold"
+                className="px-2 sm:px-4 py-2 bg-gold text-obsidian rounded font-mono text-[10px] sm:text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2 glow-gold cursor-pointer"
                 title={t("exportSoulMd")}
               >
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>download</span>
@@ -396,7 +396,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <button
                     role="menuitem"
                     onClick={() => { handleExport(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10"
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
                     style={{ color: "rgba(255,255,255,0.85)" }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>description</span>
@@ -405,7 +405,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <button
                     role="menuitem"
                     onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10"
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
                     style={{ color: "rgba(255,255,255,0.85)" }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>data_object</span>
@@ -414,7 +414,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <button
                     role="menuitem"
                     onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10"
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
                     style={{ color: "rgba(255,255,255,0.85)" }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>code</span>
@@ -443,7 +443,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-white/50 hover:text-gold/80"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
+                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs cursor-pointer ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-white/50 hover:text-gold/80"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}
@@ -552,7 +552,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                         </h3>
                         <button
                           onClick={() => setQuickStartDismissed(true)}
-                          className="text-xs hover:underline transition-colors mono-data"
+                          className="text-xs hover:underline transition-colors cursor-pointer mono-data"
                           style={{ color: "rgba(255,255,255,0.3)" }}
                         >
                           {t("dismissQuickStart") || "DISMISS"}
@@ -561,7 +561,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button
                           onClick={() => { resetSoul(); setQuickStartDismissed(true); }}
-                          className="p-4 text-left transition-all hover:scale-[1.02] cyber-glass"
+                          className="p-4 text-left transition-all hover:scale-[1.02] cursor-pointer cyber-glass"
                         >
                           <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>restart_alt</span>
                           <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.scratch")}</p>
@@ -569,7 +569,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                         </button>
                         <button
                           onClick={() => { resetSoul(); setQuickStartDismissed(true); setFillWithAIOpen(true); }}
-                          className="p-4 text-left transition-all hover:scale-[1.02] cyber-glass"
+                          className="p-4 text-left transition-all hover:scale-[1.02] cursor-pointer cyber-glass"
                         >
                           <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>wand_stars</span>
                           <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.ai")}</p>
@@ -776,7 +776,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                                 : [...current, domain.value];
                               handleAttributeChange("knowledgeDomains", updated);
                             }}
-                            className="p-2.5 text-xs text-left transition-all rounded"
+                            className="p-2.5 text-xs text-left transition-all rounded cursor-pointer"
                             style={{
                               background: isSelected ? "rgba(250,204,21,0.1)" : "rgba(255,255,255,0.02)",
                               border: `1px solid ${isSelected ? "rgba(250,204,21,0.3)" : "rgba(255,255,255,0.06)"}`,
