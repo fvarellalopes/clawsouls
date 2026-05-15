@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
@@ -25,7 +25,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const messages = (await import(`../../messages/${locale}.json`)).default;
   const typedMessages = messages as Record<string, any>;
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://clawsouls.vercel.app'),
@@ -47,7 +47,7 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const messages = (await import(`../../messages/${locale}.json`)).default;
   const typedMessages = messages as Record<string, any>;
 
   return (

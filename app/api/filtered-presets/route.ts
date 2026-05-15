@@ -1,30 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { list_presets } from '@/lib/db'
 
 // Blacklist of preset IDs to filter out (historical figures with harmful associations)
 const PRESET_BLACKLIST = new Set(['adolf-hitler'])
 
 export async function GET(request: NextRequest) {
-  const SUPABASE_URL = process.env.SUPABASE_URL
-  const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
-
-  if (!SUPABASE_URL || !SUPABASE_KEY) {
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
+  const searchParams = request.nextUrl.searchParams
+  const limit = parseInt(searchParams.get('limit') || '50')
+  const offset = parseInt(searchParams.get('offset') || '0')
+  const creature = searchParams.get('creature') || undefined
+  const source = searchParams.get('source') || undefined
+  const search = searchParams.get('search') || undefined
 
   try {
-    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-    const { data, error } = await supabase.from('presets').select('*')
-    
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    // Uses list_presets from lib/db which falls back to SQLite when Supabase is unavailable
+    const presets = await list_presets(limit, offset, creature, source, undefined, search)
 
     // Filter out blacklisted presets
-    const filtered = data?.filter((p: {id: string}) => !PRESET_BLACKLIST.has(p.id)) || []
-    
+    const filtered = presets.filter(preset => !PRESET_BLACKLIST.has(preset.id))
+
     return NextResponse.json({ data: filtered })
   } catch (err) {
+    console.error('Error fetching filtered presets:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

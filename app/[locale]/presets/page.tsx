@@ -1,10 +1,9 @@
 "use client";
 
 import { useTranslations, useMessages } from "next-intl";
-import { usePresets } from "@/lib/usePresets";
 import { PresetCard } from "@/components/preset-card";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { SoulPreset } from "@/store/soulStore";
 import { useRouter, useParams } from "next/navigation";
 import { PresetsGridSkeleton } from "@/components/skeletons";
@@ -16,18 +15,60 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// Blacklist of preset IDs to filter out
+const PRESET_BLACKLIST = new Set(['adolf-hitler'])
+
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
   const messages = useMessages();
   const presetsMessages = (messages as any)?.presets as
     | Record<string, Record<string, string>>
     | undefined;
-  const { presets, loading } = usePresets(presetsMessages);
+  const [presets, setPresets] = useState<SoulPreset[]>([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const router = useRouter();
   const params = useParams();
   const locale = (params?.locale as string) || "en";
+  const fetchedRef = useRef(false);
+
+  // Single-effect data fetch
+  useEffect(() => {
+    if (fetchedRef.current) return;
+    fetchedRef.current = true;
+
+    let cancelled = false;
+
+    async function load() {
+      try {
+        setLoading(true);
+        const res = await fetch("/api/filtered-presets");
+        if (!res.ok) throw new Error("Failed to fetch presets");
+        const json = await res.json();
+        if (cancelled) return;
+
+        const mapped = ((json.data || []) as any[]).map(formatPreset);
+        setPresets(mapped);
+      } catch (err: any) {
+        console.error("Erro ao carregar presets:", err);
+        // Fallback: import presets estáticos
+        if (!cancelled) {
+          try {
+            const { presets: localPresets } = await import("@/data/presets");
+            setPresets(localPresets);
+          } catch (e) {
+            console.error("Fallback também falhou:", e);
+          }
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    load();
+    return () => { cancelled = true; };
+  }, []);
 
   const allTags = useMemo(() => {
     const tags = new Set<string>();
@@ -36,7 +77,14 @@ export default function PresetsPage() {
   }, [presets]);
 
   const filtered = useMemo(() => {
-    let result = presets;
+    let result = presets.filter(p => !PRESET_BLACKLIST.has(p.id));
+    if (presetsMessages) {
+      result = result.map(p => {
+        const pt = presetsMessages[p.id];
+        if (!pt) return p;
+        return { ...p, name: pt.name || p.name, creature: pt.creature || p.creature, vibe: pt.vibe || p.vibe, description: pt.description || p.description };
+      });
+    }
     if (search) {
       const q = search.toLowerCase();
       result = result.filter(
@@ -51,7 +99,7 @@ export default function PresetsPage() {
       result = result.filter((p) => p.tags.includes(selectedTag));
     }
     return result;
-  }, [presets, search, selectedTag]);
+  }, [presets, search, selectedTag, presetsMessages]);
 
   const handleSelect = (preset: SoulPreset) => {
     router.push(`/${locale}/editor?preset=${preset.id}`);
@@ -170,4 +218,49 @@ export default function PresetsPage() {
       </div>
     </div>
   );
+}
+
+// Format a preset from the API response
+function formatPreset(data: any): SoulPreset {
+  let tags = data.tags || [];
+  if (typeof tags === 'string') {
+    try { tags = JSON.parse(tags); } catch { tags = []; }
+  }
+
+  return {
+    id: data.id,
+    name: data.name,
+    creature: data.creature,
+    vibe: data.vibe,
+    emoji: data.emoji,
+    avatar: data.avatar,
+    coreTruths: {
+      helpful: data.core_truths_helpful,
+      opinions: data.core_truths_opinions,
+      resourceful: data.core_truths_resourceful,
+      trustworthy: data.core_truths_trustworthy,
+      respectful: data.core_truths_respectful,
+    },
+    boundaries: {
+      private: data.boundaries_private,
+      askBeforeActing: data.boundaries_ask_before_acting,
+      noHalfBaked: data.boundaries_no_half_baked,
+      notVoiceProxy: data.boundaries_not_voice_proxy,
+    },
+    vibeStyle: data.vibe_style as any,
+    description: data.description,
+    tags: tags,
+    source: data.source,
+    humor: data.humor ?? 50,
+    formality: data.formality ?? 50,
+    emojiUsage: data.emoji_usage ?? 10,
+    verbosity: data.verbosity ?? 50,
+    consciousness: data.consciousness ?? 50,
+    questioning: data.questioning ?? 30,
+    openness: data.openness ?? 70,
+    conscientiousness: data.conscientiousness ?? 50,
+    extraversion: data.extraversion ?? 50,
+    agreeableness: data.agreeableness ?? 50,
+    neuroticism: data.neuroticism ?? 30,
+  };
 }

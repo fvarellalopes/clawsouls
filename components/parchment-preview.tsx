@@ -28,11 +28,11 @@ function ToneBar({ label, value }: { label: string; value: number }) {
           className="h-full rounded-full transition-all duration-500 ease-out"
           style={{
             width: `${value}%`,
-            background: "var(--primary)",
+            background: "#facc15",
           }}
         />
       </div>
-      <span className="w-8 font-mono" style={{ color: "var(--accent)" }}>{value}</span>
+      <span className="w-8 font-mono" style={{ color: "#facc15" }}>{value}</span>
     </div>
   );
 }
@@ -135,7 +135,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                   <h2
                     key={i}
                     className="text-2xl font-display font-bold tracking-wider mt-4 first:mt-0"
-                    style={{ color: "var(--accent)" }}
+                    style={{ color: "#facc15" }}
                   >
                     {section.content}
                   </h2>
@@ -148,7 +148,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                     className="text-lg font-display font-semibold tracking-wide mt-5 mb-2 flex items-center gap-2"
                     style={{ color: "var(--foreground)" }}
                   >
-                    <span className="w-2 h-2 rounded-full" style={{ background: "var(--primary)" }} />
+                    <span className="w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
                     {section.content}
                   </h3>
                 );
@@ -169,7 +169,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                     className="flex items-start gap-2 pl-2"
                     style={{ color: "var(--foreground)" }}
                   >
-                    <span className="mt-1 text-xs" style={{ color: "var(--accent)" }}>▸</span>
+                    <span className="mt-1 text-xs" style={{ color: "#facc15" }}>▸</span>
                     <span>{section.content}</span>
                   </div>
                 );
