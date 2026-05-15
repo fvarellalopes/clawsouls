@@ -257,7 +257,9 @@
     "presetName": "Nom du Preset",
     "undo": "Annuler",
     "redo": "Rétablir",
-    "avatarPlaceholder": "URL de l'avatar ou placeholder"
+    "avatarPlaceholder": "URL de l'avatar ou placeholder",
+    "coreTruthsTitle": "Vérités Fondamentales",
+    "boundariesTitle": "Limites"
   },
   "presetsPage": {
     "title": "Personnalités Prédéfinies",

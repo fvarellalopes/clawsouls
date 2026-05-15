@@ -257,7 +257,9 @@
     "presetName": "Preset Name",
     "undo": "Rückgängig",
     "redo": "Wiederholen",
-    "avatarPlaceholder": "Avatar-URL oder Platzhalter"
+    "avatarPlaceholder": "Avatar-URL oder Platzhalter",
+    "coreTruthsTitle": "Grundwahrheiten",
+    "boundariesTitle": "Grenzen"
   },
   "presetsPage": {
     "title": "Vorgefertigte Persönlichkeiten",

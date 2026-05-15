@@ -257,7 +257,9 @@
     "presetName": "プリセット名",
     "undo": "元に戻す",
     "redo": "やり直し",
-    "avatarPlaceholder": "アバターURLまたはプレースホルダー"
+    "avatarPlaceholder": "アバターURLまたはプレースホルダー",
+    "coreTruthsTitle": "核心理念",
+    "boundariesTitle": "境界"
   },
   "presetsPage": {
     "title": "プリセット人格",

@@ -257,7 +257,9 @@
     "presetName": "Preset Name",
     "undo": "Undo",
     "redo": "Redo",
-    "avatarPlaceholder": "Avatar URL or placeholder"
+    "avatarPlaceholder": "Avatar URL or placeholder",
+    "coreTruthsTitle": "Core Truths",
+    "boundariesTitle": "Boundaries"
   },
   "presetsPage": {
     "title": "Preset Personalities",

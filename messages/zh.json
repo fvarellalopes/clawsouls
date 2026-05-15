@@ -257,7 +257,9 @@
     "presetName": "预设名称",
     "undo": "撤销",
     "redo": "重做",
-    "avatarPlaceholder": "头像链接或占位符"
+    "avatarPlaceholder": "头像链接或占位符",
+    "coreTruthsTitle": "核心真理",
+    "boundariesTitle": "边界"
   },
   "presetsPage": {
     "title": "预设人格",

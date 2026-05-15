@@ -620,7 +620,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
                       <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>verified</span>
-                      {t("coreTruths") || "Core Truths"}
+                      {t("coreTruthsTitle") || "Core Truths"}
                     </h3>
                     <div className="space-y-1">
                       {Object.entries(soul.coreTruths).map(([key, value]) => (
@@ -638,7 +638,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <div className="cyber-glass p-6">
                     <h3 className="cyber-section-title">
                       <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>shield</span>
-                      {t("boundaries") || "Boundaries"}
+                      {t("boundariesTitle") || "Boundaries"}
                     </h3>
                     <div className="space-y-1">
                       {Object.entries(soul.boundaries).map(([key, value]) => (

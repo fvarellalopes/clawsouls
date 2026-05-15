@@ -257,7 +257,9 @@
     "presetName": "Nombre del Preset",
     "undo": "Deshacer",
     "redo": "Rehacer",
-    "avatarPlaceholder": "URL del Avatar o placeholder"
+    "avatarPlaceholder": "URL del Avatar o placeholder",
+    "coreTruthsTitle": "Verdades Fundamentales",
+    "boundariesTitle": "Límites"
   },
   "presetsPage": {
     "title": "Personalidades Predefinidas",
