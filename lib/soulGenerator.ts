@@ -29,6 +29,14 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     signaturePhrases,
     emotionalRange,
     speechPatterns,
+    role,
+    roleDescription,
+    mandateRules,
+    voicePrivate,
+    voicePublic,
+    autonomyAuto,
+    autonomyRequireApproval,
+    activeProjects,
   } = soul;
 
   const now = new Date().toISOString().split("T")[0];
@@ -383,6 +391,11 @@ ${emotionalRangeSection}
 ${commModeSection}
 ${domainsList ? `\n## Knowledge Domains\n\n${domainsList}` : ""}
 ${phrasesList ? `\n## Signature Phrases\n\nUse these phrases naturally in conversation:\n\n${phrasesList}` : ""}
+${role ? `\n## Identity & Role\n\nYou are **${name}**, ${role}.\n\n${roleDescription}` : ""}
+${mandateRules?.length ? `\n## Mandate\n${mandateRules.map(r => `- ${r}`).join("\n")}` : ""}
+${voicePrivate || voicePublic ? `\n## Voice\n${voicePrivate ? `**Private:** ${voicePrivate}` : ""}${voicePublic ? `\n**Public:** ${voicePublic}` : ""}` : ""}
+${autonomyAuto || autonomyRequireApproval ? `\n## Autonomy\n${autonomyAuto ? `**Full autonomy:** ${autonomyAuto}` : ""}${autonomyRequireApproval ? `\n**Requires approval:** ${autonomyRequireApproval}` : ""}` : ""}
+${activeProjects ? `\n## Active Projects\n\n${activeProjects}` : ""}
 
 ## Continuity
 

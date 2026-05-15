@@ -89,6 +89,15 @@ function mapSupabaseToSoulPreset(data: any, localFallback?: SoulPreset): SoulPre
       technicalJargon: data.speech_technical_jargon ?? 40,
       slangUsage: data.speech_slang_usage ?? 20,
     },
+    // Operator config (Hermes-style)
+    role: hasLocal ? (localFallback!.role ?? 'Autonomous operator and thought partner') : (data.role ?? 'Autonomous operator and thought partner'),
+    roleDescription: hasLocal ? (localFallback!.roleDescription ?? '') : (data.role_description ?? ''),
+    mandateRules: hasLocal ? (localFallback!.mandateRules ?? []) : ([]),
+    voicePrivate: hasLocal ? (localFallback!.voicePrivate ?? '') : (data.voice_private ?? ''),
+    voicePublic: hasLocal ? (localFallback!.voicePublic ?? '') : (data.voice_public ?? ''),
+    autonomyAuto: hasLocal ? (localFallback!.autonomyAuto ?? '') : (data.autonomy_auto ?? ''),
+    autonomyRequireApproval: hasLocal ? (localFallback!.autonomyRequireApproval ?? '') : (data.autonomy_require_approval ?? ''),
+    activeProjects: hasLocal ? (localFallback!.activeProjects ?? '') : (data.active_projects ?? ''),
   }
 }
 

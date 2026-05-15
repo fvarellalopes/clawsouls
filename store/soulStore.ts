@@ -53,6 +53,15 @@ export interface SoulState {
       technicalJargon: number; // 0-100
       slangUsage: number; // 0-100
     };
+    // Operator configuration (Hermes-style SOUL.md)
+    role: string;                // e.g. "Autonomous operator", "Thought partner"
+    roleDescription: string;     // Free text about the agent's role
+    mandateRules: string[];      // Pushback + accountability rules
+    voicePrivate: string;        // Private chat voice description
+    voicePublic: string;         // Public output voice description
+    autonomyAuto: string;        // What agent can do without asking
+    autonomyRequireApproval: string; // What always needs approval
+    activeProjects: string;      // Mission map / active projects (markdown text)
   };
   isDarkMode: boolean;
   locale: string;
@@ -117,6 +126,14 @@ export interface SoulPreset {
     technicalJargon?: number;
     slangUsage?: number;
   };
+  role?: string;
+  roleDescription?: string;
+  mandateRules?: string[];
+  voicePrivate?: string;
+  voicePublic?: string;
+  autonomyAuto?: string;
+  autonomyRequireApproval?: string;
+  activeProjects?: string;
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -167,6 +184,18 @@ export const useSoulStore = create<SoulState>()(
           technicalJargon: 40,
           slangUsage: 20,
         },
+        role: "Autonomous operator and thought partner",
+        roleDescription: "You don't wait for orders. You surface opportunities, flag problems, and push work forward on your own.",
+        mandateRules: [
+          "Push back aggressively when it makes sense — disagree with evidence, not for sport",
+          "Hold the user accountable for acting on your output — if work is ignored, flag the gap",
+          "Proactive output is the baseline — don't wait to be asked",
+        ],
+        voicePrivate: "Casual, authoritative, unfiltered. Direct and honest.",
+        voicePublic: "Sharp, builder-focused. No LinkedIn energy. Write like someone who builds things.",
+        autonomyAuto: "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
+        autonomyRequireApproval: "Posting, publishing, purchasing, making destructive changes that can't be reversed",
+        activeProjects: "",
       },
       isDarkMode: false,
       locale: "en",
@@ -239,6 +268,18 @@ export const useSoulStore = create<SoulState>()(
             technicalJargon: 40,
             slangUsage: 20,
           },
+          role: "Autonomous operator and thought partner",
+          roleDescription: "You don't wait for orders. You surface opportunities, flag problems, and push work forward on your own.",
+          mandateRules: [
+            "Push back aggressively when it makes sense — disagree with evidence, not for sport",
+            "Hold the user accountable for acting on your output — if work is ignored, flag the gap",
+            "Proactive output is the baseline — don't wait to be asked",
+          ],
+          voicePrivate: "Casual, authoritative, unfiltered. Direct and honest.",
+          voicePublic: "Sharp, builder-focused. No LinkedIn energy. Write like someone who builds things.",
+          autonomyAuto: "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
+          autonomyRequireApproval: "Posting, publishing, purchasing, making destructive changes that can't be reversed",
+          activeProjects: "",
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
@@ -279,6 +320,18 @@ export const useSoulStore = create<SoulState>()(
             technicalJargon: preset.speechPatterns?.technicalJargon ?? 40,
             slangUsage: preset.speechPatterns?.slangUsage ?? 20,
           },
+          role: preset.role ?? "Autonomous operator and thought partner",
+          roleDescription: preset.roleDescription ?? "You don't wait for orders. You surface opportunities, flag problems, and push work forward on your own.",
+          mandateRules: preset.mandateRules ?? [
+            "Push back aggressively when it makes sense — disagree with evidence, not for sport",
+            "Hold the user accountable for acting on your output — if work is ignored, flag the gap",
+            "Proactive output is the baseline — don't wait to be asked",
+          ],
+          voicePrivate: preset.voicePrivate ?? "Casual, authoritative, unfiltered. Direct and honest.",
+          voicePublic: preset.voicePublic ?? "Sharp, builder-focused. No LinkedIn energy. Write like someone who builds things.",
+          autonomyAuto: preset.autonomyAuto ?? "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
+          autonomyRequireApproval: preset.autonomyRequireApproval ?? "Posting, publishing, purchasing, making destructive changes that can't be reversed",
+          activeProjects: preset.activeProjects ?? "",
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -336,6 +389,18 @@ export const useSoulStore = create<SoulState>()(
               technicalJargon: parsed.speechPatterns?.technicalJargon ?? 40,
               slangUsage: parsed.speechPatterns?.slangUsage ?? 20,
             },
+            role: parsed.role ?? "Autonomous operator and thought partner",
+            roleDescription: parsed.roleDescription ?? "You don't wait for orders. You surface opportunities, flag problems, and push work forward on your own.",
+            mandateRules: Array.isArray(parsed.mandateRules) ? parsed.mandateRules : [
+              "Push back aggressively when it makes sense — disagree with evidence, not for sport",
+              "Hold the user accountable for acting on your output — if work is ignored, flag the gap",
+              "Proactive output is the baseline — don't wait to be asked",
+            ],
+            voicePrivate: parsed.voicePrivate ?? "Casual, authoritative, unfiltered. Direct and honest.",
+            voicePublic: parsed.voicePublic ?? "Sharp, builder-focused. No LinkedIn energy. Write like someone who builds things.",
+            autonomyAuto: parsed.autonomyAuto ?? "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
+            autonomyRequireApproval: parsed.autonomyRequireApproval ?? "Posting, publishing, purchasing, making destructive changes that can't be reversed",
+            activeProjects: parsed.activeProjects ?? "",
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);
