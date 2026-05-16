@@ -73,12 +73,14 @@
 
 html {
   scroll-behavior: smooth;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-body);
+  transition: background-color 0.25s, color 0.25s;
 }
 
 /* ─── Legacy CSS variable compatibility (shadcn/ui pattern, used by ParchmentPreview etc.) ─── */

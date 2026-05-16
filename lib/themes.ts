@@ -427,6 +427,11 @@ export function applyTheme(theme: ColorTheme): void {
   root.style.setProperty("--color-on-surface-variant", mutedFg);
   root.style.setProperty("--color-muted", surface);
   root.style.setProperty("--color-muted-foreground", mutedFg);
+
+  // data-theme attribute + color-scheme for native dark/light support
+  const isDark = theme.id !== "paper" && theme.id !== "clean";
+  root.dataset.theme = isDark ? "dark" : "light";
+  root.style.colorScheme = isDark ? "dark" : "light";
 }
 
 /**
