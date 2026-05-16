@@ -16,13 +16,13 @@ export default function TermsPage() {
           <h1 className="text-[36px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-4">
             {t("termsTitle")}
           </h1>
-          <p className="text-sm font-mono text-white/40">
+          <p className="text-sm font-mono text-foreground/40">
             {t("lastUpdated")}: {t("termsDate")}
           </p>
         </div>
 
         {/* Content */}
-        <div className="space-y-12 text-white/70 text-sm leading-relaxed">
+        <div className="space-y-12 text-foreground/70 text-sm leading-relaxed">
           <section>
             <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
               1. {t("section1Title")}
@@ -50,7 +50,7 @@ export default function TermsPage() {
             </h2>
             <div className="space-y-3">
               <p>{t("section3P1")}</p>
-              <ul className="list-disc pl-6 space-y-2 text-white/60">
+              <ul className="list-disc pl-6 space-y-2 text-foreground/60">
                 <li>{t("section3Li1")}</li>
                 <li>{t("section3Li2")}</li>
                 <li>{t("section3Li3")}</li>

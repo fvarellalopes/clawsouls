@@ -10,9 +10,9 @@ function SkeletonPulse({ className }: { className?: string }) {
 
 export function PresetCardSkeleton() {
   return (
-    <div className="bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-lg overflow-hidden flex flex-col h-full">
+    <div className="bg-foreground/[0.02] backdrop-blur-md border border-border rounded-lg overflow-hidden flex flex-col h-full">
       <div className="absolute top-0 left-0 w-8 h-[2px] bg-primary-container/30" />
-      <div className="aspect-square bg-black/50 border-b border-white/5 flex items-center justify-center">
+      <div className="aspect-square bg-background/50 border-b border-border/50 flex items-center justify-center">
         <SkeletonPulse className="w-20 h-20 rounded" />
       </div>
       <div className="p-6 flex flex-col gap-4 flex-grow">

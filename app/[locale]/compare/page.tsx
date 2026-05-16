@@ -12,7 +12,7 @@ export default function ComparePage() {
     <div className="min-h-screen bg-surface-dim">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col gap-10">
         {/* Header Section */}
-        <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
+        <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-border pb-8">
           <div className="flex flex-col gap-2">
             <span className="font-display text-yellow-400 uppercase tracking-widest">
               {t("title")}
@@ -26,7 +26,7 @@ export default function ComparePage() {
           </div>
           <Link
             href="/"
-            className="font-label-caps text-label-caps text-white/40 hover:text-primary-container transition-colors flex items-center gap-2"
+            className="font-label-caps text-label-caps text-muted-foreground hover:text-primary-container transition-colors flex items-center gap-2"
           >
             <span className="material-symbols-outlined text-[18px]">
               arrow_back

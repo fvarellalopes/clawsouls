@@ -5,7 +5,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-[#09090b] flex items-center justify-center px-4">
       <div className="text-center max-w-md">
         <h1 className="text-6xl font-bold text-yellow-400 mb-4 font-display">404</h1>
-        <p className="text-gray-400 font-body mb-8">
+        <p className="text-muted-foreground font-body mb-8">
           Página não encontrada — esse terminal não reconhece este endereço.
         </p>
         <Link

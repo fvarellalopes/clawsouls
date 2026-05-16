@@ -19,7 +19,7 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
         {/* Breadcrumb */}
         <Link
           href={`/${locale}/presets`}
-          className="font-label-caps text-label-caps text-white/40 hover:text-primary-container transition-colors flex items-center gap-2 mb-8"
+          className="font-label-caps text-label-caps text-foreground/40 hover:text-primary-container transition-colors flex items-center gap-2 mb-8"
         >
           <span className="material-symbols-outlined text-[18px]">arrow_back</span>
           &lt; BACK TO PRESETS
@@ -28,7 +28,7 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
         {/* Hero */}
         <div className="flex flex-col md:flex-row gap-8 mb-12">
           {/* Avatar */}
-          <div className="w-full md:w-64 aspect-square rounded-2xl overflow-hidden bg-black/50 border border-white/10">
+          <div className="w-full md:w-64 aspect-square rounded-2xl overflow-hidden bg-background/50 border border-border">
             <img
               src={avatarUrl(preset) || preset.avatar || "/placeholder-avatar.png"}
               alt={preset.name}
@@ -42,7 +42,7 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
               <span className="font-mono-data text-sm text-primary-container">
                 {preset.id.toUpperCase()}
               </span>
-              <h1 className="font-display text-4xl text-white mt-1">{preset.name}</h1>
+              <h1 className="font-display text-4xl text-foreground mt-1">{preset.name}</h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant mt-1">
                 {preset.creature}
               </p>
@@ -52,7 +52,7 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
               {preset.vibe}
             </p>
 
-            <p className="font-body-sm text-body-sm text-white/60 leading-relaxed">
+            <p className="font-body-sm text-body-sm text-muted-foreground leading-relaxed">
               {preset.description}
             </p>
 
@@ -61,7 +61,7 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
               {preset.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs font-medium rounded-full border border-white/10 text-white/50 font-mono"
+                  className="px-3 py-1 text-xs font-medium rounded-full border border-border text-foreground/50 font-mono"
                 >
                   {tag.toUpperCase()}
                 </span>
@@ -89,11 +89,11 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
             { label: "Consciousness", value: preset.consciousness ?? 50 },
             { label: "Questioning", value: preset.questioning ?? 30 },
           ].map((stat) => (
-            <div key={stat.label} className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
+            <div key={stat.label} className="p-4 rounded-xl bg-foreground/[0.02] border border-border">
               <div className="font-mono-data text-xs text-primary-container mb-1">
                 {stat.label.toUpperCase()}
               </div>
-              <div className="font-display text-2xl text-white">{stat.value}%</div>
+              <div className="font-display text-2xl text-foreground">{stat.value}%</div>
             </div>
           ))}
         </div>

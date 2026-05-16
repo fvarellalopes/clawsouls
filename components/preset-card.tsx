@@ -25,8 +25,8 @@ export const PresetCard = React.memo(function PresetCard({
       onClick={() => onSelect(preset)}
       className={`relative group cursor-pointer w-full text-left overflow-hidden rounded-lg flex flex-col h-full transition-all duration-300 ${
         isSelected
-          ? "bg-white/[0.04] border-primary-container/60 shadow-[0_0_30px_rgba(250,204,21,0.1)]"
-          : "bg-white/[0.02] border-white/10 hover:border-primary-container/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.05)]"
+          ? "bg-foreground/5 border-primary-container/60 shadow-[0_0_30px_rgba(250,204,21,0.1)]"
+          : "bg-foreground/[0.02] border-border hover:border-primary-container/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.05)]"
       } backdrop-blur-md border`}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}
@@ -35,7 +35,7 @@ export const PresetCard = React.memo(function PresetCard({
       <div className="absolute top-0 left-0 w-8 h-[2px] bg-primary-container" />
 
       {/* Image / Emoji section */}
-      <div className="relative p-4 border-b border-white/5 aspect-square overflow-hidden bg-black/50 flex items-center justify-center">
+      <div className="relative p-4 border-b border-border/50 aspect-square overflow-hidden bg-background/50 flex items-center justify-center">
         <img
           src={avatarUrl(preset) || preset.avatar}
           alt={preset.name}
@@ -45,8 +45,8 @@ export const PresetCard = React.memo(function PresetCard({
         />
 
         {/* Version badge — top-right */}
-        <div className="absolute top-6 right-6 bg-black/80 backdrop-blur-sm border border-white/10 px-2 py-1 rounded">
-          <span className="font-label-caps text-label-caps text-white/80">
+        <div className="absolute top-6 right-6 bg-background/80 backdrop-blur-sm border border-border px-2 py-1 rounded">
+          <span className="font-label-caps text-label-caps text-foreground/80">
             v{preset.vibeStyle || "1.0"}
           </span>
         </div>
@@ -58,10 +58,10 @@ export const PresetCard = React.memo(function PresetCard({
           <span className="font-mono-data text-mono-data text-sm text-primary-container">
             {archCode}
           </span>
-          <h3 className="font-display text-lg text-white">{preset.name}</h3>
+          <h3 className="font-display text-lg text-foreground">{preset.name}</h3>
         </div>
 
-        <p className="font-body-sm text-body-sm text-white/60 flex-grow line-clamp-3 leading-relaxed">
+        <p className="font-body-sm text-body-sm text-muted-foreground flex-grow line-clamp-3 leading-relaxed">
           {preset.description}
         </p>
 
@@ -70,7 +70,7 @@ export const PresetCard = React.memo(function PresetCard({
           {preset.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full border border-white/10 text-white/50 font-mono"
+              className="px-2.5 py-0.5 text-[10px] font-medium tracking-wide rounded-full border border-border text-foreground/50 font-mono"
             >
               {tag}
             </span>
@@ -79,7 +79,7 @@ export const PresetCard = React.memo(function PresetCard({
 
         {/* Load button */}
         <div className="mt-auto pt-2">
-          <div className="w-full bg-transparent border border-white/20 text-white font-label-caps text-label-caps py-3 rounded group-hover:bg-primary-container group-hover:border-primary-container group-hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
+          <div className="w-full bg-transparent border border-border text-foreground font-label-caps text-label-caps py-3 rounded group-hover:bg-primary-container group-hover:border-primary-container group-hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
             <span className="material-symbols-outlined text-[18px]">
               download
             </span>

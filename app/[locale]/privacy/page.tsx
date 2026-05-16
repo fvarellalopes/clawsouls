@@ -16,13 +16,13 @@ export default function PrivacyPage() {
           <h1 className="text-[36px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-4">
             {t("privacyTitle")}
           </h1>
-          <p className="text-sm font-mono text-white/40">
+          <p className="text-sm font-mono text-foreground/40">
             {t("lastUpdated")}: {t("privacyDate")}
           </p>
         </div>
 
         {/* Content */}
-        <div className="space-y-12 text-white/70 text-sm leading-relaxed">
+        <div className="space-y-12 text-foreground/70 text-sm leading-relaxed">
           <section>
             <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
               1. {t("privacySection1Title")}
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             <div className="space-y-3">
               <p>{t("privacySection1P1")}</p>
               <p>{t("privacySection1P2")}</p>
-              <ul className="list-disc pl-6 space-y-2 text-white/60">
+              <ul className="list-disc pl-6 space-y-2 text-foreground/60">
                 <li>{t("privacySection1Li1")}</li>
                 <li>{t("privacySection1Li2")}</li>
                 <li>{t("privacySection1Li3")}</li>
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
             </h2>
             <div className="space-y-3">
               <p>{t("privacySection2P1")}</p>
-              <ul className="list-disc pl-6 space-y-2 text-white/60">
+              <ul className="list-disc pl-6 space-y-2 text-foreground/60">
                 <li>{t("privacySection2Li1")}</li>
                 <li>{t("privacySection2Li2")}</li>
                 <li>{t("privacySection2Li3")}</li>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             </h2>
             <div className="space-y-3">
               <p>{t("privacySection3P1")}</p>
-              <ul className="list-disc pl-6 space-y-2 text-white/60">
+              <ul className="list-disc pl-6 space-y-2 text-foreground/60">
                 <li>{t("privacySection3Li1")}</li>
                 <li>{t("privacySection3Li2")}</li>
               </ul>

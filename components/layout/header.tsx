@@ -51,7 +51,7 @@ export function Header({ locale }: HeaderProps) {
             <Link
               key={link.href}
               href={link.href}
-              className="font-['Space_Grotesk'] tracking-tight text-sm uppercase text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200 px-2 py-1 rounded"
+              className="font-['Space_Grotesk'] tracking-tight text-sm uppercase text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-all duration-200 px-2 py-1 rounded"
             >
               {t(link.key)}
             </Link>
@@ -63,7 +63,7 @@ export function Header({ locale }: HeaderProps) {
       <div className="flex items-center gap-4">
         <button
           onClick={toggleTheme}
-          className="text-white/60 hover:text-[#facc15] transition-colors cursor-pointer"
+          className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
           aria-label="Toggle theme"
         >
           <span className="material-symbols-outlined text-xl">

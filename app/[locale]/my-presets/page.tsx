@@ -30,7 +30,7 @@ export default function MyPresetsPage() {
   return (
     <div className="min-h-screen bg-surface-dim">
       <div className="max-w-4xl mx-auto py-16 px-6">
-        <h1 className="font-display text-3xl md:text-4xl text-white mb-2">{t("title")}</h1>
+        <h1 className="font-display text-3xl md:text-4xl text-foreground mb-2">{t("title")}</h1>
         <p className="font-body-md text-body-md text-on-surface-variant mb-8">{t("subtitle")}</p>
 
         {presets.length === 0 ? (

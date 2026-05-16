@@ -109,7 +109,7 @@ export default function PresetsPage() {
     <div className="min-h-screen bg-surface-dim">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col gap-10">
         {/* Header Section */}
-        <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
+        <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-border pb-8">
           <div className="flex flex-col gap-2">
             <span className="font-display text-yellow-400 uppercase tracking-widest">
               {t("directory")}
@@ -126,7 +126,7 @@ export default function PresetsPage() {
           <div className="flex items-center gap-4 w-full md:w-auto">
             {/* Search */}
             <div className="relative flex-grow md:flex-grow-0">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xl">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xl">
                 search
               </span>
               <label htmlFor="presets-search" className="sr-only">
@@ -138,24 +138,24 @@ export default function PresetsPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder={t("searchPlaceholder")}
-                className="bg-black border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-4 py-2 rounded focus:border-primary-container focus:ring-0 focus:outline-none appearance-none w-full md:w-56 transition-colors"
+                className="bg-background border border-border text-foreground/80 font-mono-data text-mono-data pl-10 pr-4 py-2 rounded focus:border-primary-container focus:ring-0 focus:outline-none appearance-none w-full md:w-56 transition-colors"
                 aria-label={t("searchPlaceholder")}
               />
             </div>
 
             {/* Filter dropdown */}
             <div className="relative flex-grow md:flex-grow-0">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xl pointer-events-none z-10">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xl pointer-events-none z-10">
                 filter_list
               </span>
               <Select
                 value={selectedTag || "all"}
                 onValueChange={(value) => setSelectedTag(value === "all" ? null : value)}
               >
-                <SelectTrigger className="bg-white/5 backdrop-blur border border-white/10 text-white/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 w-full md:w-48 h-10 transition-colors">
+                <SelectTrigger className="bg-surface-alt/50 backdrop-blur border border-border text-foreground/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-yellow-400 focus:ring-0 w-full md:w-48 h-10 transition-colors">
                   <SelectValue placeholder={t("allArchetypes")} />
                 </SelectTrigger>
-                <SelectContent className="bg-[#131315] border border-white/10 text-white">
+                <SelectContent className="bg-surface border border-border text-foreground">
                   <SelectItem value="all">{t("allArchetypes")}</SelectItem>
                   {allTags.map((tag) => (
                     <SelectItem key={tag} value={tag}>
@@ -171,12 +171,12 @@ export default function PresetsPage() {
         {/* Results count */}
         {!loading && (
           <div className="flex items-center justify-between">
-            <span className="font-mono-data text-mono-data text-white/40">
+            <span className="font-mono-data text-mono-data text-muted-foreground">
               {filtered.length} {filtered.length === 1 ? t("entry") : t("entries")} {t("found")}
             </span>
               <Link
                 href="/"
-                className="font-label-caps text-label-caps text-white/40 hover:text-primary-container transition-colors flex items-center gap-2"
+                className="font-label-caps text-label-caps text-muted-foreground hover:text-primary-container transition-colors flex items-center gap-2"
               >
                 <span className="material-symbols-outlined text-[18px]">
                   arrow_back
@@ -205,10 +205,10 @@ export default function PresetsPage() {
         {/* Empty state */}
         {!loading && filtered.length === 0 && (
           <div className="text-center py-20">
-            <span className="material-symbols-outlined text-5xl text-white/20 mb-4 block">
+            <span className="material-symbols-outlined text-5xl text-foreground/20 mb-4 block">
               search_off
             </span>
-            <p className="font-body-lg text-body-lg text-white/40">
+            <p className="font-body-lg text-body-lg text-muted-foreground">
               {search
                 ? t("noPresetsFoundSearch", { query: search })
                 : t("noPresetsFound")}

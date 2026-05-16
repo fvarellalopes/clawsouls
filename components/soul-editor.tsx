@@ -443,7 +443,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs cursor-pointer ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-white/50 hover:text-gold/80"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
+                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs cursor-pointer ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-muted-foreground hover:text-primary"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}
