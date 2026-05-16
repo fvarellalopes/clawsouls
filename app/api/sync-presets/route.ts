@@ -1,91 +1,63 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-// Dynamic import of presets — Next.js handles the TS→JS transpilation
 export async function GET() {
   try {
     const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
     const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-
     if (!url || !key) {
       return NextResponse.json({ error: 'Supabase not configured' }, { status: 500 })
     }
-
     const supabase = createClient(url, key)
 
-    // Import presets from the local data file
     const { presets } = await import('@/data/presets')
 
-    // Get current presets in Supabase to compare
-    const { data: existing } = await supabase.from('presets').select('id')
-    const existingIds = new Set((existing || []).map((r: any) => r.id))
+    // Batch upsert — single call instead of 500+ individual calls
+    const rows = presets.map((p: any) => ({
+      id: p.id,
+      name: p.name,
+      creature: p.creature,
+      vibe: p.vibe || null,
+      emoji: p.emoji || null,
+      avatar: p.avatar || null,
+      core_truths_helpful: p.coreTruths?.helpful ?? true,
+      core_truths_opinions: p.coreTruths?.opinions ?? true,
+      core_truths_resourceful: p.coreTruths?.resourceful ?? true,
+      core_truths_trustworthy: p.coreTruths?.trustworthy ?? true,
+      core_truths_respectful: p.coreTruths?.respectful ?? true,
+      boundaries_private: p.boundaries?.private ?? false,
+      boundaries_ask_before_acting: p.boundaries?.askBeforeActing ?? false,
+      boundaries_no_half_baked: p.boundaries?.noHalfBaked ?? false,
+      boundaries_not_voice_proxy: p.boundaries?.notVoiceProxy ?? true,
+      vibe_style: p.vibeStyle || 'expressive',
+      humor: p.humor ?? 50,
+      formality: p.formality ?? 50,
+      emoji_usage: p.emojiUsage ?? 10,
+      verbosity: p.verbosity ?? 50,
+      consciousness: p.consciousness ?? 50,
+      questioning: p.questioning ?? 30,
+      openness: p.openness ?? 70,
+      conscientiousness: p.conscientiousness ?? 50,
+      extraversion: p.extraversion ?? 50,
+      agreeableness: p.agreeableness ?? 50,
+      neuroticism: p.neuroticism ?? 30,
+      description: p.description || null,
+      tags: p.tags || [],
+      source: p.source || 'original',
+      updated_at: new Date().toISOString(),
+    }))
 
-    let inserted = 0
-    let updated = 0
-    let errors = 0
+    const { data, error } = await supabase.from('presets').upsert(rows, {
+      onConflict: 'id',
+      ignoreDuplicates: false,
+    })
 
-    for (const preset of presets) {
-      // Map SoulPreset format → database row format
-      const row = {
-        id: preset.id,
-        name: preset.name,
-        creature: preset.creature,
-        vibe: preset.vibe || null,
-        emoji: preset.emoji || null,
-        avatar: preset.avatar || null,
-        core_truths_helpful: preset.coreTruths?.helpful ?? true,
-        core_truths_opinions: preset.coreTruths?.opinions ?? true,
-        core_truths_resourceful: preset.coreTruths?.resourceful ?? true,
-        core_truths_trustworthy: preset.coreTruths?.trustworthy ?? true,
-        core_truths_respectful: preset.coreTruths?.respectful ?? true,
-        boundaries_private: preset.boundaries?.private ?? false,
-        boundaries_ask_before_acting: preset.boundaries?.askBeforeActing ?? false,
-        boundaries_no_half_baked: preset.boundaries?.noHalfBaked ?? false,
-        boundaries_not_voice_proxy: preset.boundaries?.notVoiceProxy ?? true,
-        vibe_style: preset.vibeStyle || 'expressive',
-        humor: preset.humor ?? 50,
-        formality: preset.formality ?? 50,
-        emoji_usage: preset.emojiUsage ?? 10,
-        verbosity: preset.verbosity ?? 50,
-        consciousness: preset.consciousness ?? 50,
-        questioning: preset.questioning ?? 30,
-        openness: preset.openness ?? 70,
-        conscientiousness: preset.conscientiousness ?? 50,
-        extraversion: preset.extraversion ?? 50,
-        agreeableness: preset.agreeableness ?? 50,
-        neuroticism: preset.neuroticism ?? 30,
-        description: preset.description || null,
-        tags: preset.tags || [],
-        source: preset.source || 'original',
-        updated_at: new Date().toISOString(),
-      }
-
-      const isNew = !existingIds.has(preset.id)
-
-      const { error } = await supabase.from('presets').upsert(row, {
-        onConflict: 'id',
-        ignoreDuplicates: false,
-      })
-
-      if (error) {
-        console.error(`Error syncing ${preset.id}:`, error)
-        errors++
-      } else if (isNew) {
-        inserted++
-      } else {
-        updated++
-      }
+    if (error) {
+      return NextResponse.json({ error: error.message, details: error }, { status: 500 })
     }
 
-    return NextResponse.json({
-      success: true,
-      total: presets.length,
-      inserted,
-      updated,
-      errors,
-    })
+    return NextResponse.json({ success: true, total: rows.length })
   } catch (err: any) {
-    console.error('Sync error:', err)
     return NextResponse.json({ error: err.message }, { status: 500 })
   }
 }
