@@ -36,7 +36,7 @@ curl https://<tunnel-url>/health
 
 # Gerar avatar
 curl -X POST https://<tunnel-url>/generate \
-  -H "Authorization: Bearer cs-secret-2026" \
+  -H "Authorization: Bearer $SECRET_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "fantasy portrait, cyberpunk, ..."}'
 ```

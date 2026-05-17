@@ -13,7 +13,9 @@ from pathlib import Path
 
 # Config
 API_URL = os.environ.get("CLAWSOUL_API_URL", "http://localhost:8000")
-TOKEN = os.environ.get("CLAWSOUL_TOKEN", "cs-secret-2026")
+TOKEN = os.environ.get("CLAWSOUL_TOKEN")
+if not TOKEN:
+    raise ValueError("CLAWSOUL_TOKEN env var is required")
 PROMPTS_FILE = Path(__file__).parent.parent / "clawsouls_cyberpunk_prompts.json"
 OUTPUT_DIR = Path("/tmp/clawsouls_avatars")
 LOG_FILE = OUTPUT_DIR / "_generation_log.json"

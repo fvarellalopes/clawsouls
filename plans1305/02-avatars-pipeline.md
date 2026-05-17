@@ -59,7 +59,7 @@ ls -t public/avatars/*.png | head -5
 - [ ] **Executar script de geração em lote**
 
 ```bash
-python gen_batch.py --tunnel-url <URL> --token cs-secret-2026 --start <N> --count 50
+python gen_batch.py --tunnel-url <URL> --token $CLAWSOULS_TOKEN --start <N> --count 50
 ```
 
 Delay entre requests: 60s (40s geração + 20s margem)

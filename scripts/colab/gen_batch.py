@@ -1,7 +1,9 @@
 import json, os, time, requests, subprocess, sys, base64, shutil, tempfile
 
 API_URL = "https://trip-vinyl-pet-examining.trycloudflare.com"
-TOKEN = "cs-secret-2026"
+TOKEN = os.environ.get("CLAWSOULS_TOKEN")
+if not TOKEN:
+    raise ValueError("CLAWSOULS_TOKEN env var is required")
 AVATARS_DIR = "public/avatars"
 
 os.makedirs(AVATARS_DIR, exist_ok=True)

@@ -16,7 +16,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Config
-SECRET_TOKEN = 'cs-secret-2026'
+SECRET_TOKEN = os.environ.get('SECRET_TOKEN')
+if not SECRET_TOKEN:
+    raise ValueError('SECRET_TOKEN env var is required')
 
 # FastAPI
 app = FastAPI(title="ClawSouls API")

@@ -17,7 +17,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Configuração
-SECRET_TOKEN = os.environ.get('SECRET_TOKEN', 'cs-secret-2026')
+SECRET_TOKEN = os.environ.get('SECRET_TOKEN')
+if not SECRET_TOKEN:
+    raise ValueError('SECRET_TOKEN env var is required')
 
 # Inicializar FastAPI
 app = FastAPI(title="ClawSouls Image API", version="1.0")

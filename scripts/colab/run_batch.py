@@ -12,7 +12,9 @@ Gera todos os 289 avatares via Z-Image-Turbo API (cloudflared tunnel).
 import json, subprocess, os, shutil, base64, time, sys, urllib.request
 
 API_URL = os.environ.get("CLAWSOULS_API_URL", "https://absolutely-racial-klein-polyester.trycloudflare.com").rstrip("/")
-TOKEN = os.environ.get("CLAWSOULS_TOKEN", "cs-secret-2026")
+TOKEN = os.environ.get("CLAWSOULS_TOKEN")
+if not TOKEN:
+    raise ValueError("CLAWSOULS_TOKEN env var is required")
 STAGING_DIR = "/tmp/clawsouls_avatars"
 REPO_AVATARS_DIR = "/home/ubuntu/clawsouls/public/avatars"
 PROMPTS_FILE = "/home/ubuntu/clawsouls/clawsouls_cyberpunk_prompts.json"
