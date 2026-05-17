@@ -280,6 +280,34 @@
     "found": "FOUND",
     "allArchetypes": "ALL ARCHETYPES"
   },
+  "karma": {
+    "score": "カルマ",
+    "karmaScore": "{score}/100",
+    "refined": "洗練",
+    "developing": "発展中",
+    "unstable": "不安定",
+    "critiqueTitle": "ソウル整合性警告",
+    "critiqueSubtitle": "このプリセットのカルマが低い — 予測不能な動作をする可能性があります",
+    "generateCritique": "分析＆フィードバックを取得",
+    "analyzing": "ソウル構造を分析中...",
+    "breakdown": {
+      "personality": "性格",
+      "vibe": "雰囲気",
+      "completeness": "完成度",
+      "community": "コミュニティ"
+    },
+    "issues": {
+      "personalityFlat": "性格特性が平坦すぎる — もっと差別化が必要",
+      "personalityExtreme": "性格特性が極端すぎる — 極端に偏っている",
+      "vibeTooShort": "雰囲気の説明が短すぎるか欠落している"
+    },
+    "like": "いいね",
+    "dislike": "よくない",
+    "liked": "いいね済み",
+    "disliked": "よくない済み",
+    "rateThis": "このプリセットを評価",
+    "likes": "いいね"
+  },
   "home": {
     "heroTitle": "AIの魂を作ろう",
     "heroSubtitle": "OpenClaw SOUL.mdファイルのビジュアルエディタ。人格をカスタマイズ、トーンを調整、作成物を共有。",

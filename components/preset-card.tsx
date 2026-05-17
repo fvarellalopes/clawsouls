@@ -3,12 +3,100 @@
 import React from "react";
 import { SoulPreset } from "@/store/soulStore";
 import { avatarUrl } from "@/lib/avatar";
+import { useRatingsStore } from "@/store/ratingsStore";
+import { calculateKarma } from "@/lib/karma";
+import { useTranslations } from "next-intl";
 
 interface PresetCardProps {
   preset: SoulPreset;
   index: number;
   onSelect: (preset: SoulPreset) => void;
   isSelected?: boolean;
+}
+
+function KarmaBadge({ preset }: { preset: SoulPreset }) {
+  const karma = calculateKarma(preset);
+  return (
+    <div
+      className="flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold font-mono"
+      style={{
+        background: karma.score > 60 ? "rgba(34,197,94,0.15)" : karma.score > 30 ? "color-mix(in srgb, var(--primary) 15%, transparent)" : "color-mix(in srgb, var(--destructive) 15%, transparent)",
+        color: karma.score > 60 ? "rgb(34,197,94)" : karma.score > 30 ? "var(--primary)" : "var(--destructive)",
+        border: `1px solid ${karma.score > 60 ? "rgba(34,197,94,0.3)" : karma.score > 30 ? "color-mix(in srgb, var(--primary) 30%, transparent)" : "color-mix(in srgb, var(--destructive) 30%, transparent)"}`,
+      }}
+    >
+      <span className="material-symbols-outlined" style={{ fontSize: "10px" }}>
+        {karma.icon}
+      </span>
+      {karma.score}
+    </div>
+  );
+}
+
+function StarRating({ presetId, compact }: { presetId: string; compact?: boolean }) {
+  const { getStars, setStars } = useRatingsStore();
+  const stars = getStars(presetId);
+
+  return (
+    <div className="flex items-center gap-0.5">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <button
+          key={star}
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setStars(presetId, star === stars ? 0 : star);
+          }}
+          className="cursor-pointer hover:scale-125 transition-transform"
+          style={{ lineHeight: 0 }}
+        >
+          <span
+            className="material-symbols-outlined"
+            style={{
+              fontSize: compact ? "12px" : "14px",
+              color: star <= stars ? "var(--primary)" : "var(--muted-fg)",
+              fontVariationSettings: star <= stars ? "'FILL' 1" : "'FILL' 0",
+            }}
+          >
+            star
+          </span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function LikeButton({ presetId }: { presetId: string }) {
+  const t = useTranslations("karma");
+  const { getLike, toggleLike } = useRatingsStore();
+  const liked = getLike(presetId);
+
+  return (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.stopPropagation();
+        toggleLike(presetId);
+      }}
+      className="flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-mono transition-all hover:scale-105 cursor-pointer"
+      style={{
+        background: liked === true ? "color-mix(in srgb, var(--primary) 15%, transparent)" : "transparent",
+        color: liked === true ? "var(--primary)" : "var(--muted-fg)",
+        border: `1px solid ${liked === true ? "color-mix(in srgb, var(--primary) 30%, transparent)" : "var(--border)"}`,
+      }}
+      aria-label={liked === true ? t("liked") : t("like")}
+    >
+      <span
+        className="material-symbols-outlined"
+        style={{
+          fontSize: "13px",
+          fontVariationSettings: liked === true ? "'FILL' 1" : "'FILL' 0",
+        }}
+      >
+        thumb_up
+      </span>
+    </button>
+  );
 }
 
 export const PresetCard = React.memo(function PresetCard({
@@ -34,6 +122,11 @@ export const PresetCard = React.memo(function PresetCard({
       {/* Gold accent bar — top-left */}
       <div className="absolute top-0 left-0 w-8 h-[2px] bg-primary-container" />
 
+      {/* Karma badge — top-right */}
+      <div className="absolute top-3 right-3 z-10">
+        <KarmaBadge preset={preset} />
+      </div>
+
       {/* Image / Emoji section */}
       <div className="relative p-4 border-b border-border/50 aspect-square overflow-hidden bg-background/50 flex items-center justify-center">
         <img
@@ -44,8 +137,8 @@ export const PresetCard = React.memo(function PresetCard({
           className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 rounded"
         />
 
-        {/* Version badge — top-right */}
-        <div className="absolute top-6 right-6 bg-background/80 backdrop-blur-sm border border-border px-2 py-1 rounded">
+        {/* Version badge — top-left of image */}
+        <div className="absolute top-6 left-6 bg-background/80 backdrop-blur-sm border border-border px-2 py-1 rounded">
           <span className="font-label-caps text-label-caps text-foreground/80">
             v{preset.vibeStyle || "1.0"}
           </span>
@@ -53,7 +146,7 @@ export const PresetCard = React.memo(function PresetCard({
       </div>
 
       {/* Content */}
-      <div className="p-6 flex flex-col flex-grow gap-4">
+      <div className="p-6 flex flex-col flex-grow gap-3">
         <div className="flex flex-col gap-1">
           <span className="font-mono-data text-mono-data text-sm text-primary-container">
             {archCode}
@@ -75,6 +168,12 @@ export const PresetCard = React.memo(function PresetCard({
               {tag}
             </span>
           ))}
+        </div>
+
+        {/* Rating row */}
+        <div className="flex items-center justify-between gap-2 pt-1">
+          <StarRating presetId={preset.id} compact />
+          <LikeButton presetId={preset.id} />
         </div>
 
         {/* Load button */}

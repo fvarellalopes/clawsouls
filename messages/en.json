@@ -278,9 +278,37 @@
     "allArchetypes": "ALL ARCHETYPES",
     "found": "FOUND",
     "entry": "ENTRY",
-    "entries": "ENTRIES"
+   "entries": "ENTRIES"
+ },
+  "karma": {
+    "score": "Karma",
+    "karmaScore": "{score}/100",
+    "refined": "Refined",
+    "developing": "Developing",
+    "unstable": "Unstable",
+    "critiqueTitle": "Soul Integrity Warning",
+    "critiqueSubtitle": "This preset has low karma — it may behave unpredictably",
+    "generateCritique": "Analyze & Get Feedback",
+    "analyzing": "Analyzing soul structure...",
+    "breakdown": {
+      "personality": "Personality",
+      "vibe": "Vibe",
+      "completeness": "Completeness",
+      "community": "Community"
+    },
+    "issues": {
+      "personalityFlat": "Personality traits are too flat — needs more differentiation",
+      "personalityExtreme": "Personality traits are too extreme — polarized to extremes",
+      "vibeTooShort": "Vibe description is too short or missing"
+    },
+    "like": "Like",
+    "dislike": "Dislike",
+    "liked": "Liked",
+    "disliked": "Disliked",
+    "rateThis": "Rate this preset",
+    "likes": "likes"
   },
-  "home": {
+ "home": {
     "heroTitle": "Create Your AI's Soul",
     "heroSubtitle": "Visual editor for OpenClaw SOUL.md files. Customize personalities, tweak tones, and share your creations.",
     "getStarted": "Get Started",

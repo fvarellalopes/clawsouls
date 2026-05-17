@@ -19,6 +19,7 @@ import { attributeOptions } from "@/data/presets";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { exportYAML } from "@/lib/exportYAML";
 import { avatarUrl, hasAvatar } from "@/lib/avatar";
+import { CritiquePanel } from "@/components/critique-panel";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -1050,6 +1051,22 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   </span>
                 </div>
               </div>
+
+              {/* Karma Critique — shows when karma < 35 */}
+              <CritiquePanel
+                preset={{
+                  ...soul,
+                  id: "current",
+                  creature: soul.creature || "",
+                  vibe: soul.vibe || "",
+                  emoji: soul.emoji || "",
+                  vibeStyle: soul.vibeStyle || "",
+                  description: soul.vibe || "",
+                  tags: [],
+                  source: "custom" as const,
+                }}
+              />
+
 
               {/* Parchment Preview */}
               <div className="sticky top-24">

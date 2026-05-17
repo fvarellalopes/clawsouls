@@ -280,6 +280,34 @@
     "found": "FOUND",
     "allArchetypes": "ALL ARCHETYPES"
   },
+  "karma": {
+    "score": "业力",
+    "karmaScore": "{score}/100",
+    "refined": "精炼",
+    "developing": "发展中",
+    "unstable": "不稳定",
+    "critiqueTitle": "灵魂完整性警告",
+    "critiqueSubtitle": "此预设的业力较低 — 可能会表现得不可预测",
+    "generateCritique": "分析并获取反馈",
+    "analyzing": "正在分析灵魂结构...",
+    "breakdown": {
+      "personality": "性格",
+      "vibe": "氛围",
+      "completeness": "完整度",
+      "community": "社区"
+    },
+    "issues": {
+      "personalityFlat": "性格特征过于平淡 — 需要更多差异化",
+      "personalityExtreme": "性格特征过于极端 — 偏向极端值",
+      "vibeTooShort": "氛围描述过短或缺失"
+    },
+    "like": "喜欢",
+    "dislike": "不喜欢",
+    "liked": "已喜欢",
+    "disliked": "已不喜欢",
+    "rateThis": "评价此预设",
+    "likes": "喜欢"
+  },
   "home": {
     "heroTitle": "打造 AI 的灵魂",
     "heroSubtitle": "OpenClaw SOUL.md 文件的可视化编辑器。自定义人格、调整语气、分享创作。",
