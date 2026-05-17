@@ -16,8 +16,10 @@ let _ratelimit: Ratelimit | null = null;
 function getRatelimit(): Ratelimit | null {
   if (_ratelimit) return _ratelimit;
 
-  const url = process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  // Vercel Marketplace prefixes env vars with the KV store name (e.g. soul_KV_REST_API_URL)
+  // Support both standard Upstash names and Vercel-prefixed names
+  const url = process.env.UPSTASH_REDIS_REST_URL || process.env.soul_KV_REST_API_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.soul_KV_REST_API_TOKEN;
 
   if (!url || !token) return null;
 
