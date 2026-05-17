@@ -56,7 +56,7 @@ function CyberSlider({
     <div className="space-y-2">
       <div className="flex justify-between items-center">
         <span className="mono-data">{label}</span>
-        <span style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", fontSize: "13px", fontWeight: 600 }}>
+        <span style={{ color: "var(--primary)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", fontSize: "13px", fontWeight: 600 }}>
           {value}
         </span>
       </div>
@@ -68,7 +68,7 @@ function CyberSlider({
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
       />
-      <div className="flex justify-between text-[9px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.25)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>
+      <div className="flex justify-between text-[9px] uppercase tracking-widest" style={{ color: "var(--muted-fg)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>
         <span>{minLabel}</span>
         <span>{maxLabel}</span>
       </div>
@@ -333,18 +333,18 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
 
   // ─── CYBER TERMINAL EDITOR ───────────────────────────────────────────
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: "#09090b" }}>
+    <div className="min-h-screen overflow-x-hidden bg-background">
       {/* ─── TOP ACTIONS BAR ─── */}
-      <div className="px-3 sm:px-6 py-3 sm:py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.3)" }}>
+      <div className="px-3 sm:px-6 py-3 sm:py-4 border-b border-border bg-surface/30">
         <div className="container mx-auto max-w-[1400px] flex items-center justify-between gap-2 sm:gap-4">
           {/* Left: Title + Status */}
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink">
-            <div className="w-0.5 sm:w-1 h-6 sm:h-8 flex-shrink-0" style={{ background: "#facc15" }} />
+            <div className="w-0.5 sm:w-1 h-6 sm:h-8 flex-shrink-0 bg-primary" />
             <div className="min-w-0">
               <h1 className="text-sm sm:text-lg font-bold font-display text-yellow-400 truncate" style={{ letterSpacing: "0.06em" }}>
                 Terminal Session_01
               </h1>
-              <p className="mono-data hidden sm:block" style={{ color: "rgba(255,255,255,0.35)", fontSize: "10px" }}>
+              <p className="mono-data hidden sm:block text-muted-foreground" style={{ fontSize: "10px" }}>
                 STATUS: CONFIGURING // TARGET: SOUL.MD
               </p>
             </div>
@@ -360,7 +360,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_back</span>
               <span className="hidden sm:inline">{t("presets")}</span>
             </Link>
-            <div className="w-px h-4 sm:h-6 flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <div className="w-px h-4 sm:h-6 flex-shrink-0 bg-border" />
             <button onClick={undo} disabled={!canUndo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("undoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
               <span className="hidden sm:inline">{t("undo")}</span>
@@ -369,7 +369,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
               <span className="hidden sm:inline">{t("redo")}</span>
             </button>
-            <div className="w-px h-4 sm:h-6 flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <div className="w-px h-4 sm:h-6 flex-shrink-0 bg-border" />
             <button onClick={handleShare} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer flex-shrink-0" title={t("share")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
               <span className="hidden sm:inline">{t("share")}</span>
@@ -397,27 +397,27 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                     role="menuitem"
                     onClick={() => { handleExport(); setExportDropdownOpen(false); }}
                     className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
-                    style={{ color: "rgba(255,255,255,0.85)" }}
+                    style={{ color: "var(--fg)" }}
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>description</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--primary)" }}>description</span>
                     {t("exportDropdown.soulmd")}
                   </button>
                   <button
                     role="menuitem"
                     onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
                     className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
-                    style={{ color: "rgba(255,255,255,0.85)" }}
+                    style={{ color: "var(--fg)" }}
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>data_object</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--primary)" }}>data_object</span>
                     {t("exportDropdown.json")}
                   </button>
                   <button
                     role="menuitem"
                     onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
                     className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
-                    style={{ color: "rgba(255,255,255,0.85)" }}
+                    style={{ color: "var(--fg)" }}
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "#facc15" }}>code</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--primary)" }}>code</span>
                     {t("exportDropdown.yaml")}
                   </button>
                 </div>
@@ -434,7 +434,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
             {/* ─── LEFT COLUMN (7 cols) — Editor ─── */}
             <div className="lg:col-span-7 space-y-4 sm:space-y-6">
               {/* Tabs */}
-              <div className="flex gap-0 overflow-x-auto no-scrollbar" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+              <div className="flex gap-0 overflow-x-auto no-scrollbar border-b border-border">
                 {[
                   { id: "essentials", label: t("tabsEssentials") || "BASIC INFO" },
                   { id: "personality", label: t("tabsPersonality") || "PERSONALITY" },
@@ -456,7 +456,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>badge</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>badge</span>
                       {t("tabsEssentials") || "Basic Info"}
                     </h3>
                     <div className="space-y-5">
@@ -533,7 +533,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                           style={{ cursor: "pointer" }}
                         >
                           {vibeStyles.map((style) => (
-                            <option key={style.value} value={style.value} style={{ background: "#09090b", color: "#fff" }}>
+                            <option key={style.value} value={style.value} style={{ background: "var(--surface)", color: "var(--fg)" }}>
                               {style.label}
                             </option>
                           ))}
@@ -546,14 +546,14 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {showQuickStart && (
                     <div className="cyber-glass p-6" style={{ animation: "fadeInUp 0.3s ease-out" }}>
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="mono-data" style={{ color: "#facc15" }}>
+                        <h3 className="mono-data text-primary">
                           <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle" }}>bolt</span>
                           {t("quickStart.title") || "QUICK START"}
                         </h3>
                         <button
                           onClick={() => setQuickStartDismissed(true)}
                           className="text-xs hover:underline transition-colors cursor-pointer mono-data"
-                          style={{ color: "rgba(255,255,255,0.3)" }}
+                          style={{ color: "var(--muted-fg)" }}
                         >
                           {t("dismissQuickStart") || "DISMISS"}
                         </button>
@@ -563,25 +563,25 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                           onClick={() => { resetSoul(); setQuickStartDismissed(true); }}
                           className="p-4 text-left transition-all hover:scale-[1.02] cursor-pointer cyber-glass"
                         >
-                          <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>restart_alt</span>
-                          <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.scratch")}</p>
-                          <p className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("quickStart.scratchDesc")}</p>
+                          <span className="material-symbols-outlined block mb-2 text-muted-foreground" style={{ fontSize: "20px" }}>restart_alt</span>
+                          <p className="mono-data text-xs text-foreground">{t("quickStart.scratch")}</p>
+                          <p className="text-[10px] mt-1 text-muted-foreground">{t("quickStart.scratchDesc")}</p>
                         </button>
                         <button
                           onClick={() => { resetSoul(); setQuickStartDismissed(true); setFillWithAIOpen(true); }}
                           className="p-4 text-left transition-all hover:scale-[1.02] cursor-pointer cyber-glass"
                         >
-                          <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>wand_stars</span>
-                          <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.ai")}</p>
-                          <p className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("quickStart.aiDesc")}</p>
+                          <span className="material-symbols-outlined block mb-2 text-muted-foreground" style={{ fontSize: "20px" }}>wand_stars</span>
+                          <p className="mono-data text-xs text-foreground">{t("quickStart.ai")}</p>
+                          <p className="text-[10px] mt-1 text-muted-foreground">{t("quickStart.aiDesc")}</p>
                         </button>
                         <Link
                           href={`/${activeLocale}/presets`}
                           className="p-4 text-left transition-all hover:scale-[1.02] cyber-glass block"
                         >
-                          <span className="material-symbols-outlined block mb-2" style={{ color: "rgba(255,255,255,0.5)", fontSize: "20px" }}>auto_awesome</span>
-                          <p className="mono-data text-xs" style={{ color: "rgba(255,255,255,0.8)" }}>{t("quickStart.preset")}</p>
-                          <p className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>{t("quickStart.presetDesc")}</p>
+                          <span className="material-symbols-outlined block mb-2 text-muted-foreground" style={{ fontSize: "20px" }}>auto_awesome</span>
+                          <p className="mono-data text-xs text-foreground">{t("quickStart.preset")}</p>
+                          <p className="text-[10px] mt-1 text-muted-foreground">{t("quickStart.presetDesc")}</p>
                         </Link>
                       </div>
                     </div>
@@ -595,7 +595,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Cognitive Parameters — Big Five */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>psychology</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>psychology</span>
                       Cognitive Parameters
                     </h3>
                     <div className="space-y-6">
@@ -619,7 +619,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Core Truths */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>verified</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>verified</span>
                       {t("coreTruthsTitle") || "Core Truths"}
                     </h3>
                     <div className="space-y-1">
@@ -637,7 +637,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Boundaries */}
                   <div className="cyber-glass p-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>shield</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>shield</span>
                       {t("boundariesTitle") || "Boundaries"}
                     </h3>
                     <div className="space-y-1">
@@ -660,7 +660,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Syntactic Tone Profile */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>tune</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>tune</span>
                       {t("toneAttributes") || "Syntactic Tone Profile"}
                     </h3>
                     <div className="space-y-6">
@@ -712,7 +712,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Communication Mode */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>forum</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>forum</span>
                       {t("communicationMode") || "Communication Mode"}
                     </h3>
                     <select
@@ -721,19 +721,19 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                       className="cyber-input"
                       style={{ cursor: "pointer" }}
                     >
-                      <option value="direct" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.direct")}</option>
-                      <option value="socratic" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.socratic")}</option>
-                      <option value="diagnostic" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.diagnostic")}</option>
-                      <option value="encouraging" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.encouraging")}</option>
-                      <option value="challenging" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.challenging")}</option>
-                      <option value="flirty" style={{ background: "#09090b", color: "#fff" }}>{t("commModes.flirty")}</option>
+                      <option value="direct" style={{ background: "var(--surface)", color: "var(--fg)" }}>{t("commModes.direct")}</option>
+                      <option value="socratic" style={{ background: "var(--surface)", color: "var(--fg)" }}>{t("commModes.socratic")}</option>
+                      <option value="diagnostic" style={{ background: "var(--surface)", color: "var(--fg)" }}>{t("commModes.diagnostic")}</option>
+                      <option value="encouraging" style={{ background: "var(--surface)", color: "var(--fg)" }}>{t("commModes.encouraging")}</option>
+                      <option value="challenging" style={{ background: "var(--surface)", color: "var(--fg)" }}>{t("commModes.challenging")}</option>
+                      <option value="flirty" style={{ background: "var(--surface)", color: "var(--fg)" }}>{t("commModes.flirty")}</option>
                     </select>
                   </div>
 
                   {/* Emotional Range */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>mood</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>mood</span>
                       {t("emotionalRange") || "Emotional Range"}
                     </h3>
                     <CyberSlider
@@ -748,7 +748,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Knowledge Domains */}
                   <div className="cyber-glass p-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>school</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>school</span>
                       {t("knowledgeDomains") || "Knowledge Domains"}
                     </h3>
                     <div className="grid grid-cols-2 gap-2">
@@ -778,9 +778,9 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                             }}
                             className="p-2.5 text-xs text-left transition-all rounded cursor-pointer"
                             style={{
-                              background: isSelected ? "rgba(250,204,21,0.1)" : "rgba(255,255,255,0.02)",
-                              border: `1px solid ${isSelected ? "rgba(250,204,21,0.3)" : "rgba(255,255,255,0.06)"}`,
-                              color: isSelected ? "#facc15" : "rgba(255,255,255,0.5)",
+                              background: isSelected ? "var(--primary)" : "var(--surface)",
+                              border: `1px solid ${isSelected ? "var(--primary)" : "var(--border)"}`,
+                              color: isSelected ? "var(--primary)" : "var(--muted-fg)",
                               fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
                             }}
                           >
@@ -799,7 +799,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Speech Patterns */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>record_voice_over</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>record_voice_over</span>
                       {t("speechPatterns") || "Speech Patterns"}
                     </h3>
                     <div className="space-y-5">
@@ -837,19 +837,19 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Custom Core Truths */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>add_circle</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>add_circle</span>
                       {t("customCoreTruths") || "Custom Core Truths"}
                     </h3>
                     <div className="space-y-2 mb-4">
                       {(soul.customCoreTruths || []).map((truth, i) => (
-                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                          <span className="flex-1 text-xs" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>{truth}</span>
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                          <span className="flex-1 text-xs" style={{ color: "var(--fg)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>{truth}</span>
                           <button
                             onClick={() => removeCustomCoreTruth(i)}
                             className="cyber-btn"
                             style={{ padding: "4px", border: "none" }}
                           >
-                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "rgba(255,100,100,0.6)" }}>delete</span>
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "var(--destructive)" }}>delete</span>
                           </button>
                         </div>
                       ))}
@@ -871,19 +871,19 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Custom Boundaries */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>add_circle</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>add_circle</span>
                       {t("customBoundaries") || "Custom Boundaries"}
                     </h3>
                     <div className="space-y-2 mb-4">
                       {(soul.customBoundaries || []).map((boundary, i) => (
-                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                          <span className="flex-1 text-xs" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>{boundary}</span>
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                          <span className="flex-1 text-xs" style={{ color: "var(--fg)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>{boundary}</span>
                           <button
                             onClick={() => removeCustomBoundary(i)}
                             className="cyber-btn"
                             style={{ padding: "4px", border: "none" }}
                           >
-                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "rgba(255,100,100,0.6)" }}>delete</span>
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "var(--destructive)" }}>delete</span>
                           </button>
                         </div>
                       ))}
@@ -905,13 +905,13 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Signature Phrases */}
                   <div className="cyber-glass p-6 mb-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>format_quote</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>format_quote</span>
                       {t("signaturePhrases") || "Signature Phrases"}
                     </h3>
                     <div className="space-y-2 mb-4">
                       {(soul.signaturePhrases || []).map((phrase, i) => (
-                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                          <span className="flex-1 text-xs italic" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>"{phrase}"</span>
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                          <span className="flex-1 text-xs italic" style={{ color: "var(--fg)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>"{phrase}"</span>
                           <button
                             onClick={() => {
                               const updated = [...(soul.signaturePhrases || [])];
@@ -921,13 +921,13 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                             className="cyber-btn"
                             style={{ padding: "4px", border: "none" }}
                           >
-                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "rgba(255,100,100,0.6)" }}>delete</span>
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "var(--destructive)" }}>delete</span>
                           </button>
                         </div>
                       ))}
                     </div>
                     {(soul.signaturePhrases || []).length >= 5 ? (
-                      <p className="mono-data text-[10px]" style={{ color: "rgba(255,255,255,0.3)" }}>
+                      <p className="mono-data text-[10px]" style={{ color: "var(--muted-fg)" }}>
                         {t("signaturePhrasesMaxReached") || "Maximum 5 phrases reached"}
                       </p>
                     ) : (
@@ -949,7 +949,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                             />
                             <span
                               className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] tabular-nums"
-                              style={{ color: newSignaturePhrase.length >= 45 ? "rgba(255,100,100,0.6)" : "rgba(255,255,255,0.25)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}
+                              style={{ color: newSignaturePhrase.length >= 45 ? "var(--destructive)" : "var(--muted-fg)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}
                             >
                               {newSignaturePhrase.length}/50
                             </span>
@@ -968,7 +968,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                             <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>add</span>
                           </button>
                         </div>
-                        <p className="mono-data text-[10px]" style={{ color: "rgba(255,255,255,0.25)" }}>
+                        <p className="mono-data text-[10px]" style={{ color: "var(--muted-fg)" }}>
                           {t("signaturePhrasesCounter", { count: (soul.signaturePhrases || []).length }) || `${(soul.signaturePhrases || []).length}/5`}
                         </p>
                       </div>
@@ -978,7 +978,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   {/* Actions */}
                   <div className="cyber-glass p-6">
                     <h3 className="cyber-section-title">
-                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "rgba(250,204,21,0.6)" }}>settings</span>
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>settings</span>
                       {t("customize") || "Actions"}
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -997,7 +997,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                           }
                         }}
                         className="cyber-btn"
-                        style={{ borderColor: "rgba(255,100,100,0.3)", color: "rgba(255,100,100,0.7)" }}
+                        style={{ borderColor: "var(--destructive)", color: "var(--destructive)" }}
                       >
                         {t("reset") || "Reset"}
                       </button>
@@ -1013,9 +1013,9 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               <div className="cyber-glass p-6 text-center">
                 <div className="relative mx-auto mb-4 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden"
                      style={{
-                       background: "rgba(255,255,255,0.03)",
-                       border: "1px solid rgba(250,204,21,0.2)",
-                       boxShadow: "0 0 30px rgba(250,204,21,0.08), inset 0 0 30px rgba(250,204,21,0.03)",
+                       background: "var(--surface)",
+                      border: "1px solid var(--primary)",
+                      boxShadow: "0 0 30px var(--primary), inset 0 0 30px var(--primary)",
                      }}>
                   {avatarUrl(soul).includes("placeholder") ? (
                     <div className="w-full h-full flex items-center justify-center">
@@ -1029,10 +1029,10 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                     />
                   )}
                   {/* Cyber corner decorations */}
-                  <div className="absolute top-0 left-0 w-4 h-4" style={{ borderTop: "2px solid rgba(250,204,21,0.4)", borderLeft: "2px solid rgba(250,204,21,0.4)" }} />
-                  <div className="absolute top-0 right-0 w-4 h-4" style={{ borderTop: "2px solid rgba(250,204,21,0.4)", borderRight: "2px solid rgba(250,204,21,0.4)" }} />
-                  <div className="absolute bottom-0 left-0 w-4 h-4" style={{ borderBottom: "2px solid rgba(250,204,21,0.4)", borderLeft: "2px solid rgba(250,204,21,0.4)" }} />
-                  <div className="absolute bottom-0 right-0 w-4 h-4" style={{ borderBottom: "2px solid rgba(250,204,21,0.4)", borderRight: "2px solid rgba(250,204,21,0.4)" }} />
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary/40" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary/40" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary/40" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary/40" />
                 </div>
 
                 {/* Info below avatar */}
@@ -1040,14 +1040,12 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                     style={{ letterSpacing: "0.04em" }}>
                   {soul.name || t("unnamedSoul") || "UNNAMED SOUL"}
                 </h2>
-                <p className="mono-data text-xs mt-1 truncate max-w-full" style={{ color: "rgba(255,255,255,0.4)" }}>
+                <p className="mono-data text-xs mt-1 truncate max-w-full text-muted-foreground">
                   {soul.creature || "—"}
                 </p>
                 <div className="flex items-center justify-center gap-2 mt-3">
-                  <span className="w-1.5 h-1.5 rounded-full"
-                        style={{ background: hasAvatar(soul) ? "#22c55e" : "rgba(255,255,255,0.2)" }} />
-                  <span className="mono-data text-[10px]"
-                        style={{ color: hasAvatar(soul) ? "rgba(34,197,94,0.7)" : "rgba(255,255,255,0.25)" }}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${hasAvatar(soul) ? "bg-green-500" : "bg-muted-foreground"}`} />
+                  <span className={`mono-data text-[10px] ${hasAvatar(soul) ? "text-green-500" : "text-muted-foreground"}`}>
                     {hasAvatar(soul) ? "AVATAR GENERATED" : "NO AVATAR"}
                   </span>
                 </div>
@@ -1076,12 +1074,12 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
 
       {/* Share Dialog */}
       <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
-        <DialogContent style={{ background: "#111118", borderColor: "rgba(255,255,255,0.1)" }}>
+        <DialogContent style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
           <DialogHeader>
-            <DialogTitle style={{ color: "#facc15", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.06em" }}>
+            <DialogTitle style={{ color: "var(--primary)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.06em" }}>
               {t("shareLink") || "Share Link"}
             </DialogTitle>
-            <DialogDescription style={{ color: "rgba(255,255,255,0.5)" }}>
+            <DialogDescription style={{ color: "var(--muted-fg)" }}>
               {t("shareDesc") || "Share this link with others"}
             </DialogDescription>
           </DialogHeader>
@@ -1091,7 +1089,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               value={shareUrl}
               className="cyber-input"
             />
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{t("shareTip") || "Link copied to clipboard"}</p>
+            <p className="text-xs" style={{ color: "var(--muted-fg)" }}>{t("shareTip") || "Link copied to clipboard"}</p>
           </div>
           <DialogFooter>
             <button onClick={() => setShareDialogOpen(false)} className="cyber-btn-gold">
