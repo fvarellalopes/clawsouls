@@ -15,7 +15,9 @@ interface PresetCardProps {
 }
 
 function KarmaBadge({ preset }: { preset: SoulPreset }) {
-  const karma = calculateKarma(preset);
+  const { getAggregate } = useRatingsStore();
+  const agg = getAggregate(preset.id);
+  const karma = calculateKarma(preset, agg.likes, agg.dislikes, agg.avgStars);
   return (
     <div
       className="flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold font-mono"
@@ -68,34 +70,40 @@ function StarRating({ presetId, compact }: { presetId: string; compact?: boolean
 
 function LikeButton({ presetId }: { presetId: string }) {
   const t = useTranslations("karma");
-  const { getLike, toggleLike } = useRatingsStore();
+  const { getLike, toggleLike, getAggregate } = useRatingsStore();
   const liked = getLike(presetId);
+  const agg = getAggregate(presetId);
 
   return (
-    <button
-      type="button"
-      onClick={(e) => {
-        e.stopPropagation();
-        toggleLike(presetId);
-      }}
-      className="flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-mono transition-all hover:scale-105 cursor-pointer"
-      style={{
-        background: liked === true ? "color-mix(in srgb, var(--primary) 15%, transparent)" : "transparent",
-        color: liked === true ? "var(--primary)" : "var(--muted-fg)",
-        border: `1px solid ${liked === true ? "color-mix(in srgb, var(--primary) 30%, transparent)" : "var(--border)"}`,
-      }}
-      aria-label={liked === true ? t("liked") : t("like")}
-    >
-      <span
-        className="material-symbols-outlined"
-        style={{
-          fontSize: "13px",
-          fontVariationSettings: liked === true ? "'FILL' 1" : "'FILL' 0",
+    <div className="flex items-center gap-1.5">
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleLike(presetId);
         }}
+        className="flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-mono transition-all hover:scale-105 cursor-pointer"
+        style={{
+          background: liked === true ? "color-mix(in srgb, var(--primary) 15%, transparent)" : "transparent",
+          color: liked === true ? "var(--primary)" : "var(--muted-fg)",
+          border: `1px solid ${liked === true ? "color-mix(in srgb, var(--primary) 30%, transparent)" : "var(--border)"}`,
+        }}
+        aria-label={liked === true ? t("liked") : t("like")}
       >
-        thumb_up
-      </span>
-    </button>
+        <span
+          className="material-symbols-outlined"
+          style={{
+            fontSize: "13px",
+            fontVariationSettings: liked === true ? "'FILL' 1" : "'FILL' 0",
+          }}
+        >
+          thumb_up
+        </span>
+        {agg.likes > 0 && (
+          <span className="text-[10px] font-mono">{agg.likes}</span>
+        )}
+      </button>
+    </div>
   );
 }
 

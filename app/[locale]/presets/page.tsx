@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { SoulPreset } from "@/store/soulStore";
 import { useRouter, useParams } from "next/navigation";
+import { useRatingsStore } from "@/store/ratingsStore";
 import { PresetsGridSkeleton } from "@/components/skeletons";
 import {
   Select,
@@ -67,6 +68,8 @@ export default function PresetsPage() {
     }
 
     load();
+    // Also fetch rating aggregates from backend
+    useRatingsStore.getState().fetchAggregates();
     return () => { cancelled = true; };
   }, []);
 
