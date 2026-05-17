@@ -1,96 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSupabase } from '@/lib/supabase';
-
-// --- Rate limiter (in-memory, per IP) ---
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_WINDOW = 60_000; // 1 min
-const RATE_LIMIT_MAX = 30;       // 30 req/min per IP
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return true;
-  }
-
-  if (entry.count >= RATE_LIMIT_MAX) return false;
-  entry.count++;
-  return true;
-}
-
-// --- Input validation ---
-function sanitizePresetId(id: unknown): string | null {
-  if (typeof id !== 'string') return null;
-  const trimmed = id.trim();
-  if (trimmed.length === 0 || trimmed.length > 100) return null;
-  // Only allow alphanumeric, hyphens, underscores
-  if (!/^[a-zA-Z0-9_-]+$/.test(trimmed)) return null;
-  return trimmed;
-}
-
-function sanitizeAnonId(id: unknown): string | null {
-  if (typeof id !== 'string') return null;
-  const trimmed = id.trim();
-  if (trimmed.length < 5 || trimmed.length > 50) return null;
-  // Only allow alphanumeric, underscores
-  if (!/^[a-zA-Z0-9_]+$/.test(trimmed)) return null;
-  return trimmed;
-}
-
-function sanitizeStars(stars: unknown): number {
-  const n = Number(stars);
-  if (!Number.isFinite(n)) return 0;
-  return Math.max(0, Math.min(5, Math.round(n)));
-}
-
-function sanitizeLiked(liked: unknown): boolean | null {
-  if (liked === true || liked === false) return liked;
-  return null;
-}
-
-// --- Helpers ---
-function getClientIp(request: NextRequest): string {
-  return (
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip') ||
-    'unknown'
-  );
-}
-
-function safeError(context: string, err: unknown): string {
-  // Never expose Supabase internals to the client
-  console.error(`[ratings] ${context}:`, err);
-  return 'Internal server error';
-}
+import { getClientSupabase } from '@/lib/supabase';
+import { checkRateLimit } from '@/lib/rate-limit';
+import { ratingsPostSchema, ratingsGetSchema, safeError } from '@/lib/schemas';
 
 // GET /api/ratings?presetId=xxx — get aggregate for one preset
 // GET /api/ratings — get aggregates for ALL presets
 export async function GET(request: NextRequest) {
-  const ip = getClientIp(request);
-  if (!checkRateLimit(ip)) {
-    return NextResponse.json({ error: 'Rate limit exceeded' }, { status: 429 });
+  const rl = await checkRateLimit(request);
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Rate limit exceeded' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.reset - Date.now()) / 1000)) } }
+    );
   }
 
-  const supabase = getSupabase();
+  const supabase = getClientSupabase();
   if (!supabase) {
     return NextResponse.json({ error: 'Service unavailable' }, { status: 503 });
   }
 
-  const rawPresetId = request.nextUrl.searchParams.get('presetId');
-  const presetId = rawPresetId ? sanitizePresetId(rawPresetId) : null;
-
-  if (rawPresetId && !presetId) {
-    return NextResponse.json({ error: 'Invalid presetId' }, { status: 400 });
+  const parsed = ratingsGetSchema.safeParse({
+    presetId: request.nextUrl.searchParams.get('presetId') || undefined,
+  });
+  if (!parsed.success) {
+    return NextResponse.json({ error: 'Invalid parameters', details: parsed.error.flatten() }, { status: 400 });
   }
 
   try {
-    if (presetId) {
+    if (parsed.data.presetId) {
       const { data, error } = await supabase
         .from('preset_ratings')
         .select('liked, stars')
-        .eq('preset_id', presetId);
+        .eq('preset_id', parsed.data.presetId);
 
       if (error) {
         return NextResponse.json({ error: safeError('GET single', error) }, { status: 500 });
@@ -105,7 +46,7 @@ export async function GET(request: NextRequest) {
         : 0;
 
       return NextResponse.json({
-        presetId,
+        presetId: parsed.data.presetId,
         likes,
         dislikes,
         avgStars: Math.round(avgStars * 10) / 10,
@@ -155,50 +96,46 @@ export async function GET(request: NextRequest) {
 
 // POST /api/ratings — submit or update a rating
 export async function POST(request: NextRequest) {
-  const ip = getClientIp(request);
-  if (!checkRateLimit(ip)) {
-    return NextResponse.json({ error: 'Rate limit exceeded' }, { status: 429 });
+  const rl = await checkRateLimit(request, 20, 60); // 20/min for writes
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Rate limit exceeded' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.reset - Date.now()) / 1000)) } }
+    );
   }
 
-  const supabase = getSupabase();
+  const supabase = getClientSupabase();
   if (!supabase) {
     return NextResponse.json({ error: 'Service unavailable' }, { status: 503 });
   }
 
   try {
-    // Limit body size
     const contentLength = Number(request.headers.get('content-length') || '0');
-    if (contentLength > 1024) {
+    if (contentLength > 2048) {
       return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
     }
 
     const body = await request.json();
+    const parsed = ratingsPostSchema.safeParse(body);
 
-    const presetId = sanitizePresetId(body?.presetId);
-    const anonymousId = sanitizeAnonId(body?.anonymousId);
-    const liked = sanitizeLiked(body?.liked);
-    const stars = sanitizeStars(body?.stars);
-
-    if (!presetId) {
-      return NextResponse.json({ error: 'Invalid presetId' }, { status: 400 });
-    }
-    if (!anonymousId) {
-      return NextResponse.json({ error: 'Invalid anonymousId' }, { status: 400 });
+    if (!parsed.success) {
+      return NextResponse.json({ error: 'Invalid input', details: parsed.error.flatten() }, { status: 400 });
     }
 
-    const { data, error } = await (supabase as any)
+    const { presetId, anonymousId, liked, stars } = parsed.data;
+
+    const { error } = await (supabase as any)
       .from('preset_ratings')
       .upsert(
         {
           preset_id: presetId,
           anonymous_id: anonymousId,
-          liked,
-          stars,
+          liked: liked ?? null,
+          stars: stars ?? 0,
           updated_at: new Date().toISOString(),
         },
         { onConflict: 'preset_id,anonymous_id' }
-      )
-      .select('id, preset_id, liked, stars');
+      );
 
     if (error) {
       return NextResponse.json({ error: safeError('POST upsert', error) }, { status: 500 });

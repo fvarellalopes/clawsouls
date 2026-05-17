@@ -81,14 +81,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Anti-FOUC: apply persisted theme before React hydrates */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              '(function(){try{var e=localStorage.getItem("clawsouls-theme");var t=!0;if(e){var n=JSON.parse(e);var r=n&&n.state&&n.state.themeId;t=r!=="paper"&&r!=="clean"}var o=document.documentElement;o.dataset.theme=t?"dark":"light";o.style.colorScheme=t?"dark":"light"}catch(c){}})()',
-          }}
-        />
         <meta name="color-scheme" content="dark light" />
+        <script src="/scripts/theme-init.js" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
           rel="stylesheet"

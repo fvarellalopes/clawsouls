@@ -1,4 +1,4 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { getServerSupabase } from './supabase';
 import Database from 'better-sqlite3';
 import fs from 'fs';
 import path from 'path';
@@ -39,23 +39,8 @@ export type Preset = {
   updated_at?: string;
 };
 
-// Supabase client (singleton)
-let supabase: SupabaseClient | null = null;
-
-function getSupabase(): SupabaseClient | null {
-  if (supabase) return supabase;
-
-  // Accept NEXT_PUBLIC_ prefixed vars (Vercel config) or standard vars
-  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-
-  if (url && key) {
-    supabase = createClient(url, key);
-    return supabase;
-  }
-
-  return null;
-}
+// Supabase client — uses consolidated factory from lib/supabase.ts
+// getServerSupabase() uses SUPABASE_SERVICE_ROLE_KEY (no NEXT_PUBLIC_ fallback)
 
 // SQLite fallback
 const DB_PATH = path.join(process.cwd(), 'data', 'database.sqlite');
@@ -117,7 +102,7 @@ export async function list_presets(
   tags?: string[],
   search?: string
 ): Promise<Preset[]> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     let query = supabaseClient.from('presets').select('*');
 
@@ -185,7 +170,7 @@ function list_presets_sync(
 }
 
 export async function get_preset_by_id(preset_id: string): Promise<Preset | null> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const { data, error } = await supabaseClient.from('presets').select('*').eq('id', preset_id).single();
     if (error) {
@@ -208,7 +193,7 @@ export async function count_presets(
   tags?: string[],
   search?: string
 ): Promise<number> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     let query = supabaseClient.from('presets').select('*', { count: 'exact', head: true });
 
@@ -260,7 +245,7 @@ export async function count_presets(
 }
 
 export async function get_creature_types(): Promise<string[]> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const { data, error } = await supabaseClient.from('presets').select('creature').order('creature', { ascending: true });
     if (error) {
@@ -279,7 +264,7 @@ export async function get_creature_types(): Promise<string[]> {
 }
 
 export async function get_sources(): Promise<string[]> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const { data, error } = await supabaseClient.from('presets').select('source').order('source', { ascending: true });
     if (error) {
@@ -298,7 +283,7 @@ export async function get_sources(): Promise<string[]> {
 }
 
 export async function insert_preset(preset: any): Promise<boolean> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const { error } = await supabaseClient.from('presets').insert([{
       id: preset.id,
@@ -400,7 +385,7 @@ export async function insert_preset(preset: any): Promise<boolean> {
 
 
 export async function update_preset(id: string, preset: Partial<Preset>): Promise<boolean> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const { error } = await supabaseClient.from('presets').update({
       name: preset.name,
@@ -464,7 +449,7 @@ export async function update_preset(id: string, preset: Partial<Preset>): Promis
 }
 
 export async function delete_preset(id: string): Promise<boolean> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const { error } = await supabaseClient.from('presets').delete().eq('id', id);
     if (error) {
@@ -481,7 +466,7 @@ export async function delete_preset(id: string): Promise<boolean> {
 }
 
 export async function health_check(): Promise<{ status: string; total_presets: number; creature_types: number; sources: number; db_type: string }> {
-  const supabaseClient = getSupabase();
+  const supabaseClient = getServerSupabase();
   if (supabaseClient) {
     const count = await count_presets();
     const creatures = (await get_creature_types()).length;

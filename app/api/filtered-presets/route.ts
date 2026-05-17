@@ -16,7 +16,7 @@ async function getLocalPresets() {
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
-  const limit = parseInt(searchParams.get('limit') || '1000')
+  const limit = Math.min(parseInt(searchParams.get('limit') || '100'), 100)
   const offset = parseInt(searchParams.get('offset') || '0')
   const creature = searchParams.get('creature') || undefined
   const source = searchParams.get('source') || undefined
