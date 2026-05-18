@@ -12,8 +12,6 @@
   --color-border: var(--border, rgba(255, 255, 255, 0.1));
   --color-border-subtle: var(--border-subtle, rgba(255, 255, 255, 0.05));
 
-  --color-gold: #facc15;
-  --color-obsidian: #09090b;
 
   --color-surface-container: var(--surface-container, #201f22);
   --color-surface-container-low: var(--surface-container-low, #1c1b1d);
