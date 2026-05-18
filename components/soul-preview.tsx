@@ -15,7 +15,7 @@ export function SoulPreview({ soul }: SoulPreviewProps) {
   const markdown = generateSoulMD(soul);
 
   return (
-    <div className="cyber-glass-gold overflow-hidden">
+    <div className="cyber-glass overflow-hidden">
       <div className="flex items-center gap-3 px-5 py-3 border-b border-primary/10">
         <div className="w-2 h-2 rounded-full cyber-pulse bg-primary" style={{ boxShadow: "0 0 6px var(--primary)" }} />
         <span className="mono-data text-primary">{t("title") || "SOUL_PREVIEW.MD"}</span>
