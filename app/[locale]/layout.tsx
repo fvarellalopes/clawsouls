@@ -24,6 +24,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!locales.includes(locale as typeof locales[number])) {
+    return {};
+  }
   setRequestLocale(locale);
   const messages = (await import(`../../messages/${locale}.json`)).default;
   const typedMessages = messages as Record<string, any>;
