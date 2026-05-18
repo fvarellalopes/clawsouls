@@ -7,7 +7,7 @@ export default function HomePage() {
   const t = useTranslations("home");
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg,#09090b)_0%,var(--surface-dim,#131315)_50%,var(--bg,#09090b)_100%)]">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg)_0%,var(--surface-dim)_50%,var(--bg)_100%)]">
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center px-4 py-32 text-center">
         <div className="animate-fade-in">
@@ -63,19 +63,13 @@ export default function HomePage() {
               </div>
 
               {/* Editor Content */}
-              <div
-                className="relative p-8 min-h-[380px]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.15 0.02 270) 0%, oklch(0.10 0.01 200) 100%)",
-                }}
-              >
+              <div className="relative p-8 min-h-[380px] bg-surface-container-lowest">
                 {/* Overlay grid effect */}
                 <div
-                  className="absolute inset-0 opacity-[0.03]"
+                  className="absolute inset-0 opacity-[0.04]"
                   style={{
                     backgroundImage:
-                      "linear-gradient(oklch(1 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0) 1px, transparent 1px)",
+                      "linear-gradient(var(--color-on-surface) 1px, transparent 1px), linear-gradient(90deg, var(--color-on-surface) 1px, transparent 1px)",
                     backgroundSize: "40px 40px",
                   }}
                 />
@@ -226,7 +220,7 @@ function SliderMock({ label, value }: { label: string; value: number }) {
       </div>
       <div className="w-full h-1.5 rounded-full bg-surface-container-highest">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-primary-container to-yellow-400"
+          className="h-full rounded-full bg-gradient-to-r from-primary-container to-primary"
           style={{ width: `${value}%` }}
         />
       </div>
