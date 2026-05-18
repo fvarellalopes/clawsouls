@@ -355,23 +355,23 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <Link
               href={`/${activeLocale}/presets`}
-              className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/50 text-gold rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 transition-all flex items-center gap-1.5 flex-shrink-0"
+              className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-primary/50 text-primary rounded font-mono text-[10px] uppercase font-bold hover:bg-primary/10 transition-all flex items-center gap-1.5 flex-shrink-0"
               title={t("presets")}
             >
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_back</span>
               <span className="hidden sm:inline">{t("presets")}</span>
             </Link>
             <div className="w-px h-4 sm:h-6 flex-shrink-0 bg-border" />
-            <button onClick={undo} disabled={!canUndo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("undoTitle")}>
+            <button onClick={undo} disabled={!canUndo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-primary/30 text-primary/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-primary/10 hover:text-primary transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("undoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>undo</span>
               <span className="hidden sm:inline">{t("undo")}</span>
             </button>
-            <button onClick={redo} disabled={!canRedo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("redoTitle")}>
+            <button onClick={redo} disabled={!canRedo()} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-primary/30 text-primary/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-primary/10 hover:text-primary transition-all flex items-center gap-1.5 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer flex-shrink-0" title={t("redoTitle")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>redo</span>
               <span className="hidden sm:inline">{t("redo")}</span>
             </button>
             <div className="w-px h-4 sm:h-6 flex-shrink-0 bg-border" />
-            <button onClick={handleShare} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-gold/30 text-gold/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-gold/10 hover:text-gold transition-all flex items-center gap-1.5 cursor-pointer flex-shrink-0" title={t("share")}>
+            <button onClick={handleShare} className="p-2 sm:px-3 sm:py-1.5 bg-transparent border border-primary/30 text-primary/70 rounded font-mono text-[10px] uppercase font-bold hover:bg-primary/10 hover:text-primary transition-all flex items-center gap-1.5 cursor-pointer flex-shrink-0" title={t("share")}>
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>share</span>
               <span className="hidden sm:inline">{t("share")}</span>
             </button>
@@ -381,7 +381,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   e.stopPropagation();
                   setExportDropdownOpen(!exportDropdownOpen);
                 }}
-                className="px-2 sm:px-4 py-2 bg-gold text-obsidian rounded font-mono text-[10px] sm:text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2 glow-gold cursor-pointer"
+                className="px-2 sm:px-4 py-2 bg-primary text-primary-foreground rounded font-mono text-[10px] sm:text-[11px] uppercase font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2  cursor-pointer"
                 title={t("exportSoulMd")}
               >
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>download</span>
@@ -397,7 +397,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <button
                     role="menuitem"
                     onClick={() => { handleExport(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-primary/10 cursor-pointer"
                     style={{ color: "var(--fg)" }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--primary)" }}>description</span>
@@ -406,7 +406,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <button
                     role="menuitem"
                     onClick={() => { handleExportJSON(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-primary/10 cursor-pointer"
                     style={{ color: "var(--fg)" }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--primary)" }}>data_object</span>
@@ -415,7 +415,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   <button
                     role="menuitem"
                     onClick={() => { handleExportYAML(); setExportDropdownOpen(false); }}
-                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-gold/10 cursor-pointer"
+                    className="flex items-center gap-2 w-full px-4 py-2.5 text-left text-sm transition-all hover:bg-primary/10 cursor-pointer"
                     style={{ color: "var(--fg)" }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: "16px", color: "var(--primary)" }}>code</span>
@@ -444,7 +444,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 ].map((tab) => (
                   <button
                     key={tab.id}
-                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs cursor-pointer ${activeTab === tab.id ? "border-b-2 border-gold text-gold" : "text-muted-foreground hover:text-primary"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
+                    className={`whitespace-nowrap uppercase font-display text-[11px] sm:text-xs cursor-pointer ${activeTab === tab.id ? "border-b-2 border-primary text-primary" : "text-muted-foreground hover:text-primary"} px-2 sm:px-4 py-2 transition-all duration-200 flex-shrink-0`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.label}
