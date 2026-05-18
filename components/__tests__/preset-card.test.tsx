@@ -125,7 +125,7 @@ describe('PresetCard', () => {
     );
 
     const card = container.firstChild as HTMLElement;
-    expect(card.className).toContain('border-white/10');
+    expect(card.className).toContain('border-border');
   });
 
   it('renders ARCH code derived from index', () => {
