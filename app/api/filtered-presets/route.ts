@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { list_presets } from '@/lib/db'
+import { checkRateLimit } from '@/lib/rate-limit'
+import { filteredPresetsGetSchema, safeError } from '@/lib/schemas'
 
 // Blacklist of preset IDs to filter out (historical figures with harmful associations)
 const PRESET_BLACKLIST = new Set(['adolf-hitler'])
@@ -15,12 +17,20 @@ async function getLocalPresets() {
 }
 
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams
-  const limit = Math.min(parseInt(searchParams.get('limit') || '100'), 100)
-  const offset = parseInt(searchParams.get('offset') || '0')
-  const creature = searchParams.get('creature') || undefined
-  const source = searchParams.get('source') || undefined
-  const search = searchParams.get('search') || undefined
+  const rl = await checkRateLimit(request);
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Rate limit exceeded' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.reset - Date.now()) / 1000)) } }
+    );
+  }
+
+  const parsed = filteredPresetsGetSchema.safeParse(Object.fromEntries(request.nextUrl.searchParams));
+  if (!parsed.success) {
+    return NextResponse.json({ error: 'Invalid parameters', details: parsed.error.flatten() }, { status: 400 });
+  }
+
+  const { limit, offset, creature, source, search } = parsed.data;
 
   try {
     // Try Supabase / SQLite first
@@ -84,7 +94,6 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ data: filtered })
   } catch (err) {
-    console.error('Error fetching filtered presets:', err)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ error: safeError('GET filtered-presets', err) }, { status: 500 })
   }
 }
