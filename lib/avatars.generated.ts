@@ -349,7 +349,7 @@ export const KNOWN_AVATARS: ReadonlySet<string> = new Set([
   "nikolatesla",
   "nuwa",
   "nymph",
-  "obaluaie",
+  "obaluiae",
   "odin",
   "ogum",
   "okoye",
