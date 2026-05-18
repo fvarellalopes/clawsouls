@@ -186,7 +186,7 @@ export const PresetCard = React.memo(function PresetCard({
 
         {/* Load button */}
         <div className="mt-auto pt-2">
-          <div className="w-full bg-transparent border border-border text-foreground font-label-caps text-label-caps py-3 rounded group-hover:bg-primary-container group-hover:border-primary-container group-hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
+          <div className="w-full bg-transparent border border-border text-foreground font-label-caps text-label-caps py-3 rounded group-hover:bg-primary-container group-hover:border-primary-container group-hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2">
             <span className="material-symbols-outlined text-[18px]">
               download
             </span>

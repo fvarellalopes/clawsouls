@@ -10,7 +10,7 @@ export default function TermsPage() {
       <div className="max-w-4xl mx-auto px-6 py-32">
         {/* Header */}
         <div className="mb-16">
-          <span className="inline-block mb-4 px-3 py-1 rounded-full border border-yellow-400/50 text-yellow-400 text-[10px] font-mono tracking-[0.2em] uppercase">
+          <span className="inline-block mb-4 px-3 py-1 rounded-full border border-primary/50 text-primary text-[10px] font-mono tracking-[0.2em] uppercase">
             {t("badge")}
           </span>
           <h1 className="text-[36px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-4">
@@ -24,7 +24,7 @@ export default function TermsPage() {
         {/* Content */}
         <div className="space-y-12 text-foreground/70 text-sm leading-relaxed">
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               1. {t("section1Title")}
             </h2>
             <div className="space-y-3">
@@ -34,7 +34,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               2. {t("section2Title")}
             </h2>
             <div className="space-y-3">
@@ -45,7 +45,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               3. {t("section3Title")}
             </h2>
             <div className="space-y-3">
@@ -62,7 +62,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               4. {t("section4Title")}
             </h2>
             <div className="space-y-3">
@@ -72,7 +72,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               5. {t("section5Title")}
             </h2>
             <div className="space-y-3">
@@ -82,7 +82,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               6. {t("section6Title")}
             </h2>
             <div className="space-y-3">
@@ -92,7 +92,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               7. {t("section7Title")}
             </h2>
             <div className="space-y-3">
@@ -101,7 +101,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-base font-display text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-base font-display text-primary mb-4 tracking-wide">
               8. {t("section8Title")}
             </h2>
             <div className="space-y-3">

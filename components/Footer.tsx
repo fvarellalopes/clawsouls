@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Copyright Text */}
         <p className="text-muted-foreground text-sm text-center md:text-left">
-          © 2024 CLAWSOULS TERMINAL // SYSTEM STATUS: <span className="text-yellow-400">NOMINAL</span>
+          © 2024 CLAWSOULS TERMINAL // SYSTEM STATUS: <span className="text-primary">NOMINAL</span>
         </p>
 
         {/* Footer Links */}

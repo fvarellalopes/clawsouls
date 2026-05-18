@@ -14,10 +14,10 @@ export default function ComparePage() {
         {/* Header Section */}
         <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-border pb-8">
           <div className="flex flex-col gap-2">
-            <span className="font-display text-yellow-400 uppercase tracking-widest">
+            <span className="font-display text-primary uppercase tracking-widest">
               {t("title")}
             </span>
-            <h1 className="font-display text-yellow-400 text-3xl">
+            <h1 className="font-display text-primary text-3xl">
               {t("title")}
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-2">

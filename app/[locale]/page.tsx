@@ -12,12 +12,12 @@ export default function HomePage() {
       <section className="relative flex flex-col items-center justify-center px-4 py-32 text-center">
         <div className="animate-fade-in">
           {/* Badge */}
-          <span className="inline-block mb-8 px-4 py-1 rounded-full border border-yellow-400 text-yellow-400 text-label-caps tracking-widest uppercase">
+          <span className="inline-block mb-8 px-4 py-1 rounded-full border border-primary text-primary text-label-caps tracking-widest uppercase">
             {t("systemOnline")}
           </span>
 
           {/* Title */}
-          <h1 className="text-[48px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-6 max-w-3xl mx-auto">
+          <h1 className="text-[48px] font-display text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mb-6 max-w-3xl mx-auto">
             {t("heroTitleMain")}
           </h1>
 
@@ -30,7 +30,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/editor"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-yellow-400 text-black font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
               >
                 {t("launchEditor")}
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -38,7 +38,7 @@ export default function HomePage() {
 
             <Link
               href="/presets"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-yellow-400 text-yellow-400 font-label-caps tracking-widest uppercase rounded-lg hover:bg-yellow-400/10 transition-all duration-150"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary text-primary font-label-caps tracking-widest uppercase rounded-lg hover:bg-primary/10 transition-all duration-150"
               >
                 {t("browsePresets")}
               </Link>

@@ -71,7 +71,7 @@ export function PresetDetail({ preset, locale }: PresetDetailProps) {
             {/* CTA */}
             <button
               onClick={() => router.push(`/${locale}/editor?preset=${preset.id}`)}
-              className="mt-4 inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-yellow-400 text-black font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all w-full md:w-auto"
+              className="mt-4 inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all w-full md:w-auto"
             >
               <span className="material-symbols-outlined text-base">download</span>
               LOAD INTO EDITOR

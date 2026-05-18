@@ -342,7 +342,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink">
             <div className="w-0.5 sm:w-1 h-6 sm:h-8 flex-shrink-0 bg-primary" />
             <div className="min-w-0">
-              <h1 className="text-sm sm:text-lg font-bold font-display text-yellow-400 truncate" style={{ letterSpacing: "0.06em" }}>
+              <h1 className="text-sm sm:text-lg font-bold font-display text-primary truncate" style={{ letterSpacing: "0.06em" }}>
                 Terminal Session_01
               </h1>
               <p className="mono-data hidden sm:block text-muted-foreground" style={{ fontSize: "10px" }}>
@@ -1037,7 +1037,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 </div>
 
                 {/* Info below avatar */}
-                <h2 className="text-xl font-bold font-display text-yellow-400 truncate max-w-full"
+                <h2 className="text-xl font-bold font-display text-primary truncate max-w-full"
                     style={{ letterSpacing: "0.04em" }}>
                   {soul.name || t("unnamedSoul") || "UNNAMED SOUL"}
                 </h2>

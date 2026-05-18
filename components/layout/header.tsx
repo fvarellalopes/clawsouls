@@ -37,12 +37,12 @@ export function Header({ locale }: HeaderProps) {
   ];
 
   return (
-<nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-16 bg-background/80 backdrop-blur-xl border-b border-border shadow-[0_0_20px_rgba(250,204,21,0.05)]">
+<nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-16 bg-background/80 backdrop-blur-xl border-b border-border">
       {/* Left — Logo + Nav */}
       <div className="flex items-center gap-8">
         <Link
           href={`/${activeLocale}`}
-          className="text-2xl font-bold tracking-tighter text-[#facc15] font-['Space_Grotesk']"
+          className="text-2xl font-bold tracking-tighter text-primary font-['Space_Grotesk']"
         >
           ClawSouls
         </Link>
@@ -72,7 +72,7 @@ export function Header({ locale }: HeaderProps) {
         </button>
         <Link
           href={`/${activeLocale}/editor`}
-          className="hidden md:flex items-center px-4 py-2 bg-[#facc15] text-[#3c2f00] font-['Space_Grotesk'] text-xs font-bold uppercase tracking-[0.1em] rounded hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(250,204,21,0.3)] transition-all"
+          className="hidden md:flex items-center px-4 py-2 bg-primary text-primary-foreground font-['Space_Grotesk'] text-xs font-bold uppercase tracking-[0.1em] rounded hover:scale-[1.02] transition-all"
         >
           {t("connectTerminal")}
         </Link>
