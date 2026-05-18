@@ -206,10 +206,10 @@ body {
   align-items: center;
   gap: 6px;
   padding: 10px 24px;
-  background: #facc15;
+  background: var(--primary, #facc15);
   border: none;
   border-radius: var(--radius);
-  color: #09090b;
+  color: var(--primary-fg, #09090b);
   font-family: var(--font-mono, 'JetBrains Mono', monospace);
   font-size: 11px;
   font-weight: 700;
