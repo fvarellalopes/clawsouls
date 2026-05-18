@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, Edit3, LayoutGrid, Bookmark, Sparkles, Trophy, GitCompareArrows } from "lucide-react";
+import { Home, Edit3, LayoutGrid, Bookmark, Sparkles, GitCompareArrows } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
@@ -21,7 +21,6 @@ export function MobileNav() {
     { href: "/my-presets", label: t("myPresets"), icon: Bookmark },
     { href: "/quiz", label: tCommon("quiz"), icon: Sparkles },
     { href: "/compare", label: tCommon("compare"), icon: GitCompareArrows },
-    { href: "/achievements", label: t("achievements"), icon: Trophy },
   ];
 
   return (
