@@ -22,9 +22,9 @@ function KarmaBadge({ preset }: { preset: SoulPreset }) {
     <div
       className="flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold font-mono"
       style={{
-        background: karma.score > 60 ? "rgba(34,197,94,0.15)" : karma.score > 30 ? "color-mix(in srgb, var(--primary) 15%, transparent)" : "color-mix(in srgb, var(--destructive) 15%, transparent)",
-        color: karma.score > 60 ? "rgb(34,197,94)" : karma.score > 30 ? "var(--primary)" : "var(--destructive)",
-        border: `1px solid ${karma.score > 60 ? "rgba(34,197,94,0.3)" : karma.score > 30 ? "color-mix(in srgb, var(--primary) 30%, transparent)" : "color-mix(in srgb, var(--destructive) 30%, transparent)"}`,
+        background: karma.score > 60 ? "color-mix(in srgb, var(--color-accent) 15%, transparent)" : karma.score > 30 ? "color-mix(in srgb, var(--primary) 15%, transparent)" : "color-mix(in srgb, var(--destructive) 15%, transparent)",
+        color: karma.score > 60 ? "var(--color-accent)" : karma.score > 30 ? "var(--primary)" : "var(--destructive)",
+        border: `1px solid ${karma.score > 60 ? "color-mix(in srgb, var(--color-accent) 30%, transparent)" : karma.score > 30 ? "color-mix(in srgb, var(--primary) 30%, transparent)" : "color-mix(in srgb, var(--destructive) 30%, transparent)"}`,
       }}
     >
       <span className="material-symbols-outlined" style={{ fontSize: "10px" }}>

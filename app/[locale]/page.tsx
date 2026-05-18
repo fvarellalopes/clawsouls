@@ -51,7 +51,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             {/* Left — Editor Mockup (8 cols) */}
-            <div className="lg:col-span-8 rounded-2xl glass-panel overflow-hidden">
+            <div className="lg:col-span-8 rounded-2xl cyber-glass overflow-hidden">
               {/* Window Chrome */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/20">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -110,7 +110,7 @@ export default function HomePage() {
             </div>
 
             {/* Right — Output Panel (4 cols) */}
-            <div className="lg:col-span-4 rounded-2xl glass-panel overflow-hidden">
+            <div className="lg:col-span-4 rounded-2xl cyber-glass overflow-hidden">
               {/* Window Chrome */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-outline-variant/20">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />

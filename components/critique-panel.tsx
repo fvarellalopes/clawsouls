@@ -132,7 +132,7 @@ export function CritiquePanel({ preset, likes = 0, dislikes = 0, avgStars = 0 }:
                       className="h-full rounded-full transition-all"
                       style={{
                         width: `${pct}%`,
-                        background: pct > 60 ? "rgb(34,197,94)" : pct > 30 ? "var(--primary)" : "var(--destructive)",
+                        background: pct > 60 ? "var(--color-accent)" : pct > 30 ? "var(--primary)" : "var(--destructive)",
                       }}
                     />
                   </div>

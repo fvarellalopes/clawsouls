@@ -6,14 +6,14 @@ export default function PrivacyPage() {
   const t = useTranslations("legal");
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg,#09090b)_0%,var(--surface-dim,#131315)_50%,var(--bg,#09090b)_100%)]">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg)_0%,var(--surface-dim)_50%,var(--bg)_100%)]">
       <div className="max-w-4xl mx-auto px-6 py-32">
         {/* Header */}
         <div className="mb-16">
           <span className="inline-block mb-4 px-3 py-1 rounded-full border border-primary/50 text-primary text-[10px] font-mono tracking-[0.2em] uppercase">
             {t("badge")}
           </span>
-          <h1 className="text-[36px] font-display text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 mb-4">
+          <h1 className="text-[36px] font-display text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mb-4">
             {t("privacyTitle")}
           </h1>
           <p className="text-sm font-mono text-foreground/40">
