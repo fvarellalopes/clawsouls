@@ -22,17 +22,17 @@ interface ParchmentPreviewProps {
 function ToneBar({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="w-20 text-right truncate" style={{ color: "var(--foreground-muted)" }}>{label}</span>
-      <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: "var(--muted)" }}>
+      <span className="w-20 text-right truncate" style={{ color: "var(--muted-fg)" }}>{label}</span>
+      <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: "var(--surface)" }}>
         <div
           className="h-full rounded-full transition-all duration-500 ease-out"
           style={{
             width: `${value}%`,
-            background: "#facc15",
+            background: "var(--primary)",
           }}
         />
       </div>
-      <span className="w-8 font-mono" style={{ color: "#facc15" }}>{value}</span>
+      <span className="w-8 font-mono" style={{ color: "var(--primary)" }}>{value}</span>
     </div>
   );
 }
@@ -71,7 +71,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
   return (
     <div className="relative" style={{ animation: "fadeInUp 0.4s ease-out" }}>
       {/* Parchment container */}
-      <div className="relative rounded-2xl overflow-hidden" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
+      <div className="relative rounded-2xl overflow-hidden" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
         {/* Content */}
         <div className="relative p-6 md:p-8">
           {/* Header with emoji and name */}
@@ -82,7 +82,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                 <h3 className="text-xl font-bold font-display font-display text-primary">
                   {name || t("unnamedSoul")}
                 </h3>
-                <p className="text-sm" style={{ color: "var(--foreground-muted)" }}>{t("soulMdPreview")}</p>
+                <p className="text-sm" style={{ color: "var(--muted-fg)" }}>{t("soulMdPreview")}</p>
               </div>
             </div>
             <Button
@@ -91,8 +91,8 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
               onClick={handleCopy}
               className="gap-1.5 transition-all"
               style={{
-                borderColor: copied ? "var(--color-success)" : "var(--border)",
-                color: copied ? "var(--color-success)" : "var(--foreground)",
+                borderColor: copied ? "#22c55e" : "var(--border)",
+                color: copied ? "#22c55e" : "var(--fg)",
               }}
               aria-label={t("copySoulContent")}
             >
@@ -113,7 +113,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
           {/* Tone Attributes Summary */}
           {toneAttributes && (
             <div className="mb-6 pb-4" style={{ borderBottom: "1px solid var(--border)" }}>
-              <p className="text-[10px] uppercase tracking-widest mb-3 font-display" style={{ color: "var(--foreground-muted)" }}>
+              <p className="text-[10px] uppercase tracking-widest mb-3 font-display" style={{ color: "var(--muted-fg)" }}>
                 {t("toneProfile")}
               </p>
               <div className="space-y-1.5">
@@ -135,7 +135,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                   <h2
                     key={i}
                     className="text-2xl font-display font-bold tracking-wider mt-4 first:mt-0"
-                    style={{ color: "#facc15" }}
+                    style={{ color: "var(--primary)" }}
                   >
                     {section.content}
                   </h2>
@@ -146,9 +146,9 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                   <h3
                     key={i}
                     className="text-lg font-display font-semibold tracking-wide mt-5 mb-2 flex items-center gap-2"
-                    style={{ color: "var(--foreground)" }}
+                    style={{ color: "var(--fg)" }}
                   >
-                    <span className="w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
+                    <span className="w-2 h-2 rounded-full" style={{ background: "var(--primary)" }} />
                     {section.content}
                   </h3>
                 );
@@ -157,7 +157,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                 return (
                   <div key={i} className="my-4 flex items-center gap-3">
                     <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
-                    <span className="text-xs" style={{ color: "var(--foreground-muted)" }}>✦</span>
+                    <span className="text-xs" style={{ color: "var(--muted-fg)" }}>✦</span>
                     <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
                   </div>
                 );
@@ -167,9 +167,9 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
                   <div
                     key={i}
                     className="flex items-start gap-2 pl-2"
-                    style={{ color: "var(--foreground)" }}
+                    style={{ color: "var(--fg)" }}
                   >
-                    <span className="mt-1 text-xs" style={{ color: "#facc15" }}>▸</span>
+                    <span className="mt-1 text-xs" style={{ color: "var(--primary)" }}>▸</span>
                     <span>{section.content}</span>
                   </div>
                 );
@@ -177,7 +177,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
               return (
                 <p
                   key={i}
-                  style={{ color: "var(--foreground-muted)" }}
+                  style={{ color: "var(--muted-fg)" }}
                 >
                   {section.content}
                 </p>
@@ -187,7 +187,7 @@ export function ParchmentPreview({ content, name, emoji, toneAttributes }: Parch
 
           {/* Footer watermark */}
           <div className="mt-6 pt-4 text-center" style={{ borderTop: "1px solid var(--border)" }}>
-            <span className="text-[10px] tracking-widest uppercase font-display" style={{ color: "var(--foreground-muted)" }}>
+            <span className="text-[10px] tracking-widest uppercase font-display" style={{ color: "var(--muted-fg)" }}>
               {t("forgedBy", { year: new Date().getFullYear() })}
             </span>
           </div>

@@ -121,8 +121,8 @@ export const PresetCard = React.memo(function PresetCard({
       onClick={() => onSelect(preset)}
       className={`relative group cursor-pointer w-full text-left overflow-hidden rounded-lg flex flex-col h-full transition-all duration-300 ${
         isSelected
-          ? "bg-foreground/5 border-primary-container/60 shadow-[0_0_30px_rgba(250,204,21,0.1)]"
-          : "bg-foreground/[0.02] border-border hover:border-primary-container/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.05)]"
+          ? "bg-foreground/5 border-primary-container/60 shadow-lg shadow-primary/10"
+          : "bg-foreground/[0.02] border-border hover:border-primary-container/50 hover:shadow-md hover:shadow-primary/5"
       } backdrop-blur-md border`}
       aria-label={`${preset.name} — ${preset.creature}`}
       aria-pressed={isSelected}
