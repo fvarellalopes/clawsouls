@@ -24,7 +24,7 @@ export function QRCodeDisplay({ url, name }: QRCodeDisplayProps) {
 
   return (
     <div className="flex flex-col items-center space-y-4" role="img" aria-label={t("qrCode")}>
-      <img src={qrDataUrl} alt={t("qrCode")} className="border-2 border-accent rounded-lg p-2 bg-white" />
+      <img src={qrDataUrl} alt={t("qrCode")} className="border-2 border-accent rounded-lg p-2 bg-background" />
       <Button
         variant="outline"
         size="sm"
