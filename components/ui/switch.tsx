@@ -11,7 +11,7 @@ const Switch = React.forwardRef<
       "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50",
       props.checked
         ? "bg-primary hover:bg-primary/90 active:bg-primary/80"
-        : "bg-white/10 hover:bg-white/20 active:bg-white/15",
+        : "bg-foreground/10 hover:bg-foreground/20 active:bg-foreground/15",
       className
     )}
     {...props}
@@ -22,7 +22,7 @@ const Switch = React.forwardRef<
         "pointer-events-none block h-4 w-4 rounded-full shadow-lg ring-0 transition-transform duration-200 ease-in-out",
         props.checked 
           ? "translate-x-4 bg-background" 
-          : "translate-x-0 bg-white/80"
+          : "translate-x-0 bg-foreground/80"
       )}
     />
   </SwitchPrimitives.Root>
