@@ -101,6 +101,7 @@ export const KNOWN_AVATARS: ReadonlySet<string> = new Set([
   "curupira",
   "cyborg",
   "cyclops",
+  "cyclops-greek",
   "d0c",
   "d3v",
   "daddyyankee",
@@ -532,4 +533,4 @@ export const KNOWN_AVATARS: ReadonlySet<string> = new Set([
   "zombie",
 ]);
 
-export const AVATAR_COUNT = 528;
+export const AVATAR_COUNT = 529;
