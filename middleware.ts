@@ -7,5 +7,5 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ["/((?!api|share|_next|_vercel|.*\\\\..*|favicon.ico).*)"],
+  matcher: ["/((?!api|share|_next|_vercel|llms\\.txt|robots\\.txt|.*\\..*|favicon.ico).*)"],
 };
