@@ -64,6 +64,7 @@ export default function QuizPage() {
   };
 
   const handleLoadPreset = (preset: SoulPreset) => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     router.push(`/editor?preset=${preset.id}`);
   };
 

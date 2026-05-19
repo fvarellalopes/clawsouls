@@ -105,6 +105,7 @@ export default function PresetsPage() {
   }, [presets, search, selectedTag, presetsMessages]);
 
   const handleSelect = (preset: SoulPreset) => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     router.push(`/${locale}/editor?preset=${preset.id}`);
   };
 

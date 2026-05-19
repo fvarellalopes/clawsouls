@@ -24,6 +24,7 @@ export default function MyPresetsPage() {
   const handleLoad = (soul: any) => {
     // Pass preset id via query param to editor
     const presetId = soul.id || soul.name?.toLowerCase().replace(/\s+/g, '-');
+    window.scrollTo({ top: 0, behavior: "instant" });
     router.push(`/editor?preset=${presetId}`);
   };
 
