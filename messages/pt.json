@@ -470,6 +470,14 @@
     "copyShareLinkDesc": "Qualquer um com este link pode carregar esta personalidade no ClawSouls.",
     "copied": "Copiado!",
     "copy": "Copiar",
+    "shareVia": "Compartilhar via...",
+    "shareOnSocial": "Compartilhar nas Redes Sociais",
+    "shareOnSocialDesc": "Compartilhe esta personalidade com seus amigos e seguidores.",
+    "qrCode": "Código QR",
+    "qrCodeDesc": "Escaneie este código QR para abrir o link de compartilhamento em outro dispositivo.",
+    "showQR": "Mostrar QR",
+    "hideQR": "Ocultar QR",
+    "instagramCopied": "Link copiado! Cole no Instagram.",
     "loadInEditor": "Carregar no Editor",
     "loadInEditorDesc": "Quer personalizar esta personalidade? Abra no editor.",
     "openInEditor": "Abrir no Editor",
@@ -481,8 +489,7 @@
     "scanToShare": "Escanear para Compartilhar",
     "createYourOwn": "Crie o Seu",
     "loading": "Carregando...",
-    "loadingPreview": "Carregando prévia...",
-    "shareVia": "Compartilhar via..."
+    "loadingPreview": "Carregando prévia..."
   },
   "keyboard": {
     "title": "Atalhos de Teclado",

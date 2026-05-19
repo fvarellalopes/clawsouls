@@ -5,9 +5,8 @@ import { useParams } from "next/navigation";
 import { SoulPreview } from "@/components/soul-preview";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowLeft, QrCode, Loader2 } from "lucide-react";
+import { ArrowLeft, Loader2 } from "lucide-react";
 import { avatarUrl } from "@/lib/avatar";
-import { QRCodeDisplay } from "@/components/qrcode-display";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 import type { AbstractIntlMessages } from "next-intl";
 const localeLoaders: Record<string, () => Promise<{ default: AbstractIntlMessages }>> = {
@@ -98,16 +97,6 @@ function ShareByIdContent() {
             </div>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{typeof soul.vibe === "string" ? soul.vibe : ""}</p>
-        </div>
-
-        <div className="mt-12 border-t pt-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center flex items-center justify-center">
-            <QrCode className="mr-2 h-5 w-5" />
-            {t("scanToShare")}
-          </h2>
-          <div className="flex justify-center">
-            <QRCodeDisplay url={shareUrl} name={typeof soul.name === "string" ? soul.name : ""} />
-          </div>
         </div>
 
         <div className="mt-8">

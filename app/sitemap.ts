@@ -1,32 +1,59 @@
 import type { MetadataRoute } from "next";
 
-const locales = ["en", "pt", "es", "ja", "fr", "de", "zh"];
-const baseUrl = "https://clawsouls.hub";
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
-    "",
-    "/editor",
-    "/presets",
-    "/quiz",
-    "/compare",
-    "/achievements",
-    "/my-presets",
-    "/share",
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.vercel.app";
+
+  // Static pages
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/editor`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/presets`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/quiz`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/achievements`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
-  const entries: MetadataRoute.Sitemap = [];
-
-  for (const locale of locales) {
-    for (const route of staticRoutes) {
-      entries.push({
-        url: `${baseUrl}/${locale}${route}`,
-        lastModified: new Date(),
-        changeFrequency: route === "" || route === "/presets" ? "weekly" : "monthly",
-        priority: route === "" ? 1.0 : 0.8,
-      });
-    }
-  }
-
-  return entries;
+  return staticPages;
 }
