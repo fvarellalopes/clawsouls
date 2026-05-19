@@ -27,6 +27,7 @@ import { SavePresetDialog } from "@/components/save-preset-dialog";
 import { ParchmentPreview } from "@/components/parchment-preview";
 import { ImportJsonDialog } from "@/components/import-json-dialog";
 import { FillWithAIDialog } from "@/components/fill-with-ai-dialog";
+import { ShareActions } from "@/components/share-actions";
 import { useAchievementsStore } from "@/store/achievementsStore";
 
 interface SoulEditorProps {
@@ -1091,7 +1092,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
 
       {/* Share Dialog */}
       <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
-        <DialogContent style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto" style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
           <DialogHeader>
             <DialogTitle style={{ color: "var(--primary)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)", letterSpacing: "0.06em" }}>
               {t("shareLink") || "Share Link"}
@@ -1100,13 +1101,8 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
               {t("shareDesc") || "Share this link with others"}
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4">
-            <input
-              readOnly
-              value={shareUrl}
-              className="cyber-input"
-            />
-            <p className="text-xs" style={{ color: "var(--muted-fg)" }}>{t("shareTip") || "Link copied to clipboard"}</p>
+          <div className="py-4">
+            <ShareActions dataParam={shareUrl} />
           </div>
           <DialogFooter>
             <button onClick={() => setShareDialogOpen(false)} className="cyber-btn-gold">
