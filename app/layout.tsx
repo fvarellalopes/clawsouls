@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "ClawSouls — Create Your OpenClaw Soul",
     description:
       "Design, customize, and share AI personality profiles. The visual SOUL.md editor for OpenClaw agents.",
-    url: "https://clawsouls.hub",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.vercel.app",
     siteName: "ClawSouls",
     locale: "en_US",
     type: "website",

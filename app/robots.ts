@@ -1,14 +1,16 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clawsouls.vercel.app";
+
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: "/api/",
       },
     ],
-    sitemap: "https://clawsouls.hub/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
