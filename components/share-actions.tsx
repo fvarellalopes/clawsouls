@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { QRCodeDisplay } from "@/components/qrcode-display";
 
 interface ShareActionsProps {
+  shareUrl?: string;
   dataParam: string;
 }
 
@@ -78,14 +79,14 @@ const QRCodeIcon = () => (
   </svg>
 );
 
-export function ShareActions({ dataParam }: ShareActionsProps) {
+export function ShareActions({ shareUrl: propShareUrl, dataParam }: ShareActionsProps) {
   const t = useTranslations("share");
   const [copied, setCopied] = useState(false);
   const [showQR, setShowQR] = useState(false);
 
-  const shareUrl = typeof window !== "undefined"
+  const shareUrl = propShareUrl || (typeof window !== "undefined"
     ? `${window.location.origin}/share?data=${dataParam}`
-    : `/share?data=${dataParam}`;
+    : `/share?data=${dataParam}`);
 
   const shareText = "Check out this AI personality on ClawSouls!";
 

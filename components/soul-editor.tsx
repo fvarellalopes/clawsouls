@@ -112,6 +112,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
   const activeLocale = (params?.locale as string) || locale || "en";
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
+  const [shareDataParam, setShareDataParam] = useState("");
   const [newCoreTruth, setNewCoreTruth] = useState("");
   const [newBoundary, setNewBoundary] = useState("");
   const [newSignaturePhrase, setNewSignaturePhrase] = useState("");
@@ -204,6 +205,9 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
   };
 
   const handleShare = async () => {
+    const dataParam = btoa(JSON.stringify(soul));
+    setShareDataParam(dataParam);
+    
     try {
       const res = await fetch("/api/share", {
         method: "POST",
@@ -218,14 +222,14 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
         incrementShare();
       } else {
         const params = new URLSearchParams();
-        params.set("data", btoa(JSON.stringify(soul)));
+        params.set("data", dataParam);
         const fallbackUrl = `${window.location.origin}/share?${params.toString()}`;
         await navigator.clipboard.writeText(fallbackUrl);
         setShareUrl(fallbackUrl);
       }
     } catch {
       const params = new URLSearchParams();
-      params.set("data", btoa(JSON.stringify(soul)));
+      params.set("data", dataParam);
       const fallbackUrl = `${window.location.origin}/share?${params.toString()}`;
       await navigator.clipboard.writeText(fallbackUrl);
       setShareUrl(fallbackUrl);
@@ -1102,7 +1106,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
-            <ShareActions dataParam={shareUrl} />
+            <ShareActions shareUrl={shareUrl} dataParam={shareDataParam} />
           </div>
           <DialogFooter>
             <button onClick={() => setShareDialogOpen(false)} className="cyber-btn-gold">
