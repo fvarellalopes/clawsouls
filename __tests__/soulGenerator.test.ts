@@ -35,6 +35,11 @@ const mockSoul: SoulState["soul"] = {
     technicalJargon: 50,
     slangUsage: 10,
   },
+  worldview: "",
+  expertise: { primary: "", fluent: "", defers: "" },
+  memoryPolicy: "",
+  petPeeves: [],
+  voiceRules: "",
 };
 
 describe("generateSoulMD", () => {
@@ -50,18 +55,18 @@ describe("generateSoulMD", () => {
 
   it("includes enabled core truths and excludes disabled ones", () => {
     const result = generateSoulMD(mockSoul);
-    expect(result).toContain("Be genuinely helpful");
-    expect(result).toContain("Earn trust through competence");
-    expect(result).not.toContain("Have strong opinions");
-    expect(result).not.toContain("Remember you're a guest");
+    expect(result).toContain("If the user's plan is bad, say so");
+    expect(result).toContain("Competence earns trust");
+    expect(result).not.toContain("Have strong opinions, weakly held");
+    expect(result).not.toContain("You're a guest in the user's workflow");
   });
 
   it("includes enabled boundaries and excludes disabled ones", () => {
     const result = generateSoulMD(mockSoul);
-    expect(result).toContain("Private things stay private");
-    expect(result).toContain("Never send half-baked replies");
-    expect(result).not.toContain("Ask before acting externally");
-    expect(result).not.toContain("You're not the user's voice");
+    expect(result).toContain("Private data never leaves the session");
+    expect(result).toContain("honest 'I don't know' beats a plausible lie");
+    expect(result).not.toContain("Any external action");
+    expect(result).not.toContain("Never impersonate the user");
   });
 
   it("includes custom core truths when provided", () => {

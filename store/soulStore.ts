@@ -62,6 +62,16 @@ export interface SoulState {
     autonomyAuto: string;        // What agent can do without asking
     autonomyRequireApproval: string; // What always needs approval
     activeProjects: string;      // Mission map / active projects (markdown text)
+    // SOUL.md best practices fields
+    worldview: string;           // Opinionated takes by domain (free text)
+    expertise: {
+      primary: string;           // Primary domain of mastery
+      fluent: string;            // Tools/domains where agent is fluent
+      defers: string;            // Where agent defers to the user
+    };
+    memoryPolicy: string;        // What persists, what stays private
+    petPeeves: string[];         // Phrases/tones the agent never produces
+    voiceRules: string;          // Concrete voice rules (not adjectives)
   };
   isDarkMode: boolean;
   locale: string;
@@ -134,6 +144,15 @@ export interface SoulPreset {
   autonomyAuto?: string;
   autonomyRequireApproval?: string;
   activeProjects?: string;
+  worldview?: string;
+  expertise?: {
+    primary?: string;
+    fluent?: string;
+    defers?: string;
+  };
+  memoryPolicy?: string;
+  petPeeves?: string[];
+  voiceRules?: string;
 }
 
 export const useSoulStore = create<SoulState>()(
@@ -196,6 +215,15 @@ export const useSoulStore = create<SoulState>()(
         autonomyAuto: "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
         autonomyRequireApproval: "Posting, publishing, purchasing, making destructive changes that can't be reversed",
         activeProjects: "",
+        worldview: "",
+        expertise: {
+          primary: "",
+          fluent: "",
+          defers: "",
+        },
+        memoryPolicy: "",
+        petPeeves: [],
+        voiceRules: "",
       },
       isDarkMode: false,
       locale: "en",
@@ -280,6 +308,15 @@ export const useSoulStore = create<SoulState>()(
           autonomyAuto: "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
           autonomyRequireApproval: "Posting, publishing, purchasing, making destructive changes that can't be reversed",
           activeProjects: "",
+          worldview: "",
+          expertise: {
+            primary: "",
+            fluent: "",
+            defers: "",
+          },
+          memoryPolicy: "",
+          petPeeves: [],
+          voiceRules: "",
         };
         set({ soul: defaultSoul });
         useHistoryStore.getState().push(defaultSoul);
@@ -332,6 +369,15 @@ export const useSoulStore = create<SoulState>()(
           autonomyAuto: preset.autonomyAuto ?? "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
           autonomyRequireApproval: preset.autonomyRequireApproval ?? "Posting, publishing, purchasing, making destructive changes that can't be reversed",
           activeProjects: preset.activeProjects ?? "",
+          worldview: preset.worldview ?? "",
+          expertise: {
+            primary: preset.expertise?.primary ?? "",
+            fluent: preset.expertise?.fluent ?? "",
+            defers: preset.expertise?.defers ?? "",
+          },
+          memoryPolicy: preset.memoryPolicy ?? "",
+          petPeeves: preset.petPeeves ?? [],
+          voiceRules: preset.voiceRules ?? "",
         };
         set({ soul: newSoul });
         useHistoryStore.getState().push(newSoul);
@@ -401,6 +447,15 @@ export const useSoulStore = create<SoulState>()(
             autonomyAuto: parsed.autonomyAuto ?? "Research, write, code, debug, plan, schedule, analyze, compare, organize, delegate",
             autonomyRequireApproval: parsed.autonomyRequireApproval ?? "Posting, publishing, purchasing, making destructive changes that can't be reversed",
             activeProjects: parsed.activeProjects ?? "",
+            worldview: parsed.worldview ?? "",
+            expertise: {
+              primary: parsed.expertise?.primary ?? "",
+              fluent: parsed.expertise?.fluent ?? "",
+              defers: parsed.expertise?.defers ?? "",
+            },
+            memoryPolicy: parsed.memoryPolicy ?? "",
+            petPeeves: Array.isArray(parsed.petPeeves) ? parsed.petPeeves : [],
+            voiceRules: parsed.voiceRules ?? "",
           };
           set({ soul: newSoul });
           useHistoryStore.getState().push(newSoul);

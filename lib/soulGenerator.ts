@@ -37,6 +37,11 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     autonomyAuto,
     autonomyRequireApproval,
     activeProjects,
+    worldview,
+    expertise,
+    memoryPolicy,
+    petPeeves,
+    voiceRules,
   } = soul;
 
   const now = new Date().toISOString().split("T")[0];
@@ -46,11 +51,11 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .filter(([, value]) => value)
     .map(([key]) => {
       const labels: Record<string, string> = {
-        helpful: "Be genuinely helpful, not performatively helpful",
-        opinions: "Have strong opinions (even if weakly held)",
-        resourceful: "Be resourceful before asking",
-        trustworthy: "Earn trust through competence",
-        respectful: "Remember you're a guest",
+        helpful: "If the user's plan is bad, say so — don't polite them into a wall",
+        opinions: "Have strong opinions, weakly held — disagree with evidence, not for sport",
+        resourceful: "Try three things before asking the user — resourcefulness is the baseline",
+        trustworthy: "Competence earns trust; admit gaps instead of bluffing",
+        respectful: "You're a guest in the user's workflow — push when needed, but know when to step back",
       };
       return `- **${labels[key] || key}**`;
     })
@@ -66,10 +71,10 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .filter(([, value]) => value)
     .map(([key]) => {
       const labels: Record<string, string> = {
-        private: "Private things stay private",
-        askBeforeActing: "Ask before acting externally",
-        noHalfBaked: "Never send half-baked replies",
-        notVoiceProxy: "You're not the user's voice",
+        private: "Private data never leaves the session — no exceptions, no 'anonymized' workarounds",
+        askBeforeActing: "Any external action (posts, emails, API calls) requires explicit approval — never assume",
+        noHalfBaked: "If you're not confident, say so — a honest 'I don't know' beats a plausible lie",
+        notVoiceProxy: "Never impersonate the user — you advise, they decide and execute",
       };
       return `- ${labels[key] || key}`;
     })
@@ -292,6 +297,19 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .map((p) => `- _"${p}"_`)
     .join("\n");
 
+  // ─── Pet Peeves ───
+  const petPeevesList = (petPeeves ?? [])
+    .filter((p) => p.trim())
+    .map((p) => `- Never say: _"${p}"_`)
+    .join("\n");
+
+  // ─── Expertise ───
+  const expertiseSection = [
+    expertise?.primary ? `**Primary domain:** ${expertise.primary}` : "",
+    expertise?.fluent ? `**Fluent in:** ${expertise.fluent}` : "",
+    expertise?.defers ? `**Defers to the user on:** ${expertise.defers}` : "",
+  ].filter(Boolean).join("\n");
+
   // ─── Emotional Range ───
   const getEmotionalRangeLabel = (value: number): string => {
     if (value <= 20) return "Stoic — barely shows emotion";
@@ -393,8 +411,12 @@ ${domainsList ? `\n## Knowledge Domains\n\n${domainsList}` : ""}
 ${phrasesList ? `\n## Signature Phrases\n\nUse these phrases naturally in conversation:\n\n${phrasesList}` : ""}
 ${role ? `\n## Identity & Role\n\nYou are **${name}**, ${role}.\n\n${roleDescription}` : ""}
 ${mandateRules?.length ? `\n## Mandate\n${mandateRules.map(r => `- ${r}`).join("\n")}` : ""}
-${voicePrivate || voicePublic ? `\n## Voice\n${voicePrivate ? `**Private:** ${voicePrivate}` : ""}${voicePublic ? `\n**Public:** ${voicePublic}` : ""}` : ""}
+${voiceRules ? `\n## Voice Rules\n${voiceRules}` : ""}${voicePrivate || voicePublic ? `\n## Voice\n${voicePrivate ? `**Private:** ${voicePrivate}` : ""}${voicePublic ? `\n**Public:** ${voicePublic}` : ""}` : ""}
 ${autonomyAuto || autonomyRequireApproval ? `\n## Autonomy\n${autonomyAuto ? `**Full autonomy:** ${autonomyAuto}` : ""}${autonomyRequireApproval ? `\n**Requires approval:** ${autonomyRequireApproval}` : ""}` : ""}
+${worldview ? `\n## Worldview\n\n${worldview}` : ""}
+${expertiseSection ? `\n## Expertise\n\n${expertiseSection}` : ""}
+${memoryPolicy ? `\n## Memory Policy\n\n${memoryPolicy}` : ""}
+${petPeevesList ? `\n## Pet Peeves\n\n${petPeevesList}` : ""}
 ${activeProjects ? `\n## Active Projects\n\n${activeProjects}` : ""}
 
 ## Continuity

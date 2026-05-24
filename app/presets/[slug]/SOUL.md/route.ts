@@ -57,6 +57,15 @@ export async function GET(
     autonomyAuto: preset.autonomyAuto ?? "",
     autonomyRequireApproval: preset.autonomyRequireApproval ?? "",
     activeProjects: preset.activeProjects ?? "",
+    worldview: preset.worldview ?? "",
+    expertise: {
+      primary: preset.expertise?.primary ?? "",
+      fluent: preset.expertise?.fluent ?? "",
+      defers: preset.expertise?.defers ?? "",
+    },
+    memoryPolicy: preset.memoryPolicy ?? "",
+    petPeeves: preset.petPeeves ?? [],
+    voiceRules: preset.voiceRules ?? "",
   };
 
   const md = generateSoulMD(soul);

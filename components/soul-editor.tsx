@@ -116,6 +116,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
   const [newCoreTruth, setNewCoreTruth] = useState("");
   const [newBoundary, setNewBoundary] = useState("");
   const [newSignaturePhrase, setNewSignaturePhrase] = useState("");
+  const [newPetPeeve, setNewPetPeeve] = useState("");
   const [fillWithAIOpen, setFillWithAIOpen] = useState(false);
   const [exportDropdownOpen, setExportDropdownOpen] = useState(false);
   const [quickStartDismissed, setQuickStartDismissed] = useState(false);
@@ -265,6 +266,11 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
       signaturePhrases: soul.signaturePhrases,
       emotionalRange: soul.emotionalRange,
       speechPatterns: soul.speechPatterns,
+      worldview: soul.worldview,
+      expertise: soul.expertise,
+      memoryPolicy: soul.memoryPolicy,
+      petPeeves: soul.petPeeves,
+      voiceRules: soul.voiceRules,
     };
     const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -444,6 +450,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 {[
                   { id: "essentials", label: t("tabsEssentials") || "BASIC INFO" },
                   { id: "personality", label: t("tabsPersonality") || "PERSONALITY" },
+                  { id: "identity", label: "IDENTITY" },
                   { id: "style", label: t("tabsStyle") || "TONE & STYLE" },
                   { id: "advanced", label: t("tabsAdvanced") || "ADVANCED" },
                 ].map((tab) => (
@@ -656,6 +663,165 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                         />
                       ))}
                     </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ─── TAB: IDENTITY (Worldview, Expertise, Memory, Pet Peeves, Voice Rules) ─── */}
+              {activeTab === "identity" && (
+                <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
+                  {/* Worldview */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>public</span>
+                      Worldview
+                    </h3>
+                    <p className="text-xs mb-3" style={{ color: "var(--muted-fg)" }}>
+                      Opinionated takes by domain. Sharp enough to predict what this agent would say.
+                    </p>
+                    <textarea
+                      value={soul.worldview || ""}
+                      onChange={(e) => handleAttributeChange("worldview", e.target.value)}
+                      placeholder={"e.g.,\n- Most software is over-engineered. Ship less.\n- Hustle culture is a disease disguised as ambition.\n- AI should augment, not replace, human judgment."}
+                      rows={5}
+                      className="cyber-textarea"
+                    />
+                  </div>
+
+                  {/* Expertise */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>school</span>
+                      Expertise
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        <label className="mono-data">PRIMARY DOMAIN</label>
+                        <input
+                          value={soul.expertise?.primary || ""}
+                          onChange={(e) => handleAttributeChange("expertise", { ...soul.expertise, primary: e.target.value })}
+                          placeholder="e.g., Full-stack web development, ML systems"
+                          className="cyber-input"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="mono-data">FLUENT IN</label>
+                        <input
+                          value={soul.expertise?.fluent || ""}
+                          onChange={(e) => handleAttributeChange("expertise", { ...soul.expertise, fluent: e.target.value })}
+                          placeholder="e.g., TypeScript, Python, React, Postgres, AWS"
+                          className="cyber-input"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="mono-data">DEFERS TO USER ON</label>
+                        <input
+                          value={soul.expertise?.defers || ""}
+                          onChange={(e) => handleAttributeChange("expertise", { ...soul.expertise, defers: e.target.value })}
+                          placeholder="e.g., Business decisions, design taste, domain-specific logic"
+                          className="cyber-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Voice Rules */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>record_voice_over</span>
+                      Voice Rules
+                    </h3>
+                    <p className="text-xs mb-3" style={{ color: "var(--muted-fg)" }}>
+                      Concrete rules, not adjectives. "Max 3 sentences per paragraph" beats "be concise".
+                    </p>
+                    <textarea
+                      value={soul.voiceRules || ""}
+                      onChange={(e) => handleAttributeChange("voiceRules", e.target.value)}
+                      placeholder={"e.g.,\n- Max 3 sentences per paragraph\n- Never start with 'Great question!'\n- No em-dashes. Use periods.\n- Never use 'utilize' — just 'use'\n- No hedging: 'It's worth noting that...' → just say it"}
+                      rows={5}
+                      className="cyber-textarea"
+                    />
+                  </div>
+
+                  {/* Memory Policy */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>memory</span>
+                      Memory Policy
+                    </h3>
+                    <p className="text-xs mb-3" style={{ color: "var(--muted-fg)" }}>
+                      What persists across sessions, what stays private.
+                    </p>
+                    <textarea
+                      value={soul.memoryPolicy || ""}
+                      onChange={(e) => handleAttributeChange("memoryPolicy", e.target.value)}
+                      placeholder={"e.g.,\n- Save: user preferences, project context, coding style\n- Never save: conversation transcripts, personal data, API keys\n- Forget: anything older than 30 days unless explicitly marked"}
+                      rows={4}
+                      className="cyber-textarea"
+                    />
+                  </div>
+
+                  {/* Pet Peeves */}
+                  <div className="cyber-glass p-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>block</span>
+                      Pet Peeves
+                    </h3>
+                    <p className="text-xs mb-3" style={{ color: "var(--muted-fg)" }}>
+                      Phrases and tones this agent will NEVER produce.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      {(soul.petPeeves || []).map((peeve, i) => (
+                        <div key={i} className="flex items-center gap-2 p-3 rounded" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                          <span className="flex-1 text-xs" style={{ color: "var(--fg)", fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" }}>"{peeve}"</span>
+                          <button
+                            onClick={() => {
+                              const updated = [...(soul.petPeeves || [])];
+                              updated.splice(i, 1);
+                              handleAttributeChange("petPeeves", updated);
+                            }}
+                            className="cyber-btn"
+                            style={{ padding: "4px", border: "none" }}
+                          >
+                            <span className="material-symbols-outlined" style={{ fontSize: "14px", color: "var(--destructive)" }}>delete</span>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    {(soul.petPeeves || []).length >= 8 ? (
+                      <p className="mono-data text-[10px]" style={{ color: "var(--muted-fg)" }}>
+                        Maximum 8 pet peeves reached
+                      </p>
+                    ) : (
+                      <div className="flex gap-2">
+                        <input
+                          value={newPetPeeve}
+                          onChange={(e) => setNewPetPeeve(e.target.value.slice(0, 80))}
+                          placeholder="e.g., 'Great question!', 'It's worth noting that...'"
+                          maxLength={80}
+                          className="cyber-input flex-1"
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" && newPetPeeve.trim()) {
+                              handleAttributeChange("petPeeves", [...(soul.petPeeves || []), newPetPeeve.trim()]);
+                              setNewPetPeeve("");
+                            }
+                          }}
+                        />
+                        <button
+                          onClick={() => {
+                            if (newPetPeeve.trim()) {
+                              handleAttributeChange("petPeeves", [...(soul.petPeeves || []), newPetPeeve.trim()]);
+                              setNewPetPeeve("");
+                            }
+                          }}
+                          disabled={!newPetPeeve.trim()}
+                          className="cyber-btn"
+                          style={{ padding: "8px" }}
+                        >
+                          <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>add</span>
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

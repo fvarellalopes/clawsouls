@@ -35,6 +35,15 @@ export interface SoulExportState {
   signaturePhrases?: string[];
   emotionalRange?: number;
   speechPatterns?: SpeechPatterns;
+  worldview?: string;
+  expertise?: {
+    primary?: string;
+    fluent?: string;
+    defers?: string;
+  };
+  memoryPolicy?: string;
+  petPeeves?: string[];
+  voiceRules?: string;
 }
 
 /**
@@ -142,6 +151,41 @@ export function exportYAML(soul: SoulExportState & { name: string }): string {
         slangUsage: soul.speechPatterns.slangUsage,
       },
     }));
+    blank();
+  }
+
+  if (soul.worldview) {
+    push("# -- Worldview ----------------------------------------------");
+    push("# Opinionated takes by domain");
+    push(toYaml({ worldview: soul.worldview }));
+    blank();
+  }
+
+  if (soul.expertise && (soul.expertise.primary || soul.expertise.fluent || soul.expertise.defers)) {
+    push("# -- Expertise ----------------------------------------------");
+    push("# Primary domain, fluent tools, where it defers");
+    push(toYaml({ expertise: soul.expertise }));
+    blank();
+  }
+
+  if (soul.voiceRules) {
+    push("# -- Voice Rules --------------------------------------------");
+    push("# Concrete rules for how the agent talks");
+    push(toYaml({ voiceRules: soul.voiceRules }));
+    blank();
+  }
+
+  if (soul.memoryPolicy) {
+    push("# -- Memory Policy ------------------------------------------");
+    push("# What persists, what stays private");
+    push(toYaml({ memoryPolicy: soul.memoryPolicy }));
+    blank();
+  }
+
+  if (soul.petPeeves && soul.petPeeves.length > 0) {
+    push("# -- Pet Peeves ---------------------------------------------");
+    push("# Phrases and tones the agent never produces");
+    push(toYaml({ petPeeves: soul.petPeeves }));
     blank();
   }
 

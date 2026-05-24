@@ -39,6 +39,18 @@ const makeSoul = (overrides: Record<string, any> = {}) => ({
   knowledgeDomains: [],
   signaturePhrases: [],
   emotionalRange: 50,
+  speechPatterns: {
+    alliteration: false,
+    rhymeTendency: 10,
+    metaphorFrequency: 30,
+    technicalJargon: 40,
+    slangUsage: 20,
+  },
+  worldview: "",
+  expertise: { primary: "", fluent: "", defers: "" },
+  memoryPolicy: "",
+  petPeeves: [],
+  voiceRules: "",
   ...overrides,
 });
 
@@ -95,8 +107,8 @@ describe('soulGenerator — core truths toggling', () => {
       coreTruths: { helpful: true, opinions: false, resourceful: false, trustworthy: true, respectful: false },
     });
     const md = generateSoulMD(soul);
-    expect(md).toContain('Be genuinely helpful');
-    expect(md).toContain('Earn trust through competence');
+    expect(md).toContain("If the user's plan is bad, say so");
+    expect(md).toContain('Competence earns trust');
     expect(md).not.toContain('Have strong opinions');
     expect(md).not.toContain('Be resourceful before asking');
     expect(md).not.toContain("Remember you're a guest");
@@ -107,11 +119,11 @@ describe('soulGenerator — core truths toggling', () => {
       coreTruths: { helpful: true, opinions: true, resourceful: true, trustworthy: true, respectful: true },
     });
     const md = generateSoulMD(soul);
-    expect(md).toContain('Be genuinely helpful');
-    expect(md).toContain('Have strong opinions');
-    expect(md).toContain('Be resourceful before asking');
-    expect(md).toContain('Earn trust through competence');
-    expect(md).toContain("Remember you're a guest");
+    expect(md).toContain("If the user's plan is bad, say so");
+    expect(md).toContain('Have strong opinions, weakly held');
+    expect(md).toContain('Try three things before asking');
+    expect(md).toContain('Competence earns trust');
+expect(md).toContain('Never impersonate the user');
   });
 
   it('shows placeholder when no core truths are enabled', () => {
@@ -130,10 +142,10 @@ describe('soulGenerator — boundaries toggling', () => {
       boundaries: { private: true, askBeforeActing: false, noHalfBaked: true, notVoiceProxy: false },
     });
     const md = generateSoulMD(soul);
-    expect(md).toContain('Private things stay private');
-    expect(md).toContain('Never send half-baked replies');
-    expect(md).not.toContain('Ask before acting externally');
-    expect(md).not.toContain("You're not the user's voice");
+    expect(md).toContain('Private data never leaves the session');
+    expect(md).toContain("honest 'I don't know' beats a plausible lie");
+expect(md).not.toContain('Any external action');
+expect(md).not.toContain('Never impersonate the user');
   });
 
   it('shows placeholder when no boundaries are enabled', () => {
@@ -513,5 +525,88 @@ describe('soulGenerator — edge cases', () => {
   it('includes continuity section', () => {
     const md = generateSoulMD(makeSoul());
     expect(md).toContain('Each session, you wake up fresh.');
+  });
+});
+
+// ─── p. New SOUL.md best practices sections ───
+describe('soulGenerator — worldview', () => {
+  it('includes worldview section when set', () => {
+    const soul = makeSoul({ worldview: "Most software is over-engineered.\nAI should augment, not replace." });
+    const md = generateSoulMD(soul);
+    expect(md).toContain('## Worldview');
+    expect(md).toContain('Most software is over-engineered');
+    expect(md).toContain('AI should augment, not replace');
+  });
+
+  it('omits worldview section when empty', () => {
+    const soul = makeSoul({ worldview: "" });
+    const md = generateSoulMD(soul);
+    expect(md).not.toContain('## Worldview');
+  });
+});
+
+describe('soulGenerator — expertise', () => {
+  it('includes expertise section when any field is set', () => {
+    const soul = makeSoul({ expertise: { primary: "Full-stack dev", fluent: "TypeScript, Python", defers: "Business decisions" } });
+    const md = generateSoulMD(soul);
+    expect(md).toContain('## Expertise');
+    expect(md).toContain('Full-stack dev');
+    expect(md).toContain('TypeScript, Python');
+    expect(md).toContain('Business decisions');
+  });
+
+  it('omits expertise section when all fields are empty', () => {
+    const soul = makeSoul({ expertise: { primary: "", fluent: "", defers: "" } });
+    const md = generateSoulMD(soul);
+    expect(md).not.toContain('## Expertise');
+  });
+});
+
+describe('soulGenerator — voice rules', () => {
+  it('includes voice rules section when set', () => {
+    const soul = makeSoul({ voiceRules: "Max 3 sentences per paragraph.\nNever use 'utilize'." });
+    const md = generateSoulMD(soul);
+    expect(md).toContain('## Voice Rules');
+    expect(md).toContain('Max 3 sentences per paragraph');
+    expect(md).toContain("Never use 'utilize'");
+  });
+
+  it('omits voice rules section when empty', () => {
+    const soul = makeSoul({ voiceRules: "" });
+    const md = generateSoulMD(soul);
+    expect(md).not.toContain('## Voice Rules');
+  });
+});
+
+describe('soulGenerator — memory policy', () => {
+  it('includes memory policy section when set', () => {
+    const soul = makeSoul({ memoryPolicy: "Save user preferences.\nNever save transcripts." });
+    const md = generateSoulMD(soul);
+    expect(md).toContain('## Memory Policy');
+    expect(md).toContain('Save user preferences');
+    expect(md).toContain('Never save transcripts');
+  });
+
+  it('omits memory policy section when empty', () => {
+    const soul = makeSoul({ memoryPolicy: "" });
+    const md = generateSoulMD(soul);
+    expect(md).not.toContain('## Memory Policy');
+  });
+});
+
+describe('soulGenerator — pet peeves', () => {
+  it('includes pet peeves section when set', () => {
+    const soul = makeSoul({ petPeeves: ["Great question!", "It's worth noting that..."] });
+    const md = generateSoulMD(soul);
+    expect(md).toContain('## Pet Peeves');
+    expect(md).toContain('Never say:');
+    expect(md).toContain('Great question!');
+    expect(md).toContain("It's worth noting that...");
+  });
+
+  it('omits pet peeves section when empty', () => {
+    const soul = makeSoul({ petPeeves: [] });
+    const md = generateSoulMD(soul);
+    expect(md).not.toContain('## Pet Peeves');
   });
 });

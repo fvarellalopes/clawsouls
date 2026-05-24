@@ -44,6 +44,11 @@ const makeSoul = (overrides: Partial<SoulExportState> = {}): SoulExportState => 
     technicalJargon: 40,
     slangUsage: 20,
   },
+  worldview: "",
+  expertise: { primary: "", fluent: "", defers: "" },
+  memoryPolicy: "",
+  petPeeves: [],
+  voiceRules: "",
   ...overrides,
 });
 
@@ -276,6 +281,78 @@ describe('exportYAML — speech patterns', () => {
     const yaml = exportYAML(makeSoul({ speechPatterns: undefined }));
     expect(yaml).not.toContain('# -- Speech Patterns');
     expect(yaml).not.toContain('speechPatterns:');
+  });
+});
+
+// ─── Worldview ──────────────────────────────────────────────────────
+describe('exportYAML — worldview', () => {
+  it('includes worldview when set', () => {
+    const yaml = exportYAML(makeSoul({ worldview: "Most software is over-engineered." }));
+    expect(yaml).toContain('# -- Worldview');
+    expect(yaml).toContain('Most software is over-engineered');
+  });
+
+  it('omits worldview section when empty', () => {
+    const yaml = exportYAML(makeSoul({ worldview: "" }));
+    expect(yaml).not.toContain('# -- Worldview');
+  });
+});
+
+// ─── Expertise ──────────────────────────────────────────────────────
+describe('exportYAML — expertise', () => {
+  it('includes expertise when set', () => {
+    const yaml = exportYAML(makeSoul({ expertise: { primary: "Full-stack", fluent: "TS, Python", defers: "Design" } }));
+    expect(yaml).toContain('# -- Expertise');
+    expect(yaml).toContain('Full-stack');
+    expect(yaml).toContain('TS, Python');
+    expect(yaml).toContain('Design');
+  });
+
+  it('omits expertise when all fields empty', () => {
+    const yaml = exportYAML(makeSoul({ expertise: { primary: "", fluent: "", defers: "" } }));
+    expect(yaml).not.toContain('# -- Expertise');
+  });
+});
+
+// ─── Voice Rules ────────────────────────────────────────────────────
+describe('exportYAML — voice rules', () => {
+  it('includes voice rules when set', () => {
+    const yaml = exportYAML(makeSoul({ voiceRules: "Max 3 sentences per paragraph." }));
+    expect(yaml).toContain('# -- Voice Rules');
+    expect(yaml).toContain('Max 3 sentences per paragraph');
+  });
+
+  it('omits voice rules when empty', () => {
+    const yaml = exportYAML(makeSoul({ voiceRules: "" }));
+    expect(yaml).not.toContain('# -- Voice Rules');
+  });
+});
+
+// ─── Memory Policy ─────────────────────────────────────────────────
+describe('exportYAML — memory policy', () => {
+  it('includes memory policy when set', () => {
+    const yaml = exportYAML(makeSoul({ memoryPolicy: "Save preferences. Never save transcripts." }));
+    expect(yaml).toContain('# -- Memory Policy');
+    expect(yaml).toContain('Save preferences');
+  });
+
+  it('omits memory policy when empty', () => {
+    const yaml = exportYAML(makeSoul({ memoryPolicy: "" }));
+    expect(yaml).not.toContain('# -- Memory Policy');
+  });
+});
+
+// ─── Pet Peeves ─────────────────────────────────────────────────────
+describe('exportYAML — pet peeves', () => {
+  it('includes pet peeves when present', () => {
+    const yaml = exportYAML(makeSoul({ petPeeves: ["Great question!", "It\'s worth noting"] }));
+    expect(yaml).toContain('# -- Pet Peeves');
+    expect(yaml).toContain('Great question!');
+  });
+
+  it('omits pet peeves when empty', () => {
+    const yaml = exportYAML(makeSoul({ petPeeves: [] }));
+    expect(yaml).not.toContain('# -- Pet Peeves');
   });
 });
 

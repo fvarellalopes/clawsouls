@@ -45,6 +45,11 @@ const makeSoul = (overrides: Record<string, any> = {}) => ({
     technicalJargon: 40,
     slangUsage: 20,
   },
+  worldview: "",
+  expertise: { primary: "", fluent: "", defers: "" },
+  memoryPolicy: "",
+  petPeeves: [],
+  voiceRules: "",
   ...overrides,
 });
 
