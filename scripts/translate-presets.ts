@@ -1,52 +1,59 @@
 /**
  * Translate presets to all supported locales via Supabase.
+ * Uses curl for OpenGateway API calls (avoids Node.js fetch gzip issues).
  * 
- * 1. Creates preset_translations table if not exists
- * 2. Fetches all presets from Supabase
- * 3. Translates name, description, creature, vibe to each locale
- * 4. Upserts translations into preset_translations
+ * Usage: npx tsx scripts/translate-presets.ts [--locale pt] [--batch 10] [--dry-run]
  * 
- * Usage: npx tsx scripts/translate-presets.ts [--locale pt] [--batch 50] [--dry-run]
- * 
- * Requires: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY in .env.local
+ * Requires: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GITLAWB_API_KEY in .env.local
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { execSync } from 'child_process';
 
-// Load env from .env.local and global ~/.hermes/.env
-const envPaths = [
-  path.join(__dirname, '..', '.env.local'),
-  path.join(process.env.HOME || '~', '.hermes', '.env'),
-];
-for (const envPath of envPaths) {
-  if (fs.existsSync(envPath)) {
-    for (const line of fs.readFileSync(envPath, 'utf-8').split('\n')) {
+// Load env from .env.local ONLY
+const envPath = path.join(__dirname, '..', '.env.local');
+if (fs.existsSync(envPath)) {
+  for (const line of fs.readFileSync(envPath, 'utf-8').split('\n')) {
+    const t = line.trim();
+    if (!t || t.startsWith('#')) continue;
+    const eq = t.indexOf('=');
+    if (eq === -1) continue;
+    const k = t.slice(0, eq).trim();
+    const v = t.slice(eq + 1).trim();
+    if (!process.env[k]) process.env[k] = v;
+  }
+}
+
+// Also load GITLAWB_API_KEY from global .env if not in .env.local
+if (!process.env.GITLAWB_API_KEY) {
+  const globalEnv = path.join(process.env.HOME || '/home/ubuntu', '.hermes', '.env');
+  if (fs.existsSync(globalEnv)) {
+    for (const line of fs.readFileSync(globalEnv, 'utf-8').split('\n')) {
       const t = line.trim();
       if (!t || t.startsWith('#')) continue;
       const eq = t.indexOf('=');
       if (eq === -1) continue;
       const k = t.slice(0, eq).trim();
       const v = t.slice(eq + 1).trim();
-      if (!process.env[k]) process.env[k] = v;
+      if (k === 'GITLAWB_API_KEY' && !process.env[k]) process.env[k] = v;
     }
   }
 }
 
-const URL = process.env.SUPABASE_URL || '';
-const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+const API_KEY = process.env.GITLAWB_API_KEY || '';
+const API_BASE = 'https://opengateway.gitlawb.com/v1';
 
-if (!URL || !KEY) {
+if (!SUPABASE_URL || !SUPABASE_KEY) {
   console.error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
   process.exit(1);
 }
-
-const HEADERS = {
-  'apikey': KEY,
-  'Authorization': `Bearer ${KEY}`,
-  'Content-Type': 'application/json',
-  'Prefer': 'return=minimal',
-};
+if (!API_KEY) {
+  console.error('Missing GITLAWB_API_KEY');
+  process.exit(1);
+}
 
 // Supported locales (excluding 'en' which is the source)
 const LOCALES = ['pt', 'es', 'fr', 'de', 'ja', 'zh'];
@@ -57,78 +64,60 @@ const localeArg = args.find(a => a.startsWith('--locale='))?.split('=')[1];
 const batchArg = args.find(a => a.startsWith('--batch='))?.split('=')[1];
 const dryRun = args.includes('--dry-run');
 const targetLocales = localeArg ? [localeArg] : LOCALES;
-const batchSize = batchArg ? parseInt(batchArg) : 20;
+const batchSize = batchArg ? parseInt(batchArg) : 10;
 
-// ─── Step 1: Create table ───────────────────────────────────────────
-async function createTable() {
-  console.log('Step 1: Creating preset_translations table if not exists...');
-
-  const sql = `
-CREATE TABLE IF NOT EXISTS preset_translations (
-  preset_id TEXT NOT NULL,
-  locale TEXT NOT NULL,
-  name TEXT,
-  description TEXT,
-  creature TEXT,
-  vibe TEXT,
-  tags JSONB DEFAULT '[]',
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW(),
-  PRIMARY KEY (preset_id, locale)
-);
-
-CREATE INDEX IF NOT EXISTS idx_preset_translations_locale ON preset_translations(locale);
-CREATE INDEX IF NOT EXISTS idx_preset_translations_preset ON preset_translations(preset_id);
-`;
-
-  const res = await fetch(`${URL}/rest/v1/rpc/exec_sql`, {
-    method: 'POST',
-    headers: HEADERS,
-    body: JSON.stringify({ sql }),
-  });
-
-  if (!res.ok) {
-    // Try direct SQL endpoint
-    const res2 = await fetch(`${URL}/rest/v1/sql`, {
-      method: 'POST',
-      headers: HEADERS,
-      body: sql,
-    });
-    if (!res2.ok) {
-      const text = await res2.text();
-      console.error('Failed to create table:', text);
-      console.log('You may need to create the table manually in Supabase SQL editor:');
-      console.log(sql);
-      return false;
-    }
-  }
-
-  console.log('  ✓ Table created/verified');
-  return true;
+// ─── Helpers ────────────────────────────────────────────────────────
+function curlGet(url: string): any {
+  const result = execSync(
+    `curl -s -m 30 "${url}" -H "apikey: ${SUPABASE_KEY}" -H "Authorization: Bearer ${SUPABASE_KEY}"`,
+    { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024 }
+  );
+  return JSON.parse(result);
 }
 
-// ─── Step 2: Fetch presets ──────────────────────────────────────────
-async function fetchPresets(): Promise<any[]> {
-  console.log('Step 2: Fetching presets from Supabase...');
+function curlPost(url: string, body: string, headers: Record<string, string> = {}): string {
+  const allHeaders = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`,
+    'Content-Type': 'application/json',
+    ...headers,
+  };
+  const headerArgs = Object.entries(allHeaders)
+    .map(([k, v]) => `-H "${k}: ${v}"`)
+    .join(' ');
+  const escapedBody = body.replace(/'/g, "'\\''");
+  return execSync(
+    `curl -s -m 60 ${headerArgs} -d '${escapedBody}' "${url}"`,
+    { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024 }
+  );
+}
 
+function translateViaLLM(prompt: string): string {
+  const body = JSON.stringify({
+    model: 'mimo-v2.5',
+    messages: [{ role: 'user', content: prompt }],
+    max_tokens: 3000,
+    temperature: 0.2,
+  });
+  const result = execSync(
+    `curl -s -m 60 -H "Content-Type: application/json" -H "Authorization: Bearer ${API_KEY}" -d '${body.replace(/'/g, "'\\''")}' "${API_BASE}/chat/completions"`,
+    { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024 }
+  );
+  const data = JSON.parse(result);
+  return data.choices?.[0]?.message?.content || '';
+}
+
+// ─── Step 1: Fetch presets ──────────────────────────────────────────
+function fetchPresets(): any[] {
+  console.log('Step 1: Fetching presets from Supabase...');
   const allPresets: any[] = [];
   const pageSize = 1000;
   let offset = 0;
 
   while (true) {
-    const res = await fetch(
-      `${URL}/rest/v1/presets?select=id,name,description,creature,vibe,tags&limit=${pageSize}&offset=${offset}&order=id`,
-      { headers: HEADERS }
-    );
-
-    if (!res.ok) {
-      console.error('Failed to fetch presets:', await res.text());
-      break;
-    }
-
-    const batch = await res.json();
+    const url = `${SUPABASE_URL}/rest/v1/presets?select=id,name,description,creature,vibe,tags&limit=${pageSize}&offset=${offset}&order=id`;
+    const batch = curlGet(url);
     allPresets.push(...batch);
-
     if (batch.length < pageSize) break;
     offset += pageSize;
   }
@@ -137,24 +126,15 @@ async function fetchPresets(): Promise<any[]> {
   return allPresets;
 }
 
-// ─── Step 3: Check existing translations ────────────────────────────
-async function getExistingTranslations(locale: string): Promise<Set<string>> {
-  const res = await fetch(
-    `${URL}/rest/v1/preset_translations?select=preset_id&locale=eq.${locale}`,
-    { headers: { ...HEADERS, 'Accept': 'application/json' } }
-  );
-
-  if (!res.ok) return new Set();
-
-  const rows = await res.json();
+// ─── Step 2: Check existing translations ────────────────────────────
+function getExistingTranslations(locale: string): Set<string> {
+  const url = `${SUPABASE_URL}/rest/v1/preset_translations?select=preset_id&locale=eq.${locale}`;
+  const rows = curlGet(url);
   return new Set(rows.map((r: any) => r.preset_id));
 }
 
-// ─── Step 4: Translate via LLM ──────────────────────────────────────
-async function translateBatch(
-  presets: any[],
-  locale: string
-): Promise<any[]> {
+// ─── Step 3: Translate via LLM ──────────────────────────────────────
+function translateBatch(presets: any[], locale: string): any[] {
   const localeNames: Record<string, string> = {
     pt: 'Portuguese (Brazil)',
     es: 'Spanish',
@@ -166,73 +146,44 @@ async function translateBatch(
 
   const localeName = localeNames[locale] || locale;
 
-  const prompt = `You are a professional translator for a cyberpunk-themed AI character platform called ClawSouls.
+  const prompt = `You are a professional translator for a cyberpunk-themed AI character platform.
 
 Translate the following preset data from English to ${localeName}.
 
 RULES:
 - Keep the cyberpunk/dark aesthetic tone
-- Names of well-known characters (e.g., "Sherlock Holmes", "Einstein") should stay in their original form or use the commonly known localized version
-- Creature types should be translated naturally (e.g., "Digital Phoenix" → "Fênix Digital" in PT)
+- Names of well-known characters should stay in their original form or use the commonly known localized version
+- Creature types should be translated naturally
 - Tags should be translated to common equivalents
 - Vibe descriptions should maintain the atmospheric quality
-- DO NOT translate: proper nouns that are already well-known, technical terms, character IDs
+- DO NOT translate: proper nouns already well-known, character IDs
 
-INPUT (JSON array of presets):
+INPUT (JSON array):
 ${JSON.stringify(presets.map(p => ({
-  id: p.id,
-  name: p.name,
-  description: p.description,
-  creature: p.creature,
-  vibe: p.vibe,
-  tags: p.tags,
-})), null, 2)}
+    id: p.id,
+    name: p.name,
+    description: p.description,
+    creature: p.creature,
+    vibe: p.vibe,
+    tags: p.tags,
+  })), null, 2)}
 
-OUTPUT (JSON array with same structure, translated):
-Respond with ONLY the JSON array, no explanation.`;
+OUTPUT: Respond with ONLY a valid JSON array. No markdown, no explanation.`;
 
-  // Use the OpenGateway API for translation
-  const apiKey = process.env.GITLAWB_API_KEY || process.env.OPENROUTER_API_KEY || process.env.OPENAI_API_KEY;
-  const baseUrl = process.env.GITLAWB_BASE_URL || 'https://opengateway.gitlawb.com/v1';
-  const model = process.env.TRANSLATION_MODEL || 'mimo-v2.5-pro';
+  const content = translateViaLLM(prompt);
 
-  if (!apiKey) {
-    throw new Error('No API key found for translation. Set OPENROUTER_API_KEY or OPENAI_API_KEY');
-  }
-
-  const res = await fetch(`${baseUrl}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: model,
-      messages: [{ role: 'user', content: prompt }],
-      temperature: 0.3,
-      max_tokens: 8000,
-    }),
-  });
-
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Translation API error: ${res.status} - ${text}`);
-  }
-
-  const data = await res.json();
-  const content = data.choices?.[0]?.message?.content || '';
-
-  // Extract JSON from response (might be wrapped in markdown code blocks)
-  const jsonMatch = content.match(/\[[\s\S]*\]/);
+  // Extract JSON from response (handle markdown code blocks)
+  const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)\s*```/) || content.match(/\[[\s\S]*\]/);
   if (!jsonMatch) {
-    throw new Error(`Failed to parse translation response: ${content.slice(0, 200)}`);
+    throw new Error(`Failed to parse translation response: ${content.slice(0, 300)}`);
   }
 
-  return JSON.parse(jsonMatch[0]);
+  const jsonStr = jsonMatch[1] || jsonMatch[0];
+  return JSON.parse(jsonStr);
 }
 
-// ─── Step 5: Upsert translations ────────────────────────────────────
-async function upsertTranslations(translations: any[], locale: string) {
+// ─── Step 4: Upsert translations ────────────────────────────────────
+function upsertTranslations(translations: any[], locale: string) {
   if (dryRun) {
     console.log(`  [DRY RUN] Would upsert ${translations.length} translations for ${locale}`);
     return;
@@ -249,45 +200,41 @@ async function upsertTranslations(translations: any[], locale: string) {
     updated_at: new Date().toISOString(),
   }));
 
-  const res = await fetch(`${URL}/rest/v1/preset_translations`, {
-    method: 'POST',
-    headers: { ...HEADERS, 'Prefer': 'resolution=merge-duplicates' },
-    body: JSON.stringify(rows),
-  });
+  const result = curlPost(
+    `${SUPABASE_URL}/rest/v1/preset_translations`,
+    JSON.stringify(rows),
+    { 'Prefer': 'resolution=merge-duplicates' }
+  );
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Failed to upsert translations: ${text}`);
+  // Check for errors
+  if (result.includes('"code"') && result.includes('"message"')) {
+    console.error(`  ✗ Supabase error: ${result.slice(0, 200)}`);
+  } else {
+    console.log(`  ✓ Upserted ${rows.length} translations for ${locale}`);
   }
-
-  console.log(`  ✓ Upserted ${rows.length} translations for ${locale}`);
 }
 
 // ─── Main ───────────────────────────────────────────────────────────
-async function main() {
-  console.log('=== ClawSouls Preset Translator ===');
+function main() {
+  console.log('=== ClawSouls Preset Translator (curl-based) ===');
   console.log(`Locales: ${targetLocales.join(', ')}`);
   console.log(`Batch size: ${batchSize}`);
   console.log(`Dry run: ${dryRun}`);
   console.log('');
 
-  // Step 1: Create table (skip if already exists)
-  console.log('Step 1: Verifying preset_translations table...');
-  console.log('  ✓ Table should already exist (created manually)');
-
-  // Step 2: Fetch presets
-  const presets = await fetchPresets();
+  // Step 1: Fetch presets
+  const presets = fetchPresets();
   if (presets.length === 0) {
     console.error('No presets found. Exiting.');
     process.exit(1);
   }
 
-  // Step 3-5: Translate for each locale
+  // Step 2-4: Translate for each locale
   for (const locale of targetLocales) {
     console.log(`\n--- Translating to ${locale} ---`);
 
     // Check existing translations
-    const existing = await getExistingTranslations(locale);
+    const existing = getExistingTranslations(locale);
     console.log(`  Existing translations: ${existing.size}`);
 
     // Filter presets that need translation
@@ -300,21 +247,33 @@ async function main() {
     }
 
     // Process in batches
+    let consecutiveFailures = 0;
+    const MAX_CONSECUTIVE_FAILURES = 5;
+
     for (let i = 0; i < toTranslate.length; i += batchSize) {
       const batch = toTranslate.slice(i, i + batchSize);
-      console.log(`  Translating batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(toTranslate.length / batchSize)} (${batch.length} presets)...`);
+      const batchNum = Math.floor(i / batchSize) + 1;
+      const totalBatches = Math.ceil(toTranslate.length / batchSize);
+      process.stdout.write(`  Batch ${batchNum}/${totalBatches} (${batch.length} presets)... `);
 
       try {
-        const translations = await translateBatch(batch, locale);
-        await upsertTranslations(translations, locale);
+        const translations = translateBatch(batch, locale);
+        upsertTranslations(translations, locale);
+        consecutiveFailures = 0;
+        console.log('✓');
       } catch (err: any) {
-        console.error(`  ✗ Error translating batch: ${err.message}`);
-        // Continue with next batch
+        consecutiveFailures++;
+        console.log(`✗ ${err.message?.slice(0, 80)}`);
+
+        if (consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
+          console.error(`  ✗✗ Too many consecutive failures (${consecutiveFailures}). Stopping.`);
+          break;
+        }
       }
 
-      // Rate limiting: wait 1 second between batches
+      // Rate limiting
       if (i + batchSize < toTranslate.length) {
-        await new Promise(r => setTimeout(r, 1000));
+        execSync('sleep 1');
       }
     }
   }
@@ -322,7 +281,4 @@ async function main() {
   console.log('\n=== Translation complete ===');
 }
 
-main().catch(err => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+main();
