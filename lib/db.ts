@@ -52,6 +52,9 @@ export type Preset = {
   voice_public?: string;
   autonomy_auto?: string;
   autonomy_require_approval?: string;
+  active_projects?: string;
+  custom_core_truths?: string[];
+  custom_boundaries?: string[];
   created_at?: string;
   updated_at?: string;
 };
@@ -122,6 +125,9 @@ function rowToPreset(row: any): Preset {
     voice_public: row.voice_public,
     autonomy_auto: row.autonomy_auto,
     autonomy_require_approval: row.autonomy_require_approval,
+    active_projects: row.active_projects,
+    custom_core_truths: row.custom_core_truths,
+    custom_boundaries: row.custom_boundaries,
     created_at: row.created_at,
     updated_at: row.updated_at,
   };
