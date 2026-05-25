@@ -16,7 +16,7 @@ import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, 
 import { useAutoSaveStore } from "@/store/autoSaveStore";
 import { usePresets } from "@/lib/usePresets";
 import { attributeOptions } from "@/data/presets";
-import { generateSoulMD } from "@/lib/soulGenerator";
+import { generateSoulMD, getCharacterCoreTruths, getCharacterBoundaries } from "@/lib/soulGenerator";
 import { exportYAML } from "@/lib/exportYAML";
 import { avatarUrl, hasAvatar } from "@/lib/avatar";
 import { CritiquePanel } from "@/components/critique-panel";
@@ -636,14 +636,17 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                       {t("coreTruthsTitle") || "Core Truths"}
                     </h3>
                     <div className="space-y-1">
-                      {Object.entries(soul.coreTruths).map(([key, value]) => (
+                      {Object.entries(soul.coreTruths).map(([key, value]) => {
+                        const archLabels = getCharacterCoreTruths(soul.creature, soul.vibeStyle);
+                        return (
                         <CyberToggle
                           key={key}
-                          label={t(`coreTruths.${key}`) || key}
+                          label={archLabels[key] || t(`coreTruths.${key}`) || key}
                           checked={value}
                           onChange={(checked) => handleCoreTruthChange(key as any, checked)}
                         />
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
 
@@ -654,14 +657,17 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                       {t("boundariesTitle") || "Boundaries"}
                     </h3>
                     <div className="space-y-1">
-                      {Object.entries(soul.boundaries).map(([key, value]) => (
+                      {Object.entries(soul.boundaries).map(([key, value]) => {
+                        const archBounds = getCharacterBoundaries(soul.creature);
+                        return (
                         <CyberToggle
                           key={key}
-                          label={t(`boundaries.${key}`) || key}
+                          label={archBounds[key] || t(`boundaries.${key}`) || key}
                           checked={value}
                           onChange={(checked) => handleBoundaryChange(key as any, checked)}
                         />
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
