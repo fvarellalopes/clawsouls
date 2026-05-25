@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { SoulPreset } from '@/store/soulStore'
+import { useLocale } from 'next-intl'
 
 const API_BASE = '/api/filtered-presets' // Use filtered endpoint to block harmful content
 
@@ -107,28 +108,19 @@ function mapSupabaseToSoulPreset(data: any, localFallback?: SoulPreset): SoulPre
   }
 }
 
-// Apply locale translations to a preset
-function applyTranslations(preset: SoulPreset, presetTranslations: Record<string, string> | undefined): SoulPreset {
-  if (!presetTranslations) return preset;
-  return {
-    ...preset,
-    name: presetTranslations.name || preset.name,
-    creature: presetTranslations.creature || preset.creature,
-    vibe: presetTranslations.vibe || preset.vibe,
-    description: presetTranslations.description || preset.description,
-  };
-}
-
-export function usePresets(presetsMessages?: Record<string, Record<string, string>>) {
+export function usePresets() {
   const [rawPresets, setRawPresets] = useState<SoulPreset[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const locale = useLocale()
 
   useEffect(() => {
     async function fetchPresets() {
       try {
         setLoading(true)
-        const res = await fetch(API_BASE)
+        // Pass locale to API for server-side translation
+        const url = `${API_BASE}?locale=${locale}&limit=1000`
+        const res = await fetch(url)
         if (!res.ok) throw new Error('Failed to fetch presets')
         const json = await res.json()
         // Load local presets as fallback for missing personality fields
@@ -152,52 +144,53 @@ export function usePresets(presetsMessages?: Record<string, Record<string, strin
     }
 
     fetchPresets()
-  }, [])
+  }, [locale]) // Re-fetch when locale changes
 
-  // Apply translations when messages change
+  // Filter out blacklisted presets
   const presets = useMemo(() => {
-    // Filter out blacklisted presets
-    const filtered = rawPresets.filter(preset => !PRESET_BLACKLIST.has(preset.id))
-    if (!presetsMessages) return filtered
-    return filtered.map(preset => {
-      const presetTranslations = presetsMessages[preset.id]
-      return applyTranslations(preset, presetTranslations)
-    })
-  }, [rawPresets, presetsMessages])
+    return rawPresets.filter(preset => !PRESET_BLACKLIST.has(preset.id))
+  }, [rawPresets])
 
   return { presets, loading, error }
 }
 
-export function usePresetById(id: string, presetsMessages?: Record<string, Record<string, string>>) {
+export function usePresetById(id: string) {
   const [preset, setPreset] = useState<SoulPreset | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const locale = useLocale()
 
   useEffect(() => {
     async function fetchPreset() {
       try {
         setLoading(true)
-        const res = await fetch(`${API_BASE}/${id}`)
-        if (!res.ok) {
-          if (res.status === 404) {
-            setError('Preset não encontrado')
-            return
-          }
-          throw new Error('Failed to fetch preset')
-        }
-        const data = await res.json()
+        // Fetch all presets with locale and find the one we need
+        const url = `${API_BASE}?locale=${locale}&limit=1000`
+        const res = await fetch(url)
+        if (!res.ok) throw new Error('Failed to fetch presets')
+        const json = await res.json()
         const localMap = await getLocalPresetsMap()
-        const mapped = mapSupabaseToSoulPreset(data, localMap[id])
-        setPreset(mapped)
+        const found = (json.data || []).find((d: any) => d.id === id)
+        if (found) {
+          setPreset(mapSupabaseToSoulPreset(found, localMap[found.id]))
+        } else {
+          // Try local fallback
+          const localPreset = localMap[id]
+          if (localPreset) {
+            setPreset(localPreset)
+          } else {
+            setError('Preset not found')
+          }
+        }
         setError(null)
       } catch (err: any) {
         console.error('Erro ao carregar preset:', err)
         setError(err.message)
-        // Fallback: buscar da lista local
+        // Fallback: try local presets
         try {
           const { presets: localPresets } = await import('@/data/presets')
-          const local = localPresets.find(p => p.id === id)
-          if (local) setPreset(local)
+          const found = localPresets.find(p => p.id === id)
+          if (found) setPreset(found)
         } catch (e) {
           console.error('Fallback também falhou:', e)
         }
@@ -206,15 +199,8 @@ export function usePresetById(id: string, presetsMessages?: Record<string, Recor
       }
     }
 
-    if (id) fetchPreset()
-  }, [id])
+    fetchPreset()
+  }, [id, locale])
 
-  // Apply translations
-  const translatedPreset = useMemo(() => {
-    if (!preset || !presetsMessages) return preset;
-    const presetTranslations = presetsMessages[preset.id];
-    return applyTranslations(preset, presetTranslations);
-  }, [preset, presetsMessages]);
-
-  return { preset: translatedPreset, loading, error }
+  return { preset, loading, error }
 }

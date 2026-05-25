@@ -39,6 +39,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ClawSouls" }],
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "ClawSouls — Create Your OpenClaw Soul",
     description:

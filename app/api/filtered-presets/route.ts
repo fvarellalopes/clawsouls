@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { list_presets } from '@/lib/db'
+import { getServerSupabase } from '@/lib/supabase'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { filteredPresetsGetSchema, safeError } from '@/lib/schemas'
 
@@ -16,6 +17,59 @@ async function getLocalPresets() {
   return localPresetsCache
 }
 
+// Fetch translations for a set of preset IDs and locale
+async function fetchTranslations(presetIds: string[], locale: string): Promise<Map<string, any>> {
+  const translationMap = new Map<string, any>()
+
+  if (!locale || locale === 'en') return translationMap
+
+  const supabase = getServerSupabase()
+  if (!supabase) return translationMap
+
+  // Fetch in batches of 1000 (Supabase limit)
+  const batchSize = 1000
+  for (let i = 0; i < presetIds.length; i += batchSize) {
+    const batch = presetIds.slice(i, i + batchSize)
+    const { data, error } = await supabase
+      .from('preset_translations')
+      .select('preset_id, name, description, creature, vibe, tags')
+      .eq('locale', locale)
+      .in('preset_id', batch)
+
+    if (error) {
+      console.error('Error fetching translations:', error)
+      continue
+    }
+
+    for (const row of data || []) {
+      translationMap.set(row.preset_id, row)
+    }
+  }
+
+  return translationMap
+}
+
+// Apply translations to a preset
+function applyTranslation(preset: any, translation: any): any {
+  if (!translation) return preset
+
+  return {
+    ...preset,
+    name: translation.name || preset.name,
+    description: translation.description || preset.description,
+    creature: translation.creature || preset.creature,
+    vibe: translation.vibe || preset.vibe,
+    tags: translation.tags || preset.tags,
+    // Keep original values for reference
+    _original: {
+      name: preset.name,
+      description: preset.description,
+      creature: preset.creature,
+      vibe: preset.vibe,
+    }
+  }
+}
+
 export async function GET(request: NextRequest) {
   const rl = await checkRateLimit(request);
   if (!rl.success) {
@@ -30,7 +84,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid parameters', details: parsed.error.flatten() }, { status: 400 });
   }
 
-  const { limit, offset, creature, source, search } = parsed.data;
+  const { limit, offset, creature, source, search, locale } = parsed.data;
 
   try {
     // Try Supabase / SQLite first
@@ -108,6 +162,19 @@ export async function GET(request: NextRequest) {
 
     // Filter out blacklisted presets
     const filtered = presets.filter((preset: any) => !PRESET_BLACKLIST.has(preset.id))
+
+    // Apply translations if locale is specified
+    if (locale && locale !== 'en') {
+      const presetIds = filtered.map((p: any) => p.id)
+      const translations = await fetchTranslations(presetIds, locale)
+
+      if (translations.size > 0) {
+        const translated = filtered.map((preset: any) =>
+          applyTranslation(preset, translations.get(preset.id))
+        )
+        return NextResponse.json({ data: translated, locale, translated: translations.size })
+      }
+    }
 
     return NextResponse.json({ data: filtered })
   } catch (err) {

@@ -96,6 +96,7 @@ export const filteredPresetsGetSchema = z.object({
   creature: z.string().max(100).optional(),
   source: z.string().max(50).optional(),
   search: z.string().max(200).optional(),
+  locale: z.string().max(5).optional(), // 'en', 'pt', 'es', 'fr', 'de', 'ja', 'zh'
 });
 
 // --- Helper: safe error response ---
