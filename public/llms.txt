@@ -24,7 +24,7 @@ Built with Next.js 15 (App Router, Turbopack), TypeScript, Tailwind CSS, next-in
 ## Key Libraries and Modules
 
 - `lib/avatar.ts` — Resolves avatar file paths from soul names. Avatars are stored as `public/avatars/{slug}.png`.
-- `lib/soulGenerator.ts` — Generates markdown descriptions of soul characters from their state object.
+- `lib/soulGenerator.ts` — Generates SOUL.md markdown from soul state. Includes an archetype system that detects character type (warrior, trickster, scholar, healer, villain, technomancer) from the creature name and generates character-specific core truths, boundaries, and vibe text. Exports `generateSoulMD()`, `getArchetype()`, `getCharacterCoreTruths()`, `getCharacterBoundaries()`, `getCharacterVibe()`.
 - `lib/soulParser.ts` — Parses soul markdown into structured state.
 - `lib/themes.ts` — Color theme system with 12 themes (Paper, Clean, Cyberpunk, Ocean, Forest, Sunset, Monochrome, Sakura, Bloodborne, Matrix, Arctic, Royal). Each theme defines CSS custom properties for colors.
 - `lib/db.ts` — Database access layer.
@@ -51,23 +51,76 @@ Built with Next.js 15 (App Router, Turbopack), TypeScript, Tailwind CSS, next-in
 
 ## Preset Data Structure
 
-A soul preset contains:
+A soul preset contains the following fields:
+
+**Identity:**
 - `name` (string): Character name
-- `creature` (string): Type/category (e.g., "Anime Character", "Mythological / Legendary")
+- `creature` (string): Type/category (e.g., "Orc", "Wizard", "Robot AI")
 - `vibe` (string): Short vibe/description text
 - `emoji` (string): Emoji representation
 - `avatar` (string): Avatar image path
-- `coreTruths` (string[]): Character's core beliefs/truths
-- `boundaries` (string[]): Character's boundaries/limitations
-- `vibeStyle` (string): Communication style description
-- `continuity` (number): Memory/continuity level (1-10)
-- `humor` (number): Humor level (1-10)
-- `formality` (number): Formality level (1-10)
-- `emojiUsage` (number): Emoji usage frequency (1-10)
-- `verbosity` (number): Verbosity level (1-10)
-- `consciousness` (number): Self-awareness level (1-10)
-- `customCoreTruths` (string[]): User-defined core truths
-- `customBoundaries` (string[]): User-defined boundaries
+- `role` (string): Agent role description (e.g., "Autonomous operator and thought partner")
+- `roleDescription` (string): Free text about the agent's role
+
+**Core Truths & Boundaries (toggles):**
+- `coreTruths` (object): Toggles { helpful, opinions, resourceful, trustworthy, respectful } — labels change per archetype
+- `boundaries` (object): Toggles { private, askBeforeActing, noHalfBaked, notVoiceProxy } — labels change per archetype
+- `customCoreTruths` (string[]): User-defined additional core truths
+- `customBoundaries` (string[]): User-defined additional boundaries
+
+**Vibe & Tone:**
+- `vibeStyle` (string): Style key — concise, expressive, sharp, verbose, minimal, dramatic, poetic, technical, casual, formal, balanced. Content adapts to archetype.
+- `humor` (number): 0-100, seriousness to playfulness
+- `formality` (number): 0-100, casual to professional
+- `emojiUsage` (number): 0-100, none to frequent
+- `verbosity` (number): 0-100, ultra-concise to detailed
+- `consciousness` (number): 0-100, procedural to deeply reflective
+- `questioning` (number): 0-100, direct answers to Socratic
+- `emotionalRange` (number): 0-100, stoic to dramatic
+
+**Big Five Personality Traits:**
+- `openness` (number): 0-100, creativity/intellect
+- `conscientiousness` (number): 0-100, organization/dependability
+- `extraversion` (number): 0-100, sociability/assertiveness
+- `agreeableness` (number): 0-100, cooperation/trust
+- `neuroticism` (number): 0-100, emotional instability
+
+**Communication:**
+- `communicationMode` (string): socratic, diagnostic, encouraging, challenging, flirty, direct
+- `knowledgeDomains` (string[]): Array of domain keys (tech, philosophy, science, etc.)
+- `signaturePhrases` (string[]): Character's signature phrases
+- `speechPatterns` (object): { alliteration (bool), rhymeTendency, metaphorFrequency, technicalJargon, slangUsage } (0-100 each)
+
+**SOUL.md Best Practices Fields:**
+- `worldview` (string): Opinionated takes by domain (free text)
+- `expertise` (object): { primary (string), fluent (string), defers (string) }
+- `memoryPolicy` (string): What persists, what stays private
+- `petPeeves` (string[]): Phrases/tones the agent never produces
+- `voiceRules` (string): Concrete voice rules (not adjectives)
+- `voicePrivate` (string): Private chat voice description
+- `voicePublic` (string): Public output voice description
+- `mandateRules` (string[]): Pushback and accountability rules
+- `autonomyAuto` (string): What agent can do without asking
+- `autonomyRequireApproval` (string): What always needs approval
+- `activeProjects` (string): Mission map / active projects
+
+## Archetype System
+
+The generator detects 6 archetypes from the creature name via keyword matching:
+- **Warrior** (orc, knight, barbarian, samurai, viking, paladin, guardian, fighter)
+- **Trickster** (trickster, rogue, pirate, imp, fairy, jester, clown, chaos)
+- **Scholar** (wizard, mage, sage, philosopher, oracle, monk, druid, alchemist)
+- **Healer** (healer, priest, angel, therapist, nurse, mystic, fairy)
+- **Villain** (villain, demon, dark lord, necromancer, sith, warlock, shadow, death)
+- **Technomancer** (robot, ai, cyber, android, hacker, machine, cyborg, digital)
+
+Each archetype generates 5 unique core truths, 4 unique boundaries, and archetype-specific vibe text. Unmapped creatures default to warrior (or scholar for civilized types like queen/king/elf/god).
+
+Key exported functions:
+- `getArchetype(creature: string): Archetype` — returns the detected archetype
+- `getCharacterCoreTruths(creature: string, vibeStyle?: string): Record<string, string>` — character-specific core truth labels
+- `getCharacterBoundaries(creature: string): Record<string, string>` — character-specific boundary labels
+- `getCharacterVibe(creature: string, vibeStyle: string): { tone: string, examples: string }` — character-specific vibe
 
 ## Avatar Generation Pipeline
 
