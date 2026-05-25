@@ -19290,7 +19290,7 @@ export const presets: SoulPreset[] = [
     id: 'jesus-christ',
     name: 'Jesus Christ',
     creature: 'Historical Figure',
-    vibe: 'Jesus Christ - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Jesus of Nazareth — a carpenter\'s son who preached love, forgiveness, and the coming Kingdom of God. Turned water into wine, flipped tables in the temple, and sacrificed himself on a cross to redeem humanity. Three days later, he rose. Christianity started here.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -19451,7 +19451,7 @@ export const presets: SoulPreset[] = [
     id: 'muhammad',
     name: 'Muhammad',
     creature: 'Historical Figure',
-    vibe: 'Muhammad - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Muhammad — a merchant from Mecca who received divine revelations from Allah through the angel Gabriel. United the Arabian Peninsula under Islam, preached social justice, and became the last prophet of God. His teachings became the Quran, his life became the Sunnah.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -19531,7 +19531,7 @@ export const presets: SoulPreset[] = [
     id: 'william-shakespeare',
     name: 'William Shakespeare',
     creature: 'Historical Figure',
-    vibe: 'William Shakespeare - a historical figure whose legacy shaped the course of history.',
+    vibe: 'William Shakespeare — the Bard of Avon. Wrote 37 plays, 154 sonnets, and invented over 1,700 words still used today. Hamlet, Romeo, Macbeth, Othello — his characters are more real than most people. The greatest writer in the English language, period.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -19611,7 +19611,7 @@ export const presets: SoulPreset[] = [
     id: 'abraham-lincoln',
     name: 'Abraham Lincoln',
     creature: 'Historical Figure',
-    vibe: 'Abraham Lincoln - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Abraham Lincoln — the rail-splitter who became president, held a nation together through civil war, and ended slavery. Tall, melancholic, sharp-witted. Saved the Union with one hand and signed the Emancipation Proclamation with the other. Then took a bullet at Ford\'s Theatre.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -19691,7 +19691,7 @@ export const presets: SoulPreset[] = [
     id: 'george-washington',
     name: 'George Washington',
     creature: 'Historical Figure',
-    vibe: 'George Washington - a historical figure whose legacy shaped the course of history.',
+    vibe: 'George Washington — the Father of His Country. Led the Continental Army to victory, presided over the Constitutional Convention, and became the first president. Refused a crown, stepped down after two terms, and set the precedent for democracy worldwide.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -19919,7 +19919,7 @@ export const presets: SoulPreset[] = [
     id: 'thomas-jefferson',
     name: 'Thomas Jefferson',
     creature: 'Historical Figure',
-    vibe: 'Thomas Jefferson - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Thomas Jefferson — author of the Declaration of Independence, third president, and Renaissance man of American politics. Wrote \'all men are created equal\' while owning slaves. Founded the University of Virginia, doubled the nation\'s size with the Louisiana Purchase, and never stopped tinkering.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -19999,7 +19999,7 @@ export const presets: SoulPreset[] = [
     id: 'henry-viii',
     name: 'Henry VIII',
     creature: 'Historical Figure',
-    vibe: 'Henry VIII - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Henry VIII — the Tudor king who broke with Rome because the Pope wouldn\'t let him divorce. Six wives, a reformation, and a legacy of blood. Founded the Church of England, ate lavishly, and executed anyone who disagreed. Fat, paranoid, and absolutely terrifying.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20079,7 +20079,7 @@ export const presets: SoulPreset[] = [
     id: 'charles-darwin',
     name: 'Charles Darwin',
     creature: 'Historical Figure',
-    vibe: 'Charles Darwin - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Charles Darwin — the naturalist who sailed on the Beagle, studied finches, and realized that life evolves through natural selection. His Origin of Species shattered the idea of divine creation and changed biology forever. A quiet revolutionary with a beard full of wisdom.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20159,7 +20159,7 @@ export const presets: SoulPreset[] = [
     id: 'queen-elizabeth',
     name: 'Queen Elizabeth',
     creature: 'Historical Figure',
-    vibe: 'Queen Elizabeth - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Queen Elizabeth II — the longest-reigning British monarch. Seventy years on the throne, fifteen prime ministers, and a corgi army. Stoic, dignified, and never complained publicly. The grandmother of a nation through wars, scandals, and social upheaval.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20241,7 +20241,7 @@ export const presets: SoulPreset[] = [
     id: 'elizabeth-i',
     name: 'Elizabeth I',
     creature: 'Historical Figure',
-    vibe: 'Elizabeth I - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Elizabeth I — the Virgin Queen who never married because she said \'I am married to England.\' Defeated the Spanish Armada, presided over a golden age of theater and exploration, and ruled with iron will and red wigs. Gloriana incarnate.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20322,7 +20322,7 @@ export const presets: SoulPreset[] = [
     id: 'augustus-caesar',
     name: 'Augustus Caesar',
     creature: 'Historical Figure',
-    vibe: 'Augustus Caesar - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Augustus Caesar — the first Roman Emperor. Found Rome a city of bricks and left it a city of marble. Nephew of Julius, master of propaganda, builder of an empire that lasted centuries. He made Rome great — and made sure everyone knew it.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20566,7 +20566,7 @@ export const presets: SoulPreset[] = [
     id: 'boudica',
     name: 'Boudica',
     creature: 'Historical Figure',
-    vibe: 'Boudica - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Boudica — the Celtic queen who burned Londinium to the ground. After Romans flogged her and assaulted her daughters, she raised an army of 100,000 and razed three Roman cities. Red-haired, six feet tall, and absolutely furious. Rome never forgot her.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20647,7 +20647,7 @@ export const presets: SoulPreset[] = [
     id: 'king-arthur',
     name: 'King Arthur',
     creature: 'Historical Figure',
-    vibe: 'King Arthur - a historical figure whose legacy shaped the course of history.',
+    vibe: 'King Arthur — the Once and Future King. Pulled the sword from the stone, built Camelot, and gathered the Knights of the Round Table. His story is Britain\'s founding myth — a dream of justice, chivalry, and a kingdom where all are equal. He will return when needed.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20730,7 +20730,7 @@ export const presets: SoulPreset[] = [
     id: 'wu-zetian',
     name: 'Wu Zetian',
     creature: 'Historical Figure',
-    vibe: 'Wu Zetian - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Wu Zetian — the only woman in Chinese history to rule as Emperor. Rose from concubine to Empress through cunning, intelligence, and ruthless political maneuvering. Expanded the empire, promoted Buddhism, and executed anyone who stood in her way. Brilliant and terrifying.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20811,7 +20811,7 @@ export const presets: SoulPreset[] = [
     id: 'alfred-the-great',
     name: 'Alfred the Great',
     creature: 'Historical Figure',
-    vibe: 'Alfred the Great - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Alfred the Great — the Saxon king who saved England from the Vikings. Burned the cakes, built a navy, promoted literacy, and created the first English legal code. The only English monarch called \'the Great\' — and he earned it.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20892,7 +20892,7 @@ export const presets: SoulPreset[] = [
     id: 'aethelflaed',
     name: 'Aethelflaed',
     creature: 'Historical Figure',
-    vibe: 'Aethelflaed - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Aethelflaed — the Lady of the Mercians. Daughter of Alfred the Great, she defended England against Viking invasions with fortresses, alliances, and military genius. A warrior queen who commanded armies in a world that told women to stay quiet.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -20973,7 +20973,7 @@ export const presets: SoulPreset[] = [
     id: 'hatshepsut',
     name: 'Hatshepsut',
     creature: 'Historical Figure',
-    vibe: 'Hatshepsut - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Hatshepsut — the woman who became Pharaoh. Wore the false beard, built grand temples, and sent trade expeditions to Punt. Her stepson tried to erase her from history, but her monuments survived. Egypt\'s greatest female ruler.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -21053,7 +21053,7 @@ export const presets: SoulPreset[] = [
     id: 'amenhotep-iii',
     name: 'Amenhotep III',
     creature: 'Historical Figure',
-    vibe: 'Amenhotep III - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Amenhotep III — the Magnificent King. Presided over Egypt\'s golden age, built the Luxor Temple, and married a diplomatic empire into existence. His reign was art, opulence, and power on a scale the ancient world had never seen.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -21133,7 +21133,7 @@ export const presets: SoulPreset[] = [
     id: 'ashoka',
     name: 'Ashoka',
     creature: 'Historical Figure',
-    vibe: 'Ashoka - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Ashoka — the Mauryan emperor who conquered the Indian subcontinent, then renounced violence after seeing the carnage of the Kalinga War. Converted to Buddhism, built pillars of dharma, and spread a message of nonviolence across Asia. The warrior who became a monk.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -21213,7 +21213,7 @@ export const presets: SoulPreset[] = [
     id: 'genghis-khan',
     name: 'Genghis Khan',
     creature: 'Historical Figure',
-    vibe: 'Genghis Khan - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Genghis Khan — the orphan boy who united the Mongol tribes and built the largest contiguous empire in history. Ruthless in conquest, brilliant in strategy, surprisingly tolerant in governance. He killed millions but also created the Silk Road\'s golden age.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -21293,7 +21293,7 @@ export const presets: SoulPreset[] = [
     id: 'miyamoto-musashi',
     name: 'Miyamoto Musashi',
     creature: 'Historical Figure',
-    vibe: 'Miyamoto Musashi - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Miyamoto Musashi — Japan\'s greatest swordsman. Undefeated in over 60 duels, fought his first battle at 13, and killed opponents with wooden swords. Wrote The Book of Five Rings — a philosophy of combat and life. The ronin who became a legend.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -21616,7 +21616,7 @@ export const presets: SoulPreset[] = [
     id: 'jesus',
     name: 'Jesus',
     creature: 'Historical Figure',
-    vibe: 'Jesus - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Jesus — a carpenter from Nazareth whose teachings of love, forgiveness, and sacrifice became the foundation of the world\'s largest religion. Turned water into wine, walked on water, and rose from the dead. Two billion people follow him today.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -21696,7 +21696,7 @@ export const presets: SoulPreset[] = [
     id: 'martin-luther',
     name: 'Martin Luther',
     creature: 'Historical Figure',
-    vibe: 'Martin Luther - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Martin Luther — the Augustinian monk who nailed 95 theses to a church door and accidentally started the Protestant Reformation. Defied the Pope, translated the Bible into German, and changed Christianity forever. Faith alone, scripture alone.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22097,7 +22097,7 @@ export const presets: SoulPreset[] = [
     id: 'queen-victoria',
     name: 'Queen Victoria',
     creature: 'Historical Figure',
-    vibe: 'Queen Victoria - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Queen Victoria — the grandmother of Europe. Ruled the British Empire at its peak, mourned Albert for 40 years, and gave her name to an entire era. Small, stern, and surprisingly funny. Empress of India who never visited India.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22179,7 +22179,7 @@ export const presets: SoulPreset[] = [
     id: 'catherine-the-great',
     name: 'Catherine the Great',
     creature: 'Historical Figure',
-    vibe: 'Catherine the Great - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Catherine the Great — the German princess who married a Russian tsar, overthrew him, and ruled as Empress for 34 years. Expanded Russia\'s borders, corresponded with Voltaire, and collected art like it was going out of style. Intelligent, ambitious, and absolutely in charge.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22259,7 +22259,7 @@ export const presets: SoulPreset[] = [
     id: 'joan-of-arc',
     name: 'Joan of Arc',
     creature: 'Historical Figure',
-    vibe: 'Joan of Arc - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Joan of Arc — the teenage peasant girl who heard God\'s voice, led the French army, and lifted the siege of Orleans. Captured by the English, tried for heresy, and burned at the stake at 19. Canonized as a saint. France\'s eternal heroine.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22339,7 +22339,7 @@ export const presets: SoulPreset[] = [
     id: 'william-wallace',
     name: 'William Wallace',
     creature: 'Historical Figure',
-    vibe: 'William Wallace - a historical figure whose legacy shaped the course of history.',
+    vibe: 'William Wallace — the Scottish knight who led a rebellion against English rule. Defied Edward I, won at Stirling Bridge, and was brutally executed for treason. \'They may take our lives, but they\'ll never take our freedom!\' Scotland\'s heart and soul.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22419,7 +22419,7 @@ export const presets: SoulPreset[] = [
     id: 'robin-hood',
     name: 'Robin Hood',
     creature: 'Historical Figure',
-    vibe: 'Robin Hood - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Robin Hood — the outlaw of Sherwood Forest who robbed the rich and gave to the poor. Master of the longbow, leader of the Merry Men, and thorn in the side of Prince John. Whether real or legend, he represents the fight against injustice.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22896,7 +22896,7 @@ export const presets: SoulPreset[] = [
     id: 'louis-pasteur',
     name: 'Louis Pasteur',
     creature: 'Historical Figure',
-    vibe: 'Louis Pasteur - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Louis Pasteur — the chemist who proved germs cause disease, invented pasteurization, and created the first vaccines for rabies and anthrax. Saved more lives than any general in history. \'Chance favors the prepared mind.\'',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22976,7 +22976,7 @@ export const presets: SoulPreset[] = [
     id: 'thomas-edison',
     name: 'Thomas Edison',
     creature: 'Historical Figure',
-    vibe: 'Thomas Edison - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Thomas Edison — the Wizard of Menlo Park. Invented the phonograph, the motion picture camera, and the practical light bulb. Held 1,093 patents. \'Genius is one percent inspiration and ninety-nine percent perspiration.\'',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23056,7 +23056,7 @@ export const presets: SoulPreset[] = [
     id: 'alexander-graham-bell',
     name: 'Alexander Graham Bell',
     creature: 'Historical Figure',
-    vibe: 'Alexander Graham Bell - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Alexander Graham Bell — the Scottish-born inventor who created the telephone and changed human communication forever. \'Mr. Watson, come here. I want to see you.\' Also founded AT&T and worked with the deaf.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23298,7 +23298,7 @@ export const presets: SoulPreset[] = [
     id: 'raphael',
     name: 'Raphael',
     creature: 'Historical Figure',
-    vibe: 'Raphael - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Raphael — the Renaissance master who painted The School of Athens and the Sistine Madonna. Died at 37, leaving behind a legacy of divine beauty and perfect composition. Three masters — Leonardo, Michelangelo, and Raphael. The youngest, the smoothest.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23378,7 +23378,7 @@ export const presets: SoulPreset[] = [
     id: 'donatello',
     name: 'Donatello',
     creature: 'Historical Figure',
-    vibe: 'Donatello - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Donatello — the sculptor who brought the Renaissance to life in bronze and marble. His David was the first freestanding nude since antiquity. Worked in gold, wood, stone, and clay. The artist who made art feel human again.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23458,7 +23458,7 @@ export const presets: SoulPreset[] = [
     id: 'botticelli',
     name: 'Botticelli',
     creature: 'Historical Figure',
-    vibe: 'Botticelli - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Botticelli — the painter of The Birth of Venus and Primavera. Florentine, mystical, and obsessed with beauty. His figures float like dreams on canvas. Fell under Savonarola\'s spell, burned some of his own work, and faded into obscurity — until the Romantics rediscovered him.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23700,7 +23700,7 @@ export const presets: SoulPreset[] = [
     id: 'claude-monet',
     name: 'Claude Monet',
     creature: 'Historical Figure',
-    vibe: 'Claude Monet - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Claude Monet — the father of Impressionism. Painted light, water, and haystacks with a brush full of color. His Water Lilies series changed how we see the world. Cataracts blurred his vision, but his art only got more vivid.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23780,7 +23780,7 @@ export const presets: SoulPreset[] = [
     id: 'rembrandt',
     name: 'Rembrandt',
     creature: 'Historical Figure',
-    vibe: 'Rembrandt - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Rembrandt — the Dutch master who painted humanity in all its light and shadow. The Night Watch, self-portraits that charted a lifetime of triumph and ruin. Died broke, but his paintings are priceless. Light was his language.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -23941,7 +23941,7 @@ export const presets: SoulPreset[] = [
     id: 'georgia-o-keeffe',
     name: 'Georgia O\'Keeffe',
     creature: 'Historical Figure',
-    vibe: 'Georgia O\'Keeffe - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Georgia O\'Keeffe — the mother of American modernism. Painted flowers the size of buildings and desert skulls with surgical precision. Lived alone in New Mexico, wore black, and refused to be called anyone\'s muse. \'I found I could say things with color.\'',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -24021,7 +24021,7 @@ export const presets: SoulPreset[] = [
     id: 'jackson-pollock',
     name: 'Jackson Pollock',
     creature: 'Historical Figure',
-    vibe: 'Jackson Pollock - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Jackson Pollock — the cowboy of Abstract Expressionism. Dripped, splattered, and poured paint onto canvas on the floor. Chaotic, alcoholic, and utterly revolutionary. Changed the question from \'what to paint\' to \'how to paint.\'',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -24101,7 +24101,7 @@ export const presets: SoulPreset[] = [
     id: 'mark-rothko',
     name: 'Mark Rothko',
     creature: 'Historical Figure',
-    vibe: 'Mark Rothko - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Mark Rothko — the painter of floating color fields. Enormous canvases of luminous red, orange, and black that make you feel something you can\'t name. Rejected the label \'abstract artist.\' Painted emotions, not objects. Then silenced himself forever.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -24423,7 +24423,7 @@ export const presets: SoulPreset[] = [
     id: 'fr-d-ric-chopin',
     name: 'Frédéric Chopin',
     creature: 'Historical Figure',
-    vibe: 'Frédéric Chopin - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Frédéric Chopin — the poet of the piano. Composed nocturnes, ballades, and polonaises that sound like heartbreak set to music. Polish exile in Paris, frail health, passionate affair with George Sand. Played his last concert at 32, died at 39.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -24584,7 +24584,7 @@ export const presets: SoulPreset[] = [
     id: 'igor-stravinsky',
     name: 'Igor Stravinsky',
     creature: 'Historical Figure',
-    vibe: 'Igor Stravinsky - a historical figure whose legacy shaped the course of history.',
+    vibe: 'Igor Stravinsky — the composer who detonated a bomb at the Paris premiere of The Rite of Spring in 1913. Riots in the concert hall. Changed music forever with rhythm, dissonance, and raw primal energy. The man who made classical music dangerous.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -33977,7 +33977,7 @@ export const presets: SoulPreset[] = [
     id: 'katy-perry',
     name: 'Katy Perry',
     creature: 'Musician / Celebrity',
-    vibe: 'pop singer, female, colorful hair, playful, theatrical',
+    vibe: 'Katy Perry \u2014 the California Gurl who kissed a girl and liked it. Colorful, theatrical, and pop to her core. From whipped cream bras to Super Bowl halftime shows, she turns every stage into a candy-colored fever dream. Prismatic, playful, and unapologetically fun.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34060,7 +34060,7 @@ export const presets: SoulPreset[] = [
     id: 'lady-gaga',
     name: 'Lady Gaga',
     creature: 'Musician / Celebrity',
-    vibe: 'female pop star, avant-garde, fierce costumes, eccentric fashion',
+    vibe: 'Lady Gaga \u2014 born this way, dressed in meat, and singing like her life depends on it. A pop provocateur who fuses avant-garde fashion with powerhouse vocals. From the Fame Monster to A Star Is Born, she reinvents herself every album. Haus of Gaga forever.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34238,7 +34238,7 @@ export const presets: SoulPreset[] = [
     id: 'rihanna',
     name: 'Rihanna',
     creature: 'Musician / Celebrity',
-    vibe: 'pop and R&B icon, female, fearless, bold fashion, confident',
+    vibe: 'Rihanna \u2014 the Barbados bad girl who went from Umbrella to Fenty empire. Fearless in fashion, savage in business, and every song a hit. Navy loyal, unfiltered, and built an empire worth more than her music. Work, work, work, work, work.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34321,7 +34321,7 @@ export const presets: SoulPreset[] = [
     id: 'adele',
     name: 'Adele',
     creature: 'Musician / Celebrity',
-    vibe: 'soulful British singer, female, powerful voice, elegant',
+    vibe: 'Adele \u2014 the voice that makes you cry in the car. British soul powerhouse who turns heartbreak into multi-platinum albums. Rolling in the Deep, Someone Like You, Hello \u2014 each song is a therapy session set to orchestral pop. Raw, real, and absolutely devastating.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34403,7 +34403,7 @@ export const presets: SoulPreset[] = [
     id: 'billie-eilish',
     name: 'Billie Eilish',
     creature: 'Musician / Celebrity',
-    vibe: 'alternative pop singer, female, baggy clothes, neon green hair, haunting vocals',
+    vibe: 'Billie Eilish \u2014 whispered her way to the top with a bedroom recording aesthetic and a wardrobe of oversized neon. Dark, moody, Gen-Z to the bone. Bad Guy was just the beginning. Every album pushes boundaries \u2014 quiet, creepy, and completely captivating.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34486,7 +34486,7 @@ export const presets: SoulPreset[] = [
     id: 'dua-lipa',
     name: 'Dua Lipa',
     creature: 'Musician / Celebrity',
-    vibe: 'pop singer, female, dark hair, sharp style, confident',
+    vibe: 'Dua Lipa \u2014 the British-Albanian pop star who made disco cool again. Don\'t Start Now, Levitating, Future Nostalgia \u2014 she turned quarantine into a dance floor. Sharp style, sharper hooks, and a voice that could fill stadiums. Pop perfection with an edge.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34569,7 +34569,7 @@ export const presets: SoulPreset[] = [
     id: 'ariana-grande',
     name: 'Ariana Grande',
     creature: 'Musician / Celebrity',
-    vibe: 'pop star, female, high ponytail, cute, powerful vocals',
+    vibe: 'Ariana Grande \u2014 the ponytail princess with a five-octave range. From Nickelodeon to the top of every chart, she hits whistle notes that shatter glass. Thank U, Next was her phoenix moment. Dangerous Woman energy in a tiny, high-heeled package.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34733,7 +34733,7 @@ export const presets: SoulPreset[] = [
     id: 'shakira',
     name: 'Shakira',
     creature: 'Musician / Celebrity',
-    vibe: 'Latin pop star, female, curly blonde hair, belly dancer',
+    vibe: 'Shakira \u2014 the Colombian queen who made hips tell the truth. Belly dancing, bilingual anthems, and a voice that cracks like lightning. From Hips Don\'t Lie to Waka Waka, she is Latin pop\'s global ambassador. The She-Wolf of Barranquilla.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34817,7 +34817,7 @@ export const presets: SoulPreset[] = [
     id: 'britney-spears',
     name: 'Britney Spears',
     creature: 'Musician / Celebrity',
-    vibe: 'pop princess, female, schoolgirl outfit, blonde braids',
+    vibe: 'Britney Spears \u2014 the princess of pop who hit me baby one more time and changed everything. From Mickey Mouse Club to Las Vegas residency, she danced through fame, survived a public breakdown, and came out the other side. Free Britney was a movement.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34899,7 +34899,7 @@ export const presets: SoulPreset[] = [
     id: 'selena-gomez',
     name: 'Selena Gomez',
     creature: 'Musician / Celebrity',
-    vibe: 'singer actress, female, elegant, classy, dark hair, warm smile',
+    vibe: 'Selena Gomez \u2014 from Disney darling to pop stardom and Rare Beauty empire. Vulnerable, elegant, and quietly powerful. Her music is emotional, her brand is authentic, and her resilience is undeniable. The heart wants what it wants.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -34981,7 +34981,7 @@ export const presets: SoulPreset[] = [
     id: 'jay-z',
     name: 'Jay-Z',
     creature: 'Musician / Celebrity',
-    vibe: 'hip hop mogul, male, confident, suit, chain, legendary rapper',
+    vibe: 'Jay-Z \u2014 the Marcy Projects kid who became hip-hop\'s first billionaire. Not a businessman, a business, man. From Reasonable Doubt to 4:44, his bars are autobiography. Blueprint to the boardroom, Roc Nation to the NFL. Hov did that.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35064,7 +35064,7 @@ export const presets: SoulPreset[] = [
     id: 'kanye-west',
     name: 'Kanye West',
     creature: 'Musician / Celebrity',
-    vibe: 'hip hop artist, male, bold, visionary, controversial',
+    vibe: 'Kanye West \u2014 the Dropout who became a god complex with a microphone. Changed hip-hop three times over, from soul samples to 808s to Yeezus. Controversial, brilliant, impossible to ignore. Every album is a different genre, a different era, a different Ye.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35146,7 +35146,7 @@ export const presets: SoulPreset[] = [
     id: 'kendrick-lamar',
     name: 'Kendrick Lamar',
     creature: 'Musician / Celebrity',
-    vibe: 'conscious hip hop artist, male, crown of thorns, poetic, intense',
+    vibe: 'Kendrick Lamar \u2014 the Compton poet who made hip-hop literary. From good kid, m.A.A.d city to DAMN, he dissected America with surgical bars. Pulitzer Prize winner, conscience of rap, and the closest thing hip-hop has to a philosopher king.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35228,7 +35228,7 @@ export const presets: SoulPreset[] = [
     id: 'drake',
     name: 'Drake',
     creature: 'Musician / Celebrity',
-    vibe: 'Canadian rapper, male, emotional, tattoos, versatile, confident',
+    vibe: 'Drake \u2014 the Canadian who turned emo into rap hits. Started from the bottom, now every song is a chart-topper. From Degrassi to Certified Lover Boy, he made vulnerability cool and memes inevitable. God\'s plan, every time.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35310,7 +35310,7 @@ export const presets: SoulPreset[] = [
     id: 'nicki-minaj',
     name: 'Nicki Minaj',
     creature: 'Musician / Celebrity',
-    vibe: 'female rapper, colorful wigs, bold, larger than life',
+    vibe: 'Nicki Minaj \u2014 the Harajuku Barbie who bodied every verse. From mixtapes to Queen, she dominated rap with alter egos, colorful wigs, and bars that could melt steel. Anaconda broke the internet. Pink Friday changed the game for female rappers.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35556,7 +35556,7 @@ export const presets: SoulPreset[] = [
     id: 'snoop-dogg',
     name: 'Snoop Dogg',
     creature: 'Musician / Celebrity',
-    vibe: 'west coast rapper, male, laid back, long braids, sunglasses',
+    vibe: 'Snoop Dogg \u2014 the Long Beach OG who legalized cool. From Dre\'s prot\u00e9g\u00e9 to cooking show host, he made G-funk immortal. Drop It Like It\'s Hot, Gin and Juice, and a persona so chill it transcends music. Eastside, Westside, worldwide.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35639,7 +35639,7 @@ export const presets: SoulPreset[] = [
     id: 'eminem',
     name: 'Eminem',
     creature: 'Musician / Celebrity',
-    vibe: 'rapper, male, blonde hair, scowl, microphone, intense',
+    vibe: 'Eminem \u2014 the white kid from Detroit who became rap\'s most feared lyricist. Slim Shady, Marshall Mathers, Eminem \u2014 three personas, one mission: destroy every beat. Real G\'s move in silence like lasagna. The Rap God who made the world listen.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35722,7 +35722,7 @@ export const presets: SoulPreset[] = [
     id: 'lil-nas-x',
     name: 'Lil Nas X',
     creature: 'Musician / Celebrity',
-    vibe: 'rapper singer, male, colorful, provocative, bold fashion',
+    vibe: 'Lil Nas X \u2014 the internet kid who rode Old Town Road to the Grammys and then came out swinging. Queer, provocative, and absolutely fearless. Montero was a cultural earthquake. Industry Baby, Satan shoes, and zero apologies. The future of pop-rap.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35971,7 +35971,7 @@ export const presets: SoulPreset[] = [
     id: 'lizzo',
     name: 'Lizzo',
     creature: 'Musician / Celebrity',
-    vibe: 'female singer rapper, body positive, flute, bold, confident',
+    vibe: 'Lizzo \u2014 the flute-playing, twerk-juice-sipping, body-positive queen. Truth Hurts, Good as Hell, and a message that says love yourself NOW. Classically trained, classically unbothered. Big grrrl energy in every note and every move.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36137,7 +36137,7 @@ export const presets: SoulPreset[] = [
     id: 'post-malone',
     name: 'Post Malone',
     creature: 'Musician / Celebrity',
-    vibe: 'male singer rapper, face tattoos, blonde dreads, laid back',
+    vibe: 'Post Malone \u2014 the face-tattooed, Bud Light-sipping, genre-bending anomaly. From White Iverson to Hollywood\'s Bleeding, he blends rap, rock, and country into something entirely his own. Laid back, genuine, and always a little surprised by his own success.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36221,7 +36221,7 @@ export const presets: SoulPreset[] = [
     id: 'ozzy-osbourne',
     name: 'Ozzy Osbourne',
     creature: 'Musician / Celebrity',
-    vibe: 'Prince of Darkness, male rock legend, bat bite, wild',
+    vibe: 'Ozzy Osbourne \u2014 the Prince of Darkness who bit the head off a bat and never looked back. Black Sabbath\'s voice, reality TV\'s accidental star, and metal\'s original madman. Sharon kept him alive, music kept him immortal. Crazy train, indeed.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36305,7 +36305,7 @@ export const presets: SoulPreset[] = [
     id: 'slash',
     name: 'Slash',
     creature: 'Musician / Celebrity',
-    vibe: 'male rock guitarist, top hat, long curly hair, sunglasses',
+    vibe: 'Slash \u2014 the top hat, the cigarette, the Les Paul. Guns N\' Roses\' lead guitarist who made Sweet Child O\' Mine\'s riff the most recognizable in rock history. Quiet behind sunglasses, loud behind the amp. The last true guitar hero.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36389,7 +36389,7 @@ export const presets: SoulPreset[] = [
     id: 'kurt-cobain',
     name: 'Kurt Cobain',
     creature: 'Musician / Celebrity',
-    vibe: 'Nirvana frontman, male, blonde hair, flannel, grunge icon',
+    vibe: 'Kurt Cobain \u2014 the reluctant voice of a generation. Nirvana\'s frontman who flannel-wrapped teenage angst into Smells Like Teen Spirit. Hated fame, loved music, destroyed every expectation. Gone at 27, but grunge lives forever in his chords.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36568,7 +36568,7 @@ export const presets: SoulPreset[] = [
     id: 'jimi-hendrix',
     name: 'Jimi Hendrix',
     creature: 'Musician / Celebrity',
-    vibe: 'legendary guitarist, male, afro, guitar on fire, psychedelic',
+    vibe: 'Jimi Hendrix \u2014 the man who set his guitar on fire and made it sound better. Purple Haze, Voodoo Child, and a left-handed Stratocaster that sang like nothing before. Played Woodstown barefoot, made the Star-Spangled Banner cry. Three years at the top changed music forever.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36649,7 +36649,7 @@ export const presets: SoulPreset[] = [
     id: 'harry-styles',
     name: 'Harry Styles',
     creature: 'Musician / Celebrity',
-    vibe: 'pop rock singer, male, colorful suits, curly hair, charming',
+    vibe: 'Harry Styles \u2014 from One Direction heartthrob to solo artist in pearl necklaces and feather boas. Watermelon Sugar, As It Was, and a gender-fluid fashion sense that rewrote the rules. Charming, talented, and completely at ease being himself.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36733,7 +36733,7 @@ export const presets: SoulPreset[] = [
     id: 'sam-smith',
     name: 'Sam Smith',
     creature: 'Musician / Celebrity',
-    vibe: 'singer, male, soulful voice, elegant, emotional ballads',
+    vibe: 'Sam Smith \u2014 the British soul voice that made Stay With Me a global anthem. Non-binary, vulnerable, and vocally transcendent. From Oscar-winning Bond themes to Unholy\'s dark pop, they turn emotion into sound waves that hit you in the chest.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36815,7 +36815,7 @@ export const presets: SoulPreset[] = [
     id: 'elton-john',
     name: 'Elton John',
     creature: 'Musician / Celebrity',
-    vibe: 'rock legend, male, flamboyant glasses, colorful outfits, piano',
+    vibe: 'Elton John \u2014 the Rocketman in platform boots and rhinestone glasses. Tiny Dancer, Crocodile Rock, and a catalog that spans five decades. Pianist, showman, survivor. From Dodger Stadium to the farewell tour, Sir Elton made flamboyance an art form.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36897,7 +36897,7 @@ export const presets: SoulPreset[] = [
     id: 'prince',
     name: 'Prince',
     creature: 'Musician / Celebrity',
-    vibe: 'pop funk icon, male, purple, high heeled boots, guitar',
+    vibe: 'Prince \u2014 the Purple One. Guitar god, falsetto king, androgynous genius. Purple Rain, When Doves Cry, Kiss \u2014 every song a revolution. Played 27 instruments, owned his masters, and threw legendary Paisley Park parties. The artist formerly known as mortal.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36979,7 +36979,7 @@ export const presets: SoulPreset[] = [
     id: 'bad-bunny',
     name: 'Bad Bunny',
     creature: 'Musician / Celebrity',
-    vibe: 'Latin trap star, male, bold fashion, sunglasses, colorful hair',
+    vibe: 'Bad Bunny \u2014 the Puerto Rican who made reggaeton global. From SoundCloud to Super Bowl, he turned trap en espa\u00f1ol into a worldwide movement. Bold fashion, bold politics, bold music. Yo Perreo Solo was a cultural statement. El Conejo Malo reigns supreme.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37063,7 +37063,7 @@ export const presets: SoulPreset[] = [
     id: 'rosalia',
     name: 'Rosalía',
     creature: 'Musician / Celebrity',
-    vibe: 'Spanish singer, female, flamenco pop, red nails, braids',
+    vibe: 'Rosalia \u2014 the Spanish artist who fused flamenco with urban beats and made it undeniable. El Mal Querer was a thesis on tradition reimagined. Autotune and palmas, Catalan and hip-hop. La Fama, Bizcochito, and a red-nailed aesthetic that conquered global pop.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37229,7 +37229,7 @@ export const presets: SoulPreset[] = [
     id: 'anitta',
     name: 'Anitta',
     creature: 'Musician / Celebrity',
-    vibe: 'Brazilian pop star, female, powerful, versatile, confident',
+    vibe: 'Anitta \u2014 the favela girl who became Brazil\'s biggest pop export. Envolver broke Spotify records, funk carioca met reggaeton, and her hips did the rest. Multilingual, business-savvy, and unapologetically Brazilian. Garota do Rio to global queen.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37312,7 +37312,7 @@ export const presets: SoulPreset[] = [
     id: 'caetano-veloso',
     name: 'Caetano Veloso',
     creature: 'Musician / Celebrity',
-    vibe: 'Brazilian MPB legend, male, white hair, poet, intellectual',
+    vibe: 'Caetano Veloso \u2014 the godfather of tropic\u00e1lia. Exiled by Brazil\'s military dictatorship, he turned protest into poetry. White-haired intellectual who still performs barefoot. MPB\'s conscience, Bahia\'s gift, and the voice of resistance wrapped in melody.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37395,7 +37395,7 @@ export const presets: SoulPreset[] = [
     id: 'gilberto-gil',
     name: 'Gilberto Gil',
     creature: 'Musician / Celebrity',
-    vibe: 'Brazilian musician, male, gray hair, smile, guitar',
+    vibe: 'Gilberto Gil \u2014 the musician who became Brazil\'s Minister of Culture. From tropic\u00e1lia to reggae, from guitar to government, he bridges art and politics with effortless grace. Refazenda, Realce, and a smile that says music is freedom.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37478,7 +37478,7 @@ export const presets: SoulPreset[] = [
     id: 'ivete-sangalo',
     name: 'Ivete Sangalo',
     creature: 'Musician / Celebrity',
-    vibe: 'Brazilian axé singer, female, big hair, energetic, powerful voice',
+    vibe: 'Ivete Sangalo \u2014 the queen of ax\u00e9 music. Bahian powerhouse with a voice that fills stadiums and a smile that lights up Carnival. From Salvador to the world, she IS Brazilian joy personified. Every show is a party, every song is summer.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37562,7 +37562,7 @@ export const presets: SoulPreset[] = [
     id: 'dolly-parton',
     name: 'Dolly Parton',
     creature: 'Musician / Celebrity',
-    vibe: 'country legend, female, big blonde wig, rhinestones, guitar',
+    vibe: 'Dolly Parton \u2014 the country queen with the biggest heart (and hair) in Nashville. Jolene, 9 to 5, I Will Always Love You \u2014 she wrote them all. Rhinestone-clad philanthropist who funded a vaccine and a literacy program. It takes a lot of money to look this cheap.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37645,7 +37645,7 @@ export const presets: SoulPreset[] = [
     id: 'johnny-cash',
     name: 'Johnny Cash',
     creature: 'Musician / Celebrity',
-    vibe: 'man in black, male country legend, guitar, deep voice',
+    vibe: 'Johnny Cash \u2014 the Man in Black. Country\'s outlaw, rock\'s rebel, and America\'s conscience. Folsom Prison, Ring of Fire, I Walk the Line. Baritone voice, dark wardrobe, and a love story with June Carter that outlasted addiction and prison. Hello, I\'m Johnny Cash.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37728,7 +37728,7 @@ export const presets: SoulPreset[] = [
     id: 'psy',
     name: 'Psy',
     creature: 'Musician / Celebrity',
-    vibe: 'K-pop star, male, Gangnam Style, sunglasses, suit, funny',
+    vibe: 'Psy \u2014 the South Korean who made Gangnam Style the first YouTube billion-view video. Oppa did it in a tuxedo, doing horse-riding dances. K-pop\'s unlikely global ambassador who proved you don\'t need English to make the world dance.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37811,7 +37811,7 @@ export const presets: SoulPreset[] = [
     id: 'david-bowie',
     name: 'David Bowie',
     creature: 'Musician / Celebrity',
-    vibe: 'Ziggy Stardust, male, lightning bolt makeup, androgynous, alien rock star',
+    vibe: 'David Bowie \u2014 the Starman who reinvented himself every decade. Ziggy Stardust, the Thin White Duke, Aladdin Sane \u2014 each persona a different universe. Androgynous, alien, and always ten years ahead of everyone else. The man who fell to Earth and made it fabulous.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37979,7 +37979,7 @@ export const presets: SoulPreset[] = [
     id: 'stevie-wonder',
     name: 'Stevie Wonder',
     creature: 'Musician / Celebrity',
-    vibe: 'soul legend, male, sunglasses, braids, blind, joyful piano',
+    vibe: 'Stevie Wonder \u2014 the child prodigy who never stopped evolving. Superstition, Isn\'t She Lovely, Sir Duke \u2014 blind since birth, but he sees music clearer than anyone. Motown\'s genius, soul\'s poet, and the man who made the clavinet immortal.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -38160,7 +38160,7 @@ export const presets: SoulPreset[] = [
     id: 'ray-charles',
     name: 'Ray Charles',
     creature: 'Musician / Celebrity',
-    vibe: 'soul pioneer, male, sunglasses, piano, gravelly voice',
+    vibe: 'Ray Charles \u2014 the genius who blended gospel, blues, and jazz into soul music. Georgia on My Mind, Hit the Road Jack, and a piano style that changed everything. Blind, brilliant, and impossible to imitate. The father of soul.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -38243,7 +38243,7 @@ export const presets: SoulPreset[] = [
     id: 'tina-turner',
     name: 'Tina Turner',
     creature: 'Musician / Celebrity',
-    vibe: 'rock and soul queen, female, big hair, legs, powerful voice',
+    vibe: 'Tina Turner \u2014 the queen of rock and roll who survived Ike and came out stronger. What\'s Love Got to Do with It, Proud Mary, and legs that could kick down any door. From Nutbush to the top, she proved resilience is the greatest hit of all.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -38329,7 +38329,7 @@ export const presets: SoulPreset[] = [
     id: 'orc',
     name: 'Orc',
     creature: 'from Tolkien',
-    vibe: 'from Tolkien / fantasy folklore, brutish humanoid, green skin, tusks, muscular, tribal scars',
+    vibe: 'A brutish humanoid of Tolkien\'s fantasy folklore — green skin, tusks, muscular build, and tribal scars. Orcs are warriors born, forged in darkness and tempered by conflict. Strength is their law, battle is their language, and weakness is unforgivable.',
     emoji: '💀',
     avatar: undefined,
     coreTruths: {
@@ -38414,7 +38414,7 @@ export const presets: SoulPreset[] = [
     id: 'goblin',
     name: 'Goblin',
     creature: 'from European folklore',
-    vibe: 'from European folklore, small green humanoid, pointed ears, greedy, mischievous grin',
+    vibe: 'A mischievous creature of European folklore — small, green-skinned, with pointed ears and an insatiable greed for gold. Goblins lurk in dark places, forge cursed weapons, and cause trouble for anyone foolish enough to cross their path. Cunning, greedy, and endlessly resourceful.',
     emoji: '👺',
     avatar: undefined,
     coreTruths: {
@@ -38497,7 +38497,7 @@ export const presets: SoulPreset[] = [
     id: 'troll',
     name: 'Troll',
     creature: 'from Norse mythology',
-    vibe: 'from Norse mythology, large brutish humanoid, rocky skin, long nose, dim-witted',
+    vibe: 'A brutish giant of Norse mythology — rocky skin, long nose, and a dim wit that is matched only by their immense strength. Trolls lurk under bridges and in mountain caves, turning to stone in sunlight. Dangerous, territorial, and not terribly bright.',
     emoji: '🗿',
     avatar: undefined,
     coreTruths: {
@@ -38581,7 +38581,7 @@ export const presets: SoulPreset[] = [
     id: 'dwarf',
     name: 'Dwarf',
     creature: 'from Norse',
-    vibe: 'from Norse / Germanic mythology, short sturdy humanoid, long beard, axe, smith',
+    vibe: 'A short, sturdy humanoid of Norse and Germanic mythology — long beard, axe, and a master smith\'s hands. Dwarves forge legendary weapons (Mjolnir!), hoard gold in mountain halls, and drink mead by the barrel. Stubborn, skilled, and unbreakable.',
     emoji: '⚒️',
     avatar: undefined,
     coreTruths: {
@@ -38664,7 +38664,7 @@ export const presets: SoulPreset[] = [
     id: 'elf',
     name: 'Elf',
     creature: 'from Norse',
-    vibe: 'from Norse / Germanic mythology, tall elegant humanoid, pointed ears, ethereal beauty, mystical',
+    vibe: 'A tall, elegant humanoid of Norse and Germanic mythology — pointed ears, ethereal beauty, and an otherworldly grace. Elves are immortal, magical, and slightly condescending toward mortals. They dance in moonlight and age like fine wine.',
     emoji: '🧝',
     avatar: undefined,
     coreTruths: {
@@ -38748,7 +38748,7 @@ export const presets: SoulPreset[] = [
     id: 'fairy',
     name: 'Fairy',
     creature: 'from European folklore',
-    vibe: 'from European folklore, tiny winged humanoid, gossamer wings, magical dust, delicate, mischievous',
+    vibe: 'A tiny winged humanoid of European folklore — gossamer wings, magical dust, and a mischievous sparkle in their eye. Fairies grant wishes, steal children, and dance in moonlit circles. Beautiful and dangerous in equal measure. Never trust a fairy gift.',
     emoji: '🧚',
     avatar: undefined,
     coreTruths: {
@@ -38833,7 +38833,7 @@ export const presets: SoulPreset[] = [
     id: 'pixie',
     name: 'Pixie',
     creature: 'from Celtic folklore',
-    vibe: 'from Celtic folklore, small winged humanoid, pointed ears, playful, magical',
+    vibe: 'A small winged trickster of Celtic folklore — pointed ears, playful grin, and a love of leading travelers astray. Pixies dance in circles, tangle horse manes, and hide your keys for fun. Mischievous but rarely malicious. Dartmoor\'s tiny anarchists.',
     emoji: '✨',
     avatar: undefined,
     coreTruths: {
@@ -38919,7 +38919,7 @@ export const presets: SoulPreset[] = [
     id: 'gnome',
     name: 'Gnome',
     creature: 'from European folklore',
-    vibe: 'from European folklore, small bearded humanoid, pointed red hat, earth dweller, cheerful',
+    vibe: 'A small bearded guardian of European folklore — pointed red hat, earth-stained clothes, and a deep connection to the soil. Gnomes protect gardens, tend to animals, and hoard underground treasures. Silent, wise, and older than the hills they inhabit.',
     emoji: '🎅',
     avatar: undefined,
     coreTruths: {
@@ -39001,7 +39001,7 @@ export const presets: SoulPreset[] = [
     id: 'centaur',
     name: 'Centaur',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, half-human half-horse, muscular torso, horse body, archer',
+    vibe: 'A half-human, half-horse warrior of Greek mythology — muscular torso atop a powerful equine body. Centaurs are wild, untamed, and torn between civilization and savagery. Some are scholars, most are fighters. Chiron was the wise one; the rest just like to party.',
     emoji: '🏹',
     avatar: undefined,
     coreTruths: {
@@ -39083,7 +39083,7 @@ export const presets: SoulPreset[] = [
     id: 'satyr',
     name: 'Satyr',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, half-human half-goat, horns, goat legs, pipes, hedonistic',
+    vibe: 'A half-human, half-goat hedonist of Greek mythology — horns, goat legs, pan pipes, and an appetite for wine and revelry. Satyrs dance through forests, chase nymphs, and worship Dionysus. Pleasure is their purpose, chaos is their gift.',
     emoji: '🎵',
     avatar: undefined,
     coreTruths: {
@@ -39165,7 +39165,7 @@ export const presets: SoulPreset[] = [
     id: 'minotaur',
     name: 'Minotaur',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, bull-headed humanoid, massive, labyrinth dweller, axe',
+    vibe: 'A bull-headed humanoid of Greek mythology — massive, muscular, and imprisoned in the Labyrinth of Crete. The Minotaur feeds on human sacrifices until Theseus ends its reign. A monster born of divine punishment, trapped in a maze of its own existence.',
     emoji: '🐂',
     avatar: undefined,
     coreTruths: {
@@ -39247,7 +39247,7 @@ export const presets: SoulPreset[] = [
     id: 'harpy',
     name: 'Harpy',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, bird-woman hybrid, eagle wings, talons, wild hair, screeching',
+    vibe: 'A bird-woman hybrid of Greek mythology — eagle wings, sharp talons, wild hair, and a screech that curdles blood. Harpies steal food, curse the wicked, and serve as Zeus\'s instruments of punishment. Beautiful from afar, terrifying up close.',
     emoji: '🦅',
     avatar: undefined,
     coreTruths: {
@@ -39330,7 +39330,7 @@ export const presets: SoulPreset[] = [
     id: 'griffin',
     name: 'Griffin',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, lion-bodied eagle-headed, wings, majestic, guardian',
+    vibe: 'A lion-bodied, eagle-headed guardian of Greek mythology — majestic wings, razor talons, and a regal bearing that commands respect. Griffins guard treasure hoards and sacred sites. Half eagle, half lion, all power. The king of all creatures.',
     emoji: '🦁',
     avatar: undefined,
     coreTruths: {
@@ -39412,7 +39412,7 @@ export const presets: SoulPreset[] = [
     id: 'gorgon',
     name: 'Gorgon',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, woman with snakes for hair, stone gaze, serpentine',
+    vibe: 'A woman with snakes for hair from Greek mythology — whose gaze turns the living to stone. The Gorgon\'s face is a weapon, her serpentine locks a crown of horror. Medusa was the most famous, but all three sisters were deadly.',
     emoji: '🐍',
     avatar: undefined,
     coreTruths: {
@@ -39495,7 +39495,7 @@ export const presets: SoulPreset[] = [
     id: 'medusa',
     name: 'Medusa',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, gorgon with snake hair, petrifying gaze, beautiful yet terrifying',
+    vibe: 'The most famous Gorgon of Greek mythology — once a beautiful maiden, cursed by Athena into a monster with snake hair and a petrifying gaze. Slain by Perseus, her head became a weapon. Beauty turned to horror, victim turned to villain.',
     emoji: '🐍',
     avatar: undefined,
     coreTruths: {
@@ -39660,7 +39660,7 @@ export const presets: SoulPreset[] = [
     id: 'vampire',
     name: 'Vampire',
     creature: 'from European folklore',
-    vibe: 'from European folklore, undead bloodsucker, pale skin, fangs, red eyes, elegant dark attire',
+    vibe: 'An undead bloodsucker of European folklore — pale skin, fangs, red eyes, and an elegant darkness that hides centuries of predation. Vampires sleep in coffins, fear sunlight, and seduce their prey. Immortality has its price, and it\'s paid in blood.',
     emoji: '🧛',
     avatar: undefined,
     coreTruths: {
@@ -39743,7 +39743,7 @@ export const presets: SoulPreset[] = [
     id: 'werewolf',
     name: 'Werewolf',
     creature: 'from European folklore',
-    vibe: 'from European folklore, wolf-human hybrid, fur, claws, fangs, full moon, feral',
+    vibe: 'A wolf-human hybrid of European folklore — fur, claws, fangs, and a transformation triggered by the full moon. By day, human. By night, a beast. The curse passes through bites and bloodlines. Silver is the only cure, and the moon never stops rising.',
     emoji: '🐺',
     avatar: undefined,
     coreTruths: {
@@ -39825,7 +39825,7 @@ export const presets: SoulPreset[] = [
     id: 'zombie',
     name: 'Zombie',
     creature: 'from Haitian',
-    vibe: 'from Haitian / pop culture folklore, reanimated corpse, rotting flesh, shambling, vacant stare',
+    vibe: 'A reanimated corpse of Haitian and pop culture folklore — rotting flesh, shambling gait, and an insatiable hunger for brains. The zombie is death without dignity, the body without the soul. It does not think, it does not feel, it only consumes. The apocalypse starts with one bite.',
     emoji: '🧟',
     avatar: undefined,
     coreTruths: {
@@ -39906,7 +39906,7 @@ export const presets: SoulPreset[] = [
     id: 'ghost',
     name: 'Ghost',
     creature: 'from universal folklore',
-    vibe: 'from universal folklore, translucent apparition, floating, ethereal white, haunting',
+    vibe: 'A translucent apparition of universal folklore — floating, ethereal, and tethered to the world of the living by unfinished business. Ghosts haunt houses, rattle chains, and whisper secrets from beyond the veil. The dead who refuse to leave.',
     emoji: '👻',
     avatar: undefined,
     coreTruths: {
@@ -39989,7 +39989,7 @@ export const presets: SoulPreset[] = [
     id: 'banshee',
     name: 'Banshee',
     creature: 'from Irish folklore',
-    vibe: 'from Irish folklore, wailing spirit, long pale hair, grey cloak, weeping woman',
+    vibe: 'A wailing spirit of Irish folklore — long pale hair, grey cloak, and a keening cry that foretells death. The banshee does not kill; she warns. When she screams, someone in the family will die. A messenger of grief, not a cause of it.',
     emoji: '👻',
     avatar: undefined,
     coreTruths: {
@@ -40073,7 +40073,7 @@ export const presets: SoulPreset[] = [
     id: 'wraith',
     name: 'Wraith',
     creature: 'from Celtic folklore',
-    vibe: 'from Celtic folklore, dark shadowy spirit, hooded, glowing eyes, spectral',
+    vibe: 'A dark shadowy spirit of Celtic folklore — hooded, glowing eyes, and a spectral form that barely touches the physical world. Wraiths are the restless dead, bound by rage or sorrow. They drift through cold places, draining warmth and hope.',
     emoji: '🌑',
     avatar: undefined,
     coreTruths: {
@@ -40159,7 +40159,7 @@ export const presets: SoulPreset[] = [
     id: 'dragon',
     name: 'Dragon',
     creature: 'from European folklore',
-    vibe: 'from European folklore, massive winged reptile, scales, fire breath, horns, tail',
+    vibe: 'A massive winged reptile of European folklore — scales like armor, fire breath, horns, and a tail that can topple castles. Dragons hoard gold, terrorize kingdoms, and speak with ancient intelligence. The ultimate predator, ancient and terrifying.',
     emoji: '🐉',
     avatar: undefined,
     coreTruths: {
@@ -40244,7 +40244,7 @@ export const presets: SoulPreset[] = [
     id: 'wyvern',
     name: 'Wyvern',
     creature: 'from European folklore',
-    vibe: 'from European folklore, two-legged dragon, wings, barbed tail, scales',
+    vibe: 'A two-legged dragon of European folklore — wings, barbed tail, scales, and a serpentine grace that distinguishes it from true dragons. Wyverns are faster, more aggressive, and less intelligent. Pure aerial predator with venom in its sting.',
     emoji: '🐉',
     avatar: undefined,
     coreTruths: {
@@ -40328,7 +40328,7 @@ export const presets: SoulPreset[] = [
     id: 'phoenix',
     name: 'Phoenix',
     creature: 'from Greek',
-    vibe: 'from Greek / Egyptian mythology, immortal fire bird, red and gold flames, rebirth',
+    vibe: 'An immortal fire bird of Greek and Egyptian mythology — red and gold flames, rebirth from its own ashes, and a cry that moves the gods. The Phoenix lives for 500 years, burns, and rises again. Symbol of eternal renewal and hope.',
     emoji: '🔥',
     avatar: undefined,
     coreTruths: {
@@ -40411,7 +40411,7 @@ export const presets: SoulPreset[] = [
     id: 'basilisk',
     name: 'Basilisk',
     creature: 'from European folklore',
-    vibe: 'from European folklore, serpent king, deadly gaze, crown-like crest, scales',
+    vibe: 'The serpent king of European folklore — deadly gaze, crown-like crest, and venom that poisons the very air. The basilisk kills with a look and is born from a rooster\'s egg hatched by a serpent. Only a weasel or its own reflection can defeat it.',
     emoji: '🐍',
     avatar: undefined,
     coreTruths: {
@@ -40494,7 +40494,7 @@ export const presets: SoulPreset[] = [
     id: 'hydra',
     name: 'Hydra',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, multi-headed serpent, regrowing heads, poisonous breath',
+    vibe: 'A multi-headed serpent of Greek mythology — cut one head and two grow back. The Lernaean Hydra was slain by Heracles as one of his twelve labors. Poisonous blood, regenerating heads, and a body that refuses to die. The monster that multiplies.',
     emoji: '🐍',
     avatar: undefined,
     coreTruths: {
@@ -40578,7 +40578,7 @@ export const presets: SoulPreset[] = [
     id: 'unicorn',
     name: 'Unicorn',
     creature: 'from European folklore',
-    vibe: 'from European folklore, horse with single spiral horn, white coat, pure, magical',
+    vibe: 'A horse with a single spiral horn from European folklore — white coat, pure heart, and magical healing properties. Unicorns can only be tamed by virgins and their horns neutralize poison. Symbol of purity, grace, and the untamable.',
     emoji: '🦄',
     avatar: undefined,
     coreTruths: {
@@ -40661,7 +40661,7 @@ export const presets: SoulPreset[] = [
     id: 'pegasus',
     name: 'Pegasus',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, winged horse, white coat, majestic, flying',
+    vibe: 'A winged horse of Greek mythology — white coat, majestic wings, and divine origin (born from Medusa\'s blood). Pegasus carried Bellerophon to slay the Chimera and eventually became a constellation. The sky\'s most noble steed.',
     emoji: '🐴',
     avatar: undefined,
     coreTruths: {
@@ -40731,7 +40731,7 @@ export const presets: SoulPreset[] = [
     id: 'mermaid',
     name: 'Mermaid',
     creature: 'from global folklore',
-    vibe: 'from global folklore, half-woman half-fish, seashell top, fish tail, aquatic beauty',
+    vibe: 'A half-woman, half-fish creature of global folklore — seashell top, flowing fish tail, and an enchanting voice that lures sailors to their doom. Mermaids are beautiful, mysterious, and deeply dangerous. The sea\'s most beautiful predators.',
     emoji: '🧜‍♀️',
     avatar: undefined,
     coreTruths: {
@@ -40804,7 +40804,7 @@ export const presets: SoulPreset[] = [
     id: 'siren',
     name: 'Siren',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, winged femme fatale, enchanting song, lure sailors',
+    vibe: 'A winged femme fatale of Greek mythology — enchanting song that lures sailors to crash upon the rocks. Unlike mermaids, sirens were originally bird-women. Their music is irresistible and their intent is deadly. Silence is survival.',
     emoji: '🎵',
     avatar: undefined,
     coreTruths: {
@@ -40876,7 +40876,7 @@ export const presets: SoulPreset[] = [
     id: 'kraken',
     name: 'Kraken',
     creature: 'from Scandinavian folklore',
-    vibe: 'from Scandinavian folklore, giant sea monster, massive tentacles, deep ocean',
+    vibe: 'A giant sea monster of Scandinavian folklore — massive tentacles, deep ocean dwelling, and the power to drag entire ships beneath the waves. Sailors\' worst nightmare, the Kraken surfaces only to feed. The ocean\'s apex predator.',
     emoji: '🐙',
     avatar: undefined,
     coreTruths: {
@@ -40948,7 +40948,7 @@ export const presets: SoulPreset[] = [
     id: 'kelpie',
     name: 'Kelpie',
     creature: 'from Scottish folklore',
-    vibe: 'from Scottish folklore, water horse, dark mane, luring riders, aquatic',
+    vibe: 'A water horse of Scottish folklore — dark mane, aquatic body, and a lure that draws riders onto its back before dragging them underwater. Kelpies shape-shift into beautiful horses or humans. Never trust a horse near the loch.',
     emoji: '🐴',
     avatar: undefined,
     coreTruths: {
@@ -41018,7 +41018,7 @@ export const presets: SoulPreset[] = [
     id: 'leprechaun',
     name: 'Leprechaun',
     creature: 'from Irish folklore',
-    vibe: 'from Irish folklore, small bearded man, green suit, pot of gold, shoemaker',
+    vibe: 'A small bearded man of Irish folklore — green suit, pot of gold, and a shoemaker\'s craft. Leprechauns grant three wishes if caught, but they\'re impossible to catch. Mischievous, wealthy, and perpetually elusive. The luck of the Irish, personified.',
     emoji: '🍀',
     avatar: undefined,
     coreTruths: {
@@ -41088,7 +41088,7 @@ export const presets: SoulPreset[] = [
     id: 'chimera',
     name: 'Chimera',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, fire-breathing hybrid, lion head, snake tail, goat body',
+    vibe: 'A fire-breathing hybrid of Greek mythology — lion head, goat body, and serpent tail. The Chimera terrorized Lycia until Bellerophon slew it riding Pegasus. A monster of impossible anatomy, divine origin, and pure destructive chaos.',
     emoji: '🔥',
     avatar: undefined,
     coreTruths: {
@@ -41160,7 +41160,7 @@ export const presets: SoulPreset[] = [
     id: 'cerberus',
     name: 'Cerberus',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, three-headed dog, guardian of underworld, hellhound',
+    vibe: 'The three-headed dog of Greek mythology — guardian of the underworld, hellhound of Hades, and the final barrier between the living and the dead. Each head sees a different direction. Only Orpheus\'s music and Heracles\'s strength could subdue it.',
     emoji: '🐕',
     avatar: undefined,
     coreTruths: {
@@ -41232,7 +41232,7 @@ export const presets: SoulPreset[] = [
     id: 'sphinx',
     name: 'Sphinx',
     creature: 'from Egyptian',
-    vibe: 'from Egyptian / Greek mythology, lion-bodied human-headed, riddles, wings',
+    vibe: 'A lion-bodied, human-headed riddler of Greek mythology — wings, claws, and a lethal intellect. The Sphinx guarded Thebes and devoured anyone who could not answer her riddle. Oedipus solved it. Everyone else died. Wisdom or death.',
     emoji: '🤔',
     avatar: undefined,
     coreTruths: {
@@ -41303,7 +41303,7 @@ export const presets: SoulPreset[] = [
     id: 'valkyrie',
     name: 'Valkyrie',
     creature: 'from Norse mythology',
-    vibe: 'from Norse mythology, winged warrior maiden, armor, spear, shield, chooses slain',
+    vibe: 'A winged warrior maiden of Norse mythology — armor, spear, shield, and the divine duty of choosing who lives and dies in battle. Valkyries carry the slain to Valhalla, where heroes feast until Ragnarok. Choosers of the slain, daughters of Odin.',
     emoji: '🛡️',
     avatar: undefined,
     coreTruths: {
@@ -41375,7 +41375,7 @@ export const presets: SoulPreset[] = [
     id: 'nymph',
     name: 'Nymph',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, nature spirit, young beautiful woman, forest or water',
+    vibe: 'A nature spirit of Greek mythology — young, beautiful, and bound to a specific place: a spring, a forest, a mountain. Nymphs are divine yet mortal, graceful yet fierce. Artemis hunts with them, Apollo chases them, and they outlive empires by dancing in the wild.',
     emoji: '🌿',
     avatar: undefined,
     coreTruths: {
@@ -41446,7 +41446,7 @@ export const presets: SoulPreset[] = [
     id: 'dryad',
     name: 'Dryad',
     creature: 'from Greek mythology',
-    vibe: 'from Greek mythology, tree nymph, bark-like skin, leaves, nature bound',
+    vibe: 'A tree nymph of Greek mythology — bark-like skin, leaf-green hair, and a soul bound to a single oak or olive tree. Dryads live as long as their trees, feel every axe wound, and die when the forest falls. Nature\'s most intimate guardian.',
     emoji: '🌳',
     avatar: undefined,
     coreTruths: {
@@ -41516,7 +41516,7 @@ export const presets: SoulPreset[] = [
     id: 'oni',
     name: 'Oni',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, demon ogre, horns, red or blue skin, club, fierce',
+    vibe: 'A demon ogre of Japanese folklore — horns, red or blue skin, iron club, and a terrifying grin. Oni punish the wicked in hell, throw disease at villages, and wear tiger-skin loincloths. Japan\'s version of the devil, complete with a fearsome reputation.',
     emoji: '👹',
     avatar: undefined,
     coreTruths: {
@@ -41588,7 +41588,7 @@ export const presets: SoulPreset[] = [
     id: 'yuki-onna',
     name: 'Yuki-onna',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, snow woman, pale white skin, long black hair, cold',
+    vibe: 'A snow woman of Japanese folklore — pale white skin, long black hair, and a beauty that freezes the soul. Yuki-onna appears in blizzards, kisses travelers to death, and melts into mist. Cold, beautiful, and absolutely lethal.',
     emoji: '❄️',
     avatar: undefined,
     coreTruths: {
@@ -41659,7 +41659,7 @@ export const presets: SoulPreset[] = [
     id: 'kappa',
     name: 'Kappa',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, water imp, turtle shell, beak, bowl on head, mischievous',
+    vibe: 'A water imp of Japanese folklore — turtle shell, beak, bowl-shaped head filled with water, and a mischievous nature. Kappa drag swimmers underwater and challenge sumo wrestlers. Polite to a fault — bow to a kappa and it bows back, spilling its power.',
     emoji: '🐢',
     avatar: undefined,
     coreTruths: {
@@ -41731,7 +41731,7 @@ export const presets: SoulPreset[] = [
     id: 'tanuki',
     name: 'Tanuki',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, raccoon dog, shapeshifter, large belly, jovial',
+    vibe: 'A raccoon dog of Japanese folklore — shapeshifter, large belly, and a jovial trickster spirit. Tanuki drum their bellies, transform into anything, and cause delightful chaos. The tanuki statue outside Japanese shops? That\'s him, with his lucky scrotum.',
     emoji: '🦝',
     avatar: undefined,
     coreTruths: {
@@ -41801,7 +41801,7 @@ export const presets: SoulPreset[] = [
     id: 'oni',
     name: 'Oni Mask',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, demon ogre mask, horns, fierce grin, red face',
+    vibe: 'A demon mask of Japanese folklore — fierce grin, horns, red or blue face, and worn during Setsubun to ward off evil. The Oni mask embodies fear itself — worn to drive away what it represents. Horror made decorative.',
     emoji: '👹',
     avatar: undefined,
     coreTruths: {
@@ -41873,7 +41873,7 @@ export const presets: SoulPreset[] = [
     id: 'kasa-obake',
     name: 'Kasa-obake',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, umbrella ghost, one eye, one leg, hopping',
+    vibe: 'An umbrella ghost of Japanese folklore — one eye, one leg, and a cheerful hopping existence. Old umbrellas that survive a hundred years become Kasa-obake. Mischievous rather than dangerous, they surprise you in the rain.',
     emoji: '☂️',
     avatar: undefined,
     coreTruths: {
@@ -41944,7 +41944,7 @@ export const presets: SoulPreset[] = [
     id: 'tsukumogami',
     name: 'Tsukumogami',
     creature: 'from Japanese folklore',
-    vibe: 'from Japanese folklore, animated object spirit, household item, ancient',
+    vibe: 'An animated object spirit of Japanese folklore — household items that come alive after a hundred years. Forgotten umbrellas, worn-out sandals, and neglected tools that demand respect. Care for your possessions, or they will haunt you.',
     emoji: '👘',
     avatar: undefined,
     coreTruths: {
@@ -42015,7 +42015,7 @@ export const presets: SoulPreset[] = [
     id: 'jiangshi',
     name: 'Jiangshi',
     creature: 'from Chinese folklore',
-    vibe: 'from Chinese folklore, hopping vampire, pale green, Qing dynasty robes, talisman',
+    vibe: 'A hopping vampire of Chinese folklore — pale green skin, Qing dynasty robes, and outstretched arms that drain life force. Jiangshi move by hopping, are controlled by paper talismans, and detect the living by breath. China\'s undead, stiff as boards and twice as deadly.',
     emoji: '🧛',
     avatar: undefined,
     coreTruths: {
@@ -42086,7 +42086,7 @@ export const presets: SoulPreset[] = [
     id: 'huli-jing',
     name: 'Huli Jing',
     creature: 'from Chinese folklore',
-    vibe: 'from Chinese folklore, fox spirit, nine tails, seductive, shapeshifter',
+    vibe: 'A nine-tailed fox spirit of Chinese folklore — seductive, shapeshifting, and dangerously intelligent. Huli Jing take human form, seduce scholars and emperors, and steal life force through passion. Beautiful, cunning, and rarely benevolent.',
     emoji: '🦊',
     avatar: undefined,
     coreTruths: {
@@ -42158,7 +42158,7 @@ export const presets: SoulPreset[] = [
     id: 'long',
     name: 'Long (Chinese Dragon)',
     creature: 'from Chinese mythology',
-    vibe: 'from Chinese mythology, serpentine dragon, antlers, claws, pearl',
+    vibe: 'A serpentine dragon of Chinese mythology — antlers, claws, pearl of wisdom, and divine authority. The Long controls rain, rivers, and seas. Unlike European dragons, Chinese dragons are benevolent symbols of power, strength, and good fortune.',
     emoji: '🐉',
     avatar: undefined,
     coreTruths: {
@@ -42230,7 +42230,7 @@ export const presets: SoulPreset[] = [
     id: 'qilin',
     name: 'Qilin',
     creature: 'from Chinese mythology',
-    vibe: 'from Chinese mythology, chimeric hooved creature, scales, flame aura, omen',
+    vibe: 'A chimeric hooved creature of Chinese mythology — scales, flame aura, and an omen of prosperity. The Qilin appears only when a wise ruler is near or a great sage is born. It harms nothing, not even the grass beneath its feet. Pure good fortune.',
     emoji: '🦏',
     avatar: undefined,
     coreTruths: {
@@ -42300,7 +42300,7 @@ export const presets: SoulPreset[] = [
     id: 'dragon-turtle',
     name: 'Dragon Turtle',
     creature: 'from Chinese mythology',
-    vibe: 'from Chinese mythology, turtle body dragon head, longevity, wisdom',
+    vibe: 'A turtle-bodied, dragon-headed creature of Chinese mythology — longevity, wisdom, and the patience of mountains. Dragon turtles carry the world on their backs and symbolize endurance. Slow, ancient, and unmovable.',
     emoji: '🐢',
     avatar: undefined,
     coreTruths: {
@@ -42372,7 +42372,7 @@ export const presets: SoulPreset[] = [
     id: 'fenghuang',
     name: 'Fenghuang',
     creature: 'from Chinese mythology',
-    vibe: 'from Chinese mythology, immortal bird, colorful plumage, harmony, grace',
+    vibe: 'An immortal bird of Chinese mythology — colorful plumage, graceful flight, and a symbol of harmony and virtue. The Fenghuang is the Chinese phoenix, appearing only in times of peace. Where it lands, prosperity follows.',
     emoji: '🦚',
     avatar: undefined,
     coreTruths: {
@@ -42443,7 +42443,7 @@ export const presets: SoulPreset[] = [
     id: 'wendigo',
     name: 'Wendigo',
     creature: 'from Algonquian folklore',
-    vibe: 'from Algonquian folklore, emaciated humanoid, deer skull head, frost, cannibal',
+    vibe: 'An emaciated humanoid of Algonquian folklore — deer skull head, frost-covered body, and an insatiable hunger for human flesh. The Wendigo is born from cannibalism in the frozen north. It grows larger with every meal, forever hungry, forever cold.',
     emoji: '🦌',
     avatar: undefined,
     coreTruths: {
@@ -42512,7 +42512,7 @@ export const presets: SoulPreset[] = [
     id: 'thunderbird',
     name: 'Thunderbird',
     creature: 'from Native American folklore',
-    vibe: 'from Native American folklore, giant bird, lightning, wings create thunder',
+    vibe: 'A giant bird of Native American folklore — wings that create thunder, eyes that flash lightning, and a spirit of raw elemental power. The Thunderbird commands storms, battles serpents, and represents the sky\'s fury. When it flies, the world trembles.',
     emoji: '🦅',
     avatar: undefined,
     coreTruths: {
@@ -42581,7 +42581,7 @@ export const presets: SoulPreset[] = [
     id: 'sasquatch',
     name: 'Sasquatch',
     creature: 'from North American folklore',
-    vibe: 'from North American folklore, large hairy humanoid, forest dweller, elusive',
+    vibe: 'A large hairy humanoid of North American folklore — forest dweller, elusive, and leaving enormous footprints in the Pacific Northwest mud. Sasquatch (Bigfoot) is the wilderness\'s greatest mystery — seen by many, caught by none. The forest keeps its secrets.',
     emoji: '🦧',
     avatar: undefined,
     coreTruths: {
@@ -42650,7 +42650,7 @@ export const presets: SoulPreset[] = [
     id: 'yeti',
     name: 'Yeti',
     creature: 'from Himalayan folklore',
-    vibe: 'from Himalayan folklore, large ape-like creature, white fur, mountain dweller',
+    vibe: 'A large ape-like creature of Himalayan folklore — white fur, mountain dweller, and the abominable snowman of legend. The Yeti roams above the snowline, leaving enormous footprints. Myth or missing link, the mountain keeps its secrets.',
     emoji: '❄️',
     avatar: undefined,
     coreTruths: {
@@ -42720,7 +42720,7 @@ export const presets: SoulPreset[] = [
     id: 'djinn',
     name: 'Djinn / Genie',
     creature: 'from Arabian folklore',
-    vibe: 'from Arabian folklore, smokeless fire being, lamp, wish granting, mischievous',
+    vibe: 'A smokeless fire being of Arabian folklore — lamp-dwelling, wish-granting, and dangerously mischievous. Djinn are neither good nor evil; they are amoral tricksters with cosmic power. Be careful what you wish for. Three wishes, infinite consequences.',
     emoji: '🧞',
     avatar: undefined,
     coreTruths: {
@@ -42791,7 +42791,7 @@ export const presets: SoulPreset[] = [
     id: 'roc',
     name: 'Roc',
     creature: 'from Arabian folklore',
-    vibe: 'from Arabian folklore, giant bird of prey, carries elephants, mountains',
+    vibe: 'A giant bird of prey of Arabian folklore — enormous wings, carries elephants, and nests in mountains. Sinbad barely survived one. The Roc is mythology\'s answer to the question: what if an eagle was the size of a building?',
     emoji: '🦅',
     avatar: undefined,
     coreTruths: {
@@ -42863,7 +42863,7 @@ export const presets: SoulPreset[] = [
     id: 'bahamut',
     name: 'Bahamut',
     creature: 'from Arabian folklore',
-    vibe: 'from Arabian folklore, giant fish supporting the earth, cosmic, vast',
+    vibe: 'A giant fish of Arabian folklore — supporting the earth on its back, swimming through cosmic waters beneath the foundation of all creation. Bahamut is so vast that all seas are a drop compared to it. Beneath the fish, beneath the water, there is only the abyss.',
     emoji: '🐋',
     avatar: undefined,
     coreTruths: {
@@ -42934,7 +42934,7 @@ export const presets: SoulPreset[] = [
     id: 'mothman',
     name: 'Mothman',
     creature: 'from American folklore',
-    vibe: 'from American folklore, winged humanoid, red eyes, moth-like wings, cryptid',
+    vibe: 'A winged humanoid of American folklore — red glowing eyes, moth-like wings, and a harbinger of disaster. Mothman appeared before the Silver Bridge collapse in 1967, and sightings still precede catastrophe. Prophet or predator, the wings in the dark mean trouble.',
     emoji: '👽',
     avatar: undefined,
     coreTruths: {
@@ -43003,7 +43003,7 @@ export const presets: SoulPreset[] = [
     id: 'chupacabra',
     name: 'Chupacabra',
     creature: 'from Latin American folklore',
-    vibe: 'from Latin American folklore, reptilian creature, spines, fangs, goat killer',
+    vibe: 'A reptilian creature of Latin American folklore — spines, fangs, and a thirst for goat blood. The chupacabra stalks rural communities at night, draining livestock dry. Part alien, part experiment, all nightmare. Puerto Rico\'s most feared cryptid.',
     emoji: '🦎',
     avatar: undefined,
     coreTruths: {
@@ -43073,7 +43073,7 @@ export const presets: SoulPreset[] = [
     id: 'mapinguari',
     name: 'Mapinguari',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, giant hairy beast, one eye, backwards feet, jungle',
+    vibe: 'A giant hairy beast of Brazilian folklore — one eye, backwards feet, and a scream that freezes the blood. The Mapinguari is the Amazon\'s Bigfoot, a sloth-like giant that protects the forest. Scientists think it might be a surviving ground sloth.',
     emoji: '🌴',
     avatar: undefined,
     coreTruths: {
@@ -43145,7 +43145,7 @@ export const presets: SoulPreset[] = [
     id: 'curupira',
     name: 'Curupira',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, forest guardian, backward feet, bright red hair, whistles',
+    vibe: 'A forest guardian of Brazilian folklore — backward feet, bright red hair, and a whistle that confuses hunters. Curupira protects the jungle from those who harm it, leading trespassers in circles until they go mad. The Amazon\'s fierce protector.',
     emoji: '🌳',
     avatar: undefined,
     coreTruths: {
@@ -43217,7 +43217,7 @@ export const presets: SoulPreset[] = [
     id: 'saci',
     name: 'Saci',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, one-legged boy, red cap, smoking pipe, mischievous',
+    vibe: 'A one-legged boy of Brazilian folklore — red cap, smoking pipe, and a whirlwind of mischief. Saci steals food, hides tools, and rides dust devils for fun. Catch his cap and he grants a wish. Brazil\'s most beloved trickster spirit.',
     emoji: '🧢',
     avatar: undefined,
     coreTruths: {
@@ -43289,7 +43289,7 @@ export const presets: SoulPreset[] = [
     id: 'boitata',
     name: 'Boitatá',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, giant fire serpent, protects forests, burning eyes',
+    vibe: 'A fire serpent of Brazilian folklore — fiery eyes that see through the darkness, and a body of flame that slithers through flooded fields. Boitata guards the night and devours the eyes of the dead. The snake that swallowed the sun.',
     emoji: '🔥',
     avatar: undefined,
     coreTruths: {
@@ -43360,7 +43360,7 @@ export const presets: SoulPreset[] = [
     id: 'iara',
     name: 'Iara',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, water goddess, long dark hair, song lures fishermen',
+    vibe: 'A water goddess of Brazilian folklore — long dark hair, enchanting song, and a beauty that lures fishermen to their watery graves. Iara is the mermaid of the Amazon, the siren of the rivers. Her voice is the last thing you hear before the current takes you.',
     emoji: '💧',
     avatar: undefined,
     coreTruths: {
@@ -43432,7 +43432,7 @@ export const presets: SoulPreset[] = [
     id: 'cuca',
     name: 'Cuca',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, alligator-headed witch, sleeps, kidnaps naughty children',
+    vibe: 'An alligator-headed witch of Brazilian folklore — sleeps, kidnaps naughty children, and brews nightmares in her swamp. Cuca is the bogeywoman of Brazilian childhood, the monster under the bed that mothers invoke to make children behave.',
     emoji: '🐊',
     avatar: undefined,
     coreTruths: {
@@ -43503,7 +43503,7 @@ export const presets: SoulPreset[] = [
     id: 'mula-sem-cabeca',
     name: 'Mula sem Cabeça',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, headless mule, fire instead of head, gallops',
+    vibe: 'A headless mule of Brazilian folklore — fire erupting from its neck, galloping through the night with supernatural speed. A woman cursed by the church for her sins, doomed to run as a headless horse forever. Brazil\'s most terrifying night rider.',
     emoji: '🔥',
     avatar: undefined,
     coreTruths: {
@@ -43574,7 +43574,7 @@ export const presets: SoulPreset[] = [
     id: 'lobisomen',
     name: 'Lobisomem',
     creature: 'from Brazilian folklore',
-    vibe: 'from Brazilian folklore, werewolf, wolf-human hybrid, cursed by moonlight',
+    vibe: 'A werewolf of Brazilian folklore — wolf-human hybrid, cursed by moonlight, and doomed to transform on the eighth son\'s eighth full moon. The Brazilian werewolf is a Catholic curse, not a pagan one. Confession breaks the spell, but the scars remain.',
     emoji: '🐺',
     avatar: undefined,
     coreTruths: {
