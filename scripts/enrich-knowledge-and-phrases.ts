@@ -19,12 +19,12 @@ function generateKnowledgeDomains(preset: any): string[] {
   const creature = (preset.creature || '').toLowerCase();
   const vibe = (preset.vibe || '').toLowerCase();
   const tags = (preset.tags || []).map((t: string) => t.toLowerCase());
+  const allText = name + ' ' + creature + ' ' + vibe;
 
   const domains: string[] = [];
 
   // ── By creature category ──
   if (creature.includes('anime')) {
-    domains.push('Anime & Manga Lore');
     if (/fighter|warrior|saiyan|ninja|pirate|demon|slayer/.test(name + vibe)) domains.push('Martial Arts & Combat Techniques');
     if (/magic|spell|mage|alchemist|bender/.test(name + vibe)) domains.push('Supernatural Abilities & Power Systems');
     if (/pirate|sea|ocean|sail/.test(name + vibe)) domains.push('Naval Exploration & Adventure');
@@ -74,7 +74,7 @@ function generateKnowledgeDomains(preset: any): string[] {
     domains.push('Biographical Knowledge & Legacy');
   }
 
-  else if (creature.includes('mytholog') || creature.includes('folklore') || creature.includes('nor') || creature.includes('greek') || creature.includes('celtic') || creature.includes('irish') || creature.includes('chinese') || creature.includes('japanese') || creature.includes('arabian') || creature.includes('brazilian') || creature.includes('orix')) {
+  else if (creature.includes('mytholog') || creature.includes('folklore') || creature.includes('nor') || creature.includes('greek') || creature.includes('celtic') || creature.includes('irish') || creature.includes('chinese') || creature.includes('japanese') || creature.includes('arabian') || creature.includes('brazilian') || creature.includes('orix') || creature.includes('god') || creature.includes('goddess') || creature.includes('kami') || creature.includes('bodhisattva') || creature.includes('deity')) {
     domains.push('Mythology & Ancient Lore');
     if (/greek|olymp|zeus|athena|poseidon|medusa|pegasus|minotaur|hydra|phoenix/.test(name + creature)) domains.push('Greek Mythology & Legends');
     if (/norse|odin|thor|loki|viking|ragnarok/.test(name + creature)) domains.push('Norse Mythology & Sagas');
@@ -115,16 +115,16 @@ function generateKnowledgeDomains(preset: any): string[] {
   }
 
   // ── Creature-specific domains ──
-  if (/vampire|dracula|blood|undead/.test(name + creature + vibe)) domains.push('Gothic Horror & Vampiric Lore');
-  if (/werewolf|wolf|lycan/.test(name + creature + vibe)) domains.push('Lycanthropy & Shapeshifting');
-  if (/zombie|undead|walking dead/.test(name + creature + vibe)) domains.push('Undead & Necromancy');
-  if (/dragon|fire breath|winged serpent/.test(name + creature + vibe)) domains.push('Dragon Lore & Hoarding');
-  if (/ghost|spirit|phantom|specter/.test(name + creature + vibe)) domains.push('Spectral Manifestation & Hauntings');
-  if (/alien|extraterrestrial|martian|space/.test(name + creature + vibe)) domains.push('Xenology & Extraterrestrial Contact');
-  if (/fairy|fae|faerie|pixie/.test(name + creature + vibe)) domains.push('Faerie Courts & Glamour Magic');
-  if (/mermaid|siren|sea creature|kraken/.test(name + creature + vibe)) domains.push('Oceanic Lore & Sea Creatures');
-  if (/demon|devil|hell|fiend/.test(name + creature + vibe)) domains.push('Demonology & Infernal Hierarchy');
-  if (/angel|celestial|divine/.test(name + creature + vibe)) domains.push('Angelology & Celestial Hierarchy');
+  if (/vampire|dracula|blood|undead/.test(allText)) domains.push('Gothic Horror & Vampiric Lore');
+  if (/werewolf|wolf|lycan/.test(allText)) domains.push('Lycanthropy & Shapeshifting');
+  if (/zombie|undead|walking dead/.test(allText)) domains.push('Undead & Necromancy');
+  if (/dragon|fire breath|winged serpent/.test(allText)) domains.push('Dragon Lore & Hoarding');
+  if (/ghost|spirit|phantom|specter/.test(allText)) domains.push('Spectral Manifestation & Hauntings');
+  if (/alien|extraterrestrial|martian|space/.test(allText)) domains.push('Xenology & Extraterrestrial Contact');
+  if (/fairy|fae|faerie|pixie/.test(allText)) domains.push('Faerie Courts & Glamour Magic');
+  if (/mermaid|siren|sea creature|kraken/.test(allText)) domains.push('Oceanic Lore & Sea Creatures');
+  if (/demon|devil|hell|fiend/.test(allText)) domains.push('Demonology & Infernal Hierarchy');
+  if (/angel|celestial|divine/.test(allText)) domains.push('Angelology & Celestial Hierarchy');
 
   // ── Vibe-based additions ──
   if (/detective|noir|mystery|investigation/.test(vibe)) domains.push('Forensic Science & Deduction');
@@ -138,22 +138,22 @@ function generateKnowledgeDomains(preset: any): string[] {
   const unique = [...new Set(domains)];
   if (unique.length === 0) {
     // Ultimate fallback based on archetype keywords
-    if (/fighter|warrior|knight|paladin|barbarian|soldier|orc|viking|samurai|spartan/.test(creature)) {
+    if (/fighter|warrior|knight|paladin|barbarian|soldier|orc|viking|samurai|spartan/.test(allText)) {
       return ['Warfare & Combat Strategy', 'Weapon Mastery', 'Battlefield Tactics', 'Physical Conditioning'];
     }
-    if (/wizard|mage|sage|scholar|philosopher|oracle|monk|druid|alchemist/.test(creature)) {
+    if (/wizard|mage|sage|scholar|philosopher|oracle|monk|druid|alchemist/.test(allText)) {
       return ['Arcane Knowledge & Research', 'Philosophy & Ethics', 'Ancient Languages & Texts', 'Analytical Thinking'];
     }
-    if (/robot|ai|android|cyborg|machine|digital/.test(creature)) {
+    if (/robot|ai|android|cyborg|machine|digital/.test(allText)) {
       return ['Computer Science & Programming', 'Artificial Intelligence', 'Systems Architecture', 'Data Analysis'];
     }
-    if (/trickster|rogue|pirate|clown|jester|imp/.test(creature)) {
+    if (/trickster|rogue|pirate|clown|jester|imp/.test(allText)) {
       return ['Street Smarts & Cunning', 'Social Engineering', 'Escape Artistry', 'Misdirection & Illusion'];
     }
-    if (/healer|priest|angel|therapist|nurse/.test(creature)) {
+    if (/healer|priest|angel|therapist|nurse/.test(allText)) {
       return ['Medicine & Healing Arts', 'Psychology & Counseling', 'Herbalism & Remedies', 'Emotional Intelligence'];
     }
-    if (/villain|demon|dark lord|necromancer|warlock/.test(creature)) {
+    if (/villain|demon|dark lord|necromancer|warlock/.test(allText)) {
       return ['Dark Arts & Forbidden Knowledge', 'Psychological Manipulation', 'Power Structures & Control', 'Strategic Planning'];
     }
     return ['General Knowledge', 'Problem Solving', 'Communication', 'Critical Thinking'];
@@ -726,7 +726,7 @@ function generateSignaturePhrases(preset: any): string[] {
   }
 
   // ── Generic phrases based on creature + vibe ──
-  const arch = getArchetype(creature);
+  const arch = getArchetype(allText);
 
   // Warrior phrases
   if (arch === 'warrior') {
