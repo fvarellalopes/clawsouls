@@ -98,6 +98,12 @@ function mapSupabaseToSoulPreset(data: any, localFallback?: SoulPreset): SoulPre
     autonomyAuto: hasLocal ? (localFallback!.autonomyAuto ?? '') : (data.autonomy_auto ?? ''),
     autonomyRequireApproval: hasLocal ? (localFallback!.autonomyRequireApproval ?? '') : (data.autonomy_require_approval ?? ''),
     activeProjects: hasLocal ? (localFallback!.activeProjects ?? '') : (data.active_projects ?? ''),
+    // SOUL.md best practices fields
+    worldview: hasLocal ? (localFallback!.worldview ?? '') : (data.worldview ?? ''),
+    expertise: hasLocal ? (localFallback!.expertise ?? { primary: '', fluent: '', defers: '' }) : (data.expertise ?? { primary: '', fluent: '', defers: '' }),
+    memoryPolicy: hasLocal ? (localFallback!.memoryPolicy ?? '') : (data.memory_policy ?? ''),
+    petPeeves: hasLocal ? (localFallback!.petPeeves ?? []) : (data.pet_peeves ?? []),
+    voiceRules: hasLocal ? (localFallback!.voiceRules ?? '') : (data.voice_rules ?? ''),
   }
 }
 

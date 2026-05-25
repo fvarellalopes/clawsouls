@@ -35,6 +35,23 @@ export type Preset = {
   description?: string;
   tags?: string[];
   source?: string;
+  worldview?: string;
+  expertise?: any;
+  memory_policy?: string;
+  pet_peeves?: string[];
+  voice_rules?: string;
+  communication_mode?: string;
+  knowledge_domains?: string[];
+  signature_phrases?: string[];
+  emotional_range?: number;
+  speech_patterns?: any;
+  role?: string;
+  role_description?: string;
+  mandate_rules?: string[];
+  voice_private?: string;
+  voice_public?: string;
+  autonomy_auto?: string;
+  autonomy_require_approval?: string;
   created_at?: string;
   updated_at?: string;
 };
@@ -88,6 +105,23 @@ function rowToPreset(row: any): Preset {
     description: row.description,
     tags: row.tags || [],
     source: row.source,
+    worldview: row.worldview,
+    expertise: row.expertise,
+    memory_policy: row.memory_policy,
+    pet_peeves: row.pet_peeves,
+    voice_rules: row.voice_rules,
+    communication_mode: row.communication_mode,
+    knowledge_domains: row.knowledge_domains,
+    signature_phrases: row.signature_phrases,
+    emotional_range: row.emotional_range,
+    speech_patterns: row.speech_patterns,
+    role: row.role,
+    role_description: row.role_description,
+    mandate_rules: row.mandate_rules,
+    voice_private: row.voice_private,
+    voice_public: row.voice_public,
+    autonomy_auto: row.autonomy_auto,
+    autonomy_require_approval: row.autonomy_require_approval,
     created_at: row.created_at,
     updated_at: row.updated_at,
   };

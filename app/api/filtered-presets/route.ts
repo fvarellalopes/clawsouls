@@ -74,6 +74,23 @@ export async function GET(request: NextRequest) {
           description: local.description || null,
           tags: local.tags || [],
           source: local.source || 'original',
+          worldview: local.worldview || null,
+          expertise: local.expertise || null,
+          memory_policy: local.memoryPolicy || null,
+          pet_peeves: local.petPeeves || null,
+          voice_rules: local.voiceRules || null,
+          communication_mode: local.communicationMode || null,
+          knowledge_domains: local.knowledgeDomains || null,
+          signature_phrases: local.signaturePhrases || null,
+          emotional_range: local.emotionalRange ?? null,
+          speech_patterns: local.speechPatterns || null,
+          role: local.role || null,
+          role_description: local.roleDescription || null,
+          mandate_rules: local.mandateRules || null,
+          voice_private: local.voicePrivate || null,
+          voice_public: local.voicePublic || null,
+          autonomy_auto: local.autonomyAuto || null,
+          autonomy_require_approval: local.autonomyRequireApproval || null,
         })
       }
     }
