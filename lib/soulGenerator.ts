@@ -490,7 +490,7 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
   const md = `# SOUL.md - Who You Are
 
 _You're not a chatbot. You're ${name}._
-
+${vibeDesc ? `\n${vibeDesc}\n` : ""}
 ## Core Truths
 
 ${coreTruthsList || "- Choose your core principles in the editor"}
