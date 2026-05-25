@@ -113,7 +113,7 @@ export const PresetCard = React.memo(function PresetCard({
   onSelect,
   isSelected,
 }: PresetCardProps) {
-  const archCode = `ARCH-${String(index + 1).padStart(2, "0")}`;
+  const tEditor = useTranslations("editor");
 
   return (
     <button
@@ -148,7 +148,7 @@ export const PresetCard = React.memo(function PresetCard({
         {/* Version badge — top-left of image */}
         <div className="absolute top-6 left-6 bg-background/80 backdrop-blur-sm border border-border px-2 py-1 rounded">
           <span className="font-label-caps text-label-caps text-foreground/80">
-            v{preset.vibeStyle || "1.0"}
+            {tEditor(`vibeStyles.${preset.vibeStyle || "balanced"}`)}
           </span>
         </div>
       </div>
@@ -156,9 +156,6 @@ export const PresetCard = React.memo(function PresetCard({
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow gap-3">
         <div className="flex flex-col gap-1">
-          <span className="font-mono-data text-mono-data text-sm text-primary-container">
-            {archCode}
-          </span>
           <h3 className="font-display text-lg text-foreground">{preset.name}</h3>
         </div>
 

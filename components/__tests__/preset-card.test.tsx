@@ -6,6 +6,37 @@ import { SoulPreset } from '@/store/soulStore';
 // Mock lucide-react (not used directly but kept for future use)
 jest.mock('lucide-react', () => ({}));
 
+// Mock next-intl
+jest.mock('next-intl', () => ({
+  useTranslations: (namespace: string) => (key: string) => {
+    if (namespace === 'editor' && key.startsWith('vibeStyles.')) {
+      const style = key.split('.')[1];
+      const labels: Record<string, string> = {
+        concise: 'Concise',
+        expressive: 'Expressive',
+        sharp: 'Sharp/Sarcastic',
+        verbose: 'Verbose',
+        minimal: 'Minimal',
+        dramatic: 'Dramatic',
+        poetic: 'Poetic',
+        technical: 'Technical',
+        casual: 'Casual',
+        formal: 'Formal',
+        balanced: 'Balanced',
+      };
+      return labels[style] ?? style;
+    }
+    if (namespace === 'karma') {
+      const karmaLabels: Record<string, string> = {
+        liked: 'Liked',
+        like: 'Like',
+      };
+      return karmaLabels[key] ?? key;
+    }
+    return key;
+  },
+}));
+
 const makePreset = (overrides: Partial<SoulPreset> = {}): SoulPreset => ({
   id: 'test-1',
   name: 'Aria',
@@ -128,21 +159,21 @@ describe('PresetCard', () => {
     expect(card.className).toContain('border-border');
   });
 
-  it('renders ARCH code derived from index', () => {
-    const preset = makePreset();
-    const { getByText } = render(
-      <PresetCard preset={preset} index={2} onSelect={jest.fn()} />
-    );
-
-    expect(getByText('ARCH-03')).toBeTruthy();
-  });
-
-  it('renders version badge from vibeStyle', () => {
+  it('renders translated vibeStyle label', () => {
     const preset = makePreset({ vibeStyle: 'concise' });
     const { getByText } = render(
       <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
     );
 
-    expect(getByText('vconcise')).toBeTruthy();
+    expect(getByText('Concise')).toBeTruthy();
+  });
+
+  it('renders default vibeStyle label when not set', () => {
+    const preset = makePreset({ vibeStyle: undefined });
+    const { getByText } = render(
+      <PresetCard preset={preset} index={0} onSelect={jest.fn()} />
+    );
+
+    expect(getByText('Balanced')).toBeTruthy();
   });
 });
