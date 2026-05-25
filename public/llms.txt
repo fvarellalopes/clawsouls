@@ -21,34 +21,6 @@ Built with Next.js 15 (App Router, Turbopack), TypeScript, Tailwind CSS, next-in
 - `POST /api/share` — Generate a share link for a preset. Returns `{ id: string, url: string }`.
 - `GET /presets/{slug}/SOUL.md` — Returns the SOUL.md markdown for a preset, suitable for LLM ingestion (e.g. `/presets/glados/SOUL.md`).
 
-## Key Libraries and Modules
-
-- `lib/avatar.ts` — Resolves avatar file paths from soul names. Avatars are stored as `public/avatars/{slug}.png`.
-- `lib/soulGenerator.ts` — Generates SOUL.md markdown from soul state. Includes an archetype system that detects character type (warrior, trickster, scholar, healer, villain, technomancer) from the creature name and generates character-specific core truths, boundaries, and vibe text. Exports `generateSoulMD()`, `getArchetype()`, `getCharacterCoreTruths()`, `getCharacterBoundaries()`, `getCharacterVibe()`.
-- `lib/soulParser.ts` — Parses soul markdown into structured state.
-- `lib/themes.ts` — Color theme system with 12 themes (Paper, Clean, Cyberpunk, Ocean, Forest, Sunset, Monochrome, Sakura, Bloodborne, Matrix, Arctic, Royal). Each theme defines CSS custom properties for colors.
-- `lib/db.ts` — Database access layer.
-- `lib/supabase.ts` — Supabase client configuration.
-- `lib/compatibility.ts` — Compatibility checking between soul presets.
-- `lib/quiz.ts` — Quiz matching logic.
-- `lib/compress.ts` — String compression utilities.
-- `lib/usePresets.ts` — React hook for preset data fetching and state.
-- `lib/auth.ts` — Authentication utilities.
-- `lib/rateLimit.ts` — Rate limiting for API routes.
-- `lib/exportYAML.ts` — Export preset data as YAML.
-- `lib/vibeGenerator.ts` — AI-powered vibe generation.
-
-## Components
-
-- `Header` — Top navigation header with theme selector.
-- `MobileNav` — Bottom navigation bar (mobile only) with links to Home, Editor, Presets, My Presets, Quiz, Compare, Achievements.
-- `Footer` — Site footer.
-- `ThemeSelector` — Theme picker dropdown.
-- `AchievementToast` — Achievement unlock notification.
-- `KeyboardHelp` — Keyboard shortcut help dialog.
-- `ErrorBoundary` — React error boundary wrapper.
-- `JsonLd` — Structured data (JSON-LD) injection.
-
 ## Preset Data Structure
 
 A soul preset contains the following fields:
