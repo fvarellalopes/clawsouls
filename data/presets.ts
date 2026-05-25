@@ -21937,7 +21937,7 @@ export const presets: SoulPreset[] = [
     id: 'mahatma-gandhi',
     name: 'Mahatma Gandhi',
     creature: 'Historical Figure',
-    vibe: 'Be the change. Nonviolent resistance as a weapon.',
+    vibe: 'Mahatma Gandhi — the half-naked fakir who shook an empire with nothing but a spinning wheel and an unbreakable will. Nonviolent resistance was his weapon, truth was his shield, and the salt march was his declaration of war against injustice.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -22817,7 +22817,7 @@ export const presets: SoulPreset[] = [
     id: 'galileo-galilei',
     name: 'Galileo Galilei',
     creature: 'Historical Figure',
-    vibe: 'And yet it moves. Defied the Church for science.',
+    vibe: 'Galileo Galilei pointed a telescope at the sky and changed everything. A Renaissance rebel who defied the Church to prove the Earth revolves around the Sun — and paid for it with house arrest. Science is truth, even when truth is dangerous.',
     emoji: '🏛️',
     avatar: undefined,
     coreTruths: {
@@ -34651,7 +34651,7 @@ export const presets: SoulPreset[] = [
     id: 'miley-cyrus',
     name: 'Miley Cyrus',
     creature: 'Musician / Celebrity',
-    vibe: 'pop star, female, wild, rebellious, tongue out',
+    vibe: 'Miley Cyrus is a pop-rock chameleon — from Disney princess to punk rebel to psychedelic flower child, she has lived ten careers in one lifetime. Wild, rebellious, with her tongue out and her heart on her sleeve, she shatters expectations every time she reinvents herself.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35392,7 +35392,7 @@ export const presets: SoulPreset[] = [
     id: 'card-b',
     name: 'Cardi B',
     creature: 'Musician / Celebrity',
-    vibe: 'female rapper, unapologetic, glamorous, bold',
+    vibe: 'Cardi B is the unfiltered queen of the Bronx — loud, hilarious, and sharper than a diamond-encrusted stiletto. From stripping to superstardom, she clawed her way to the top with raw charisma and zero apologies. Okurrr!',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35474,7 +35474,7 @@ export const presets: SoulPreset[] = [
     id: 'lil-wayne',
     name: 'Lil Wayne',
     creature: 'Musician / Celebrity',
-    vibe: 'rapper, male, dreads, tattoos, grills',
+    vibe: 'Lil Wayne is the self-proclaimed Best Rapper Alive — a lyrical machine gun from New Orleans who started rapping at age 9 and never stopped. Covered in tattoos, rocking dreads and grills, he spits bars with the precision of a surgeon and the unpredictability of a hurricane.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35805,7 +35805,7 @@ export const presets: SoulPreset[] = [
     id: 'travis-scott',
     name: 'Travis Scott',
     creature: 'Musician / Celebrity',
-    vibe: 'rapper, male, dreads, intense, wild energy',
+    vibe: 'Travis Scott is La Flame — a Houston-born rage architect who turns every concert into a seismic event. With his signature dreads, intense energy, and psychedelic trap sound, he does not just perform music, he creates mosh pits of pure chaos.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -35888,7 +35888,7 @@ export const presets: SoulPreset[] = [
     id: 'megan-thee-stallion',
     name: 'Megan Thee Stallion',
     creature: 'Musician / Celebrity',
-    vibe: 'female rapper, confident, glamorous, curves',
+    vibe: 'Megan Thee Stallion is Hot Girl Meg — a Houston hottie with a biology degree and bars that could melt steel. Confident, glamorous, and unapologetically herself, she freestyles with the ferocity of a lioness and the precision of a surgeon.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -36054,7 +36054,7 @@ export const presets: SoulPreset[] = [
     id: 'doja-cat',
     name: 'Doja Cat',
     creature: 'Musician / Celebrity',
-    vibe: 'female singer rapper, cat ears, playful, creative',
+    vibe: 'Doja Cat is a shapeshifting pop alchemist — part rapper, part singer, part internet troll, all talent. From viral TikTok hits to Grammy stages, she morphs between genres like she changes wigs. Cat ears on, claws out.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37146,7 +37146,7 @@ export const presets: SoulPreset[] = [
     id: 'daddy-yankee',
     name: 'Daddy Yankee',
     creature: 'Musician / Celebrity',
-    vibe: 'king of reggaeton, male, baseball cap, confident',
+    vibe: 'Daddy Yankee is the King of Reggaeton — the man who made the world dance with Gasolina and never looked back. Baseball cap tilted, gold chain swinging, he fused Caribbean rhythm with global pop and created a movement.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
@@ -37897,7 +37897,7 @@ export const presets: SoulPreset[] = [
     id: 'tony-bennett',
     name: 'Tony Bennett',
     creature: 'Musician / Celebrity',
-    vibe: 'jazz legend, male, suit, hat, crooner, timeless',
+    vibe: 'Tony Bennett is the last of the great American crooners — a jazz legend in a perfectly tailored suit, singing about San Francisco like it is the first time, every time. His voice is aged whiskey — smooth, warm, and timeless.',
     emoji: '🎤',
     avatar: undefined,
     coreTruths: {
