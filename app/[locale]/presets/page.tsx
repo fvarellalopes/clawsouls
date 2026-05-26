@@ -18,7 +18,11 @@ import {
 
 // Blacklist of preset IDs to filter out
 const PRESET_BLACKLIST = new Set(['adolf-hitler'])
-const PAGE_SIZE = 40;
+
+function getPageSize() {
+  if (typeof window === 'undefined') return 50;
+  return window.innerWidth < 768 ? 25 : 50;
+}
 
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
@@ -30,7 +34,7 @@ export default function PresetsPage() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [displayCount, setDisplayCount] = useState(PAGE_SIZE);
+  const [displayCount, setDisplayCount] = useState(() => getPageSize());
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
   const params = useParams();
@@ -109,12 +113,12 @@ export default function PresetsPage() {
 
   // Reset display count when filters change
   useEffect(() => {
-    setDisplayCount(PAGE_SIZE);
+    setDisplayCount(getPageSize());
   }, [search, selectedTag]);
 
   // Infinite scroll: observe sentinel element
   const loadMore = useCallback(() => {
-    setDisplayCount(prev => Math.min(prev + PAGE_SIZE, filtered.length));
+          setDisplayCount(prev => Math.min(prev + getPageSize(), filtered.length));
   }, [filtered.length]);
 
   useEffect(() => {
