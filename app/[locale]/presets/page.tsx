@@ -3,7 +3,7 @@
 import { useTranslations, useMessages } from "next-intl";
 import { PresetCard } from "@/components/preset-card";
 import Link from "next/link";
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import { SoulPreset } from "@/store/soulStore";
 import { useRouter, useParams } from "next/navigation";
 import { useRatingsStore } from "@/store/ratingsStore";
@@ -18,6 +18,7 @@ import {
 
 // Blacklist of preset IDs to filter out
 const PRESET_BLACKLIST = new Set(['adolf-hitler'])
+const PAGE_SIZE = 40;
 
 export default function PresetsPage() {
   const t = useTranslations("presetsPage");
@@ -29,6 +30,8 @@ export default function PresetsPage() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [displayCount, setDisplayCount] = useState(PAGE_SIZE);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
   const params = useParams();
   const locale = (params?.locale as string) || "en";
@@ -71,7 +74,7 @@ export default function PresetsPage() {
     // Also fetch rating aggregates from backend
     useRatingsStore.getState().fetchAggregates();
     return () => { cancelled = true; };
-  }, []);
+  }, [locale]);
 
   const allTags = useMemo(() => {
     const tags = new Set<string>();
@@ -103,6 +106,37 @@ export default function PresetsPage() {
     }
     return result;
   }, [presets, search, selectedTag, presetsMessages]);
+
+  // Reset display count when filters change
+  useEffect(() => {
+    setDisplayCount(PAGE_SIZE);
+  }, [search, selectedTag]);
+
+  // Infinite scroll: observe sentinel element
+  const loadMore = useCallback(() => {
+    setDisplayCount(prev => Math.min(prev + PAGE_SIZE, filtered.length));
+  }, [filtered.length]);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && displayCount < filtered.length) {
+          loadMore();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [displayCount, filtered.length, loadMore]);
+
+  const visiblePresets = useMemo(() => {
+    return filtered.slice(0, displayCount);
+  }, [filtered, displayCount]);
 
   const handleSelect = (preset: SoulPreset) => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -194,16 +228,30 @@ export default function PresetsPage() {
         {loading ? (
           <PresetsGridSkeleton count={8} />
         ) : (
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((preset, i) => (
-              <PresetCard
-                key={preset.id}
-                preset={preset}
-                index={i}
-                onSelect={handleSelect}
-              />
-            ))}
-          </section>
+          <>
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {visiblePresets.map((preset, i) => (
+                <PresetCard
+                  key={preset.id}
+                  preset={preset}
+                  index={i}
+                  onSelect={handleSelect}
+                />
+              ))}
+            </section>
+
+            {/* Sentinel for infinite scroll */}
+            {displayCount < filtered.length && (
+              <div ref={sentinelRef} className="flex justify-center py-8">
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                  <span className="font-mono-data text-mono-data">
+                    {displayCount} / {filtered.length}
+                  </span>
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         {/* Empty state */}
