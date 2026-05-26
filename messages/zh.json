@@ -93,7 +93,11 @@
       "technical": "技术型",
       "casual": "随意",
       "formal": "正式",
-      "balanced": "均衡"
+      "balanced": "均衡",
+      "elegant": "优雅",
+      "sardonic": "讽刺",
+      "creative": "创意",
+      "smooth": "流畅"
     },
     "customize": "自定义",
     "customizeDesc": "额外选项和操作",

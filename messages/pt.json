@@ -93,7 +93,11 @@
       "technical": "Técnico",
       "casual": "Casual",
       "formal": "Formal",
-      "balanced": "Equilibrado"
+      "balanced": "Equilibrado",
+      "elegant": "Elegante",
+      "sardonic": "Sardônico",
+      "creative": "Criativo",
+      "smooth": "Suave"
     },
     "customize": "Personalizar",
     "customizeDesc": "Opções e ações adicionais",

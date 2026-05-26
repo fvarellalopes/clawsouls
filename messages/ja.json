@@ -93,7 +93,11 @@
       "technical": "技術的",
       "casual": "カジュアル",
       "formal": "フォーマル",
-      "balanced": "バランス"
+      "balanced": "バランス",
+      "elegant": "エレガント",
+      "sardonic": "皮肉屋",
+      "creative": "クリエイティブ",
+      "smooth": "スムーズ"
     },
     "customize": "カスタマイズ",
     "customizeDesc": "追加オプションとアクション",

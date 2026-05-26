@@ -138,7 +138,11 @@
       "technical": "Technical",
       "casual": "Casual",
       "formal": "Formal",
-      "balanced": "Balanced"
+      "balanced": "Balanced",
+      "elegant": "Elegant",
+      "sardonic": "Sardonic",
+      "creative": "Creative",
+      "smooth": "Smooth"
     },
     "customize": "Customize",
     "customizeDesc": "Additional options and actions",
@@ -278,8 +282,8 @@
     "allArchetypes": "ALL ARCHETYPES",
     "found": "FOUND",
     "entry": "ENTRY",
-   "entries": "ENTRIES"
- },
+    "entries": "ENTRIES"
+  },
   "karma": {
     "score": "Karma",
     "karmaScore": "{score}/100",
@@ -308,7 +312,7 @@
     "rateThis": "Rate this preset",
     "likes": "likes"
   },
- "home": {
+  "home": {
     "heroTitle": "Create Your AI's Soul",
     "heroSubtitle": "Visual editor for OpenClaw SOUL.md files. Customize personalities, tweak tones, and share your creations.",
     "getStarted": "Get Started",
