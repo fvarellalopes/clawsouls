@@ -91,7 +91,7 @@ export const presetsGetSchema = z.object({
 // --- /api/filtered-presets (query params) ---
 
 export const filteredPresetsGetSchema = z.object({
-  limit: z.coerce.number().int().min(1).max(100).default(100),
+  limit: z.coerce.number().int().min(1).max(1000).default(100),
   offset: z.coerce.number().int().min(0).default(0),
   creature: z.string().max(100).optional(),
   source: z.string().max(50).optional(),
