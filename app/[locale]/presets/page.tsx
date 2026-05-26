@@ -44,7 +44,7 @@ export default function PresetsPage() {
     async function load() {
       try {
         setLoading(true);
-        const res = await fetch("/api/filtered-presets");
+        const res = await fetch(`/api/filtered-presets?locale=${locale}&limit=1000`);
         if (!res.ok) throw new Error("Failed to fetch presets");
         const json = await res.json();
         if (cancelled) return;
