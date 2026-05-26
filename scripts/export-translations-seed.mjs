@@ -80,7 +80,7 @@ async function main() {
     const vibe = escapeSql(r.vibe);
     const tags = escapeSql(typeof r.tags === 'string' ? r.tags : JSON.stringify(r.tags || []));
     const comma = i < rows.length - 1 ? ',' : '';
-    lines.push(`  ('${r.preset_id}', '${r.locale}', '${name}', '${desc}', '${creature}', '${vibe}', '${tags}'::json)${comma}`);
+    lines.push(`  ('${r.preset_id.toLowerCase()}', '${r.locale}', '${name}', '${desc}', '${creature}', '${vibe}', '${tags}'::json)${comma}`);
   }
 
   lines.push('ON CONFLICT (preset_id, locale) DO UPDATE SET');
