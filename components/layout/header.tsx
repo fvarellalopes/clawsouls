@@ -32,6 +32,7 @@ export function Header({ locale }: HeaderProps) {
   const navLinks = [
     { href: `/${activeLocale}/editor`, key: "create" },
     { href: `/${activeLocale}/presets`, key: "presets" },
+    { href: `/${activeLocale}/soulgate`, key: "soulgate" },
     { href: `/${activeLocale}/quiz`, key: "quiz" },
     { href: `/${activeLocale}/compare`, key: "compare" },
   ];
