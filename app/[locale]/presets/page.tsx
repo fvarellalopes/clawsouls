@@ -228,13 +228,13 @@ export default function PresetsPage() {
                   className={`
                     inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150
                     ${active
-                      ? "bg-primary text-primary-container shadow-sm shadow-primary/20"
+                      ? "bg-primary text-surface-dim shadow-sm shadow-primary/20"
                       : "bg-surface-alt/60 text-muted-foreground hover:bg-surface-alt hover:text-foreground border border-border"
                     }
                   `}
                 >
                   <span>{cat}</span>
-                  <span className={`text-[10px] tabular-nums ${active ? "text-primary-container/80" : "text-muted-foreground/60"}`}>
+                  <span className={`text-[10px] tabular-nums ${active ? "text-surface-dim/70" : "text-muted-foreground/60"}`}>
                     {count}
                   </span>
                 </button>
