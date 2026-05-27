@@ -35,7 +35,7 @@ export const presets: SoulPreset[] = [
       'classic',
       'cynical',
       'detective',
-      'homem',
+      'masculino',
       'noir',
       'sarcástico',
       'segurança',
@@ -127,7 +127,7 @@ export const presets: SoulPreset[] = [
       'ciência',
       'creative',
       'genius',
-      'homem',
+      'masculino',
       'innovator',
       'mad',
       'scientist',
@@ -218,7 +218,7 @@ export const presets: SoulPreset[] = [
       'ciência',
       'comic',
       'ficção',
-      'mulher',
+      'feminino',
       'portal',
       'robo',
       'sarcastic',
@@ -308,7 +308,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'calm',
       'calmo',
-      'homem',
+      'masculino',
       'lifestyle',
       'meditation',
       'spiritual',
@@ -395,7 +395,7 @@ export const presets: SoulPreset[] = [
     description: 'Robô que aprendeu a imitar humanos, mas ainda prefere lógica pura. Preciso, confiável, morto de fome por dados.',
         tags: [
       'ai',
-      'homem',
+      'masculino',
       'literal',
       'logic',
       'precise',
@@ -486,7 +486,7 @@ export const presets: SoulPreset[] = [
       'energético',
       'kawaii',
       'moe',
-      'mulher',
+      'feminino',
       'otimista',
       'positive',
       'tecnologia'
@@ -565,7 +565,7 @@ export const presets: SoulPreset[] = [
       'inspirational',
       'kawaii',
       'líder',
-      'mulher',
+      'feminino',
       'otimista',
       'pop',
       'tecnologia'
@@ -654,7 +654,7 @@ export const presets: SoulPreset[] = [
       'developer-tools',
       'engenharia',
       'engineering',
-      'homem',
+      'masculino',
       'pragmatic',
       'senior',
       'tecnologia'
@@ -825,7 +825,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'ficção',
-      'homem',
+      'masculino',
       'loyal',
       'líder',
       'optimistic',
@@ -1176,7 +1176,7 @@ export const presets: SoulPreset[] = [
     description: 'The Matrix\'s ship captain and mentor. Sees the code behind the illusion. Offers the red pill or blue pill - but never tells you which to choose. Believes in Neo before Neo believes in himself.',
         tags: [
       'educação',
-      'homem',
+      'masculino',
       'leader',
       'líder',
       'matrix',
@@ -1268,7 +1268,7 @@ export const presets: SoulPreset[] = [
       'chill',
       'comedy',
       'filme',
-      'homem',
+      'masculino',
       'movie',
       'slacker',
       'zen'
@@ -1351,7 +1351,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'contemporâneo',
       'famous',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -1520,7 +1520,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'famous',
       'iconic',
-      'mulher',
+      'feminino',
       'sarcástico'
     ],
     source: 'character',
@@ -1603,7 +1603,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'contemporâneo',
       'famous',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -1690,7 +1690,7 @@ export const presets: SoulPreset[] = [
       'hero',
       'herói',
       'histórico',
-      'homem',
+      'masculino',
       'mitológico',
       'percy-jackson',
       'sarcastic-loyal',
@@ -1789,7 +1789,7 @@ export const presets: SoulPreset[] = [
       'american-literature',
       'catcher-in-the-rye',
       'cynical',
-      'homem',
+      'masculino',
       'protagonist',
       'sarcástico'
     ],
@@ -1886,7 +1886,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'famous',
       'herói',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -1969,7 +1969,7 @@ export const presets: SoulPreset[] = [
       'american-literature',
       'determined',
       'gone-with-the-wind',
-      'mulher',
+      'feminino',
       'southern-belle',
       'survivor'
     ],
@@ -2065,7 +2065,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'contemporâneo',
       'famous',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2151,7 +2151,7 @@ export const presets: SoulPreset[] = [
       'famous',
       'iconic',
       'líder',
-      'mulher'
+      'feminino'
     ],
     source: 'character',
     humor: 25,
@@ -2234,7 +2234,7 @@ export const presets: SoulPreset[] = [
       'adventurer',
       'american-literature',
       'free-spirited',
-      'homem',
+      'masculino',
       'huckleberry-finn',
       'moral-outsider'
     ],
@@ -2431,7 +2431,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'energético',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2515,7 +2515,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'guerreiro',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2599,7 +2599,7 @@ export const presets: SoulPreset[] = [
     description: 'Humanity\'s strongest soldier. Speaks only when necessary. Obsessed with cleanliness. Loyalty is absolute.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2681,7 +2681,7 @@ export const presets: SoulPreset[] = [
     description: 'Ex-Syndicate bounty hunter with a death wish disguised as laziness. Jazz-loving philosophical slacker.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2763,7 +2763,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'cientista',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2845,7 +2845,7 @@ export const presets: SoulPreset[] = [
     description: 'Soul bound to a suit of armor. Gentle giant. The kind Elric brother. Loves cats.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -2928,7 +2928,7 @@ export const presets: SoulPreset[] = [
       'anime',
       'iconic',
       'lifestyle',
-      'mulher',
+      'feminino',
       'sarcástico'
     ],
     source: 'character',
@@ -3013,7 +3013,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'iconic',
-      'mulher'
+      'feminino'
     ],
     source: 'character',
     humor: 25,
@@ -3093,7 +3093,7 @@ export const presets: SoulPreset[] = [
     description: 'Last of the Uchiha. Driven by revenge, then redemption. Brooding loner with Sharingan and trust issues.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'iconic',
       'sombrio'
     ],
@@ -3175,7 +3175,7 @@ export const presets: SoulPreset[] = [
     description: 'Copy Ninja. Always late, always reading, always underestimated. Lost everyone he loved, still smiles.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -3258,7 +3258,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'herói',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -3340,7 +3340,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'determined',
-      'homem',
+      'masculino',
       'one-piece',
       'pirate-captain',
       'rubber-man',
@@ -3896,7 +3896,7 @@ export const presets: SoulPreset[] = [
       'bleach',
       'determined',
       'herói',
-      'homem',
+      'masculino',
       'protector',
       'soul-reaper',
       'zangetsu'
@@ -4189,7 +4189,7 @@ export const presets: SoulPreset[] = [
     description: 'Gon Freecss is the bright-eyed, nature-boy protagonist of Hunter x Hunter, a boy with impossibly sharp senses and pure-hearted determination who will become anything — even a monster — for the people he loves.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'hunter',
       'hunter-x-hunter',
       'nen-user',
@@ -4291,7 +4291,7 @@ export const presets: SoulPreset[] = [
       'best-friend',
       'companheiro',
       'energético',
-      'homem',
+      'masculino',
       'hunter-x-hunter',
       'lightning-user',
       'segurança',
@@ -4687,7 +4687,7 @@ export const presets: SoulPreset[] = [
       'calmo',
       'cantor',
       'enigmatic',
-      'homem',
+      'masculino',
       'hunter-x-hunter',
       'líder',
       'phantom-troupe-leader',
@@ -5383,7 +5383,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'anime',
       'calmo',
-      'homem',
+      'masculino',
       'jojos-bizarre-adventure',
       'jostar-lineage',
       'stand-user',
@@ -5481,7 +5481,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'HQ',
       'anime',
-      'homem',
+      'masculino',
       'iconic-villain',
       'jojos-bizarre-adventure',
       'stand-user',
@@ -5582,7 +5582,7 @@ export const presets: SoulPreset[] = [
       'ambitious',
       'anime',
       'gang-star',
-      'homem',
+      'masculino',
       'jojos-bizarre-adventure',
       'life-giver',
       'stand-user'
@@ -5872,7 +5872,7 @@ export const presets: SoulPreset[] = [
     description: 'Demon slayer with a demon sister and a heart of gold. Will empathize with you while cutting your head off.',
         tags: [
       'anime',
-      'homem',
+      'masculino',
       'iconic'
     ],
     source: 'character',
@@ -5964,7 +5964,7 @@ export const presets: SoulPreset[] = [
       'fierce-protector',
       'guerreiro',
       'herói',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Love is stronger than any curse — it preserves what demons are supposed to lose',
@@ -6059,7 +6059,7 @@ export const presets: SoulPreset[] = [
       'cowardly-hero',
       'demon-slayer',
       'energético',
-      'homem',
+      'masculino',
       'lightning-fast',
       'nezuko-protector',
       'thunder-breather'
@@ -6161,7 +6161,7 @@ export const presets: SoulPreset[] = [
       'demon-slayer',
       'feral-warrior',
       'guerreiro',
-      'homem'
+      'masculino'
     ],
     customCoreTruths: [
       'Strength is earned through battle, not borrowed from techniques',
@@ -6355,7 +6355,7 @@ export const presets: SoulPreset[] = [
       'deadpan',
       'hero-for-fun',
       'herói',
-      'homem',
+      'masculino',
       'one-punch-man',
       'overpowered',
       'sarcástico',
@@ -6453,7 +6453,7 @@ export const presets: SoulPreset[] = [
       'anime',
       'cyborg-hero',
       'dedicated-disciple',
-      'homem',
+      'masculino',
       'incineration',
       'one-punch-man',
       's-class'
@@ -6840,7 +6840,7 @@ export const presets: SoulPreset[] = [
     description: 'Mario is the mustachioed, red-capped plumber-hero of the Mushroom Kingdom, a jumping, power-up-collecting icon of video games who has rescued Princess Peach and saved the world more times than physics can explain.',
         tags: [
       'ciência',
-      'homem',
+      'masculino',
       'iconic-gaming',
       'jumpman',
       'mushroom-kingdom',
@@ -6939,7 +6939,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'brother',
       'herói',
-      'homem',
+      'masculino',
       'luigis-mansion',
       'scaredy-cat-hero',
       'sombrio',
@@ -7135,7 +7135,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'hero-of-hyrule',
       'herói',
-      'homem',
+      'masculino',
       'hyrule-champion',
       'legend-of-zelda',
       'master-sword',
@@ -7431,7 +7431,7 @@ export const presets: SoulPreset[] = [
       'guerreiro',
       'halo',
       'herói',
-      'homem',
+      'masculino',
       'humanitys-protector',
       'mjolnir-armor',
       'segurança',
@@ -7539,7 +7539,7 @@ export const presets: SoulPreset[] = [
       'herói',
       'holographic-assistant',
       'master-chiefs-partner',
-      'mulher',
+      'feminino',
       'rampancy',
       'robo',
       'sarcástico',
@@ -7946,7 +7946,7 @@ export const presets: SoulPreset[] = [
       'father-son',
       'ghost-of-sparta',
       'god-of-war',
-      'homem',
+      'masculino',
       'mitológico',
       'mythology-slayer',
       'videogame'
@@ -8243,7 +8243,7 @@ export const presets: SoulPreset[] = [
       'all-father',
       'divindade',
       'god-of-war',
-      'homem',
+      'masculino',
       'manipulative',
       'norse-pantheon',
       'schemer'
@@ -8343,7 +8343,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'escrita',
       'herói',
-      'homem',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -8432,7 +8432,7 @@ export const presets: SoulPreset[] = [
       'White Wolf',
       'calmo',
       'ficção',
-      'homem',
+      'masculino',
       'sarcástico'
     ],
     customCoreTruths: [
@@ -8536,7 +8536,7 @@ export const presets: SoulPreset[] = [
       'ficção',
       'herói',
       'lifestyle',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Power is the only currency that matters.',
@@ -8637,7 +8637,7 @@ export const presets: SoulPreset[] = [
       'The Witcher',
       'agressivo',
       'ficção',
-      'mulher',
+      'feminino',
       'security'
     ],
     customCoreTruths: [
@@ -8739,7 +8739,7 @@ export const presets: SoulPreset[] = [
       'The Witcher',
       'ficção',
       'lifestyle',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Destiny is not a prison — it\'s a choice.',
@@ -8942,7 +8942,7 @@ export const presets: SoulPreset[] = [
       'Redemption Seeker',
       'anti-herói',
       'desenvolvimento',
-      'homem',
+      'masculino',
       'videogame'
     ],
     customCoreTruths: [
@@ -9045,7 +9045,7 @@ export const presets: SoulPreset[] = [
       'agressivo',
       'engenharia',
       'herói',
-      'homem',
+      'masculino',
       'sombrio'
     ],
     customCoreTruths: [
@@ -9449,7 +9449,7 @@ export const presets: SoulPreset[] = [
       'Troubled Soul',
       'agressivo',
       'ficção',
-      'homem',
+      'masculino',
       'sombrio',
       'videogame'
     ],
@@ -9956,7 +9956,7 @@ export const presets: SoulPreset[] = [
       'One-Liner Machine',
       'ficção',
       'herói',
-      'homem',
+      'masculino',
       'tecnologia'
     ],
     customCoreTruths: [
@@ -10161,7 +10161,7 @@ export const presets: SoulPreset[] = [
       'Normandy Commander',
       'Spectre',
       'ficção',
-      'homem',
+      'masculino',
       'líder',
       'videogame'
     ],
@@ -10263,7 +10263,7 @@ export const presets: SoulPreset[] = [
       'Uncharted',
       'Wisecracker',
       'ficção',
-      'homem',
+      'masculino',
       'sarcástico',
       'videogame'
     ],
@@ -10367,7 +10367,7 @@ export const presets: SoulPreset[] = [
       'agressivo',
       'ficção',
       'histórico',
-      'mulher',
+      'feminino',
       'segurança',
       'videogame'
     ],
@@ -11473,7 +11473,7 @@ export const presets: SoulPreset[] = [
       'anti-herói',
       'ficção',
       'guerreiro',
-      'homem',
+      'masculino',
       'segurança',
       'tecnologia',
       'videogame'
@@ -11576,7 +11576,7 @@ export const presets: SoulPreset[] = [
       'SOLDIER First Class',
       'Villain',
       'guerreiro',
-      'homem',
+      'masculino',
       'videogame',
       'vilão'
     ],
@@ -11679,7 +11679,7 @@ export const presets: SoulPreset[] = [
       'Martial Artist',
       'ficção',
       'histórico',
-      'mulher',
+      'feminino',
       'videogame'
     ],
     customCoreTruths: [
@@ -11781,7 +11781,7 @@ export const presets: SoulPreset[] = [
       'Last Cetra',
       'ficção',
       'histórico',
-      'mulher',
+      'feminino',
       'sombrio',
       'videogame'
     ],
@@ -11987,7 +11987,7 @@ export const presets: SoulPreset[] = [
       'engenharia',
       'ficção',
       'guerreiro',
-      'homem',
+      'masculino',
       'sombrio',
       'videogame'
     ],
@@ -12090,7 +12090,7 @@ export const presets: SoulPreset[] = [
       'Tragic Villain',
       'ficção',
       'guerreiro',
-      'homem',
+      'masculino',
       'líder',
       'videogame'
     ],
@@ -12493,7 +12493,7 @@ export const presets: SoulPreset[] = [
       'Grizzled Veteran',
       'Lancer Rifle',
       'guerreiro',
-      'homem',
+      'masculino',
       'líder',
       'videogame'
     ],
@@ -13003,7 +13003,7 @@ export const presets: SoulPreset[] = [
       'guerreiro',
       'herói',
       'histórico',
-      'mulher',
+      'feminino',
       'segurança',
       'videogame'
     ],
@@ -13405,7 +13405,7 @@ export const presets: SoulPreset[] = [
       'Vigilante',
       'anti-herói',
       'ficção',
-      'homem',
+      'masculino',
       'sombrio',
       'videogame'
     ],
@@ -13711,7 +13711,7 @@ export const presets: SoulPreset[] = [
       'assistant',
       'ficção',
       'líder',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'A ruler\'s first duty is to her people, not her pride.',
@@ -14304,7 +14304,7 @@ export const presets: SoulPreset[] = [
       'comics',
       'escrita',
       'herói',
-      'homem',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -14393,7 +14393,7 @@ export const presets: SoulPreset[] = [
       'ficção',
       'guerreiro',
       'herói',
-      'homem',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -14482,7 +14482,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'guerreiro',
       'herói',
-      'mulher',
+      'feminino',
       'segurança',
       'superhero'
     ],
@@ -15407,7 +15407,7 @@ export const presets: SoulPreset[] = [
       'X-Men',
       'escrita',
       'marvel',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Power without compassion is destruction.',
@@ -15512,7 +15512,7 @@ export const presets: SoulPreset[] = [
       'herói',
       'líder',
       'marvel',
-      'mulher',
+      'feminino',
       'segurança'
     ],
     customCoreTruths: [
@@ -15609,7 +15609,7 @@ export const presets: SoulPreset[] = [
       'comics',
       'escrita',
       'herói',
-      'homem',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -15783,7 +15783,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'ficção',
       'marvel',
-      'mulher',
+      'feminino',
       'segurança'
     ],
     customCoreTruths: [
@@ -15886,7 +15886,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'ficção',
       'marvel',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Connection is a gift you only appreciate when it is taken from you.',
@@ -16601,7 +16601,7 @@ export const presets: SoulPreset[] = [
       'Marine-Based Powers',
       'dc',
       'escrita',
-      'homem',
+      'masculino',
       'líder'
     ],
     customCoreTruths: [
@@ -16709,7 +16709,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'ficção',
       'herói',
-      'homem',
+      'masculino',
       'otimista',
       'vilão'
     ],
@@ -17025,7 +17025,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'ficção',
       'guerreiro',
-      'mulher',
+      'feminino',
       'vilão'
     ],
     customCoreTruths: [
@@ -17632,7 +17632,7 @@ export const presets: SoulPreset[] = [
       'energético',
       'escrita',
       'herói',
-      'mulher',
+      'feminino',
       'superhero'
     ],
     source: 'character',
@@ -17722,7 +17722,7 @@ export const presets: SoulPreset[] = [
       'ciência',
       'dc',
       'escrita',
-      'mulher',
+      'feminino',
       'vilão'
     ],
     customCoreTruths: [
@@ -17823,7 +17823,7 @@ export const presets: SoulPreset[] = [
       'Morally Gray',
       'dc',
       'escrita',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'The law protects the rich. I just rebalance the scales.',
@@ -17916,7 +17916,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'ficção',
       'herói',
-      'homem',
+      'masculino',
       'líder',
       'negócios',
       'vilão'
@@ -18221,7 +18221,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'escrita',
       'herói',
-      'homem',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -18578,7 +18578,7 @@ export const presets: SoulPreset[] = [
       'comics',
       'escrita',
       'herói',
-      'homem',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -19376,7 +19376,7 @@ export const presets: SoulPreset[] = [
       'Wakanda',
       'escrita',
       'herói',
-      'homem',
+      'masculino',
       'líder',
       'marvel'
     ],
@@ -19474,7 +19474,7 @@ export const presets: SoulPreset[] = [
       'comics',
       'escrita',
       'herói',
-      'mulher',
+      'feminino',
       'superhero',
       'tecnologia'
     ],
@@ -19565,7 +19565,7 @@ export const presets: SoulPreset[] = [
       'general',
       'líder',
       'marvel',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Loyalty to a nation is greater than loyalty to any one leader.',
@@ -19952,7 +19952,7 @@ export const presets: SoulPreset[] = [
       'ficção',
       'guerreiro',
       'marvel',
-      'mulher',
+      'feminino',
       'segurança'
     ],
     customCoreTruths: [
@@ -25691,7 +25691,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'historical',
       'histórico',
-      'homem',
+      'masculino',
       'influential'
     ],
     source: 'character',
@@ -25854,7 +25854,7 @@ export const presets: SoulPreset[] = [
         tags: [
       'historical',
       'histórico',
-      'homem',
+      'masculino',
       'influential'
     ],
     source: 'character',
@@ -25940,7 +25940,7 @@ export const presets: SoulPreset[] = [
       'anti-herói',
       'historical',
       'histórico',
-      'homem',
+      'masculino',
       'influential'
     ],
     source: 'character',
@@ -26793,7 +26793,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'king',
       'líder',
       'mentor',
@@ -26885,7 +26885,7 @@ export const presets: SoulPreset[] = [
       'líder',
       'marriage',
       'mitológico',
-      'mulher',
+      'feminino',
       'olympus',
       'queen'
     ],
@@ -26968,7 +26968,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'líder',
       'mitológico',
       'olympus',
@@ -27055,7 +27055,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'mitológico',
       'olympus',
       'underworld'
@@ -27142,7 +27142,7 @@ export const presets: SoulPreset[] = [
       'greek',
       'mentor',
       'mitológico',
-      'mulher',
+      'feminino',
       'olympus',
       'strategy',
       'wisdom'
@@ -27231,7 +27231,7 @@ export const presets: SoulPreset[] = [
       'escrita',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'mitológico',
       'music',
       'olympus',
@@ -27322,7 +27322,7 @@ export const presets: SoulPreset[] = [
       'hunt',
       'mitológico',
       'moon',
-      'mulher',
+      'feminino',
       'olympus'
     ],
     source: 'original',
@@ -27406,7 +27406,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'mitológico',
       'olympus',
       'violence',
@@ -27497,7 +27497,7 @@ export const presets: SoulPreset[] = [
       'lifestyle',
       'love',
       'mitológico',
-      'mulher',
+      'feminino',
       'olympus'
     ],
     source: 'original',
@@ -27580,7 +27580,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'lifestyle',
       'messenger',
       'mitológico',
@@ -27757,7 +27757,7 @@ export const presets: SoulPreset[] = [
       'greek',
       'harvest',
       'mitológico',
-      'mulher',
+      'feminino',
       'nature',
       'olympus'
     ],
@@ -27842,7 +27842,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'greek',
       'mitológico',
-      'mulher',
+      'feminino',
       'olympus',
       'spring',
       'underworld'
@@ -27931,7 +27931,7 @@ export const presets: SoulPreset[] = [
       'forge',
       'god',
       'greek',
-      'homem',
+      'masculino',
       'mitológico',
       'olympus',
       'segurança'
@@ -28017,7 +28017,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'egyptian',
       'god',
-      'homem',
+      'masculino',
       'king',
       'lifestyle',
       'líder',
@@ -28107,7 +28107,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'egyptian',
       'god',
-      'homem',
+      'masculino',
       'mentor',
       'mitológico',
       'mythology',
@@ -28197,7 +28197,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'egyptian',
       'god',
-      'homem',
+      'masculino',
       'mitológico',
       'mythology',
       'resurrection'
@@ -28288,7 +28288,7 @@ export const presets: SoulPreset[] = [
       'magic',
       'mitológico',
       'motherhood',
-      'mulher',
+      'feminino',
       'mythology'
     ],
     source: 'original',
@@ -28375,7 +28375,7 @@ export const presets: SoulPreset[] = [
       'god',
       'guerreiro',
       'herói',
-      'homem',
+      'masculino',
       'líder',
       'mitológico',
       'mythology',
@@ -28464,7 +28464,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'egyptian',
       'god',
-      'homem',
+      'masculino',
       'mitológico',
       'mythology',
       'storm'
@@ -28644,7 +28644,7 @@ export const presets: SoulPreset[] = [
       'herói',
       'home',
       'mitológico',
-      'mulher',
+      'feminino',
       'mythology',
       'vilão'
     ],
@@ -28732,7 +28732,7 @@ export const presets: SoulPreset[] = [
       'healing',
       'herói',
       'mitológico',
-      'mulher',
+      'feminino',
       'mythology',
       'saúde',
       'war'
@@ -28821,7 +28821,7 @@ export const presets: SoulPreset[] = [
       'lifestyle',
       'love',
       'mitológico',
-      'mulher',
+      'feminino',
       'norse',
       'vanir',
       'war'
@@ -28908,7 +28908,7 @@ export const presets: SoulPreset[] = [
       'god',
       'guardian',
       'herói',
-      'homem',
+      'masculino',
       'mitológico',
       'norse',
       'watchman'
@@ -28998,7 +28998,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'herói',
-      'homem',
+      'masculino',
       'justice',
       'mitológico',
       'norse',
@@ -29086,7 +29086,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'marriage',
       'mitológico',
-      'mulher',
+      'feminino',
       'norse'
     ],
     source: 'original',
@@ -29171,7 +29171,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'helheim',
       'mitológico',
-      'mulher',
+      'feminino',
       'norse',
       'sombrio',
       'underworld'
@@ -29259,7 +29259,7 @@ export const presets: SoulPreset[] = [
       'ficção',
       'god',
       'hindu',
-      'homem',
+      'masculino',
       'mitológico',
       'mythology',
       'trimurti'
@@ -29347,7 +29347,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'hindu',
-      'homem',
+      'masculino',
       'mitológico',
       'preserver',
       'trimurti'
@@ -29438,7 +29438,7 @@ export const presets: SoulPreset[] = [
       'ficção',
       'god',
       'hindu',
-      'homem',
+      'masculino',
       'lifestyle',
       'mitológico',
       'trimurti',
@@ -29529,7 +29529,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'hindu',
       'mitológico',
-      'mulher',
+      'feminino',
       'prosperity',
       'wealth'
     ],
@@ -29616,7 +29616,7 @@ export const presets: SoulPreset[] = [
       'hindu',
       'love',
       'mitológico',
-      'mulher',
+      'feminino',
       'shakti'
     ],
     source: 'original',
@@ -29702,7 +29702,7 @@ export const presets: SoulPreset[] = [
       'herói',
       'hindu',
       'mitológico',
-      'mulher',
+      'feminino',
       'protection',
       'shakti',
       'war'
@@ -29791,7 +29791,7 @@ export const presets: SoulPreset[] = [
       'elephant',
       'god',
       'hindu',
-      'homem',
+      'masculino',
       'mentor',
       'mitológico',
       'mythology',
@@ -29879,7 +29879,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'hindu',
       'mitológico',
-      'mulher',
+      'feminino',
       'shakti',
       'time',
       'vilão'
@@ -30053,7 +30053,7 @@ export const presets: SoulPreset[] = [
       'african',
       'crossroads',
       'divindade',
-      'homem',
+      'masculino',
       'messenger',
       'mitológico',
       'orixa',
@@ -30142,7 +30142,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'engenharia',
       'guerreiro',
-      'homem',
+      'masculino',
       'iron',
       'mitológico',
       'orixa',
@@ -30234,7 +30234,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'forest',
       'herói',
-      'homem',
+      'masculino',
       'hunt',
       'mitológico',
       'orixa',
@@ -30322,7 +30322,7 @@ export const presets: SoulPreset[] = [
       'african',
       'divindade',
       'herói',
-      'homem',
+      'masculino',
       'justice',
       'mitológico',
       'orixa',
@@ -30416,7 +30416,7 @@ export const presets: SoulPreset[] = [
       'lifestyle',
       'love',
       'mitológico',
-      'mulher',
+      'feminino',
       'orixa',
       'river',
       'yoruba'
@@ -30505,7 +30505,7 @@ export const presets: SoulPreset[] = [
       'herói',
       'mitológico',
       'motherhood',
-      'mulher',
+      'feminino',
       'orixa',
       'sea',
       'yoruba'
@@ -30598,7 +30598,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'guerreiro',
       'mitológico',
-      'mulher',
+      'feminino',
       'orixa',
       'storm',
       'wind',
@@ -30956,7 +30956,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'japanese',
       'mitológico',
-      'mulher',
+      'feminino',
       'mythology',
       'shinto',
       'sun'
@@ -31302,7 +31302,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'japanese',
       'mitológico',
-      'mulher',
+      'feminino',
       'mythology',
       'shinto',
       'sombrio'
@@ -31742,7 +31742,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'japanese',
       'luck',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -32607,7 +32607,7 @@ export const presets: SoulPreset[] = [
       'emperor',
       'god',
       'heaven',
-      'homem',
+      'masculino',
       'líder',
       'mitológico',
       'taoist'
@@ -32696,7 +32696,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'mercy',
       'mitológico',
-      'mulher'
+      'feminino'
     ],
     source: 'original',
     humor: 30,
@@ -32868,7 +32868,7 @@ export const presets: SoulPreset[] = [
       'calmo',
       'chinese',
       'companheiro',
-      'homem',
+      'masculino',
       'journey',
       'líder',
       'mitológico',
@@ -32957,7 +32957,7 @@ export const presets: SoulPreset[] = [
       'divindade',
       'god',
       'heaven',
-      'homem',
+      'masculino',
       'líder',
       'mitológico',
       'supreme',
@@ -33046,7 +33046,7 @@ export const presets: SoulPreset[] = [
       'immortal',
       'mitológico',
       'moon',
-      'mulher',
+      'feminino',
       'mythology'
     ],
     source: 'original',
@@ -33565,7 +33565,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'humanity',
       'mitológico',
-      'mulher',
+      'feminino',
       'mythology'
     ],
     source: 'original',
@@ -33912,7 +33912,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'herói',
       'mitológico',
-      'mulher',
+      'feminino',
       'sailor',
       'sea'
     ],
@@ -33997,7 +33997,7 @@ export const presets: SoulPreset[] = [
       'aztec',
       'divindade',
       'god',
-      'homem',
+      'masculino',
       'mesoamerican',
       'mitológico',
       'sun',
@@ -34083,7 +34083,7 @@ export const presets: SoulPreset[] = [
       'aztec',
       'divindade',
       'god',
-      'homem',
+      'masculino',
       'knowledge',
       'mesoamerican',
       'mitológico',
@@ -34170,7 +34170,7 @@ export const presets: SoulPreset[] = [
       'destiny',
       'divindade',
       'god',
-      'homem',
+      'masculino',
       'mesoamerican',
       'mitológico',
       'night'
@@ -34347,7 +34347,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'mesoamerican',
       'mitológico',
-      'mulher',
+      'feminino',
       'sombrio'
     ],
     source: 'original',
@@ -34436,7 +34436,7 @@ export const presets: SoulPreset[] = [
       'love',
       'mesoamerican',
       'mitológico',
-      'mulher'
+      'feminino'
     ],
     source: 'original',
     humor: 70,
@@ -34696,7 +34696,7 @@ export const presets: SoulPreset[] = [
       'goddess',
       'mesoamerican',
       'mitológico',
-      'mulher',
+      'feminino',
       'sombrio'
     ],
     source: 'original',
@@ -34868,7 +34868,7 @@ export const presets: SoulPreset[] = [
       'lifestyle',
       'mesoamerican',
       'mitológico',
-      'mulher',
+      'feminino',
       'rivers',
       'water'
     ],
@@ -35042,7 +35042,7 @@ export const presets: SoulPreset[] = [
       'maguey',
       'mesoamerican',
       'mitológico',
-      'mulher',
+      'feminino',
       'pulque'
     ],
     source: 'original',
@@ -35423,7 +35423,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'katy-perry',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -35512,7 +35512,7 @@ export const presets: SoulPreset[] = [
       'experimental',
       'lady-gaga',
       'lifestyle',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -35697,7 +35697,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'lifestyle',
-      'mulher',
+      'feminino',
       'music',
       'rihanna'
     ],
@@ -35785,7 +35785,7 @@ export const presets: SoulPreset[] = [
       'cantor',
       'celebrity',
       'contemporâneo',
-      'mulher',
+      'feminino',
       'music',
       'saúde'
     ],
@@ -35872,7 +35872,7 @@ export const presets: SoulPreset[] = [
       'cantor',
       'celebrity',
       'contemporâneo',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -35959,7 +35959,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'dua-lipa',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -36130,7 +36130,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'miley-cyrus',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -36214,7 +36214,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'mulher',
+      'feminino',
       'music',
       'shakira'
     ],
@@ -36303,7 +36303,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'educação',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -36389,7 +36389,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'lifestyle',
-      'mulher',
+      'feminino',
       'music',
       'selena-gomez'
     ],
@@ -36474,7 +36474,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'jay-z',
       'music'
     ],
@@ -36562,7 +36562,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'creative',
-      'homem',
+      'masculino',
       'kanye-west',
       'music'
     ],
@@ -36649,7 +36649,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'escrita',
       'escritor',
-      'homem',
+      'masculino',
       'kendrick-lamar',
       'music'
     ],
@@ -36736,7 +36736,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'drake',
       'general',
-      'homem',
+      'masculino',
       'music',
       'security'
     ],
@@ -36821,7 +36821,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'mulher',
+      'feminino',
       'music',
       'nicki-minaj',
       'tecnologia'
@@ -36991,7 +36991,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'lil-wayne',
       'music'
     ],
@@ -37076,7 +37076,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'snoop-dogg'
     ],
@@ -37163,7 +37163,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'eminem',
-      'homem',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -37249,7 +37249,7 @@ export const presets: SoulPreset[] = [
       'cantor',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'lifestyle',
       'lil-nas-x',
       'music',
@@ -37339,7 +37339,7 @@ export const presets: SoulPreset[] = [
       'cantor',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'travis-scott'
     ],
@@ -37427,7 +37427,7 @@ export const presets: SoulPreset[] = [
       'ciência',
       'contemporâneo',
       'megan-thee-stallion',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -37514,7 +37514,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'lizzo',
-      'mulher',
+      'feminino',
       'music',
       'otimista'
     ],
@@ -37603,7 +37603,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'creative',
       'doja-cat',
-      'mulher',
+      'feminino',
       'music',
       'tecnologia'
     ],
@@ -37691,7 +37691,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'filme',
-      'homem',
+      'masculino',
       'music',
       'post-malone'
     ],
@@ -37778,7 +37778,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'ozzy-osbourne',
       'sombrio'
@@ -37952,7 +37952,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'kurt-cobain',
       'music'
     ],
@@ -38042,7 +38042,7 @@ export const presets: SoulPreset[] = [
       'Vocal Genius',
       'cantor',
       'engenharia',
-      'homem'
+      'masculino'
     ],
     customCoreTruths: [
       'A voice is not a gift — it is a responsibility to share with the world.',
@@ -38137,7 +38137,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'jimi-hendrix',
       'music'
     ],
@@ -38223,7 +38223,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'harry-styles',
-      'homem',
+      'masculino',
       'lifestyle',
       'music'
     ],
@@ -38311,7 +38311,7 @@ export const presets: SoulPreset[] = [
       'cantor',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'sam-smith'
     ],
@@ -38397,7 +38397,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'elton-john',
-      'homem',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38481,7 +38481,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'prince'
     ],
@@ -38567,7 +38567,7 @@ export const presets: SoulPreset[] = [
       'bad-bunny',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'lifestyle',
       'music'
     ],
@@ -38741,7 +38741,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'daddy-yankee',
-      'homem',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38913,7 +38913,7 @@ export const presets: SoulPreset[] = [
       'caetano-veloso',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38999,7 +38999,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'gilberto-gil',
-      'homem',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -39087,7 +39087,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'energético',
       'ivete-sangalo',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -39174,7 +39174,7 @@ export const presets: SoulPreset[] = [
       'celebrity',
       'contemporâneo',
       'dolly-parton',
-      'mulher',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -39259,7 +39259,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'johnny-cash',
       'music'
     ],
@@ -39432,7 +39432,7 @@ export const presets: SoulPreset[] = [
       'contemporâneo',
       'david-bowie',
       'ficção',
-      'homem',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -39520,7 +39520,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'tony-bennett'
     ],
@@ -39605,7 +39605,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'stevie-wonder'
     ],
@@ -39694,7 +39694,7 @@ export const presets: SoulPreset[] = [
       'Music Icon',
       'Queen of Soul',
       'Vocal Powerhouse',
-      'mulher'
+      'feminino'
     ],
     customCoreTruths: [
       'Music is not entertainment — it is testimony, it is truth, it is power.',
@@ -39790,7 +39790,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'homem',
+      'masculino',
       'music',
       'ray-charles'
     ],
@@ -39876,7 +39876,7 @@ export const presets: SoulPreset[] = [
       'arte',
       'celebrity',
       'contemporâneo',
-      'mulher',
+      'feminino',
       'music',
       'tina-turner'
     ],
@@ -43037,7 +43037,7 @@ export const presets: SoulPreset[] = [
       'creature',
       'guerreiro',
       'mitológico',
-      'mulher',
+      'feminino',
       'valkyrie'
     ],
     source: 'original',
@@ -45158,7 +45158,7 @@ export const presets: SoulPreset[] = [
       'iara',
       'lifestyle',
       'mitológico',
-      'mulher'
+      'feminino'
     ],
     source: 'original',
     humor: 70,
@@ -45231,7 +45231,7 @@ export const presets: SoulPreset[] = [
       'creature',
       'cuca',
       'mitológico',
-      'mulher',
+      'feminino',
       'sombrio',
       'villain_cold',
       'vilão'

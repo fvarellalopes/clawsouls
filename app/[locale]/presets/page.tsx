@@ -15,7 +15,7 @@ const PRESET_BLACKLIST = new Set(['adolf-hitler'])
 // Category chips for filtering (order matters — grouped by domain)
 const CATEGORY_CHIPS = [
   // Identity
-  "homem", "mulher", "robo", "animal", "divindade",
+  "masculino", "feminino", "robo", "animal", "divindade",
   // Genre
   "ficção", "histórico", "mitológico", "contemporâneo",
   // Personality
