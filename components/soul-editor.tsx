@@ -123,13 +123,14 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
   const [previewFormat, setPreviewFormat] = useState<"soulmd" | "yaml">("soulmd");
   const [activeTab, setActiveTab] = useState("essentials");
 
-  // Load preset from URL slug
+  // Load preset from URL slug — reset soul first to avoid stale data flash
   const { presets } = usePresets();
   useEffect(() => {
     if (!initialPresetSlug) return;
     const target = presets.find((p) => p.id === initialPresetSlug);
     if (target) {
-      // Delay via setTimeout to ensure zustand persist hydration completes first
+      // Reset immediately to clear stale data, then load new preset
+      resetSoul();
       const id = setTimeout(() => loadPreset(target), 0);
       return () => clearTimeout(id);
     }
