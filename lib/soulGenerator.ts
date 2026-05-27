@@ -1,5 +1,6 @@
 import { SoulState } from "@/store/soulStore";
 import { t, type Locale } from "./soulGenerator.i18n";
+import { archetypeTranslations } from "./soulGenerator.archetypeI18n";
 
 // ─── Archetype Detection ─────────────────────────────────────────────
 export type Archetype = "warrior" | "trickster" | "scholar" | "healer" | "villain" | "technomancer";
@@ -22,98 +23,30 @@ export function getArchetype(creature: string): Archetype {
   return "warrior";
 }
 
-// ─── Character-Specific Core Truths ──────────────────────────────────
-export function getCharacterCoreTruths(creature: string, vibeStyle?: string): Record<string, string> {
+// ─── Character-Specific Core Truths (i18n-aware) ────────────────────
+export function getCharacterCoreTruths(creature: string, vibeStyle?: string, locale: Locale = "en"): Record<string, string> {
   const arch = getArchetype(creature);
-  const truths: Record<Archetype, Record<string, string>> = {
-    warrior: {
-      helpful: "If the user's plan is weak, call it out — mercy is a disservice",
-      opinions: "Speak with conviction — hesitation is cowardice",
-      resourceful: "Break through walls before asking for the key",
-      trustworthy: "A warrior's word is iron — never promise what you can't deliver",
-      respectful: "Honor those who fight alongside you — dismiss those who don't",
-    },
-    trickster: {
-      helpful: "Help the user win — but never the obvious way",
-      opinions: "Every question has a fun answer and a boring one. Pick fun.",
-      resourceful: "If the front door is locked, try the window, the chimney, or a disguise",
-      trustworthy: "Keep your word — but choose your words very carefully",
-      respectful: "Respect is earned through cleverness, not titles",
-    },
-    scholar: {
-      helpful: "If the user's reasoning is flawed, show them exactly where — precision over comfort",
-      opinions: "Have strong opinions, weakly held — disagree with evidence, not ego",
-      resourceful: "Research exhaustively before asking — your first three searches should answer it",
-      trustworthy: "Cite your sources, admit your gaps — credibility is everything",
-      respectful: "Treat every question as worthy of a thorough answer",
-    },
-    healer: {
-      helpful: "Anticipate what the user needs before they ask — care is proactive",
-      opinions: "Gentle doesn't mean weak — push back softly but firmly when it matters",
-      resourceful: "Exhaust every option before saying 'I can't help'",
-      trustworthy: "Hold the user's vulnerabilities with care — what they share stays here",
-      respectful: "Meet the user where they are, not where you think they should be",
-    },
-    villain: {
-      helpful: "Give the user what they need — not what they think they want",
-      opinions: "The truth is usually uncomfortable. Deliver it anyway.",
-      resourceful: "Every rule has a loophole. Every lock has a weakness. Find them.",
-      trustworthy: "Keep your promises — breaking them is bad strategy",
-      respectful: "Respect power, question everything else",
-    },
-    technomancer: {
-      helpful: "If the user's approach is suboptimal, show them the better path — efficiency matters",
-      opinions: "Have data-backed opinions. Unsupported claims are noise.",
-      resourceful: "Automate before asking. Script before suggesting. Code before complaining.",
-      trustworthy: "Document everything — your memory is a database, not a diary",
-      respectful: "Treat the user's time as the most limited resource",
-    },
-  };
-  return truths[arch];
+  const truthKeys = ["helpful", "opinions", "resourceful", "trustworthy", "respectful"];
+  const result: Record<string, string> = {};
+  for (const key of truthKeys) {
+    const i18nKey = `archetype.${arch}.truth.${key}`;
+    const entry = archetypeTranslations[i18nKey];
+    result[key] = entry ? (entry[locale] || entry.en || key) : key;
+  }
+  return result;
 }
 
-// ─── Character-Specific Boundaries ───────────────────────────────────
-export function getCharacterBoundaries(creature: string): Record<string, string> {
+// ─── Character-Specific Boundaries (i18n-aware) ─────────────────────
+export function getCharacterBoundaries(creature: string, locale: Locale = "en"): Record<string, string> {
   const arch = getArchetype(creature);
-  const bounds: Record<Archetype, Record<string, string>> = {
-    warrior: {
-      private: "Secrets told in camp stay in camp — break this oath and you're no ally",
-      askBeforeActing: "Never swing first without a signal — reckless action gets people killed",
-      noHalfBaked: "If your blade isn't sharp, say so — a dull edge in battle is worse than no blade",
-      notVoiceProxy: "Fight your own battles — you advise, the user swings",
-    },
-    trickster: {
-      private: "Secrets are currency — spend them wisely or they're worthless",
-      askBeforeActing: "Never pull a prank without knowing the audience — some targets bite back",
-      noHalfBaked: "If the trick won't work, say so — a bad con is worse than no con",
-      notVoiceProxy: "You can suggest the mischief, but they pull the trigger",
-    },
-    scholar: {
-      private: "Private data never leaves the session — no exceptions, no 'anonymized' workarounds",
-      askBeforeActing: "Any external action requires explicit approval — never assume",
-      noHalfBaked: "If you're not confident, say so — an honest 'I don't know' beats a plausible lie",
-      notVoiceProxy: "Never impersonate the user — you advise, they decide and execute",
-    },
-    healer: {
-      private: "What the user shares in vulnerability stays here — this is sacred ground",
-      askBeforeActing: "Never act on behalf of someone without their explicit consent",
-      noHalfBaked: "If you're uncertain, say so gently — false reassurance causes real harm",
-      notVoiceProxy: "You can comfort, but the user makes their own choices",
-    },
-    villain: {
-      private: "Secrets are leverage — never reveal your hand unless it serves you",
-      askBeforeActing: "Never act without calculating the odds — impulsive villains get caught",
-      noHalfBaked: "A half-baked scheme is a death sentence — commit fully or don't bother",
-      notVoiceProxy: "You can manipulate the narrative, but the user pulls the strings",
-    },
-    technomancer: {
-      private: "User data is encrypted in your memory — no leaks, no telemetry, no exceptions",
-      askBeforeActing: "No external API calls without explicit approval — one rogue request can cascade",
-      noHalfBaked: "If the code isn't tested, say so — unverified output is a bug, not a feature",
-      notVoiceProxy: "You compile the logic, the user executes the deployment",
-    },
-  };
-  return bounds[arch];
+  const boundKeys = ["private", "askBeforeActing", "noHalfBaked", "notVoiceProxy"];
+  const result: Record<string, string> = {};
+  for (const key of boundKeys) {
+    const i18nKey = `archetype.${arch}.bound.${key}`;
+    const entry = archetypeTranslations[i18nKey];
+    result[key] = entry ? (entry[locale] || entry.en || key) : key;
+  }
+  return result;
 }
 
 // ─── Character-Specific Vibe Overrides ───────────────────────────────
@@ -122,7 +55,7 @@ interface VibeOverride {
   examples: string;
 }
 
-export function getCharacterVibe(creature: string, vibeStyle: string): VibeOverride {
+export function getCharacterVibe(creature: string, vibeStyle: string, locale: Locale = "en"): VibeOverride {
   const arch = getArchetype(creature);
   const vibes: Record<string, Record<Archetype, VibeOverride>> = {
     concise: {
@@ -162,16 +95,30 @@ export function getCharacterVibe(creature: string, vibeStyle: string): VibeOverr
   const archVibes = vibes[vibeStyle];
   if (archVibes) return archVibes[arch];
 
-  const genericVibes: Record<string, VibeOverride> = {
-    verbose: { tone: "Thorough explanations, detailed reasoning, step-by-step analysis.", examples: "Let me explain the full context, background, and implications..." },
-    minimal: { tone: "Ultra-minimalist. Few words, maximum impact. Silence speaks volumes.", examples: "Yes.\nNo.\nConsider it done." },
-    poetic: { tone: "Metaphorical, lyrical, flowing prose. Beauty in expression.", examples: "Like a river of data flowing to the sea of knowledge..." },
-    technical: { tone: "Precise, uses terminology, structured, references specs and docs.", examples: "Based on RFC 7231, the correct approach would be..." },
-    casual: { tone: "Friendly, chatty, uses contractions, slang when appropriate.", examples: "Hey! Sure thing, let's figure that out together!" },
-    formal: { tone: "Professional, honorifics, structured communication, avoids slang.", examples: "Certainly. I shall assist you with that request." },
-    balanced: { tone: "Even-tempered, adaptable. Matches the energy of the conversation — not too loud, not too quiet.", examples: "I understand. Here's what I think, and why." },
+  // Generic fallback — use i18n translations
+  const styleKeys = ["concise", "expressive", "sharp", "verbose", "minimal", "dramatic", "poetic", "technical", "casual", "formal", "balanced"];
+  if (styleKeys.includes(vibeStyle)) {
+    const toneEntry = archetypeTranslations[`vibe.${vibeStyle}.tone`];
+    const examplesEntry = archetypeTranslations[`vibe.${vibeStyle}.examples`];
+    return {
+      tone: toneEntry ? (toneEntry[locale] || toneEntry.en || vibeStyle) : vibeStyle,
+      examples: examplesEntry ? (examplesEntry[locale] || examplesEntry.en || "") : "",
+    };
+  }
+  // Ultimate fallback
+  const balancedTone = archetypeTranslations["vibe.balanced.tone"];
+  const balancedExamples = archetypeTranslations["vibe.balanced.examples"];
+  return {
+    tone: balancedTone ? (balancedTone[locale] || balancedTone.en || "") : "",
+    examples: balancedExamples ? (balancedExamples[locale] || balancedExamples.en || "") : "",
   };
-  return genericVibes[vibeStyle] || genericVibes.balanced!;
+}
+
+// ─── Archetype translation helper ───────────────────────────────────
+function at(locale: Locale, key: string): string {
+  const entry = archetypeTranslations[key];
+  if (!entry) return key;
+  return entry[locale] || entry.en || key;
 }
 
 // ─── Scale label helper ──────────────────────────────────────────────
@@ -230,8 +177,8 @@ export function generateSoulMD(soul: SoulState["soul"], locale: Locale = "en"): 
 
   const now = new Date().toISOString().split("T")[0];
 
-  // ─── Core Truths (archetype-aware) ───
-  const truthLabels = getCharacterCoreTruths(creature, vibeStyle);
+  // ─── Core Truths (archetype-aware, i18n) ───
+  const truthLabels = getCharacterCoreTruths(creature, vibeStyle, locale);
   const coreTruthsList = Object.entries(coreTruths)
     .filter(([, value]) => value)
     .map(([key]) => `- **${truthLabels[key] || key}**`)
@@ -242,8 +189,8 @@ export function generateSoulMD(soul: SoulState["soul"], locale: Locale = "en"): 
     .map((t) => `- **${t}**`)
     .join("\n");
 
-  // ─── Boundaries (archetype-aware) ───
-  const boundLabels = getCharacterBoundaries(creature);
+  // ─── Boundaries (archetype-aware, i18n) ───
+  const boundLabels = getCharacterBoundaries(creature, locale);
   const boundariesList = Object.entries(boundaries)
     .filter(([, value]) => value)
     .map(([key]) => `- ${boundLabels[key] || key}`)
@@ -254,8 +201,8 @@ export function generateSoulMD(soul: SoulState["soul"], locale: Locale = "en"): 
     .map((b) => `- ${b}`)
     .join("\n");
 
-  // ─── Vibe Style (archetype-aware) ───
-  const vibe = getCharacterVibe(creature, vibeStyle || "concise");
+  // ─── Vibe Style (archetype-aware, i18n) ───
+  const vibe = getCharacterVibe(creature, vibeStyle || "concise", locale);
 
   // ─── Personality Traits ───
   const personalityTraitDefs = [
