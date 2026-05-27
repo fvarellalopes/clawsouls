@@ -121,6 +121,36 @@ function at(locale: Locale, key: string): string {
   return entry[locale] || entry.en || key;
 }
 
+
+// ─── Translate known preset strings (reverse lookup) ────────────────
+// Maps English strings → translation keys for known archetype content
+const KNOWN_EN_TO_KEY: Record<string, string> = {};
+(function buildReverseMap() {
+  for (const [key, entry] of Object.entries(archetypeTranslations)) {
+    if (entry.en) {
+      KNOWN_EN_TO_KEY[entry.en] = key;
+    }
+  }
+})();
+
+function translateKnown(locale: Locale, text: string): string {
+  if (locale === "en") return text;
+  // Try exact match first
+  const key = KNOWN_EN_TO_KEY[text];
+  if (key) {
+    const entry = archetypeTranslations[key];
+    return entry[locale] || text;
+  }
+  // Try trimmed match
+  const trimmed = text.trim();
+  const key2 = KNOWN_EN_TO_KEY[trimmed];
+  if (key2) {
+    const entry = archetypeTranslations[key2];
+    return entry[locale] || text;
+  }
+  return text;
+}
+
 // ─── Scale label helper ──────────────────────────────────────────────
 function getScaleLabel(locale: Locale, value: number): string {
   if (value <= 20) return t(locale, "scale.veryLow");
@@ -282,9 +312,9 @@ export function generateSoulMD(soul: SoulState["soul"], locale: Locale = "en"): 
 
   // ─── Expertise ───
   const expertiseSection = [
-    expertise?.primary ? `**${t(locale, "soul.primaryDomain")}:** ${expertise.primary}` : "",
-    expertise?.fluent ? `**${t(locale, "soul.fluentIn")}:** ${expertise.fluent}` : "",
-    expertise?.defers ? `**${t(locale, "soul.defersToUser")}:** ${expertise.defers}` : "",
+    expertise?.primary ? `**${t(locale, "soul.primaryDomain")}:** ${translateKnown(locale, expertise.primary)}` : "",
+    expertise?.fluent ? `**${t(locale, "soul.fluentIn")}:** ${translateKnown(locale, expertise.fluent)}` : "",
+    expertise?.defers ? `**${t(locale, "soul.defersToUser")}:** ${translateKnown(locale, expertise.defers)}` : "",
   ].filter(Boolean).join("\n");
 
   // ─── Emotional Range ───
@@ -354,11 +384,11 @@ ${emotionalRangeSection}
 ${commModeSection}
 ${domainsList ? `\n## ${t(locale, "soul.knowledgeDomains")}\n\n${domainsList}` : ""}
 ${phrasesList ? `\n## ${t(locale, "soul.signaturePhrases")}\n\n${t(locale, "soul.signaturePhrasesIntro")}\n\n${phrasesList}` : ""}
-${role ? `\n## ${t(locale, "soul.identityRole")}\n\n${t(locale, "soul.identityRoleDesc", { name, role })}\n\n${roleDescription}` : ""}
-${mandateRules?.length ? `\n## ${t(locale, "soul.mandate")}\n${mandateRules.map(r => `- ${r}`).join("\n")}` : ""}
-${voiceRules ? `\n## ${t(locale, "soul.voiceRules")}\n${voiceRules}` : ""}${voicePrivate || voicePublic ? `\n## ${t(locale, "soul.voice")}\n${voicePrivate ? `**${t(locale, "soul.voicePrivate")}:** ${voicePrivate}` : ""}${voicePublic ? `\n**${t(locale, "soul.voicePublic")}:** ${voicePublic}` : ""}` : ""}
-${autonomyAuto || autonomyRequireApproval ? `\n## ${t(locale, "soul.autonomy")}\n${autonomyAuto ? `**${t(locale, "soul.autonomyFull")}:** ${autonomyAuto}` : ""}${autonomyRequireApproval ? `\n**${t(locale, "soul.autonomyApproval")}:** ${autonomyRequireApproval}` : ""}` : ""}
-${worldview ? `\n## ${t(locale, "soul.worldview")}\n\n${worldview}` : ""}
+${role ? `\n## ${t(locale, "soul.identityRole")}\n\n${t(locale, "soul.identityRoleDesc", { name, role: translateKnown(locale, role) })}\n\n${translateKnown(locale, roleDescription)}` : ""}
+${mandateRules?.length ? `\n## ${t(locale, "soul.mandate")}\n${mandateRules.map(r => `- ${translateKnown(locale, r)}`).join("\n")}` : ""}
+${voiceRules ? `\n## ${t(locale, "soul.voiceRules")}\n${translateKnown(locale, voiceRules)}` : ""}${voicePrivate || voicePublic ? `\n## ${t(locale, "soul.voice")}\n${voicePrivate ? `**${t(locale, "soul.voicePrivate")}:** ${translateKnown(locale, voicePrivate)}` : ""}${voicePublic ? `\n**${t(locale, "soul.voicePublic")}:** ${translateKnown(locale, voicePublic)}` : ""}` : ""}
+${autonomyAuto || autonomyRequireApproval ? `\n## ${t(locale, "soul.autonomy")}\n${autonomyAuto ? `**${t(locale, "soul.autonomyFull")}:** ${translateKnown(locale, autonomyAuto)}` : ""}${autonomyRequireApproval ? `\n**${t(locale, "soul.autonomyApproval")}:** ${translateKnown(locale, autonomyRequireApproval)}` : ""}` : ""}
+${worldview ? `\n## ${t(locale, "soul.worldview")}\n\n${translateKnown(locale, worldview)}` : ""}
 ${expertiseSection ? `\n## ${t(locale, "soul.expertise")}\n\n${expertiseSection}` : ""}
 ${memoryPolicy ? `\n## ${t(locale, "soul.memoryPolicy")}\n\n${memoryPolicy}` : ""}
 ${petPeevesList ? `\n## ${t(locale, "soul.petPeeves")}\n\n${petPeevesList}` : ""}
