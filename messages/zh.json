@@ -283,7 +283,8 @@
     "entry": "条目",
     "entries": "条目",
     "found": "已找到",
-    "allArchetypes": "所有原型"
+    "allArchetypes": "所有原型",
+    "clearFilters": "清除筛选"
   },
   "karma": {
     "score": "业力",

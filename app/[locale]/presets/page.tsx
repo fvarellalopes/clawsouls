@@ -8,16 +8,29 @@ import { SoulPreset } from "@/store/soulStore";
 import { useRouter, useParams } from "next/navigation";
 import { useRatingsStore } from "@/store/ratingsStore";
 import { PresetsGridSkeleton } from "@/components/skeletons";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 // Blacklist of preset IDs to filter out
 const PRESET_BLACKLIST = new Set(['adolf-hitler'])
+
+// Category chips for filtering (order matters — grouped by domain)
+const CATEGORY_CHIPS = [
+  // Identity
+  "homem", "mulher", "robo", "animal", "divindade",
+  // Genre
+  "ficção", "histórico", "mitológico", "contemporâneo",
+  // Personality
+  "calmo", "agressivo", "sarcástico", "otimista", "sombrio", "energético",
+  // Use Case
+  "trabalho", "lifestyle", "escrita", "educação",
+  // Domain
+  "tecnologia", "ciência", "arte", "negócios", "saúde", "segurança", "engenharia",
+  // Source
+  "marvel", "dc", "anime", "videogame", "HQ", "filme",
+  // Role
+  "herói", "vilão", "anti-herói", "mentor", "líder", "companheiro",
+  // Profession
+  "cantor", "artista", "escritor", "cientista", "guerreiro",
+];
 
 function getPageSize() {
   if (typeof window === 'undefined') return 50;
@@ -33,7 +46,7 @@ export default function PresetsPage() {
   const [presets, setPresets] = useState<SoulPreset[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [displayCount, setDisplayCount] = useState(() => getPageSize());
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
@@ -80,10 +93,13 @@ export default function PresetsPage() {
     return () => { cancelled = true; };
   }, [locale]);
 
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    presets.forEach((p) => p.tags.forEach((t) => tags.add(t)));
-    return Array.from(tags).sort();
+  // Compute category counts from presets
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const cat of CATEGORY_CHIPS) {
+      counts[cat] = presets.filter(p => p.tags.includes(cat)).length;
+    }
+    return counts;
   }, [presets]);
 
   const filtered = useMemo(() => {
@@ -105,16 +121,19 @@ export default function PresetsPage() {
           p.tags.some((t) => t.toLowerCase().includes(q))
       );
     }
-    if (selectedTag) {
-      result = result.filter((p) => p.tags.includes(selectedTag));
+    // Multi-tag AND filter
+    if (selectedTags.length > 0) {
+      result = result.filter((p) =>
+        selectedTags.every(tag => p.tags.includes(tag))
+      );
     }
     return result;
-  }, [presets, search, selectedTag, presetsMessages]);
+  }, [presets, search, selectedTags, presetsMessages]);
 
   // Reset display count when filters change
   useEffect(() => {
     setDisplayCount(getPageSize());
-  }, [search, selectedTag]);
+  }, [search, selectedTags]);
 
   // Infinite scroll: observe sentinel element
   const loadMore = useCallback(() => {
@@ -147,6 +166,14 @@ export default function PresetsPage() {
     router.push(`/${locale}/editor?preset=${preset.id}`);
   };
 
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  };
+
+  const clearTags = () => setSelectedTags([]);
+
   return (
     <div className="min-h-screen bg-surface-dim">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 flex flex-col gap-10">
@@ -164,9 +191,8 @@ export default function PresetsPage() {
             </p>
           </div>
 
-          {/* Filter & Search */}
+          {/* Search */}
           <div className="flex items-center gap-4 w-full md:w-auto">
-            {/* Search */}
             <div className="relative flex-grow md:flex-grow-0">
               <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xl">
                 search
@@ -184,37 +210,58 @@ export default function PresetsPage() {
                 aria-label={t("searchPlaceholder")}
               />
             </div>
-
-            {/* Filter dropdown */}
-            <div className="relative flex-grow md:flex-grow-0">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xl pointer-events-none z-10">
-                filter_list
-              </span>
-              <Select
-                value={selectedTag || "all"}
-                onValueChange={(value) => setSelectedTag(value === "all" ? null : value)}
-              >
-                <SelectTrigger className="bg-surface-alt/50 backdrop-blur border border-border text-foreground/80 font-mono-data text-mono-data pl-10 pr-8 py-2 rounded focus:border-primary focus:ring-0 w-full md:w-48 h-10 transition-colors">
-                  <SelectValue placeholder={t("allArchetypes")} />
-                </SelectTrigger>
-                <SelectContent className="bg-surface border border-border text-foreground">
-                  <SelectItem value="all">{t("allArchetypes")}</SelectItem>
-                  {allTags.map((tag) => (
-                    <SelectItem key={tag} value={tag}>
-                      {tag.toUpperCase()}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
           </div>
         </section>
+
+        {/* Category Filter Chips */}
+        {!loading && presets.length > 0 && (
+          <section className="flex flex-wrap gap-2 items-center">
+            <span className="material-symbols-outlined text-muted-foreground text-lg mr-1">filter_list</span>
+            {CATEGORY_CHIPS.map((cat) => {
+              const count = categoryCounts[cat] || 0;
+              const active = selectedTags.includes(cat);
+              if (count === 0 && !active) return null;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => toggleTag(cat)}
+                  className={`
+                    inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150
+                    ${active
+                      ? "bg-primary text-primary-container shadow-sm shadow-primary/20"
+                      : "bg-surface-alt/60 text-muted-foreground hover:bg-surface-alt hover:text-foreground border border-border"
+                    }
+                  `}
+                >
+                  <span>{cat}</span>
+                  <span className={`text-[10px] tabular-nums ${active ? "text-primary-container/80" : "text-muted-foreground/60"}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+            {selectedTags.length > 0 && (
+              <button
+                onClick={clearTags}
+                className="inline-flex items-center gap-1 px-2 py-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span className="material-symbols-outlined text-sm">close</span>
+                {t("clearFilters") || "Limpar"}
+              </button>
+            )}
+          </section>
+        )}
 
         {/* Results count */}
         {!loading && (
           <div className="flex items-center justify-between">
             <span className="font-mono-data text-mono-data text-muted-foreground">
               {filtered.length} {filtered.length === 1 ? t("entry") : t("entries")} {t("found")}
+              {selectedTags.length > 0 && (
+                <span className="ml-2 text-primary/70">
+                  ({selectedTags.join(" + ")})
+                </span>
+              )}
             </span>
               <Link
                 href="/"
@@ -269,6 +316,14 @@ export default function PresetsPage() {
                 ? t("noPresetsFoundSearch", { query: search })
                 : t("noPresetsFound")}
             </p>
+            {selectedTags.length > 0 && (
+              <button
+                onClick={clearTags}
+                className="mt-4 text-sm text-primary hover:text-primary-container transition-colors underline"
+              >
+                {t("clearFilters") || "Limpar filtros"}
+              </button>
+            )}
           </div>
         )}
       </div>

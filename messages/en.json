@@ -283,7 +283,8 @@
     "allArchetypes": "ALL ARCHETYPES",
     "found": "FOUND",
     "entry": "ENTRY",
-    "entries": "ENTRIES"
+    "entries": "ENTRIES",
+    "clearFilters": "Clear filters"
   },
   "karma": {
     "score": "Karma",

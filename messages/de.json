@@ -283,7 +283,8 @@
     "entry": "ERGEBNIS",
     "entries": "ERGEBNISSE",
     "found": "GEFUNDEN",
-    "allArchetypes": "ALLE ARCHETYPEN"
+    "allArchetypes": "ALLE ARCHETYPEN",
+    "clearFilters": "Filter löschen"
   },
   "home": {
     "heroTitle": "Erschaffe die Seele deiner KI",

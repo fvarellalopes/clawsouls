@@ -283,7 +283,8 @@
     "entry": "件",
     "entries": "件",
     "found": "見つかりました",
-    "allArchetypes": "すべてのアーキタイプ"
+    "allArchetypes": "すべてのアーキタイプ",
+    "clearFilters": "フィルターをクリア"
   },
   "karma": {
     "score": "カルマ",

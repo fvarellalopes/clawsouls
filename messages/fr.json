@@ -283,7 +283,8 @@
     "entry": "RÉSULTAT",
     "entries": "RÉSULTATS",
     "found": "TROUVÉS",
-    "allArchetypes": "TOUS LES ARCHÉTYPES"
+    "allArchetypes": "TOUS LES ARCHÉTYPES",
+    "clearFilters": "Effacer les filtres"
   },
   "home": {
     "heroTitle": "Créez l'Âme de votre IA",

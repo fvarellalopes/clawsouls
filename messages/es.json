@@ -283,7 +283,8 @@
     "entry": "RESULTADO",
     "entries": "RESULTADOS",
     "found": "ENCONTRADOS",
-    "allArchetypes": "TODOS LOS ARQUETIPOS"
+    "allArchetypes": "TODOS LOS ARQUETIPOS",
+    "clearFilters": "Limpiar filtros"
   },
   "home": {
     "heroTitle": "Crea el Alma de tu AI",
