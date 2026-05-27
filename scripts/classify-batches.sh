@@ -3,7 +3,7 @@
 # Each batch: 10 characters, saves to /tmp/llm_batch_N.json
 
 GATEWAY="https://opengateway.gitlawb.com/v1/chat/completions"
-TOKEN="ogw_live_bb78b31dc2f4d145ea80d450508d9765"
+TOKEN="${GATEWAY_TOKEN}"
 RESULTS_DIR="/tmp/llm_batches"
 mkdir -p "$RESULTS_DIR"
 

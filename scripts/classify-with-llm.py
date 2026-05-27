@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Classify ALL 509 ClawSouls presets via LLM gateway."""
-import json, urllib.request, sys, time, re
+import json, os, urllib.request, sys, time, re
 
 GATEWAY = "https://opengateway.gitlawb.com/v1/chat/completions"
-TOKEN = "ogw_live_bb78b31dc2f4d145ea80d450508d9765"
+TOKEN = os.environ.get("GATEWAY_TOKEN", "")
 
 CATEGORIES = [
     "masculino", "feminino", "robo", "animal", "divindade",

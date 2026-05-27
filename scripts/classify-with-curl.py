@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Classify presets via gateway using curl subprocess (more reliable than urllib)."""
-import json, subprocess, re, sys, time, os
+import json, os, subprocess, re, sys, time, os
 
 GATEWAY = "https://opengateway.gitlawb.com/v1/chat/completions"
-TOKEN = "ogw_live_bb78b31dc2f4d145ea80d450508d9765"
+TOKEN = os.environ.get("GATEWAY_TOKEN", "")
 RESULTS_FILE = "/tmp/llm_classifications.json"
 
 CATEGORIES = ["masculino","feminino","robo","animal","divindade","ficção","histórico","mitológico","contemporâneo","calmo","agressivo","sarcástico","otimista","sombrio","energético","trabalho","lifestyle","escrita","educação","tecnologia","ciência","arte","negócios","saúde","segurança","engenharia","marvel","dc","anime","videogame","HQ","filme","herói","vilão","anti-herói","mentor","líder","companheiro","cantor","artista","escritor","cientista","guerreiro"]
