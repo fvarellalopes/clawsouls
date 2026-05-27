@@ -59,7 +59,7 @@ function applyTranslation(preset: any, translation: any): any {
     description: translation.description || preset.description,
     creature: translation.creature || preset.creature,
     vibe: translation.vibe || preset.vibe,
-    tags: translation.tags || preset.tags,
+    tags: preset.tags, // Don't override tags from translations — categories are managed separately
     // Keep original values for reference
     _original: {
       name: preset.name,
