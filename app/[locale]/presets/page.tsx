@@ -226,10 +226,10 @@ export default function PresetsPage() {
                   key={cat}
                   onClick={() => toggleTag(cat)}
                   className={`
-                    inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150
+                    inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 border
                     ${active
-                      ? "bg-primary text-surface-dim shadow-sm shadow-primary/20"
-                      : "bg-surface-alt/60 text-muted-foreground hover:bg-surface-alt hover:text-foreground border border-border"
+                      ? "bg-primary text-surface-dim border-primary shadow-sm shadow-primary/20"
+                      : "bg-surface-alt/60 text-muted-foreground border-border hover:bg-surface-alt hover:text-foreground"
                     }
                   `}
                 >
