@@ -272,18 +272,18 @@
     "load": "Charger le Preset",
     "description": "Sélectionnez un preset pour charger son profil complet",
     "backToEditor": "Retour à l'Éditeur",
-    "backToHome": "BACK TO HOME",
+    "backToHome": "RETOUR À L'ACCUEIL",
     "searchPlaceholder": "Rechercher des presets...",
     "allCreatures": "Toutes les créatures",
     "loading": "Chargement...",
     "all": "Tous",
     "noPresetsFound": "Aucun preset trouvé",
     "noPresetsFoundSearch": "Aucun preset trouvé pour \"{query}\"",
-    "directory": "Global Directory",
-    "entry": "ENTRY",
-    "entries": "ENTRIES",
-    "found": "FOUND",
-    "allArchetypes": "ALL ARCHETYPES"
+    "directory": "RÉPERTOIRE GLOBAL",
+    "entry": "RÉSULTAT",
+    "entries": "RÉSULTATS",
+    "found": "TROUVÉS",
+    "allArchetypes": "TOUS LES ARCHÉTYPES"
   },
   "home": {
     "heroTitle": "Créez l'Âme de votre IA",
@@ -1104,5 +1104,9 @@
     "bestPractices": "Bonnes Pratiques",
     "scanStages": "Étapes du Scan",
     "howItWorks": "Comment Fonctionne SoulGate"
+  },
+  "attributes": {
+    "consciousness": "CONSCIENCE",
+    "questioning": "QUESTIONNEMENT"
   }
 }

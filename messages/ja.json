@@ -272,18 +272,18 @@
     "load": "プリセットをロード",
     "description": "プリセットを選択して完全なプロフィールをロード",
     "backToEditor": "エディターに戻る",
-    "backToHome": "BACK TO HOME",
+    "backToHome": "ホームに戻る",
     "searchPlaceholder": "プリセットを検索...",
     "allCreatures": "すべてのクリーチャー",
     "loading": "読み込み中...",
     "all": "すべて",
     "noPresetsFound": "プリセットが見つかりません",
     "noPresetsFoundSearch": "\"{query}\" に該当するプリセットが見つかりません",
-    "directory": "Global Directory",
-    "entry": "ENTRY",
-    "entries": "ENTRIES",
-    "found": "FOUND",
-    "allArchetypes": "ALL ARCHETYPES"
+    "directory": "グローバルディレクトリ",
+    "entry": "件",
+    "entries": "件",
+    "found": "見つかりました",
+    "allArchetypes": "すべてのアーキタイプ"
   },
   "karma": {
     "score": "カルマ",
@@ -3791,5 +3791,9 @@
     "bestPractices": "ベストプラクティス",
     "scanStages": "スキャン段階",
     "howItWorks": "SoulGateの仕組み"
+  },
+  "attributes": {
+    "consciousness": "意識",
+    "questioning": "質問"
   }
 }

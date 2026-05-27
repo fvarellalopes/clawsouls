@@ -272,18 +272,18 @@
     "load": "Cargar Preset",
     "description": "Selecciona un preset para cargar su perfil completo",
     "backToEditor": "Volver al Editor",
-    "backToHome": "BACK TO HOME",
+    "backToHome": "VOLVER AL INICIO",
     "searchPlaceholder": "Buscar presets...",
     "allCreatures": "Todas las criaturas",
     "loading": "Cargando...",
     "all": "Todos",
     "noPresetsFound": "No se encontraron presets",
     "noPresetsFoundSearch": "No se encontraron presets para \"{query}\"",
-    "directory": "Global Directory",
-    "entry": "ENTRY",
-    "entries": "ENTRIES",
-    "found": "FOUND",
-    "allArchetypes": "ALL ARCHETYPES"
+    "directory": "DIRECTORIO GLOBAL",
+    "entry": "RESULTADO",
+    "entries": "RESULTADOS",
+    "found": "ENCONTRADOS",
+    "allArchetypes": "TODOS LOS ARQUETIPOS"
   },
   "home": {
     "heroTitle": "Crea el Alma de tu AI",
@@ -1109,5 +1109,9 @@
     "bestPractices": "Buenas Prácticas",
     "scanStages": "Etapas del Escaneo",
     "howItWorks": "Cómo Funciona SoulGate"
+  },
+  "attributes": {
+    "consciousness": "CONCIENCIA",
+    "questioning": "CUESTIONAMIENTO"
   }
 }

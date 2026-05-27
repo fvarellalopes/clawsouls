@@ -272,18 +272,18 @@
     "load": "加载预设",
     "description": "选择一个预设以加载其完整人格配置",
     "backToEditor": "返回编辑器",
-    "backToHome": "BACK TO HOME",
+    "backToHome": "返回首页",
     "searchPlaceholder": "搜索预设...",
     "allCreatures": "所有类型",
     "loading": "加载中...",
     "all": "全部",
     "noPresetsFound": "未找到预设",
     "noPresetsFoundSearch": "未找到 \"{query}\" 相关预设",
-    "directory": "Global Directory",
-    "entry": "ENTRY",
-    "entries": "ENTRIES",
-    "found": "FOUND",
-    "allArchetypes": "ALL ARCHETYPES"
+    "directory": "全局目录",
+    "entry": "条目",
+    "entries": "条目",
+    "found": "已找到",
+    "allArchetypes": "所有原型"
   },
   "karma": {
     "score": "业力",
@@ -3791,5 +3791,9 @@
     "bestPractices": "最佳实践",
     "scanStages": "扫描阶段",
     "howItWorks": "SoulGate 工作原理"
+  },
+  "attributes": {
+    "consciousness": "意识",
+    "questioning": "质疑"
   }
 }

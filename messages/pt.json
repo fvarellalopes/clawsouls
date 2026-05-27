@@ -271,18 +271,18 @@
     "subtitle": "Comece com um personagem famoso ou crie o seu próprio",
     "load": "Carregar Preset",
     "description": "Selecione um preset para carregar seu perfil completo",
-    "backToHome": "BACK TO HOME",
+    "backToHome": "VOLTAR AO INÍCIO",
     "searchPlaceholder": "Buscar presets...",
     "allCreatures": "Todos os tipos",
     "loading": "Carregando...",
     "noPresetsFound": "Nenhum preset encontrado",
     "noPresetsFoundSearch": "Nenhum preset encontrado para \"{query}\"",
     "all": "Todos",
-    "directory": "Global Directory",
-    "entry": "ENTRY",
-    "entries": "ENTRIES",
-    "found": "FOUND",
-    "allArchetypes": "ALL ARCHETYPES",
+    "directory": "DIRETÓRIO GLOBAL",
+    "entry": "RESULTADO",
+    "entries": "RESULTADOS",
+    "found": "ENCONTRADOS",
+    "allArchetypes": "TODOS OS ARQUÉTIPOS",
     "backToEditor": "Voltar ao Editor"
   },
   "home": {
@@ -1116,5 +1116,9 @@
     "bestPractices": "Boas Práticas",
     "scanStages": "Etapas do Scan",
     "howItWorks": "Como o SoulGate Funciona"
+  },
+  "attributes": {
+    "consciousness": "CONSCIÊNCIA",
+    "questioning": "QUESTIONAMENTO"
   }
 }
