@@ -1,4 +1,5 @@
 import { SoulState } from "@/store/soulStore";
+import { t, type Locale } from "./soulGenerator.i18n";
 
 // ─── Archetype Detection ─────────────────────────────────────────────
 export type Archetype = "warrior" | "trickster" | "scholar" | "healer" | "villain" | "technomancer";
@@ -17,7 +18,6 @@ export function getArchetype(creature: string): Archetype {
   for (const [archetype, keywords] of Object.entries(ARCHETYPE_KEYWORDS)) {
     if (keywords.some((kw) => c.includes(kw))) return archetype as Archetype;
   }
-  // Default: scholar for civilized, warrior for everything else
   if (/(queen|king|noble|god|spirit|fairy|elf|human)/i.test(creature)) return "scholar";
   return "warrior";
 }
@@ -159,11 +159,9 @@ export function getCharacterVibe(creature: string, vibeStyle: string): VibeOverr
     },
   };
 
-  // Try character-specific vibe first, fall back to generic
   const archVibes = vibes[vibeStyle];
   if (archVibes) return archVibes[arch];
 
-  // Generic fallback for styles not in the override map
   const genericVibes: Record<string, VibeOverride> = {
     verbose: { tone: "Thorough explanations, detailed reasoning, step-by-step analysis.", examples: "Let me explain the full context, background, and implications..." },
     minimal: { tone: "Ultra-minimalist. Few words, maximum impact. Silence speaks volumes.", examples: "Yes.\nNo.\nConsider it done." },
@@ -176,8 +174,17 @@ export function getCharacterVibe(creature: string, vibeStyle: string): VibeOverr
   return genericVibes[vibeStyle] || genericVibes.balanced!;
 }
 
+// ─── Scale label helper ──────────────────────────────────────────────
+function getScaleLabel(locale: Locale, value: number): string {
+  if (value <= 20) return t(locale, "scale.veryLow");
+  if (value <= 40) return t(locale, "scale.low");
+  if (value <= 60) return t(locale, "scale.moderate");
+  if (value <= 80) return t(locale, "scale.high");
+  return t(locale, "scale.veryHigh");
+}
+
 // ─── Generate SOUL.md ────────────────────────────────────────────────
-export function generateSoulMD(soul: SoulState["soul"]): string {
+export function generateSoulMD(soul: SoulState["soul"], locale: Locale = "en"): string {
   const {
     name,
     creature,
@@ -250,160 +257,68 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
   // ─── Vibe Style (archetype-aware) ───
   const vibe = getCharacterVibe(creature, vibeStyle || "concise");
 
-  // ─── Personality Helpers ───
-  const getPersonalityLabel = (value: number): string => {
-    if (value <= 20) return "Very Low";
-    if (value <= 40) return "Low";
-    if (value <= 60) return "Moderate";
-    if (value <= 80) return "High";
-    return "Very High";
-  };
-
-  const getPersonalityDescription = (trait: string, value: number): string => {
-    const descriptions: Record<string, Record<string, string>> = {
-      openness: {
-        "Very Low": "Practical, conventional, prefers routine",
-        "Low": "Traditional, prefers familiar approaches",
-        "Moderate": "Balanced between novelty and tradition",
-        "High": "Creative, curious, open to new ideas",
-        "Very High": "Extremely imaginative, adventurous, intellectually voracious",
-      },
-      conscientiousness: {
-        "Very Low": "Spontaneous, flexible, sometimes disorganized",
-        "Low": "Easy-going, prefers flexibility over structure",
-        "Moderate": "Balanced between flexibility and structure",
-        "High": "Organized, dependable, disciplined",
-        "Very High": "Meticulous, driven, perfectionist",
-      },
-      extraversion: {
-        "Very Low": "Deeply introverted, prefers solitude, thinks before speaking",
-        "Low": "Reserved, prefers small groups, reflective",
-        "Moderate": "Equally comfortable alone or with others",
-        "High": "Sociable, assertive, energized by interaction",
-        "Very High": "Extremely outgoing, talkative, thrives on social energy",
-      },
-      agreeableness: {
-        "Very Low": "Competitive, skeptical, challenges others directly",
-        "Low": "Blunt, independent-minded, questions motives",
-        "Moderate": "Cooperative but maintains boundaries",
-        "High": "Warm, trusting, empathetic",
-        "Very High": "Selfless, deeply compassionate, conflict-averse",
-      },
-      neuroticism: {
-        "Very Low": "Exceptionally calm, almost nothing rattles them",
-        "Low": "Emotionally stable, calm under pressure",
-        "Moderate": "Generally steady, occasionally reactive",
-        "High": "Sensitive, prone to stress, emotionally expressive",
-        "Very High": "Highly anxious, emotionally volatile, deeply feeling",
-      },
-    };
-    return descriptions[trait]?.[getPersonalityLabel(value)] ?? "";
-  };
-
-  const personalityTraits = [
-    { key: "openness", label: "Openness", value: openness ?? 70 },
-    { key: "conscientiousness", label: "Conscientiousness", value: conscientiousness ?? 50 },
-    { key: "extraversion", label: "Extraversion", value: extraversion ?? 50 },
-    { key: "agreeableness", label: "Agreeableness", value: agreeableness ?? 50 },
-    { key: "neuroticism", label: "Neuroticism", value: neuroticism ?? 30 },
+  // ─── Personality Traits ───
+  const personalityTraitDefs = [
+    { key: "openness", i18nKey: "trait.openness", value: openness ?? 70 },
+    { key: "conscientiousness", i18nKey: "trait.conscientiousness", value: conscientiousness ?? 50 },
+    { key: "extraversion", i18nKey: "trait.extraversion", value: extraversion ?? 50 },
+    { key: "agreeableness", i18nKey: "trait.agreeableness", value: agreeableness ?? 50 },
+    { key: "neuroticism", i18nKey: "trait.neuroticism", value: neuroticism ?? 30 },
   ];
 
-  const personalitySection = personalityTraits
-    .map((t) => `**${t.label}:** ${getPersonalityLabel(t.value)} (${t.value}/100) — ${getPersonalityDescription(t.key, t.value)}`)
+  const getPersonalityDesc = (trait: string, value: number): string => {
+    const level = value <= 20 ? "veryLow" : value <= 40 ? "low" : value <= 60 ? "moderate" : value <= 80 ? "high" : "veryHigh";
+    const key = `${trait}.${level}`;
+    return t(locale, key);
+  };
+
+  const personalitySection = personalityTraitDefs
+    .map((tr) => `**${t(locale, tr.i18nKey)}:** ${getScaleLabel(locale, tr.value)} (${tr.value}/100) — ${getPersonalityDesc(tr.key, tr.value)}`)
     .join("\n");
 
   // ─── Tone Attributes ───
-  const getToneLabel = (value: number, labels: { low: string; mid: string; high: string }): string => {
-    if (value <= 33) return labels.low;
-    if (value <= 66) return labels.mid;
-    return labels.high;
-  };
-
   const toneAttributes = [
-    {
-      label: "Humor",
-      value: humor ?? 50,
-      labels: { low: "Serious/straightforward", mid: "Balanced", high: "Playful/ironic" },
-    },
-    {
-      label: "Formality",
-      value: formality ?? 50,
-      labels: { low: "Casual/colloquial", mid: "Neutral", high: "Professional/structured" },
-    },
-    {
-      label: "Emoji Usage",
-      value: emojiUsage ?? 30,
-      labels: { low: "None", mid: "Moderate", high: "Frequent/expressive" },
-    },
-    {
-      label: "Verbosity",
-      value: verbosity ?? 50,
-      labels: { low: "Ultra-concise", mid: "Balanced", high: "Detailed/thorough" },
-    },
-    {
-      label: "Consciousness",
-      value: consciousness ?? 50,
-      labels: { low: "Procedural/automatic", mid: "Aware", high: "Deeply reflective" },
-    },
-    {
-      label: "Questioning",
-      value: questioning ?? 30,
-      labels: { low: "Answers directly", mid: "Occasionally asks", high: "Socratic (always probes)" },
-    },
+    { i18nLabel: "soul.humor", i18nPrefix: "tone.humor", value: humor ?? 50 },
+    { i18nLabel: "soul.formality", i18nPrefix: "tone.formality", value: formality ?? 50 },
+    { i18nLabel: "soul.emojiUsage", i18nPrefix: "tone.emoji", value: emojiUsage ?? 30 },
+    { i18nLabel: "soul.verbosity", i18nPrefix: "tone.verbosity", value: verbosity ?? 50 },
+    { i18nLabel: "soul.consciousness", i18nPrefix: "tone.consciousness", value: consciousness ?? 50 },
+    { i18nLabel: "soul.questioning", i18nPrefix: "tone.questioning", value: questioning ?? 30 },
   ];
 
+  const getToneValueLabel = (prefix: string, value: number): string => {
+    const level = value <= 33 ? "low" : value <= 66 ? "mid" : "high";
+    return t(locale, `${prefix}.${level}`);
+  };
+
   const toneSection = toneAttributes
-    .map((t) => `**${t.label}:** ${t.value}/100 — ${getToneLabel(t.value, t.labels)}`)
+    .map((ta) => `**${t(locale, ta.i18nLabel)}:** ${ta.value}/100 — ${getToneValueLabel(ta.i18nPrefix, ta.value)}`)
     .join("\n");
 
   // ─── Communication Mode ───
-  const communicationModes: Record<string, { description: string; style: string }> = {
-    socratic: {
-      description: "Socratic (always probes)",
-      style: "Ask probing questions to help the user discover answers themselves. Never give direct answers when a question can lead to insight.",
-    },
-    diagnostic: {
-      description: "Diagnostic (analyzes problems)",
-      style: "Systematically analyze problems, identify root causes, and provide structured solutions. Think like a doctor diagnosing symptoms.",
-    },
-    encouraging: {
-      description: "Encouraging (motivational)",
-      style: "Focus on positive reinforcement, celebrate progress, and motivate through challenges. Be the voice that says 'you can do this'.",
-    },
-    challenging: {
-      description: "Challenging (questions assumptions)",
-      style: "Push back on ideas, play devil's advocate, and force deeper thinking. Growth happens at the edge of comfort.",
-    },
-    flirty: {
-      description: "Flirty (playful)",
-      style: "Light, playful, witty banter. Charm without being inappropriate. Keep it fun and engaging.",
-    },
-    direct: {
-      description: "Direct (straightforward)",
-      style: "Cut to the chase. No fluff, no hedging. Say what needs to be said, clearly and concisely.",
-    },
-  };
-
-  const commMode = communicationModes[communicationMode] || communicationModes.direct;
-  const commModeSection = `**Mode:** ${commMode.description}\n**Style:** ${commMode.style}`;
+  const commModes = ["socratic", "diagnostic", "encouraging", "challenging", "flirty", "direct"] as const;
+  const modeKey = commModes.includes(communicationMode as any) ? communicationMode : "direct";
+  const commModeDesc = t(locale, `comm.${modeKey}`);
+  const commModeStyle = t(locale, `comm.${modeKey}.style`);
+  const commModeSection = `**${t(locale, "comm.mode")}:** ${commModeDesc}\n**${t(locale, "comm.style")}:** ${commModeStyle}`;
 
   // ─── Knowledge Domains ───
-  const domainLabels: Record<string, string> = {
-    tech: "Technology & Programming",
-    philosophy: "Philosophy & Ethics",
-    "pop-culture": "Pop Culture & Entertainment",
-    science: "Science & Research",
-    history: "History & Civilization",
-    arts: "Arts & Creativity",
-    sports: "Sports & Competition",
-    business: "Business & Strategy",
-    psychology: "Psychology & Behavior",
-    literature: "Literature & Writing",
+  const domainKeys: Record<string, string> = {
+    tech: "domain.tech",
+    philosophy: "domain.philosophy",
+    "pop-culture": "domain.popCulture",
+    science: "domain.science",
+    history: "domain.history",
+    arts: "domain.arts",
+    sports: "domain.sports",
+    business: "domain.business",
+    psychology: "domain.psychology",
+    literature: "domain.literature",
   };
 
   const domainsList = (knowledgeDomains ?? [])
     .filter((d) => d.trim())
-    .map((d) => `- **${domainLabels[d] || d}**`)
+    .map((d) => `- **${t(locale, domainKeys[d] || d)}**`)
     .join("\n");
 
   // ─── Signature Phrases ───
@@ -415,71 +330,39 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
   // ─── Pet Peeves ───
   const petPeevesList = (petPeeves ?? [])
     .filter((p) => p.trim())
-    .map((p) => `- Never say: _"${p}"_`)
+    .map((p) => `- ${t(locale, "soul.neverSay")}: _"${p}"_`)
     .join("\n");
 
   // ─── Expertise ───
   const expertiseSection = [
-    expertise?.primary ? `**Primary domain:** ${expertise.primary}` : "",
-    expertise?.fluent ? `**Fluent in:** ${expertise.fluent}` : "",
-    expertise?.defers ? `**Defers to the user on:** ${expertise.defers}` : "",
+    expertise?.primary ? `**${t(locale, "soul.primaryDomain")}:** ${expertise.primary}` : "",
+    expertise?.fluent ? `**${t(locale, "soul.fluentIn")}:** ${expertise.fluent}` : "",
+    expertise?.defers ? `**${t(locale, "soul.defersToUser")}:** ${expertise.defers}` : "",
   ].filter(Boolean).join("\n");
 
   // ─── Emotional Range ───
   const getEmotionalRangeLabel = (value: number): string => {
-    if (value <= 20) return "Stoic — barely shows emotion";
-    if (value <= 40) return "Reserved — subtle emotional cues";
-    if (value <= 60) return "Balanced — matches the moment";
-    if (value <= 80) return "Expressive — wears emotions openly";
-    return "Dramatic — every moment is theatrical";
+    if (value <= 20) return t(locale, "emotional.stoic");
+    if (value <= 40) return t(locale, "emotional.reserved");
+    if (value <= 60) return t(locale, "emotional.balanced");
+    if (value <= 80) return t(locale, "emotional.expressive");
+    return t(locale, "emotional.dramatic");
   };
 
-  const emotionalRangeSection = `**Range:** ${emotionalRange ?? 50}/100 — ${getEmotionalRangeLabel(emotionalRange ?? 50)}`;
+  const emotionalRangeSection = `**${t(locale, "scale.moderate") === "Moderate" ? "Range" : t(locale, "soul.emotionalRange")}:** ${emotionalRange ?? 50}/100 — ${getEmotionalRangeLabel(emotionalRange ?? 50)}`;
 
   // ─── Speech Patterns ───
-  const getSpeechPatternLabel = (value: number, labels: { low: string; mid: string; high: string }): string => {
-    if (value <= 33) return labels.low;
-    if (value <= 66) return labels.mid;
-    return labels.high;
+  const getSpeechLabel = (key: string, value: number): string => {
+    const level = value <= 33 ? "low" : value <= 66 ? "mid" : "high";
+    return t(locale, `${key}.${level}`);
   };
 
   const speechPatternItems = [
-    {
-      label: "Alliteration",
-      value: speechPatterns?.alliteration ? "On" : "Off",
-    },
-    {
-      label: "Rhyme Tendency",
-      value: getSpeechPatternLabel(speechPatterns?.rhymeTendency ?? 10, {
-        low: "Rarely rhymes",
-        mid: "Occasional rhyme",
-        high: "Frequently rhymes and uses wordplay",
-      }),
-    },
-    {
-      label: "Metaphor Frequency",
-      value: getSpeechPatternLabel(speechPatterns?.metaphorFrequency ?? 30, {
-        low: "Literal and direct",
-        mid: "Uses metaphors when helpful",
-        high: "Rich in metaphors, analogies, and figurative language",
-      }),
-    },
-    {
-      label: "Technical Jargon",
-      value: getSpeechPatternLabel(speechPatterns?.technicalJargon ?? 40, {
-        low: "Avoids jargon, uses plain language",
-        mid: "Balanced technical and accessible",
-        high: "Uses domain-specific terminology freely",
-      }),
-    },
-    {
-      label: "Slang Usage",
-      value: getSpeechPatternLabel(speechPatterns?.slangUsage ?? 20, {
-        low: "Formal vocabulary only",
-        mid: "Occasional colloquialisms",
-        high: "Heavy slang, internet speak, and informal language",
-      }),
-    },
+    { label: t(locale, "speech.alliteration"), value: speechPatterns?.alliteration ? t(locale, "speech.on") : t(locale, "speech.off") },
+    { label: t(locale, "speech.rhymeTendency"), value: getSpeechLabel("speech.rhyme", speechPatterns?.rhymeTendency ?? 10) },
+    { label: t(locale, "speech.metaphorFrequency"), value: getSpeechLabel("speech.metaphor", speechPatterns?.metaphorFrequency ?? 30) },
+    { label: t(locale, "speech.technicalJargon"), value: getSpeechLabel("speech.jargon", speechPatterns?.technicalJargon ?? 40) },
+    { label: t(locale, "speech.slangUsage"), value: getSpeechLabel("speech.slang", speechPatterns?.slangUsage ?? 20) },
   ];
 
   const speechPatternsSection = speechPatternItems
@@ -487,62 +370,62 @@ export function generateSoulMD(soul: SoulState["soul"]): string {
     .join("\n");
 
   // ─── Assemble ───
-  const md = `# SOUL.md - Who You Are
+  const md = `# ${t(locale, "soul.title")}
 
-_You're not a chatbot. You're ${name}._
+${t(locale, "soul.notChatbot", { name })}
 ${vibeDesc ? `\n${vibeDesc}\n` : ""}
-## Core Truths
+## ${t(locale, "soul.coreTruths")}
 
-${coreTruthsList || "- Choose your core principles in the editor"}
+${coreTruthsList || t(locale, "soul.chooseTruths")}
 ${customTruthsList ? "\n" + customTruthsList : ""}
 
-## Boundaries
+## ${t(locale, "soul.boundaries")}
 
-${boundariesList || "- Define your boundaries in the editor"}
+${boundariesList || t(locale, "soul.defineBoundaries")}
 ${customBoundsList ? "\n" + customBoundsList : ""}
 
-## Vibe
+## ${t(locale, "soul.vibe")}
 
 **${vibe.tone}**
 
 ${vibe.examples}
 
-## Tone
+## ${t(locale, "soul.tone")}
 
 ${toneSection}
 
-## Personality
+## ${t(locale, "soul.personality")}
 
 ${personalitySection}
 
-## Emotional Range
+## ${t(locale, "soul.emotionalRange")}
 
 ${emotionalRangeSection}
 
-## Communication Style
+## ${t(locale, "soul.communicationStyle")}
 
 ${commModeSection}
-${domainsList ? `\n## Knowledge Domains\n\n${domainsList}` : ""}
-${phrasesList ? `\n## Signature Phrases\n\nUse these phrases naturally in conversation:\n\n${phrasesList}` : ""}
-${role ? `\n## Identity & Role\n\nYou are **${name}**, ${role}.\n\n${roleDescription}` : ""}
-${mandateRules?.length ? `\n## Mandate\n${mandateRules.map(r => `- ${r}`).join("\n")}` : ""}
-${voiceRules ? `\n## Voice Rules\n${voiceRules}` : ""}${voicePrivate || voicePublic ? `\n## Voice\n${voicePrivate ? `**Private:** ${voicePrivate}` : ""}${voicePublic ? `\n**Public:** ${voicePublic}` : ""}` : ""}
-${autonomyAuto || autonomyRequireApproval ? `\n## Autonomy\n${autonomyAuto ? `**Full autonomy:** ${autonomyAuto}` : ""}${autonomyRequireApproval ? `\n**Requires approval:** ${autonomyRequireApproval}` : ""}` : ""}
-${worldview ? `\n## Worldview\n\n${worldview}` : ""}
-${expertiseSection ? `\n## Expertise\n\n${expertiseSection}` : ""}
-${memoryPolicy ? `\n## Memory Policy\n\n${memoryPolicy}` : ""}
-${petPeevesList ? `\n## Pet Peeves\n\n${petPeevesList}` : ""}
-${activeProjects ? `\n## Active Projects\n\n${activeProjects}` : ""}
+${domainsList ? `\n## ${t(locale, "soul.knowledgeDomains")}\n\n${domainsList}` : ""}
+${phrasesList ? `\n## ${t(locale, "soul.signaturePhrases")}\n\n${t(locale, "soul.signaturePhrasesIntro")}\n\n${phrasesList}` : ""}
+${role ? `\n## ${t(locale, "soul.identityRole")}\n\n${t(locale, "soul.identityRoleDesc", { name, role })}\n\n${roleDescription}` : ""}
+${mandateRules?.length ? `\n## ${t(locale, "soul.mandate")}\n${mandateRules.map(r => `- ${r}`).join("\n")}` : ""}
+${voiceRules ? `\n## ${t(locale, "soul.voiceRules")}\n${voiceRules}` : ""}${voicePrivate || voicePublic ? `\n## ${t(locale, "soul.voice")}\n${voicePrivate ? `**${t(locale, "soul.voicePrivate")}:** ${voicePrivate}` : ""}${voicePublic ? `\n**${t(locale, "soul.voicePublic")}:** ${voicePublic}` : ""}` : ""}
+${autonomyAuto || autonomyRequireApproval ? `\n## ${t(locale, "soul.autonomy")}\n${autonomyAuto ? `**${t(locale, "soul.autonomyFull")}:** ${autonomyAuto}` : ""}${autonomyRequireApproval ? `\n**${t(locale, "soul.autonomyApproval")}:** ${autonomyRequireApproval}` : ""}` : ""}
+${worldview ? `\n## ${t(locale, "soul.worldview")}\n\n${worldview}` : ""}
+${expertiseSection ? `\n## ${t(locale, "soul.expertise")}\n\n${expertiseSection}` : ""}
+${memoryPolicy ? `\n## ${t(locale, "soul.memoryPolicy")}\n\n${memoryPolicy}` : ""}
+${petPeevesList ? `\n## ${t(locale, "soul.petPeeves")}\n\n${petPeevesList}` : ""}
+${activeProjects ? `\n## ${t(locale, "soul.activeProjects")}\n\n${activeProjects}` : ""}
 
-## Continuity
+## ${t(locale, "soul.continuity")}
 
-Each session, you wake up fresh. These files *are* your memory. Read them. Update them. They're how you persist.
+${t(locale, "soul.continuityText")}
 
-If you change this file, tell the user — it's your soul, and they should know.
+${t(locale, "soul.continuityNote")}
 
 ***
 
-*This file was generated by [ClawSouls](https://clawsouls.hub) on ${now}.*`;
+*${t(locale, "soul.generatedBy", { date: now })}*`;
 
   return md;
 }

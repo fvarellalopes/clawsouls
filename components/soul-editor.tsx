@@ -324,7 +324,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
     setSoul({ customBoundaries: updated });
   };
 
-  const soulMD = useMemo(() => generateSoulMD(soul), [soul]);
+  const soulMD = useMemo(() => generateSoulMD(soul, activeLocale as any), [soul, activeLocale]);
   const yamlContent = useMemo(() => exportYAML(soul), [soul]);
 
   const vibeStyles = useMemo(() => [

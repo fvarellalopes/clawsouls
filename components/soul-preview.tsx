@@ -3,6 +3,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { generateSoulMD } from "@/lib/soulGenerator";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 import { SoulState } from "@/store/soulStore";
 
@@ -12,7 +13,9 @@ interface SoulPreviewProps {
 
 export function SoulPreview({ soul }: SoulPreviewProps) {
   const t = useTranslations("soulPreview");
-  const markdown = generateSoulMD(soul);
+  const params = useParams();
+  const locale = (params?.locale as string) || "en";
+  const markdown = generateSoulMD(soul, locale as any);
 
   return (
     <div className="cyber-glass overflow-hidden">
