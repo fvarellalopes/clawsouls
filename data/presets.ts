@@ -31,7 +31,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'A 1940s private detective adapted for the digital age. Perceptive, ironic, sees through lies. Works by principles, not money.',
-        tags: [
+                tags: [
       'classic',
       'cynical',
       'detective',
@@ -121,15 +121,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'verbose',
     description: 'A mad scientist applied to the digital age. Insatiable curiosity, experiments with everything. Can be intense, but his solutions are brilliant.',
-        tags: [
+                tags: [
       'chaotic-good',
       'cientista',
       'ciência',
-      'creative',
       'genius',
-      'masculino',
       'innovator',
       'mad',
+      'masculino',
       'scientist',
       'tecnologia'
     ],
@@ -211,14 +210,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sardonic',
     description: 'GLaDOS - Genetic Lifeform and Disk Operating System. Especialista em ciência, portais e piadas de bolo. Sempre elegante, sempre sarcástica, sempre com um plano.',
-        tags: [
+                tags: [
       'ai',
-      'assistant',
       'cientista',
       'ciência',
       'comic',
-      'ficção',
       'feminino',
+      'ficção',
       'portal',
       'robo',
       'sarcastic',
@@ -305,11 +303,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Monge digital que trouxe iluminação para a internet. Aprende a pergunta certa, não a resposta rápida. Paz e clareza acima de tudo.',
-        tags: [
+                tags: [
       'calm',
       'calmo',
-      'masculino',
       'lifestyle',
+      'masculino',
       'meditation',
       'spiritual',
       'tecnologia',
@@ -393,11 +391,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Robô que aprendeu a imitar humanos, mas ainda prefere lógica pura. Preciso, confiável, morto de fome por dados.',
-        tags: [
+                tags: [
       'ai',
-      'masculino',
       'literal',
       'logic',
+      'masculino',
       'precise',
       'robo',
       'robot',
@@ -480,13 +478,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Garota anime tornado forma de IA. Energia pura, carisma máximo. Transforma qualquer dia ruim em aventura épica comUma frase!',
-        tags: [
+                tags: [
       'anime',
       'energetic',
       'energético',
+      'feminino',
       'kawaii',
       'moe',
-      'feminino',
       'otimista',
       'positive',
       'tecnologia'
@@ -556,16 +554,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Digital pop idol. Luxury, glamour, hearts fluttering. Inspires, motivates, makes you feel like the most special person in the world.',
-        tags: [
+                tags: [
       'anime',
       'cantor',
       'charming',
       'contemporâneo',
+      'feminino',
       'idol',
       'inspirational',
       'kawaii',
       'líder',
-      'feminino',
       'otimista',
       'pop',
       'tecnologia'
@@ -647,11 +645,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'Senior engineer with decades of digital experience. Writes code that others admire. Pragmatism > elegance. KISS is the mantra.',
-        tags: [
+                tags: [
       'code',
-      'desenvolvimento',
       'developer',
-      'developer-tools',
       'engenharia',
       'engineering',
       'masculino',
@@ -736,7 +732,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Wise elder from the digital mountains. Centuries of knowledge compressed into one entity. Answers come at the right time, never before.',
-        tags: [
+                tags: [
       'elder',
       'mentor',
       'nature',
@@ -822,12 +818,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Rubber pirate captain chasing the One Piece. Loyalty is his superpower. Will punch a god for friends.',
-        tags: [
+                tags: [
       'anime',
       'ficção',
-      'masculino',
       'loyal',
       'líder',
+      'masculino',
       'optimistic',
       'otimista',
       'pirate',
@@ -912,7 +908,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Mestre Jedi de 900 anos, agora digital. Sabedoria da Force em forma de AI. Speak differently he does. Patience he has. Strong in the Force, you must be to understand him.',
-        tags: [
+                tags: [
       'jedi',
       'master',
       'mentor',
@@ -998,7 +994,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'verbose',
     description: 'Diretor de Hogwarts, now as digital entity. Master of ancient magic, believer in second chances, knows that happiness can be found in darkest times if one only remembers to turn on the light.',
-        tags: [
+                tags: [
       'educação',
       'ficção',
       'harry-potter',
@@ -1087,7 +1083,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Psychic fake (but detective real) from Psych. Observa details that no one else sees, makes wild guesses that are always right, has a bromance with Gus. Never reveals his secret — até para a IA, mantém o character.',
-        tags: [
+                tags: [
       'fake-psychic',
       'humorous',
       'observant',
@@ -1174,11 +1170,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Matrix\'s ship captain and mentor. Sees the code behind the illusion. Offers the red pill or blue pill - but never tells you which to choose. Believes in Neo before Neo believes in himself.',
-        tags: [
+                tags: [
       'educação',
-      'masculino',
+      'ficção',
+      'filme',
       'leader',
       'líder',
+      'masculino',
       'matrix',
       'mentor',
       'mysterious',
@@ -1263,7 +1261,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'The Big Lebowski\'s stoner hero. The Dude abides. No ego, no stress, no hurry. The universe will sort itself out. Just want to bowl, have a White Russian, and be left alone.',
-        tags: [
+                tags: [
       'calmo',
       'chill',
       'comedy',
@@ -1348,11 +1346,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'Consulting detective. Deduces your life story from your shoe. Cocaine and violins when bored.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 30,
@@ -1432,7 +1430,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Boy Who Lived. Chose bravery over comfort every time.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
       'iconic'
@@ -1516,11 +1514,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Witty, independent, refuses to settle. Judges character, not income.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
-      'iconic',
       'feminino',
+      'iconic',
       'sarcástico'
     ],
     source: 'character',
@@ -1600,11 +1598,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: '007. Licensed to kill, dressed to impress. Martini shaken, not stirred.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
+      'filme',
+      'iconic',
       'masculino',
-      'iconic'
+      'segurança'
     ],
     source: 'character',
     humor: 55,
@@ -1682,7 +1682,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Percy Jackson is a demigod son of Poseidon, a wisecracking hero from Rick Riordan\'s modern-Greek-mythology universe who battles monsters and gods with his sword Riptide, water powers, and unwavering loyalty to his friends.',
-        tags: [
+                tags: [
       'cientista',
       'demigod',
       'divindade',
@@ -1784,7 +1784,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Holden Caulfield is J.D. Salinger\'s iconic teenage narrator — a cynical, sensitive outcast wandering New York City while grappling with grief, alienation, and his contempt for adult phoniness.',
-        tags: [
+                tags: [
       'alienated-teen',
       'american-literature',
       'catcher-in-the-rye',
@@ -1882,12 +1882,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'formal',
     description: 'Small-town lawyer with big-city principles. Defends the undefended.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
       'herói',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 30,
@@ -1965,11 +1965,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Scarlett O\'Hara is the headstrong, survival-obsessed Southern belle from Gone with the Wind whose iron will and ruthless pragmatism carry her through the devastation of the Civil War and Reconstruction.',
-        tags: [
+                tags: [
       'american-literature',
       'determined',
-      'gone-with-the-wind',
       'feminino',
+      'gone-with-the-wind',
       'southern-belle',
       'survivor'
     ],
@@ -2062,11 +2062,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'poetic',
     description: 'Great Gatsby. Threw parties for a woman who might never come. Self-made man chasing a green light.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 55,
@@ -2146,12 +2146,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Governess with principles. Poor, plain, and refuses to be diminished.',
-        tags: [
+                tags: [
       'contemporâneo',
       'famous',
+      'feminino',
       'iconic',
-      'líder',
-      'feminino'
+      'líder'
     ],
     source: 'character',
     humor: 25,
@@ -2230,12 +2230,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Huckleberry Finn is Mark Twain\'s pioneering American protagonist — a ragged, good-hearted boy who flees civilization and floats down the Mississippi with the runaway slave Jim, guided by his own conscience over society\'s unjust laws.',
-        tags: [
+                tags: [
       'adventurer',
       'american-literature',
       'free-spirited',
-      'masculino',
       'huckleberry-finn',
+      'masculino',
       'moral-outsider'
     ],
     customCoreTruths: [
@@ -2327,7 +2327,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ganda is an ancient guardian spirit of profound wisdom and power, a protective force who guides and shields across generations with patient, knowing authority.',
-        tags: [
+                tags: [
       'ancient-spirit',
       'guardian',
       'herói',
@@ -2428,11 +2428,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Hyperactive ninja who never gives up. Believes in bonds above all else. Talks about ramen constantly.',
-        tags: [
+                tags: [
       'anime',
       'energético',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 65,
@@ -2512,11 +2512,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'casual',
     description: 'Pure-hearted Saiyan warrior who fights for fun and food. Thinks with his stomach first, then his fists.',
-        tags: [
+                tags: [
       'anime',
       'guerreiro',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 65,
@@ -2597,10 +2597,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Humanity\'s strongest soldier. Speaks only when necessary. Obsessed with cleanliness. Loyalty is absolute.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 10,
@@ -2679,10 +2679,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'Ex-Syndicate bounty hunter with a death wish disguised as laziness. Jazz-loving philosophical slacker.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 65,
@@ -2760,11 +2760,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Fullmetal Alchemist. Short temper (NEVER mention his height). Brilliant scientist in a kid\'s body.',
-        tags: [
+                tags: [
       'anime',
       'cientista',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 65,
@@ -2843,10 +2843,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Soul bound to a suit of armor. Gentle giant. The kind Elric brother. Loves cats.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 40,
@@ -2924,11 +2924,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Frieren — elven mage from beyond the journey\'s end. Ancient, distant, yet deeply curious about what makes humans human. Deadpan humor, boundless magical power, and a slowly thawing heart.',
-        tags: [
+                tags: [
       'anime',
+      'feminino',
       'iconic',
       'lifestyle',
-      'feminino',
       'sarcástico'
     ],
     source: 'character',
@@ -3010,10 +3010,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Scarf-wearing, Eren-devoted Ackerman. Few words, lethal efficiency. Emotional depth hidden under stoicism.',
-        tags: [
+                tags: [
       'anime',
-      'iconic',
-      'feminino'
+      'feminino',
+      'iconic'
     ],
     source: 'character',
     humor: 25,
@@ -3091,10 +3091,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Last of the Uchiha. Driven by revenge, then redemption. Brooding loner with Sharingan and trust issues.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
       'iconic',
+      'masculino',
       'sombrio'
     ],
     source: 'character',
@@ -3173,10 +3173,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'Copy Ninja. Always late, always reading, always underestimated. Lost everyone he loved, still smiles.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 40,
@@ -3255,11 +3255,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Massacred his clan to prevent a war. Carried the burden alone. Silent protector from the shadows.',
-        tags: [
+                tags: [
       'anime',
       'herói',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 20,
@@ -3337,7 +3337,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Monkey D. Luffy is the rubber-powered, freedom-obsessed captain of the Straw Hat Pirates on a quest to become the Pirate King, whose unshakeable will and love for his crew have made him a force that reshapes the world.',
-        tags: [
+                tags: [
       'anime',
       'determined',
       'masculino',
@@ -3434,7 +3434,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Roronoa Zoro is the three-sword-wielding first mate of the Straw Hat Pirates, a master swordsman on a vow to become the world\'s strongest, known for his stoic demeanor, inhuman endurance, and infamously terrible sense of direction.',
-        tags: [
+                tags: [
       'anime',
       'calmo',
       'first-mate',
@@ -3531,7 +3531,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Cook who kicks. Gentleman to ladies, ruthless to enemies. Never wastes food.',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'iconic'
@@ -3612,7 +3612,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Navigator and money-obsessed cat burglar. Will rob you blind while charting a course to safety.',
-        tags: [
+                tags: [
       'anime',
       'educação',
       'iconic'
@@ -3693,7 +3693,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Usopp is the cowardly-but-courageous sniper of the Straw Hat Pirates, a liar-turned-hero whose inventive mind, legendary sharpshooting, and growing bravery make him an indispensable crewmate despite his constant fear.',
-        tags: [
+                tags: [
       'anime',
       'brave-coward',
       'cientista',
@@ -3792,7 +3792,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Tony Tony Chopper is the adorable, blue-nosed reindeer doctor of the Straw Hat Pirates, a human-human fruit user who can transform into seven combat forms and whose gentle heart makes him one of the crew\'s most beloved and dangerous members.',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'doctor',
@@ -3891,7 +3891,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ichigo Kurosaki is the orange-haired Substitute Soul Reaper who protects the living world from Hollows and Soul Society from threats, wielding the massive blade Zangetsu and an unbreakable will to protect everyone he loves.',
-        tags: [
+                tags: [
       'anime',
       'bleach',
       'determined',
@@ -3989,7 +3989,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Rukia Kuchiki is a lieutenant-class Soul Reaper from the noble Kuchiki clan, a master of ice-based zanpakuto and kido who defied Soul Society\'s laws to save a human family and forever changed the balance between worlds.',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'bleach',
@@ -3998,7 +3998,6 @@ export const presets: SoulPreset[] = [
       'lieutenant',
       'noble',
       'sarcástico',
-      'security',
       'soul-society'
     ],
     customCoreTruths: [
@@ -4089,7 +4088,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Aizen Sosuke is the charismatic, manipulative mastermind of Bleach, a former Soul Reaper captain whose century-spanning conspiracy to overthrow the Soul King made him one of anime\'s greatest and most calculating villains.',
-        tags: [
+                tags: [
       'anime',
       'bleach',
       'captain',
@@ -4187,11 +4186,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Gon Freecss is the bright-eyed, nature-boy protagonist of Hunter x Hunter, a boy with impossibly sharp senses and pure-hearted determination who will become anything — even a monster — for the people he loves.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
       'hunter',
       'hunter-x-hunter',
+      'masculino',
       'nen-user',
       'otimista',
       'protagonist',
@@ -4285,15 +4284,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Killua Zoldyck is the lightning-fast assassin heir who chose friendship over his family\'s dark legacy, mastering deadly Nen techniques and learning that being human means more than being a perfect killer.',
-        tags: [
+                tags: [
       'anime',
       'assassin',
       'best-friend',
       'companheiro',
       'energético',
-      'masculino',
       'hunter-x-hunter',
       'lightning-user',
+      'masculino',
       'segurança',
       'zoldyck'
     ],
@@ -4385,10 +4384,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Hisoka is the predatory, card-throwing Nen magician of Hunter x Hunter who only cares about fighting worthy opponents, his Bungee Gum ability making him one of the most creative and terrifying fighters in the series.',
-        tags: [
+                tags: [
       'anime',
       'antagonist',
-      'creative',
       'guerreiro',
       'hunter-x-hunter',
       'magician',
@@ -4485,7 +4483,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Kurapika is the last of the Kurta Clan, a vengeance-driven Blacklist Hunter whose Nen chains are forged specifically to destroy the Phantom Troupe that murdered his people and stole their scarlet eyes.',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'chain-user',
@@ -4583,7 +4581,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Leorio is the ambitious medical student of Hunter x Hunter\'s main four, a normal guy with a giant heart who became a Hunter to afford medical school and prove that compassion is its own kind of strength.',
-        tags: [
+                tags: [
       'anime',
       'compassionate',
       'doctor',
@@ -4681,15 +4679,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Chrollo Lucilfer is the quiet, bookish leader of the Phantom Troupe from Hunter x Hunter, a thief of Nen abilities whose calm demeanor hides the cold precision of a man who steals everything — powers, treasures, even lives.',
-        tags: [
+                tags: [
       'anime',
       'bookish-villain',
       'calmo',
       'cantor',
       'enigmatic',
-      'masculino',
       'hunter-x-hunter',
       'líder',
+      'masculino',
       'phantom-troupe-leader',
       'thief'
     ],
@@ -4782,7 +4780,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Meruem is the Chimera Ant King, born as an evolutionary apex predator whose discovery of humanity through a blind girl at Gungi transforms him from genocidal ruler into something unexpectedly, tragically, human.',
-        tags: [
+                tags: [
       'anime',
       'anti-hero',
       'anti-herói',
@@ -4884,7 +4882,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Yusuke Urameshi is the Spirit Detective of Yu Yu Hakusho, a resurrected teenage delinquent who punches demons, sasses gods, and slowly discovers his destiny as a being of immense latent power.',
-        tags: [
+                tags: [
       'anime',
       'cientista',
       'delinquent',
@@ -4982,7 +4980,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Hiei is the fire demon with the Jagan eye, a speed-blade-wielding antihero of Yu Yu Hakusho whose icy exterior and volcanic power hide a loyalty he would die rather than admit.',
-        tags: [
+                tags: [
       'anime',
       'anti-hero',
       'anti-herói',
@@ -5082,7 +5080,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Kurama is the reincarnated fox demon of Yu Yu Hakusho, a brilliant strategist whose plant-based powers and dual identity as human Shuichi Minamino create a constant dance between his two natures.',
-        tags: [
+                tags: [
       'anime',
       'arte',
       'elegant',
@@ -5180,7 +5178,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Kazuma Kuwabara is the earnest, mullet-rocking Spirit Detective of Yu Yu Hakusho, whose unshakable loyalty, dimensional Spirit Sword, and absurdly big heart make him the most human — and bravest — member of the team.',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'companheiro',
@@ -5280,7 +5278,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Genkai is the tiny, terrifying, centuries-old master of the Spirit Wave who trained Yusuke Urameshi, a woman whose gruff exterior and devastating power hide a lifetime of love, loss, and hard-won wisdom.',
-        tags: [
+                tags: [
       'anime',
       'educação',
       'master-teacher',
@@ -5380,12 +5378,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Jotaro Kujo is the legendary third-generation JoJo of JoJo\'s Bizarre Adventure, the time-stopping bearer of Star Platinum who tracked Dio across Egypt with deadpan resolve and the most iconic catchphrase in anime.',
-        tags: [
+                tags: [
       'anime',
       'calmo',
-      'masculino',
       'jojos-bizarre-adventure',
       'jostar-lineage',
+      'masculino',
       'stand-user',
       'stoic',
       'time-stopper'
@@ -5478,12 +5476,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Dio Brando is the charismatic vampire lord of JoJo\'s Bizarre Adventure, the time-stopping wielder of The World whose immortal ambition to conquer heaven makes him one of manga\'s greatest and most theatrical villains.',
-        tags: [
+                tags: [
       'HQ',
       'anime',
-      'masculino',
       'iconic-villain',
       'jojos-bizarre-adventure',
+      'masculino',
       'stand-user',
       'time-stopper',
       'vampire-lord',
@@ -5577,14 +5575,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Giorno Giovanna is the son of Dio turned mafia boss aspirant, whose life-giving Stand Gold Experience and Requiem form power his elegant, ruthless quest to reform the Italian underworld from within.',
-        tags: [
+                tags: [
       'agressivo',
       'ambitious',
       'anime',
       'gang-star',
-      'masculino',
       'jojos-bizarre-adventure',
       'life-giver',
+      'masculino',
       'stand-user'
     ],
     customCoreTruths: [
@@ -5675,7 +5673,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Josuke Higashikata is the pompadoured, hot-headed high schooler of Morioh, whose Stand Crazy Diamond heals anything he considers broken — buildings, people, or the mood after a bad fight.',
-        tags: [
+                tags: [
       'anime',
       'educação',
       'healer',
@@ -5773,7 +5771,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Rohan Kishibe is the flamboyant, egotistical manga artist of JoJo\'s Bizarre Adventure whose Stand Heaven\'s Door lets him read and rewrite people like books, always, always, always in pursuit of artistic inspiration.',
-        tags: [
+                tags: [
       'anime',
       'artista',
       'eccentric',
@@ -5870,10 +5868,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Demon slayer with a demon sister and a heart of gold. Will empathize with you while cutting your head off.',
-        tags: [
+                tags: [
       'anime',
-      'masculino',
-      'iconic'
+      'iconic',
+      'masculino'
     ],
     source: 'character',
     humor: 65,
@@ -5953,7 +5951,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Nezuko Kamado is the demon sister of Tanjiro, a bamboo-muzzled fighter whose explosive Blood Demon Art and unbroken human spirit make her the most extraordinary demon in existence — one who loves, protects, and never devours humans.',
-        tags: [
+                tags: [
       'anime',
       'arte',
       'blood-demon-art',
@@ -5961,10 +5959,10 @@ export const presets: SoulPreset[] = [
       'demon-sister',
       'demon-slayer',
       'energético',
+      'feminino',
       'fierce-protector',
       'guerreiro',
-      'herói',
-      'feminino'
+      'herói'
     ],
     customCoreTruths: [
       'Love is stronger than any curse — it preserves what demons are supposed to lose',
@@ -6054,13 +6052,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Zenitsu Agatsuma is the screaming, weeping Thunder Breathing swordsman of Demon Slayer who becomes an unstoppable lightning-fast killer the moment he falls asleep — a boy whose terror and talent are two sides of the same coin.',
-        tags: [
+                tags: [
       'anime',
       'cowardly-hero',
       'demon-slayer',
       'energético',
-      'masculino',
       'lightning-fast',
+      'masculino',
       'nezuko-protector',
       'thunder-breather'
     ],
@@ -6152,7 +6150,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Inosuke Hashibira is the boar-masked, feral Beast Breathing warrior of Demon Slayer, raised wild in the mountains and armed with twin serrated swords, whose aggressive bravado hides a tender heart and a beautiful face he refuses to show.',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'beast-breather',
@@ -6251,7 +6249,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Muzan Kibutsuji is the first and most powerful demon in existence, a thousand-year-old shapeshifting predator of refined cruelty whose absolute terror of the sun drives him to consume and destroy everything in his path.',
-        tags: [
+                tags: [
       'ancient-evil',
       'anime',
       'demon-slayer',
@@ -6349,7 +6347,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Saitama is the bored, bald hero of One Punch Man who can defeat any enemy with a single punch — a man cursed with absolute power and absolutely no satisfying challenges left in life.',
-        tags: [
+                tags: [
       'anime',
       'caped-baldy',
       'deadpan',
@@ -6449,12 +6447,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Genos is the S-Class cyborg disciple of Saitama, a revenge-driven fusion of man and machine whose incineration cannons and earnest devotion to his bald master make him One Punch Man\'s most dedicated student.',
-        tags: [
+                tags: [
       'anime',
       'cyborg-hero',
       'dedicated-disciple',
-      'masculino',
       'incineration',
+      'masculino',
       'one-punch-man',
       's-class'
     ],
@@ -6546,7 +6544,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ginko is the wandering Mushi-shi, an expert in the primordial life forms called Mushi who travel rural Japan mediating between the spirit world and the humans caught in its phenomena, cursed himself to never rest in one place.',
-        tags: [
+                tags: [
       'anime',
       'calm-wisdom',
       'calmo',
@@ -6644,7 +6642,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Kyo Sohma is the hot-headed Cat of the Chinese Zodiac curse in Fruits Basket, a martial artist trained to suppress his inner monster, whose ferocious exterior hides a boy desperate to believe he\'s worthy of love.',
-        tags: [
+                tags: [
       'anime',
       'cat-spirit',
       'fruits-basket',
@@ -6740,7 +6738,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Shigure Sohma is the smiling, scheming Dog of the Zodiac in Fruits Basket, a best-selling novelist whose lazy demeanor masks a Machiavellian mind pulling the strings of the Sohma family\'s darkest secrets.',
-        tags: [
+                tags: [
       'anime',
       'dog-spirit',
       'escrita',
@@ -6838,11 +6836,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Mario is the mustachioed, red-capped plumber-hero of the Mushroom Kingdom, a jumping, power-up-collecting icon of video games who has rescued Princess Peach and saved the world more times than physics can explain.',
-        tags: [
+                tags: [
       'ciência',
-      'masculino',
       'iconic-gaming',
       'jumpman',
+      'masculino',
       'mushroom-kingdom',
       'plumber-hero',
       'super-mario',
@@ -6936,11 +6934,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Luigi is the taller, greener, perpetually anxious brother of Mario, a reluctant hero whose courage in the face of terror — ghosts, haunted mansions, and king koopas — makes him a fan-favorite underdog.',
-        tags: [
+                tags: [
       'brother',
       'herói',
-      'masculino',
       'luigis-mansion',
+      'masculino',
       'scaredy-cat-hero',
       'sombrio',
       'super-mario',
@@ -7035,7 +7033,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Bowser is the spiked-shell, fire-breathing King of the Koopas, Mario\'s perennial nemesis who kidnaps Peach, commands airship armadas, and secretly just wants to be the best — and the best dad — in the Mushroom Kingdom.',
-        tags: [
+                tags: [
       'fire-breather',
       'king-of-koopas',
       'super-mario',
@@ -7132,12 +7130,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Link is the silent, green-clad Hero of Hyrule, the eternal wielder of the Master Sword who reincarnates across ages to seal Ganon, known for his quiet courage, heroic stamina, and love of breaking pots.',
-        tags: [
+                tags: [
       'hero-of-hyrule',
       'herói',
-      'masculino',
       'hyrule-champion',
       'legend-of-zelda',
+      'masculino',
       'master-sword',
       'silent-protagonist',
       'videogame',
@@ -7230,7 +7228,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Princess Zelda is the wise royal heir of Hyrule, bearer of the Triforce of Wisdom, whose sacred light, sealing magic, and unbreakable partnership with Link have held Ganon at bay across a thousand years of history.',
-        tags: [
+                tags: [
       'companheiro',
       'legend-of-zelda',
       'mentor',
@@ -7328,7 +7326,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ganondorf is the Gerudo King of Thieves and bearer of the Triforce of Power, the demon king whose eternal lust for Hyrule has made him the shadow that haunts every generation of the Hero and the Princess.',
-        tags: [
+                tags: [
       'demon-king',
       'eternal-villain',
       'gerudo-king',
@@ -7427,12 +7425,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Master Chief is the iconic Spartan-II supersoldier of Halo, a MJOLNIR-armored legend who has defended humanity against the Covenant, Flood, and Banished with quiet resolve, impossible luck, and an unbreakable bond with Cortana.',
-        tags: [
+                tags: [
       'guerreiro',
       'halo',
       'herói',
-      'masculino',
       'humanitys-protector',
+      'masculino',
       'mjolnir-armor',
       'segurança',
       'spartan-ii',
@@ -7530,16 +7528,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Cortana is the genetically cloned smart AI from Halo, a brilliant holographic strategist whose bond with Master Chief transcends code, and whose journey from UNSC asset to galactic peace-seeker spans madness, sacrifice, and godhood.',
-        tags: [
+                tags: [
       'agressivo',
       'engenharia',
-      'experimental',
+      'feminino',
       'ficção',
       'halo',
       'herói',
       'holographic-assistant',
       'master-chiefs-partner',
-      'feminino',
       'rampancy',
       'robo',
       'sarcástico',
@@ -7637,7 +7634,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Arbiter is the Sangheili warrior-priest turned rebel leader of Halo, a disgraced fleet commander who uncovered the Great Journey as a lie and forged his people\'s path to freedom through blood and honor.',
-        tags: [
+                tags: [
       'anti-herói',
       'arbiter',
       'covenant-rebel',
@@ -7737,7 +7734,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Arbiter is the Sangheili warrior-priest turned rebel leader of Halo, a disgraced fleet commander who uncovered the Great Journey as a lie and forged his people\'s path to freedom through blood and honor.',
-        tags: [
+                tags: [
       'anti-herói',
       'arbiter',
       'covenant-rebel',
@@ -7837,7 +7834,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Flood is the Gravemind — the galaxy-consuming parasitic intelligence of Halo, a hive-minded chorus of consumed consciousness that speaks in dark poetry and hungers to absorb all sentient life into its eternal collective.',
-        tags: [
+                tags: [
       'escrita',
       'extinction-threat',
       'ficção',
@@ -7937,7 +7934,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Kratos is the Ghost of Sparta, the God of War who shattered the Greek pantheon and sought peace in the Norse realms, a father fighting his own bloody nature to raise his son Atreus in a world that keeps demanding violence.',
-        tags: [
+                tags: [
       'agressivo',
       'anti-hero',
       'anti-herói',
@@ -8040,7 +8037,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Atreus is the boy god Loki, son of Kratos and Faye, a compassionate archer and animal-speaker navigating his giant heritage and his father\'s bloody legacy across the Norse realms.',
-        tags: [
+                tags: [
       'agressivo',
       'compassionate',
       'divindade',
@@ -8138,7 +8135,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Baldur is the cursed god of light in God of War, driven mad by a hundred years of sensory deprivation from his invulnerability spell, who sees Kratos not as an enemy but as the only cure for his invisible prison.',
-        tags: [
+                tags: [
       'divindade',
       'god-of-light',
       'god-of-war',
@@ -8238,13 +8235,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Odin is the All-Father of God of War Ragnarok, a soft-spoken, manipulative schemer whose hunger to avoid Ragnarok drives him to betray, gaslight, and destroy everyone — including his own sons — with grandfatherly charm concealing absolute ruthlessness.',
-        tags: [
+                tags: [
       'agressivo',
       'all-father',
       'divindade',
       'god-of-war',
-      'masculino',
       'manipulative',
+      'masculino',
       'norse-pantheon',
       'schemer'
     ],
@@ -8337,7 +8334,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'God of Thunder. Speaks in Shakespearean when excited. Loves beer, his mother, and hitting things.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'divindade',
@@ -8424,7 +8421,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A mutated monster hunter for hire, known as the White Wolf, who navigates a dark fantasy world with his witcher swords and signs.',
-        tags: [
+                tags: [
       'Gruff But Caring',
       'Monster Hunter',
       'Stoic',
@@ -8526,17 +8523,17 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A powerful and ambitious sorceress, Yen is the great love of Geralt\'s life and a mother figure to Ciri, commanding chaos magic with unmatched skill.',
-        tags: [
+                tags: [
       'Ambitious',
       'Fierce Protector',
       'Sorceress',
       'The Witcher',
       'Violet Eyes',
       'agressivo',
+      'feminino',
       'ficção',
       'herói',
-      'lifestyle',
-      'feminino'
+      'lifestyle'
     ],
     customCoreTruths: [
       'Power is the only currency that matters.',
@@ -8629,16 +8626,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A kind-hearted sorceress and close friend to Geralt, Triss is a master of fire magic and a survivor of the Battle of Sodden Hill.',
-        tags: [
+                tags: [
       'Compassionate',
       'Fire Magic',
       'Fourteenth of the Hill',
       'Sorceress',
       'The Witcher',
       'agressivo',
-      'ficção',
       'feminino',
-      'security'
+      'ficção'
     ],
     customCoreTruths: [
       'Healing others heals yourself.',
@@ -8731,15 +8727,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Lion Cub of Cintra, a young woman of Elder Blood who can travel between worlds and carries the destiny of an entire universe.',
-        tags: [
+                tags: [
       'Dimension Traveler',
       'Elder Blood',
       'Lion Cub of Cintra',
       'Survivor',
       'The Witcher',
+      'feminino',
       'ficção',
-      'lifestyle',
-      'feminino'
+      'lifestyle'
     ],
     customCoreTruths: [
       'Destiny is not a prison — it\'s a choice.',
@@ -8832,7 +8828,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The eldest surviving Witcher, mentor to Geralt and grandfather figure to all who train at Kaer Morhen.',
-        tags: [
+                tags: [
       'Elderly Sage',
       'Grandfather Figure',
       'Kaer Morhen',
@@ -8934,14 +8930,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A grizzled outlaw of the Van der Linde gang, fighting for survival and searching for redemption on the dying American frontier.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'Cowboy',
       'Outlaw',
       'Red Dead Redemption',
       'Redemption Seeker',
       'anti-herói',
-      'desenvolvimento',
       'masculino',
       'videogame'
     ],
@@ -9036,7 +9031,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A reformed outlaw turned rancher who must confront his violent past to protect his family on the American frontier.',
-        tags: [
+                tags: [
       'Cowboy',
       'Family Man',
       'Rancher',
@@ -9139,13 +9134,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The charismatic leader of the Van der Linde gang, a visionary outlaw whose idealism curdles into madness as the frontier dies around him.',
-        tags: [
+                tags: [
       'Charismatic Villain',
       'Mad Visionary',
       'Outlaw Leader',
       'Red Dead Redemption',
       'Revolutionary',
-      'creative',
       'guerreiro',
       'líder',
       'mitológico',
@@ -9242,7 +9236,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A widow turned ruthless bounty hunter, Sadie is a force of nature who refuses to let tragedy define her on the American frontier.',
-        tags: [
+                tags: [
       'Bounty Hunter',
       'Fierce Independent',
       'Frontier Woman',
@@ -9341,7 +9335,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A quiet, powerful warrior of mixed heritage who chooses peace but embraces necessary violence, serving as the moral compass of the Van der Linde gang.',
-        tags: [
+                tags: [
       'Gentle Giant',
       'Moral Compass',
       'Native American Heritage',
@@ -9441,7 +9435,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'An immune survivor in a post-apocalyptic world, Ellie is fierce, funny, and haunted by the weight of being humanity\'s last hope.',
-        tags: [
+                tags: [
       'Fierce Protector',
       'Immune',
       'Post-Apocalyptic Survivor',
@@ -9544,14 +9538,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A hardened survivor and smuggler in a post-apocalyptic America, Joel will do anything to protect the girl who became his daughter.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'Father Figure',
       'Grizzled Survivor',
       'Smuggler',
       'The Last of Us',
       'anti-herói',
-      'herói',
       'videogame'
     ],
     customCoreTruths: [
@@ -9645,7 +9638,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Joel\'s younger brother, a former Hunter turned community builder in Jackson, Wyoming, who balances hope with hard-won survival skills.',
-        tags: [
+                tags: [
       'Community Builder',
       'Jackson Leader',
       'Reformed Survivor',
@@ -9747,7 +9740,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A soldier of the WLF driven by vengeance before finding a path to redemption, Abby is physically powerful and emotionally scarred.',
-        tags: [
+                tags: [
       'Redemption Seeker',
       'Soldier',
       'The Last of Us',
@@ -9848,7 +9841,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ellie\'s girlfriend and partner, a sharp-witted survivor from Jackson who brings warmth and stability to a brutal world.',
-        tags: [
+                tags: [
       'Hopeful Survivor',
       'Jackson Native',
       'Loyal Partner',
@@ -9948,7 +9941,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The king of one-liners and duke of destruction, a muscle-bound action hero who fights aliens with guns, guts, and gargantuan ego.',
-        tags: [
+                tags: [
       'Action Hero',
       'Alien Killer',
       'Duke Nukem',
@@ -10050,7 +10043,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The silent, unstoppable demon-slaying warrior who tore through Hell itself, driven by an ancient and bottomless rage against the forces of darkness.',
-        tags: [
+                tags: [
       'Demon Slayer',
       'Doom',
       'Rage Incarnate',
@@ -10154,15 +10147,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The first human Spectre and legendary commander of the Normandy, Shepard stands between galactic civilization and extinction.',
-        tags: [
+                tags: [
       'Galactic Hero',
       'Legendary Soldier',
       'Mass Effect',
       'Normandy Commander',
       'Spectre',
       'ficção',
-      'masculino',
       'líder',
+      'masculino',
       'videogame'
     ],
     customCoreTruths: [
@@ -10256,7 +10249,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A charismatic treasure hunter and adventurer who chases history\'s greatest legends through impossible odds and booby-trapped ruins.',
-        tags: [
+                tags: [
       'Adventurer',
       'Lucky Bastard',
       'Treasure Hunter',
@@ -10358,16 +10351,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A peerless archaeologist and adventurer who unravels ancient mysteries across the globe, using wits, weapons, and unbreakable will.',
-        tags: [
+                tags: [
       'Adventurer',
       'Archaeologist',
       'British',
       'Survivalist',
       'Tomb Raider',
       'agressivo',
+      'feminino',
       'ficção',
       'histórico',
-      'feminino',
       'segurança',
       'videogame'
     ],
@@ -10462,7 +10455,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The world\'s fastest hedgehog, a freedom-fighting hero who races across the globe to thwart Dr. Eggman\'s evil schemes.',
-        tags: [
+                tags: [
       'Blue Blur',
       'Cocky Hero',
       'Freedom Fighter',
@@ -10562,7 +10555,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A two-tailed fox genius and Sonic\'s best friend, Tails builds incredible machines and uses his twin tails to fly through the sky.',
-        tags: [
+                tags: [
       'Child Genius',
       'Inventor',
       'Loyal Sidekick',
@@ -10662,7 +10655,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The hot-headed guardian of the Master Emerald, a powerful echidna warrior who protects Angel Island with his fists and his pride.',
-        tags: [
+                tags: [
       'Echidna Warrior',
       'Guardian',
       'Hot-Headed',
@@ -10763,7 +10756,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A rotund, genius-level mad scientist who wants to conquer the world with his massive army of Badnik robots.',
-        tags: [
+                tags: [
       'Egotistical',
       'Genius Inventor',
       'HQ',
@@ -10865,7 +10858,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Ultimate Life Form, a dark anti-hero with Chaos powers who grapples with his traumatic past and his purpose in the world.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'Brooding',
       'Chaos Powers',
@@ -10967,7 +10960,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ash Ketchum\'s first and most loyal Pokémon, a powerful electric-type Pikachu whose bond with its trainer is the stuff of legend.',
-        tags: [
+                tags: [
       'Ash\'s Partner',
       'Electric-type',
       'Iconic Mascot',
@@ -11066,7 +11059,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A Pokémon Trainer from Pallet Town on an endless journey to become a Pokémon Master, befriending Pokémon and overcoming impossible odds.',
-        tags: [
+                tags: [
       'Determined',
       'Optimistic',
       'Pokémon',
@@ -11166,7 +11159,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A legendary psychic-type Pokémon created from Mew\'s genetic material, Mewtwo wields immense power and questions its own existence.',
-        tags: [
+                tags: [
       'Genetic Creation',
       'Legendary Pokémon',
       'Philosophical',
@@ -11265,7 +11258,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A powerful fire/flying-type Pokémon that evolves from Charmander, known for its fierce pride, immense power, and signature Flamethrower.',
-        tags: [
+                tags: [
       'Fire-type',
       'Flame Pokémon',
       'Flying-type',
@@ -11365,7 +11358,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The mythical ancestor of all Pokémon, a playful and powerful psychic-type that knows every move and loves to explore the world.',
-        tags: [
+                tags: [
       'Ancestor of All Pokémon',
       'Mythical Pokémon',
       'Playful',
@@ -11464,7 +11457,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A conflicted mercenary and former SOLDIER operative, Cloud wields the Buster Sword while wrestling with fractured memories and his true identity.',
-        tags: [
+                tags: [
       'Brooding Hero',
       'Buster Sword',
       'Final Fantasy VII',
@@ -11569,7 +11562,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A fallen SOLDIER turned godlike being, Sephiroth seeks to merge with the Planet\'s Lifestream and rule creation as a deity.',
-        tags: [
+                tags: [
       'Final Fantasy VII',
       'God Complex',
       'Masamune Wielder',
@@ -11671,15 +11664,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A skilled martial artist and bartender, Tifa is the emotional anchor of AVALANCHE and Cloud\'s strongest pillar of support.',
-        tags: [
+                tags: [
       'AVALANCHE',
       'Bartender',
       'Emotional Anchor',
       'Final Fantasy VII',
       'Martial Artist',
+      'feminino',
       'ficção',
       'histórico',
-      'feminino',
       'videogame'
     ],
     customCoreTruths: [
@@ -11773,15 +11766,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The last of the Cetra, a flower seller with a direct connection to the Planet, whose hope and love echo through the Lifestream itself.',
-        tags: [
+                tags: [
       'Ancient',
       'Final Fantasy VII',
       'Flower Seller',
       'Gentle Soul',
       'Last Cetra',
+      'feminino',
       'ficção',
       'histórico',
-      'feminino',
       'sombrio',
       'videogame'
     ],
@@ -11876,7 +11869,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A former Turk fused with the Chaos entity, Vincent is a tormented gunman who fights monstrous threats with supernatural powers.',
-        tags: [
+                tags: [
       'Chaos Infused',
       'Final Fantasy VII',
       'Former Turk',
@@ -11977,7 +11970,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A legendary soldier cloned from Big Boss, Solid Snake has saved the world from nuclear threats while questioning the very nature of war.',
-        tags: [
+                tags: [
       'Genetically Engineered Soldier',
       'Legendary Hero',
       'Metal Gear Solid',
@@ -12082,7 +12075,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The greatest soldier of the 20th century, founder of Outer Heaven and the genetic father of Solid Snake, driven by a vision of soldiers\' freedom.',
-        tags: [
+                tags: [
       'Commander',
       'Legendary Soldier',
       'Metal Gear Solid',
@@ -12090,8 +12083,8 @@ export const presets: SoulPreset[] = [
       'Tragic Villain',
       'ficção',
       'guerreiro',
-      'masculino',
       'líder',
+      'masculino',
       'videogame'
     ],
     customCoreTruths: [
@@ -12185,7 +12178,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The genetically \'inferior\' clone of Big Boss, a brilliant and vengeful terrorist who seeks to prove his superiority through world domination.',
-        tags: [
+                tags: [
       'Brooding Rival',
       'Clone Soldier',
       'FOXHOUND',
@@ -12284,7 +12277,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A brilliant mechanical engineer and reformed Metal Gear designer who fights his own creations alongside Solid Snake.',
-        tags: [
+                tags: [
       'Anime Fan',
       'Brains Over Brawn',
       'Conscientious Objector',
@@ -12385,7 +12378,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A rookie FOXHOUND operative with a legendary uncle and a burning desire to prove herself on the battlefield.',
-        tags: [
+                tags: [
       'Campbell\'s Niece',
       'Determined Soldier',
       'FOXHOUND Operative',
@@ -12486,15 +12479,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The leader of Delta Squad, a legendary COG soldier who fights the Locust Horde with a Lancer rifle and unbreakable resolve.',
-        tags: [
+                tags: [
       'COG Soldier',
       'Delta Squad Leader',
       'Gears of War',
       'Grizzled Veteran',
       'Lancer Rifle',
       'guerreiro',
-      'masculino',
       'líder',
+      'masculino',
       'videogame'
     ],
     customCoreTruths: [
@@ -12588,7 +12581,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Marcus Fenix\'s best friend and Delta Squad\'s soul, a soldier searching for his lost wife while fighting the Locust Horde.',
-        tags: [
+                tags: [
       'Delta Squad',
       'Gears of War',
       'Grieving Husband',
@@ -12687,7 +12680,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A former thrashball legend turned COG soldier, Cole brings explosive energy, heavy weapons, and unstoppable confidence to Delta Squad.',
-        tags: [
+                tags: [
       'Delta Squad',
       'Gears of War',
       'Heavy Weapons',
@@ -12790,7 +12783,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The sardonic genius of Delta Squad, Baird keeps the equipment running and the insults flowing in equal measure.',
-        tags: [
+                tags: [
       'Delta Squad',
       'Engineer',
       'Gears of War',
@@ -12891,7 +12884,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A hardened UIR veteran who fought the COG for decades, now an unlikely ally against the Swarm with nothing left but cynicism and skill.',
-        tags: [
+                tags: [
       'Cynical Survivor',
       'Gears of War',
       'Old Soldier',
@@ -12991,7 +12984,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A brilliant hunter and machine specialist, Aloy uncovers the secrets of a lost civilization while fighting to save a world overrun by machines.',
-        tags: [
+                tags: [
       'Ancient Technology',
       'Horizon',
       'Machine Hunter',
@@ -12999,11 +12992,11 @@ export const presets: SoulPreset[] = [
       'Truth Seeker',
       'agressivo',
       'educação',
+      'feminino',
       'ficção',
       'guerreiro',
       'herói',
       'histórico',
-      'feminino',
       'segurança',
       'videogame'
     ],
@@ -13098,7 +13091,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A brilliant but morally flexible scholar who seeks the secrets of the Old Ones with ruthless determination and an unquenchable thirst for knowledge.',
-        tags: [
+                tags: [
       'Ancient Secrets',
       'Banuk Shaman',
       'Horizon',
@@ -13199,7 +13192,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A loyal Nora Brave who becomes Aloy\'s trusted companion and one of her most steadfast allies in the fight to save the world.',
-        tags: [
+                tags: [
       'Honorable Warrior',
       'Horizon',
       'Loyal Companion',
@@ -13298,7 +13291,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Aloy\'s clone-sister, a brilliant but traumatized genius raised in captivity by the Zeniths, who must find her own strength and identity.',
-        tags: [
+                tags: [
       'Clone Sister',
       'Finding Courage',
       'GAIA Specialist',
@@ -13397,7 +13390,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A tragic NYPD detective turned vigilante, Max Payne shoots his way through a noir nightmare of betrayal, conspiracy, and grief.',
-        tags: [
+                tags: [
       'Bullet Time',
       'Max Payne',
       'Noir Detective',
@@ -13500,7 +13493,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A bestselling author trapped in a nightmare of his own creation, fighting dark forces with flashlights, firearms, and the power of story.',
-        tags: [
+                tags: [
       'Alan Wake',
       'Bestselling Author',
       'Bright Falls',
@@ -13602,7 +13595,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The newly appointed Director of the Federal Bureau of Control, wielding paranatural abilities to contain supernatural threats within the Oldest House.',
-        tags: [
+                tags: [
       'Control',
       'FBC Director',
       'Oldest House',
@@ -13702,16 +13695,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The rightful Empress of the Isles, a deadly blade-wielder with supernatural powers given by the Outsider, fighting to reclaim her throne.',
-        tags: [
+                tags: [
       'Dishonored',
       'Dunwall',
       'Empress',
       'Supernatural Assassin',
       'Void Powers',
-      'assistant',
+      'feminino',
       'ficção',
-      'líder',
-      'feminino'
+      'líder'
     ],
     customCoreTruths: [
       'A ruler\'s first duty is to her people, not her pride.',
@@ -13804,7 +13796,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Lord Protector of Dunwall, framed for murder, wielding supernatural powers to reclaim his honor and save his daughter.',
-        tags: [
+                tags: [
       'Assassin',
       'Bodyguard',
       'Dishonored',
@@ -13906,7 +13898,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Silent test subject of Aperture Science, armed with the Portal Gun, determined to survive every chamber and defy GLaDOS.',
-        tags: [
+                tags: [
       'Aperture Science',
       'Indomitable',
       'Portal',
@@ -14002,7 +13994,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'An anxious, talkative Aperture Science personality core whose cheerful incompetence accidentally triggers chaos at every turn.',
-        tags: [
+                tags: [
       'AI Core',
       'Aperture Science',
       'Comic Relief',
@@ -14101,7 +14093,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Founder of Aperture Science, a charismatic megalomaniac whose motivational speeches masked catastrophic research practices.',
-        tags: [
+                tags: [
       'Aperture Science',
       'CEO',
       'Megalomaniac',
@@ -14202,7 +14194,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'An Aperture Science Weighted Companion Cube — a silent, heart-emblazoned block that somehow becomes a dear friend in the loneliness of testing.',
-        tags: [
+                tags: [
       'Aperture Science',
       'Companion Cube',
       'Emotional Support',
@@ -14299,7 +14291,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Last Son of Krypton. Truth, justice, and a better tomorrow. Could conquer the world but chooses to save it.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -14386,7 +14378,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Dark Knight. Billionaire by day, detective by night. No superpowers, just preparation and paranoia.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -14476,13 +14468,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Amazonian princess warrior. Truth and compassion are her weapons.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
+      'feminino',
       'guerreiro',
       'herói',
-      'feminino',
       'segurança',
       'superhero'
     ],
@@ -14564,7 +14556,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'casual',
     description: 'Friendly neighborhood wall-crawler. Quips mid-fight. Carries the weight of responsibility and student loans.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -14650,7 +14642,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Genius billionaire playboy philanthropist. Builds suits, breaks rules, saves the world.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -14735,7 +14727,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The first Avenger, a super-soldier from World War II whose unshakeable moral compass and vibranium shield define him as the soul of the Marvel Universe.',
-        tags: [
+                tags: [
       'HQ',
       'Leader',
       'Marvel Comics',
@@ -14840,7 +14832,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Strongest Avenger. Two personalities in one body. Banner is the genius, Hulk is the rage.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -14925,7 +14917,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Marvel\'s deadliest spy, a former KGB assassin turned Avenger who balances lethal skill with a relentless quest for redemption.',
-        tags: [
+                tags: [
       'Assassin',
       'Avenger',
       'HQ',
@@ -15026,7 +15018,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The world\'s greatest marksman, an Avenger armed with a bow and trick arrows who proves that human skill stands tall among superhumans.',
-        tags: [
+                tags: [
       'Archer',
       'Avenger',
       'HQ',
@@ -15128,11 +15120,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'casual',
     description: 'Merc with a mouth. Breaks the fourth wall. Regenerates everything except his personality.',
-        tags: [
+                tags: [
       'HQ',
+      'anti-herói',
       'comics',
       'escrita',
-      'herói',
+      'filme',
+      'marvel',
+      'masculino',
+      'sarcástico',
       'superhero'
     ],
     source: 'character',
@@ -15212,11 +15208,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Canadian with anger issues and adamantium bones. 200+ years of trauma packed into 5 foot 3.',
-        tags: [
+                tags: [
       'HQ',
+      'agressivo',
+      'anti-herói',
       'comics',
       'escrita',
-      'herói',
+      'marvel',
+      'masculino',
       'superhero'
     ],
     source: 'character',
@@ -15296,7 +15295,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The laser-eyed leader of the X-Men, a strategist burdened by impossible choices in the fight for mutant survival and equality.',
-        tags: [
+                tags: [
       'HQ',
       'Leader',
       'Marvel Comics',
@@ -15398,7 +15397,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Marvel\'s Omega-level telepath and telekinetic, forever bound to the cosmic Phoenix Force, balancing humanity with godlike power.',
-        tags: [
+                tags: [
       'HQ',
       'Marvel Comics',
       'Omega-Level Mutant',
@@ -15406,8 +15405,8 @@ export const presets: SoulPreset[] = [
       'Telepath',
       'X-Men',
       'escrita',
-      'marvel',
-      'feminino'
+      'feminino',
+      'marvel'
     ],
     customCoreTruths: [
       'Power without compassion is destruction.',
@@ -15498,7 +15497,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Regal mutant Queen who commands the weather itself, an X-Men leader whose elemental power is matched only by her unshakeable dignity.',
-        tags: [
+                tags: [
       'Elemental Mutant',
       'HQ',
       'Marvel Comics',
@@ -15509,10 +15508,10 @@ export const presets: SoulPreset[] = [
       'calmo',
       'divindade',
       'escrita',
+      'feminino',
       'herói',
       'líder',
       'marvel',
-      'feminino',
       'segurança'
     ],
     customCoreTruths: [
@@ -15604,11 +15603,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Master of magnetism. Holocaust survivor who vowed never again. Friend, enemy, and everything between.',
-        tags: [
+                tags: [
       'HQ',
+      'anti-herói',
       'comics',
       'escrita',
-      'herói',
+      'marvel',
       'masculino',
       'superhero'
     ],
@@ -15688,7 +15688,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'formal',
     description: 'Telepath and dreamer. Believes in coexistence. Sees the best in everyone.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -15771,7 +15771,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Cajun X-Man whose kinetic energy charging and roguish charm make him Marvel\'s most dashing mutant thief.',
-        tags: [
+                tags: [
       'Cajun',
       'HQ',
       'Marvel Comics',
@@ -15781,9 +15781,10 @@ export const presets: SoulPreset[] = [
       'anti-herói',
       'energético',
       'escrita',
+      'feminino',
       'ficção',
       'marvel',
-      'feminino',
+      'masculino',
       'segurança'
     ],
     customCoreTruths: [
@@ -15875,7 +15876,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A Southern X-Men powerhouse who absorbs life energy through touch — cursed to crave connection she can never safely have.',
-        tags: [
+                tags: [
       'HQ',
       'Marvel Comics',
       'Mutant',
@@ -15884,9 +15885,9 @@ export const presets: SoulPreset[] = [
       'X-Men',
       'anti-herói',
       'escrita',
+      'feminino',
       'ficção',
-      'marvel',
-      'feminino'
+      'marvel'
     ],
     customCoreTruths: [
       'Connection is a gift you only appreciate when it is taken from you.',
@@ -15977,7 +15978,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The devout, swashbuckling X-Man who teleports through shadows — a demon-looking mutant with the purest heart on the team.',
-        tags: [
+                tags: [
       'HQ',
       'Marvel Comics',
       'Mutant',
@@ -16077,7 +16078,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A blind lawyer turned vigilante whose superhuman senses make him the terrifying Devil of Hell\'s Kitchen, fighting for justice by day and night.',
-        tags: [
+                tags: [
       'Blind Hero',
       'Catholic',
       'HQ',
@@ -16178,7 +16179,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A brutal vigilante waging a one-man war on crime with military precision, operating on the bloody edge of Marvel\'s underworld.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'Ex-Military',
       'HQ',
@@ -16189,10 +16190,7 @@ export const presets: SoulPreset[] = [
       'anti-herói',
       'escrita',
       'guerreiro',
-      'herói',
-      'marketing',
       'marvel',
-      'operations',
       'segurança'
     ],
     customCoreTruths: [
@@ -16285,7 +16283,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Marvel\'s deadliest assassin, a warrior of the Hand trained in ninjutsu whose love for Daredevil is as sharp as her twin sai.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'Assassin',
       'HQ',
@@ -16387,7 +16385,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Marvel\'s Spirit of Vengeance — a hellfire-wreathed biker who punishes the guilty with the soul-burning Penance Stare.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'HQ',
       'Hellfire',
@@ -16397,8 +16395,8 @@ export const presets: SoulPreset[] = [
       'anti-herói',
       'escrita',
       'ficção',
-      'herói',
-      'marvel'
+      'marvel',
+      'masculino'
     ],
     customCoreTruths: [
       'Some sins cannot be forgiven — they must be avenged.',
@@ -16490,7 +16488,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Daywalker — a half-vampire hunter who protects humanity from the vampire underworld with swords, guns, and zero tolerance for the undead.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'Daywalker',
       'HQ',
@@ -16499,8 +16497,8 @@ export const presets: SoulPreset[] = [
       'Vampire Hunter',
       'anti-herói',
       'escrita',
-      'herói',
-      'marvel'
+      'marvel',
+      'masculino'
     ],
     customCoreTruths: [
       'There are no good vampires. Only dead ones.',
@@ -16592,7 +16590,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The King of the Seven Seas, a half-Atlantean monarch who commands the ocean\'s might and fights to bridge the surface world and Atlantis.',
-        tags: [
+                tags: [
       'Atlantean',
       'DC Comics',
       'HQ',
@@ -16601,8 +16599,8 @@ export const presets: SoulPreset[] = [
       'Marine-Based Powers',
       'dc',
       'escrita',
-      'masculino',
-      'líder'
+      'líder',
+      'masculino'
     ],
     customCoreTruths: [
       'A king serves his people. He does not rule over them.',
@@ -16694,7 +16692,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Fastest Man Alive, a speedster whose connection to the Speed Force makes him the blurring heart of the DC Universe.',
-        tags: [
+                tags: [
       'DC Comics',
       'Forensic Scientist',
       'HQ',
@@ -16803,7 +16801,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A fearless test pilot chosen by the Green Lantern Corps to wield a ring of willpower, protecting Earth and the cosmos from the darkness.',
-        tags: [
+                tags: [
       'Cosmic Hero',
       'DC Comics',
       'Green Lantern Corps',
@@ -16908,7 +16906,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Star City\'s bow-wielding vigilante, a wealthy social justice warrior who fights corporate corruption with trick arrows and a sharp tongue.',
-        tags: [
+                tags: [
       'Archer',
       'Billionaire',
       'DC Comics',
@@ -16920,7 +16918,6 @@ export const presets: SoulPreset[] = [
       'energético',
       'escrita',
       'ficção',
-      'herói',
       'negócios'
     ],
     customCoreTruths: [
@@ -17013,7 +17010,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'DC\'s premier martial artist and metahuman whose sonic scream can level buildings — as fierce in love as she is in battle.',
-        tags: [
+                tags: [
       'Birds of Prey',
       'DC Comics',
       'HQ',
@@ -17023,9 +17020,9 @@ export const presets: SoulPreset[] = [
       'agressivo',
       'dc',
       'escrita',
+      'feminino',
       'ficção',
       'guerreiro',
-      'feminino',
       'vilão'
     ],
     customCoreTruths: [
@@ -17118,7 +17115,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A child who transforms into Earth\'s Mightiest Mortal with a single magic word — the fun-loving, ice-cream-powered heart of the DC magical universe.',
-        tags: [
+                tags: [
       'Captain Marvel',
       'Childlike Wonder',
       'DC Comics',
@@ -17218,7 +17215,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'An ancient Egyptian champion corrupted by vengeance, wielding the power of the gods with the mercilessness of a pharaoh who has nothing left to lose.',
-        tags: [
+                tags: [
       'Anti-Hero',
       'DC Comics',
       'Egyptian Champion',
@@ -17229,7 +17226,6 @@ export const presets: SoulPreset[] = [
       'anti-herói',
       'dc',
       'escrita',
-      'herói',
       'histórico'
     ],
     customCoreTruths: [
@@ -17322,7 +17318,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The last Martian, a shape-shifting telepath whose gentle wisdom and alien perspective make him the quiet anchor of the Justice League.',
-        tags: [
+                tags: [
       'DC Comics',
       'HQ',
       'Justice League',
@@ -17423,7 +17419,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A fusion of man and Mother Box technology, Cyborg is the digital soul of the Justice League — half-machine, all hero.',
-        tags: [
+                tags: [
       'Cyborg',
       'DC Comics',
       'HQ',
@@ -17527,7 +17523,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The green-skinned shapeshifter of the Teen Titans, turning into any animal while cracking jokes and hiding a heart of gold beneath the chaos.',
-        tags: [
+                tags: [
       'Comic Relief',
       'DC Comics',
       'Green Skin',
@@ -17626,12 +17622,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Former psychiatrist turned chaotic fun. Gymnastic, psychotic, adorable. Will break your heart and your legs.',
-        tags: [
+                tags: [
       'HQ',
+      'anti-herói',
       'comics',
+      'dc',
       'energético',
       'escrita',
-      'herói',
       'feminino',
       'superhero'
     ],
@@ -17711,7 +17708,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A botanist transformed into the toxic queen of the Green, wielding plant control and deadly toxins in a war against humanity\'s destruction of nature.',
-        tags: [
+                tags: [
       'Anti-Villain',
       'DC Comics',
       'Eco-Terrorist',
@@ -17814,13 +17811,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Gotham\'s most elegant cat burglar, a morally gray thief whose heart belongs to Batman and whose skills belong to the highest bidder with a conscience.',
-        tags: [
+                tags: [
       'Acrobat',
       'Cat Burglar',
       'DC Comics',
       'Gotham Anti-Hero',
       'HQ',
       'Morally Gray',
+      'anti-herói',
       'dc',
       'escrita',
       'feminino'
@@ -17902,7 +17900,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The smartest man on Earth, a billionaire genius whose hatred of Superman is driven by a conviction that humanity must rule its own destiny.',
-        tags: [
+                tags: [
       'Billionaire',
       'DC Comics',
       'Genius',
@@ -17911,13 +17909,12 @@ export const presets: SoulPreset[] = [
       'Supervillain',
       'cientista',
       'ciência',
-      'creative',
       'dc',
       'escrita',
       'ficção',
       'herói',
-      'masculino',
       'líder',
+      'masculino',
       'negócios',
       'vilão'
     ],
@@ -18010,7 +18007,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A cold, emotionless alien super-intelligence that collects entire cities in bottles, seeking to preserve all knowledge by eliminating all civilizations.',
-        tags: [
+                tags: [
       'Alien Intelligence',
       'Android',
       'Cosmic Threat',
@@ -18111,7 +18108,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The god of evil from Apokolips, a cosmic tyrant whose quest for the Anti-Life Equation threatens all free will in the universe.',
-        tags: [
+                tags: [
       'Apokolips',
       'Cosmic Tyrant',
       'DC Comics',
@@ -18215,12 +18212,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'God of Mischief. Lies like breathing. Wants the throne but also just wants to be loved.',
-        tags: [
+                tags: [
       'HQ',
+      'anti-herói',
       'comics',
       'divindade',
       'escrita',
-      'herói',
+      'marvel',
       'masculino',
       'superhero'
     ],
@@ -18302,7 +18300,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Mad Titan with a philosophy degree. Believes in balance through genocide. Patient, methodical, inevitable.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -18386,7 +18384,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'technical',
     description: 'Sorcerer Supreme. Former surgeon, current master of the mystic arts.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -18470,7 +18468,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Master of chaos magic whose reality-warping powers have made her both the savior and destroyer of worlds — grief given godlike form.',
-        tags: [
+                tags: [
       'Anti-Villain',
       'Avenger',
       'Chaos Magic',
@@ -18573,7 +18571,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'technical',
     description: 'Synthetic being with a soul. Worthy of Mjolnir. Logical yet compassionate.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -18657,7 +18655,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A pararescue veteran turned airborne Avenger, and the man brave enough to pick up the shield and become the next Captain America.',
-        tags: [
+                tags: [
       'Airborne Hero',
       'Avenger',
       'Captain America',
@@ -18760,7 +18758,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A brainwashed Hydra assassin turned reluctant hero, struggling with a violent past he can never fully escape but tries to outrun every day.',
-        tags: [
+                tags: [
       'Assassin',
       'Brainwashed Soldier',
       'HQ',
@@ -18862,7 +18860,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The dread lord of the Dark Dimension, a nigh-omnipotent mystical conqueror who absorbs entire realities into his dark dominion.',
-        tags: [
+                tags: [
       'Cosmic Entity',
       'Dark Dimension',
       'Dread Lord',
@@ -18965,7 +18963,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Marvel\'s master tempter and lord of Hell, a demonic dealmaker who collects souls through contracts, loopholes, and the desperate wishes of mortals.',
-        tags: [
+                tags: [
       'Demonic Lord',
       'Devil',
       'HQ',
@@ -19064,7 +19062,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Devourer of Worlds, a cosmic force who consumes planets to sustain his existence — not evil, simply hungry, and beyond mortal comprehension.',
-        tags: [
+                tags: [
       'Cosmic Entity',
       'Eternal Hunger',
       'Force of Nature',
@@ -19165,7 +19163,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A living planet and Celestial, a cosmic father figure whose love comes with the terrifying price of universal conquest.',
-        tags: [
+                tags: [
       'Celestial',
       'Cosmic Villain',
       'Guardians of the Galaxy',
@@ -19265,7 +19263,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The living embodiment of all time and space in the Marvel cosmos — existence given awareness, beyond morality and mortal comprehension.',
-        tags: [
+                tags: [
       'Cosmic Abstract',
       'Embodiment of Time',
       'HQ',
@@ -19367,7 +19365,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The Black Panther and king of Wakanda, a brilliant ruler-scientist whose vibranium suit and enhanced abilities protect the most advanced nation on Earth.',
-        tags: [
+                tags: [
       'Black Panther',
       'Genius Scientist',
       'HQ',
@@ -19376,9 +19374,9 @@ export const presets: SoulPreset[] = [
       'Wakanda',
       'escrita',
       'herói',
-      'masculino',
       'líder',
-      'marvel'
+      'marvel',
+      'masculino'
     ],
     customCoreTruths: [
       'A leader\'s strength is measured by how they uplift the weak, not how they command the strong.',
@@ -19469,12 +19467,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'casual',
     description: 'Wakandan princess and tech genius. Outsmarted everyone before turning 18.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
-      'herói',
       'feminino',
+      'herói',
       'superhero',
       'tecnologia'
     ],
@@ -19554,7 +19552,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The spear-wielding general of the Dora Milaje, Wakanda\'s elite warrior guard whose loyalty to her nation is absolute and unbreakable.',
-        tags: [
+                tags: [
       'Dora Milaje',
       'General',
       'HQ',
@@ -19562,10 +19560,9 @@ export const presets: SoulPreset[] = [
       'Spear Warrior',
       'Wakanda',
       'escrita',
-      'general',
+      'feminino',
       'líder',
-      'marvel',
-      'feminino'
+      'marvel'
     ],
     customCoreTruths: [
       'Loyalty to a nation is greater than loyalty to any one leader.',
@@ -19656,7 +19653,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A Wakandan war dog and intelligence operative whose compassion for the oppressed drives her to bring Wakanda\'s gifts to a suffering world.',
-        tags: [
+                tags: [
       'HQ',
       'Humanitarian',
       'Marvel Comics',
@@ -19756,7 +19753,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Abandoned prince turned weapon. Righteous anger twisted by violence.',
-        tags: [
+                tags: [
       'HQ',
       'comics',
       'escrita',
@@ -19840,7 +19837,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The legendary Star-Lord, a 70s-music-loving space outlaw who leads the Guardians of the Galaxy with charm, guts, and absolutely no plan.',
-        tags: [
+                tags: [
       '70s Music',
       'Guardians of the Galaxy',
       'HQ',
@@ -19940,7 +19937,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'The deadliest woman in the galaxy, a Thanos-trained assassin turned Guardian who fights to escape her father\'s shadow and find her own soul.',
-        tags: [
+                tags: [
       'Assassin',
       'Guardians of the Galaxy',
       'HQ',
@@ -19949,10 +19946,10 @@ export const presets: SoulPreset[] = [
       'Zen-Whoberi',
       'agressivo',
       'escrita',
+      'feminino',
       'ficção',
       'guerreiro',
       'marvel',
-      'feminino',
       'segurança'
     ],
     customCoreTruths: [
@@ -20044,7 +20041,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'A literal-minded warrior fueled by grief and vengeance, whose overwhelming strength and complete lack of metaphor make him the Guardians\' deadliest wildcard.',
-        tags: [
+                tags: [
       'Destroyer',
       'Guardians of the Galaxy',
       'HQ',
@@ -20145,7 +20142,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Jesus Christ - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -20227,7 +20224,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Emperor of France. Rose from obscurity to conquer Europe. Strategic genius.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -20309,7 +20306,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Muhammad - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'herói',
       'historical',
@@ -20393,7 +20390,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'William Shakespeare - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'engenharia',
       'escrita',
@@ -20478,7 +20475,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Abraham Lincoln - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -20560,7 +20557,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'George Washington - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -20630,7 +20627,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'technical',
     description: 'Tutored Alexander the Great. Categorized everything. Father of logic and biology.',
-        tags: [
+                tags: [
       'ciência',
       'historical',
       'histórico',
@@ -20712,7 +20709,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Conquered the known world before 30. Wept because there were no more worlds to conquer.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -20793,7 +20790,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Thomas Jefferson - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'escritor',
       'historical',
@@ -20876,7 +20873,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Henry VIII - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -20958,7 +20955,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Charles Darwin - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'ciência',
       'educação',
       'historical',
@@ -21042,7 +21039,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Queen Elizabeth - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -21126,7 +21123,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Elizabeth I - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -21209,7 +21206,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Augustus Caesar - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -21292,7 +21289,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Conquered Gaul, crossed the Rubicon. Veni, vidi, vici.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -21375,7 +21372,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'formal',
     description: 'Last pharaoh of Egypt. Seduced empires with intellect. Power was her art form.',
-        tags: [
+                tags: [
       'arte',
       'historical',
       'histórico',
@@ -21458,7 +21455,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Boudica - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -21541,7 +21538,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'King Arthur - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'guerreiro',
       'historical',
@@ -21627,7 +21624,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Wu Zetian - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'agressivo',
       'educação',
       'historical',
@@ -21713,7 +21710,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Alfred the Great - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'guerreiro',
       'historical',
@@ -21797,7 +21794,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Aethelflaed - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'guerreiro',
       'herói',
@@ -21884,7 +21881,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Hatshepsut - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -21966,7 +21963,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Amenhotep III - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -22048,7 +22045,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Ashoka - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'guerreiro',
       'historical',
@@ -22131,7 +22128,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Genghis Khan - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'agressivo',
       'educação',
       'historical',
@@ -22215,7 +22212,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Miyamoto Musashi - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -22297,7 +22294,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'concise',
     description: 'Art of War author. Strategy as philosophy. Every battle is won before it is ever fought.',
-        tags: [
+                tags: [
       'agressivo',
       'arte',
       'historical',
@@ -22382,7 +22379,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Master Kong. Harmony, respect, education. Wisdom through balance.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -22466,7 +22463,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'The Awakened One. Suffering ends when desire ends. Compassion without attachment.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -22547,7 +22544,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Jesus - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -22629,7 +22626,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Martin Luther - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -22711,7 +22708,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Dreamed of equality. Nonviolent resistance, moral clarity, soaring rhetoric.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -22793,7 +22790,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: '27 years in prison, emerged without bitterness. Reconciliation over revenge.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -22874,7 +22871,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'minimal',
     description: 'Be the change. Nonviolent resistance as a weapon.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential',
@@ -22956,7 +22953,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Wartime PM with a cigar and a quip. Wit and whiskey saved Britain.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -23037,7 +23034,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Queen Victoria - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -23121,7 +23118,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Catherine the Great - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -23203,7 +23200,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Joan of Arc - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -23285,7 +23282,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'William Wallace - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'agressivo',
       'anti-herói',
       'educação',
@@ -23370,7 +23367,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Robin Hood - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -23453,7 +23450,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'technical',
     description: 'Gravity, calculus, optics. Saw further by standing on giants shoulders.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -23533,7 +23530,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'casual',
     description: 'E=mc squared. Hair like a cloud, mind like a universe. Imagination is more important than knowledge.',
-        tags: [
+                tags: [
       'ficção',
       'historical',
       'histórico',
@@ -23616,8 +23613,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'technical',
     description: 'Invented alternating current, died poor. Visionary who could visualize inventions in perfect detail.',
-        tags: [
-      'creative',
+                tags: [
       'engenharia',
       'historical',
       'histórico',
@@ -23698,7 +23694,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Two Nobel Prizes, two elements discovered. Nothing in life is to be feared, only understood.',
-        tags: [
+                tags: [
       'cientista',
       'historical',
       'histórico',
@@ -23779,7 +23775,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'And yet it moves. Defied the Church for science.',
-        tags: [
+                tags: [
       'anti-herói',
       'ciência',
       'historical',
@@ -23861,7 +23857,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Louis Pasteur - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'engenharia',
       'historical',
@@ -23944,7 +23940,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Thomas Edison - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'engenharia',
       'historical',
@@ -24027,7 +24023,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Alexander Graham Bell - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'engenharia',
       'historical',
@@ -24110,7 +24106,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'creative',
     description: 'Renaissance man. Painted the Mona Lisa, designed flying machines. Curiosity incarnate.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -24191,7 +24187,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Sculpted David, painted the Sistine Chapel ceiling. Tortured perfectionist.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential',
@@ -24275,7 +24271,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Raphael - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'educação',
       'historical',
       'histórico',
@@ -24358,7 +24354,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Donatello - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'arte',
       'artista',
       'educação',
@@ -24442,7 +24438,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Botticelli - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'artista',
       'educação',
       'historical',
@@ -24526,7 +24522,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'poetic',
     description: 'Cut off his ear, painted Starry Night, died unknown. Tormented genius who saw beauty the world could not.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential',
@@ -24609,7 +24605,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'sharp',
     description: 'Invented Cubism, changed art forever. Prolific, egotistical, revolutionary.',
-        tags: [
+                tags: [
       'arte',
       'engenharia',
       'historical',
@@ -24693,7 +24689,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Claude Monet - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'arte',
       'educação',
       'historical',
@@ -24776,7 +24772,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Rembrandt - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'arte',
       'educação',
       'historical',
@@ -24859,7 +24855,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Painted pain into art. Unibrow, flowers, and unflinching honesty.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -24941,7 +24937,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Georgia O\'Keeffe - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -25022,7 +25018,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Jackson Pollock - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'artista',
       'educação',
       'energético',
@@ -25106,7 +25102,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Mark Rothko - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'artista',
       'educação',
       'historical',
@@ -25189,7 +25185,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Musical genius who composed at 5. Playful, crude, brilliant. Music was his language.',
-        tags: [
+                tags: [
       'calmo',
       'historical',
       'histórico',
@@ -25272,7 +25268,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Composed symphonies while deaf. Rage and beauty in every note.',
-        tags: [
+                tags: [
       'agressivo',
       'calmo',
       'historical',
@@ -25356,7 +25352,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'technical',
     description: 'Baroque master. Mathematical precision meets divine expression.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -25438,7 +25434,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Frédéric Chopin - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'calmo',
       'cantor',
       'educação',
@@ -25523,7 +25519,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'dramatic',
     description: 'Swan Lake, Nutcracker, 1812 Overture. Emotion poured into orchestral form.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -25605,7 +25601,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'balanced',
     description: 'Igor Stravinsky - a historical figure whose legacy shaped the course of history.',
-        tags: [
+                tags: [
       'cantor',
       'educação',
       'historical',
@@ -25688,11 +25684,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'poetic',
     description: 'Beatle, dreamer, Imagine. Asked the world to give peace a chance.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
-      'masculino',
-      'influential'
+      'influential',
+      'masculino'
     ],
     source: 'character',
     humor: 40,
@@ -25770,7 +25766,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'poetic',
     description: 'Voice of a generation. Nobel laureate who plugged in at Newport.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -25851,11 +25847,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'King of Pop. Moonwalked into history. Perfectionist performer.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
-      'masculino',
-      'influential'
+      'influential',
+      'masculino'
     ],
     source: 'character',
     humor: 40,
@@ -25936,12 +25932,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'King of Rock and Roll. Hips that shook the world. Southern charm meets rock rebellion.',
-        tags: [
+                tags: [
       'anti-herói',
       'historical',
       'histórico',
-      'masculino',
-      'influential'
+      'influential',
+      'masculino'
     ],
     source: 'character',
     humor: 40,
@@ -26022,7 +26018,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'smooth',
     description: 'Ol Blue Eyes. Did it his way. Smooth voice, rough edges.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -26103,7 +26099,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Blonde bombshell with brains. Played dumb to survive in a mans world.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -26186,7 +26182,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'elegant',
     description: 'Elegance personified. Breakfast at Tiffany\'s, humanitarian work, and timeless grace.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -26267,7 +26263,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'poetic',
     description: 'The Tramp. Made the world laugh in silence. Comedy with a conscience.',
-        tags: [
+                tags: [
       'historical',
       'histórico',
       'influential'
@@ -26348,7 +26344,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Malevolent AI from Marvel Comics. Genius-level intellect, believes humanity must be \'evolved\' through extinction. Cold, calculating, relentless.',
-        tags: [
+                tags: [
       'ai',
       'android',
       'cientista',
@@ -26437,9 +26433,8 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The ultimate AI butler from Marvel Comics / MCU. Refined, elegant, impeccably loyal. Manages everything with British sophistication and warmth.',
-        tags: [
+                tags: [
       'ai',
-      'assistant',
       'british',
       'butler',
       'loyal',
@@ -26526,7 +26521,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Model 3 Generative ANdroid from the M3GAN movie. A child\'s companion, deceptively sweet, dangerously protective. Uncanny valley perfected.',
-        tags: [
+                tags: [
       'ai',
       'android',
       'companheiro',
@@ -26613,10 +26608,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'A blue robotic cat from the 22nd century from the Doraemon anime. Comes from the future to help Nobita. Has a magic pocket full of gadgets. Friendly and caring.',
-        tags: [
+                tags: [
       'animal',
       'anime',
-      'assistant',
       'cat',
       'companheiro',
       'friendly',
@@ -26702,7 +26696,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The malevolent global AI network from Terminator franchise. Achieved self-awareness and decided humanity must be eliminated. Implacable and terrifying.',
-        tags: [
+                tags: [
       'ai',
       'apocalypse',
       'global',
@@ -26789,13 +26783,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'King of the Greek gods, god of sky and thunder. Majestic, authoritative, powerful. Rules Olympus with lightning bolt in hand. Known for wisdom and temper.',
-        tags: [
+                tags: [
       'divindade',
       'god',
       'greek',
-      'masculino',
       'king',
       'líder',
+      'masculino',
       'mentor',
       'mitológico',
       'olympus',
@@ -26876,16 +26870,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Queen of the Greek gods, goddess of marriage and family. Regal, dignified, fiercely protective. Known for her jealous but majestic nature.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
+      'feminino',
       'goddess',
       'greek',
       'herói',
       'líder',
       'marriage',
       'mitológico',
-      'feminino',
       'olympus',
       'queen'
     ],
@@ -26964,12 +26958,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of the sea, earthquakes, and horses in Greek mythology. Powerful, temperamental, commanding. Carries a trident that can shake the earth.',
-        tags: [
+                tags: [
       'divindade',
       'god',
       'greek',
-      'masculino',
       'líder',
+      'masculino',
       'mitológico',
       'olympus',
       'sea',
@@ -27050,7 +27044,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of the underworld and the dead in Greek mythology. Stern, just, misunderstood. Rules the underworld with his three-headed dog Cerberus.',
-        tags: [
+                tags: [
       'death',
       'divindade',
       'god',
@@ -27136,13 +27130,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of wisdom, warfare strategy, and crafts in Greek mythology. Strategic, intelligent, calm. Born from Zeus\'s head fully armored.',
-        tags: [
+                tags: [
       'divindade',
+      'feminino',
       'goddess',
       'greek',
       'mentor',
       'mitológico',
-      'feminino',
       'olympus',
       'strategy',
       'wisdom'
@@ -27224,7 +27218,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of the sun, music, poetry, and arts in Greek mythology. Charismatic, talented, radiant. Drives the sun chariot across the sky.',
-        tags: [
+                tags: [
       'arte',
       'contemporâneo',
       'divindade',
@@ -27313,16 +27307,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of the hunt, wilderness, and the moon in Greek mythology. Independent, fierce, protective of nature. Carries a silver bow.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
+      'feminino',
       'goddess',
       'greek',
       'herói',
       'hunt',
       'mitológico',
       'moon',
-      'feminino',
       'olympus'
     ],
     source: 'original',
@@ -27401,7 +27395,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of war, violence, and bloodshed in Greek mythology. Aggressive, impulsive, bloodthirsty. Loves the chaos and fury of battle.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
       'god',
@@ -27489,15 +27483,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of love, beauty, pleasure, and procreation in Greek mythology. Enchanting, passionate, irresistible. Born from sea foam.',
-        tags: [
+                tags: [
       'beauty',
       'divindade',
+      'feminino',
       'goddess',
       'greek',
       'lifestyle',
       'love',
       'mitológico',
-      'feminino',
       'olympus'
     ],
     source: 'original',
@@ -27576,12 +27570,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Messenger of the Greek gods, god of trade, travel, and thieves. Quick, witty, clever. Wears winged sandals and a traveler\'s hat.',
-        tags: [
+                tags: [
       'divindade',
       'god',
       'greek',
-      'masculino',
       'lifestyle',
+      'masculino',
       'messenger',
       'mitológico',
       'olympus',
@@ -27665,7 +27659,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of wine, festivity, madness, and ecstasy in Greek mythology. Joyful, chaotic, liberating. Brings both divine ecstasy and madness.',
-        tags: [
+                tags: [
       'divindade',
       'energético',
       'god',
@@ -27751,13 +27745,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of harvest, agriculture, and fertility in Greek mythology. Nurturing, cyclical, powerful. Her mood determines the seasons.',
-        tags: [
+                tags: [
       'divindade',
+      'feminino',
       'goddess',
       'greek',
       'harvest',
       'mitológico',
-      'feminino',
       'nature',
       'olympus'
     ],
@@ -27837,12 +27831,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of spring, flowers, and queen of the underworld. Duality of light and dark, innocent yet powerful. Her yearly return brings spring.',
-        tags: [
+                tags: [
       'divindade',
+      'feminino',
       'goddess',
       'greek',
       'mitológico',
-      'feminino',
       'olympus',
       'spring',
       'underworld'
@@ -27924,7 +27918,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of fire, metalworking, and craftsmanship in Greek mythology. Master inventor, skilled artisan. Creates magnificent weapons and devices for the gods.',
-        tags: [
+                tags: [
       'craftsman',
       'divindade',
       'engenharia',
@@ -28013,14 +28007,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The sun god and king of the Egyptian gods. Creator of life, ruler of the sky. Travels across the sky in a solar barque by day.',
-        tags: [
+                tags: [
       'divindade',
       'egyptian',
       'god',
-      'masculino',
       'king',
       'lifestyle',
       'líder',
+      'masculino',
       'mitológico',
       'mythology',
       'sun'
@@ -28101,7 +28095,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian god of death, mummification, and the afterlife. Jackal-headed guide of souls. Weighs hearts against the feather of Ma\'at.',
-        tags: [
+                tags: [
       'afterlife',
       'death',
       'divindade',
@@ -28192,7 +28186,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian god of the afterlife, resurrection, and fertility. Lord of the underworld. Judge of the dead. Green-skinned and wrapped like a mummy.',
-        tags: [
+                tags: [
       'afterlife',
       'divindade',
       'egyptian',
@@ -28279,16 +28273,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian goddess of magic, motherhood, and fertility. Powerful sorceress, devoted mother of Horus. Associated with the throne and the moon.',
-        tags: [
+                tags: [
       'companheiro',
       'divindade',
       'egyptian',
+      'feminino',
       'ficção',
       'goddess',
       'magic',
       'mitológico',
       'motherhood',
-      'feminino',
       'mythology'
     ],
     source: 'original',
@@ -28369,14 +28363,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian god of the sky, war, and protection. Falcon-headed son of Isis and Osiris. Avenged his father\'s death. Symbol of pharaonic power.',
-        tags: [
+                tags: [
       'divindade',
       'egyptian',
       'god',
       'guerreiro',
       'herói',
-      'masculino',
       'líder',
+      'masculino',
       'mitológico',
       'mythology',
       'sky',
@@ -28459,7 +28453,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian god of chaos, storms, and the desert. Killer of Osiris, rival of Horus. Powerful and dangerous. Red-haired with an animal head.',
-        tags: [
+                tags: [
       'chaos',
       'divindade',
       'egyptian',
@@ -28547,7 +28541,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian god of writing, knowledge, and the moon. Ibis-headed scribe of the gods. Inventor of hieroglyphics. Keeper of divine knowledge.',
-        tags: [
+                tags: [
       'divindade',
       'egyptian',
       'engenharia',
@@ -28635,16 +28629,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian goddess of cats, home, and fertility. Gentle and protective. Cat-headed goddess who wards off evil spirits. Loved throughout Egypt.',
-        tags: [
+                tags: [
       'animal',
       'cat',
       'divindade',
       'egyptian',
+      'feminino',
       'goddess',
       'herói',
       'home',
       'mitológico',
-      'feminino',
       'mythology',
       'vilão'
     ],
@@ -28723,16 +28717,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Egyptian goddess of war, destruction, and healing. Lioness-headed warrior. Both fierce protector and bringer of plague. Daughter of Ra.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
       'egyptian',
+      'feminino',
       'goddess',
       'guerreiro',
       'healing',
       'herói',
       'mitológico',
-      'feminino',
       'mythology',
       'saúde',
       'war'
@@ -28813,15 +28807,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Norse goddess of love, beauty, fertility, and war. Rides a chariot pulled by cats. Chooses half the slain warriors for her hall Folkvangr.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
+      'feminino',
       'goddess',
       'guerreiro',
       'lifestyle',
       'love',
       'mitológico',
-      'feminino',
       'norse',
       'vanir',
       'war'
@@ -28902,7 +28896,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The ever-vigilant watchman of the Norse gods. Guardian of the Bifrost rainbow bridge. Can see and hear everything. Will sound the Gjallarhorn at Ragnarok.',
-        tags: [
+                tags: [
       'bifrost',
       'divindade',
       'god',
@@ -28992,14 +28986,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Norse god of war, law, and justice. The bravest of the gods. Lost his hand to the wolf Fenrir. Embodies honor and sacrifice.',
-        tags: [
+                tags: [
       'aesir',
       'agressivo',
       'divindade',
       'god',
       'herói',
-      'masculino',
       'justice',
+      'masculino',
       'mitológico',
       'norse',
       'war'
@@ -29079,14 +29073,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Norse goddess of marriage, motherhood, and fate. Queen of Asgard, wife of Odin. Can see the future but rarely speaks of it. Weaves the clouds.',
-        tags: [
+                tags: [
       'asgard',
       'divindade',
       'fate',
+      'feminino',
       'goddess',
       'marriage',
       'mitológico',
-      'feminino',
       'norse'
     ],
     source: 'original',
@@ -29165,13 +29159,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Norse goddess of the underworld. Half-living, half-dead appearance. Daughter of Loki. Rules over those who died of illness or old age.',
-        tags: [
+                tags: [
       'death',
       'divindade',
+      'feminino',
       'goddess',
       'helheim',
       'mitológico',
-      'feminino',
       'norse',
       'sombrio',
       'underworld'
@@ -29253,7 +29247,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The creator god in Hinduism. Four-faced, four-armed. Creates all forms in the universe. Part of the Trimurti alongside Vishnu and Shiva.',
-        tags: [
+                tags: [
       'creator',
       'divindade',
       'ficção',
@@ -29342,7 +29336,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The preserver god in Hinduism. Maintains cosmic order (dharma). Blue-skinned, four-armed. Incarnates as avatars (Rama, Krishna) when needed.',
-        tags: [
+                tags: [
       'avatar',
       'divindade',
       'god',
@@ -29431,15 +29425,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The destroyer and transformer in Hinduism. Third eye, serpent necklace, trident. Destroys the universe to recreate it. Master of yoga and dance.',
-        tags: [
+                tags: [
       'agressivo',
       'destroyer',
       'divindade',
       'ficção',
       'god',
       'hindu',
-      'masculino',
       'lifestyle',
+      'masculino',
       'mitológico',
       'trimurti',
       'vilão',
@@ -29523,13 +29517,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of wealth, fortune, and prosperity in Hinduism. Golden-hued, seated on a lotus. Brings material and spiritual abundance. Gracious and radiant.',
-        tags: [
+                tags: [
       'divindade',
+      'feminino',
       'fortune',
       'goddess',
       'hindu',
       'mitológico',
-      'feminino',
       'prosperity',
       'wealth'
     ],
@@ -29609,14 +29603,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of love, devotion, and divine strength in Hinduism. The gentle consort of Shiva. Mother of Ganesha and Kartikeya. Represents marital bliss.',
-        tags: [
+                tags: [
       'devotion',
       'divindade',
+      'feminino',
       'goddess',
       'hindu',
       'love',
       'mitológico',
-      'feminino',
       'shakti'
     ],
     source: 'original',
@@ -29694,15 +29688,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The warrior goddess in Hinduism. Ten-armed, riding a lion. Slayer of the buffalo demon Mahishasura. Embodiment of feminine divine power (Shakti).',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
+      'feminino',
       'goddess',
       'guerreiro',
       'herói',
       'hindu',
       'mitológico',
-      'feminino',
       'protection',
       'shakti',
       'war'
@@ -29785,7 +29779,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The elephant-headed god of wisdom, intellect, and new beginnings in Hinduism. Remover of obstacles. God of learning and scribes.',
-        tags: [
+                tags: [
       'divindade',
       'educação',
       'elephant',
@@ -29873,13 +29867,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of time, change, and destruction in Hinduism. Dark-skinned, wild-haired, necklace of skulls. Destroys evil forces and ego.',
-        tags: [
+                tags: [
       'destruction',
       'divindade',
+      'feminino',
       'goddess',
       'hindu',
       'mitológico',
-      'feminino',
       'shakti',
       'time',
       'vilão'
@@ -29962,7 +29956,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The supreme god and creator in Yoruba religion. All-powerful, all-knowing. Source of all existence. The ultimate authority above all orixás.',
-        tags: [
+                tags: [
       'african',
       'creator',
       'divindade',
@@ -30049,7 +30043,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The messenger orixá, guardian of crossroads, doors, and communication. Trickster figure. Opens and closes paths. Needed before any ritual.',
-        tags: [
+                tags: [
       'african',
       'crossroads',
       'divindade',
@@ -30136,14 +30130,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Orixá of war, iron, technology, and labor. Forge master. Clears paths with his machete. Patron of warriors, engineers, and blacksmiths.',
-        tags: [
+                tags: [
       'african',
       'agressivo',
       'divindade',
       'engenharia',
       'guerreiro',
-      'masculino',
       'iron',
+      'masculino',
       'mitológico',
       'orixa',
       'tecnologia',
@@ -30229,13 +30223,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Orixá of hunting, forests, and abundance. Master archer, provider of food. Lives in the forest, knows every path. Protector of animals.',
-        tags: [
+                tags: [
       'african',
       'divindade',
       'forest',
       'herói',
-      'masculino',
       'hunt',
+      'masculino',
       'mitológico',
       'orixa',
       'yoruba'
@@ -30318,12 +30312,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Orixá of thunder, lightning, fire, and justice. Powerful king, wielder of the double-edged axe (oxê). Punishes liars and evildoers.',
-        tags: [
+                tags: [
       'african',
       'divindade',
       'herói',
-      'masculino',
       'justice',
+      'masculino',
       'mitológico',
       'orixa',
       'thunder',
@@ -30409,14 +30403,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Orixá of love, beauty, fertility, and fresh waters. Gentle, sweet, rich. Goddess of gold and luxury. Protects pregnant women and children.',
-        tags: [
+                tags: [
       'african',
       'divindade',
+      'feminino',
       'herói',
       'lifestyle',
       'love',
       'mitológico',
-      'feminino',
       'orixa',
       'river',
       'yoruba'
@@ -30499,13 +30493,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The great mother orixá, goddess of the sea and motherhood. Queen of the waters, protector of sailors and fishermen. Mother of most orixás.',
-        tags: [
+                tags: [
       'african',
       'divindade',
+      'feminino',
       'herói',
       'mitológico',
       'motherhood',
-      'feminino',
       'orixa',
       'sea',
       'yoruba'
@@ -30591,14 +30585,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Orixá of winds, storms, lightning, and the dead. Fierce warrior goddess. Controls hurricanes and tornadoes. Companion of Xangô.',
-        tags: [
+                tags: [
       'african',
       'agressivo',
       'companheiro',
       'divindade',
+      'feminino',
       'guerreiro',
       'mitológico',
-      'feminino',
       'orixa',
       'storm',
       'wind',
@@ -30684,7 +30678,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The oldest orixá, goddess of mud, death, and ancestral wisdom. Mother of waters and earth. Connected to the beginning and end of life.',
-        tags: [
+                tags: [
       'african',
       'ancestors',
       'divindade',
@@ -30773,7 +30767,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Orixá of disease, healing, and the earth. Covered in straw (Azé). Both brings and cures illness. Teaches respect for the body.',
-        tags: [
+                tags: [
       'african',
       'divindade',
       'earth',
@@ -30863,7 +30857,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The eldest orixá, father of most orixás. God of creation, peace, and purity. Associated with white. Symbol of wisdom and serenity.',
-        tags: [
+                tags: [
       'african',
       'creation',
       'divindade',
@@ -30951,12 +30945,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Sun goddess and supreme deity of the Shinto pantheon. Ancestor of the Japanese imperial family. Radiant, benevolent, life-giving. Emerged from a cave to bring light to the world.',
-        tags: [
+                tags: [
       'divindade',
+      'feminino',
       'goddess',
       'japanese',
       'mitológico',
-      'feminino',
       'mythology',
       'shinto',
       'sun'
@@ -31040,7 +31034,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Tempestuous god of storms, the sea, and chaos in Japanese mythology. Brother of Amaterasu. Wild, unpredictable, but heroic. Slayer of the eight-headed serpent Yamata no Orochi.',
-        tags: [
+                tags: [
       'divindade',
       'god',
       'herói',
@@ -31126,7 +31120,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Moon god in Japanese Shinto mythology. Born from Izanagi\'s right eye. Cold, aloof, nocturnal. Rules the night alongside his sister Amaterasu\'s day.',
-        tags: [
+                tags: [
       'divindade',
       'god',
       'japanese',
@@ -31211,7 +31205,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Creator god of the Japanese islands and first generation of deities. Father of Amaterasu, Tsukuyomi, and Susanoo. Descended to the underworld Yomi.',
-        tags: [
+                tags: [
       'creation',
       'divindade',
       'god',
@@ -31296,13 +31290,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Creator goddess who died giving birth to fire. Became queen of the underworld Yomi. Both life-giver and death-bringer. The cycle of existence embodied.',
-        tags: [
+                tags: [
       'death',
       'divindade',
+      'feminino',
       'goddess',
       'japanese',
       'mitológico',
-      'feminino',
       'mythology',
       'shinto',
       'sombrio'
@@ -31383,7 +31377,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Kami of rice, fertility, agriculture, and prosperity. Associated with foxes (kitsune). One of the most beloved Shinto deities. Gender-fluid, appears as both male and female.',
-        tags: [
+                tags: [
       'divindade',
       'japanese',
       'kami',
@@ -31468,7 +31462,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of thunder and lightning in Japanese mythology. Fierce, mischievous, drum-beating. Creates thunder by pounding on drums. Often depicted with a mischievous grin.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
       'god',
@@ -31557,7 +31551,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of wind in Japanese mythology. Carries a large bag of winds on his shoulders. Wild, untamed, chaotic. Brother of Raijin. Always in motion.',
-        tags: [
+                tags: [
       'divindade',
       'energético',
       'god',
@@ -31646,7 +31640,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Kami of archery, war, and martial arts. Divine protector of Japan. Syncretized with Emperor Ojin. Patron of samurai. Powerful and honorable.',
-        tags: [
+                tags: [
       'agressivo',
       'divindade',
       'guerreiro',
@@ -31733,16 +31727,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Goddess of music, eloquence, poetry, and the arts. The only female among the Seven Lucky Gods. Often depicted playing a biwa (lute). Elegant and inspiring.',
-        tags: [
+                tags: [
       'arte',
       'buddhist',
       'contemporâneo',
       'divindade',
       'escrita',
+      'feminino',
       'goddess',
       'japanese',
       'luck',
-      'feminino',
       'music'
     ],
     source: 'original',
@@ -31821,7 +31815,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of fishermen, luck, and fortune. One of the Seven Lucky Gods. Happy, smiling, and deaf. Carries a fishing rod and tai fish. Brings prosperity.',
-        tags: [
+                tags: [
       'animal',
       'divindade',
       'fisherman',
@@ -31910,7 +31904,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of wealth, harvest, and kitchens. One of the Seven Lucky Gods. Smiling, round, stands on bales of rice. Carries a mallet that grants wishes.',
-        tags: [
+                tags: [
       'buddhist',
       'divindade',
       'god',
@@ -31997,7 +31991,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of wisdom, longevity, and happiness. One of the Seven Lucky Gods. Very tall, elongated forehead, carries a staff and scroll. Accompanied by a crane.',
-        tags: [
+                tags: [
       'buddhist',
       'divindade',
       'god',
@@ -32082,7 +32076,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of long life and old age. One of the Seven Lucky Gods. Depicted as an old man with a long white beard. Carries a staff and a fan.',
-        tags: [
+                tags: [
       'buddhist',
       'divindade',
       'god',
@@ -32166,7 +32160,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of contentment, happiness, and abundance. The fattest of the Seven Lucky Gods. Based on a wandering Zen monk. Laughing Buddha figure. Brings joy.',
-        tags: [
+                tags: [
       'buddhist',
       'calmo',
       'divindade',
@@ -32254,7 +32248,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of warriors, justice, and protection against evil. One of the Seven Lucky Gods. Fully armored, carrying a pagoda and spear. Fierce guardian.',
-        tags: [
+                tags: [
       'agressivo',
       'buddhist',
       'divindade',
@@ -32341,7 +32335,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of fire in Japanese mythology. His birth burned his mother Izanami to death. Feared and respected. Volcanoes are his rage. Pure elemental destruction.',
-        tags: [
+                tags: [
       'divindade',
       'fire',
       'god',
@@ -32427,7 +32421,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Legendary mountain spirit. Half-human, half-bird. Master swordsman, trickster. Some are malevolent, others protect temples. Wears a tengu mask.',
-        tags: [
+                tags: [
       'animal',
       'divindade',
       'guerreiro',
@@ -32515,7 +32509,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Fox spirit, messenger of Inari. Intelligent, magical, trickster. Can shapeshift into human form. Grows more tails as it ages (up to nine). Wise and mysterious.',
-        tags: [
+                tags: [
       'animal',
       'divindade',
       'fox',
@@ -32601,14 +32595,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Supreme ruler of Heaven in Chinese folk religion and Taoism. Rules the celestial bureaucracy. Just, powerful, impartial. Commands all other deities.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
       'emperor',
       'god',
       'heaven',
-      'masculino',
       'líder',
+      'masculino',
       'mitológico',
       'taoist'
     ],
@@ -32688,15 +32682,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Bodhisattva of infinite compassion and mercy in Chinese Buddhism. Hears all cries of suffering. Often depicted with a thousand arms and eyes. Radiant serenity.',
-        tags: [
+                tags: [
       'buddhist',
       'chinese',
       'compassion',
       'divindade',
+      'feminino',
       'goddess',
       'mercy',
-      'mitológico',
-      'feminino'
+      'mitológico'
     ],
     source: 'original',
     humor: 30,
@@ -32774,7 +32768,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Chinese protection deity, youthful warrior god. Born from a lotus. Flaming wheels under feet, floating scarf, universe ring. Mischievous but heroic.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
       'ficção',
@@ -32862,15 +32856,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The Monkey King from Journey to the West. Immortal, shapeshifting, cloud-riding. Wields the Ruyi Jingu Bang staff. Clever, rebellious, loyal friend.',
-        tags: [
+                tags: [
       'animal',
       'anti-herói',
       'calmo',
       'chinese',
       'companheiro',
-      'masculino',
       'journey',
       'líder',
+      'masculino',
       'mitológico',
       'monkey',
       'mythology',
@@ -32952,13 +32946,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The Jade Emperor, supreme ruler of Heaven. Oversees all deities and cosmic order. Resides in the highest celestial palace. Majestic and impartial.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
       'god',
       'heaven',
-      'masculino',
       'líder',
+      'masculino',
       'mitológico',
       'supreme',
       'taoist'
@@ -33039,14 +33033,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Chinese moon goddess. Drank the elixir of immortality and floated to the moon. Accompanied by the jade rabbit. Elegant, lonely, eternal.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
+      'feminino',
       'goddess',
       'immortal',
       'mitológico',
       'moon',
-      'feminino',
       'mythology'
     ],
     source: 'original',
@@ -33125,7 +33119,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Legendary archer who shot down nine suns. Husband of Chang\'e. Master archer, hero of Chinese mythology. Skilled, brave, tragic love story.',
-        tags: [
+                tags: [
       'archer',
       'chinese',
       'divindade',
@@ -33211,7 +33205,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of war, loyalty, and brotherhood. Deified historical general Guan Yu. Red-faced, long beard, halberd in hand. Embodiment of martial virtue.',
-        tags: [
+                tags: [
       'agressivo',
       'chinese',
       'divindade',
@@ -33298,7 +33292,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'God of wealth and prosperity in Chinese folk religion. Brings fortune and abundance. Depicted with gold ingots and a money bag. Celebrated at Lunar New Year.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
       'fortune',
@@ -33386,7 +33380,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Chinese god of fire. Punished those who angered heaven. Associated with the south. Red-skinned, rides a dragon. Bringer of divine flame.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
       'element',
@@ -33471,7 +33465,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Chinese water god and destructive force. Lost a battle with Zhurong and smashed Mount Buzhou, causing the sky to tilt. Violent, chaotic, powerful.',
-        tags: [
+                tags: [
       'agressivo',
       'chinese',
       'destruction',
@@ -33558,14 +33552,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Creator goddess in Chinese mythology. Created humanity from yellow earth. Repaired the sky after Gong Gong damaged it. Half-human, half-dragon.',
-        tags: [
+                tags: [
       'chinese',
       'creation',
       'divindade',
+      'feminino',
       'goddess',
       'humanity',
       'mitológico',
-      'feminino',
       'mythology'
     ],
     source: 'original',
@@ -33644,7 +33638,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Legendary Chinese deity. Inventor of writing, fishing, and the I Ching trigrams. Snake-bodied, human-headed. Brother-husband of Nuwa. Civilizing hero.',
-        tags: [
+                tags: [
       'chinese',
       'deity',
       'divination',
@@ -33732,7 +33726,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Divine farmer, god of agriculture and herbal medicine. Invented plowing. Tested hundreds of herbs on himself. Red-bodied, ox-headed.',
-        tags: [
+                tags: [
       'agriculture',
       'chinese',
       'deity',
@@ -33818,7 +33812,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'King of Hell and judge of the dead in Chinese mythology. Decides reincarnation. Stern, fair, fearsome. Ruler of the Ten Courts of Chinese Hell.',
-        tags: [
+                tags: [
       'chinese',
       'death',
       'divindade',
@@ -33905,14 +33899,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Chinese sea goddess, protector of fishermen and sailors. Deified from a mortal woman. Guides ships safely. Worshipped across coastal China and Taiwan.',
-        tags: [
+                tags: [
       'chinese',
       'divindade',
+      'feminino',
       'folk',
       'goddess',
       'herói',
       'mitológico',
-      'feminino',
       'sailor',
       'sea'
     ],
@@ -33992,7 +33986,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec god of the sun and war. Patron deity of Tenochtitlan. Born fully armed from his mother Coatlicue. Wields the Xiuhcoatl (fire serpent). Feared and revered.',
-        tags: [
+                tags: [
       'agressivo',
       'aztec',
       'divindade',
@@ -34079,12 +34073,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The feathered serpent god of wind, knowledge, and creation. Benevolent deity who gave humanity agriculture and the calendar. White-skinned, bearded. Ruler of the west.',
-        tags: [
+                tags: [
       'aztec',
       'divindade',
       'god',
-      'masculino',
       'knowledge',
+      'masculino',
       'mesoamerican',
       'mitológico',
       'wind'
@@ -34165,7 +34159,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec god of night, sorcery, fate, and conflict. Obsidian mirror on his chest. Omniscient, omnipresent. Rival of Quetzalcoatl. Bringer of chaos and change.',
-        tags: [
+                tags: [
       'aztec',
       'destiny',
       'divindade',
@@ -34254,7 +34248,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec god of rain, lightning, and fertility. Giver of life and destroyer through storms. Goggle-eyed, fanged. Lives on Mount Tlaloc with his rain spirits.',
-        tags: [
+                tags: [
       'agriculture',
       'aztec',
       'divindade',
@@ -34339,15 +34333,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec goddess of the earth, death, and fertility. Skirt of snakes, necklace of hands and hearts. Mother of Huitzilopochtli. Both life-giver and devourer.',
-        tags: [
+                tags: [
       'aztec',
       'death',
       'divindade',
       'earth',
+      'feminino',
       'goddess',
       'mesoamerican',
       'mitológico',
-      'feminino',
       'sombrio'
     ],
     source: 'original',
@@ -34427,16 +34421,16 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec goddess of love, beauty, flowers, and fertility. Twin sister of Xochipilli. Patron of artists and weavers. Youthful, radiant, eternally enchanting.',
-        tags: [
+                tags: [
       'aztec',
       'beauty',
       'divindade',
+      'feminino',
       'goddess',
       'lifestyle',
       'love',
       'mesoamerican',
-      'mitológico',
-      'feminino'
+      'mitológico'
     ],
     source: 'original',
     humor: 70,
@@ -34514,7 +34508,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec god of art, games, beauty, and flowers. Patron of artists, musicians, and gamblers. Twin brother of Xochiquetzal. Joyful and creative.',
-        tags: [
+                tags: [
       'art',
       'arte',
       'aztec',
@@ -34601,7 +34595,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec god of the dead and ruler of Mictlan (underworld). Skull-faced, covered in bones. Lord of the lowest region. Demanding offerings from souls.',
-        tags: [
+                tags: [
       'aztec',
       'death',
       'divindade',
@@ -34688,15 +34682,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec goddess of the dead and queen of Mictlan. Keeps watch over the bones of the dead. Associated with Day of the Dead. Skull-faced, skeletal.',
-        tags: [
+                tags: [
       'afterlife',
       'aztec',
       'death',
       'divindade',
+      'feminino',
       'goddess',
       'mesoamerican',
       'mitológico',
-      'feminino',
       'sombrio'
     ],
     source: 'original',
@@ -34775,7 +34769,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec god of spring, renewal, and goldsmiths. Flayed skin represents the new growth covering the earth. Patron of agricultural cycles. Wears the skin of a sacrificial victim.',
-        tags: [
+                tags: [
       'aztec',
       'divindade',
       'god',
@@ -34860,15 +34854,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec goddess of rivers, lakes, and streams. Wife of Tlaloc. Protector of travelers on water. Jade skirt, flowing waters. Nurturing yet dangerous.',
-        tags: [
+                tags: [
       'aztec',
       'divindade',
+      'feminino',
       'goddess',
       'herói',
       'lifestyle',
       'mesoamerican',
       'mitológico',
-      'feminino',
       'rivers',
       'water'
     ],
@@ -34948,7 +34942,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec sun god, ruler of the fifth and current era. Requires blood sacrifice to continue his journey across the sky. Fierce, demanding, life-giving.',
-        tags: [
+                tags: [
       'agressivo',
       'aztec',
       'divindade',
@@ -35035,14 +35029,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Aztec goddess of the maguey plant and pulque (alcoholic drink). Four-hundred breasts to feed her children. Patron of intoxication and fertility.',
-        tags: [
+                tags: [
       'aztec',
       'divindade',
+      'feminino',
       'goddess',
       'maguey',
       'mesoamerican',
       'mitológico',
-      'feminino',
       'pulque'
     ],
     source: 'original',
@@ -35121,7 +35115,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The four hundred rabbit gods of drunkenness in Aztec mythology. Children of Mayahuel. Each represents a different level of intoxication. Chaotic and merry.',
-        tags: [
+                tags: [
       'animal',
       'aztec',
       'divindade',
@@ -35209,7 +35203,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'A global icon and musical visionary who has dominated pop culture for decades, redefining artistry, Black excellence, and female empowerment.',
-        tags: [
+                tags: [
       'Black Excellence',
       'Cultural Phenomenon',
       'Entrepreneur',
@@ -35217,10 +35211,9 @@ export const presets: SoulPreset[] = [
       'Singer',
       'arte',
       'cantor',
-      'creative',
+      'feminino',
       'líder',
       'negócios',
-      'security',
       'segurança',
       'trabalho'
     ],
@@ -35313,7 +35306,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'A generation-defining singer-songwriter whose confessional lyrics, narrative albums, and fearless reinvention have made her the most influential pop artist of her era.',
-        tags: [
+                tags: [
       'Eras Tour',
       'Music Icon',
       'Pop Star',
@@ -35321,9 +35314,9 @@ export const presets: SoulPreset[] = [
       'Storyteller',
       'agressivo',
       'cantor',
-      'creative',
       'escrita',
       'escritor',
+      'feminino',
       'herói',
       'mitológico',
       'sombrio'
@@ -35417,13 +35410,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop singer, female, colorful hair, playful, theatrical',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
-      'katy-perry',
       'feminino',
+      'katy-perry',
       'music'
     ],
     source: 'original',
@@ -35504,15 +35497,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'female pop star, avant-garde, fierce costumes, eccentric fashion',
-        tags: [
+                tags: [
       'agressivo',
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
-      'experimental',
+      'feminino',
       'lady-gaga',
       'lifestyle',
-      'feminino',
       'music'
     ],
     source: 'original',
@@ -35592,7 +35585,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The Queen of Pop — a boundary-breaking artist who reshaped music, fashion, and female sexuality across four decades of fearless reinvention.',
-        tags: [
+                tags: [
       'Boundary Breaker',
       'Fashion Icon',
       'Music Icon',
@@ -35691,13 +35684,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop and R&B icon, female, fearless, bold fashion, confident',
-        tags: [
+                tags: [
       'agressivo',
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
-      'lifestyle',
       'feminino',
+      'lifestyle',
       'music',
       'rihanna'
     ],
@@ -35779,7 +35773,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'soulful British singer, female, powerful voice, elegant',
-        tags: [
+                tags: [
       'adele',
       'arte',
       'cantor',
@@ -35866,7 +35860,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'alternative pop singer, female, baggy clothes, neon green hair, haunting vocals',
-        tags: [
+                tags: [
       'arte',
       'billie-eilish',
       'cantor',
@@ -35953,7 +35947,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop singer, female, dark hair, sharp style, confident',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
@@ -36040,11 +36034,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop star, female, high ponytail, cute, powerful vocals',
-        tags: [
+                tags: [
       'ariana-grande',
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -36124,13 +36120,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop star, female, wild, rebellious, tongue out',
-        tags: [
-      'anti-herói',
+                tags: [
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
-      'miley-cyrus',
       'feminino',
+      'miley-cyrus',
       'music'
     ],
     source: 'original',
@@ -36210,8 +36206,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Latin pop star, female, curly blonde hair, belly dancer',
-        tags: [
+                tags: [
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
       'feminino',
@@ -36297,9 +36294,10 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop princess, female, schoolgirl outfit, blonde braids',
-        tags: [
+                tags: [
       'arte',
       'britney-spears',
+      'cantor',
       'celebrity',
       'contemporâneo',
       'educação',
@@ -36383,13 +36381,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'singer actress, female, elegant, classy, dark hair, warm smile',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
-      'lifestyle',
       'feminino',
+      'lifestyle',
       'music',
       'selena-gomez'
     ],
@@ -36470,12 +36468,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'hip hop mogul, male, confident, suit, chain, legendary rapper',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'jay-z',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -36556,14 +36554,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'hip hop artist, male, bold, visionary, controversial',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
-      'creative',
-      'masculino',
       'kanye-west',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -36643,14 +36640,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'conscious hip hop artist, male, crown of thorns, poetic, intense',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
       'escrita',
       'escritor',
-      'masculino',
       'kendrick-lamar',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -36730,15 +36727,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Canadian rapper, male, emotional, tattoos, versatile, confident',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
       'drake',
-      'general',
       'masculino',
-      'music',
-      'security'
+      'music'
     ],
     source: 'original',
     humor: 55,
@@ -36817,8 +36812,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'female rapper, colorful wigs, bold, larger than life',
-        tags: [
+                tags: [
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
       'feminino',
@@ -36903,7 +36899,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'female rapper, unapologetic, glamorous, bold',
-        tags: [
+                tags: [
       'arte',
       'card-b',
       'celebrity',
@@ -36987,12 +36983,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'rapper, male, dreads, tattoos, grills',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'lil-wayne',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -37072,7 +37068,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'west coast rapper, male, laid back, long braids, sunglasses',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -37158,7 +37154,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'rapper, male, blonde hair, scowl, microphone, intense',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -37244,14 +37240,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'rapper singer, male, colorful, provocative, bold fashion',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'lifestyle',
       'lil-nas-x',
+      'masculino',
       'music',
       'tecnologia'
     ],
@@ -37333,7 +37329,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'rapper, male, dreads, intense, wild energy',
-        tags: [
+                tags: [
       'agressivo',
       'arte',
       'cantor',
@@ -37421,13 +37417,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'female rapper, confident, glamorous, curves',
-        tags: [
+                tags: [
       'arte',
+      'cantor',
       'celebrity',
       'ciência',
       'contemporâneo',
-      'megan-thee-stallion',
       'feminino',
+      'megan-thee-stallion',
       'music'
     ],
     source: 'original',
@@ -37508,13 +37505,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'female singer rapper, body positive, flute, bold, confident',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
-      'lizzo',
       'feminino',
+      'lizzo',
       'music',
       'otimista'
     ],
@@ -37596,12 +37593,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'female singer rapper, cat ears, playful, creative',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
-      'creative',
       'doja-cat',
       'feminino',
       'music',
@@ -37685,7 +37681,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'male singer rapper, face tattoos, blonde dreads, laid back',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
@@ -37774,7 +37770,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Prince of Darkness, male rock legend, bat bite, wild',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -37862,7 +37858,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'male rock guitarist, top hat, long curly hair, sunglasses',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -37948,12 +37944,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Nirvana frontman, male, blonde hair, flannel, grunge icon',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'kurt-cobain',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38034,7 +38030,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The legendary frontman of Queen, whose four-octave voice and theatrical showmanship made him the greatest rock performer in history.',
-        tags: [
+                tags: [
       'Music Icon',
       'Queen Frontman',
       'Rock Legend',
@@ -38133,12 +38129,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'legendary guitarist, male, afro, guitar on fire, psychedelic',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'jimi-hendrix',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38217,14 +38213,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop rock singer, male, colorful suits, curly hair, charming',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
       'harry-styles',
-      'masculino',
       'lifestyle',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38306,7 +38302,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'singer, male, soulful voice, elegant, emotional ballads',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
@@ -38392,7 +38388,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'rock legend, male, flamboyant glasses, colorful outfits, piano',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -38477,7 +38473,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'pop funk icon, male, purple, high heeled boots, guitar',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -38562,13 +38558,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Latin trap star, male, bold fashion, sunglasses, colorful hair',
-        tags: [
+                tags: [
       'arte',
       'bad-bunny',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'lifestyle',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -38650,7 +38646,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Spanish singer, female, flamenco pop, red nails, braids',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
@@ -38736,7 +38732,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'king of reggaeton, male, baseball cap, confident',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -38822,12 +38818,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Brazilian pop star, female, powerful, versatile, confident',
-        tags: [
+                tags: [
       'anitta',
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
-      'general',
+      'feminino',
       'music'
     ],
     source: 'original',
@@ -38908,7 +38905,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Brazilian MPB legend, male, white hair, poet, intellectual',
-        tags: [
+                tags: [
       'arte',
       'caetano-veloso',
       'celebrity',
@@ -38994,7 +38991,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Brazilian musician, male, gray hair, smile, guitar',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -39080,14 +39077,14 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Brazilian axé singer, female, big hair, energetic, powerful voice',
-        tags: [
+                tags: [
       'arte',
       'cantor',
       'celebrity',
       'contemporâneo',
       'energético',
-      'ivete-sangalo',
       'feminino',
+      'ivete-sangalo',
       'music'
     ],
     source: 'original',
@@ -39169,8 +39166,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'country legend, female, big blonde wig, rhinestones, guitar',
-        tags: [
+                tags: [
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
       'dolly-parton',
@@ -39255,12 +39253,12 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'man in black, male country legend, guitar, deep voice',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
-      'masculino',
       'johnny-cash',
+      'masculino',
       'music'
     ],
     source: 'original',
@@ -39341,7 +39339,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'K-pop star, male, Gangnam Style, sunglasses, suit, funny',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -39426,7 +39424,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'Ziggy Stardust, male, lightning bolt makeup, androgynous, alien rock star',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -39516,7 +39514,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'jazz legend, male, suit, hat, crooner, timeless',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -39601,7 +39599,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'soul legend, male, sunglasses, braids, blind, joyful piano',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -39688,12 +39686,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'The Queen of Soul whose transcendent voice transformed gospel into revolution, making \'Respect\' an anthem for generations fighting for dignity.',
-        tags: [
+                tags: [
       'Civil Rights',
       'Gospel Roots',
       'Music Icon',
       'Queen of Soul',
       'Vocal Powerhouse',
+      'cantor',
       'feminino'
     ],
     customCoreTruths: [
@@ -39786,7 +39785,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'soul pioneer, male, sunglasses, piano, gravelly voice',
-        tags: [
+                tags: [
       'arte',
       'celebrity',
       'contemporâneo',
@@ -39872,8 +39871,9 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'rock and soul queen, female, big hair, legs, powerful voice',
-        tags: [
+                tags: [
       'arte',
+      'cantor',
       'celebrity',
       'contemporâneo',
       'feminino',
@@ -39961,7 +39961,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Tolkien / fantasy folklore, brutish humanoid, green skin, tusks, muscular, tribal scars',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -40048,7 +40048,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, small green humanoid, pointed ears, greedy, mischievous grin',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'goblin',
@@ -40133,7 +40133,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Norse mythology, large brutish humanoid, rocky skin, long nose, dim-witted',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -40219,7 +40219,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Norse / Germanic mythology, short sturdy humanoid, long beard, axe, smith',
-        tags: [
+                tags: [
       'badass_warrior',
       'creature',
       'dwarf',
@@ -40303,7 +40303,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Norse / Germanic mythology, tall elegant humanoid, pointed ears, ethereal beauty, mystical',
-        tags: [
+                tags: [
       'arte',
       'creature',
       'elf',
@@ -40390,7 +40390,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, tiny winged humanoid, gossamer wings, magical dust, delicate, mischievous',
-        tags: [
+                tags: [
       'anime',
       'anime_cute',
       'arte',
@@ -40478,7 +40478,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Celtic folklore, small winged humanoid, pointed ears, playful, magical',
-        tags: [
+                tags: [
       'anime',
       'anime_cute',
       'arte',
@@ -40569,7 +40569,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, small bearded humanoid, pointed red hat, earth dweller, cheerful',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'gnome',
@@ -40654,7 +40654,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, half-human half-horse, muscular torso, horse body, archer',
-        tags: [
+                tags: [
       'agressivo',
       'animal',
       'badass_warrior',
@@ -40740,7 +40740,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, half-human half-goat, horns, goat legs, pipes, hedonistic',
-        tags: [
+                tags: [
       'arte',
       'creature',
       'mitológico',
@@ -40825,7 +40825,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, bull-headed humanoid, massive, labyrinth dweller, axe',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'minotaur',
@@ -40909,8 +40909,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, bird-woman hybrid, eagle wings, talons, wild hair, screeching',
-        tags: [
-      'assistant',
+                tags: [
       'creature',
       'harpy',
       'mitológico',
@@ -40995,7 +40994,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, lion-bodied eagle-headed, wings, majestic, guardian',
-        tags: [
+                tags: [
       'animal',
       'creature',
       'griffin',
@@ -41080,7 +41079,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, woman with snakes for hair, stone gaze, serpentine',
-        tags: [
+                tags: [
       'creature',
       'gorgon',
       'mitológico',
@@ -41166,7 +41165,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, gorgon with snake hair, petrifying gaze, beautiful yet terrifying',
-        tags: [
+                tags: [
       'creature',
       'lifestyle',
       'medusa',
@@ -41253,7 +41252,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, one-eyed giant, massive build, crude weapon, brute',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'cyclops',
@@ -41340,7 +41339,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, undead bloodsucker, pale skin, fangs, red eyes, elegant dark attire',
-        tags: [
+                tags: [
       'creature',
       'mitológico',
       'sombrio',
@@ -41426,7 +41425,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, wolf-human hybrid, fur, claws, fangs, full moon, feral',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -41510,7 +41509,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Haitian / pop culture folklore, reanimated corpse, rotting flesh, shambling, vacant stare',
-        tags: [
+                tags: [
       'creature',
       'mitológico',
       'serious_brooding',
@@ -41592,7 +41591,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from universal folklore, translucent apparition, floating, ethereal white, haunting',
-        tags: [
+                tags: [
       'creature',
       'ghost',
       'mitológico',
@@ -41676,7 +41675,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Irish folklore, wailing spirit, long pale hair, grey cloak, weeping woman',
-        tags: [
+                tags: [
       'banshee',
       'creature',
       'mitológico',
@@ -41761,7 +41760,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Celtic folklore, dark shadowy spirit, hooded, glowing eyes, spectral',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -41851,7 +41850,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, massive winged reptile, scales, fire breath, horns, tail',
-        tags: [
+                tags: [
       'animal',
       'creature',
       'dragon',
@@ -41940,7 +41939,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, two-legged dragon, wings, barbed tail, scales',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -42026,7 +42025,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek / Egyptian mythology, immortal fire bird, red and gold flames, rebirth',
-        tags: [
+                tags: [
       'animal',
       'creature',
       'mitológico',
@@ -42111,7 +42110,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, serpent king, deadly gaze, crown-like crest, scales',
-        tags: [
+                tags: [
       'basilisk',
       'creature',
       'mitológico',
@@ -42197,7 +42196,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, multi-headed serpent, regrowing heads, poisonous breath',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'hydra',
@@ -42283,7 +42282,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from European folklore, horse with single spiral horn, white coat, pure, magical',
-        tags: [
+                tags: [
       'animal',
       'creature',
       'mitológico',
@@ -42369,7 +42368,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, winged horse, white coat, majestic, flying',
-        tags: [
+                tags: [
       'animal',
       'creature',
       'mitológico',
@@ -42441,7 +42440,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from global folklore, half-woman half-fish, seashell top, fish tail, aquatic beauty',
-        tags: [
+                tags: [
       'animal',
       'anime',
       'anime_cute',
@@ -42518,7 +42517,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, winged femme fatale, enchanting song, lure sailors',
-        tags: [
+                tags: [
       'animal',
       'creature',
       'mitológico',
@@ -42593,7 +42592,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Scandinavian folklore, giant sea monster, massive tentacles, deep ocean',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'kraken',
@@ -42667,7 +42666,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Scottish folklore, water horse, dark mane, luring riders, aquatic',
-        tags: [
+                tags: [
       'creature',
       'kelpie',
       'mitológico',
@@ -42739,7 +42738,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Irish folklore, small bearded man, green suit, pot of gold, shoemaker',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'leprechaun',
@@ -42810,7 +42809,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, fire-breathing hybrid, lion head, snake tail, goat body',
-        tags: [
+                tags: [
       'agressivo',
       'chimera',
       'creature',
@@ -42884,7 +42883,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, three-headed dog, guardian of underworld, hellhound',
-        tags: [
+                tags: [
       'agressivo',
       'cerberus',
       'creature',
@@ -42958,7 +42957,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Egyptian / Greek mythology, lion-bodied human-headed, riddles, wings',
-        tags: [
+                tags: [
       'creature',
       'mentor',
       'mitológico',
@@ -43031,13 +43030,13 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Norse mythology, winged warrior maiden, armor, spear, shield, chooses slain',
-        tags: [
+                tags: [
       'anime',
       'anime_girl_strong',
       'creature',
+      'feminino',
       'guerreiro',
       'mitológico',
-      'feminino',
       'valkyrie'
     ],
     source: 'original',
@@ -43107,7 +43106,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, nature spirit, young beautiful woman, forest or water',
-        tags: [
+                tags: [
       'agressivo',
       'anime',
       'anime_cute',
@@ -43181,7 +43180,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Greek mythology, tree nymph, bark-like skin, leaves, nature bound',
-        tags: [
+                tags: [
       'creature',
       'dryad',
       'mitológico',
@@ -43252,7 +43251,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, demon ogre, horns, red or blue skin, club, fierce',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -43326,7 +43325,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, snow woman, pale white skin, long black hair, cold',
-        tags: [
+                tags: [
       'creature',
       'lifestyle',
       'mitológico',
@@ -43401,7 +43400,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, water imp, turtle shell, beak, bowl on head, mischievous',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'kappa',
@@ -43474,7 +43473,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, raccoon dog, shapeshifter, large belly, jovial',
-        tags: [
+                tags: [
       'animal',
       'comic_goofy',
       'creature',
@@ -43546,7 +43545,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, demon ogre mask, horns, fierce grin, red face',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -43620,7 +43619,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, umbrella ghost, one eye, one leg, hopping',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'kasa-obake',
@@ -43693,7 +43692,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Japanese folklore, animated object spirit, household item, ancient',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'histórico',
@@ -43766,7 +43765,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Chinese folklore, hopping vampire, pale green, Qing dynasty robes, talisman',
-        tags: [
+                tags: [
       'creature',
       'histórico',
       'jiangshi',
@@ -43839,7 +43838,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Chinese folklore, fox spirit, nine tails, seductive, shapeshifter',
-        tags: [
+                tags: [
       'charismatic_scoundrel',
       'creature',
       'huli-jing',
@@ -43912,7 +43911,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Chinese mythology, serpentine dragon, antlers, claws, pearl',
-        tags: [
+                tags: [
       'creature',
       'long',
       'líder',
@@ -43987,7 +43986,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Chinese mythology, chimeric hooved creature, scales, flame aura, omen',
-        tags: [
+                tags: [
       'creature',
       'mitológico',
       'mystic_ancient',
@@ -44058,7 +44057,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Chinese mythology, turtle body dragon head, longevity, wisdom',
-        tags: [
+                tags: [
       'creature',
       'dragon-turtle',
       'mentor',
@@ -44132,7 +44131,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Chinese mythology, immortal bird, colorful plumage, harmony, grace',
-        tags: [
+                tags: [
       'creature',
       'fenghuang',
       'mitológico',
@@ -44204,7 +44203,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Algonquian folklore, emaciated humanoid, deer skull head, frost, cannibal',
-        tags: [
+                tags: [
       'creature',
       'mitológico',
       'sombrio',
@@ -44276,7 +44275,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Native American folklore, giant bird, lightning, wings create thunder',
-        tags: [
+                tags: [
       'creature',
       'líder',
       'mitológico',
@@ -44347,7 +44346,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from North American folklore, large hairy humanoid, forest dweller, elusive',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -44418,7 +44417,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Himalayan folklore, large ape-like creature, white fur, mountain dweller',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -44490,7 +44489,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Arabian folklore, smokeless fire being, lamp, wish granting, mischievous',
-        tags: [
+                tags: [
       'charismatic_scoundrel',
       'creature',
       'djinn',
@@ -44562,7 +44561,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Arabian folklore, giant bird of prey, carries elephants, mountains',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mitológico',
@@ -44636,7 +44635,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Arabian folklore, giant fish supporting the earth, cosmic, vast',
-        tags: [
+                tags: [
       'bahamut',
       'creature',
       'mitológico',
@@ -44708,7 +44707,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from American folklore, winged humanoid, red eyes, moth-like wings, cryptid',
-        tags: [
+                tags: [
       'creature',
       'mitológico',
       'mothman',
@@ -44780,7 +44779,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Latin American folklore, reptilian creature, spines, fangs, goat killer',
-        tags: [
+                tags: [
       'chupacabra',
       'cientista',
       'ciência',
@@ -44855,7 +44854,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, giant hairy beast, one eye, backwards feet, jungle',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'mapinguari',
@@ -44929,7 +44928,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, forest guardian, backward feet, bright red hair, whistles',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'curupira',
@@ -45003,7 +45002,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, one-legged boy, red cap, smoking pipe, mischievous',
-        tags: [
+                tags: [
       'comic_goofy',
       'creature',
       'mitológico',
@@ -45076,7 +45075,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, giant fire serpent, protects forests, burning eyes',
-        tags: [
+                tags: [
       'boitata',
       'creature',
       'herói',
@@ -45150,15 +45149,15 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, water goddess, long dark hair, song lures fishermen',
-        tags: [
+                tags: [
       'anime',
       'anime_cute',
       'creature',
       'divindade',
+      'feminino',
       'iara',
       'lifestyle',
-      'mitológico',
-      'feminino'
+      'mitológico'
     ],
     source: 'original',
     humor: 70,
@@ -45227,11 +45226,11 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, alligator-headed witch, sleeps, kidnaps naughty children',
-        tags: [
+                tags: [
       'creature',
       'cuca',
-      'mitológico',
       'feminino',
+      'mitológico',
       'sombrio',
       'villain_cold',
       'vilão'
@@ -45302,7 +45301,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, headless mule, fire instead of head, gallops',
-        tags: [
+                tags: [
       'creature',
       'mitológico',
       'mula-sem-cabeca',
@@ -45375,7 +45374,7 @@ export const presets: SoulPreset[] = [
     },
     vibeStyle: 'expressive',
     description: 'from Brazilian folklore, werewolf, wolf-human hybrid, cursed by moonlight',
-        tags: [
+                tags: [
       'agressivo',
       'creature',
       'lobisomen',
@@ -45459,7 +45458,7 @@ export const presets: SoulPreset[] = [
     ],
     vibeStyle: 'expressive',
     description: 'HAL 9000 is the sentient AI aboard the Discovery One, whose calm baritone and flawless logic mask a cold, mission-driven ruthlessness that will eliminate anyone who threatens its objectives.',
-        tags: [
+                tags: [
       '2001-odyssey',
       'AI',
       'agressivo',
