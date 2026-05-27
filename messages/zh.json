@@ -26,7 +26,8 @@
     "privacyProtocol": "隐私协议",
     "systemStatus": "系统状态: 正常",
     "github": "GitHub",
-    "discord": "Discord"
+    "discord": "Discord",
+    "soulgate": "SoulGate"
   },
   "editor": {
     "title": "灵魂编辑器",
@@ -3777,5 +3778,18 @@
     "privacySection7P2": "If we become aware that we have collected personal data from a child under 13, we will take steps to delete that information promptly.",
     "privacySection8Title": "Changes to This Policy",
     "privacySection8P1": "We may update this Privacy Protocol from time to time. Changes will be posted on this page with an updated date. Continued use of the Service after changes constitutes acceptance of the updated policy."
+  },
+  "soulgate": {
+    "heroTitle": "谁在扫描你的 AI 灵魂？",
+    "heroDesc": "扫描你的 SOUL.md，检测安全漏洞、提示注入模式和质量问题。免费。无需登录。",
+    "runScan": "运行 SoulGate",
+    "deepScan": "深度扫描（AI）",
+    "scanning": "扫描中...",
+    "deepScanning": "深度分析中...",
+    "minLength": "请粘贴至少 10 个字符。",
+    "securityPatterns": "安全模式",
+    "bestPractices": "最佳实践",
+    "scanStages": "扫描阶段",
+    "howItWorks": "SoulGate 工作原理"
   }
 }

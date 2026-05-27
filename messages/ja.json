@@ -26,7 +26,8 @@
     "privacyProtocol": "プライバシープロトコル",
     "systemStatus": "システムステータス: 正常",
     "github": "GitHub",
-    "discord": "Discord"
+    "discord": "Discord",
+    "soulgate": "SoulGate"
   },
   "editor": {
     "title": "ソウルエディタ",
@@ -3777,5 +3778,18 @@
     "privacySection7P2": "If we become aware that we have collected personal data from a child under 13, we will take steps to delete that information promptly.",
     "privacySection8Title": "Changes to This Policy",
     "privacySection8P1": "We may update this Privacy Protocol from time to time. Changes will be posted on this page with an updated date. Continued use of the Service after changes constitutes acceptance of the updated policy."
+  },
+  "soulgate": {
+    "heroTitle": "誰があなたのエージェントの魂をスキャンしていますか？",
+    "heroDesc": "SOUL.mdのセキュリティ脆弱性、プロンプトインジェクションパターン、品質問題をスキャン。無料。ログイン不要。",
+    "runScan": "SoulGate実行",
+    "deepScan": "ディープスキャン（AI）",
+    "scanning": "スキャン中...",
+    "deepScanning": "深度分析中...",
+    "minLength": "10文字以上入力してください。",
+    "securityPatterns": "セキュリティパターン",
+    "bestPractices": "ベストプラクティス",
+    "scanStages": "スキャン段階",
+    "howItWorks": "SoulGateの仕組み"
   }
 }

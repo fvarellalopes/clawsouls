@@ -26,7 +26,8 @@
     "privacyProtocol": "Protocole de Confidentialité",
     "systemStatus": "ÉTAT DU SYSTÈME: NOMINAL",
     "github": "GitHub",
-    "discord": "Discord"
+    "discord": "Discord",
+    "soulgate": "SoulGate"
   },
   "editor": {
     "title": "Éditeur d'Âme",
@@ -1090,5 +1091,18 @@
     "disliked": "Pas aimé",
     "rateThis": "Évaluer ce preset",
     "likes": "j aime"
+  },
+  "soulgate": {
+    "heroTitle": "Qui scanne l'âme de votre agent ?",
+    "heroDesc": "Scannez votre SOUL.md pour les vulnérabilités de sécurité, les modèles d'injection de prompt et les problèmes de qualité. Gratuit. Sans inscription.",
+    "runScan": "Lancer SoulGate",
+    "deepScan": "Scan Approfondi (IA)",
+    "scanning": "Analyse en cours...",
+    "deepScanning": "Analyse Approfondie...",
+    "minLength": "Collez au moins 10 caractères.",
+    "securityPatterns": "Modèles de Sécurité",
+    "bestPractices": "Bonnes Pratiques",
+    "scanStages": "Étapes du Scan",
+    "howItWorks": "Comment Fonctionne SoulGate"
   }
 }

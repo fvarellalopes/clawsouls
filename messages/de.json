@@ -26,7 +26,8 @@
     "privacyProtocol": "Datenschutzprotokoll",
     "systemStatus": "SYSTEMSTATUS: NOMINAL",
     "github": "GitHub",
-    "discord": "Discord"
+    "discord": "Discord",
+    "soulgate": "SoulGate"
   },
   "editor": {
     "title": "Seelen-Editor",
@@ -1090,5 +1091,18 @@
     "disliked": "Nicht gemocht",
     "rateThis": "Dieses Preset bewerten",
     "likes": "Mag ich"
+  },
+  "soulgate": {
+    "heroTitle": "Wer scannt die Seele deines Agenten?",
+    "heroDesc": "Scanne deine SOUL.md auf Sicherheitslücken, Prompt-Injection-Muster und Qualitätsprobleme. Kostenlos. Keine Anmeldung.",
+    "runScan": "SoulGate Starten",
+    "deepScan": "Tiefenscan (KI)",
+    "scanning": "Scanne...",
+    "deepScanning": "Tiefenanalyse...",
+    "minLength": "Füge mindestens 10 Zeichen ein.",
+    "securityPatterns": "Sicherheitsmuster",
+    "bestPractices": "Best Practices",
+    "scanStages": "Scan-Phasen",
+    "howItWorks": "So Funktioniert SoulGate"
   }
 }

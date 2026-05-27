@@ -26,7 +26,8 @@
     "privacyProtocol": "Privacy Protocol",
     "systemStatus": "SYSTEM STATUS: NOMINAL",
     "github": "GitHub",
-    "discord": "Discord"
+    "discord": "Discord",
+    "soulgate": "SoulGate"
   },
   "editor": {
     "title": "Soul Editor",
@@ -3784,5 +3785,18 @@
     "privacySection7P2": "If we become aware that we have collected personal data from a child under 13, we will take steps to delete that information promptly.",
     "privacySection8Title": "Changes to This Policy",
     "privacySection8P1": "We may update this Privacy Protocol from time to time. Changes will be posted on this page with an updated date. Continued use of the Service after changes constitutes acceptance of the updated policy."
+  },
+  "soulgate": {
+    "heroTitle": "Who's scanning your agent's soul?",
+    "heroDesc": "Scan your SOUL.md for security vulnerabilities, prompt injection patterns, and quality issues. Free. No sign-in required.",
+    "runScan": "Run SoulGate",
+    "deepScan": "Deep Scan (AI)",
+    "scanning": "Scanning...",
+    "deepScanning": "Deep Analysis...",
+    "minLength": "Paste at least 10 characters.",
+    "securityPatterns": "Security Patterns",
+    "bestPractices": "Best Practices",
+    "scanStages": "Scan Stages",
+    "howItWorks": "How SoulGate Works"
   }
 }
