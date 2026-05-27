@@ -439,12 +439,73 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
         </div>
       </div>
 
-      {/* ─── MAIN CONTENT: 7/5 SPLIT ─── */}
+      {/* ─── MAIN CONTENT ─── */}
       <div className="px-3 sm:px-6 py-4 sm:py-6">
-        <div className="container mx-auto max-w-[1400px]">
+        <div className="container mx-auto max-w-[1400px] space-y-4 sm:space-y-6">
+
+          {/* ─── TOP: Avatar + Editor side by side ─── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
-            {/* ─── LEFT COLUMN (7 cols) — Editor ─── */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+            {/* ─── Avatar Column (3 cols) ─── */}
+            <div className="lg:col-span-3">
+              <div className="cyber-glass p-4 sm:p-6 text-center lg:sticky lg:top-24">
+                <div className="relative mx-auto mb-4 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden"
+                     style={{
+                       background: "var(--surface)",
+                      border: "1px solid var(--primary)",
+                      boxShadow: "0 0 30px var(--primary), inset 0 0 30px var(--primary)",
+                     }}>
+                  {avatarUrl(soul).includes("placeholder") ? (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-5xl sm:text-6xl">{soul.emoji || "✨"}</span>
+                    </div>
+                  ) : (
+                    <img
+                      src={avatarUrl(soul)}
+                      alt={soul.name || "Avatar"}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary/40" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary/40" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary/40" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary/40" />
+                </div>
+
+                <h2 className="text-lg sm:text-xl font-bold font-display text-primary truncate max-w-full"
+                    style={{ letterSpacing: "0.04em" }}>
+                  {soul.name || t("unnamedSoul") || "UNNAMED SOUL"}
+                </h2>
+                <p className="mono-data text-xs mt-1 truncate max-w-full text-muted-foreground">
+                  {soul.creature || "—"}
+                </p>
+                <div className="flex items-center justify-center gap-2 mt-3">
+                  <span className={`w-1.5 h-1.5 rounded-full ${hasAvatar(soul) ? "bg-green-500" : "bg-muted-foreground"}`} />
+                  <span className={`mono-data text-[10px] ${hasAvatar(soul) ? "text-green-500" : "text-muted-foreground"}`}>
+                    {hasAvatar(soul) ? "AVATAR GENERATED" : "NO AVATAR"}
+                  </span>
+                </div>
+
+                {/* Critique Panel — inline under avatar */}
+                <div className="mt-4">
+                  <CritiquePanel
+                    preset={{
+                      ...soul,
+                      id: "current",
+                      creature: soul.creature || "",
+                      vibe: soul.vibe || "",
+                      emoji: soul.emoji || "",
+                      vibeStyle: soul.vibeStyle || "",
+                      description: soul.vibe || "",
+                      tags: [],
+                      source: "custom" as const,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* ─── Editor Column (9 cols) ─── */}
+            <div className="lg:col-span-9 space-y-4 sm:space-y-6">
               {/* Tabs */}
               <div className="flex gap-0 overflow-x-auto no-scrollbar border-b border-border">
                 {[
@@ -1184,84 +1245,23 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                 </div>
               )}
             </div>
+          </div>
 
-            {/* ─── RIGHT COLUMN (5 cols) — Avatar + Live Preview ─── */}
-            <div className="lg:col-span-5 space-y-4 sm:space-y-6">
-              {/* Avatar Display */}
-              <div className="cyber-glass p-6 text-center">
-                <div className="relative mx-auto mb-4 w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden"
-                     style={{
-                       background: "var(--surface)",
-                      border: "1px solid var(--primary)",
-                      boxShadow: "0 0 30px var(--primary), inset 0 0 30px var(--primary)",
-                     }}>
-                  {avatarUrl(soul).includes("placeholder") ? (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-6xl sm:text-7xl">{soul.emoji || "✨"}</span>
-                    </div>
-                  ) : (
-                    <img
-                      src={avatarUrl(soul)}
-                      alt={soul.name || "Avatar"}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                  {/* Cyber corner decorations */}
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary/40" />
-                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary/40" />
-                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary/40" />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary/40" />
-                </div>
-
-                {/* Info below avatar */}
-                <h2 className="text-xl font-bold font-display text-primary truncate max-w-full"
-                    style={{ letterSpacing: "0.04em" }}>
-                  {soul.name || t("unnamedSoul") || "UNNAMED SOUL"}
-                </h2>
-                <p className="mono-data text-xs mt-1 truncate max-w-full text-muted-foreground">
-                  {soul.creature || "—"}
-                </p>
-                <div className="flex items-center justify-center gap-2 mt-3">
-                  <span className={`w-1.5 h-1.5 rounded-full ${hasAvatar(soul) ? "bg-green-500" : "bg-muted-foreground"}`} />
-                  <span className={`mono-data text-[10px] ${hasAvatar(soul) ? "text-green-500" : "text-muted-foreground"}`}>
-                    {hasAvatar(soul) ? "AVATAR GENERATED" : "NO AVATAR"}
-                  </span>
-                </div>
-              </div>
-
-              {/* Karma Critique — shows when karma < 35 */}
-              <CritiquePanel
-                preset={{
-                  ...soul,
-                  id: "current",
-                  creature: soul.creature || "",
-                  vibe: soul.vibe || "",
-                  emoji: soul.emoji || "",
-                  vibeStyle: soul.vibeStyle || "",
-                  description: soul.vibe || "",
-                  tags: [],
-                  source: "custom" as const,
-                }}
-              />
-
-
-              {/* Parchment Preview */}
-              <div className="sticky top-24">
-                <ParchmentPreview
-                  content={soulMD}
-                  name={soul.name}
-                  emoji={soul.emoji}
-                  toneAttributes={{
-                    humor: soul.humor,
-                    formality: soul.formality,
-                    emojiUsage: soul.emojiUsage,
-                    verbosity: soul.verbosity,
-                    consciousness: soul.consciousness,
-                    questioning: soul.questioning,
-                  }}
-                />
-              </div>
-            </div>
+          {/* ─── BOTTOM: Full-width Soul Preview ─── */}
+          <div>
+            <ParchmentPreview
+              content={soulMD}
+              name={soul.name}
+              emoji={soul.emoji}
+              toneAttributes={{
+                humor: soul.humor,
+                formality: soul.formality,
+                emojiUsage: soul.emojiUsage,
+                verbosity: soul.verbosity,
+                consciousness: soul.consciousness,
+                questioning: soul.questioning,
+              }}
+            />
           </div>
         </div>
       </div>
