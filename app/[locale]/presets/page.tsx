@@ -7,6 +7,7 @@ import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import { SoulPreset } from "@/store/soulStore";
 import { useRouter, useParams } from "next/navigation";
 import { useRatingsStore } from "@/store/ratingsStore";
+import { useNsfwStore } from "@/store/nsfwStore";
 import { PresetsGridSkeleton } from "@/components/skeletons";
 
 // Blacklist of preset IDs to filter out
@@ -43,6 +44,7 @@ export default function PresetsPage() {
   const presetsMessages = (messages as any)?.presets as
     | Record<string, Record<string, string>>
     | undefined;
+  const { nsfwEnabled } = useNsfwStore();
   const [presets, setPresets] = useState<SoulPreset[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -104,6 +106,12 @@ export default function PresetsPage() {
 
   const filtered = useMemo(() => {
     let result = presets.filter(p => !PRESET_BLACKLIST.has(p.id));
+
+    // NSFW filtering: hide NSFW presets unless mode is enabled
+    if (!nsfwEnabled) {
+      result = result.filter(p => !p.nsfw);
+    }
+
     if (presetsMessages) {
       result = result.map(p => {
         const pt = presetsMessages[p.id];
@@ -127,8 +135,14 @@ export default function PresetsPage() {
         selectedTags.every(tag => p.tags.includes(tag))
       );
     }
+
+    // NSFW boost: when NSFW chip is active, put NSFW presets first
+    if (selectedTags.includes("nsfw")) {
+      result.sort((a, b) => (b.nsfw ? 1 : 0) - (a.nsfw ? 1 : 0));
+    }
+
     return result;
-  }, [presets, search, selectedTags, presetsMessages]);
+  }, [presets, search, selectedTags, presetsMessages, nsfwEnabled]);
 
   // Reset display count when filters change
   useEffect(() => {
@@ -217,6 +231,29 @@ export default function PresetsPage() {
         {!loading && presets.length > 0 && (
           <section className="flex flex-wrap gap-2 items-center">
             <span className="material-symbols-outlined text-muted-foreground text-lg mr-1">filter_list</span>
+            {/* NSFW chip — only visible when NSFW mode is enabled */}
+            {nsfwEnabled && (() => {
+              const nsfwCount = presets.filter(p => p.nsfw).length;
+              const active = selectedTags.includes("nsfw");
+              return (
+                <button
+                  onClick={() => toggleTag("nsfw")}
+                  className={`
+                    inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 border
+                    ${active
+                      ? "bg-red-500 text-white border-red-500 shadow-sm shadow-red-500/20"
+                      : "bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20 hover:text-red-300"
+                    }
+                  `}
+                >
+                  <span className="material-symbols-outlined text-sm">no_adult_content</span>
+                  <span>NSFW</span>
+                  <span className={`text-[10px] tabular-nums ${active ? "text-white/70" : "text-red-400/60"}`}>
+                    {nsfwCount}
+                  </span>
+                </button>
+              );
+            })()}
             {CATEGORY_CHIPS.map((cat) => {
               const count = categoryCounts[cat] || 0;
               const active = selectedTags.includes(cat);

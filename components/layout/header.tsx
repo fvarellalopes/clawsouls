@@ -5,7 +5,9 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
 import { useThemeStore } from "@/store/themeStore";
+import { useNsfwStore } from "@/store/nsfwStore";
 import { applyTheme, getThemeById } from "@/lib/themes";
+import { AgeGateModal } from "@/components/age-gate-modal";
 
 const LOCALES = [
   { code: "en", label: "English", flag: "🇺🇸" },
@@ -25,8 +27,10 @@ export function Header() {
   const activeLocale = (params?.locale as string) || "en";
   const { themeId, setTheme } = useThemeStore();
   const isDark = themeId !== "paper";
+  const { ageVerified, nsfwEnabled, toggleNsfw } = useNsfwStore();
 
   const [langOpen, setLangOpen] = useState(false);
+  const [ageGateOpen, setAgeGateOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,6 +50,14 @@ export function Header() {
   }, []);
 
   const toggleTheme = () => setTheme(isDark ? "paper" : "cyberpunk");
+
+  const handleNsfwClick = () => {
+    if (!ageVerified) {
+      setAgeGateOpen(true);
+    } else {
+      toggleNsfw();
+    }
+  };
 
   const switchLocale = (newLocale: string) => {
     // Replace the locale segment in the pathname
@@ -134,6 +146,21 @@ export function Header() {
           </span>
         </button>
 
+        {/* NSFW Toggle */}
+        <button
+          onClick={handleNsfwClick}
+          className={`transition-colors cursor-pointer p-1.5 ${
+            nsfwEnabled
+              ? "text-red-500 hover:text-red-400"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+          aria-label="Toggle NSFW mode"
+        >
+          <span className="material-symbols-outlined text-xl">
+            no_adult_content
+          </span>
+        </button>
+
         {/* CTA */}
         <Link
           href={`/${activeLocale}/editor`}
@@ -142,6 +169,12 @@ export function Header() {
           {t("connectTerminal")}
         </Link>
       </div>
+
+      {/* Age Gate Modal */}
+      <AgeGateModal
+        isOpen={ageGateOpen}
+        onClose={() => setAgeGateOpen(false)}
+      />
     </nav>
   );
 }

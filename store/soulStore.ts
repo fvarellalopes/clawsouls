@@ -153,6 +153,21 @@ export interface SoulPreset {
   memoryPolicy?: string;
   petPeeves?: string[];
   voiceRules?: string;
+
+  // NSFW fields
+  nsfw?: boolean;
+  nsfwTags?: string[];
+  nsfwSliders?: {
+    submissiveDominant?: number;    // 0=submissive, 50=neutral, 100=dominant
+    shyProvocative?: number;        // 0=shy, 50=neutral, 100=provocative
+    romanticErotic?: number;        // 0=romantic, 50=neutral, 100=erotic
+    gentleIntense?: number;         // 0=gentle, 50=neutral, 100=intense
+    playfulSerious?: number;        // 0=playful, 50=neutral, 100=serious
+    exhibitionistDiscreet?: number; // 0=exhibitionist, 50=neutral, 100=discreet
+    innocentExperienced?: number;   // 0=innocent, 50=neutral, 100=experienced
+    verbalTactile?: number;         // 0=verbal, 50=neutral, 100=tactile
+    fantasyRealism?: number;        // 0=fantasy, 50=neutral, 100=realism
+  };
 }
 
 export const useSoulStore = create<SoulState>()(
