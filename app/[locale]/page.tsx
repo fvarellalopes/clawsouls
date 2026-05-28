@@ -2,14 +2,53 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { avatarUrl } from "@/lib/avatar";
+
+interface PresetPreview {
+  id: string;
+  name: string;
+  creature: string;
+  emoji?: string;
+  tags?: string[];
+}
+
+// Curated list of iconic presets to feature
+const FEATURED_IDS = [
+  "batman", "sherlock-holmes", "harry-potter", "naruto-uzumaki",
+  "elon-musk", "nikola-tesla", "marie-curie", "sun-tzu",
+  "deadpool", "joker", "gandalf", "yoda"
+];
 
 export default function HomePage() {
   const t = useTranslations("home");
+  const [featured, setFeatured] = useState<PresetPreview[]>([]);
+
+  useEffect(() => {
+    fetch("/api/filtered-presets?limit=500")
+      .then((r) => r.json())
+      .then((data) => {
+        const all = data.data || [];
+        const picked = FEATURED_IDS
+          .map((id) => all.find((p: PresetPreview) => p.id === id))
+          .filter(Boolean)
+          .slice(0, 8);
+        // If not enough featured, fill with first available
+        if (picked.length < 8) {
+          const remaining = all
+            .filter((p: PresetPreview) => !FEATURED_IDS.includes(p.id))
+            .slice(0, 8 - picked.length);
+          picked.push(...remaining);
+        }
+        setFeatured(picked);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,var(--bg)_0%,var(--surface-dim)_50%,var(--bg)_100%)]">
       {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center px-4 py-32 text-center">
+      <section className="relative flex flex-col items-center justify-center px-4 py-24 md:py-32 text-center">
         <div className="animate-fade-in">
           {/* Badge */}
           <span className="inline-block mb-8 px-4 py-1 rounded-full border border-primary text-primary text-label-caps tracking-widest uppercase">
@@ -17,7 +56,7 @@ export default function HomePage() {
           </span>
 
           {/* Title */}
-          <h1 className="text-[48px] font-display text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mb-6 max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-[48px] font-display text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mb-6 max-w-3xl mx-auto">
             {t("heroTitleMain")}
           </h1>
 
@@ -31,20 +70,91 @@ export default function HomePage() {
             <Link
               href="/editor"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
-              >
-                {t("launchEditor")}
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+            >
+              {t("launchEditor")}
+              <span className="material-symbols-outlined text-base">arrow_forward</span>
             </Link>
 
             <Link
               href="/presets"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary text-primary font-label-caps tracking-widest uppercase rounded-lg hover:bg-primary/10 transition-all duration-150"
-              >
-                {t("browsePresets")}
-              </Link>
+            >
+              {t("browsePresets")}
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* Featured Presets */}
+      {featured.length > 0 && (
+        <section className="px-4 pb-16">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-10">
+              <h2 className="text-h2 font-h2 text-on-surface mb-3">
+                {t("featuredPresets") || "Featured Souls"}
+              </h2>
+              <p className="text-body-md font-body-sm text-on-surface-variant max-w-xl mx-auto">
+                {t("featuredPresetsDesc") || "Popular characters ready to use as starting points"}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {featured.map((preset, i) => (
+                <Link
+                  key={preset.id}
+                  href={`/editor?preset=${preset.id}`}
+                  className="group relative rounded-xl border border-border bg-surface/60 backdrop-blur-sm overflow-hidden hover:border-primary/30 hover:bg-surface transition-all duration-200"
+                  style={{ animationDelay: `${i * 0.05}s` }}
+                >
+                  {/* Avatar */}
+                  <div className="aspect-square overflow-hidden bg-surface-container-lowest">
+                    <img
+                      src={`/avatars/${preset.id}.webp`}
+                      alt={preset.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const emoji = document.createElement("span");
+                          emoji.className = "text-5xl flex items-center justify-center w-full h-full";
+                          emoji.textContent = preset.emoji || "✨";
+                          parent.appendChild(emoji);
+                        }
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-3">
+                    <h3 className="font-display text-sm text-foreground truncate">
+                      {preset.name}
+                    </h3>
+                    <p className="text-[11px] text-muted-foreground truncate mt-0.5">
+                      {preset.creature}
+                    </p>
+                  </div>
+
+                  {/* Hover line */}
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                href="/presets"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-display uppercase tracking-wider"
+              >
+                {t("viewAllPresets") || "View all presets"}
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Bento Grid — Editor Mockup + Code Output */}
       <section className="px-4 pb-24">
@@ -125,48 +235,35 @@ export default function HomePage() {
               <div className="p-6 min-h-[380px] bg-surface-container-lowest font-mono text-body-sm leading-relaxed">
                 <pre className="text-on-surface-variant/80">
                   <code>
-{`{
-  `}
+{`{\n  `}
                     <span className="text-primary-container">"personality"</span>
-{`: {
-    `}
+{`: {\n    `}
                     <span className="text-primary-container">"aggression"</span>
 {`: `}
                     <span className="text-green-400">0.75</span>
-{`,
-    `}
+{`,\n    `}
                     <span className="text-primary-container">"empathy"</span>
 {`: `}
                     <span className="text-green-400">0.30</span>
-{`,
-    `}
+{`,\n    `}
                     <span className="text-primary-container">"logic_bias"</span>
 {`: `}
                     <span className="text-green-400">0.90</span>
-{`
-  },
-  `}
+{`\n  },\n  `}
                     <span className="text-primary-container">"tone"</span>
-{`: [
-    `}
+{`: [\n    `}
                     <span className="text-amber-300">"sarcastic"</span>
-{`,
-    `}
+{`,\n    `}
                     <span className="text-amber-300">"direct"</span>
-{`,
-    `}
+{`,\n    `}
                     <span className="text-amber-300">"witty"</span>
-{`,
-    `}
+{`,\n    `}
                     <span className="text-amber-300">"minimal"</span>
-{`
-  ],
-  `}
+{`\n  ],\n  `}
                     <span className="text-primary-container">"version"</span>
 {`: `}
                     <span className="text-amber-300">"2.0"</span>
-{`
-}`}
+{`\n}`}
                   </code>
                 </pre>
               </div>

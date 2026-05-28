@@ -4,7 +4,6 @@
     "editor": "Éditeur",
     "presets": "Presets",
     "myPresets": "Mes Presets",
-    "achievements": "Succès",
     "compare": "Compare"
   },
   "common": {
@@ -27,7 +26,8 @@
     "systemStatus": "ÉTAT DU SYSTÈME: NOMINAL",
     "github": "GitHub",
     "discord": "Discord",
-    "soulgate": "SoulGate"
+    "soulgate": "SoulGate",
+    "myPresets": "Mes Presets"
   },
   "editor": {
     "title": "Éditeur d'Âme",
@@ -264,7 +264,9 @@
     "redo": "Rétablir",
     "avatarPlaceholder": "URL de l'avatar ou placeholder",
     "coreTruthsTitle": "Vérités Fondamentales",
-    "boundariesTitle": "Limites"
+    "boundariesTitle": "Limites",
+    "placeholderName": "Nexo",
+    "placeholderCreature": "IA / Fantôme dans la machine"
   },
   "presetsPage": {
     "title": "Personnalités Prédéfinies",
@@ -318,7 +320,10 @@
     "sarcastic": "Sarcastique",
     "direct": "Direct",
     "witty": "Esprit",
-    "minimal": "Minimal"
+    "minimal": "Minimal",
+    "featuredPresets": "Âmes en Vedette",
+    "featuredPresetsDesc": "Personnages populaires prêts à utiliser comme point de départ",
+    "viewAllPresets": "Voir tous les presets"
   },
   "myPresets": {
     "title": "Mes Presets",

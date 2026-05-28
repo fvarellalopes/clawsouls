@@ -453,7 +453,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                      style={{
                        background: "var(--surface)",
                       border: "1px solid var(--primary)",
-                      boxShadow: "0 0 30px var(--primary), inset 0 0 30px var(--primary)",
+                      boxShadow: "0 0 30px var(--primary)",
                      }}>
                   {avatarUrl(soul).includes("placeholder") ? (
                     <div className="w-full h-full flex items-center justify-center">
@@ -541,7 +541,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                           <input
                             value={soul.name}
                             onChange={(e) => handleAttributeChange("name", e.target.value)}
-                            placeholder="Nexo"
+                            placeholder={t("placeholderName") || "Nexo"}
                             className="cyber-input"
                           />
                         </div>
@@ -550,7 +550,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                           <input
                             value={soul.creature}
                             onChange={(e) => handleAttributeChange("creature", e.target.value)}
-                            placeholder="AI / Ghost in the machine"
+                            placeholder={t("placeholderCreature") || "AI / Ghost in the machine"}
                             className="cyber-input"
                           />
                         </div>

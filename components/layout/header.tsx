@@ -1,58 +1,89 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useThemeStore } from "@/store/themeStore";
-import { applyTheme } from "@/lib/themes";
-import { getThemeById } from "@/lib/themes";
+import { applyTheme, getThemeById } from "@/lib/themes";
 
-interface HeaderProps {
-  locale?: string;
-}
+const LOCALES = [
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "pt", label: "Português", flag: "🇧🇷" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "ja", label: "日本語", flag: "🇯🇵" },
+  { code: "zh", label: "中文", flag: "🇨🇳" },
+];
 
-export function Header({ locale }: HeaderProps) {
+export function Header() {
   const t = useTranslations("common");
   const params = useParams();
-  const activeLocale = locale || (params?.locale as string) || "en";
+  const pathname = usePathname();
+  const router = useRouter();
+  const activeLocale = (params?.locale as string) || "en";
   const { themeId, setTheme } = useThemeStore();
   const isDark = themeId !== "paper";
 
-  // Apply persisted theme on mount
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const theme = getThemeById(themeId);
     applyTheme(theme);
   }, [themeId]);
 
-  const toggleTheme = () => {
-    setTheme(isDark ? "paper" : "cyberpunk");
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const toggleTheme = () => setTheme(isDark ? "paper" : "cyberpunk");
+
+  const switchLocale = (newLocale: string) => {
+    // Replace the locale segment in the pathname
+    const segments = pathname?.split("/") || [];
+    if (segments.length > 1 && LOCALES.some((l) => l.code === segments[1])) {
+      segments[1] = newLocale;
+    } else {
+      segments.splice(1, 0, newLocale);
+    }
+    router.push(segments.join("/"));
+    setLangOpen(false);
   };
 
   const navLinks = [
     { href: `/${activeLocale}/editor`, key: "create" },
     { href: `/${activeLocale}/presets`, key: "presets" },
     { href: `/${activeLocale}/soulgate`, key: "soulgate" },
-    { href: `/${activeLocale}/quiz`, key: "quiz" },
-    { href: `/${activeLocale}/compare`, key: "compare" },
+    { href: `/${activeLocale}/my-presets`, key: "myPresets" },
   ];
 
+  const currentLocale = LOCALES.find((l) => l.code === activeLocale) || LOCALES[0];
+
   return (
-<nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-16 bg-background/80 backdrop-blur-xl border-b border-border">
+    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-12 h-16 bg-background/80 backdrop-blur-xl border-b border-border">
       {/* Left — Logo + Nav */}
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-6">
         <Link
           href={`/${activeLocale}`}
-          className="text-2xl font-bold tracking-tighter text-primary font-['Space_Grotesk']"
+          className="text-xl md:text-2xl font-bold tracking-tighter text-primary font-display"
         >
           ClawSouls
         </Link>
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-['Space_Grotesk'] tracking-tight text-sm uppercase text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-all duration-200 px-2 py-1 rounded"
+              className="font-display tracking-tight text-sm uppercase text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-all duration-200 px-2 py-1 rounded"
             >
               {t(link.key)}
             </Link>
@@ -61,19 +92,52 @@ export function Header({ locale }: HeaderProps) {
       </div>
 
       {/* Right — Actions */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
+        {/* Language Switcher */}
+        <div ref={langRef} className="relative">
+          <button
+            onClick={() => setLangOpen(!langOpen)}
+            className="flex items-center gap-1.5 px-2 py-1.5 rounded text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-all cursor-pointer text-sm"
+            aria-label="Switch language"
+          >
+            <span className="text-base">{currentLocale.flag}</span>
+            <span className="hidden sm:inline font-mono text-xs uppercase tracking-wide">{currentLocale.code}</span>
+          </button>
+          {langOpen && (
+            <div className="absolute right-0 top-full mt-1 min-w-[160px] z-50 bg-surface border border-border rounded-lg shadow-xl overflow-hidden animate-fade-in">
+              {LOCALES.map((loc) => (
+                <button
+                  key={loc.code}
+                  onClick={() => switchLocale(loc.code)}
+                  className={`flex items-center gap-2.5 w-full px-4 py-2.5 text-left text-sm transition-colors cursor-pointer ${
+                    loc.code === activeLocale
+                      ? "bg-primary/10 text-primary"
+                      : "text-foreground hover:bg-foreground/5"
+                  }`}
+                >
+                  <span className="text-base">{loc.flag}</span>
+                  <span className="font-mono text-xs">{loc.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
-          className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+          className="text-muted-foreground hover:text-primary transition-colors cursor-pointer p-1.5"
           aria-label="Toggle theme"
         >
           <span className="material-symbols-outlined text-xl">
             {isDark ? "light_mode" : "dark_mode"}
           </span>
         </button>
+
+        {/* CTA */}
         <Link
           href={`/${activeLocale}/editor`}
-          className="hidden md:flex items-center px-4 py-2 bg-primary text-primary-foreground font-['Space_Grotesk'] text-xs font-bold uppercase tracking-[0.1em] rounded hover:scale-[1.02] transition-all"
+          className="hidden md:flex items-center px-4 py-2 bg-primary text-primary-foreground font-display text-xs font-bold uppercase tracking-[0.1em] rounded hover:scale-[1.02] transition-all"
         >
           {t("connectTerminal")}
         </Link>

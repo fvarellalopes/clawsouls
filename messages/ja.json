@@ -4,7 +4,6 @@
     "editor": "エディタ",
     "presets": "プリセット",
     "myPresets": "マイプリセット",
-    "achievements": "実績",
     "compare": "Compare"
   },
   "common": {
@@ -27,7 +26,8 @@
     "systemStatus": "システムステータス: 正常",
     "github": "GitHub",
     "discord": "Discord",
-    "soulgate": "SoulGate"
+    "soulgate": "SoulGate",
+    "myPresets": "マイプリセット"
   },
   "editor": {
     "title": "ソウルエディタ",
@@ -264,7 +264,9 @@
     "redo": "やり直し",
     "avatarPlaceholder": "アバターURLまたはプレースホルダー",
     "coreTruthsTitle": "核心理念",
-    "boundariesTitle": "境界"
+    "boundariesTitle": "境界",
+    "placeholderName": "Nexo",
+    "placeholderCreature": "AI / 機械の中の幽霊"
   },
   "presetsPage": {
     "title": "プリセット人格",
@@ -346,7 +348,10 @@
     "sarcastic": "サービアス",
     "direct": "Direct",
     "witty": "機知",
-    "minimal": "Minimal"
+    "minimal": "Minimal",
+    "featuredPresets": "注目のソウル",
+    "featuredPresetsDesc": "出発点として使える人気キャラクター",
+    "viewAllPresets": "すべてのプリセットを見る"
   },
   "myPresets": {
     "title": "マイプリセット",

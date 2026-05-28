@@ -4,7 +4,6 @@
     "editor": "编辑器",
     "presets": "预设",
     "myPresets": "我的预设",
-    "achievements": "成就",
     "compare": "Compare"
   },
   "common": {
@@ -27,7 +26,8 @@
     "systemStatus": "系统状态: 正常",
     "github": "GitHub",
     "discord": "Discord",
-    "soulgate": "SoulGate"
+    "soulgate": "SoulGate",
+    "myPresets": "我的预设"
   },
   "editor": {
     "title": "灵魂编辑器",
@@ -264,7 +264,9 @@
     "redo": "重做",
     "avatarPlaceholder": "头像链接或占位符",
     "coreTruthsTitle": "核心真理",
-    "boundariesTitle": "边界"
+    "boundariesTitle": "边界",
+    "placeholderName": "Nexo",
+    "placeholderCreature": "AI / 机器中的幽灵"
   },
   "presetsPage": {
     "title": "预设人格",
@@ -346,7 +348,10 @@
     "sarcastic": "讽刺的",
     "direct": "Direct",
     "witty": "机智",
-    "minimal": "Minimal"
+    "minimal": "Minimal",
+    "featuredPresets": "精选灵魂",
+    "featuredPresetsDesc": "热门角色，可作为起点使用",
+    "viewAllPresets": "查看所有预设"
   },
   "myPresets": {
     "title": "我的预设",

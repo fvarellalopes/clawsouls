@@ -4,7 +4,6 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "Meus Presets",
-    "achievements": "Conquistas",
     "compare": "Comparar"
   },
   "common": {
@@ -27,7 +26,8 @@
     "systemStatus": "STATUS DO SISTEMA: NOMINAL",
     "github": "GitHub",
     "discord": "Discord",
-    "soulgate": "SoulGate"
+    "soulgate": "SoulGate",
+    "myPresets": "Meus Presets"
   },
   "editor": {
     "title": "Editor de Alma",
@@ -264,7 +264,9 @@
     "redo": "Refazer",
     "avatarPlaceholder": "URL do Avatar ou placeholder",
     "coreTruthsTitle": "Verdades Fundamentais",
-    "boundariesTitle": "Limites"
+    "boundariesTitle": "Limites",
+    "placeholderName": "Nexo",
+    "placeholderCreature": "IA / Fantasma na máquina"
   },
   "presetsPage": {
     "title": "Personalidades Pré-definidas",
@@ -318,7 +320,10 @@
     "sarcastic": "Sarcástico",
     "direct": "Direto",
     "witty": "Esperto",
-    "minimal": "Mínimo"
+    "minimal": "Mínimo",
+    "featuredPresets": "Almas em Destaque",
+    "featuredPresetsDesc": "Personagens populares prontos para usar como ponto de partida",
+    "viewAllPresets": "Ver todos os presets"
   },
   "myPresets": {
     "title": "Meus Presets",

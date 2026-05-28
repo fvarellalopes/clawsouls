@@ -4,7 +4,6 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "Meine Presets",
-    "achievements": "Erfolge",
     "compare": "Compare"
   },
   "common": {
@@ -27,7 +26,8 @@
     "systemStatus": "SYSTEMSTATUS: NOMINAL",
     "github": "GitHub",
     "discord": "Discord",
-    "soulgate": "SoulGate"
+    "soulgate": "SoulGate",
+    "myPresets": "Meine Presets"
   },
   "editor": {
     "title": "Seelen-Editor",
@@ -264,7 +264,9 @@
     "redo": "Wiederholen",
     "avatarPlaceholder": "Avatar-URL oder Platzhalter",
     "coreTruthsTitle": "Grundwahrheiten",
-    "boundariesTitle": "Grenzen"
+    "boundariesTitle": "Grenzen",
+    "placeholderName": "Nexo",
+    "placeholderCreature": "KI / Geist in der Maschine"
   },
   "presetsPage": {
     "title": "Vorgefertigte Persönlichkeiten",
@@ -318,7 +320,10 @@
     "sarcastic": "Sarkastisch",
     "direct": "Direct",
     "witty": "Witzig",
-    "minimal": "Minimal"
+    "minimal": "Minimal",
+    "featuredPresets": "Ausgewählte Seelen",
+    "featuredPresetsDesc": "Beliebte Charaktere als Ausgangspunkt bereit",
+    "viewAllPresets": "Alle Presets anzeigen"
   },
   "myPresets": {
     "title": "Meine Presets",

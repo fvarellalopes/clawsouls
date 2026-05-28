@@ -4,7 +4,6 @@
     "editor": "Editor",
     "presets": "Presets",
     "myPresets": "My Presets",
-    "achievements": "Badges",
     "compare": "Compare"
   },
   "common": {
@@ -27,7 +26,8 @@
     "systemStatus": "SYSTEM STATUS: NOMINAL",
     "github": "GitHub",
     "discord": "Discord",
-    "soulgate": "SoulGate"
+    "soulgate": "SoulGate",
+    "myPresets": "My Presets"
   },
   "editor": {
     "title": "Soul Editor",
@@ -264,7 +264,9 @@
     "redo": "Redo",
     "avatarPlaceholder": "Avatar URL or placeholder",
     "coreTruthsTitle": "Core Truths",
-    "boundariesTitle": "Boundaries"
+    "boundariesTitle": "Boundaries",
+    "placeholderName": "Nexo",
+    "placeholderCreature": "AI / Ghost in the machine"
   },
   "presetsPage": {
     "title": "Preset Personalities",
@@ -346,7 +348,10 @@
     "sarcastic": "Sarcastic",
     "direct": "Direct",
     "witty": "Witty",
-    "minimal": "Minimal"
+    "minimal": "Minimal",
+    "featuredPresets": "Featured Souls",
+    "featuredPresetsDesc": "Popular characters ready to use as starting points",
+    "viewAllPresets": "View all presets"
   },
   "myPresets": {
     "title": "My Presets",
