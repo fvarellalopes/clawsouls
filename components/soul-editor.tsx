@@ -449,7 +449,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
             {/* ─── Avatar Column (3 cols) ─── */}
             <div className="lg:col-span-3">
               <div className="cyber-glass p-4 sm:p-6 text-center lg:sticky lg:top-24">
-                <div className="relative mx-auto mb-4 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden"
+                <div className="relative mx-auto mb-4 w-32 sm:w-40 lg:w-48 aspect-[3/4] rounded-2xl overflow-hidden"
                      style={{
                        background: "var(--surface)",
                       border: "1px solid var(--primary)",
