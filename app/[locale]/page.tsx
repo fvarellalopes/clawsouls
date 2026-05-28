@@ -68,7 +68,7 @@ export default function HomePage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/editor"
+              href="/editor?preset=jarvis"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-label-caps tracking-widest uppercase rounded-lg hover:brightness-110 transition-all duration-150"
             >
               {t("launchEditor")}
