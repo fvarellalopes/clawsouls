@@ -14,6 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, Share2, Eye, Edit3, Palette, Settings, MessageSquare, Undo2, Redo2, Copy, Check, Save, Search, ArrowLeft, Sparkles, Wand2, X, Upload, FileJson, FileText, Plus, Trash2, Sun, Moon, ChevronDown, Zap, RotateCcw } from "lucide-react";
 import { useAutoSaveStore } from "@/store/autoSaveStore";
+import { useNsfwStore } from "@/store/nsfwStore";
 import { usePresets } from "@/lib/usePresets";
 import { attributeOptions } from "@/data/presets";
 import { generateSoulMD, getCharacterCoreTruths, getCharacterBoundaries } from "@/lib/soulGenerator";
@@ -122,6 +123,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
   const [quickStartDismissed, setQuickStartDismissed] = useState(false);
   const [previewFormat, setPreviewFormat] = useState<"soulmd" | "yaml">("soulmd");
   const [activeTab, setActiveTab] = useState("essentials");
+  const { nsfwEnabled } = useNsfwStore();
 
   // Load preset from URL slug — reset soul first to avoid stale data flash
   const { presets } = usePresets();
@@ -515,6 +517,7 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                   { id: "identity", label: "IDENTITY" },
                   { id: "style", label: t("tabsStyle") || "TONE & STYLE" },
                   { id: "advanced", label: t("tabsAdvanced") || "ADVANCED" },
+                  ...(nsfwEnabled ? [{ id: "nsfw", label: "NSFW" }] : []),
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -1243,6 +1246,104 @@ export function SoulEditor({ locale, messages, initialPresetSlug }: SoulEditorPr
                       </button>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* ─── TAB: NSFW ─── */}
+              {activeTab === "nsfw" && nsfwEnabled && (
+                <div style={{ animation: "fadeInUp 0.25s ease-out" }}>
+                  {/* NSFW Toggle */}
+                  <div className="cyber-glass p-6 mb-6">
+                    <h3 className="cyber-section-title">
+                      <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--destructive)" }}>no_adult_content</span>
+                      NSFW Content
+                    </h3>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-foreground">Marcar este preset como NSFW</p>
+                        <p className="text-xs text-muted-foreground mt-1">Presets NSFW só aparecem quando o modo NSFW está ativo</p>
+                      </div>
+                      <Switch
+                        checked={soul.nsfw || false}
+                        onCheckedChange={(checked) => handleAttributeChange("nsfw", checked)}
+                      />
+                    </div>
+                  </div>
+
+                  {/* NSFW Tags */}
+                  {soul.nsfw && (
+                    <div className="cyber-glass p-6 mb-6">
+                      <h3 className="cyber-section-title">
+                        <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>label</span>
+                        NSFW Tags
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {["sugestivo", "explícito", "extremo", "romântico", "sedutor", "dominador", "submisso", "brincalhão", "BDSM", "fetiche", "roleplay", "fantasia", "casual", "íntimo", "narrativo"].map((tag) => {
+                          const active = (soul.nsfwTags || []).includes(tag);
+                          return (
+                            <button
+                              key={tag}
+                              onClick={() => {
+                                const current = soul.nsfwTags || [];
+                                handleAttributeChange("nsfwTags", active ? current.filter(t => t !== tag) : [...current, tag]);
+                              }}
+                              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
+                                active
+                                  ? "bg-red-500/20 text-red-400 border-red-500/40"
+                                  : "bg-surface-alt/60 text-muted-foreground border-border hover:bg-surface-alt hover:text-foreground"
+                              }`}
+                            >
+                              {tag}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* NSFW Bipolar Sliders */}
+                  {soul.nsfw && (
+                    <div className="cyber-glass p-6 mb-6">
+                      <h3 className="cyber-section-title">
+                        <span className="material-symbols-outlined mr-2" style={{ fontSize: "16px", verticalAlign: "middle", color: "var(--primary)" }}>tune</span>
+                        NSFW Personality Sliders
+                      </h3>
+                      <div className="space-y-6">
+                        {[
+                          { key: "submissiveDominant", left: "Submisso", right: "Dominante" },
+                          { key: "shyProvocative", left: "Tímido", right: "Provocante" },
+                          { key: "romanticErotic", left: "Romântico", right: "Erótico" },
+                          { key: "gentleIntense", left: "Gentil", right: "Intenso" },
+                          { key: "playfulSerious", left: "Brincalhão", right: "Sério" },
+                          { key: "exhibitionistDiscreet", left: "Exibicionista", right: "Discreto" },
+                          { key: "innocentExperienced", left: "Inocente", right: "Experiente" },
+                          { key: "verbalTactile", left: "Verbal", right: "Tátil" },
+                          { key: "fantasyRealism", left: "Fantasia", right: "Realismo" },
+                        ].map(({ key, left, right }) => (
+                          <div key={key} className="space-y-2">
+                            <div className="flex justify-between items-center">
+                              <span className="mono-data text-[10px] text-muted-foreground">{left}</span>
+                              <span className="mono-data text-[10px] text-primary tabular-nums">
+                                {soul.nsfwSliders?.[key as keyof typeof soul.nsfwSliders] ?? 50}
+                              </span>
+                              <span className="mono-data text-[10px] text-muted-foreground">{right}</span>
+                            </div>
+                            <Slider
+                              value={[soul.nsfwSliders?.[key as keyof typeof soul.nsfwSliders] ?? 50]}
+                              onValueChange={([value]) => {
+                                const current = soul.nsfwSliders || {};
+                                handleAttributeChange("nsfwSliders", { ...current, [key]: value });
+                              }}
+                              min={0}
+                              max={100}
+                              step={1}
+                              className="w-full"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
