@@ -1383,61 +1383,6 @@
     ]
   },
   {
-    "id": "pikachu",
-    "name": "Pikachu",
-    "creature": "Video Game Character",
-    "category": "video_game",
-    "prompt": "a Pikachu from Pokemon, cyberpunk electric pet, yellow fur, red cheeks, lightning sparks, small yellow electric mouse creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
-    "tags": [
-      "game",
-      "iconic"
-    ]
-  },
-  {
-    "id": "ash-ketchum",
-    "name": "Ash Ketchum",
-    "creature": "Human",
-    "category": "human",
-    "prompt": "a Ash Ketchum from Pokemon anime, cyberpunk Pokemon trainer, baseball cap, red and white, backpack, young male trainer, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
-    "tags": [
-      "game",
-      "iconic"
-    ]
-  },
-  {
-    "id": "mewtwo",
-    "name": "Mewtwo",
-    "creature": "Human",
-    "category": "human",
-    "prompt": "a Mewtwo from Pokemon, purple aura, floating pose, dark energy, psychic cat-like clone creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
-    "tags": [
-      "game",
-      "iconic"
-    ]
-  },
-  {
-    "id": "charizard",
-    "name": "Charizard",
-    "creature": "Human",
-    "category": "human",
-    "prompt": "a Charizard from Pokemon, wings spread, flame tail, armored look, large orange fire dragon creature, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
-    "tags": [
-      "game",
-      "iconic"
-    ]
-  },
-  {
-    "id": "mew",
-    "name": "Mew",
-    "creature": "Human",
-    "category": "human",
-    "prompt": "a Mew from Pokemon, cyberpunk mythical Pokemon, pink, psychic aura, playful pose, cyberpunk 2077 aesthetic, biomechanical enhancements, neon circuitry, glowing eyes, detailed facial features, bust portrait, sharp focus, hyper detailed, photorealistic render, cinematic lighting, 4k masterpiece",
-    "tags": [
-      "game",
-      "iconic"
-    ]
-  },
-  {
     "id": "cloud-strife",
     "name": "Cloud Strife",
     "creature": "Video Game Character",
