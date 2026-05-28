@@ -1114,5 +1114,19 @@
   "attributes": {
     "consciousness": "CONSCIENCE",
     "questioning": "QUESTIONNEMENT"
+  },
+  "nsfw": {
+    "ageGateTitle": "ACCÈS RESTREINT // VÉRIFICATION D'ÂGE NÉCESSAIRE",
+    "ageGateSubtitle": "Ce contenu est destiné aux personnes de 18 ans et plus.",
+    "ageGateConfirm": "Confirmez votre âge pour continuer.",
+    "confirmButton": "[CONFIRMER 18+]",
+    "exitButton": "[SORTIR]",
+    "toggleLabel": "Basculer le mode NSFW",
+    "tabLabel": "NSFW",
+    "nsfwContent": "Contenu NSFW",
+    "markAsNsfw": "Marquer ce preset comme NSFW",
+    "nsfwOnlyVisible": "Les presets NSFW n'apparaissent que lorsque le mode NSFW est actif",
+    "nsfwTags": "Tags NSFW",
+    "nsfwSliders": "Sliders de Personnalité NSFW"
   }
 }

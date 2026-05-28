@@ -1114,5 +1114,19 @@
   "attributes": {
     "consciousness": "BEWUSSTSEIN",
     "questioning": "HINTERFRAGUNG"
+  },
+  "nsfw": {
+    "ageGateTitle": "ZUGANG EINGESCHRÄNKT // ALTERSÜBERPRÜFUNG ERFORDERLICH",
+    "ageGateSubtitle": "Dieser Inhalt ist für Personen ab 18 Jahren bestimmt.",
+    "ageGateConfirm": "Bestätigen Sie Ihr Alter, um fortzufahren.",
+    "confirmButton": "[BESTÄTIGEN 18+]",
+    "exitButton": "[VERLASSEN]",
+    "toggleLabel": "NSFW-Modus umschalten",
+    "tabLabel": "NSFW",
+    "nsfwContent": "NSFW-Inhalt",
+    "markAsNsfw": "Dieses Preset als NSFW markieren",
+    "nsfwOnlyVisible": "NSFW-Presets werden nur angezeigt, wenn der NSFW-Modus aktiv ist",
+    "nsfwTags": "NSFW-Tags",
+    "nsfwSliders": "NSFW-Persönlichkeits-Slider"
   }
 }

@@ -3804,5 +3804,19 @@
     "bestPractices": "Best Practices",
     "scanStages": "Scan Stages",
     "howItWorks": "How SoulGate Works"
+  },
+  "nsfw": {
+    "ageGateTitle": "ACCESS RESTRICTED // AGE VERIFICATION REQUIRED",
+    "ageGateSubtitle": "This content is intended for users 18 years or older.",
+    "ageGateConfirm": "Confirm your age to continue.",
+    "confirmButton": "[CONFIRM 18+]",
+    "exitButton": "[EXIT]",
+    "toggleLabel": "Toggle NSFW mode",
+    "tabLabel": "NSFW",
+    "nsfwContent": "NSFW Content",
+    "markAsNsfw": "Mark this preset as NSFW",
+    "nsfwOnlyVisible": "NSFW presets only appear when NSFW mode is active",
+    "nsfwTags": "NSFW Tags",
+    "nsfwSliders": "NSFW Personality Sliders"
   }
 }

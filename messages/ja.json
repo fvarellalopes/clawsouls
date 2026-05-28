@@ -3801,5 +3801,19 @@
   "attributes": {
     "consciousness": "意識",
     "questioning": "質問"
+  },
+  "nsfw": {
+    "ageGateTitle": "アクセス制限 // 年齢確認が必要",
+    "ageGateSubtitle": "このコンテンツは18歳以上の方を対象としています。",
+    "ageGateConfirm": "続行するには年齢を確認してください。",
+    "confirmButton": "[18歳以上を確認]",
+    "exitButton": "[退出]",
+    "toggleLabel": "NSFWモードを切り替え",
+    "tabLabel": "NSFW",
+    "nsfwContent": "NSFWコンテンツ",
+    "markAsNsfw": "このプリセットをNSFWとしてマーク",
+    "nsfwOnlyVisible": "NSFWプリセットはNSFWモードが有効な場合のみ表示されます",
+    "nsfwTags": "NSFWタグ",
+    "nsfwSliders": "NSFWパーソナリティスライダー"
   }
 }

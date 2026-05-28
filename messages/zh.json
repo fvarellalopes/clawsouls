@@ -3801,5 +3801,19 @@
   "attributes": {
     "consciousness": "意识",
     "questioning": "质疑"
+  },
+  "nsfw": {
+    "ageGateTitle": "访问受限 // 需要年龄验证",
+    "ageGateSubtitle": "此内容仅限18岁及以上用户。",
+    "ageGateConfirm": "请确认您的年龄以继续。",
+    "confirmButton": "[确认18+]",
+    "exitButton": "[退出]",
+    "toggleLabel": "切换NSFW模式",
+    "tabLabel": "NSFW",
+    "nsfwContent": "NSFW内容",
+    "markAsNsfw": "将此预设标记为NSFW",
+    "nsfwOnlyVisible": "NSFW预设仅在NSFW模式激活时显示",
+    "nsfwTags": "NSFW标签",
+    "nsfwSliders": "NSFW个性滑块"
   }
 }
