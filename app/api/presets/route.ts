@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { list_presets } from '../../../lib/db'
-import { Preset } from '../../../lib/db'
+import { list_presets, type Preset } from '@/lib/db'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { presetsGetSchema, safeError } from '@/lib/schemas'
 

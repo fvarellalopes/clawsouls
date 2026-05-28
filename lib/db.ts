@@ -1,7 +1,4 @@
 import { getServerSupabase } from './supabase';
-import Database from 'better-sqlite3';
-import fs from 'fs';
-import path from 'path';
 
 // Types
 export type Preset = {
@@ -59,81 +56,6 @@ export type Preset = {
   updated_at?: string;
 };
 
-// Supabase client — uses consolidated factory from lib/supabase.ts
-// getServerSupabase() uses SUPABASE_SERVICE_ROLE_KEY (no NEXT_PUBLIC_ fallback)
-
-// SQLite fallback
-const DB_PATH = path.join(process.cwd(), 'data', 'database.sqlite');
-let db: Database.Database | null = null;
-
-function getDb(): Database.Database {
-  if (db) return db;
-  const dataDir = path.dirname(DB_PATH);
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-  db = new Database(DB_PATH);
-  return db;
-}
-
-function rowToPreset(row: any): Preset {
-  return {
-    id: row.id,
-    name: row.name,
-    creature: row.creature,
-    vibe: row.vibe,
-    emoji: row.emoji,
-    avatar: row.avatar,
-    core_truths_helpful: Boolean(row.core_truths_helpful),
-    core_truths_opinions: Boolean(row.core_truths_opinions),
-    core_truths_resourceful: Boolean(row.core_truths_resourceful),
-    core_truths_trustworthy: Boolean(row.core_truths_trustworthy),
-    core_truths_respectful: Boolean(row.core_truths_respectful),
-    boundaries_private: Boolean(row.boundaries_private),
-    boundaries_ask_before_acting: Boolean(row.boundaries_ask_before_acting),
-    boundaries_no_half_baked: Boolean(row.boundaries_no_half_baked),
-    boundaries_not_voice_proxy: Boolean(row.boundaries_not_voice_proxy),
-    vibe_style: row.vibe_style,
-    humor: Number(row.humor),
-    formality: Number(row.formality),
-    emoji_usage: Number(row.emoji_usage),
-    verbosity: Number(row.verbosity),
-    consciousness: Number(row.consciousness),
-    questioning: Number(row.questioning),
-    openness: Number(row.openness) || 70,
-    conscientiousness: Number(row.conscientiousness) || 50,
-    extraversion: Number(row.extraversion) || 50,
-    agreeableness: Number(row.agreeableness) || 50,
-    neuroticism: Number(row.neuroticism) || 30,
-    description: row.description,
-    tags: row.tags || [],
-    source: row.source,
-    worldview: row.worldview,
-    expertise: row.expertise,
-    memory_policy: row.memory_policy,
-    pet_peeves: row.pet_peeves,
-    voice_rules: row.voice_rules,
-    communication_mode: row.communication_mode,
-    knowledge_domains: row.knowledge_domains,
-    signature_phrases: row.signature_phrases,
-    emotional_range: row.emotional_range,
-    speech_patterns: row.speech_patterns,
-    role: row.role,
-    role_description: row.role_description,
-    mandate_rules: row.mandate_rules,
-    voice_private: row.voice_private,
-    voice_public: row.voice_public,
-    autonomy_auto: row.autonomy_auto,
-    autonomy_require_approval: row.autonomy_require_approval,
-    active_projects: row.active_projects,
-    custom_core_truths: row.custom_core_truths,
-    custom_boundaries: row.custom_boundaries,
-    created_at: row.created_at,
-    updated_at: row.updated_at,
-  };
-}
-
-// API functions (async)
 export async function list_presets(
   limit: number = 50,
   offset: number = 0,
@@ -143,393 +65,41 @@ export async function list_presets(
   search?: string
 ): Promise<Preset[]> {
   const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    let query = supabaseClient.from('presets').select('*');
-
-    if (creature) query = query.eq('creature', creature);
-    if (source) query = query.eq('source', source);
-    if (search) query = query.or(`name.ilike.%${search}%,vibe.ilike.%${search}%,description.ilike.%${search}%`);
-    if (tags && tags.length > 0) {
-      for (const tag of tags) {
-        query = query.contains('tags', [tag]);
-      }
-    }
-
-    query = query.range(offset, offset + limit - 1).order('name', { ascending: true });
-
-    const { data, error } = await query;
-    if (error) {
-      console.error('Supabase error:', error);
-      return [];
-    }
-    return (data || []).map(rowToPreset);
+  if (!supabaseClient) {
+    console.error('No Supabase client available');
+    return [];
   }
 
-  // SQLite fallback (sync)
-  return list_presets_sync(limit, offset, creature, source, tags, search);
-}
+  let query = supabaseClient.from('presets').select('*');
 
-function list_presets_sync(
-  limit: number,
-  offset: number,
-  creature?: string,
-  source?: string,
-  tags?: string[],
-  search?: string
-): Preset[] {
-  const database = getDb();
-  let sql = 'SELECT * FROM presets WHERE 1=1';
-  const params: any[] = [];
-
-  if (creature) {
-    sql += ' AND creature = ?';
-    params.push(creature);
-  }
-  if (source) {
-    sql += ' AND source = ?';
-    params.push(source);
-  }
-  if (search) {
-    sql += ' AND (name LIKE ? OR vibe LIKE ? OR description LIKE ?)';
-    const searchPat = `%${search}%`;
-    params.push(searchPat, searchPat, searchPat);
-  }
+  if (creature) query = query.eq('creature', creature);
+  if (source) query = query.eq('source', source);
+  if (search) query = query.or(`name.ilike.%${search}%,vibe.ilike.%${search}%,description.ilike.%${search}%`);
   if (tags && tags.length > 0) {
     for (const tag of tags) {
-      sql += " AND tags LIKE ?";
-      params.push(`%"${tag}"%`);
+      query = query.contains('tags', [tag]);
     }
   }
 
-  sql += ' ORDER BY name LIMIT ? OFFSET ?';
-  params.push(limit, offset);
+  query = query.range(offset, offset + limit - 1).order('name', { ascending: true });
 
-  const stmt = database.prepare(sql);
-  const rows = stmt.all(...params);
-  return rows.map(rowToPreset);
+  const { data, error } = await query;
+  if (error) {
+    console.error('Supabase error:', error);
+    return [];
+  }
+  return (data || []) as Preset[];
 }
 
 export async function get_preset_by_id(preset_id: string): Promise<Preset | null> {
   const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const { data, error } = await supabaseClient.from('presets').select('*').eq('id', preset_id).single();
-    if (error) {
-      if (error.code === 'PGRST116') return null; // Not found
-      console.error('Supabase error:', error);
-      return null;
-    }
-    return data ? rowToPreset(data) : null;
+  if (!supabaseClient) return null;
+
+  const { data, error } = await supabaseClient.from('presets').select('*').eq('id', preset_id).single();
+  if (error) {
+    if (error.code === 'PGRST116') return null;
+    console.error('Supabase error:', error);
+    return null;
   }
-
-  const database = getDb();
-  const stmt = database.prepare('SELECT * FROM presets WHERE id = ?');
-  const row = stmt.get(preset_id);
-  return row ? rowToPreset(row) : null;
-}
-
-export async function count_presets(
-  creature?: string,
-  source?: string,
-  tags?: string[],
-  search?: string
-): Promise<number> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    let query = supabaseClient.from('presets').select('*', { count: 'exact', head: true });
-
-    if (creature) query = query.eq('creature', creature);
-    if (source) query = query.eq('source', source);
-    if (search) query = query.or(`name.ilike.%${search}%,vibe.ilike.%${search}%,description.ilike.%${search}%`);
-    if (tags && tags.length > 0) {
-      for (const tag of tags) {
-        query = query.contains('tags', [tag]);
-      }
-    }
-
-    const { count, error } = await query;
-    if (error) {
-      console.error('Supabase error:', error);
-      return 0;
-    }
-    return Number(count) || 0;
-  }
-
-  // SQLite fallback
-  const database = getDb();
-  let sql = 'SELECT COUNT(*) as cnt FROM presets WHERE 1=1';
-  const params: any[] = [];
-
-  if (creature) {
-    sql += ' AND creature = ?';
-    params.push(creature);
-  }
-  if (source) {
-    sql += ' AND source = ?';
-    params.push(source);
-  }
-  if (search) {
-    sql += ' AND (name LIKE ? OR vibe LIKE ? OR description LIKE ?)';
-    const searchPat = `%${search}%`;
-    params.push(searchPat, searchPat, searchPat);
-  }
-  if (tags && tags.length > 0) {
-    for (const tag of tags) {
-      sql += " AND tags LIKE ?";
-      params.push(`%"${tag}"%`);
-    }
-  }
-
-  const stmt = database.prepare(sql);
-  const row = stmt.get(...params) as { cnt: number };
-  return row ? Number(row.cnt) : 0;
-}
-
-export async function get_creature_types(): Promise<string[]> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const { data, error } = await supabaseClient.from('presets').select('creature').order('creature', { ascending: true });
-    if (error) {
-      console.error('Supabase error:', error);
-      return [];
-    }
-    const unique = new Set<string>();
-    data?.forEach(row => unique.add(row.creature));
-    return Array.from(unique).sort();
-  }
-
-  const database = getDb();
-  const stmt = database.prepare('SELECT DISTINCT creature FROM presets ORDER BY creature');
-  const rows = stmt.all() as { creature: string }[];
-  return rows.map(r => r.creature);
-}
-
-export async function get_sources(): Promise<string[]> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const { data, error } = await supabaseClient.from('presets').select('source').order('source', { ascending: true });
-    if (error) {
-      console.error('Supabase error:', error);
-      return [];
-    }
-    const unique = new Set<string>();
-    data?.forEach(row => unique.add(row.source));
-    return Array.from(unique).sort();
-  }
-
-  const database = getDb();
-  const stmt = database.prepare('SELECT DISTINCT source FROM presets ORDER BY source');
-  const rows = stmt.all() as { source: string }[];
-  return rows.map(r => r.source);
-}
-
-export async function insert_preset(preset: any): Promise<boolean> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const { error } = await supabaseClient.from('presets').insert([{
-      id: preset.id,
-      name: preset.name,
-      creature: preset.creature || 'Human',
-      vibe: preset.vibe || null,
-      emoji: preset.emoji || '😊',
-      avatar: preset.avatar || null,
-      core_truths_helpful: preset.core_truths_helpful ?? true,
-      core_truths_opinions: preset.core_truths_opinions ?? true,
-      core_truths_resourceful: preset.core_truths_resourceful ?? true,
-      core_truths_trustworthy: preset.core_truths_trustworthy ?? true,
-      core_truths_respectful: preset.core_truths_respectful ?? true,
-      boundaries_private: preset.boundaries_private ?? true,
-      boundaries_ask_before_acting: preset.boundaries_ask_before_acting ?? false,
-      boundaries_no_half_baked: preset.boundaries_no_half_baked ?? false,
-      boundaries_not_voice_proxy: preset.boundaries_not_voice_proxy ?? true,
-      vibe_style: preset.vibe_style || 'balanced',
-      humor: preset.humor ?? 50,
-      formality: preset.formality ?? 50,
-      emoji_usage: preset.emojiUsage ?? preset.emoji_usage ?? 10,
-      verbosity: preset.verbosity ?? 50,
-      consciousness: preset.consciousness ?? 50,
-      questioning: preset.questioning ?? 30,
-      openness: preset.openness ?? 70,
-      conscientiousness: preset.conscientiousness ?? 50,
-      extraversion: preset.extraversion ?? 50,
-      agreeableness: preset.agreeableness ?? 50,
-      neuroticism: preset.neuroticism ?? 30,
-      description: preset.description || null,
-      tags: preset.tags || [],
-      source: preset.source || 'character'
-    }]);
-    if (error) {
-      if (error.code === '23505') { // unique_violation
-        return false;
-      }
-      console.error('Supabase insert error:', error);
-      throw error;
-    }
-    return true;
-  }
-
-  // SQLite fallback
-  const database = getDb();
-  const sql = `
-    INSERT INTO presets (
-      id, name, creature, vibe, emoji, avatar,
-      core_truths_helpful, core_truths_opinions, core_truths_resourceful,
-      core_truths_trustworthy, core_truths_respectful,
-      boundaries_private, boundaries_ask_before_acting,
-      boundaries_no_half_baked, boundaries_not_voice_proxy,
-      vibe_style, humor, formality, emoji_usage, verbosity,
-      consciousness, questioning, openness, conscientiousness, extraversion, agreeableness, neuroticism, description, tags, source
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `;
-  try {
-    const stmt = database.prepare(sql);
-    stmt.run(
-      preset.id,
-      preset.name,
-      preset.creature || 'Human',
-      preset.vibe || null,
-      preset.emoji || '😊',
-      preset.avatar || null,
-      preset.core_truths_helpful ?? true ? 1 : 0,
-      preset.core_truths_opinions ?? true ? 1 : 0,
-      preset.core_truths_resourceful ?? true ? 1 : 0,
-      preset.core_truths_trustworthy ?? true ? 1 : 0,
-      preset.core_truths_respectful ?? true ? 1 : 0,
-      preset.boundaries_private ?? true ? 1 : 0,
-      preset.boundaries_ask_before_acting ?? false ? 1 : 0,
-      preset.boundaries_no_half_baked ?? false ? 1 : 0,
-      preset.boundaries_not_voice_proxy ?? true ? 1 : 0,
-      preset.vibe_style || 'balanced',
-      preset.humor ?? 50,
-      preset.formality ?? 50,
-      preset.emojiUsage ?? preset.emoji_usage ?? 10,
-      preset.verbosity ?? 50,
-      preset.consciousness ?? 50,
-      preset.questioning ?? 30,
-      preset.openness ?? 70,
-      preset.conscientiousness ?? 50,
-      preset.extraversion ?? 50,
-      preset.agreeableness ?? 50,
-      preset.neuroticism ?? 30,
-      preset.description || null,
-      JSON.stringify(preset.tags || []),
-      preset.source || 'character'
-    );
-    return true;
-  } catch (err: any) {
-    if (err.message.includes('UNIQUE constraint failed')) {
-      return false;
-    }
-    throw err;
-  }
-}
-
-
-export async function update_preset(id: string, preset: Partial<Preset>): Promise<boolean> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const { error } = await supabaseClient.from('presets').update({
-      name: preset.name,
-      creature: preset.creature,
-      vibe: preset.vibe,
-      emoji: preset.emoji,
-      avatar: preset.avatar,
-      vibe_style: preset.vibe_style,
-      humor: preset.humor,
-      formality: preset.formality,
-      emoji_usage: preset.emoji_usage,
-      verbosity: preset.verbosity,
-      consciousness: preset.consciousness,
-      questioning: preset.questioning,
-      openness: preset.openness,
-      conscientiousness: preset.conscientiousness,
-      extraversion: preset.extraversion,
-      agreeableness: preset.agreeableness,
-      neuroticism: preset.neuroticism,
-      description: preset.description,
-      tags: preset.tags,
-      updated_at: new Date().toISOString(),
-    }).eq('id', id);
-    if (error) {
-      console.error('Supabase update error:', error);
-      return false;
-    }
-    return true;
-  }
-
-  // SQLite fallback
-  const database = getDb();
-  const fields: string[] = [];
-  const params: any[] = [];
-  
-  const fieldMap: Record<string, any> = {
-    name: preset.name, creature: preset.creature, vibe: preset.vibe,
-    emoji: preset.emoji, avatar: preset.avatar, vibe_style: preset.vibe_style,
-    humor: preset.humor, formality: preset.formality, emoji_usage: preset.emoji_usage,
-    verbosity: preset.verbosity, consciousness: preset.consciousness,
-    questioning: preset.questioning, openness: preset.openness,
-    conscientiousness: preset.conscientiousness, extraversion: preset.extraversion,
-    agreeableness: preset.agreeableness, neuroticism: preset.neuroticism,
-    description: preset.description, tags: preset.tags ? JSON.stringify(preset.tags) : undefined,
-  };
-
-  for (const [key, val] of Object.entries(fieldMap)) {
-    if (val !== undefined) {
-      fields.push(`${key} = ?`);
-      params.push(val);
-    }
-  }
-
-  if (fields.length === 0) return false;
-  params.push(id);
-
-  const sql = `UPDATE presets SET ${fields.join(', ')} WHERE id = ?`;
-  const stmt = database.prepare(sql);
-  const result = stmt.run(...params);
-  return result.changes > 0;
-}
-
-export async function delete_preset(id: string): Promise<boolean> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const { error } = await supabaseClient.from('presets').delete().eq('id', id);
-    if (error) {
-      console.error('Supabase delete error:', error);
-      return false;
-    }
-    return true;
-  }
-
-  const database = getDb();
-  const stmt = database.prepare('DELETE FROM presets WHERE id = ?');
-  const result = stmt.run(id);
-  return result.changes > 0;
-}
-
-export async function health_check(): Promise<{ status: string; total_presets: number; creature_types: number; sources: number; db_type: string }> {
-  const supabaseClient = getServerSupabase();
-  if (supabaseClient) {
-    const count = await count_presets();
-    const creatures = (await get_creature_types()).length;
-    const sources = (await get_sources()).length;
-    return {
-      status: 'healthy (supabase)',
-      total_presets: count,
-      creature_types: creatures,
-      sources: sources,
-      db_type: 'supabase'
-    };
-  }
-
-  const database = getDb();
-  const totalRow = database.prepare('SELECT COUNT(*) as cnt FROM presets').get() as { cnt: number };
-  const creatureRow = database.prepare('SELECT COUNT(DISTINCT creature) as cnt FROM presets').get() as { cnt: number };
-  const sourcesRow = database.prepare('SELECT COUNT(DISTINCT source) as cnt FROM presets').get() as { cnt: number };
-
-  return {
-    status: 'healthy (sqlite)',
-    total_presets: Number(totalRow.cnt),
-    creature_types: Number(creatureRow.cnt),
-    sources: Number(sourcesRow.cnt),
-    db_type: 'sqlite'
-  };
+  return data as Preset;
 }

@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
 const createNextIntlPlugin = require('next-intl/plugin');
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
-});
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -20,8 +14,6 @@ const nextConfig = {
       { protocol: 'https', hostname: '*.supabase.co' },
     ],
   },
-  // Externalize native modules for server-side
-  serverExternalPackages: ['better-sqlite3'],
   // Enable React strict mode for catching re-render issues
   reactStrictMode: true,
   // Compress responses
@@ -34,4 +26,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(withPWA(withNextIntl(nextConfig)));
+module.exports = withBundleAnalyzer(withNextIntl(nextConfig));

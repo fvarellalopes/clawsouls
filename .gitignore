@@ -45,3 +45,8 @@ dist/
 .worktrees
 public/workbox-4754cb34.js
 data/database.sqlite
+
+# cleanup artifacts
+.git-rewrite/
+__pycache__/
+*.pyc

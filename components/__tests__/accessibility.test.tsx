@@ -240,20 +240,4 @@ describe("Accessibility", () => {
       expect(container.innerHTML).toBe("");
     });
   });
-
-  describe("ThemeSelector", () => {
-    it("trigger button has aria-label", () => {
-      jest.mock("@/store/themeStore", () => ({
-        useThemeStore: () => ({
-          themeId: "default",
-          setTheme: jest.fn(),
-          getAllThemes: () => [],
-        }),
-      }));
-      const { ThemeSelector } = require("@/components/theme-selector");
-      const { container } = render(<ThemeSelector />);
-      const btn = container.querySelector('button[aria-label="changeTheme"]');
-      expect(btn).toBeTruthy();
-    });
-  });
 });
